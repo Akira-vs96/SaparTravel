@@ -2,26 +2,146 @@ name: CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
-  test:
+  backend:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: sapar
+          POSTGRES_PASSWORD: ci-test-password
+          POSTGRES_DB: sapartravel_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U sapar -d sapartravel_test"
+          --health-interval 5s --health-timeout 5s --health-retries 15
+    env:
+      ENVIRONMENT: testing
+      DATABASE_URL: postgresql+psycopg://sapar:ci-test-password@localhost:5432/sapartravel_test
+      TEST_DATABASE_URL: postgresql+psycopg://sapar:ci-test-password@localhost:5432/sapartravel_test
+      JWT_SECRET: ci-only-2cf70549bf091a9d4b70045b94453f8d0a65cc68
+      AUTH_RATE_LIMIT: "0"
+    defaults:
+      run:
+        working-directory: backend
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-
-      - name: Install dependencies
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+      - run: pip install -r requirements-dev.txt
+      - name: Apply and verify PostgreSQL migrations
         run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-      - name: Run tests
+          alembic upgrade head
+          alembic check
+      - name: Verify repeatable catalog seeding
+        env:
+          SEED_DEMO_DATA: "true"
         run: |
-          pytest -q || python -m pytest -q
+          python -m app.seed
+          python -m app.seed
+      - name: Run API and booking tests against PostgreSQL
+        run: pytest -q
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run build
+
+  browser:
+    needs: [backend, frontend]
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: sapar
+          POSTGRES_PASSWORD: ci-test-password
+          POSTGRES_DB: sapartravel_e2e
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U sapar -d sapartravel_e2e"
+          --health-interval 5s --health-timeout 5s --health-retries 15
+    env:
+      ENVIRONMENT: testing
+      DATABASE_URL: postgresql+psycopg://sapar:ci-test-password@localhost:5432/sapartravel_e2e
+      JWT_SECRET: ci-only-2cf70549bf091a9d4b70045b94453f8d0a65cc68
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: ci-only-admin-password-2026
+      E2E_ADMIN_EMAIL: admin@example.com
+      E2E_ADMIN_PASSWORD: ci-only-admin-password-2026
+      AUTH_RATE_LIMIT: "0"
+      SEED_DEMO_DATA: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            backend/requirements*.txt
+            tests/requirements-browser.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: pip install -r backend/requirements-dev.txt -r tests/requirements-browser.txt
+      - run: python -m playwright install --with-deps chromium
+      - run: npm ci
+        working-directory: frontend
+      - run: npm run build
+        working-directory: frontend
+      - name: Prepare PostgreSQL and start API
+        working-directory: backend
+        run: |
+          alembic upgrade head
+          python -m app.seed
+          uvicorn app.main:app --host 127.0.0.1 --port 8000 > /tmp/sapartravel-api.log 2>&1 &
+      - name: Start production frontend preview
+        working-directory: frontend
+        run: npm run preview -- --host 127.0.0.1 --port 5173 > /tmp/sapartravel-web.log 2>&1 &
+      - name: Wait for application
+        run: |
+          python - <<'PY'
+          import time, urllib.request
+          for attempt in range(40):
+              try:
+                  urllib.request.urlopen('http://127.0.0.1:5173/api/v1/health', timeout=2)
+                  break
+              except Exception:
+                  time.sleep(0.5)
+          else:
+              raise SystemExit('Application did not become ready')
+          PY
+      - run: python tests/browser_smoke.py
+      - run: python tests/browser_management.py --base-url http://127.0.0.1:5173
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-smoke
+          path: |
+            test-results/
+            /tmp/sapartravel-api.log
+            /tmp/sapartravel-web.log

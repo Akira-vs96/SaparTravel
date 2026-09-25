@@ -1,14 +1,18 @@
+backend/app/        API, модели, авторизация, каталог и бронирования
+backend/migrations/ миграции PostgreSQL
+backend/tests/      автоматические проверки API и бизнес-правил
+frontend/src/       страницы, компоненты, переводы RU/KK/EN
+tests/             браузерная проверка полного приложения
 docs/
-  adr/               решения (ЛЗ 2, 12)
-  requirements/      стейкхолдеры, story map, НФТ (ЛЗ 4)
-  plan/              WBS, релизы, зависимости, RACI, capacity (ЛЗ 5)
-  security/          RAID-лог, модель угроз, соответствие (ЛЗ 7)
-  qa/                план тестов, UAT, postmortem (ЛЗ 11)
-  ops/               runbook, релизный план, откат (ЛЗ 10, 11)
-  portfolio/         итоговая сборка (ЛЗ 15)
-notebooks/           расчёты (ЛЗ 6)
-evals/               набор для оценки ИИ-функции (ЛЗ 12)
-scripts/             автоматизация (ЛЗ 10, 13, 14)
-src/  tests/         код системы и тесты
-.github/workflows/   пайплайн (ЛЗ 10)
-README.md            что за проект, где доска, где вики
+  adr/              решения по процессу и архитектуре
+  requirements/     требования и пользовательские сценарии
+  plan/             WBS, релизы, зависимости и RACI
+  security/         риски и модель угроз
+  qa/               тест-план и приёмка
+  ops/              запуск, резервные копии и эксплуатация
+  portfolio/        состав реализации
+  postgresql-schema.md  модель данных и правила бронирования
+scripts/            конфигурация окружения и резервное копирование
+.github/workflows/  API, frontend и Chromium в CI
+docker-compose.yml  PostgreSQL + FastAPI + Nginx
+README.md           возможности, запуск и ограничения

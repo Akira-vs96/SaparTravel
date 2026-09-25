@@ -1,0 +1,3975 @@
+{
+  "destinations": [
+    {
+      "slug": "kazakhstan",
+      "continent": "Asia",
+      "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85",
+      "name": "Казахстан",
+      "name_en": "Kazakhstan",
+      "name_kk": "Қазақстан",
+      "country": "Казахстан",
+      "country_en": "Kazakhstan",
+      "country_kk": "Қазақстан",
+      "description": "Алматы открывает путь к горным озёрам, степным просторам и каньонам. Здесь легко совместить прогулки на природе с городскими вкусами.",
+      "description_en": "Almaty is a starting point for mountain lakes, open steppe and canyons. Combine time outdoors with the flavours of the city.",
+      "description_kk": "Алматыдан тау көлдеріне, кең далаға және шатқалдарға жол ашылады. Табиғаттағы серуенді қаладағы дәмді тағамдармен үйлестіруге болады."
+    },
+    {
+      "slug": "georgia",
+      "continent": "Asia",
+      "image_url": "https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&fit=crop&w=1400&q=85",
+      "name": "Грузия",
+      "name_en": "Georgia",
+      "name_kk": "Грузия",
+      "country": "Грузия",
+      "country_en": "Georgia",
+      "country_kk": "Грузия",
+      "description": "Уютные города, семейные кухни и виноградные долины задают ритм Грузии. Кахетия приглашает задержаться за столом и узнать местные истории.",
+      "description_en": "Welcoming towns, family kitchens and vineyard valleys set Georgia’s pace. Kakheti invites you to share a table and discover local stories.",
+      "description_kk": "Грузияның шағын қалалары, отбасылық асханалары мен жүзім алқаптары ерекше әсер қалдырады. Кахетиде жергілікті тағамдармен және өңірдің тарихымен танысасыз."
+    },
+    {
+      "slug": "japan",
+      "continent": "Asia",
+      "image_url": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1400&q=85",
+      "name": "Япония",
+      "name_en": "Japan",
+      "name_kk": "Жапония",
+      "country": "Япония",
+      "country_en": "Japan",
+      "country_kk": "Жапония",
+      "description": "Киото сочетает тихие сады, старые улочки и живую культуру ремёсел. Город раскрывается в небольших деталях и неторопливых прогулках.",
+      "description_en": "Kyoto brings together quiet gardens, old lanes and a living craft culture. Discover the city through small details and leisurely walks.",
+      "description_kk": "Киотода тыныш бақтар, көне көшелер және қолөнер дәстүрлері тоғысқан. Қаланың ерекшелігі ұсақ бөлшектер мен асықпай жасалған серуендерде ашылады."
+    },
+    {
+      "slug": "indonesia",
+      "continent": "Asia",
+      "image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1400&q=85",
+      "name": "Индонезия",
+      "name_en": "Indonesia",
+      "name_kk": "Индонезия",
+      "country": "Индонезия",
+      "country_en": "Indonesia",
+      "country_kk": "Индонезия",
+      "description": "Бали приглашает в мир зелёных террас, мастерских и океанских берегов. Здесь можно соединить деревенские прогулки с отдыхом у воды.",
+      "description_en": "Bali offers green terraces, artisan workshops and ocean shores. Combine village walks with relaxed time beside the water.",
+      "description_kk": "Бали жасыл террасаларымен, шеберханаларымен және мұхит жағалауымен баурайды. Ауылдағы серуенді су жағасындағы демалыспен ұштастыруға болады."
+    },
+    {
+      "slug": "thailand",
+      "continent": "Asia",
+      "image_url": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=85",
+      "name": "Таиланд",
+      "name_en": "Thailand",
+      "name_kk": "Таиланд",
+      "country": "Таиланд",
+      "country_en": "Thailand",
+      "country_kk": "Таиланд",
+      "description": "Чиангмай знакомит с рынками, уютными кварталами и северной кухней. Окрестные деревни дополняют городскую жизнь зелёными пейзажами.",
+      "description_en": "Chiang Mai introduces lively markets, welcoming neighbourhoods and northern cooking. Nearby villages add green scenery to the urban experience.",
+      "description_kk": "Чиангмай базарларымен, жайлы кварталдарымен және солтүстік асханасымен таныстырады. Маңайдағы ауылдар қала сапарын жасыл табиғатпен толықтырады."
+    },
+    {
+      "slug": "india",
+      "continent": "Asia",
+      "image_url": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1400&q=85",
+      "name": "Индия",
+      "name_en": "India",
+      "name_kk": "Үндістан",
+      "country": "Индия",
+      "country_en": "India",
+      "country_kk": "Үндістан",
+      "description": "Джайпур привлекает цветом, архитектурой и мастерскими. Рынки и дворы помогают почувствовать ритм Раджастхана.",
+      "description_en": "Jaipur draws visitors with colour, architecture and artisan workshops. Markets and courtyards reveal the rhythm of Rajasthan.",
+      "description_kk": "Джайпур жарқын бояуларымен, сәулетімен және шеберханаларымен қызықтырады. Базарлары мен аулалары Раджастхан өмірін сезінуге мүмкіндік береді."
+    },
+    {
+      "slug": "italy",
+      "continent": "Europe",
+      "image_url": "https://images.unsplash.com/photo-1464207687429-7505649dae38?auto=format&fit=crop&w=1400&q=85",
+      "name": "Италия",
+      "name_en": "Italy",
+      "name_kk": "Италия",
+      "country": "Италия",
+      "country_en": "Italy",
+      "country_kk": "Италия",
+      "description": "Тоскана объединяет города искусства, холмы и деревенскую кухню. Здесь приятно чередовать музеи с долгими прогулками.",
+      "description_en": "Tuscany combines art-filled towns, rolling hills and country cooking. Alternate cultural visits with long, easy walks.",
+      "description_kk": "Тосканада өнер қалалары, төбелер және ауыл асханасы үйлеседі. Мәдени орындарға баруды ұзақ серуендермен алмастыруға болады."
+    },
+    {
+      "slug": "france",
+      "continent": "Europe",
+      "image_url": "https://images.unsplash.com/photo-1499002238440-d264edd596ec?auto=format&fit=crop&w=1400&q=85",
+      "name": "Франция",
+      "name_en": "France",
+      "name_kk": "Франция",
+      "country": "Франция",
+      "country_en": "France",
+      "country_kk": "Франция",
+      "description": "Прованс — это каменные деревни, рынки и свет юга. Небольшие расстояния оставляют больше времени для открытий пешком.",
+      "description_en": "Provence offers stone villages, markets and southern light. Short distances leave more time to discover its details on foot.",
+      "description_kk": "Прованс тас үйлері бар ауылдарымен, базарларымен және оңтүстіктің шуағымен ерекшеленеді. Қысқа жолдар жаяу аралауға көбірек уақыт қалдырады."
+    },
+    {
+      "slug": "spain",
+      "continent": "Europe",
+      "image_url": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1400&q=85",
+      "name": "Испания",
+      "name_en": "Spain",
+      "name_kk": "Испания",
+      "country": "Испания",
+      "country_en": "Spain",
+      "country_kk": "Испания",
+      "description": "Андалусия приглашает гулять по дворикам, слушать уличную музыку и пробовать небольшие блюда. Севилья становится удобной отправной точкой.",
+      "description_en": "Andalusia invites courtyard walks, street music and small plates. Seville makes a welcoming starting point.",
+      "description_kk": "Андалусия аулаларда серуендеуге, көше музыкасын тыңдауға және шағын тағамдардан дәм татуға шақырады. Севилья сапарды бастауға ыңғайлы қала."
+    },
+    {
+      "slug": "iceland",
+      "continent": "Europe",
+      "image_url": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1400&q=85",
+      "name": "Исландия",
+      "name_en": "Iceland",
+      "name_kk": "Исландия",
+      "country": "Исландия",
+      "country_en": "Iceland",
+      "country_kk": "Исландия",
+      "description": "Южное побережье Исландии впечатляет водопадами, лавовыми полями и открытыми горизонтами. Погода добавляет пейзажам постоянно меняющийся характер.",
+      "description_en": "Iceland’s south coast offers waterfalls, lava fields and open horizons. Changing weather continually reshapes the mood of the landscape.",
+      "description_kk": "Исландияның оңтүстік жағалауы сарқырамаларымен, лава алқаптарымен және ашық көкжиегімен таңғалдырады. Құбылмалы ауа райы табиғат көрінісін үнемі өзгертіп тұрады."
+    },
+    {
+      "slug": "turkey",
+      "continent": "Asia",
+      "image_url": "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?auto=format&fit=crop&w=1400&q=85",
+      "name": "Турция",
+      "name_en": "Turkey",
+      "name_kk": "Түркия",
+      "country": "Турция",
+      "country_en": "Turkey",
+      "country_kk": "Түркия",
+      "description": "Каппадокия сочетает необычные скальные формы, долины и ремесленные поселения. Лучшие впечатления часто ждут на тихих пеших тропах.",
+      "description_en": "Cappadocia combines unusual rock formations, valleys and craft villages. Quiet walking trails often hold its most memorable moments.",
+      "description_kk": "Каппадокия ерекше жартастарымен, аңғарларымен және қолөнер ауылдарымен танымал. Тыныш жаяу соқпақтар ең әсерлі сәттерді сыйлайды."
+    },
+    {
+      "slug": "morocco",
+      "continent": "Africa",
+      "image_url": "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1400&q=85",
+      "name": "Марокко",
+      "name_en": "Morocco",
+      "name_kk": "Марокко",
+      "country": "Марокко",
+      "country_en": "Morocco",
+      "country_kk": "Марокко",
+      "description": "Марракеш раскрывается через ремесленные улицы, дворики и ароматы рынков. За городом начинаются горные дороги и деревенские пейзажи.",
+      "description_en": "Marrakech unfolds through artisan lanes, courtyards and market aromas. Beyond the city lie mountain roads and village landscapes.",
+      "description_kk": "Марракеш қолөнер көшелері, аулалары және базар хош иістері арқылы ашылады. Қала сыртында тау жолдары мен ауыл көріністері басталады."
+    },
+    {
+      "slug": "tanzania",
+      "continent": "Africa",
+      "image_url": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1400&q=85",
+      "name": "Танзания",
+      "name_en": "Tanzania",
+      "name_kk": "Танзания",
+      "country": "Танзания",
+      "country_en": "Tanzania",
+      "country_kk": "Танзания",
+      "description": "Север Танзании привлекает открытыми ландшафтами и наблюдением за природой. Аруша служит отправной точкой для выездов в окрестные парки.",
+      "description_en": "Northern Tanzania offers open landscapes and opportunities to observe nature. Arusha is a starting point for visits to nearby parks.",
+      "description_kk": "Танзанияның солтүстігі ашық кеңістігімен және табиғатты бақылау мүмкіндігімен қызықтырады. Аруша маңайдағы саябақтарға баруға бастау нүктесі болады."
+    },
+    {
+      "slug": "south-africa",
+      "continent": "Africa",
+      "image_url": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=1400&q=85",
+      "name": "Южная Африка",
+      "name_en": "South Africa",
+      "name_kk": "Оңтүстік Африка Республикасы",
+      "country": "Южная Африка",
+      "country_en": "South Africa",
+      "country_kk": "Оңтүстік Африка Республикасы",
+      "description": "Кейптаун соединяет городскую культуру, горные силуэты и океанский берег. Дороги полуострова ведут к новым видам почти на каждом повороте.",
+      "description_en": "Cape Town brings together urban culture, mountain silhouettes and the ocean. Peninsula roads reveal fresh views around almost every bend.",
+      "description_kk": "Кейптаунда қала мәдениеті, тау сұлбалары және мұхит жағалауы тоғысқан. Түбектің жолдары әр бұрылыста жаңа көрініс ашады."
+    },
+    {
+      "slug": "egypt",
+      "continent": "Africa",
+      "image_url": "https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&w=1400&q=85",
+      "name": "Египет",
+      "name_en": "Egypt",
+      "name_kk": "Мысыр",
+      "country": "Египет",
+      "country_en": "Egypt",
+      "country_kk": "Мысыр",
+      "description": "Луксор позволяет сосредоточиться на древних памятниках и жизни у Нила. Утренние экскурсии хорошо сочетаются с тихими вечерами на берегу.",
+      "description_en": "Luxor focuses your journey on ancient monuments and life beside the Nile. Morning visits pair naturally with quiet riverside evenings.",
+      "description_kk": "Луксор көне ескерткіштерге және Ніл бойындағы өмірге назар аударуға мүмкіндік береді. Таңғы экскурсиялар өзен жағасындағы тыныш кештермен үйлеседі."
+    },
+    {
+      "slug": "usa",
+      "continent": "North America",
+      "image_url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1400&q=85",
+      "name": "США",
+      "name_en": "United States",
+      "name_kk": "АҚШ",
+      "country": "США",
+      "country_en": "United States",
+      "country_kk": "АҚШ",
+      "description": "Юта приглашает в мир красных скал, пустынных дорог и широкого неба. Моаб становится базой для коротких походов и поездок к панорамам.",
+      "description_en": "Utah offers red rock, desert roads and wide skies. Moab is a base for short hikes and scenic excursions.",
+      "description_kk": "Юта қызыл жартастарымен, шөл жолдарымен және кең аспанымен баурайды. Моаб қысқа жорықтар мен көрікті жерлерге сапарлардың базасы болады."
+    },
+    {
+      "slug": "canada",
+      "continent": "North America",
+      "image_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=85",
+      "name": "Канада",
+      "name_en": "Canada",
+      "name_kk": "Канада",
+      "country": "Канада",
+      "country_en": "Canada",
+      "country_kk": "Канада",
+      "description": "Канадские Скалистые горы привлекают озёрами, хвойными лесами и горными дорогами. Банф удобен для выездов к природным панорамам.",
+      "description_en": "The Canadian Rockies offer lakes, conifer forests and mountain roads. Banff is a convenient base for scenic excursions.",
+      "description_kk": "Канаданың Жартасты таулары көлдерімен, қылқанжапырақты ормандарымен және тау жолдарымен қызықтырады. Банф табиғат көріністеріне баруға ыңғайлы."
+    },
+    {
+      "slug": "mexico",
+      "continent": "North America",
+      "image_url": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?auto=format&fit=crop&w=1400&q=85",
+      "name": "Мексика",
+      "name_en": "Mexico",
+      "name_kk": "Мексика",
+      "country": "Мексика",
+      "country_en": "Mexico",
+      "country_kk": "Мексика",
+      "description": "Оахака знакомит с насыщенной кухней, текстилем и ремесленными деревнями. Городские рынки превращают обычную прогулку в маленькое открытие.",
+      "description_en": "Oaxaca introduces rich food traditions, textiles and artisan villages. City markets turn an ordinary walk into a small discovery.",
+      "description_kk": "Оахака алуан түрлі тағамдарымен, мата өнерімен және қолөнер ауылдарымен таныстырады. Қала базарлары әр серуенді шағын жаңалыққа айналдырады."
+    },
+    {
+      "slug": "peru",
+      "continent": "South America",
+      "image_url": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1400&q=85",
+      "name": "Перу",
+      "name_en": "Peru",
+      "name_kk": "Перу",
+      "country": "Перу",
+      "country_en": "Peru",
+      "country_kk": "Перу",
+      "description": "Куско и Священная долина соединяют горные виды, исторические места и ремесленные общины. Маршрут начинается спокойно, с временем на отдых.",
+      "description_en": "Cusco and the Sacred Valley combine mountain views, historic places and artisan communities. Begin gently, with time to rest.",
+      "description_kk": "Куско мен Қасиетті аңғарда тау көріністері, тарихи орындар және қолөнершілер қауымдары тоғысқан. Сапар демалуға уақыт беретін баяу қарқынмен басталады."
+    },
+    {
+      "slug": "brazil",
+      "continent": "South America",
+      "image_url": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1400&q=85",
+      "name": "Бразилия",
+      "name_en": "Brazil",
+      "name_kk": "Бразилия",
+      "country": "Бразилия",
+      "country_en": "Brazil",
+      "country_kk": "Бразилия",
+      "description": "Рио-де-Жанейро сочетает пляжные набережные, городскую музыку и зелёные холмы. Каждый район предлагает собственный ритм прогулки.",
+      "description_en": "Rio de Janeiro combines beach promenades, city music and green hills. Each neighbourhood offers its own walking rhythm.",
+      "description_kk": "Рио-де-Жанейрода жағажай серуен жолдары, қала музыкасы және жасыл төбелер үйлеседі. Әр ауданның өзіндік ырғағы бар."
+    },
+    {
+      "slug": "argentina",
+      "continent": "South America",
+      "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85",
+      "name": "Аргентина",
+      "name_en": "Argentina",
+      "name_kk": "Аргентина",
+      "country": "Аргентина",
+      "country_en": "Argentina",
+      "country_kk": "Аргентина",
+      "description": "Патагония открывает широкие пространства, горные тропы и озёрные берега. Эль-Чальтен приглашает замедлиться и провести больше времени на природе.",
+      "description_en": "Patagonia opens up wide spaces, mountain trails and lakeshores. El Chaltén invites you to slow down and spend more time outdoors.",
+      "description_kk": "Патагония кең далаларымен, тау соқпақтарымен және көл жағаларымен ерекшеленеді. Эль-Чальтен асықпай, табиғатта көбірек уақыт өткізуге шақырады."
+    },
+    {
+      "slug": "australia",
+      "continent": "Oceania",
+      "image_url": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+      "name": "Австралия",
+      "name_en": "Australia",
+      "name_kk": "Аустралия",
+      "country": "Австралия",
+      "country_en": "Australia",
+      "country_kk": "Аустралия",
+      "description": "Тропический Квинсленд объединяет побережье, зелёные леса и морские поездки. Кэрнс становится отправной точкой для разнообразных дневных маршрутов.",
+      "description_en": "Tropical Queensland combines coastline, green forests and boat excursions. Cairns is a starting point for varied day trips.",
+      "description_kk": "Тропикалық Квинсленд жағалауды, жасыл ормандарды және теңіз сапарларын біріктіреді. Кэрнс түрлі біркүндік бағыттардың бастау нүктесі болады."
+    },
+    {
+      "slug": "new-zealand",
+      "continent": "Oceania",
+      "image_url": "https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=1400&q=85",
+      "name": "Новая Зеландия",
+      "name_en": "New Zealand",
+      "name_kk": "Жаңа Зеландия",
+      "country": "Новая Зеландия",
+      "country_en": "New Zealand",
+      "country_kk": "Жаңа Зеландия",
+      "description": "Южный остров Новой Зеландии предлагает озёрные дороги, горные силуэты и небольшие города. Куинстаун подходит для знакомства с разными пейзажами.",
+      "description_en": "New Zealand’s South Island offers lakeside roads, mountain silhouettes and small towns. Queenstown is a base for exploring varied landscapes.",
+      "description_kk": "Жаңа Зеландияның Оңтүстік аралы көл бойындағы жолдарымен, тау сұлбаларымен және шағын қалаларымен қызықтырады. Куинстаун әртүрлі табиғат көріністерін тануға ыңғайлы."
+    },
+    {
+      "slug": "costa-rica",
+      "continent": "North America",
+      "image_url": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1400&q=85",
+      "name": "Коста-Рика",
+      "name_en": "Costa Rica",
+      "name_kk": "Коста-Рика",
+      "country": "Коста-Рика",
+      "country_en": "Costa Rica",
+      "country_kk": "Коста-Рика",
+      "description": "Монтеверде знакомит с туманными лесами, зелёными тропами и внимательным наблюдением за природой. Здесь интересно замечать даже самые маленькие детали.",
+      "description_en": "Monteverde introduces cloud forests, green trails and close observation of nature. Even the smallest details reward your attention.",
+      "description_kk": "Монтеверде тұманды ормандармен, жасыл соқпақтармен және табиғатты мұқият бақылаумен таныстырады. Мұнда ең ұсақ бөлшектердің өзі қызықты."
+    }
+  ],
+  "experiences": [
+    {
+      "slug": "almaty-lakes-and-canyons",
+      "destination_slug": "kazakhstan",
+      "category": "Nature",
+      "duration_days": 4,
+      "price_from": 420,
+      "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Озёра и каньоны Алматинского края",
+      "title_en": "Almaty lakes and canyons",
+      "title_kk": "Алматы өңірінің көлдері мен шатқалдары",
+      "description": "Четыре дня среди горных пейзажей с выездами к Кольсаю и Чарыну. Маршрут оставляет время для прогулок, фотографий и неспешных остановок.",
+      "description_en": "Spend four days among mountain landscapes with visits to Kolsai and Charyn. The itinerary leaves time for walks, photographs and unhurried stops.",
+      "description_kk": "Көлсай мен Шарынға барып, төрт күнді тау табиғатында өткізіңіз. Бағдарламада серуендеуге, суретке түсіруге және асықпай демалуға уақыт бар.",
+      "tags": [
+        "горы",
+        "озёра",
+        "каньон"
+      ],
+      "tags_en": [
+        "mountains",
+        "lakes",
+        "canyon"
+      ],
+      "tags_kk": [
+        "таулар",
+        "көлдер",
+        "шатқал"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Алматы: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Кольсай: день у воды",
+          "description": "Отправимся к нижнему озеру Кольсай и прогуляемся вдоль берега. Сделаем остановки на видовых площадках и вернёмся к месту проживания."
+        },
+        {
+          "day": 3,
+          "title": "Прогулка по Чарыну",
+          "description": "Исследуем тропы среди скальных стен Чарына с гидом. После прогулки и отдыха вернёмся в Алматы."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Алматы: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Almaty: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "A day beside Kolsai",
+          "description": "Visit the lower Kolsai lake and walk along its shore. Pause at viewpoints before returning to your accommodation."
+        },
+        {
+          "day": 3,
+          "title": "Walking in Charyn Canyon",
+          "description": "Explore trails between Charyn’s rock walls with a guide. Return to Almaty after the walk and a rest stop."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Almaty: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Алматы: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Көлсай жағасындағы күн",
+          "description": "Төменгі Көлсай көліне барып, жағалау бойымен серуендейміз. Көрініс алаңдарына тоқтап, тұратын жерімізге қайтамыз."
+        },
+        {
+          "day": 3,
+          "title": "Шарын шатқалындағы серуен",
+          "description": "Гидпен бірге Шарынның жартастары арасындағы соқпақтарды аралаймыз. Серуен мен демалыстан кейін Алматыға қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Алматы: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 420
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 460
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 490
+        }
+      ]
+    },
+    {
+      "slug": "kakheti-table-and-vineyards",
+      "destination_slug": "georgia",
+      "category": "Food",
+      "duration_days": 4,
+      "price_from": 390,
+      "image_url": "https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Кахетия: вкус семейных традиций",
+      "title_en": "Kakheti: flavours and family traditions",
+      "title_kk": "Кахети: дәм мен отбасылық дәстүр",
+      "description": "Поездка из Тбилиси в Кахетию с прогулками по маленьким городам и кулинарным знакомством с регионом. В центре внимания — люди, ремёсла и местная кухня.",
+      "description_en": "Travel from Tbilisi to Kakheti for small-town walks and a culinary introduction to the region. Meet local people and discover their food and crafts.",
+      "description_kk": "Тбилисиден Кахетиге барып, шағын қалаларды аралап, өңірдің асханасымен танысыңыз. Сапарда жергілікті тұрғындарға, қолөнерге және тағамдарға көңіл бөлінеді.",
+      "tags": [
+        "кухня",
+        "виноградники",
+        "традиции"
+      ],
+      "tags_en": [
+        "food",
+        "vineyards",
+        "traditions"
+      ],
+      "tags_kk": [
+        "асхана",
+        "жүзімдіктер",
+        "дәстүрлер"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Тбилиси: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Сигнахи и домашняя кухня",
+          "description": "Прогуляемся по Сигнахи, заглянем в семейную мастерскую и познакомимся с приготовлением местных блюд. Вечером разместимся в Кахетии."
+        },
+        {
+          "day": 3,
+          "title": "Долина и ремёсла",
+          "description": "Посетим виноградное хозяйство и узнаем о сезонных работах. После встречи с местным мастером вернёмся в Тбилиси."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Тбилиси: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Tbilisi: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Sighnaghi and a family kitchen",
+          "description": "Walk through Sighnaghi, visit a family workshop and learn how local dishes are prepared. Stay overnight in Kakheti."
+        },
+        {
+          "day": 3,
+          "title": "Valley views and local crafts",
+          "description": "Visit a vineyard to learn about seasonal work. Meet a local craftsperson before returning to Tbilisi."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Tbilisi: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Тбилиси: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Сигнахи және үй тағамдары",
+          "description": "Сигнахиде серуендеп, отбасылық шеберханаға барамыз және жергілікті тағамдардың дайындалуымен танысамыз. Кешке Кахетиде түнейміз."
+        },
+        {
+          "day": 3,
+          "title": "Аңғар көріністері мен қолөнер",
+          "description": "Жүзім шаруашылығына барып, маусымдық жұмыстар туралы білеміз. Жергілікті шебермен танысқаннан кейін Тбилисиге қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Тбилиси: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 390
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 430
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 460
+        }
+      ]
+    },
+    {
+      "slug": "kyoto-quiet-gardens",
+      "destination_slug": "japan",
+      "category": "Culture",
+      "duration_days": 5,
+      "price_from": 1180,
+      "image_url": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Тихие сады и улочки Киото",
+      "title_en": "Kyoto’s quiet gardens and lanes",
+      "title_kk": "Киотоның тыныш бақтары мен көшелері",
+      "description": "Пять дней в Киото: садовые дорожки, чайные кварталы и знакомство с ремеслом. Между экскурсиями предусмотрено свободное время для собственного открытия города.",
+      "description_en": "Five days in Kyoto with garden paths, tea-house neighbourhoods and local crafts. Free time between excursions lets you discover the city at your own pace.",
+      "description_kk": "Киотодағы бес күн бақ жолдарына, шайхана орналасқан кварталдарға және қолөнерге арналады. Экскурсиялар арасында қаланы өз бетіңізше аралауға уақыт беріледі.",
+      "tags": [
+        "сады",
+        "ремёсла",
+        "чай"
+      ],
+      "tags_en": [
+        "gardens",
+        "crafts",
+        "tea"
+      ],
+      "tags_kk": [
+        "бақтар",
+        "қолөнер",
+        "шай"
+      ],
+      "included": [
+        "Проживание: 4 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 4 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "4 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Киото: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Сады и старые кварталы",
+          "description": "Посетим сад и пройдём по улочкам восточной части Киото. Гид расскажет о городских традициях и повседневной жизни."
+        },
+        {
+          "day": 3,
+          "title": "Арасияма и речные тропы",
+          "description": "Отправимся в Арасияму для прогулки среди зелени и вдоль реки. Днём останется время для отдыха в небольшом кафе."
+        },
+        {
+          "day": 4,
+          "title": "Чай и работа мастеров",
+          "description": "Познакомимся с чайной традицией и посетим ремесленную мастерскую. Вторая половина дня свободна для прогулок по городу."
+        },
+        {
+          "day": 5,
+          "title": "Свободное утро и завершение",
+          "description": "Киото: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Kyoto: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Gardens and historic neighbourhoods",
+          "description": "Visit a garden and walk the lanes of eastern Kyoto. Your guide introduces local traditions and everyday life."
+        },
+        {
+          "day": 3,
+          "title": "Arashiyama and riverside paths",
+          "description": "Explore Arashiyama on green paths and along the river. Leave time in the afternoon for a relaxed café stop."
+        },
+        {
+          "day": 4,
+          "title": "Tea and the work of artisans",
+          "description": "Discover a tea tradition and visit an artisan’s workshop. Spend the rest of the afternoon exploring independently."
+        },
+        {
+          "day": 5,
+          "title": "A relaxed morning and farewell",
+          "description": "Kyoto: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Киото: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Бақтар мен тарихи кварталдар",
+          "description": "Баққа барып, Киотоның шығыс бөлігіндегі көшелерді аралаймыз. Гид қала дәстүрлері мен күнделікті өмірі туралы әңгімелейді."
+        },
+        {
+          "day": 3,
+          "title": "Арасияма және өзен жағасындағы соқпақтар",
+          "description": "Арасиямаға барып, жасыл желек арасында және өзен бойымен серуендейміз. Түстен кейін шағын дәмханада демалуға уақыт болады."
+        },
+        {
+          "day": 4,
+          "title": "Шай дәстүрі және шеберлердің еңбегі",
+          "description": "Шай дәстүрімен танысып, қолөнер шеберханасына барамыз. Түстен кейін қаланы өз бетіңізше аралай аласыз."
+        },
+        {
+          "day": 5,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Киото: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 1180
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1220
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1250
+        }
+      ]
+    },
+    {
+      "slug": "bali-terraces-and-ocean",
+      "destination_slug": "indonesia",
+      "category": "Beach",
+      "duration_days": 5,
+      "price_from": 760,
+      "image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Бали: зелёные террасы и океан",
+      "title_en": "Bali: green terraces and the ocean",
+      "title_kk": "Бали: жасыл террасалар мен мұхит",
+      "description": "Пять дней с базой в Убуде и поездкой к океану. Прогулки, местное ремесло и свободное пляжное время создают спокойный ритм.",
+      "description_en": "Spend five days based in Ubud with an excursion to the ocean. Walks, local crafts and free beach time set an easy pace.",
+      "description_kk": "Убудта орналасып, бес күн ішінде мұхитқа да барасыз. Серуен, жергілікті қолөнер және жағалаудағы бос уақыт жайлы демалыс сыйлайды.",
+      "tags": [
+        "океан",
+        "террасы",
+        "остров"
+      ],
+      "tags_en": [
+        "ocean",
+        "terraces",
+        "island"
+      ],
+      "tags_kk": [
+        "мұхит",
+        "террасалар",
+        "арал"
+      ],
+      "included": [
+        "Проживание: 4 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 4 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "4 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Убуд: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Тропы среди рисовых полей",
+          "description": "Пройдём по сельским тропам у рисовых террас. Посетим деревню и поговорим с гидом о местной повседневной жизни."
+        },
+        {
+          "day": 3,
+          "title": "Мастерские Убуда",
+          "description": "Заглянем в мастерскую и познакомимся с местными художественными традициями. После обеда можно самостоятельно погулять по Убуду."
+        },
+        {
+          "day": 4,
+          "title": "День на океанском берегу",
+          "description": "Поедем к побережью для прогулки и отдыха. Пляжное время свободное, вечером вернёмся в Убуд."
+        },
+        {
+          "day": 5,
+          "title": "Свободное утро и завершение",
+          "description": "Убуд: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Ubud: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Paths through rice fields",
+          "description": "Follow rural paths beside rice terraces. Visit a village and learn about everyday island life from your guide."
+        },
+        {
+          "day": 3,
+          "title": "Ubud’s artisan workshops",
+          "description": "Visit a workshop and discover local artistic traditions. Enjoy an independent walk through Ubud in the afternoon."
+        },
+        {
+          "day": 4,
+          "title": "A day by the ocean",
+          "description": "Head to the coast for a walk and a relaxed afternoon. Enjoy free time on the beach before returning to Ubud."
+        },
+        {
+          "day": 5,
+          "title": "A relaxed morning and farewell",
+          "description": "Ubud: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Убуд: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Күріш алқаптарының арасындағы соқпақтар",
+          "description": "Күріш террасаларының жанындағы ауыл соқпақтарымен жүреміз. Ауылға барып, гидтен аралдағы күнделікті өмір туралы білеміз."
+        },
+        {
+          "day": 3,
+          "title": "Убудтың қолөнер шеберханалары",
+          "description": "Шеберханаға барып, жергілікті өнер дәстүрлерімен танысамыз. Түстен кейін Убудта өз бетіңізше серуендеуге болады."
+        },
+        {
+          "day": 4,
+          "title": "Мұхит жағасындағы күн",
+          "description": "Серуендеу және демалу үшін жағалауға барамыз. Жағажайда бос уақыт беріліп, кешке Убудқа қайтамыз."
+        },
+        {
+          "day": 5,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Убуд: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 760
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 800
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 830
+        }
+      ]
+    },
+    {
+      "slug": "chiang-mai-markets-and-kitchen",
+      "destination_slug": "thailand",
+      "category": "Food",
+      "duration_days": 3,
+      "price_from": 340,
+      "image_url": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Чиангмай: рынки и северная кухня",
+      "title_en": "Chiang Mai: markets and northern flavours",
+      "title_kk": "Чиангмай: базарлар мен солтүстік тағамдары",
+      "description": "Короткое гастрономическое путешествие с прогулкой по рынку и занятием в местной кухне. Подходит для знакомства с городом в спокойном темпе.",
+      "description_en": "A short culinary journey with a market walk and a local cooking session. Discover the city at a comfortable pace.",
+      "description_kk": "Базардағы серуен мен жергілікті ас әзірлеу сабағын қамтитын қысқа гастрономиялық сапар. Қаламен асықпай танысуға мүмкіндік береді.",
+      "tags": [
+        "рынки",
+        "кулинария",
+        "старый город"
+      ],
+      "tags_en": [
+        "markets",
+        "cooking",
+        "old town"
+      ],
+      "tags_kk": [
+        "базарлар",
+        "ас әзірлеу",
+        "ескі қала"
+      ],
+      "included": [
+        "Проживание: 2 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 2 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "2 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Чиангмай: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "От рынка к семейному столу",
+          "description": "Выберем продукты на рынке вместе с гидом, затем познакомимся с приготовлением северных блюд. Вечером прогуляемся по старому городу."
+        },
+        {
+          "day": 3,
+          "title": "Свободное утро и завершение",
+          "description": "Чиангмай: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Chiang Mai: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "From the market to the table",
+          "description": "Explore market ingredients with your guide, then learn to prepare northern dishes. Take an evening walk through the old town."
+        },
+        {
+          "day": 3,
+          "title": "A relaxed morning and farewell",
+          "description": "Chiang Mai: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Чиангмай: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Базардан отбасылық дастарқанға",
+          "description": "Гидпен бірге базардағы азық-түлікпен танысып, кейін солтүстік тағамдарын әзірлеуді үйренеміз. Кешке ескі қалада серуендейміз."
+        },
+        {
+          "day": 3,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Чиангмай: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 340
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 380
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 410
+        }
+      ]
+    },
+    {
+      "slug": "jaipur-colours-and-crafts",
+      "destination_slug": "india",
+      "category": "Culture",
+      "duration_days": 4,
+      "price_from": 510,
+      "image_url": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Джайпур: цвет, дворы и ремёсла",
+      "title_en": "Jaipur: colour, courtyards and crafts",
+      "title_kk": "Джайпур: бояулар, аулалар және қолөнер",
+      "description": "Четыре дня среди исторических кварталов и ремесленных традиций Джайпура. Экскурсии чередуются с отдыхом и самостоятельными прогулками.",
+      "description_en": "Four days exploring Jaipur’s historic neighbourhoods and craft traditions. Guided visits alternate with rest and independent walks.",
+      "description_kk": "Төрт күн бойы Джайпурдың тарихи кварталдары мен қолөнер дәстүрлерін танисыз. Экскурсиялар демалыспен және жеке серуендермен кезектеседі.",
+      "tags": [
+        "архитектура",
+        "ремёсла",
+        "рынки"
+      ],
+      "tags_en": [
+        "architecture",
+        "crafts",
+        "markets"
+      ],
+      "tags_kk": [
+        "сәулет",
+        "қолөнер",
+        "базарлар"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Джайпур: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Архитектурные истории",
+          "description": "Пройдём по историческому центру и посетим дворцовые дворы. Гид поможет заметить детали фасадов и планировки города."
+        },
+        {
+          "day": 3,
+          "title": "Текстиль и городские базары",
+          "description": "Познакомимся с работой текстильных мастеров и прогуляемся по базару. После экскурсии останется свободное время в городе."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Джайпур: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Jaipur: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Stories in architecture",
+          "description": "Walk through the historic centre and visit palace courtyards. Your guide highlights details in the façades and city layout."
+        },
+        {
+          "day": 3,
+          "title": "Textiles and city bazaars",
+          "description": "Meet textile artisans and explore a local bazaar. Enjoy free time in the city after the guided visit."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Jaipur: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Джайпур: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Сәулеттегі тарих",
+          "description": "Тарихи орталықты аралап, сарай аулаларына барамыз. Гид ғимарат қасбеттері мен қала құрылымының ерекшеліктерін түсіндіреді."
+        },
+        {
+          "day": 3,
+          "title": "Мата өнері және қала базарлары",
+          "description": "Мата шеберлерінің жұмысымен танысып, базарда серуендейміз. Экскурсиядан кейін қалада бос уақыт беріледі."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Джайпур: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 510
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 550
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 580
+        }
+      ]
+    },
+    {
+      "slug": "tuscany-hills-and-tables",
+      "destination_slug": "italy",
+      "category": "Food",
+      "duration_days": 4,
+      "price_from": 990,
+      "image_url": "https://images.unsplash.com/photo-1464207687429-7505649dae38?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Тоскана: холмы и длинные обеды",
+      "title_en": "Tuscany: hills and leisurely lunches",
+      "title_kk": "Тоскана: төбелер мен асықпай ішілген ас",
+      "description": "Из Флоренции отправимся в небольшие тосканские города и на семейную ферму. Четыре дня для знакомства с местными вкусами и пейзажами.",
+      "description_en": "Travel from Florence to small Tuscan towns and a family farm. Spend four days discovering local flavours and landscapes.",
+      "description_kk": "Флоренциядан Тоскананың шағын қалаларына және отбасылық фермаға барамыз. Төрт күн жергілікті дәмдер мен табиғат көріністерін тануға арналады.",
+      "tags": [
+        "кухня",
+        "холмы",
+        "деревни"
+      ],
+      "tags_en": [
+        "food",
+        "hills",
+        "villages"
+      ],
+      "tags_kk": [
+        "асхана",
+        "төбелер",
+        "ауылдар"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Флоренция: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Городские площади и рынок",
+          "description": "Прогуляемся по тосканскому городку и его рыночным улицам. Обсудим сезонные продукты и традиции местного стола."
+        },
+        {
+          "day": 3,
+          "title": "Ферма среди холмов",
+          "description": "Посетим семейную ферму и узнаем о её продуктах. После прогулки по окрестностям вернёмся во Флоренцию."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Флоренция: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Florence: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Town squares and a market",
+          "description": "Explore a Tuscan town and its market streets. Learn about seasonal ingredients and traditions around the local table."
+        },
+        {
+          "day": 3,
+          "title": "A farm among the hills",
+          "description": "Visit a family farm and discover its produce. Walk through the surrounding countryside before returning to Florence."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Florence: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Флоренция: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Қала алаңдары мен базар",
+          "description": "Тоскананың шағын қаласын және базар көшелерін аралаймыз. Маусымдық өнімдер мен жергілікті дастарқан дәстүрлерін талқылаймыз."
+        },
+        {
+          "day": 3,
+          "title": "Төбелер арасындағы ферма",
+          "description": "Отбасылық фермаға барып, оның өнімдерімен танысамыз. Маңайды серуендеп болған соң Флоренцияға қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Флоренция: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 990
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1030
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1060
+        }
+      ]
+    },
+    {
+      "slug": "provence-villages-and-light",
+      "destination_slug": "france",
+      "category": "Culture",
+      "duration_days": 4,
+      "price_from": 1080,
+      "image_url": "https://images.unsplash.com/photo-1499002238440-d264edd596ec?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Прованс: деревни в мягком свете",
+      "title_en": "Provence: villages in gentle light",
+      "title_kk": "Прованс: жұмсақ шуақтағы ауылдар",
+      "description": "Неспешный маршрут из Авиньона по прованским деревням и ремесленным улицам. В программе — прогулки, местные истории и время на фотографии.",
+      "description_en": "An unhurried journey from Avignon through Provençal villages and artisan streets. Enjoy walks, local stories and time for photographs.",
+      "description_kk": "Авиньоннан Прованс ауылдары мен шеберлер көшелеріне асықпай саяхат жасаймыз. Бағдарламада серуен, жергілікті әңгімелер және суретке түсуге уақыт бар.",
+      "tags": [
+        "деревни",
+        "искусство",
+        "Прованс"
+      ],
+      "tags_en": [
+        "villages",
+        "art",
+        "Provence"
+      ],
+      "tags_kk": [
+        "ауылдар",
+        "өнер",
+        "Прованс"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Авиньон: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Каменные деревни",
+          "description": "Посетим небольшие деревни и пройдём по тенистым переулкам. Сделаем остановки у мастерских и панорамных площадок."
+        },
+        {
+          "day": 3,
+          "title": "Рынок и прованские истории",
+          "description": "Начнём день на местном рынке, затем отправимся на прогулку с гидом. Вечером вернёмся в Авиньон."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Авиньон: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Avignon: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Stone-built villages",
+          "description": "Visit small villages and walk their shaded lanes. Stop at workshops and viewpoints along the way."
+        },
+        {
+          "day": 3,
+          "title": "Market life and Provençal stories",
+          "description": "Begin at a local market before setting out on a guided walk. Return to Avignon in the evening."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Avignon: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Авиньон: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Тас үйлері бар ауылдар",
+          "description": "Шағын ауылдарға барып, көлеңкелі көшелермен жүреміз. Жолда шеберханалар мен көрініс алаңдарына тоқтаймыз."
+        },
+        {
+          "day": 3,
+          "title": "Базар өмірі және Прованс әңгімелері",
+          "description": "Күнді жергілікті базардан бастап, кейін гидпен серуенге шығамыз. Кешке Авиньонға қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Авиньон: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 1080
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1120
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1150
+        }
+      ]
+    },
+    {
+      "slug": "seville-courtyards-and-tapas",
+      "destination_slug": "spain",
+      "category": "City",
+      "duration_days": 3,
+      "price_from": 620,
+      "image_url": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Севилья: дворики и вечерние прогулки",
+      "title_en": "Seville: courtyards and evening walks",
+      "title_kk": "Севилья: аулалар мен кешкі серуендер",
+      "description": "Три дня для знакомства с Севильей: исторические кварталы, городской рынок и прогулки вдоль реки. Свободный вечер оставим для личных открытий.",
+      "description_en": "Get to know Seville in three days through historic neighbourhoods, a city market and riverside walks. Keep a free evening for your own discoveries.",
+      "description_kk": "Үш күнде Севильяның тарихи кварталдарын, қала базарын және өзен жағалауын аралайсыз. Бір кешті өз қалауыңыз бойынша өткізуге болады.",
+      "tags": [
+        "город",
+        "дворики",
+        "кухня"
+      ],
+      "tags_en": [
+        "city",
+        "courtyards",
+        "food"
+      ],
+      "tags_kk": [
+        "қала",
+        "аулалар",
+        "асхана"
+      ],
+      "included": [
+        "Проживание: 2 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 2 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "2 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Севилья: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "От старых улиц к реке",
+          "description": "Исследуем исторические кварталы, заглянем на рынок и познакомимся с культурой тапас. Завершим экскурсию у реки."
+        },
+        {
+          "day": 3,
+          "title": "Свободное утро и завершение",
+          "description": "Севилья: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Seville: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "From old lanes to the river",
+          "description": "Explore historic neighbourhoods, visit a market and discover tapas culture. Finish the guided walk beside the river."
+        },
+        {
+          "day": 3,
+          "title": "A relaxed morning and farewell",
+          "description": "Seville: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Севилья: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Көне көшелерден өзенге дейін",
+          "description": "Тарихи кварталдарды аралап, базарға барамыз және тапас дәстүрімен танысамыз. Экскурсияны өзен жағасында аяқтаймыз."
+        },
+        {
+          "day": 3,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Севилья: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 620
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 660
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 690
+        }
+      ]
+    },
+    {
+      "slug": "iceland-waterfalls-and-black-sand",
+      "destination_slug": "iceland",
+      "category": "Nature",
+      "duration_days": 5,
+      "price_from": 1690,
+      "image_url": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Исландия: водопады и чёрный песок",
+      "title_en": "Iceland: waterfalls and black sand",
+      "title_kk": "Исландия: сарқырамалар мен қара құм",
+      "description": "Пять дней по южному побережью с остановками у водопадов и береговых смотровых площадок. Пешие участки короткие, темп маршрута спокойный.",
+      "description_en": "Follow the south coast for five days with stops at waterfalls and coastal viewpoints. Walking sections are short and the pace is relaxed.",
+      "description_kk": "Бес күн бойы оңтүстік жағалаумен жүріп, сарқырамалар мен жағалаудағы көрініс алаңдарына тоқтаймыз. Жаяу бөліктер қысқа, сапар қарқыны жайлы.",
+      "tags": [
+        "водопады",
+        "побережье",
+        "ландшафты"
+      ],
+      "tags_en": [
+        "waterfalls",
+        "coast",
+        "landscapes"
+      ],
+      "tags_kk": [
+        "сарқырамалар",
+        "жағалау",
+        "табиғат көріністері"
+      ],
+      "included": [
+        "Проживание: 4 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 4 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "4 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Рейкьявик: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Дорога к водопадам",
+          "description": "Отправимся вдоль южного побережья с остановками у водопадов. Прогуляемся по обозначенным дорожкам и переночуем в регионе."
+        },
+        {
+          "day": 3,
+          "title": "Берег и чёрный песок",
+          "description": "Посетим береговые смотровые площадки у Вика и познакомимся с вулканическими пейзажами. Время на остановках согласуем с условиями на месте."
+        },
+        {
+          "day": 4,
+          "title": "Лавовые поля и возвращение",
+          "description": "По пути обратно остановимся у лавовых полей и небольших поселений. Вечером вернёмся в Рейкьявик."
+        },
+        {
+          "day": 5,
+          "title": "Свободное утро и завершение",
+          "description": "Рейкьявик: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Reykjavik: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "The waterfall route",
+          "description": "Travel along the south coast with waterfall stops. Follow marked paths and stay overnight in the region."
+        },
+        {
+          "day": 3,
+          "title": "Coastal views and black sand",
+          "description": "Visit coastal viewpoints near Vík and discover volcanic landscapes. Adjust each stop to local conditions."
+        },
+        {
+          "day": 4,
+          "title": "Lava fields and the return journey",
+          "description": "Stop near lava fields and small settlements on the return journey. Reach Reykjavik in the evening."
+        },
+        {
+          "day": 5,
+          "title": "A relaxed morning and farewell",
+          "description": "Reykjavik: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Рейкьявик: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Сарқырамаларға апарар жол",
+          "description": "Оңтүстік жағалаумен жүріп, сарқырамаларға тоқтаймыз. Белгіленген жолдармен серуендеп, осы өңірде түнейміз."
+        },
+        {
+          "day": 3,
+          "title": "Жағалау көріністері мен қара құм",
+          "description": "Вик маңындағы жағалау көрініс алаңдарына барып, жанартаулық табиғатпен танысамыз. Әр аялдаманың уақытын жергілікті жағдайға қарай белгілейміз."
+        },
+        {
+          "day": 4,
+          "title": "Лава алқаптары және кері жол",
+          "description": "Кері жолда лава алқаптары мен шағын елді мекендерге тоқтаймыз. Кешке Рейкьявикке қайтамыз."
+        },
+        {
+          "day": 5,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Рейкьявик: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 1690
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1730
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1760
+        }
+      ]
+    },
+    {
+      "slug": "cappadocia-valley-walks",
+      "destination_slug": "turkey",
+      "category": "Adventure",
+      "duration_days": 4,
+      "price_from": 680,
+      "image_url": "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Каппадокия: тропы между скалами",
+      "title_en": "Cappadocia: trails between the rocks",
+      "title_kk": "Каппадокия: жартастар арасындағы соқпақтар",
+      "description": "Четыре дня в долинах Каппадокии с пешими прогулками и визитом в керамическую мастерскую. Полёты на воздушных шарах в программу не входят.",
+      "description_en": "Spend four days in Cappadocia’s valleys with walks and a pottery workshop visit. Hot-air balloon flights are not part of this itinerary.",
+      "description_kk": "Каппадокия аңғарларында төрт күн серуендеп, қыш шеберханасына барасыз. Әуе шарымен ұшу бағдарламаға кірмейді.",
+      "tags": [
+        "долины",
+        "пешие прогулки",
+        "керамика"
+      ],
+      "tags_en": [
+        "valleys",
+        "walking",
+        "pottery"
+      ],
+      "tags_kk": [
+        "аңғарлар",
+        "жаяу серуен",
+        "қыш өнері"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Гёреме: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Долины и видовые тропы",
+          "description": "Пройдём с гидом по долинным тропам, делая остановки у скальных образований. После прогулки останется время для отдыха."
+        },
+        {
+          "day": 3,
+          "title": "Деревни и гончарные мастерские",
+          "description": "Посетим ремесленное поселение и познакомимся с работой гончара. День завершится прогулкой по окрестностям Гёреме."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Гёреме: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Göreme: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Valleys and scenic paths",
+          "description": "Follow valley trails with your guide and pause beside rock formations. Enjoy time to rest after the walk."
+        },
+        {
+          "day": 3,
+          "title": "Villages and pottery workshops",
+          "description": "Visit a craft village and learn about a potter’s work. Finish with a walk around Göreme."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Göreme: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Гөреме: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Аңғарлар мен көрікті соқпақтар",
+          "description": "Гидпен аңғар соқпақтарымен жүріп, ерекше жартастарға тоқтаймыз. Серуеннен кейін демалуға уақыт беріледі."
+        },
+        {
+          "day": 3,
+          "title": "Ауылдар мен қыш шеберханалары",
+          "description": "Қолөнер ауылына барып, қыш шеберінің жұмысымен танысамыз. Күнді Гөреме маңындағы серуенмен аяқтаймыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Гөреме: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 680
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 720
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 750
+        }
+      ]
+    },
+    {
+      "slug": "marrakech-courtyards-and-foothills",
+      "destination_slug": "morocco",
+      "category": "Culture",
+      "duration_days": 4,
+      "price_from": 590,
+      "image_url": "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Марракеш: медина и горные предместья",
+      "title_en": "Marrakech: medina and mountain foothills",
+      "title_kk": "Марракеш: медина мен тау бөктері",
+      "description": "Четыре дня с прогулкой по медине и поездкой в предгорья Атласа. Городские истории дополняются встречами с мастерами и сельскими пейзажами.",
+      "description_en": "Spend four days exploring the medina and visiting the Atlas foothills. City stories meet artisan encounters and rural scenery.",
+      "description_kk": "Төрт күнде мединаны аралап, Атлас тауларының бөктеріне барамыз. Қала тарихын шеберлермен танысу және ауыл табиғаты толықтырады.",
+      "tags": [
+        "медина",
+        "ремёсла",
+        "горы"
+      ],
+      "tags_en": [
+        "medina",
+        "crafts",
+        "mountains"
+      ],
+      "tags_kk": [
+        "медина",
+        "қолөнер",
+        "таулар"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Марракеш: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Истории медины",
+          "description": "Прогуляемся по старому городу с гидом и заглянем в ремесленные мастерские. Остановимся во дворике для спокойного отдыха."
+        },
+        {
+          "day": 3,
+          "title": "В предгорьях Атласа",
+          "description": "Поедем в предгорья для лёгкой прогулки и знакомства с деревенской жизнью. К вечеру вернёмся в Марракеш."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Марракеш: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Marrakech: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Stories of the medina",
+          "description": "Explore the old city with your guide and visit artisan workshops. Pause for a quiet break in a courtyard."
+        },
+        {
+          "day": 3,
+          "title": "In the Atlas foothills",
+          "description": "Head to the foothills for an easy walk and an introduction to village life. Return to Marrakech by evening."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Marrakech: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Марракеш: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Мединаның тарихы",
+          "description": "Гидпен ескі қаланы аралап, қолөнер шеберханаларына барамыз. Тынығу үшін жайлы аулаға тоқтаймыз."
+        },
+        {
+          "day": 3,
+          "title": "Атлас тауларының бөктерінде",
+          "description": "Жеңіл серуен жасап, ауыл өмірімен танысу үшін тау бөктеріне барамыз. Кешке Марракешке қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Марракеш: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 590
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 630
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 660
+        }
+      ]
+    },
+    {
+      "slug": "arusha-landscapes-and-wildlife",
+      "destination_slug": "tanzania",
+      "category": "Nature",
+      "duration_days": 5,
+      "price_from": 1480,
+      "image_url": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Танзания: пейзажи и жизнь саванны",
+      "title_en": "Tanzania: landscapes and savanna life",
+      "title_kk": "Танзания: табиғат көріністері мен саванна өмірі",
+      "description": "Пять дней с выездами в природные районы вокруг Аруши и временем для отдыха. Наблюдаем животных в естественной среде, без обещаний встречи с отдельными видами.",
+      "description_en": "Spend five days visiting natural areas around Arusha with time to rest. Observe wildlife in its habitat; sightings of specific species are not guaranteed.",
+      "description_kk": "Аруша маңындағы табиғи аймақтарға барып, бес күн демалыңыз. Жануарларды табиғи ортасында бақылаймыз, белгілі бір түрді кездестіруге кепілдік берілмейді.",
+      "tags": [
+        "сафари",
+        "саванна",
+        "животные"
+      ],
+      "tags_en": [
+        "safari",
+        "savanna",
+        "wildlife"
+      ],
+      "tags_kk": [
+        "сафари",
+        "саванна",
+        "жануарлар"
+      ],
+      "included": [
+        "Проживание: 4 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 4 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "4 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Аруша: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Первое знакомство с природой",
+          "description": "Отправимся на автомобильную экскурсию в природный парк с местным гидом. Между наблюдениями сделаем остановки для отдыха."
+        },
+        {
+          "day": 3,
+          "title": "Открытые пространства саванны",
+          "description": "Продолжим наблюдать за ландшафтами и животными с оборудованных маршрутов. Гид расскажет о связи природы и сезонных изменений."
+        },
+        {
+          "day": 4,
+          "title": "Окрестности Аруши",
+          "description": "Посетим местное хозяйство и прогуляемся по зелёным окрестностям. Во второй половине дня вернёмся в Арушу для отдыха."
+        },
+        {
+          "day": 5,
+          "title": "Свободное утро и завершение",
+          "description": "Аруша: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Arusha: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "A first day in nature",
+          "description": "Take a guided vehicle excursion in a nature park. Enjoy rest stops between wildlife observations."
+        },
+        {
+          "day": 3,
+          "title": "Open savanna landscapes",
+          "description": "Continue observing landscapes and wildlife along established routes. Your guide explains how nature responds to seasonal changes."
+        },
+        {
+          "day": 4,
+          "title": "Around Arusha",
+          "description": "Visit a local farm and walk through green surroundings. Return to Arusha in the afternoon to relax."
+        },
+        {
+          "day": 5,
+          "title": "A relaxed morning and farewell",
+          "description": "Arusha: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Аруша: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Табиғатпен алғашқы танысу",
+          "description": "Жергілікті гидпен табиғи саябақта көлікпен экскурсия жасаймыз. Бақылау арасында демалу үшін аялдаймыз."
+        },
+        {
+          "day": 3,
+          "title": "Саваннаның ашық кеңістігі",
+          "description": "Белгіленген бағыттармен жүріп, табиғат пен жануарларды бақылауды жалғастырамыз. Гид маусымдық өзгерістердің табиғатқа әсерін түсіндіреді."
+        },
+        {
+          "day": 4,
+          "title": "Аруша маңы",
+          "description": "Жергілікті шаруашылыққа барып, жасыл маңайда серуендейміз. Түстен кейін демалу үшін Арушаға қайтамыз."
+        },
+        {
+          "day": 5,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Аруша: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 1480
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1520
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1550
+        }
+      ]
+    },
+    {
+      "slug": "cape-town-coastal-roads",
+      "destination_slug": "south-africa",
+      "category": "Adventure",
+      "duration_days": 4,
+      "price_from": 860,
+      "image_url": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Кейптаун: город у двух горизонтов",
+      "title_en": "Cape Town: city and coastal horizons",
+      "title_kk": "Кейптаун: қала мен жағалау көкжиегі",
+      "description": "Четыре дня знакомства с Кейптауном и полуостровом. Городские прогулки чередуются с береговыми остановками и свободным временем.",
+      "description_en": "Get to know Cape Town and the peninsula over four days. Alternate city walks with coastal stops and free time.",
+      "description_kk": "Төрт күнде Кейптаунмен және түбекпен танысасыз. Қаладағы серуендер жағалаудағы аялдамалармен және бос уақытпен кезектеседі.",
+      "tags": [
+        "океан",
+        "панорамы",
+        "город"
+      ],
+      "tags_en": [
+        "ocean",
+        "viewpoints",
+        "city"
+      ],
+      "tags_kk": [
+        "мұхит",
+        "көріністер",
+        "қала"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Кейптаун: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Городские истории и виды",
+          "description": "Пройдём по городским кварталам с гидом и поднимемся к доступной смотровой площадке. После экскурсии останется свободное время."
+        },
+        {
+          "day": 3,
+          "title": "Дорога вдоль полуострова",
+          "description": "Отправимся по прибрежной дороге с остановками у бухт и обзорных площадок. Вечером вернёмся в Кейптаун."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Кейптаун: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Cape Town: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "City stories and viewpoints",
+          "description": "Walk through city neighbourhoods with your guide and visit an accessible viewpoint. Enjoy free time afterwards."
+        },
+        {
+          "day": 3,
+          "title": "Along the peninsula coast",
+          "description": "Follow the coastal road with stops at bays and viewpoints. Return to Cape Town in the evening."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Cape Town: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Кейптаун: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Қала тарихы мен көріністері",
+          "description": "Гидпен қала кварталдарын аралап, қолжетімді көрініс алаңына барамыз. Экскурсиядан кейін бос уақыт беріледі."
+        },
+        {
+          "day": 3,
+          "title": "Түбек жағалауымен сапар",
+          "description": "Жағалау жолымен жүріп, шығанақтар мен көрініс алаңдарына тоқтаймыз. Кешке Кейптаунға қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Кейптаун: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 860
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 900
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 930
+        }
+      ]
+    },
+    {
+      "slug": "luxor-stories-of-the-nile",
+      "destination_slug": "egypt",
+      "category": "Culture",
+      "duration_days": 4,
+      "price_from": 650,
+      "image_url": "https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Луксор: истории по берегам Нила",
+      "title_en": "Luxor: stories along the Nile",
+      "title_kk": "Луксор: Ніл жағасындағы тарих",
+      "description": "Четыре дня для знакомства с памятниками Луксора и местной жизнью. Программа оставляет дневное время для отдыха между экскурсиями.",
+      "description_en": "Spend four days discovering Luxor’s monuments and local life. The programme leaves daytime breaks between guided visits.",
+      "description_kk": "Төрт күн Луксор ескерткіштерімен және жергілікті өмірмен танысуға арналады. Экскурсиялар арасында күндіз демалуға уақыт беріледі.",
+      "tags": [
+        "история",
+        "Нил",
+        "храмы"
+      ],
+      "tags_en": [
+        "history",
+        "Nile",
+        "temples"
+      ],
+      "tags_kk": [
+        "тарих",
+        "Ніл",
+        "ғибадатханалар"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Луксор: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Храмы восточного берега",
+          "description": "Посетим храмовые комплексы с гидом и разберём детали рельефов. После отдыха прогуляемся вдоль Нила."
+        },
+        {
+          "day": 3,
+          "title": "Истории западного берега",
+          "description": "Поедем на западный берег для знакомства с археологическими памятниками. Вернёмся в Луксор во второй половине дня."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Луксор: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Luxor: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Temples of the east bank",
+          "description": "Visit temple complexes with your guide and examine details in the reliefs. Take a Nile-side walk after a rest."
+        },
+        {
+          "day": 3,
+          "title": "Stories of the west bank",
+          "description": "Head to the west bank to discover archaeological sites. Return to Luxor in the afternoon."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Luxor: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Луксор: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Шығыс жағалаудағы ғибадатханалар",
+          "description": "Гидпен ғибадатхана кешендеріне барып, бедерлі бейнелердің бөлшектерін қарастырамыз. Демалғаннан кейін Ніл жағасында серуендейміз."
+        },
+        {
+          "day": 3,
+          "title": "Батыс жағалаудың тарихы",
+          "description": "Археологиялық орындармен танысу үшін батыс жағалауға барамыз. Түстен кейін Луксорға қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Луксор: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 650
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 690
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 720
+        }
+      ]
+    },
+    {
+      "slug": "utah-red-rock-trails",
+      "destination_slug": "usa",
+      "category": "Adventure",
+      "duration_days": 5,
+      "price_from": 1520,
+      "image_url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Юта: тропами красных скал",
+      "title_en": "Utah: red-rock trails",
+      "title_kk": "Юта: қызыл жартастар соқпағымен",
+      "description": "Пять дней вокруг Моаба с прогулками по пустынным ландшафтам. Выезды планируются с паузами для отдыха и наблюдения за меняющимся светом.",
+      "description_en": "Explore desert landscapes around Moab over five days. Excursions include time to rest and watch the changing light.",
+      "description_kk": "Бес күн бойы Моаб маңындағы шөл табиғатын аралайсыз. Сапарларда демалуға және жарықтың өзгерісін тамашалауға уақыт бөлінеді.",
+      "tags": [
+        "скалы",
+        "пустыня",
+        "треккинг"
+      ],
+      "tags_en": [
+        "red rock",
+        "desert",
+        "hiking"
+      ],
+      "tags_kk": [
+        "жартастар",
+        "шөл",
+        "жаяу жорық"
+      ],
+      "included": [
+        "Проживание: 4 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 4 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "4 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Моаб: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Каменные арки и короткие тропы",
+          "description": "Пройдём по выбранным тропам среди арок и скальных форм. Гид подберёт последовательность остановок с учётом погоды."
+        },
+        {
+          "day": 3,
+          "title": "Большие панорамы каньонов",
+          "description": "Посетим смотровые площадки над каньонами и сделаем несколько лёгких прогулок. Вернёмся в Моаб к вечеру."
+        },
+        {
+          "day": 4,
+          "title": "Речная дорога и отдых",
+          "description": "Проедем вдоль реки с остановками для фотографий. Вторую половину дня оставим свободной в Моабе."
+        },
+        {
+          "day": 5,
+          "title": "Свободное утро и завершение",
+          "description": "Моаб: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Moab: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Stone arches and short trails",
+          "description": "Follow selected trails among arches and rock formations. Your guide adjusts the order of stops to the weather."
+        },
+        {
+          "day": 3,
+          "title": "Wide canyon panoramas",
+          "description": "Visit viewpoints above the canyons and take several easy walks. Return to Moab towards evening."
+        },
+        {
+          "day": 4,
+          "title": "The river road and time to rest",
+          "description": "Follow the river road with photography stops. Keep the afternoon free in Moab."
+        },
+        {
+          "day": 5,
+          "title": "A relaxed morning and farewell",
+          "description": "Moab: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Моаб: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Тас аркалар мен қысқа соқпақтар",
+          "description": "Аркалар мен жартастар арасындағы таңдалған соқпақтармен жүреміз. Гид аялдамалар ретін ауа райына қарай белгілейді."
+        },
+        {
+          "day": 3,
+          "title": "Шатқалдардың кең панорамалары",
+          "description": "Шатқал үстіндегі көрініс алаңдарына барып, бірнеше жеңіл серуен жасаймыз. Кешке қарай Моабқа қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Өзен бойындағы жол және демалыс",
+          "description": "Өзен бойымен жүріп, суретке түсуге тоқтаймыз. Түстен кейін Моабта бос уақыт беріледі."
+        },
+        {
+          "day": 5,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Моаб: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 1520
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1560
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1590
+        }
+      ]
+    },
+    {
+      "slug": "banff-lakes-and-forest-paths",
+      "destination_slug": "canada",
+      "category": "Nature",
+      "duration_days": 4,
+      "price_from": 1320,
+      "image_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Банф: озёра и лесные тропы",
+      "title_en": "Banff: lakes and forest paths",
+      "title_kk": "Банф: көлдер мен орман соқпақтары",
+      "description": "Четыре дня среди озёр и лесов вокруг Банфа. Короткие пешие маршруты чередуются с поездками по горным дорогам.",
+      "description_en": "Spend four days among lakes and forests around Banff. Short walking routes alternate with mountain-road excursions.",
+      "description_kk": "Банф маңындағы көлдер мен ормандар арасында төрт күн өткізіңіз. Қысқа жаяу бағыттар тау жолдарымен сапарларға ұласады.",
+      "tags": [
+        "озёра",
+        "лес",
+        "горы"
+      ],
+      "tags_en": [
+        "lakes",
+        "forest",
+        "mountains"
+      ],
+      "tags_kk": [
+        "көлдер",
+        "орман",
+        "таулар"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Банф: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Озёрные берега",
+          "description": "Отправимся к озёрам и пройдём по доступным береговым дорожкам. Сделаем остановки для отдыха и фотографий."
+        },
+        {
+          "day": 3,
+          "title": "Лес и горная дорога",
+          "description": "Погуляем по лесной тропе с гидом и посетим несколько обзорных точек. Вечером вернёмся в Банф."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Банф: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Banff: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Lakeshore walks",
+          "description": "Visit lakes and follow accessible shoreline paths. Pause for rest and photographs along the way."
+        },
+        {
+          "day": 3,
+          "title": "Forest paths and a mountain road",
+          "description": "Walk a forest trail with your guide and visit scenic viewpoints. Return to Banff in the evening."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Banff: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Банф: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Көл жағасындағы серуендер",
+          "description": "Көлдерге барып, қолжетімді жағалау жолдарымен жүреміз. Демалу және суретке түсу үшін аялдаймыз."
+        },
+        {
+          "day": 3,
+          "title": "Орман соқпағы мен тау жолы",
+          "description": "Гидпен орман соқпағында серуендеп, бірнеше көрініс алаңына барамыз. Кешке Банфқа қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Банф: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 1320
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1360
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1390
+        }
+      ]
+    },
+    {
+      "slug": "oaxaca-markets-and-artisans",
+      "destination_slug": "mexico",
+      "category": "Food",
+      "duration_days": 4,
+      "price_from": 690,
+      "image_url": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Оахака: вкусы рынков и руки мастеров",
+      "title_en": "Oaxaca: market flavours and artisan hands",
+      "title_kk": "Оахака: базар дәмдері мен шеберлер өнері",
+      "description": "Четыре дня в Оахаке с кулинарным знакомством и поездкой к ремесленникам. Узнаем, как местные продукты и ремёсла связаны с повседневной жизнью.",
+      "description_en": "Spend four days in Oaxaca exploring its food and visiting artisans. Discover how local ingredients and crafts connect with everyday life.",
+      "description_kk": "Оахакада төрт күн тағамдармен танысып, қолөнершілерге барасыз. Жергілікті өнімдер мен қолөнердің күнделікті өмірмен байланысын білеміз.",
+      "tags": [
+        "рынки",
+        "кухня",
+        "текстиль"
+      ],
+      "tags_en": [
+        "markets",
+        "food",
+        "textiles"
+      ],
+      "tags_kk": [
+        "базарлар",
+        "асхана",
+        "мата өнері"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Оахака: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Рынок и местная кухня",
+          "description": "Прогуляемся по рынку с гидом и познакомимся с основными продуктами региона. Затем увидим приготовление традиционных блюд."
+        },
+        {
+          "day": 3,
+          "title": "В гостях у мастеров",
+          "description": "Отправимся в ремесленные деревни и посетим текстильную мастерскую. К вечеру вернёмся в Оахаку."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Оахака: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Oaxaca: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Market produce and local cooking",
+          "description": "Explore a market with your guide and discover regional ingredients. Watch traditional dishes being prepared afterwards."
+        },
+        {
+          "day": 3,
+          "title": "Visiting local artisans",
+          "description": "Travel to artisan villages and visit a textile workshop. Return to Oaxaca by evening."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Oaxaca: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Оахака: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Базар өнімдері мен жергілікті асхана",
+          "description": "Гидпен базарды аралап, өңірдің негізгі өнімдерімен танысамыз. Кейін дәстүрлі тағамдардың дайындалуын көреміз."
+        },
+        {
+          "day": 3,
+          "title": "Жергілікті шеберлерге қонаққа",
+          "description": "Қолөнер ауылдарына барып, мата шеберханасына кіреміз. Кешке Оахакаға қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Оахака: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 690
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 730
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 760
+        }
+      ]
+    },
+    {
+      "slug": "sacred-valley-villages-and-terraces",
+      "destination_slug": "peru",
+      "category": "Culture",
+      "duration_days": 5,
+      "price_from": 920,
+      "image_url": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Священная долина: деревни и террасы",
+      "title_en": "Sacred Valley: villages and terraces",
+      "title_kk": "Қасиетті аңғар: ауылдар мен террасалар",
+      "description": "Пять дней в Куско и Священной долине с постепенным ритмом прогулок. Посещение Мачу-Пикчу в этот маршрут не включено.",
+      "description_en": "Spend five days in Cusco and the Sacred Valley, building up the pace of walks gradually. Machu Picchu is not included in this itinerary.",
+      "description_kk": "Куско мен Қасиетті аңғарда бес күн өткізіп, серуен қарқынын біртіндеп арттырамыз. Бұл бағытқа Мачу-Пикчуға бару кірмейді.",
+      "tags": [
+        "Анды",
+        "террасы",
+        "традиции"
+      ],
+      "tags_en": [
+        "Andes",
+        "terraces",
+        "traditions"
+      ],
+      "tags_kk": [
+        "Анд таулары",
+        "террасалар",
+        "дәстүрлер"
+      ],
+      "included": [
+        "Проживание: 4 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 4 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "4 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Куско: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Спокойный день в Куско",
+          "description": "Совершим короткую прогулку по историческим улицам и зайдём в ремесленную мастерскую. Большая часть дня остаётся свободной для отдыха."
+        },
+        {
+          "day": 3,
+          "title": "Деревни Священной долины",
+          "description": "Поедем в долину для знакомства с деревнями и местными рынками. Гид расскажет о сельских традициях и ландшафте."
+        },
+        {
+          "day": 4,
+          "title": "Террасы и работа с текстилем",
+          "description": "Посетим террасные пейзажи и познакомимся с местными ткачами. Во второй половине дня вернёмся в Куско."
+        },
+        {
+          "day": 5,
+          "title": "Свободное утро и завершение",
+          "description": "Куско: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Cusco: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "An easy day in Cusco",
+          "description": "Take a short walk through historic streets and visit a craft workshop. Keep much of the day free to rest."
+        },
+        {
+          "day": 3,
+          "title": "Villages of the Sacred Valley",
+          "description": "Visit valley villages and local markets. Your guide introduces rural traditions and the surrounding landscape."
+        },
+        {
+          "day": 4,
+          "title": "Terraces and textile traditions",
+          "description": "Visit terraced landscapes and meet local weavers. Return to Cusco in the afternoon."
+        },
+        {
+          "day": 5,
+          "title": "A relaxed morning and farewell",
+          "description": "Cusco: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Куско: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Кускодағы тыныш күн",
+          "description": "Тарихи көшелерде қысқа серуен жасап, қолөнер шеберханасына барамыз. Күннің көп бөлігі демалуға арналады."
+        },
+        {
+          "day": 3,
+          "title": "Қасиетті аңғар ауылдары",
+          "description": "Аңғарға барып, ауылдармен және жергілікті базарлармен танысамыз. Гид ауыл дәстүрлері мен табиғат туралы әңгімелейді."
+        },
+        {
+          "day": 4,
+          "title": "Террасалар мен мата дәстүрлері",
+          "description": "Террасалы көріністерді тамашалап, жергілікті тоқымашылармен танысамыз. Түстен кейін Кускоға қайтамыз."
+        },
+        {
+          "day": 5,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Куско: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 920
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 960
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 990
+        }
+      ]
+    },
+    {
+      "slug": "rio-neighbourhoods-and-seafront",
+      "destination_slug": "brazil",
+      "category": "Beach",
+      "duration_days": 4,
+      "price_from": 830,
+      "image_url": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Рио: кварталы, музыка и океан",
+      "title_en": "Rio: neighbourhoods, music and the ocean",
+      "title_kk": "Рио: аудандар, музыка және мұхит",
+      "description": "Четыре дня знакомства с городскими кварталами и океанскими набережными Рио. Между экскурсиями есть свободное время у моря.",
+      "description_en": "Explore Rio’s neighbourhoods and ocean promenades over four days. Enjoy free time by the sea between guided visits.",
+      "description_kk": "Төрт күн бойы Рио аудандарымен және мұхит жағалауымен танысасыз. Экскурсиялар арасында теңіз жағасында бос уақыт болады.",
+      "tags": [
+        "океан",
+        "музыка",
+        "город"
+      ],
+      "tags_en": [
+        "ocean",
+        "music",
+        "city"
+      ],
+      "tags_kk": [
+        "мұхит",
+        "музыка",
+        "қала"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Рио-де-Жанейро: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Кварталы и городские истории",
+          "description": "Прогуляемся по выбранным кварталам с местным гидом и узнаем об их музыке и архитектуре. После экскурсии предусмотрен отдых."
+        },
+        {
+          "day": 3,
+          "title": "Набережные и зелёные виды",
+          "description": "Начнём день с прибрежной прогулки, затем посетим городскую обзорную точку. Во второй половине дня можно отдыхать у океана."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Рио-де-Жанейро: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Rio de Janeiro: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Neighbourhoods and city stories",
+          "description": "Walk selected neighbourhoods with a local guide and discover their music and architecture. Rest after the excursion."
+        },
+        {
+          "day": 3,
+          "title": "Promenades and green viewpoints",
+          "description": "Begin with a coastal walk, then visit a city viewpoint. Spend the afternoon relaxing beside the ocean."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Rio de Janeiro: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Рио-де-Жанейро: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Аудандар мен қала тарихы",
+          "description": "Жергілікті гидпен таңдалған аудандарды аралап, олардың музыкасы мен сәулеті туралы білеміз. Экскурсиядан кейін демаламыз."
+        },
+        {
+          "day": 3,
+          "title": "Жағалау жолдары мен жасыл көріністер",
+          "description": "Күнді жағалаудағы серуеннен бастап, кейін қала көрініс алаңына барамыз. Түстен кейін мұхит жағасында демалуға болады."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Рио-де-Жанейро: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 830
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 870
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 900
+        }
+      ]
+    },
+    {
+      "slug": "patagonia-walks-and-wide-skies",
+      "destination_slug": "argentina",
+      "category": "Adventure",
+      "duration_days": 5,
+      "price_from": 1260,
+      "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Патагония: прогулки под большим небом",
+      "title_en": "Patagonia: walks beneath wide skies",
+      "title_kk": "Патагония: кең аспан астындағы серуендер",
+      "description": "Пять дней с базой в Эль-Чальтене и прогулками разной длины. Гид выбирает доступные участки с учётом погоды и темпа группы.",
+      "description_en": "Spend five days based in El Chaltén with walks of different lengths. Your guide chooses suitable sections according to the weather and group pace.",
+      "description_kk": "Эль-Чальтенде орналасып, бес күн бойы ұзындығы әртүрлі серуендер жасайсыз. Гид ауа райы мен топ қарқынына сай қолжетімді бағыттарды таңдайды.",
+      "tags": [
+        "Патагония",
+        "треккинг",
+        "горы"
+      ],
+      "tags_en": [
+        "Patagonia",
+        "hiking",
+        "mountains"
+      ],
+      "tags_kk": [
+        "Патагония",
+        "жаяу жорық",
+        "таулар"
+      ],
+      "included": [
+        "Проживание: 4 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 4 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "4 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Эль-Чальтен: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Первый день на тропе",
+          "description": "Начнём с короткого маршрута к обзорной площадке. Гид расскажет о местном ландшафте и ритме пеших дней."
+        },
+        {
+          "day": 3,
+          "title": "Лесные тропы и горные виды",
+          "description": "Пройдём по лесной тропе с остановками у открытых панорам. Длину прогулки согласуем с состоянием маршрута и группой."
+        },
+        {
+          "day": 4,
+          "title": "Вода, ветер и свободный вечер",
+          "description": "Совершим спокойную прогулку у воды и оставим время для фотографий. После возвращения в посёлок вечер свободный."
+        },
+        {
+          "day": 5,
+          "title": "Свободное утро и завершение",
+          "description": "Эль-Чальтен: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "El Chaltén: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "A first day on the trail",
+          "description": "Start with a short route to a viewpoint. Your guide introduces the landscape and the pace of the walking days."
+        },
+        {
+          "day": 3,
+          "title": "Forest trails and mountain views",
+          "description": "Follow a forest trail with stops at open panoramas. Adjust the walk’s length to trail conditions and the group."
+        },
+        {
+          "day": 4,
+          "title": "Water, wind and a free evening",
+          "description": "Take a relaxed waterside walk with time for photography. Enjoy a free evening after returning to the village."
+        },
+        {
+          "day": 5,
+          "title": "A relaxed morning and farewell",
+          "description": "El Chaltén: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Эль-Чальтен: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Соқпақтағы алғашқы күн",
+          "description": "Көрініс алаңына апаратын қысқа бағыттан бастаймыз. Гид жергілікті табиғат пен жаяу күндердің қарқыны туралы түсіндіреді."
+        },
+        {
+          "day": 3,
+          "title": "Орман соқпақтары мен тау көріністері",
+          "description": "Орман соқпағымен жүріп, ашық көріністерге тоқтаймыз. Серуен ұзақтығын жол жағдайы мен топ мүмкіндігіне қарай белгілейміз."
+        },
+        {
+          "day": 4,
+          "title": "Су, жел және еркін кеш",
+          "description": "Су жағасында тыныш серуендеп, суретке түсуге уақыт бөлеміз. Елді мекенге оралғаннан кейін кеш еркін өтеді."
+        },
+        {
+          "day": 5,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Эль-Чальтен: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 1260
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1300
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1330
+        }
+      ]
+    },
+    {
+      "slug": "queensland-rainforest-and-sea",
+      "destination_slug": "australia",
+      "category": "Beach",
+      "duration_days": 5,
+      "price_from": 1440,
+      "image_url": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Квинсленд: тропический лес и море",
+      "title_en": "Queensland: rainforest and sea",
+      "title_kk": "Квинсленд: тропикалық орман мен теңіз",
+      "description": "Пять дней вокруг Кэрнса с прогулкой в тропическом лесу и морским выездом. В программе есть день спокойного отдыха на побережье.",
+      "description_en": "Spend five days around Cairns with a rainforest walk and a boat excursion. The itinerary includes a relaxed coastal day.",
+      "description_kk": "Кэрнс маңында бес күн өткізіп, тропикалық орманда серуендеп, теңізге шығасыз. Бағдарламада жағалаудағы тыныш демалыс күні бар.",
+      "tags": [
+        "тропики",
+        "море",
+        "лес"
+      ],
+      "tags_en": [
+        "tropics",
+        "sea",
+        "rainforest"
+      ],
+      "tags_kk": [
+        "тропиктер",
+        "теңіз",
+        "орман"
+      ],
+      "included": [
+        "Проживание: 4 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 4 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "4 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Кэрнс: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Тропический лес",
+          "description": "Прогуляемся по оборудованным дорожкам тропического леса с гидом. Узнаем о растениях и остановимся у природных обзорных точек."
+        },
+        {
+          "day": 3,
+          "title": "Морская прогулка",
+          "description": "Отправимся на дневную морскую прогулку с наблюдением за побережьем и водой. Маршрут выезда зависит от морских условий."
+        },
+        {
+          "day": 4,
+          "title": "Спокойный день на побережье",
+          "description": "Посетим прибрежный посёлок и прогуляемся по набережной. Оставшееся время можно посвятить отдыху и фотографиям."
+        },
+        {
+          "day": 5,
+          "title": "Свободное утро и завершение",
+          "description": "Кэрнс: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Cairns: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "A rainforest day",
+          "description": "Follow established rainforest paths with your guide. Learn about plants and pause at natural viewpoints."
+        },
+        {
+          "day": 3,
+          "title": "A boat excursion",
+          "description": "Take a daytime boat excursion to observe the coast and surrounding waters. The route depends on sea conditions."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed coastal day",
+          "description": "Visit a coastal village and walk its promenade. Spend the remaining time relaxing and taking photographs."
+        },
+        {
+          "day": 5,
+          "title": "A relaxed morning and farewell",
+          "description": "Cairns: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Кэрнс: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Тропикалық ормандағы күн",
+          "description": "Гидпен тропикалық орманның жабдықталған жолдарымен жүреміз. Өсімдіктер туралы біліп, табиғи көрініс алаңдарына тоқтаймыз."
+        },
+        {
+          "day": 3,
+          "title": "Теңіздегі серуен",
+          "description": "Жағалау мен су айдынын тамашалау үшін күндізгі теңіз серуеніне шығамыз. Бағыт теңіз жағдайына байланысты белгіленеді."
+        },
+        {
+          "day": 4,
+          "title": "Жағалаудағы тыныш күн",
+          "description": "Жағалаудағы елді мекенге барып, серуен жолымен жүреміз. Қалған уақытты демалысқа және суретке түсуге арнауға болады."
+        },
+        {
+          "day": 5,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Кэрнс: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 1440
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1480
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1510
+        }
+      ]
+    },
+    {
+      "slug": "south-island-lakes-and-valleys",
+      "destination_slug": "new-zealand",
+      "category": "Nature",
+      "duration_days": 5,
+      "price_from": 1580,
+      "image_url": "https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Южный остров: озёра и зелёные долины",
+      "title_en": "South Island: lakes and green valleys",
+      "title_kk": "Оңтүстік арал: көлдер мен жасыл аңғарлар",
+      "description": "Пять дней вокруг Куинстауна с озёрными прогулками и поездками по долинам. Маршрут рассчитан на размеренное знакомство с природой.",
+      "description_en": "Spend five days around Queenstown with lakeshore walks and valley excursions. Discover nature at an unhurried pace.",
+      "description_kk": "Куинстаун маңында бес күн көл жағасында серуендеп, аңғарларға барасыз. Бағыт табиғатпен асықпай танысуға арналған.",
+      "tags": [
+        "озёра",
+        "долины",
+        "горы"
+      ],
+      "tags_en": [
+        "lakes",
+        "valleys",
+        "mountains"
+      ],
+      "tags_kk": [
+        "көлдер",
+        "аңғарлар",
+        "таулар"
+      ],
+      "included": [
+        "Проживание: 4 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 4 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "4 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Куинстаун: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Берега Вакатипу",
+          "description": "Пройдём по озёрным дорожкам и посетим несколько обзорных точек. После обеда останется время для города."
+        },
+        {
+          "day": 3,
+          "title": "Дорога в зелёные долины",
+          "description": "Отправимся по долинной дороге с короткими пешими остановками. Гид расскажет об особенностях местной природы."
+        },
+        {
+          "day": 4,
+          "title": "Маленькие города и речные тропы",
+          "description": "Посетим небольшой город и прогуляемся у реки. Вечером вернёмся в Куинстаун."
+        },
+        {
+          "day": 5,
+          "title": "Свободное утро и завершение",
+          "description": "Куинстаун: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Queenstown: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "Along Lake Wakatipu",
+          "description": "Walk beside the lake and visit scenic viewpoints. Keep the afternoon free to explore the town."
+        },
+        {
+          "day": 3,
+          "title": "A road into green valleys",
+          "description": "Follow a valley road with short walking stops. Your guide introduces the area’s natural features."
+        },
+        {
+          "day": 4,
+          "title": "Small towns and riverside paths",
+          "description": "Visit a small town and walk beside the river. Return to Queenstown in the evening."
+        },
+        {
+          "day": 5,
+          "title": "A relaxed morning and farewell",
+          "description": "Queenstown: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Куинстаун: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Вакатипу көлінің жағасында",
+          "description": "Көл бойындағы жолдармен жүріп, бірнеше көрініс алаңына барамыз. Түстен кейін қаланы аралауға уақыт болады."
+        },
+        {
+          "day": 3,
+          "title": "Жасыл аңғарларға апарар жол",
+          "description": "Аңғар жолымен жүріп, қысқа жаяу аялдамалар жасаймыз. Гид жергілікті табиғат ерекшеліктері туралы әңгімелейді."
+        },
+        {
+          "day": 4,
+          "title": "Шағын қалалар мен өзен соқпақтары",
+          "description": "Шағын қалаға барып, өзен жағасында серуендейміз. Кешке Куинстаунға қайтамыз."
+        },
+        {
+          "day": 5,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Куинстаун: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 1580
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 1620
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 1650
+        }
+      ]
+    },
+    {
+      "slug": "monteverde-cloud-forest",
+      "destination_slug": "costa-rica",
+      "category": "Nature",
+      "duration_days": 4,
+      "price_from": 790,
+      "image_url": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1400&q=85",
+      "rating": 0,
+      "review_count": 0,
+      "title": "Монтеверде: тропы облачного леса",
+      "title_en": "Monteverde: cloud-forest trails",
+      "title_kk": "Монтеверде: тұманды орман соқпақтары",
+      "description": "Четыре дня в окрестностях Монтеверде с прогулками по лесу и знакомством с местным хозяйством. Наблюдения за птицами и растениями проходят с гидом.",
+      "description_en": "Spend four days around Monteverde with forest walks and a local farm visit. Observe birds and plants with a guide.",
+      "description_kk": "Монтеверде маңында төрт күн орманда серуендеп, жергілікті шаруашылықпен танысасыз. Құстар мен өсімдіктерді гидпен бірге бақылаймыз.",
+      "tags": [
+        "облачный лес",
+        "птицы",
+        "природа"
+      ],
+      "tags_en": [
+        "cloud forest",
+        "birds",
+        "nature"
+      ],
+      "tags_kk": [
+        "тұманды орман",
+        "құстар",
+        "табиғат"
+      ],
+      "included": [
+        "Проживание: 3 ночи",
+        "Завтраки",
+        "Местный гид на экскурсиях",
+        "Экскурсии и наземные переезды по программе"
+      ],
+      "included_en": [
+        "Accommodation for 3 nights",
+        "Breakfasts",
+        "Local guide for excursions",
+        "Activities and ground transport listed in the itinerary"
+      ],
+      "included_kk": [
+        "3 түнге арналған тұру орны",
+        "Таңғы ас",
+        "Экскурсиялар кезінде жергілікті гидтің қызметі",
+        "Бағдарламадағы экскурсиялар мен құрлықтағы көлік қатынасы"
+      ],
+      "excluded": [
+        "Билеты до места начала и обратно",
+        "Страхование путешествия",
+        "Обеды, ужины и личные расходы"
+      ],
+      "excluded_en": [
+        "Travel to and from the starting point",
+        "Travel insurance",
+        "Lunches, dinners and personal expenses"
+      ],
+      "excluded_kk": [
+        "Басталу орнына бару және кері қайту билеттері",
+        "Саяхат сақтандыруы",
+        "Түскі ас, кешкі ас және жеке шығындар"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Знакомство и первая прогулка",
+          "description": "Монтеверде: встреча с гидом, размещение и спокойная прогулка. Обсудим маршрут и оставим время для отдыха после дороги."
+        },
+        {
+          "day": 2,
+          "title": "Внимательная прогулка по лесу",
+          "description": "Пройдём по лесным дорожкам с натуралистом, останавливаясь для наблюдений. Узнаем о растениях и обитателях этого ландшафта."
+        },
+        {
+          "day": 3,
+          "title": "Местное хозяйство и зелёные тропы",
+          "description": "Посетим небольшое хозяйство и познакомимся с его повседневной работой. После лёгкой прогулки вернёмся в Монтеверде."
+        },
+        {
+          "day": 4,
+          "title": "Свободное утро и завершение",
+          "description": "Монтеверде: время для завтрака и самостоятельной прогулки. После выезда из места проживания программа завершается."
+        }
+      ],
+      "itinerary_en": [
+        {
+          "day": 1,
+          "title": "Arrival and a first walk",
+          "description": "Monteverde: meet your guide, check in and take an easy introductory walk. Review the itinerary and enjoy time to rest after your journey."
+        },
+        {
+          "day": 2,
+          "title": "A close look at the forest",
+          "description": "Follow forest paths with a naturalist and pause for observations. Learn about the plants and wildlife of this landscape."
+        },
+        {
+          "day": 3,
+          "title": "A local farm and green paths",
+          "description": "Visit a small farm and discover its daily work. Return to Monteverde after an easy walk."
+        },
+        {
+          "day": 4,
+          "title": "A relaxed morning and farewell",
+          "description": "Monteverde: enjoy breakfast and time for an independent walk. The programme finishes after check-out."
+        }
+      ],
+      "itinerary_kk": [
+        {
+          "day": 1,
+          "title": "Танысу және алғашқы серуен",
+          "description": "Монтеверде: гидпен танысу, қонақүйге орналасу және жеңіл серуен. Сапар бағдарламасын талқылап, жолдан кейін демалуға уақыт бөлеміз."
+        },
+        {
+          "day": 2,
+          "title": "Орманды мұқият тамашалау",
+          "description": "Табиғат маманымен орман жолдарымен жүріп, бақылау үшін тоқтаймыз. Осы жердің өсімдіктері мен жануарлары туралы білеміз."
+        },
+        {
+          "day": 3,
+          "title": "Жергілікті шаруашылық пен жасыл соқпақтар",
+          "description": "Шағын шаруашылыққа барып, күнделікті жұмысымен танысамыз. Жеңіл серуеннен кейін Монтевердеге қайтамыз."
+        },
+        {
+          "day": 4,
+          "title": "Еркін таң және сапардың аяқталуы",
+          "description": "Монтеверде: таңғы ас ішіп, өз бетіңізше серуендеуге уақыт беріледі. Қонақүйден шыққаннан кейін бағдарлама аяқталады."
+        }
+      ],
+      "departures": [
+        {
+          "days_from_today": 14,
+          "capacity": 12,
+          "price": 790
+        },
+        {
+          "days_from_today": 35,
+          "capacity": 10,
+          "price": 830
+        },
+        {
+          "days_from_today": 63,
+          "capacity": 14,
+          "price": 860
+        }
+      ]
+    }
+  ]
+}
