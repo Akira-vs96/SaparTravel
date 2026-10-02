@@ -13,6 +13,17 @@ docker compose logs --tail=100 api
 
 `.env` содержит секреты; скрипт создаёт его с правами 0600 и никогда не перезаписывает существующий файл. Для входа администратора используются `ADMIN_EMAIL` и `ADMIN_PASSWORD`. Не передавайте `.env` в Git и не публикуйте его в артефактах CI.
 
+## Supabase PostgreSQL
+
+Приложение использует Supabase как обычный PostgreSQL: браузер подключается только к API, а ключи Supabase и пароль БД не передаются frontend. Создайте `SUPABASE_DATABASE_URL` в локальном `.env` в формате `postgresql+psycopg://.../postgres?sslmode=require`. Не вставляйте секрет в исходники, команды оболочки или Git. Если пароль был опубликован, сначала смените его в Supabase и используйте только новый.
+
+```bash
+docker compose up --build -d api web
+docker compose logs --tail=100 api
+```
+
+При старте API выполняет `alembic upgrade head`, создавая таблицы из миграций, затем запускает идемпотентное demo-наполнение согласно `SEED_DEMO_DATA`. При ошибке сети на прямом порту `5432` проверьте IPv6-доступность проекта; при необходимости используйте URI Supabase Session Pooler с тем же `postgresql+psycopg` драйвером и `sslmode=require`. Не запускайте backend-тесты против рабочей базы: они могут создавать и очищать таблицы. Для NFR-03 используйте отдельную тестовую БД/проект PostgreSQL.
+
 ## Проверка перед релизом
 
 1. Прогнать API-тесты с PostgreSQL и `npm run build`.

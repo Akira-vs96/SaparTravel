@@ -19,7 +19,7 @@ services:
   api:
     build: ./backend
     environment:
-      DATABASE_URL: postgresql+psycopg://sapar:${POSTGRES_PASSWORD:?Run python3 scripts/setup_env.py first}@db:5432/sapartravel
+      DATABASE_URL: ${SUPABASE_DATABASE_URL:-postgresql+psycopg://sapar:${POSTGRES_PASSWORD:?Run python3 scripts/setup_env.py first}@db:5432/sapartravel}
       JWT_SECRET: ${JWT_SECRET:?Run python3 scripts/setup_env.py first}
       ENVIRONMENT: ${ENVIRONMENT:-development}
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173}

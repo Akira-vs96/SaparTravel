@@ -105,6 +105,9 @@ export default function Layout() {
             <Link to="/about">
               {t("about")} <ArrowUpRight size={14} />
             </Link>
+            <Link to="/privacy">
+              {t("privacy")} <ArrowUpRight size={14} />
+            </Link>
           </nav>
         </div>
         <div className="footer-bottom">

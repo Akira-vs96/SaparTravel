@@ -34,6 +34,34 @@ function About() {
     </div>
   );
 }
+function Privacy() {
+  const { t } = useApp();
+  return (
+    <div className="page-container prose-page">
+      <PageHeading eyebrow="SAPARTRAVEL" title={t("privacyTitle")} />
+      <p>{t("privacyIntro")}</p>
+      <section>
+        <h2>{t("privacyCollectedTitle")}</h2>
+        <p>{t("privacyCollectedText")}</p>
+      </section>
+      <section>
+        <h2>{t("privacyUseTitle")}</h2>
+        <p>{t("privacyUseText")}</p>
+      </section>
+      <section>
+        <h2>{t("privacyRetentionTitle")}</h2>
+        <p>{t("privacyRetentionText")}</p>
+      </section>
+      <section>
+        <h2>{t("privacyDemoTitle")}</h2>
+        <p>{t("privacyDemoText")}</p>
+      </section>
+      <div className="info-note">
+        <p>{t("privacyDisclaimer")}</p>
+      </div>
+    </div>
+  );
+}
 function NotFound() {
   const { t } = useApp();
   return (
@@ -86,6 +114,7 @@ function App() {
               }
             />
             <Route path="about" element={<About />} />
+            <Route path="privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
