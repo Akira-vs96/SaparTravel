@@ -1,0 +1,102 @@
+<mxfile host="app.diagrams.net" modified="2026-10-02T09:00:00.000Z" agent="GitHub Copilot" version="24.7.17" type="device">
+  <diagram id="idef0-context" name="IDEF0 A-0 Контекст">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="ctx-title" value="IDEF0 A-0 | Контекст SaparTravel" style="text;html=1;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="30" y="15" width="650" height="35" as="geometry"/></mxCell>
+        <mxCell id="ctx-input" value="ВХОДЫ&#xa;Запрос туриста&#xa;Данные тура и выезда" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1"><mxGeometry x="40" y="190" width="175" height="90" as="geometry"/></mxCell>
+        <mxCell id="ctx-controls" value="УПРАВЛЕНИЕ&#xa;Правила MVP и роли&#xa;Политика ПДн и ограничения мест" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="370" y="75" width="280" height="75" as="geometry"/></mxCell>
+        <mxCell id="ctx-function" value="A-0&#xa;Обеспечить поиск тура&#xa;и обработку заявки" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="365" y="205" width="290" height="125" as="geometry"/></mxCell>
+        <mxCell id="ctx-output" value="ВЫХОДЫ&#xa;Каталог и результаты поиска&#xa;Бронь и её статус" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1"><mxGeometry x="790" y="205" width="235" height="90" as="geometry"/></mxCell>
+        <mxCell id="ctx-mechanisms" value="МЕХАНИЗМЫ&#xa;Турист, поставщик, администратор&#xa;React, FastAPI, PostgreSQL, Docker" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="365" y="415" width="290" height="90" as="geometry"/></mxCell>
+        <mxCell id="ctx-e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="ctx-input" target="ctx-function"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ctx-e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="ctx-controls" target="ctx-function"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ctx-e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="ctx-function" target="ctx-output"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ctx-e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="ctx-mechanisms" target="ctx-function"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="idef0-decomp" name="IDEF0 A0 Декомпозиция">
+    <mxGraphModel dx="1300" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="d-title" value="IDEF0 A0 | Декомпозиция результата SaparTravel" style="text;html=1;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="30" y="15" width="750" height="35" as="geometry"/></mxCell>
+        <mxCell id="d-control" value="Управление: утверждённый backlog • роли и доступ • правила обработки ПДн" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="255" y="75" width="700" height="55" as="geometry"/></mxCell>
+        <mxCell id="d-in" value="Запрос туриста&#xa;Требования PO" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="20" y="280" width="145" height="65" as="geometry"/></mxCell>
+        <mxCell id="a1" value="A1&#xa;Предоставить каталог&#xa;и детали тура" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="205" y="245" width="175" height="105" as="geometry"/></mxCell>
+        <mxCell id="a2" value="A2&#xa;Проверить пользователя&#xa;и полномочия" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="445" y="245" width="175" height="105" as="geometry"/></mxCell>
+        <mxCell id="a3" value="A3&#xa;Проверить места&#xa;и создать бронь" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="685" y="245" width="175" height="105" as="geometry"/></mxCell>
+        <mxCell id="a4" value="A4&#xa;Обработать бронь&#xa;и каталог поставщика" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="925" y="245" width="175" height="105" as="geometry"/></mxCell>
+        <mxCell id="a5" value="A5&#xa;Подтвердить качество&#xa;и передать сервис" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="1135" y="245" width="145" height="105" as="geometry"/></mxCell>
+        <mxCell id="d-out" value="Результат: проверенная бронь, статус и принятый сервис" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="1090" y="440" width="190" height="65" as="geometry"/></mxCell>
+        <mxCell id="d-mech" value="Механизмы: турист / поставщик / администратор • React • FastAPI • PostgreSQL • ИТ-служба" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="255" y="450" width="700" height="60" as="geometry"/></mxCell>
+        <mxCell id="de1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="d-in" target="a1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="a1" target="a2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="a2" target="a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="a3" target="a4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="a4" target="a5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="a5" target="d-out"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="d-control" target="a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="de8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="d-mech" target="a3"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="idef3-booking" name="IDEF3 Сценарий бронирования">
+    <mxGraphModel dx="1250" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="i-title" value="IDEF3 | Сценарий заявки на тур и обработка поставщиком" style="text;html=1;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="30" y="15" width="900" height="35" as="geometry"/></mxCell>
+        <mxCell id="i-start" value="Старт" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="25" y="270" width="85" height="55" as="geometry"/></mxCell>
+        <mxCell id="i-u1" value="UOB1&#xa;Найти тур&#xa;и выбрать выезд" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="155" y="245" width="155" height="100" as="geometry"/></mxCell>
+        <mxCell id="i-u2" value="UOB2&#xa;Проверить наличие&#xa;мест и цену" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="375" y="245" width="155" height="100" as="geometry"/></mxCell>
+        <mxCell id="i-j1" value="Места&#xa;доступны?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="595" y="245" width="120" height="100" as="geometry"/></mxCell>
+        <mxCell id="i-no" value="UOB3a&#xa;Показать отказ&#xa;и обновить остаток" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="575" y="445" width="160" height="85" as="geometry"/></mxCell>
+        <mxCell id="i-u3" value="UOB3b&#xa;Создать бронь&#xa;и записать статус" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="785" y="245" width="165" height="100" as="geometry"/></mxCell>
+        <mxCell id="i-u4" value="UOB4&#xa;Поставщик принимает&#xa;или отклоняет" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="1015" y="245" width="165" height="100" as="geometry"/></mxCell>
+        <mxCell id="i-end" value="Статус виден&#xa;в кабинете туриста" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="1030" y="445" width="145" height="70" as="geometry"/></mxCell>
+        <mxCell id="ie1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="i-start" target="i-u1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ie2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="i-u1" target="i-u2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ie3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="i-u2" target="i-j1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ie4" value="Нет" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="i-j1" target="i-no"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ie5" value="Да" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="i-j1" target="i-u3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ie6" value="Обновить выбор" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="i-no" target="i-u1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ie7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="i-u3" target="i-u4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="ie8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="i-u4" target="i-end"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="i-note" value="Сумму считает сервер; повторная проверка мест и блокировка выезда выполняются в транзакции. Оплата в сценарий MVP не входит." style="text;html=1;align=left;verticalAlign=middle;fontSize=13;" vertex="1" parent="1"><mxGeometry x="155" y="565" width="930" height="55" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="dfd-level1" name="DFD Уровень 1">
+    <mxGraphModel dx="1300" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="f-title" value="DFD | Уровень 1: SaparTravel и хранилища данных" style="text;html=1;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="30" y="15" width="850" height="35" as="geometry"/></mxCell>
+        <mxCell id="f-traveler" value="Внешняя сущность&#xa;Турист" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1"><mxGeometry x="35" y="140" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="f-vendor" value="Внешняя сущность&#xa;Поставщик" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1"><mxGeometry x="35" y="325" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="f-admin" value="Внешняя сущность&#xa;Администратор" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1"><mxGeometry x="35" y="510" width="150" height="70" as="geometry"/></mxCell>
+        <mxCell id="f-auth" value="1.0&#xa;Аутентификация&#xa;и проверка ролей" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="280" y="290" width="175" height="115" as="geometry"/></mxCell>
+        <mxCell id="f-catalog" value="2.0&#xa;Поиск и выдача&#xa;каталога" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="545" y="110" width="175" height="115" as="geometry"/></mxCell>
+        <mxCell id="f-booking" value="3.0&#xa;Проверка мест&#xa;и обработка брони" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="545" y="315" width="175" height="115" as="geometry"/></mxCell>
+        <mxCell id="f-manage" value="4.0&#xa;Управление турами&#xa;и статусами" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="545" y="520" width="175" height="115" as="geometry"/></mxCell>
+        <mxCell id="f-users" value="D1&#xa;users" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="880" y="95" width="165" height="70" as="geometry"/></mxCell>
+        <mxCell id="f-catalog-store" value="D2&#xa;destinations, experiences, departures" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="880" y="270" width="195" height="85" as="geometry"/></mxCell>
+        <mxCell id="f-bookings" value="D3&#xa;bookings" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="880" y="430" width="165" height="70" as="geometry"/></mxCell>
+        <mxCell id="f-history" value="D4&#xa;booking_status_history" style="shape=datastore;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="880" y="565" width="190" height="70" as="geometry"/></mxCell>
+        <mxCell id="f-legend" value="Прямоугольник — внешняя сущность • овал — процесс • D1–D4 — хранилища PostgreSQL. Платёжная система не подключена." style="text;html=1;align=left;verticalAlign=middle;fontSize=13;" vertex="1" parent="1"><mxGeometry x="245" y="690" width="850" height="45" as="geometry"/></mxCell>
+        <mxCell id="fe1" value="запрос каталога / результат" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-traveler" target="f-catalog"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe2" value="учётные данные / token" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-traveler" target="f-auth"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe3" value="заявка / личная история" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-traveler" target="f-booking"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe4" value="проверенный контекст пользователя" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-auth" target="f-booking"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe5" value="каталог и остатки" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-catalog-store" target="f-catalog"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe6" value="тур / выезд" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-catalog-store" target="f-booking"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe7" value="бронь и статус" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-booking" target="f-bookings"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe8" value="история изменений" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-booking" target="f-history"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe9" value="учётная запись и роль" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-users" target="f-auth"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe10" value="заявки по своим турам" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-vendor" target="f-manage"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe11" value="изменение тура / статуса" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-manage" target="f-catalog-store"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe12" value="проверка прав поставщика" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-auth" target="f-manage"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe13" value="администрирование каталога и ролей" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="f-admin" target="f-manage"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

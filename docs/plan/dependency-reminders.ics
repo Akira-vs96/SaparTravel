@@ -1,0 +1,57 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SaparTravel//Lab 5 Dependencies//RU
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:sapartravel-po-20261009@example.invalid
+DTSTAMP:20261002T090000Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261010
+SUMMARY:SaparTravel: подтвердить границы MVP и доступность PO
+DESCRIPTION:Владелец: Product Owner заказчика. Контроль: Абинсериков Нурасыл. Подтвердить Must-истории и доступность UAT.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Через 3 дня контрольная дата подтверждения MVP SaparTravel.
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:sapartravel-it-20261016@example.invalid
+DTSTAMP:20261002T090000Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261017
+SUMMARY:SaparTravel: подтвердить тестовый стенд ИТ-службы
+DESCRIPTION:Владелец: ИТ-служба вуза, назначенный владелец сервиса. Контроль: Tech Lead. Подтвердить стенд, доступы и параметры сети.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Через 3 дня контрольная дата подтверждения стенда SaparTravel.
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:sapartravel-data-20261030@example.invalid
+DTSTAMP:20261002T090000Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:SaparTravel: подтвердить исходный каталог поставщика
+DESCRIPTION:Владелец: пилотный поставщик, ответственный за каталог. Контроль: ответственный за данные команды. Подтвердить поля и правила актуальности.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Через 3 дня контрольная дата получения каталога SaparTravel.
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:sapartravel-security-20261113@example.invalid
+DTSTAMP:20261002T090000Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:SaparTravel: получить заключение ИБ и ПДн
+DESCRIPTION:Владелец: назначенные специалисты ИБ и ответственный за ПДн. Контроль: Tech Lead и PM. Заключение нужно до пилота с реальными данными.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Через 3 дня контрольная дата заключения ИБ/ПДн SaparTravel.
+TRIGGER:-P3D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
