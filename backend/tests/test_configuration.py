@@ -18,6 +18,15 @@ def test_secrets_and_database_configuration():
         Settings(admin_email="admin@example.com", admin_password="")
 
 
+@pytest.mark.parametrize("scheme", ["postgres://", "postgresql://"])
+def test_standard_postgres_urls_use_psycopg(scheme):
+    settings = Settings(
+        database_url=f"{scheme}postgres@example.com/postgres",
+        jwt_secret="pytest-secret-long-and-varied-47c90b126",
+    )
+    assert settings.database_url == "postgresql+psycopg://postgres@example.com/postgres"
+
+
 def test_authentication_rate_limit(client, monkeypatch):
     monkeypatch.setattr(get_settings(), "auth_rate_limit", 1)
     security._auth_attempts.clear()

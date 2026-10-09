@@ -25,6 +25,15 @@ class Settings(BaseSettings):
     def optional_credentials(cls, value):
         return None if value == "" else value
 
+    @field_validator("database_url", mode="before")
+    @classmethod
+    def normalize_postgres_url(cls, value):
+        if isinstance(value, str):
+            for prefix in ("postgres://", "postgresql://"):
+                if value.startswith(prefix):
+                    return "postgresql+psycopg://" + value[len(prefix):]
+        return value
+
     @field_validator("jwt_secret")
     @classmethod
     def validate_secret(cls, value: SecretStr) -> SecretStr:
