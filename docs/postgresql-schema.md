@@ -2,6 +2,9 @@
 
 Рабочее хранилище SaparTravel — PostgreSQL 17. Supabase Auth, `auth.users`, Supabase SDK и политики `auth.uid()` не используются. Авторизацию и разграничение доступа выполняет API. Источник истины о схеме — модели в `backend/app/domain/models.py` и миграции в `backend/migrations/`.
 
+Подробная ER-модель с колонками, ключами и фактическими результатами проверки
+Docker-базы находится в [docs/er-model.md](er-model.md).
+
 ## Связи
 
 ```mermaid

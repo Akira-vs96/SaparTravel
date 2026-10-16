@@ -1,4 +1,14 @@
-# RAID-лог и модель угроз
+# Обзор безопасности SaparTravel
+
+Полные артефакты ЛЗ 7 вынесены в отдельные документы:
+
+- [RAID-лог с 20 рисками и EMV](./raid.md)
+- [модель угроз STRIDE](./threat-model.md) и [файл Threat Dragon](./threat-model.json)
+- [чек-лист соответствия](./compliance-checklist.md)
+- [security backlog из трёх мер](./security-backlog.md)
+- [отчёт Trivy и Gitleaks](./security-scan-report.md)
+
+Ниже сохранён краткий исходный конспект для обратной совместимости.
 
 ## 1. RAID-лог
 

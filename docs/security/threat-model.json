@@ -1,0 +1,26 @@
+{
+  "version": "2.1.0",
+  "summary": "SaparTravel STRIDE model",
+  "detail": "MVP: browser, web, API and PostgreSQL",
+  "author": "SaparTravel",
+  "diagrams": [
+    {
+      "id": "sapartravel-mvp",
+      "title": "SaparTravel MVP",
+      "diagramType": "STRIDE",
+      "cells": [
+        {"id": "user", "type": "tm.Actor", "name": "External user", "position": {"x": 80, "y": 180}},
+        {"id": "web", "type": "tm.Process", "name": "Nginx / React", "position": {"x": 300, "y": 180}},
+        {"id": "api", "type": "tm.Process", "name": "FastAPI API", "position": {"x": 540, "y": 180}},
+        {"id": "db", "type": "tm.Store", "name": "PostgreSQL", "position": {"x": 790, "y": 180}},
+        {"id": "t1", "type": "tm.Boundary", "name": "T1 public/TLS", "position": {"x": 210, "y": 80}},
+        {"id": "t2", "type": "tm.Boundary", "name": "T2 Docker network", "position": {"x": 450, "y": 80}},
+        {"id": "t3", "type": "tm.Boundary", "name": "T3 authorization", "position": {"x": 670, "y": 80}},
+        {"id": "f1", "type": "tm.Flow", "name": "HTTPS API requests", "source": "user", "target": "web"},
+        {"id": "f2", "type": "tm.Flow", "name": "Internal API calls", "source": "web", "target": "api"},
+        {"id": "f3", "type": "tm.Flow", "name": "SQL / credentials", "source": "api", "target": "db"}
+      ]
+    }
+  ]
+}
+
