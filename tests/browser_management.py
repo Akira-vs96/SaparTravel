@@ -88,7 +88,14 @@ def check_host_workflow(browser, admin_page, base_url: str, destination_id: str,
         admin_page.get_by_role("button", name="Users", exact=True).click()
         row = admin_page.get_by_role("row").filter(has_text=email)
         row.get_by_role("combobox").select_option("vendor")
-        row.get_by_role("button", name="Save changes", exact=True).click()
+        with admin_page.expect_response(
+            lambda response: (
+                urlsplit(response.url).path.startswith("/api/v1/admin/users/")
+                and response.request.method == "PATCH"
+            )
+        ) as result:
+            row.get_by_role("button", name="Save changes", exact=True).click()
+        assert result.value.ok, f"Promoting host role failed with HTTP {result.value.status}"
         expect(row.get_by_role("button", name="Save changes", exact=True)).to_be_disabled()
         host.reload()
         expect(host.get_by_text("Host", exact=True)).to_be_visible()
