@@ -1,6 +1,52 @@
 # SaparTravel
 
-Веб-приложение для поиска и бронирования путешествий по всему миру. Интерфейс и каталог доступны на русском, казахском и английском языках. Данные хранятся в **PostgreSQL**, без Supabase и внешнего сервиса авторизации.
+SaparTravel — учебный веб-сервис для поиска и бронирования туров. Пользователь
+находит опубликованный тур, выбирает выезд и количество путешественников,
+создаёт заявку и отслеживает её статус. Интерфейс и каталог доступны на
+русском, казахском и английском языках.
+
+Текущий стек: React/Vite, FastAPI, SQLAlchemy, PostgreSQL 17, JWT/Argon2,
+Docker Compose и Nginx. Supabase Auth и внешняя авторизация не используются.
+
+## Быстрый старт
+
+Требуются Docker Engine с запущенным daemon, Docker Compose v2 и Python 3.
+
+```bash
+python3 scripts/setup_env.py
+docker compose up --build -d
+```
+
+После запуска:
+
+| Компонент | Адрес |
+|---|---|
+| Сайт | http://127.0.0.1:5173 |
+| Swagger / OpenAPI | http://127.0.0.1:8000/docs |
+| Health API + БД | http://127.0.0.1:8000/api/v1/health |
+| PostgreSQL с хоста | `127.0.0.1:55432` |
+
+Порт PostgreSQL с хоста задаётся переменной `DB_PORT`. Если порт `5432`
+свободен, можно использовать `DB_PORT=5432`; в текущем локальном окружении
+`5432` занят, поэтому используется `55432`. Внутри Docker API всегда обращается
+к `db:5432`.
+
+Проверка:
+
+```bash
+docker compose ps
+curl http://127.0.0.1:8000/api/v1/health
+```
+
+Ожидаемый ответ:
+
+```json
+{"status":"ok","service":"sapartravel-api","database":"ok"}
+```
+
+Миграции и демонстрационное наполнение запускаются автоматически при старте
+API. Администратор создаётся из `ADMIN_EMAIL` и `ADMIN_PASSWORD` в `.env`.
+Секреты генерируются скриптом и не должны попадать в Git.
 
 ## Возможности
 
@@ -28,7 +74,7 @@ docker compose up --build -d
 - Сайт: http://localhost:5173
 - OpenAPI / Swagger: http://localhost:8000/docs
 - Проверка API и БД: http://localhost:8000/api/v1/health
-- PostgreSQL для локальных инструментов: `localhost:5432`, база `sapartravel`, пользователь `sapar`; пароль — `POSTGRES_PASSWORD` в `.env`.
+- PostgreSQL для локальных инструментов: `127.0.0.1:${DB_PORT}`, база `sapartravel`, пользователь `sapar`; пароль — `POSTGRES_PASSWORD` в `.env`.
 
 Миграции и начальное наполнение выполняются при запуске API. База сохраняется в Docker volume `postgres_data`. Обычная остановка `docker compose down` данные сохраняет. **Ключ `-v` удаляет базу.**
 
@@ -92,6 +138,127 @@ GitHub Actions проверяет API с PostgreSQL, сборку фронтен
 .venv/bin/python tests/browser_smoke.py --base-url http://127.0.0.1:5173
 ```
 
+## Работа с базой данных
+
+Рабочая база — PostgreSQL 17 в контейнере `db`. Данные хранятся в Docker
+volume `postgres_data` и не удаляются обычной командой `docker compose down`.
+
+Подключение через psql:
+
+```bash
+docker compose exec db psql -U sapar -d sapartravel
+```
+
+Полная схема, ER-диаграмма, ключи, ограничения и правило конкурентного
+бронирования описаны в [ER-модели](docs/er-model.md) и
+[описании PostgreSQL-схемы](docs/postgresql-schema.md).
+
+Основные таблицы:
+
+`users`, `destinations`, `experiences`, `departures`, `favorites`, `bookings`,
+`booking_status_history`.
+
+Удаление базы вместе с volume является разрушительной операцией:
+
+```bash
+docker compose down -v
+```
+
+Для резервного копирования и восстановления используйте
+[операционный runbook](docs/ops/runbook.md).
+
+## Функциональный объём MVP
+
+### Турист
+
+- каталог, поиск, фильтры, сортировка и пагинация;
+- карточка тура с программой, услугами, ценой и выездами;
+- регистрация, вход, профиль и избранное;
+- создание заявки, серверный расчёт суммы, история, статус и отмена.
+
+### Поставщик
+
+- создание и редактирование собственных туров;
+- управление публикацией и выездами;
+- обработка заявок только по своим турам.
+
+### Администратор
+
+- управление направлениями и каталогом;
+- управление заявками;
+- назначение ролей и управление пользователями.
+
+Доступ к операциям проверяется на API по JWT, роли и владельцу ресурса.
+Создание бронирования выполняется транзакционно с блокировкой строки выезда
+через `SELECT ... FOR UPDATE`, поэтому конкурентные заявки не создают
+отрицательное количество мест.
+
+## Качество и проверки
+
+Backend-тесты:
+
+```bash
+cd backend
+../.venv/bin/pytest -q
+```
+
+Frontend:
+
+```bash
+cd frontend
+npm ci
+npm run build
+```
+
+Браузерные проверки:
+
+```bash
+cd ..
+.venv/bin/pip install -r tests/requirements-browser.txt
+.venv/bin/python -m playwright install chromium
+.venv/bin/python tests/browser_smoke.py --base-url http://127.0.0.1:5173
+```
+
+План проверок и критерии приёмки находятся в
+[docs/qa/test-plan.md](docs/qa/test-plan.md). CI проверяет PostgreSQL,
+миграции, повторный seed, API-тесты, frontend build и сценарии Chromium.
+
+## Безопасность и ЛЗ 7
+
+Артефакты лабораторной работы:
+
+- [RAID-лог](docs/security/raid.md): 20 рисков, владельцы, триггеры, EMV и резервы;
+- [STRIDE-модель угроз](docs/security/threat-model.md);
+- [файл Threat Dragon](docs/security/threat-model.json);
+- [чек-лист соответствия](docs/security/compliance-checklist.md);
+- [security backlog](docs/security/security-backlog.md);
+- [отчёт Trivy и Gitleaks](docs/security/security-scan-report.md).
+
+Запуск сканеров из корня проекта:
+
+```bash
+docker run --rm -v "$(pwd):/src" aquasec/trivy fs \
+  --scanners vuln,secret /src
+docker run --rm -v "$(pwd):/path" zricethezav/gitleaks:latest detect \
+  -s /path -v --redact
+```
+
+Последний результат не является чистым `PASS`: Trivy нашёл 16 уязвимостей
+зависимостей (включая 1 Critical и 5 High), а Gitleaks — 6
+секретоподобных совпадений в тестовых значениях и истории Git. Подробности,
+CVE и план исправлений находятся в [security-scan-report.md](docs/security/security-scan-report.md).
+
+## Документация проекта
+
+- [Устав проекта](docs/project-charter.md);
+- [Story Map и MVP](docs/requirements/story-map.md);
+- [План тестирования](docs/qa/test-plan.md);
+- [ER-модель и PostgreSQL](docs/er-model.md);
+- [Runbook эксплуатации](docs/ops/runbook.md);
+- [ADR-001 о Scrum](docs/adr/ADR-001.md);
+- [Итоговый портфель проекта](docs/portfolio/final-portfolio.md);
+- [Security-документация](docs/security/risk-assessment.md).
+
 
 ## Структура
 
@@ -112,4 +279,12 @@ docs/                 требования, архитектура, планир
 
 ## Границы текущей версии
 
-Письма, SMS, банковский эквайринг, восстановление пароля по почте и синхронизация с внешними туроператорами не подключены. Изображения загружаются с Unsplash. Для публичного размещения нужны домен, HTTPS, собственный каталог поставщиков и эксплуатационные настройки из runbook; локальный запуск сам по себе не публикует сервис в интернете.
+В текущий MVP намеренно не входят онлайн-оплата и банковский эквайринг,
+реальные API отелей/туроператоров, внешняя синхронизация, email/SMS,
+восстановление пароля по почте, мобильное приложение, отзывы, возвраты и
+полноценная продуктовая аналитика. Изображения загружаются с Unsplash, а
+каталог и цены являются демонстрационными.
+
+Локальный Docker-запуск не является production-развёртыванием. Для публичного
+размещения нужны домен, HTTPS, защищённое хранилище секретов, политика
+персональных данных, мониторинг, резервное копирование и проверка нагрузки.
