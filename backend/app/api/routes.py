@@ -1,36 +1,37 @@
 from datetime import date, timedelta
+from decimal import Decimal
 from math import ceil
 import re
-import secrets
 from typing import Literal
 from uuid import uuid4
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Response
-from sqlalchemy import cast, func, or_, select, text
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy import func, or_, select, text
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from sqlalchemy.orm import lazyload
 
 from app.api.schemas import (
-    BookingInput, BookingStatusInput, Category, Continent, DepartureInput, DestinationInput, DestinationPatch, ExperienceInput,
-    ExperiencePatch, Language, LoginInput, ProfileInput, RegisterInput, RoleInput,
+    Category, Continent, DepartureInput, DestinationInput, DestinationPatch, ExperienceInput,
+    ExperiencePatch, DeparturePatch, Language,
 )
-from app.core.security import Admin, CurrentUser, DbSession, DUMMY_HASH, Manager, check_auth_rate, password_hash, token_for
-from app.domain.models import Booking, BookingStatusHistory, Departure, Destination, Experience, Favorite, User
+from app.core.security import Admin, CurrentUser, DbSession, Manager
+from app.domain.models import (Booking, Departure, Destination, Experience, Favorite, User, ExperienceTranslation, DestinationTranslation, CatalogLine, ExperienceImage, ExperienceService, BookingItem, ExperienceCancellationRule, CategoryRecord)
+from app.services.commerce_service import lock_departure, cancel_booking as service_cancel_booking, today
 from app.services.catalog_service import (
-    booking_data, booking_snapshot, departure_data, experience_data, experience_detail,
-    localized, reserved_seats, user_data,
+    booking_data, departure_data, experience_data, experience_detail,
+    localized, reserved_seats, reservation_counts,
 )
 
 router = APIRouter()
 
 
+def catalog_audit(db, user, action, resource_type, resource_id):
+    from app.services.engagement_service import audit
+    audit(db, user.id, action, resource_type, resource_id)
+
+
 def missing(message: str = "Запись не найдена."):
     raise HTTPException(404, message)
-
-
-def auth_response(user: User) -> dict:
-    return {"access_token": token_for(user), "token_type": "bearer", "user": user_data(user)}
 
 
 @router.get("/health")
@@ -40,42 +41,6 @@ def health(db: DbSession) -> dict:
     except SQLAlchemyError:
         raise HTTPException(503, "База данных временно недоступна.") from None
     return {"status": "ok", "service": "sapartravel-api", "database": "ok"}
-
-
-@router.post("/auth/register", status_code=201, dependencies=[Depends(check_auth_rate)])
-def register(data: RegisterInput, db: DbSession):
-    email = str(data.email).casefold()
-    if db.scalar(select(User.id).where(User.email == email)):
-        raise HTTPException(409, "Аккаунт с таким адресом уже существует.")
-    user = User(name=data.name, email=email, password_hash=password_hash.hash(data.password), role="traveler")
-    db.add(user)
-    try:
-        db.commit()
-    except IntegrityError:
-        db.rollback()
-        raise HTTPException(409, "Аккаунт с таким адресом уже существует.") from None
-    return auth_response(user)
-
-
-@router.post("/auth/login", dependencies=[Depends(check_auth_rate)])
-def login(data: LoginInput, db: DbSession):
-    user = db.scalar(select(User).where(User.email == str(data.email).casefold()))
-    valid = password_hash.verify(data.password, user.password_hash if user else DUMMY_HASH)
-    if not user or not valid or not user.is_active:
-        raise HTTPException(401, "Неверный адрес электронной почты или пароль.", headers={"WWW-Authenticate": "Bearer"})
-    return auth_response(user)
-
-
-@router.get("/auth/me")
-def me(user: CurrentUser):
-    return user_data(user)
-
-
-@router.patch("/auth/me")
-def update_me(data: ProfileInput, user: CurrentUser, db: DbSession):
-    user.name = data.name
-    db.commit()
-    return user_data(user)
 
 
 @router.get("/destinations")
@@ -94,6 +59,19 @@ def destinations(db: DbSession, lang: Language = "ru"):
     return {"items": items}
 
 
+@router.get("/recommendations")
+def recommendations(
+    db: DbSession,
+    budget: Decimal | None = Query(default=None, ge=0, le=100000000),
+    category: Category | None = None,
+    duration_max: int | None = Query(default=None, ge=1, le=90),
+    travelers: int = Query(default=1, ge=1, le=20),
+    lang: Language = "ru",
+):
+    from app.services.recommendation_service import recommend
+    return recommend(db, budget=budget, category=category, duration_max=duration_max, travelers=travelers, lang=lang)
+
+
 @router.get("/experiences")
 def experiences(
     db: DbSession,
@@ -101,8 +79,11 @@ def experiences(
     destination: str | None = Query(default=None, max_length=100),
     continent: Continent | None = None,
     category: Category | None = None,
-    min_price: float | None = Query(default=None, ge=0, le=1000000, allow_inf_nan=False),
-    max_price: float | None = Query(default=None, ge=0, le=1000000, allow_inf_nan=False),
+    min_price: Decimal | None = Query(default=None, ge=0, le=100000000),
+    max_price: Decimal | None = Query(default=None, ge=0, le=100000000),
+    date_from: date | None = None,
+    date_to: date | None = None,
+    travelers: int = Query(default=1, ge=1, le=20),
     duration_max: int | None = Query(default=None, ge=1, le=90),
     sort: Literal["recommended", "price_asc", "price_desc", "rating"] = "recommended",
     page: int = Query(default=1, ge=1, le=1000000),
@@ -113,17 +94,19 @@ def experiences(
         raise HTTPException(422, "Минимальная цена не может быть больше максимальной.")
     query = select(Experience).join(Destination).where(Experience.is_published.is_(True))
     if q and q.strip():
-        fields = [getattr(model, field + suffix) for model, names in (
-            (Experience, ("title", "description")), (Destination, ("name", "country")),
-        ) for field in names for suffix in ("", "_en", "_kk")]
-        terms = [field.icontains(q.strip(), autoescape=True) for field in fields]
-        for suffix in ("", "_en", "_kk"):
-            column = getattr(Experience, "tags" + suffix)
-            # Extract JSON values instead of matching serialized Unicode escape sequences.
-            tag_rows = (func.jsonb_array_elements_text(cast(column, JSONB)) if db.bind.dialect.name == "postgresql"
-                        else func.json_each(column)).table_valued("value")
-            terms.append(select(1).select_from(tag_rows).where(tag_rows.c.value.icontains(q.strip(), autoescape=True)).exists())
-        query = query.where(or_(*terms))
+        needle = q.strip()
+        query = query.where(or_(
+            select(ExperienceTranslation.experience_id).where(
+                ExperienceTranslation.experience_id == Experience.id,
+                or_(ExperienceTranslation.title.icontains(needle, autoescape=True), ExperienceTranslation.description.icontains(needle, autoescape=True)),
+            ).exists(),
+            select(DestinationTranslation.destination_id).where(
+                DestinationTranslation.destination_id == Destination.id,
+                or_(DestinationTranslation.name.icontains(needle, autoescape=True), DestinationTranslation.country.icontains(needle, autoescape=True)),
+            ).exists(),
+            select(CatalogLine.experience_id).where(CatalogLine.experience_id == Experience.id,
+                                                  CatalogLine.kind == "tags", CatalogLine.text.icontains(needle, autoescape=True)).exists(),
+        ))
     if destination:
         query = query.where(Destination.slug == destination)
     if continent:
@@ -136,6 +119,21 @@ def experiences(
         query = query.where(Experience.price_from <= max_price)
     if duration_max is not None:
         query = query.where(Experience.duration_days <= duration_max)
+    if date_from and date_to and date_to < date_from:
+        raise HTTPException(422, "Дата окончания диапазона не может быть раньше начала.")
+    query = query.where(Experience.min_participants <= travelers, Experience.max_participants >= travelers)
+    if date_from or date_to or travelers > 1:
+        from app.services.catalog_service import active_booking_condition
+        occupied = select(func.coalesce(func.sum(Booking.travelers_count), 0)).where(
+            Booking.departure_id == Departure.id, active_booking_condition(),
+        ).correlate(Departure).scalar_subquery()
+        available = select(Departure.id).where(Departure.experience_id == Experience.id,
+                    Departure.status == "scheduled", Departure.start_date > today(), Departure.capacity - occupied >= travelers)
+        if date_from:
+            available = available.where(Departure.start_date >= date_from)
+        if date_to:
+            available = available.where(Departure.start_date <= date_to)
+        query = query.where(available.exists())
     total = db.scalar(select(func.count()).select_from(query.subquery())) or 0
     ordering = {
         "recommended": (Experience.rating.desc(), Experience.review_count.desc()),
@@ -185,74 +183,6 @@ def remove_favorite(experience_id: str, user: CurrentUser, db: DbSession):
     return Response(status_code=204)
 
 
-def lock_departure(db, departure_id: str):
-    return db.scalar(select(Departure).options(lazyload("*")).where(
-        Departure.id == departure_id,
-    ).with_for_update(of=Departure).execution_options(populate_existing=True))
-
-
-def add_status(db, booking: Booking, actor: User):
-    db.add(BookingStatusHistory(booking_id=booking.id, actor_id=actor.id, status=booking.status))
-
-
-@router.post("/bookings", status_code=201)
-def create_booking(data: BookingInput, user: CurrentUser, db: DbSession, lang: Language = "ru"):
-    departure = lock_departure(db, data.departure_id)
-    if not departure or not departure.experience.is_published:
-        missing("Заезд не найден или тур снят с публикации.")
-    if departure.start_date <= date.today():
-        raise HTTPException(409, "Бронирование этого заезда уже закрыто.")
-    available = departure.capacity - reserved_seats(db, departure.id)
-    if data.travelers_count > available:
-        raise HTTPException(409, f"Недостаточно свободных мест. Доступно: {max(available, 0)}.")
-    booking = Booking(
-        reference="SAP-" + secrets.token_hex(6).upper(), user_id=user.id, departure_id=departure.id,
-        travelers_count=data.travelers_count, total_amount=departure.price * data.travelers_count,
-        currency=departure.experience.currency, contact_name=data.contact_name,
-        contact_email=str(data.contact_email).casefold(), notes=data.notes, status="pending",
-        experience_snapshot=booking_snapshot(departure.experience), start_date=departure.start_date,
-        end_date=departure.end_date,
-    )
-    db.add(booking)
-    db.flush()
-    add_status(db, booking, user)
-    db.commit()
-    return booking_data(booking, lang)
-
-
-@router.get("/bookings")
-def bookings(user: CurrentUser, db: DbSession, lang: Language = "ru"):
-    rows = db.scalars(select(Booking).where(Booking.user_id == user.id).order_by(Booking.created_at.desc())).all()
-    return {"items": [booking_data(item, lang) for item in rows]}
-
-
-def locked_booking(db, booking_id: str, user: User, manage: bool = False):
-    query = select(Booking).options(lazyload("*")).where(Booking.id == booking_id)
-    if manage and user.role != "admin":
-        query = query.join(Departure).join(Experience).where(Experience.vendor_id == user.id)
-    elif not manage:
-        query = query.where(Booking.user_id == user.id)
-    item = db.scalar(query)
-    if not item:
-        missing("Бронирование не найдено.")
-    # Every seat-changing operation locks in the same order: departure, then booking.
-    lock_departure(db, item.departure_id)
-    return db.scalar(query.with_for_update(of=Booking).execution_options(populate_existing=True))
-
-
-@router.post("/bookings/{booking_id}/cancel")
-def cancel_booking(booking_id: str, user: CurrentUser, db: DbSession, lang: Language = "ru"):
-    item = locked_booking(db, booking_id, user)
-    if item.status == "cancelled":
-        return booking_data(item, lang)
-    if item.status == "completed" or item.start_date <= date.today():
-        raise HTTPException(409, "Начавшийся или завершённый тур нельзя отменить самостоятельно.")
-    item.status = "cancelled"
-    add_status(db, item, user)
-    db.commit()
-    return booking_data(item, lang)
-
-
 def manageable_experience(db, experience_id: str, user: User, lock: bool = False):
     query = select(Experience).where(Experience.id == experience_id)
     if user.role != "admin":
@@ -277,7 +207,79 @@ def experience_values(data):
     values = data.model_dump(exclude_unset=isinstance(data, ExperiencePatch))
     if "image_url" in values:
         values["image_url"] = str(values["image_url"])
+    values.pop("gallery", None)
+    values.pop("services", None)
+    values.pop("cancellation_rules", None)
+    status = values.get("publication_status")
+    if status is None:
+        values.pop("publication_status", None)
+        if "is_published" in values:
+            values["publication_status"] = "published" if values["is_published"] else "draft" if isinstance(data, ExperienceInput) else "unpublished"
+    else:
+        values["is_published"] = status == "published"
     return values
+
+
+def update_children(db, item, data):
+    if "cancellation_rules" in data.model_fields_set or isinstance(data, ExperienceInput):
+        rules = data.cancellation_rules or []
+        if rules:
+            if len({rule.days_before for rule in rules}) != len(rules) or not any(rule.days_before == 0 for rule in rules):
+                raise HTTPException(422, "Условия отмены должны иметь уникальные пороги и правило для 0 дней.")
+            ordered = sorted(rules, key=lambda rule: rule.days_before)
+            if any(a.refund_percent > b.refund_percent for a,b in zip(ordered, ordered[1:])):
+                raise HTTPException(422, "Возврат при более ранней отмене не может быть меньше.")
+        current = {rule.days_before: rule for rule in item.cancellation_rules}
+        for rule in rules:
+            if rule.days_before in current:
+                current[rule.days_before].refund_percent = rule.refund_percent
+            else:
+                item.cancellation_rules.append(ExperienceCancellationRule(days_before=rule.days_before, refund_percent=rule.refund_percent))
+        thresholds = {rule.days_before for rule in rules}
+        for rule in list(item.cancellation_rules):
+            if rule.days_before not in thresholds:
+                item.cancellation_rules.remove(rule)
+    if "gallery" in data.model_fields_set or isinstance(data, ExperienceInput):
+        urls = [str(url) for url in (data.gallery or [])] or [item.image_url]
+        by_position = {image.position: image for image in item.images}
+        for position, url in enumerate(urls):
+            if position in by_position:
+                by_position[position].url = url
+            else:
+                item.images.append(ExperienceImage(position=position, url=url, alt=item.title))
+        for image in list(item.images):
+            if image.position >= len(urls):
+                item.images.remove(image)
+    if "services" in data.model_fields_set or isinstance(data, ExperienceInput):
+        supplied = set()
+        for data_service in data.services or []:
+            values = data_service.model_dump(exclude={"id"})
+            service = next((service for service in item.services if service.id == data_service.id), None) if data_service.id else None
+            if data_service.id and not service:
+                raise HTTPException(422, "Услуга не принадлежит этому туру.")
+            if service:
+                for key, value in values.items():
+                    setattr(service, key, value)
+            else:
+                service = ExperienceService(**values)
+                item.services.append(service)
+                db.flush()
+            supplied.add(service.id)
+        # Sold service references and historical item prices remain intact.
+        for service in item.services:
+            if service.id not in supplied:
+                service.is_active = False
+
+
+def validate_publication(item):
+    if item.min_participants > item.max_participants:
+        raise HTTPException(422, "Минимальное число участников больше максимального.")
+    if not item.is_published:
+        return
+    if not item.title.strip() or len(item.description.strip()) < 20 or not item.image_url or not item.itinerary:
+        raise HTTPException(422, "Перед публикацией заполните название, описание, изображение и программу тура.")
+    if item.currency != "KZT":
+        raise HTTPException(422, "Новые продажи разрешены только в KZT.")
 
 
 @router.get("/manage/experiences")
@@ -285,7 +287,16 @@ def manage_experiences(user: Manager, db: DbSession, lang: Language = "ru"):
     query = select(Experience).order_by(Experience.created_at.desc())
     if user.role != "admin":
         query = query.where(Experience.vendor_id == user.id)
-    return {"items": [experience_detail(db, item, lang, manage=True) for item in db.scalars(query)]}
+    rows = db.scalars(query).all()
+    departures = db.scalars(select(Departure).options(lazyload(Departure.experience))
+        .where(Departure.experience_id.in_([item.id for item in rows]))
+        .order_by(Departure.experience_id, Departure.start_date)).all() if rows else []
+    counts = reservation_counts(db, [departure.id for departure in departures])
+    by_experience = {}
+    for departure in departures:
+        by_experience.setdefault(departure.experience_id, []).append(departure)
+    return {"items": [experience_detail(db, item, lang, manage=True,
+                        departures=by_experience.get(item.id, []), reserved_counts=counts) for item in rows]}
 
 
 @router.post("/manage/experiences", status_code=201)
@@ -293,10 +304,15 @@ def create_experience(data: ExperienceInput, user: Manager, db: DbSession):
     values = experience_values(data)
     if not db.get(Destination, data.destination_id):
         missing("Направление не найдено.")
+    if not db.get(CategoryRecord, data.category):
+        raise HTTPException(422, "Категория не найдена.")
     validate_itinerary(values, data.duration_days)
     slug_base = re.sub(r"[^a-z0-9]+", "-", (data.title_en or "experience").lower()).strip("-")[:100] or "experience"
-    item = Experience(**values, slug=slug_base + "-" + uuid4().hex[:10], vendor_id=user.id)
+    item = Experience(id=str(uuid4()), **values, slug=slug_base + "-" + uuid4().hex[:10], vendor_id=user.id)
     db.add(item)
+    update_children(db, item, data)
+    validate_publication(item)
+    catalog_audit(db, user, "catalog.created", "experience", item.id)
     db.commit()
     db.refresh(item)
     return experience_detail(db, item, manage=True)
@@ -308,12 +324,17 @@ def update_experience(experience_id: str, data: ExperiencePatch, user: Manager, 
     values = experience_values(data)
     if "destination_id" in values and not db.get(Destination, values["destination_id"]):
         missing("Направление не найдено.")
+    if "category" in values and not db.get(CategoryRecord, values["category"]):
+        raise HTTPException(422, "Категория не найдена.")
     duration = values.get("duration_days", item.duration_days)
     if duration != item.duration_days and db.scalar(select(Departure.id).where(Departure.experience_id == item.id).limit(1)):
         raise HTTPException(409, "Нельзя менять длительность тура с созданными заездами. Создайте новый тур.")
     validate_itinerary({name: values.get(name, getattr(item, name)) for name in ("itinerary", "itinerary_en", "itinerary_kk")}, duration)
     for key, value in values.items():
         setattr(item, key, value)
+    update_children(db, item, data)
+    validate_publication(item)
+    catalog_audit(db, user, "catalog.updated", "experience", item.id)
     db.commit()
     db.refresh(item)
     return experience_detail(db, item, manage=True)
@@ -322,11 +343,12 @@ def update_experience(experience_id: str, data: ExperiencePatch, user: Manager, 
 @router.post("/manage/experiences/{experience_id}/departures", status_code=201)
 def create_departure(experience_id: str, data: DepartureInput, user: Manager, db: DbSession):
     item = manageable_experience(db, experience_id, user, lock=True)
-    departure = Departure(experience_id=item.id, start_date=data.start_date,
+    departure = Departure(id=str(uuid4()), experience_id=item.id, start_date=data.start_date,
                           end_date=data.start_date + timedelta(days=item.duration_days - 1),
                           capacity=data.capacity, price=data.price)
     db.add(departure)
     try:
+        catalog_audit(db, user, "departure.created", "departure", departure.id)
         db.commit()
     except IntegrityError:
         db.rollback()
@@ -342,48 +364,13 @@ def manage_bookings(user: Manager, db: DbSession, lang: Language = "ru"):
     return {"items": [booking_data(item, lang) for item in db.scalars(query)]}
 
 
-@router.patch("/manage/bookings/{booking_id}")
-def update_booking(booking_id: str, data: BookingStatusInput, user: Manager, db: DbSession, lang: Language = "ru"):
-    item = locked_booking(db, booking_id, user, manage=True)
-    if item.status == data.status:
-        return booking_data(item, lang)
-    allowed = {"pending": {"confirmed", "cancelled"}, "confirmed": {"cancelled", "completed"}}
-    if data.status not in allowed.get(item.status, set()):
-        raise HTTPException(409, "Недопустимое изменение статуса бронирования.")
-    if data.status == "completed" and item.end_date >= date.today():
-        raise HTTPException(409, "Тур можно завершить только после даты окончания.")
-    if data.status == "confirmed" and item.start_date <= date.today():
-        raise HTTPException(409, "Нельзя подтвердить уже начавшийся заезд.")
-    item.status = data.status
-    add_status(db, item, user)
-    db.commit()
-    return booking_data(item, lang)
-
-
-@router.get("/admin/users")
-def users(user: Admin, db: DbSession):
-    return {"items": [user_data(item) for item in db.scalars(select(User).where(User.is_active.is_(True)).order_by(User.created_at.desc()))]}
-
-
-@router.patch("/admin/users/{user_id}")
-def update_role(user_id: str, data: RoleInput, user: Admin, db: DbSession):
-    # Lock all administrators to prevent two simultaneous demotions removing the last one.
-    admins = db.scalars(select(User).where(User.role == "admin", User.is_active.is_(True)).order_by(User.id).with_for_update()).all()
-    db.refresh(user)
-    if user.role != "admin":
-        raise HTTPException(403, "Доступно только администратору.")
-    target = db.get(User, user_id, populate_existing=True, with_for_update=True)
-    if not target or not target.is_active:
-        missing("Пользователь не найден.")
-    if target.role == "admin" and data.role != "admin" and len(admins) <= 1:
-        raise HTTPException(409, "Нельзя изменить роль последнего администратора.")
-    target.role = data.role
-    db.commit()
-    return user_data(target)
-
 
 def destination_manage_data(item: Destination) -> dict:
-    return {column.name: getattr(item, column.name) for column in Destination.__table__.columns}
+    result = {column.name: getattr(item, column.name) for column in Destination.__table__.columns}
+    for field in ("name", "country", "description"):
+        for suffix in ("", "_en", "_kk"):
+            result[field+suffix] = getattr(item, field+suffix)
+    return result
 
 
 @router.get("/manage/destinations")
@@ -395,9 +382,10 @@ def manage_destinations(user: Admin, db: DbSession):
 def create_destination(data: DestinationInput, user: Admin, db: DbSession):
     values = data.model_dump()
     values["image_url"] = str(values["image_url"])
-    item = Destination(**values)
+    item = Destination(id=str(uuid4()), **values)
     db.add(item)
     try:
+        catalog_audit(db, user, "destination.created", "destination", item.id)
         db.commit()
     except IntegrityError:
         db.rollback()
@@ -415,5 +403,55 @@ def update_destination(destination_id: str, data: DestinationPatch, user: Admin,
         values["image_url"] = str(values["image_url"])
     for key, value in values.items():
         setattr(item, key, value)
+    catalog_audit(db, user, "destination.updated", "destination", item.id)
     db.commit()
     return destination_manage_data(item)
+
+
+@router.patch("/manage/experiences/{experience_id}/departures/{departure_id}")
+def update_departure(experience_id: str, departure_id: str, data: DeparturePatch, user: Manager, db: DbSession):
+    manageable_experience(db, experience_id, user)
+    departure = lock_departure(db, departure_id)
+    if not departure or departure.experience_id != experience_id:
+        missing("Выезд не найден.")
+    if departure.status == "cancelled" and data.status == "scheduled":
+        raise HTTPException(409, "Отменённый выезд нельзя восстановить. Создайте новый.")
+    occupied = reserved_seats(db, departure.id)
+    if data.capacity is not None:
+        if data.capacity < occupied:
+            raise HTTPException(409, "Вместимость не может быть меньше числа занятых мест.")
+        departure.capacity = data.capacity
+    if data.price is not None:
+        departure.price = data.price
+    if data.status == "cancelled" and departure.status != "cancelled":
+        departure.status = "cancelled"
+        bookings = db.scalars(select(Booking).where(Booking.departure_id == departure.id,
+                              Booking.status.in_(("pending", "confirmed"))).order_by(Booking.id)).all()
+        for booking in bookings:
+            service_cancel_booking(db, user, booking.id, "Выезд отменён поставщиком", manage=True, force_full=True)
+    catalog_audit(db, user, "departure.updated", "departure", departure.id)
+    db.commit()
+    return departure_data(departure, reserved_seats(db, departure.id), manage=True)
+
+
+@router.patch("/manage/departures/{departure_id}")
+def update_departure_alias(departure_id: str, data: DeparturePatch, user: Manager, db: DbSession):
+    departure = db.get(Departure, departure_id)
+    if not departure:
+        missing("Выезд не найден.")
+    return update_departure(departure.experience_id, departure_id, data, user, db)
+
+
+@router.delete("/manage/departures/{departure_id}", status_code=204)
+def delete_departure(departure_id: str, user: Manager, db: DbSession):
+    departure = db.get(Departure, departure_id)
+    if not departure:
+        missing("Выезд не найден.")
+    manageable_experience(db, departure.experience_id, user)
+    departure = lock_departure(db, departure_id)
+    if db.scalar(select(Booking.id).where(Booking.departure_id == departure_id).limit(1)):
+        raise HTTPException(409, "Нельзя удалить выезд с историей бронирований. Отмените выезд.")
+    db.delete(departure)
+    catalog_audit(db, user, "departure.deleted", "departure", departure.id)
+    db.commit()
+    return Response(status_code=204)

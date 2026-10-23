@@ -43,12 +43,40 @@ export function AppProvider({ children }) {
   const activeToken = useRef(token);
   activeToken.current = token;
   const [toast, setToast] = useState("");
+  const [comparison, setComparison] = useState(() => {
+    try {
+      return JSON.parse(readStorage("sapar-compare", "[]")).slice(0, 3);
+    } catch {
+      return [];
+    }
+  });
+  const toggleCompare = (tour) => {
+    setComparison((current) => {
+      let next;
+      if (current.some((item) => item.id === tour.id))
+        next = current.filter((item) => item.id !== tour.id);
+      else if (current.length >= 3) {
+        setToast(translate(lang, "compareLimit"));
+        return current;
+      } else
+        next = [
+          ...current,
+          { id: tour.id, slug: tour.slug, title: tour.title },
+        ];
+      writeStorage("sapar-compare", JSON.stringify(next));
+      return next;
+    });
+  };
   const t = useCallback((key) => translate(lang, key), [lang]);
   const setLang = (value) => {
     setLanguage(value);
     writeStorage("sapar-language", value);
   };
   const logout = useCallback(() => {
+    if (activeToken.current)
+      api("/auth/logout", { token: activeToken.current, method: "POST" }).catch(
+        () => {},
+      );
     favoriteRequest.current.controller?.abort();
     favoriteRequest.current.version += 1;
     activeToken.current = "";
@@ -153,6 +181,12 @@ export function AppProvider({ children }) {
       const specific = {
         "Неверный адрес электронной почты или пароль.": "invalidCredentials",
         "Аккаунт с таким адресом уже существует.": "emailExists",
+        "Некорректный номер тестовой карты или контрольная сумма.":
+          "invalid_card",
+        "Разрешены только документированные тестовые карты. Не вводите реальные банковские данные.":
+          "testCardOnly",
+        "Срок действия тестовой карты истёк.": "card_expired",
+        "CVC тестовой карты должен содержать 3 цифры.": "invalid_cvc",
         "Минимальная цена не может быть больше максимальной.":
           "priceRangeError",
         "Нельзя менять длительность тура с созданными заездами. Создайте новый тур.":
@@ -164,6 +198,24 @@ export function AppProvider({ children }) {
           "itineraryError",
       };
       if (specific[error?.message]) return t(specific[error.message]);
+      if (
+        error?.status === 422 &&
+        (error?.message?.includes("expiry_month") ||
+          error.fields?.some((item) => item.field?.endsWith("expiry_month")))
+      )
+        return t("invalid_expiry_month");
+      if (
+        error?.status === 422 &&
+        (error?.message?.includes("expiry_year") ||
+          error.fields?.some((item) => item.field?.endsWith("expiry_year")))
+      )
+        return t("invalid_expiry_year");
+      if (
+        error?.status === 422 &&
+        (error?.message?.includes("cvc") ||
+          error.fields?.some((item) => item.field?.endsWith("cvc")))
+      )
+        return t("invalid_cvc");
       if (error?.message?.startsWith("Недостаточно свободных мест."))
         return t("seatsChanged");
       const statusKey = {
@@ -215,6 +267,8 @@ export function AppProvider({ children }) {
         favoritesLoading,
         reloadFavorites,
         toggleFavorite,
+        comparison,
+        toggleCompare,
         errorText,
         notify: setToast,
       }}

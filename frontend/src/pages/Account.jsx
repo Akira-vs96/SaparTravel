@@ -6,6 +6,9 @@ import {
   LogOut,
   Settings2,
   UserRound,
+  Bell,
+  Search,
+  MessageCircle,
 } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { api } from "../api";
@@ -23,6 +26,7 @@ import {
   useResource,
 } from "../components/common";
 import TourCard from "../components/TourCard";
+import { ChangePassword } from "./Password";
 
 export function AccountNav() {
   const { t, user, logout } = useApp();
@@ -39,6 +43,18 @@ export function AccountNav() {
       <NavLink to="/bookings">
         <CalendarDays size={16} />
         {t("bookings")}
+      </NavLink>
+      <NavLink to="/saved-searches">
+        <Search size={16} />
+        {t("savedSearches")}
+      </NavLink>
+      <NavLink to="/notifications">
+        <Bell size={16} />
+        {t("notifications")}
+      </NavLink>
+      <NavLink to="/support">
+        <MessageCircle size={16} />
+        {t("support")}
       </NavLink>
       {["vendor", "admin"].includes(user.role) && (
         <NavLink to="/manage">
@@ -126,6 +142,7 @@ export function Profile() {
           </button>
         </form>
       </div>
+      <ChangePassword />
     </div>
   );
 }
@@ -244,21 +261,35 @@ export function BookingCard({ booking, reload, management = false }) {
         )}
         <div className="booking-card-bottom">
           <div>
-            <strong>{money(booking.total_amount, lang)}</strong>
-            <small>{t("noPayment")}</small>
+            <strong>
+              {money(booking.total_amount, lang, booking.currency)}
+            </strong>
+            <small>{t(booking.payment_status || "unpaid")}</small>
+            {booking.currency_conversion && (
+              <small>
+                {t("historicalEquivalent")}:{" "}
+                {money(booking.currency_conversion.equivalent_amount, lang)} ·{" "}
+                {t("educationalFactor")} {booking.currency_conversion.factor}
+              </small>
+            )}
           </div>
           <div className="button-row">
-            {management &&
-              booking.status === "pending" &&
-              booking.start_date > new Date().toISOString().slice(0, 10) && (
-                <button
-                  className="button small primary"
-                  disabled={busy}
-                  onClick={() => changeStatus("confirmed")}
-                >
-                  {t("confirm")}
-                </button>
-              )}
+            {management && (
+              <Link
+                className="button secondary small"
+                to={`/manage/bookings/${booking.id}`}
+              >
+                {t("details")}
+              </Link>
+            )}
+            {!management && (
+              <Link
+                className="button small primary"
+                to={`/bookings/${booking.id}`}
+              >
+                {t(booking.status === "pending" ? "pay" : "details")}
+              </Link>
+            )}
             {management &&
               booking.status === "confirmed" &&
               booking.end_date < new Date().toISOString().slice(0, 10) && (

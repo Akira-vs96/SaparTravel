@@ -18,7 +18,7 @@ services:
 
   api:
     build: ./backend
-    environment:
+    environment: &api-environment
       DATABASE_URL: ${SUPABASE_DATABASE_URL:-postgresql+psycopg://sapar:${POSTGRES_PASSWORD:?Run python3 scripts/setup_env.py first}@db:5432/sapartravel}
       JWT_SECRET: ${JWT_SECRET:?Run python3 scripts/setup_env.py first}
       ENVIRONMENT: ${ENVIRONMENT:-development}
@@ -27,6 +27,14 @@ services:
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
       SEED_DEMO_DATA: ${SEED_DEMO_DATA:-true}
       ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES:-120}
+      AUTH_RATE_LIMIT: ${AUTH_RATE_LIMIT:-20}
+      RESERVATION_MINUTES: ${RESERVATION_MINUTES:-15}
+      PAYMENT_DEMO_ENABLED: ${PAYMENT_DEMO_ENABLED:-false}
+      DEMO_PRIVATE_DATA: ${DEMO_PRIVATE_DATA:-false}
+      DEMO_MAILBOX_ENABLED: ${DEMO_MAILBOX_ENABLED:-false}
+      PASSWORD_RESET_EXPIRE_MINUTES: ${PASSWORD_RESET_EXPIRE_MINUTES:-30}
+      PUBLIC_WEB_URL: ${PUBLIC_WEB_URL:-http://localhost:5173}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
     depends_on:
       db:
         condition: service_healthy
@@ -38,6 +46,15 @@ services:
       timeout: 5s
       retries: 15
       start_period: 30s
+    restart: unless-stopped
+
+  worker:
+    build: ./backend
+    command: ["python", "-m", "app.worker"]
+    environment: *api-environment
+    depends_on:
+      api:
+        condition: service_healthy
     restart: unless-stopped
 
   web:

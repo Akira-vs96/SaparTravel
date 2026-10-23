@@ -22,6 +22,16 @@ import {
 } from "../components/common";
 import ManageDestinations from "./ManageDestinations";
 import { AccountNav, BookingCard } from "./Account";
+import {
+  Analytics,
+  Moderation,
+  FinancialRecords,
+  Audit,
+  Promocodes,
+  Vendors,
+  Categories,
+} from "./ManageExtras";
+import Support from "./Support";
 
 export default function Manage() {
   const { user, lang, t, token, notify, errorText } = useApp();
@@ -36,7 +46,9 @@ export default function Manage() {
       await api(`/manage/experiences/${tour.id}`, {
         token,
         method: "PATCH",
-        body: { is_published: !tour.is_published },
+        body: {
+          publication_status: tour.is_published ? "unpublished" : "published",
+        },
       });
       tours.reload();
     } catch (error) {
@@ -74,6 +86,30 @@ export default function Manage() {
               {t("destinations")}
             </button>
           )}
+          {[
+            "analytics",
+            "support",
+            "reviews",
+            ...(user.role === "admin"
+              ? [
+                  "moderation",
+                  "payments",
+                  "refunds",
+                  "promos",
+                  "vendors",
+                  "categories",
+                  "auditLog",
+                ]
+              : []),
+          ].map((key) => (
+            <button
+              key={key}
+              className={tab === key ? "active" : ""}
+              onClick={() => setTab(key)}
+            >
+              {t(key)}
+            </button>
+          ))}
           {user.role === "admin" && (
             <button
               className={tab === "users" ? "active" : ""}
@@ -105,7 +141,10 @@ export default function Manage() {
                       <span
                         className={`status-badge ${tour.is_published ? "confirmed" : "pending"}`}
                       >
-                        {t(tour.is_published ? "published" : "draft")}
+                        {t(
+                          tour.publication_status ||
+                            (tour.is_published ? "published" : "draft"),
+                        )}
                       </span>
                       <h2>{tour.title}</h2>
                       <p>
@@ -143,6 +182,29 @@ export default function Manage() {
                             <ArrowUpRight size={19} />
                           </Link>
                         )}
+                        {tour.publication_status !== "archived" && (
+                          <button
+                            className="text-button danger-text"
+                            disabled={busyId === tour.id}
+                            onClick={async () => {
+                              setBusyId(tour.id);
+                              try {
+                                await api(`/manage/experiences/${tour.id}`, {
+                                  token,
+                                  method: "PATCH",
+                                  body: { publication_status: "archived" },
+                                });
+                                tours.reload();
+                              } catch (error) {
+                                notify(errorText(error));
+                              } finally {
+                                setBusyId("");
+                              }
+                            }}
+                          >
+                            {t("archive")}
+                          </button>
+                        )}
                       </div>
                     </div>
                   </article>
@@ -163,6 +225,20 @@ export default function Manage() {
       )}
       {tab === "bookings" && <ManageBookings />}
       {tab === "users" && user.role === "admin" && <ManageUsers />}
+      {tab === "analytics" && <Analytics />}
+      {tab === "support" && <Support embedded />}
+      {tab === "reviews" && <Moderation readonly />}
+      {user.role === "admin" && (
+        <>
+          {tab === "moderation" && <Moderation />}
+          {tab === "payments" && <FinancialRecords kind="payments" />}
+          {tab === "refunds" && <FinancialRecords kind="refunds" />}
+          {tab === "promos" && <Promocodes />}
+          {tab === "vendors" && <Vendors />}
+          {tab === "categories" && <Categories />}
+          {tab === "auditLog" && <Audit />}
+        </>
+      )}
       {editing && (
         <TourEditor
           tour={editing}
@@ -219,6 +295,7 @@ function ManageUsers() {
               <tr>
                 <th>{t("name")}</th>
                 <th>{t("email")}</th>
+                <th>{t("status")}</th>
                 <th>{t("role")}</th>
                 <th>{t("save")}</th>
               </tr>
@@ -237,6 +314,7 @@ function ManageUsers() {
 function UserRow({ user, reload }) {
   const { token, t, setUser, user: currentUser, notify, errorText } = useApp();
   const [role, setRole] = useState(user.role);
+  const [active, setActive] = useState(user.is_active);
   const [busy, setBusy] = useState(false);
   const save = async () => {
     setBusy(true);
@@ -244,7 +322,7 @@ function UserRow({ user, reload }) {
       const result = await api(`/admin/users/${user.id}`, {
         token,
         method: "PATCH",
-        body: { role },
+        body: { role, is_active: active },
       });
       if (currentUser.id === user.id) setUser(result);
       reload();
@@ -258,6 +336,16 @@ function UserRow({ user, reload }) {
     <tr>
       <td>{user.name}</td>
       <td>{user.email}</td>
+      <td>
+        <label className="checkbox-label">
+          <input
+            type="checkbox"
+            checked={active}
+            onChange={(e) => setActive(e.target.checked)}
+          />
+          {t("active")}
+        </label>
+      </td>
       <td>
         <select
           aria-label={`${t("role")}: ${user.email}`}
@@ -275,7 +363,7 @@ function UserRow({ user, reload }) {
         <button
           className="button small secondary"
           onClick={save}
-          disabled={busy || role === user.role}
+          disabled={busy || (role === user.role && active === user.is_active)}
         >
           <Check size={15} />
           {t("save")}
@@ -298,6 +386,17 @@ function initialTour(tour) {
     price_from: tour.price_from || 100,
     image_url: tour.image_url || "",
     is_published: tour.is_published || false,
+    publication_status:
+      tour.publication_status || (tour.is_published ? "published" : "draft"),
+    min_participants: tour.min_participants || 1,
+    max_participants: tour.max_participants || 20,
+    gallery: listToText(tour.gallery),
+    services: (tour.services || []).map((item) => ({ ...item })),
+    cancellation_rules: tour.cancellation_rules || [
+      { days_before: 7, refund_percent: 100 },
+      { days_before: 2, refund_percent: 80 },
+      { days_before: 0, refund_percent: 50 },
+    ],
   };
   ["", "_en", "_kk"].forEach((suffix) => {
     form[`title${suffix}`] = tour[`title${suffix}`] || "";
@@ -314,6 +413,7 @@ function initialTour(tour) {
 function TourEditor({ tour, onClose, onSaved }) {
   const { t, token, lang } = useApp();
   const destinations = useResource(`/destinations?lang=${lang}`);
+  const categories = useResource(`/categories?lang=${lang}`);
   const [form, setForm] = useState(() => initialTour(tour));
   const [editLang, setEditLang] = useState("ru");
   const [error, setError] = useState(null);
@@ -339,9 +439,25 @@ function TourEditor({ tour, onClose, onSaved }) {
       destination_id: form.destination_id,
       category: form.category,
       duration_days: Number(form.duration_days),
-      price_from: Number(form.price_from),
+      price_from: String(form.price_from),
       image_url: form.image_url,
-      is_published: form.is_published,
+      publication_status: form.publication_status,
+      min_participants: Number(form.min_participants),
+      max_participants: Number(form.max_participants),
+      gallery: textToList(form.gallery),
+      services: form.services.map((service) => ({
+        ...(service.id ? { id: service.id } : {}),
+        name: service.name,
+        name_en: service.name_en || "",
+        name_kk: service.name_kk || "",
+        price: String(service.price),
+        per_person: service.per_person,
+        is_active: service.is_active ?? true,
+      })),
+      cancellation_rules: form.cancellation_rules.map((rule) => ({
+        days_before: Number(rule.days_before),
+        refund_percent: Number(rule.refund_percent),
+      })),
     };
     try {
       ["", "_en", "_kk"].forEach((key) => {
@@ -588,7 +704,9 @@ function TourEditor({ tour, onClose, onSaved }) {
               <option value="">—</option>
               {destinations.data?.items.map((item) => (
                 <option value={item.id} key={item.id}>
-                  {item.name === item.country ? item.name : `${item.name} · ${item.country}`}
+                  {item.name === item.country
+                    ? item.name
+                    : `${item.name} · ${item.country}`}
                 </option>
               ))}
             </select>
@@ -597,9 +715,12 @@ function TourEditor({ tour, onClose, onSaved }) {
           <label>
             {t("category")}
             <select value={form.category} onChange={update("category")}>
-              {CATEGORIES.map((item) => (
-                <option value={item} key={item}>
-                  {t(item)}
+              {(
+                categories.data?.items ||
+                CATEGORIES.map((code) => ({ code, name: t(code) }))
+              ).map((item) => (
+                <option value={item.code} key={item.code}>
+                  {item.name}
                 </option>
               ))}
             </select>
@@ -626,7 +747,7 @@ function TourEditor({ tour, onClose, onSaved }) {
               type="number"
               required
               min="1"
-              max="1000000"
+              max="100000000"
               step="0.01"
               value={form.price_from}
               onChange={update("price_from")}
@@ -643,13 +764,201 @@ function TourEditor({ tour, onClose, onSaved }) {
             placeholder="https://…"
           />
         </label>
-        <label className="checkbox-label">
-          <input
-            type="checkbox"
-            checked={form.is_published}
-            onChange={update("is_published")}
+        <label>
+          {t("gallery")} <small>{t("onePerLine")}</small>
+          <textarea
+            rows={3}
+            value={form.gallery}
+            onChange={update("gallery")}
+            placeholder="https://…"
           />
-          {t("publish")}
+        </label>
+        <div className="form-row">
+          <label>
+            {t("minParticipants")}
+            <input
+              type="number"
+              required
+              min="1"
+              max="20"
+              value={form.min_participants}
+              onChange={update("min_participants")}
+            />
+          </label>
+          <label>
+            {t("maxParticipants")}
+            <input
+              type="number"
+              required
+              min={form.min_participants}
+              max="20"
+              value={form.max_participants}
+              onChange={update("max_participants")}
+            />
+          </label>
+        </div>
+        <fieldset className="itinerary-editor stack-form">
+          <legend>{t("additionalServices")}</legend>
+          {form.services.map((service, index) => (
+            <div className="service-editor-row" key={service.id || index}>
+              {["name", "name_kk", "name_en"].map((key) => (
+                <label key={key}>
+                  {t("name")} ·{" "}
+                  {key === "name" ? "RU" : key === "name_kk" ? "ҚАЗ" : "EN"}
+                  <input
+                    required={key === "name"}
+                    minLength={key === "name" ? 3 : undefined}
+                    maxLength="180"
+                    value={service[key] || ""}
+                    onChange={(e) =>
+                      setForm((current) => ({
+                        ...current,
+                        services: current.services.map((s, i) =>
+                          i === index ? { ...s, [key]: e.target.value } : s,
+                        ),
+                      }))
+                    }
+                  />
+                </label>
+              ))}
+              <div className="form-row">
+                <label>
+                  {t("price")} · ₸
+                  <input
+                    type="number"
+                    required
+                    min="0"
+                    max="100000000"
+                    step="0.01"
+                    value={service.price}
+                    onChange={(e) =>
+                      setForm((current) => ({
+                        ...current,
+                        services: current.services.map((s, i) =>
+                          i === index ? { ...s, price: e.target.value } : s,
+                        ),
+                      }))
+                    }
+                  />
+                </label>
+                <label className="checkbox-label">
+                  <input
+                    type="checkbox"
+                    checked={service.per_person}
+                    onChange={(e) =>
+                      setForm((current) => ({
+                        ...current,
+                        services: current.services.map((s, i) =>
+                          i === index
+                            ? { ...s, per_person: e.target.checked }
+                            : s,
+                        ),
+                      }))
+                    }
+                  />
+                  {t("perPerson")}
+                </label>
+              </div>
+              <button
+                type="button"
+                className="text-button danger-text"
+                onClick={() =>
+                  setForm((current) => ({
+                    ...current,
+                    services: current.services.filter((_, i) => i !== index),
+                  }))
+                }
+              >
+                {t("remove")}
+              </button>
+            </div>
+          ))}
+          <button
+            type="button"
+            className="button secondary"
+            disabled={form.services.length >= 20}
+            onClick={() =>
+              setForm((current) => ({
+                ...current,
+                services: [
+                  ...current.services,
+                  {
+                    name: "",
+                    name_en: "",
+                    name_kk: "",
+                    price: "0",
+                    per_person: true,
+                    is_active: true,
+                  },
+                ],
+              }))
+            }
+          >
+            <Plus size={16} />
+            {t("addService")}
+          </button>
+        </fieldset>
+        <fieldset className="itinerary-editor stack-form">
+          <legend>{t("cancellationPolicy")}</legend>
+          {form.cancellation_rules.map((rule, index) => (
+            <div className="form-row" key={index}>
+              <label>
+                {t("daysBefore")}
+                <input
+                  type="number"
+                  min="0"
+                  max="365"
+                  required
+                  value={rule.days_before}
+                  onChange={(e) =>
+                    setForm((current) => ({
+                      ...current,
+                      cancellation_rules: current.cancellation_rules.map(
+                        (r, i) =>
+                          i === index
+                            ? { ...r, days_before: e.target.value }
+                            : r,
+                      ),
+                    }))
+                  }
+                />
+              </label>
+              <label>
+                {t("refund")} %
+                <input
+                  type="number"
+                  min="0"
+                  max="100"
+                  required
+                  value={rule.refund_percent}
+                  onChange={(e) =>
+                    setForm((current) => ({
+                      ...current,
+                      cancellation_rules: current.cancellation_rules.map(
+                        (r, i) =>
+                          i === index
+                            ? { ...r, refund_percent: e.target.value }
+                            : r,
+                      ),
+                    }))
+                  }
+                />
+              </label>
+            </div>
+          ))}
+        </fieldset>
+        <label>
+          {t("status")}
+          <select
+            value={form.publication_status}
+            onChange={update("publication_status")}
+          >
+            {["draft", "published", "unpublished", "archived"].map((status) => (
+              <option value={status} key={status}>
+                {t(status)}
+              </option>
+            ))}
+          </select>
         </label>
         <FormError error={error} />
         <div className="modal-actions">
@@ -690,7 +999,7 @@ function DepartureEditor({ tour, onClose, onSaved }) {
         body: {
           start_date: form.start_date,
           capacity: Number(form.capacity),
-          price: Number(form.price),
+          price: String(form.price),
         },
       });
       setDepartures((items) =>
@@ -717,15 +1026,19 @@ function DepartureEditor({ tour, onClose, onSaved }) {
       {departures.length ? (
         <div className="departure-list">
           {departures.map((item) => (
-            <div key={item.id}>
-              <span>
-                {formatDate(item.start_date, lang)}
-                <small>
-                  {item.available_seats} / {item.capacity} {t("seats")}
-                </small>
-              </span>
-              <strong>{money(item.price, lang)}</strong>
-            </div>
+            <DepartureRow
+              key={item.id}
+              item={item}
+              tourId={tour.id}
+              onChange={(value) => {
+                setDepartures((rows) =>
+                  value
+                    ? rows.map((row) => (row.id === value.id ? value : row))
+                    : rows.filter((row) => row.id !== item.id),
+                );
+                onSaved();
+              }}
+            />
           ))}
         </div>
       ) : (
@@ -765,7 +1078,7 @@ function DepartureEditor({ tour, onClose, onSaved }) {
               type="number"
               required
               min="1"
-              max="1000000"
+              max="100000000"
               step="0.01"
               value={form.price}
               onChange={(event) =>
@@ -781,5 +1094,146 @@ function DepartureEditor({ tour, onClose, onSaved }) {
         </button>
       </form>
     </Modal>
+  );
+}
+function DepartureRow({ item, tourId, onChange }) {
+  const { t, lang, token } = useApp();
+  const [editing, setEditing] = useState(false);
+  const [capacity, setCapacity] = useState(item.capacity);
+  const [price, setPrice] = useState(item.price);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState(null);
+  const [cancel, setCancel] = useState(false);
+  const save = async (status) => {
+    setBusy(true);
+    setError(null);
+    try {
+      const result = await api(
+        `/manage/experiences/${tourId}/departures/${item.id}`,
+        {
+          token,
+          method: "PATCH",
+          body: {
+            capacity: Number(capacity),
+            price: String(price),
+            ...(status ? { status } : {}),
+          },
+        },
+      );
+      onChange(result);
+      setEditing(false);
+      setCancel(false);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <div className="departure-edit-row">
+      <div className="summary-line">
+        <span>
+          {formatDate(item.start_date, lang)}
+          <small>
+            {item.available_seats} / {item.capacity} {t("seats")} ·{" "}
+            {t(item.status || "scheduled")}
+          </small>
+        </span>
+        <strong>{money(item.price, lang)}</strong>
+      </div>
+      {editing ? (
+        <div className="form-row">
+          <label>
+            {t("capacity")}
+            <input
+              required
+              type="number"
+              min={Math.max(1, item.capacity - item.available_seats)}
+              max="1000"
+              value={capacity}
+              onChange={(e) => setCapacity(e.target.value)}
+            />
+          </label>
+          <label>
+            {t("price")} · ₸
+            <input
+              required
+              type="number"
+              min="0.01"
+              max="100000000"
+              step="0.01"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </label>
+          <button
+            type="button"
+            className="button secondary"
+            disabled={busy}
+            onClick={() => save()}
+          >
+            {t("save")}
+          </button>
+        </div>
+      ) : (
+        <div className="button-row">
+          <button className="text-button" onClick={() => setEditing(true)}>
+            {t("edit")}
+          </button>
+          {item.status !== "cancelled" && (
+            <button
+              className="text-button danger-text"
+              disabled={busy}
+              onClick={() => setCancel(true)}
+            >
+              {t("cancelDeparture")}
+            </button>
+          )}
+          <button
+            className="text-button danger-text"
+            disabled={busy}
+            onClick={async () => {
+              setBusy(true);
+              setError(null);
+              try {
+                await api(`/manage/departures/${item.id}`, {
+                  token,
+                  method: "DELETE",
+                });
+                onChange(null);
+              } catch (error) {
+                setError(error);
+              } finally {
+                setBusy(false);
+              }
+            }}
+          >
+            {t("remove")}
+          </button>
+        </div>
+      )}
+      <FormError error={error} />
+      {cancel && (
+        <div className="info-note">
+          <p>{t("cancelDepartureText")}</p>
+          <div className="button-row">
+            <button
+              className="button danger small"
+              disabled={busy}
+              onClick={() => save("cancelled")}
+            >
+              {t("confirm")}
+            </button>
+            <button
+              className="button secondary small"
+              disabled={busy}
+              onClick={() => setCancel(false)}
+            >
+              {t("cancel")}
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

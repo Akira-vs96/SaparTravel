@@ -1,29 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
   CalendarDays,
   Check,
-  CheckCircle2,
   Clock3,
   MapPin,
   ShieldCheck,
   Star,
   X,
+  GitCompareArrows,
+  Images,
 } from "lucide-react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { api } from "../api";
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import { useApp } from "../context";
 import { formatDate, money } from "../i18n";
 import {
-  FormError,
   Modal,
   Photo,
   ResourceState,
   SaveButton,
   useResource,
 } from "../components/common";
-
+import Reviews from "../components/Reviews";
+import CancellationPolicy from "../components/CancellationPolicy";
 export default function Trip() {
   const { slug } = useParams();
   const { lang } = useApp();
@@ -31,42 +36,55 @@ export default function Trip() {
   return (
     <div className="page-container trip-page">
       <ResourceState resource={resource}>
-        {(tour) => (
-          <TripContent key={tour.id} tour={tour} reload={resource.reload} />
-        )}
+        {(tour) => <TripContent key={tour.id} tour={tour} />}
       </ResourceState>
     </div>
   );
 }
-
-function TripContent({ tour, reload }) {
-  const { lang, t, user } = useApp();
+function TripContent({ tour }) {
+  const { lang, t, user, comparison, toggleCompare } = useApp();
   const navigate = useNavigate();
-  const [dateId, setDateId] = useState("");
-  const [travelers, setTravelers] = useState(1);
-  const [bookingOpen, setBookingOpen] = useState(false);
-  const today = new Date().toISOString().slice(0, 10);
-  const departures = tour.departures.filter((item) => item.start_date >= today);
+  const [params] = useSearchParams();
+  const [dateId, setDateId] = useState(params.get("departure") || "");
+  const [travelers, setTravelers] = useState(
+    Number(params.get("travelers") || tour.min_participants || 1),
+  );
+  const [gallery, setGallery] = useState(null);
+  const today = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Almaty",
+  }).format(new Date());
+  const departures = tour.departures.filter(
+    (item) => item.start_date >= today && item.status !== "cancelled",
+  );
   const selected =
     departures.find((item) => item.id === dateId) ||
     departures.find((item) => item.available_seats > 0);
-  useEffect(() => {
-    if (selected)
-      setTravelers((value) =>
-        Math.max(1, Math.min(value, selected.available_seats, 20)),
-      );
-  }, [selected?.id, selected?.available_seats]);
-  const book = (event) => {
-    event.preventDefault();
-    if (!user)
-      return navigate(
-        `/login?next=${encodeURIComponent(`/trips/${tour.slug}`)}`,
-      );
-    setBookingOpen(true);
+  const pictures = [
+    ...new Set(
+      [
+        tour.image_url,
+        ...(tour.gallery || []).map((image) =>
+          typeof image === "string" ? image : image.url || image.image_url,
+        ),
+      ].filter(Boolean),
+    ),
+  ];
+  const maxTravelers = Math.min(
+    selected?.available_seats || 0,
+    tour.max_participants || 20,
+  );
+  const compared = comparison.some((item) => item.id === tour.id);
+  const book = (e) => {
+    e.preventDefault();
+    const next = `/checkout/${tour.slug}?departure=${selected.id}&travelers=${travelers}`;
+    navigate(user ? next : `/login?next=${encodeURIComponent(next)}`);
   };
   return (
     <>
-      <Link className="back-link" to="/explore">
+      <Link
+        className="back-link"
+        to={params.get("from") ? `/explore?${params.get("from")}` : "/explore"}
+      >
         <ArrowLeft size={16} />
         {t("backCatalog")}
       </Link>
@@ -74,7 +92,7 @@ function TripContent({ tour, reload }) {
         <div>
           <p className="eyebrow">
             <MapPin size={14} />
-            {tour.destination} · {t(tour.continent)}
+            {tour.destination} · {t(tour.category)}
           </p>
           <h1>{tour.title}</h1>
           <div className="trip-meta">
@@ -82,39 +100,82 @@ function TripContent({ tour, reload }) {
               <Clock3 size={16} />
               {tour.duration_days} {t("days")}
             </span>
-            <span>{t(tour.category)}</span>
-            <span>
+            <a href="#reviews">
               <Star size={15} />
               {tour.review_count > 0
                 ? `${tour.rating} (${tour.review_count})`
                 : t("newTrip")}
+            </a>
+            <span>
+              {t("hostedBy")} {tour.vendor.name}
             </span>
           </div>
         </div>
-        <SaveButton tour={tour} className="large-save" />
+        <div className="trip-heading-actions">
+          <button
+            className={`icon-button ${compared ? "selected" : ""}`}
+            onClick={() => toggleCompare(tour)}
+            aria-label={t(compared ? "compareRemove" : "compareAdd")}
+            aria-pressed={compared}
+          >
+            <GitCompareArrows size={21} />
+          </button>
+          <SaveButton tour={tour} className="large-save" />
+        </div>
       </div>
-      <div className="trip-cover">
-        <Photo src={tour.image_url} alt={tour.title} loading="eager" />
+      <div
+        className={`trip-gallery ${pictures.length > 1 ? "has-gallery" : ""}`}
+      >
+        <button
+          className="gallery-main"
+          onClick={() => setGallery(0)}
+          aria-label={t("gallery")}
+        >
+          <Photo src={pictures[0]} alt={tour.title} loading="eager" />
+          <span>
+            <Images size={17} />
+            {t("gallery")} · {pictures.length}
+          </span>
+        </button>
+        {pictures.length > 1 && (
+          <div className="gallery-thumbnails">
+            {pictures.slice(1, 3).map((src, index) => (
+              <button
+                key={src}
+                onClick={() => setGallery(index + 1)}
+                aria-label={`${t("gallery")} ${index + 2}`}
+              >
+                <Photo src={src} alt={`${tour.title} ${index + 2}`} />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
       <div className="trip-layout">
         <div className="trip-content">
-          <section>
+          <nav className="trip-section-nav">
+            <a href="#overview">{t("overview")}</a>
+            <a href="#itinerary">{t("itinerary")}</a>
+            <a href="#included">{t("included")}</a>
+            <a href="#reviews">{t("reviews")}</a>
+          </nav>
+          <section id="overview">
             <p className="eyebrow">
               {t("hostedBy")} · {tour.vendor.name}
             </p>
             <h2>{t("overview")}</h2>
             <p className="trip-description">{tour.description}</p>
             <div className="tags">
-              {tour.tags?.map((tag, index) => (
-                <span key={`${tag}-${index}`}>{tag}</span>
+              {tour.tags?.map((tag, i) => (
+                <span key={i}>{tag}</span>
               ))}
             </div>
           </section>
-          <section>
+          <section id="itinerary">
             <h2>{t("itinerary")}</h2>
             <div className="itinerary">
               {tour.itinerary.map((item, index) => (
-                <article key={`${item.day}-${index}`}>
+                <article key={index}>
                   <div className="day-number">
                     {String(item.day).padStart(2, "0")}
                   </div>
@@ -129,12 +190,12 @@ function TripContent({ tour, reload }) {
               ))}
             </div>
           </section>
-          <section className="inclusions">
+          <section className="inclusions" id="included">
             <div>
               <h3>{t("included")}</h3>
               <ul>
-                {tour.included.map((item, index) => (
-                  <li key={index}>
+                {tour.included.map((item, i) => (
+                  <li key={i}>
                     <Check size={17} />
                     {item}
                   </li>
@@ -144,8 +205,8 @@ function TripContent({ tour, reload }) {
             <div>
               <h3>{t("excluded")}</h3>
               <ul>
-                {tour.excluded.map((item, index) => (
-                  <li key={index}>
+                {tour.excluded.map((item, i) => (
+                  <li key={i}>
                     <X size={16} />
                     {item}
                   </li>
@@ -153,13 +214,39 @@ function TripContent({ tour, reload }) {
               </ul>
             </div>
           </section>
-          <p className="demo-notice">{t("demo")}</p>
+          {tour.services?.length > 0 && (
+            <section>
+              <h2>{t("additionalServices")}</h2>
+              <div className="service-list">
+                {tour.services.map((service) => (
+                  <div key={service.id}>
+                    <span>{service.name}</span>
+                    <strong>
+                      {money(service.price, lang)}
+                      {service.per_person ? ` / ${t("perPerson")}` : ""}
+                    </strong>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+          <section>
+            <h2>{t("restrictions")}</h2>
+            <p>
+              {t("travelers")}: {tour.min_participants || 1}–
+              {tour.max_participants || 20}
+            </p>
+            {tour.restrictions && <p>{tour.restrictions}</p>}
+            <h3 className="policy-heading">{t("cancellationPolicy")}</h3>
+            <CancellationPolicy policy={tour.cancellation_policy} />
+          </section>
+          <Reviews experienceId={tour.id} />
         </div>
         <aside className="booking-sidebar">
           <form className="booking-panel" onSubmit={book}>
             <div className="booking-price">
               <span>{t("from")}</span>
-              <strong>{money(selected?.price ?? tour.price_from, lang)}</strong>
+              <strong>{money(tour.price_from, lang)}</strong>
               <span>{t("perPerson")}</span>
             </div>
             <div className="booking-divider" />
@@ -169,7 +256,10 @@ function TripContent({ tour, reload }) {
                   {t("chooseDate")}
                   <select
                     value={selected.id}
-                    onChange={(event) => setDateId(event.target.value)}
+                    onChange={(e) => {
+                      setDateId(e.target.value);
+                      setTravelers(Number(tour.min_participants || 1));
+                    }}
                   >
                     {departures.map((departure) => (
                       <option
@@ -177,7 +267,7 @@ function TripContent({ tour, reload }) {
                         key={departure.id}
                         disabled={departure.available_seats < 1}
                       >
-                        {formatDate(departure.start_date, lang)} —{" "}
+                        {formatDate(departure.start_date, lang)} ·{" "}
                         {departure.available_seats} {t("seats")}
                       </option>
                     ))}
@@ -193,26 +283,25 @@ function TripContent({ tour, reload }) {
                   <input
                     type="number"
                     required
-                    min="1"
-                    max={Math.min(selected.available_seats, 20)}
-                    step="1"
+                    min={tour.min_participants || 1}
+                    max={maxTravelers}
                     value={travelers}
-                    onChange={(event) =>
+                    onChange={(e) =>
                       setTravelers(
-                        event.target.value === ""
-                          ? ""
-                          : Number(event.target.value),
+                        e.target.value === "" ? "" : Number(e.target.value),
                       )
                     }
                   />
                 </label>
                 <div className="booking-total">
-                  <span>{t("total")}</span>
+                  <span>
+                    {money(selected.price, lang)} × {travelers}
+                  </span>
                   <strong>
-                    {money(selected.price * Number(travelers), lang)}
+                    {money(Number(selected.price) * Number(travelers), lang)}
                   </strong>
                 </div>
-                <button className="button primary full-width" type="submit">
+                <button className="button primary full-width">
                   {t(user ? "book" : "loginToBook")}
                   <ArrowRight size={17} />
                 </button>
@@ -229,129 +318,41 @@ function TripContent({ tour, reload }) {
               {t("noPayment")}
             </p>
           </form>
-          <p className="sidebar-note">{t("paymentNote")}</p>
+          <p className="sidebar-note">{t("reserveNote")}</p>
         </aside>
       </div>
-      {bookingOpen && selected && (
-        <BookingModal
-          tour={tour}
-          departure={selected}
-          travelers={Number(travelers)}
-          onClose={() => setBookingOpen(false)}
-          reload={reload}
-        />
-      )}
-    </>
-  );
-}
-function BookingModal({ tour, departure, travelers, onClose, reload }) {
-  const { user, token, lang, t } = useApp();
-  const [name, setName] = useState(user.name);
-  const [email, setEmail] = useState(user.email);
-  const [notes, setNotes] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState(null);
-  const [booking, setBooking] = useState(null);
-  const submit = async (event) => {
-    event.preventDefault();
-    setBusy(true);
-    setError(null);
-    try {
-      const result = await api("/bookings", {
-        token,
-        method: "POST",
-        body: {
-          departure_id: departure.id,
-          travelers_count: travelers,
-          contact_name: name,
-          contact_email: email,
-          notes,
-        },
-      });
-      setBooking(result);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setBusy(false);
-    }
-  };
-  return (
-    <Modal
-      title={t(booking ? "bookingSuccess" : "bookingIntro")}
-      onClose={() => {
-        if (!busy) {
-          onClose();
-          if (booking) reload();
-        }
-      }}
-    >
-      {booking ? (
-        <div className="booking-success">
-          <CheckCircle2 size={58} />
-          <p>{t("bookingSuccessText")}</p>
-          <div className="reference-box">
-            <small>{t("reference")}</small>
-            <strong>{booking.reference}</strong>
-          </div>
-          <Link to="/bookings" className="button primary full-width">
-            {t("bookings")}
-            <ArrowRight size={17} />
-          </Link>
-        </div>
-      ) : (
-        <form onSubmit={submit} className="stack-form">
-          <div className="booking-summary">
-            <Photo src={tour.image_url} alt="" />
-            <div>
-              <strong>{tour.title}</strong>
-              <p>
-                {formatDate(departure.start_date, lang)} · {travelers}{" "}
-                {t("travelers").toLowerCase()}
-              </p>
+      {gallery !== null && (
+        <Modal title={tour.title} onClose={() => setGallery(null)}>
+          <div className="gallery-dialog">
+            <Photo
+              src={pictures[gallery]}
+              alt={`${tour.title} ${gallery + 1}`}
+              loading="eager"
+            />
+            <div className="gallery-controls">
+              <button
+                className="button secondary"
+                disabled={gallery === 0}
+                onClick={() => setGallery(gallery - 1)}
+                aria-label={t("previous")}
+              >
+                <ArrowLeft size={18} />
+              </button>
+              <span>
+                {gallery + 1} / {pictures.length}
+              </span>
+              <button
+                className="button secondary"
+                disabled={gallery === pictures.length - 1}
+                onClick={() => setGallery(gallery + 1)}
+                aria-label={t("next")}
+              >
+                <ArrowRight size={18} />
+              </button>
             </div>
           </div>
-          <label>
-            {t("contactName")}
-            <input
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              required
-              minLength="2"
-              maxLength="120"
-              autoComplete="name"
-            />
-          </label>
-          <label>
-            {t("contactEmail")}
-            <input
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              required
-              autoComplete="email"
-            />
-          </label>
-          <label>
-            {t("notes")} <span className="muted">({t("optional")})</span>
-            <textarea
-              rows="3"
-              maxLength="2000"
-              value={notes}
-              onChange={(event) => setNotes(event.target.value)}
-            />
-          </label>
-          <p className="info-note">{t("paymentNote")}</p>
-          <div className="booking-total">
-            <span>{t("total")}</span>
-            <strong>{money(departure.price * travelers, lang)}</strong>
-          </div>
-          <FormError error={error} />
-          <button className="button primary full-width" disabled={busy}>
-            {t(busy ? "sending" : "confirmBooking")}
-            <ArrowRight size={17} />
-          </button>
-        </form>
+        </Modal>
       )}
-    </Modal>
+    </>
   );
 }

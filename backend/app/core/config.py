@@ -17,6 +17,12 @@ class Settings(BaseSettings):
     admin_email: EmailStr | None = None
     admin_password: SecretStr | None = None
     auth_rate_limit: int = Field(default=20, ge=0, le=1000)
+    reservation_minutes: int = Field(default=15, ge=1, le=120)
+    payment_demo_enabled: bool = False
+    demo_mailbox_enabled: bool = False
+    demo_private_data: bool = False
+    password_reset_expire_minutes: int = Field(default=30, ge=5, le=120)
+    public_web_url: str = "http://localhost:5173"
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
@@ -56,6 +62,10 @@ class Settings(BaseSettings):
             raise ValueError("ADMIN_PASSWORD must contain at least 10 characters")
         if self.auth_rate_limit == 0 and self.environment != "testing":
             raise ValueError("Authentication rate limiting can only be disabled in tests")
+        if self.environment == "production" and (self.demo_private_data or self.demo_mailbox_enabled):
+            raise ValueError("Private demonstration data and mailbox are disabled in production")
+        if not self.public_web_url.startswith(("http://", "https://")):
+            raise ValueError("PUBLIC_WEB_URL must use http or https")
         return self
 
     @property

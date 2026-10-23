@@ -11,7 +11,7 @@
     "react-dom": "19.3.0",
     "react-router-dom": "7.18.4",
     "source-map-js": "1.2.2",
-    "vite": "8.3.0"
+    "vite": "8.3.5"
   },
   "name": "sapar-travel-frontend",
   "version": "1.0.0",

@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { ArrowUpRight, Compass, Heart, Menu, UserRound, X } from "lucide-react";
+import {
+  ArrowUpRight,
+  Compass,
+  Heart,
+  Menu,
+  UserRound,
+  X,
+  GitCompareArrows,
+  Bell,
+} from "lucide-react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useApp } from "../context";
 
 export default function Layout() {
-  const { user, lang, setLang, t, logout } = useApp();
+  const { user, lang, setLang, t, logout, comparison } = useApp();
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   useEffect(() => {
@@ -29,6 +38,7 @@ export default function Layout() {
             <NavLink to="/explore">{t("explore")}</NavLink>
             <a href="/#destinations">{t("destinations")}</a>
             <NavLink to="/about">{t("about")}</NavLink>
+            <NavLink to="/support">{t("support")}</NavLink>
           </nav>
           <div className="header-actions">
             <select
@@ -41,6 +51,23 @@ export default function Layout() {
               <option value="kk">ҚАЗ</option>
               <option value="en">EN</option>
             </select>
+            <Link
+              className="icon-button desktop-only"
+              to="/compare"
+              aria-label={`${t("compare")} (${comparison.length})`}
+            >
+              <GitCompareArrows size={20} />
+              {comparison.length > 0 && <sup>{comparison.length}</sup>}
+            </Link>
+            {user && (
+              <Link
+                className="icon-button desktop-only"
+                to="/notifications"
+                aria-label={t("notifications")}
+              >
+                <Bell size={20} />
+              </Link>
+            )}
             <Link
               className="icon-button desktop-only"
               to="/favorites"
@@ -75,6 +102,12 @@ export default function Layout() {
             <Link to="/explore">{t("explore")}</Link>
             <Link to="/favorites">{t("favorites")}</Link>
             <Link to="/bookings">{t("bookings")}</Link>
+            <Link to="/compare">
+              {t("compare")} ({comparison.length})
+            </Link>
+            <Link to="/saved-searches">{t("savedSearches")}</Link>
+            <Link to="/notifications">{t("notifications")}</Link>
+            <Link to="/support">{t("support")}</Link>
             <Link to="/about">{t("about")}</Link>
             {user && ["vendor", "admin"].includes(user.role) && (
               <Link to="/manage">{t("manage")}</Link>
@@ -108,12 +141,15 @@ export default function Layout() {
             <Link to="/privacy">
               {t("privacy")} <ArrowUpRight size={14} />
             </Link>
+            <Link to="/support">
+              {t("support")} <ArrowUpRight size={14} />
+            </Link>
           </nav>
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} SaparTravel</span>
           <span>{t("footerText")}</span>
-          <span>USD · {lang.toUpperCase()}</span>
+          <span>KZT · {lang.toUpperCase()}</span>
         </div>
       </footer>
     </div>

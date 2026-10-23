@@ -9,6 +9,7 @@ import secrets
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--admin-email", default="admin@example.com")
+    parser.add_argument("--demo", action="store_true", help="Enable private local demo accounts, mailbox and payment simulator")
     args = parser.parse_args()
     target = Path(__file__).resolve().parents[1] / ".env"
     if target.exists():
@@ -26,6 +27,11 @@ def main() -> None:
         "SEED_DEMO_DATA=true\n"
         "ENVIRONMENT=development\n"
         "ACCESS_TOKEN_EXPIRE_MINUTES=120\n"
+        "AUTH_RATE_LIMIT=20\nRESERVATION_MINUTES=15\n"
+        f"PAYMENT_DEMO_ENABLED={'true' if args.demo else 'false'}\n"
+        f"DEMO_PRIVATE_DATA={'true' if args.demo else 'false'}\n"
+        f"DEMO_MAILBOX_ENABLED={'true' if args.demo else 'false'}\n"
+        "PASSWORD_RESET_EXPIRE_MINUTES=30\nPUBLIC_WEB_URL=http://localhost:5173\nLOG_LEVEL=INFO\n"
         "CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173\n"
         "DB_PORT=5432\nAPI_PORT=8000\nWEB_PORT=5173\n"
         f"DATABASE_URL=postgresql+psycopg://sapar:{password}@localhost:5432/sapartravel\n"

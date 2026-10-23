@@ -19,11 +19,12 @@ os.environ.update(
     DATABASE_URL=_test_url, ENVIRONMENT="testing",
     JWT_SECRET=string.ascii_letters + string.digits + string.punctuation,
     ADMIN_EMAIL="", ADMIN_PASSWORD="", AUTH_RATE_LIMIT="0", SEED_DEMO_DATA="false",
+    PAYMENT_DEMO_ENABLED="true", DEMO_MAILBOX_ENABLED="false", DEMO_PRIVATE_DATA="false",
 )
 
 from app.core.security import password_hash, token_for
 from app.db import Base, SessionLocal, engine
-from app.domain.models import Departure, Destination, Experience, User
+from app.domain.models import CategoryRecord, Departure, Destination, Experience, User
 from app.main import app
 from datetime import date, timedelta
 
@@ -62,6 +63,9 @@ def client():
 
 @pytest.fixture
 def catalog(db):
+    for code in ("Nature", "Culture", "Adventure", "Food", "Beach", "City"):
+        db.add(CategoryRecord(code=code, name_ru=code, name_en=code, name_kk=code))
+    db.flush()
     users = {}
     for role, name in (("admin", "Admin"), ("vendor", "Vendor"), ("traveler", "Traveler")):
         user = User(name=name, email=f"{role}@example.com", password_hash=HASH, role=role)

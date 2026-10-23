@@ -10,6 +10,7 @@ import {
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { api } from "../api";
 import { useApp } from "../context";
+import { photoCache } from "../photoCache";
 
 export function useResource(path, options = {}) {
   const { token } = useApp();
@@ -81,7 +82,41 @@ export function ResourceState({ resource, children }) {
 }
 export function Photo({ src, alt, className = "", ...props }) {
   const [failed, setFailed] = useState(false);
-  useEffect(() => setFailed(false), [src]);
+  const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef(null);
+  const timeoutRef = useRef(null);
+  const photoId =
+    typeof src === "string"
+      ? src.match(
+          /^https:\/\/images\.unsplash\.com\/(photo-[A-Za-z0-9-]+)/,
+        )?.[1]
+      : null;
+  const resolved = photoCache[photoId] || src;
+  useEffect(() => {
+    setFailed(false);
+    setLoaded(false);
+    clearTimeout(timeoutRef.current);
+    const img = imgRef.current;
+    if (!img || !resolved) return;
+    if (img.complete && img.naturalWidth) {
+      setLoaded(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          timeoutRef.current = setTimeout(() => setFailed(true), 10000);
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(img);
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeoutRef.current);
+    };
+  }, [resolved]);
   if (failed || !src)
     return (
       <div
@@ -94,11 +129,19 @@ export function Photo({ src, alt, className = "", ...props }) {
     );
   return (
     <img
-      src={src}
+      ref={imgRef}
+      src={resolved}
       alt={alt}
-      className={className}
+      className={`${className} ${loaded ? "" : "photo-loading"}`}
       loading="lazy"
-      onError={() => setFailed(true)}
+      onLoad={() => {
+        setLoaded(true);
+        clearTimeout(timeoutRef.current);
+      }}
+      onError={() => {
+        setFailed(true);
+        clearTimeout(timeoutRef.current);
+      }}
       {...props}
     />
   );
@@ -205,12 +248,99 @@ export function Modal({ title, children, onClose }) {
   );
 }
 export function FormError({ error }) {
-  const { errorText } = useApp();
+  const { errorText, t } = useApp();
+  const labels = {
+    name: "name",
+    email: "email",
+    password: "password",
+    current_password: "currentPassword",
+    new_password: "newPassword",
+    contact_name: "contactName",
+    contact_email: "contactEmail",
+    travelers_count: "travelers",
+    participants: "participants",
+    service_ids: "additionalServices",
+    promo_code: "promoCode",
+    notes: "notes",
+    accept_cancellation_policy: "cancellationPolicy",
+    departure_id: "chooseDate",
+    card_number: "cardNumber",
+    holder_name: "holderName",
+    expiry_month: "expiryMonth",
+    expiry_year: "expiryYear",
+    cvc: "cardCvc",
+    title: "title",
+    title_en: "title",
+    title_kk: "title",
+    description: "description",
+    description_en: "description",
+    description_kk: "description",
+    rating: "rating",
+    text: "message",
+    subject: "subject",
+    body: "message",
+    price: "price",
+    price_from: "price",
+    capacity: "capacity",
+    start_date: "startDate",
+    destination_id: "destinationLabel",
+    category: "category",
+    duration_days: "duration",
+    gallery: "gallery",
+    image_url: "imageUrl",
+    services: "additionalServices",
+    min_participants: "minParticipants",
+    max_participants: "maxParticipants",
+    cancellation_rules: "cancellationPolicy",
+    itinerary: "itinerary",
+    itinerary_en: "itinerary",
+    itinerary_kk: "itinerary",
+    publication_status: "status",
+    status: "status",
+    code: "code",
+    value: "discount",
+    min_amount: "minPrice",
+    starts_at: "periodFrom",
+    ends_at: "periodTo",
+    usage_limit: "usageLimit",
+    per_user_limit: "perUserLimit",
+    amount: "total",
+    reason: "reason",
+    role: "role",
+    name_ru: "russian",
+    name_en: "english",
+    name_kk: "kazakh",
+  };
+  const fields = error?.fields || error?.errors || [];
+  const fieldLabels = Array.isArray(fields)
+    ? [
+        ...new Set(
+          fields.map((item) => {
+            const path = String(
+              item.field || item.loc?.join(".") || "",
+            ).replace(/^body\./, "");
+            const key = path.split(".")[0];
+            return t(labels[key] || "invalidField");
+          }),
+        ),
+      ]
+    : [];
   return error ? (
-    <p className="form-error" role="alert">
+    <div className="form-error" role="alert">
       <AlertCircle size={17} />{" "}
-      {typeof error === "string" ? error : errorText(error)}
-    </p>
+      <div>
+        <p>{typeof error === "string" ? error : errorText(error)}</p>
+        {fieldLabels.length > 0 && (
+          <ul>
+            {fieldLabels.map((label) => (
+              <li key={label}>
+                <strong>{label}</strong> — {t("invalidValue")}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
   ) : null;
 }
 export function PageHeading({ eyebrow, title, text, children }) {

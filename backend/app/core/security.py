@@ -1,5 +1,9 @@
 from collections import defaultdict, deque
 from datetime import datetime, timedelta, timezone
+from hashlib import sha256
+from hmac import compare_digest
+from math import isfinite
+from uuid import uuid4
 from threading import Lock
 from time import monotonic
 from typing import Annotated
@@ -13,6 +17,7 @@ from sqlalchemy.orm import Session
 from app.core.config import get_settings
 from app.db import get_db
 from app.domain.models import User
+from app.domain.engagement import RevokedAccessToken, UserAccessBoundary
 
 password_hash = PasswordHash.recommended()
 # Valid hash also used for unknown accounts to reduce account timing disclosure.
@@ -45,30 +50,50 @@ def check_auth_rate(request: Request) -> None:
         attempts.append(now)
 
 
+def credential_digest(user: User) -> str:
+    return sha256(user.password_hash.encode()).hexdigest()
+
+
 def token_for(user: User) -> str:
     settings = get_settings()
     now = datetime.now(timezone.utc)
     return jwt.encode(
-        {"sub": user.id, "iat": now, "exp": now + timedelta(minutes=settings.access_token_expire_minutes),
+        {"sub": user.id, "jti": str(uuid4()), "issued": now.timestamp(), "cred": credential_digest(user), "iat": now, "exp": now + timedelta(minutes=settings.access_token_expire_minutes),
          "iss": "sapartravel", "aud": "sapartravel-api"},
         settings.jwt_secret.get_secret_value(), algorithm="HS256",
     )
 
 
-def current_user(db: DbSession, credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)]) -> User:
+def current_user(request: Request, db: DbSession, credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)]) -> User:
     error = HTTPException(401, "Войдите в аккаунт, чтобы продолжить.", headers={"WWW-Authenticate": "Bearer"})
     if credentials is None:
         raise error
     try:
         payload = jwt.decode(
             credentials.credentials, get_settings().jwt_secret.get_secret_value(), algorithms=["HS256"],
-            issuer="sapartravel", audience="sapartravel-api", options={"require": ["sub", "exp", "iat", "iss", "aud"]},
+            issuer="sapartravel", audience="sapartravel-api", options={"require": ["sub", "jti", "issued", "cred", "exp", "iat", "iss", "aud"]},
         )
         user = db.get(User, payload["sub"])
     except (jwt.InvalidTokenError, TypeError, ValueError):
         raise error from None
     if user is None or not user.is_active:
         raise error
+    credential = payload["cred"]
+    if not isinstance(credential, str) or not credential.isascii() or not compare_digest(credential_digest(user), credential):
+        raise error
+    issued = payload["issued"]
+    if type(issued) not in (int, float) or not isfinite(issued):
+        raise error
+    if db.get(RevokedAccessToken, payload["jti"]) is not None:
+        raise error
+    boundary = db.get(UserAccessBoundary, user.id)
+    if boundary:
+        invalidated_at = boundary.invalidated_at
+        if invalidated_at.tzinfo is None:
+            invalidated_at = invalidated_at.replace(tzinfo=timezone.utc)
+        if issued <= invalidated_at.timestamp():
+            raise error
+    request.state.auth_payload = payload
     return user
 
 

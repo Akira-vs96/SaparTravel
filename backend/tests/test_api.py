@@ -3,7 +3,7 @@ from datetime import date, timedelta
 import pytest
 from sqlalchemy import func, select
 
-from app.domain.models import Booking, BookingStatusHistory, Departure, Experience, Favorite, User
+from app.domain.models import Booking, BookingStatusHistory, Departure, Experience, ExperienceService, Favorite, User
 from app.core.security import password_hash
 from tests.conftest import headers
 
@@ -13,6 +13,15 @@ API = "/api/v1"
 def booking_body(catalog, count=2):
     return {"departure_id": catalog["departure"].id, "travelers_count": count,
             "contact_name": "Travel Guest", "contact_email": "guest@example.com", "notes": "Vegetarian meals"}
+
+
+def pay_booking(client, catalog, booking):
+    response = client.post(f"{API}/bookings/{booking['id']}/payments",
+                           headers={**headers(catalog["traveler"]), "Idempotency-Key": "test-success-" + booking["id"]},
+                           json={"card_number": "4242424242424242", "holder_name": "Travel Guest",
+                                 "expiry_month": 12, "expiry_year": date.today().year + 2, "cvc": "123"})
+    assert response.status_code == 200, response.text
+    assert response.json()["status"] == "succeeded"
 
 
 def tour_body(catalog):
@@ -75,9 +84,9 @@ def test_catalog_translation_filters_sort_and_pagination(client, catalog, db):
     db.add(another)
     db.commit()
     result = client.get(f"{API}/experiences?sort=price_asc&page_size=1").json()
-    assert result["items"][0]["price_from"] == 90
+    assert result["items"][0]["price_from"] == "90.00"
     assert result["total"] == 2 and result["pages"] == 2
-    assert client.get(f"{API}/experiences?sort=price_desc").json()["items"][0]["price_from"] == 250
+    assert client.get(f"{API}/experiences?sort=price_desc").json()["items"][0]["price_from"] == "250.00"
     destinations = client.get(f"{API}/destinations?lang=kk").json()["items"]
     assert destinations[0]["country"] == "Қазақстан"
     assert destinations[0]["tour_count"] == 2
@@ -104,8 +113,8 @@ def test_booking_price_seats_ownership_cancellation_and_history(client, catalog,
     response = client.post(f"{API}/bookings", headers=auth, json=booking_body(catalog, 3))
     assert response.status_code == 201
     booking = response.json()
-    assert booking["total_amount"] == 826.5
-    assert booking["payment_status"] == "pay_on_confirmation"
+    assert booking["total_amount"] == "826.50"
+    assert booking["payment_status"] == "unpaid"
     assert booking["status"] == "pending"
     assert client.get(f"{API}/experiences/mountain-trails").json()["departures"][0]["available_seats"] == 1
     assert client.post(f"{API}/bookings", headers=auth, json=booking_body(catalog, 2)).status_code == 409
@@ -130,13 +139,21 @@ def test_booking_validates_dates_quantity_and_rejects_client_total(client, catal
 
 def test_booking_snapshot_survives_catalog_changes(client, catalog, db):
     auth = headers(catalog["traveler"])
-    booked = client.post(f"{API}/bookings?lang=en", headers=auth, json=booking_body(catalog)).json()
+    service = ExperienceService(experience_id=catalog["tour"].id, name="Трансфер", name_en="Agreed transfer", name_kk="Келісілген трансфер",
+                                price=1000, currency="KZT", per_person=False, is_active=True)
+    db.add(service)
+    db.commit()
+    booked = client.post(f"{API}/bookings?lang=en", headers=auth, json={**booking_body(catalog), "service_ids": [service.id]}).json()
     catalog["tour"].title_en = "Changed later"
     catalog["tour"].price_from = 999
+    service.name_en = "Changed service title"
     db.commit()
     stored = client.get(f"{API}/bookings?lang=en", headers=auth).json()["items"][0]
     assert stored["experience"]["title"] == "Mountain trails"
     assert stored["total_amount"] == booked["total_amount"]
+    assert next(item["name"] for item in stored["items"] if item["kind"] == "service") == "Agreed transfer"
+    assert stored["history"][0]["actor_name"] == catalog["traveler"].name
+    assert stored["history"][0]["reason"] == "Places reserved while awaiting payment"
 
 
 def test_vendor_crud_permissions_and_localized_management(client, catalog, db):
@@ -174,6 +191,8 @@ def test_manage_bookings_scope_and_state_machine(client, catalog):
     assert client.patch(path, headers=headers(catalog["other_vendor"]), json={"status": "confirmed"}).status_code == 404
     vendor = headers(catalog["vendor"])
     assert client.patch(path, headers=vendor, json={"status": "completed"}).status_code == 409
+    assert client.patch(path, headers=vendor, json={"status": "confirmed"}).status_code == 409
+    pay_booking(client, catalog, booked)
     assert client.patch(path, headers=vendor, json={"status": "confirmed"}).json()["status"] == "confirmed"
     assert client.patch(path, headers=vendor, json={"status": "completed"}).status_code == 409
     assert client.patch(path, headers=vendor, json={"status": "cancelled"}).status_code == 200
@@ -220,6 +239,7 @@ def test_completed_trip_is_terminal_and_cannot_be_cancelled(client, catalog, db)
     booking = client.post(f"{API}/bookings", headers=traveler, json=booking_body(catalog)).json()
     path = f"{API}/manage/bookings/{booking['id']}"
     vendor = headers(catalog["vendor"])
+    pay_booking(client, catalog, booking)
     assert client.patch(path, headers=vendor, json={"status": "confirmed"}).status_code == 200
     stored = db.get(Booking, booking["id"])
     stored.start_date = date.today() - timedelta(days=3)

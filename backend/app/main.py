@@ -10,6 +10,10 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.exc import SQLAlchemyError
 
 from app.api.routes import router
+from app.api.identity import router as identity_router
+from app.api.engagement import router as engagement_router
+from app.api.commerce_routes import router as commerce_router
+from app.api.analytics import router as analytics_router
 from app.core.config import get_settings
 from app.core.logging import configure_logging
 from app.db import engine
@@ -31,7 +35,7 @@ app = FastAPI(title=settings.app_name, version="2.0.0", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware, allow_origins=settings.cors_origin_list, allow_credentials=False,
     allow_methods=["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
-    allow_headers=["Authorization", "Content-Type"],
+    allow_headers=["Authorization", "Content-Type", "Idempotency-Key"],
 )
 
 
@@ -64,3 +68,7 @@ async def request_logging(request: Request, call_next):
 
 
 app.include_router(router, prefix=settings.api_prefix)
+app.include_router(identity_router, prefix=settings.api_prefix)
+app.include_router(engagement_router, prefix=settings.api_prefix)
+app.include_router(commerce_router, prefix=settings.api_prefix)
+app.include_router(analytics_router, prefix=settings.api_prefix)

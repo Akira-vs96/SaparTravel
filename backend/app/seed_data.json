@@ -343,7 +343,7 @@
       "destination_slug": "kazakhstan",
       "category": "Nature",
       "duration_days": 4,
-      "price_from": 420,
+      "price_from": 210000,
       "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -471,26 +471,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 420
+          "price": 210000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 460
+          "price": 230000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 490
+          "price": 245000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "kakheti-table-and-vineyards",
       "destination_slug": "georgia",
       "category": "Food",
       "duration_days": 4,
-      "price_from": 390,
+      "price_from": 195000,
       "image_url": "https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -618,26 +619,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 390
+          "price": 195000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 430
+          "price": 215000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 460
+          "price": 230000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "kyoto-quiet-gardens",
       "destination_slug": "japan",
       "category": "Culture",
       "duration_days": 5,
-      "price_from": 1180,
+      "price_from": 590000,
       "image_url": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -780,26 +782,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 1180
+          "price": 590000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1220
+          "price": 610000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1250
+          "price": 625000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "bali-terraces-and-ocean",
       "destination_slug": "indonesia",
       "category": "Beach",
       "duration_days": 5,
-      "price_from": 760,
+      "price_from": 380000,
       "image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -942,26 +945,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 760
+          "price": 380000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 800
+          "price": 400000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 830
+          "price": 415000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "chiang-mai-markets-and-kitchen",
       "destination_slug": "thailand",
       "category": "Food",
       "duration_days": 3,
-      "price_from": 340,
+      "price_from": 170000,
       "image_url": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -1074,26 +1078,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 340
+          "price": 170000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 380
+          "price": 190000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 410
+          "price": 205000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "jaipur-colours-and-crafts",
       "destination_slug": "india",
       "category": "Culture",
       "duration_days": 4,
-      "price_from": 510,
+      "price_from": 255000,
       "image_url": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -1221,26 +1226,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 510
+          "price": 255000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 550
+          "price": 275000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 580
+          "price": 290000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "tuscany-hills-and-tables",
       "destination_slug": "italy",
       "category": "Food",
       "duration_days": 4,
-      "price_from": 990,
+      "price_from": 495000,
       "image_url": "https://images.unsplash.com/photo-1464207687429-7505649dae38?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -1368,26 +1374,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 990
+          "price": 495000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1030
+          "price": 515000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1060
+          "price": 530000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "provence-villages-and-light",
       "destination_slug": "france",
       "category": "Culture",
       "duration_days": 4,
-      "price_from": 1080,
+      "price_from": 540000,
       "image_url": "https://images.unsplash.com/photo-1499002238440-d264edd596ec?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -1515,26 +1522,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 1080
+          "price": 540000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1120
+          "price": 560000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1150
+          "price": 575000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "seville-courtyards-and-tapas",
       "destination_slug": "spain",
       "category": "City",
       "duration_days": 3,
-      "price_from": 620,
+      "price_from": 310000,
       "image_url": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -1647,26 +1655,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 620
+          "price": 310000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 660
+          "price": 330000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 690
+          "price": 345000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "iceland-waterfalls-and-black-sand",
       "destination_slug": "iceland",
       "category": "Nature",
       "duration_days": 5,
-      "price_from": 1690,
+      "price_from": 845000,
       "image_url": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -1809,26 +1818,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 1690
+          "price": 845000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1730
+          "price": 865000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1760
+          "price": 880000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "cappadocia-valley-walks",
       "destination_slug": "turkey",
       "category": "Adventure",
       "duration_days": 4,
-      "price_from": 680,
+      "price_from": 340000,
       "image_url": "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -1956,26 +1966,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 680
+          "price": 340000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 720
+          "price": 360000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 750
+          "price": 375000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "marrakech-courtyards-and-foothills",
       "destination_slug": "morocco",
       "category": "Culture",
       "duration_days": 4,
-      "price_from": 590,
+      "price_from": 295000,
       "image_url": "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -2103,26 +2114,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 590
+          "price": 295000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 630
+          "price": 315000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 660
+          "price": 330000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "arusha-landscapes-and-wildlife",
       "destination_slug": "tanzania",
       "category": "Nature",
       "duration_days": 5,
-      "price_from": 1480,
+      "price_from": 740000,
       "image_url": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -2265,26 +2277,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 1480
+          "price": 740000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1520
+          "price": 760000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1550
+          "price": 775000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "cape-town-coastal-roads",
       "destination_slug": "south-africa",
       "category": "Adventure",
       "duration_days": 4,
-      "price_from": 860,
+      "price_from": 430000,
       "image_url": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -2412,26 +2425,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 860
+          "price": 430000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 900
+          "price": 450000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 930
+          "price": 465000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "luxor-stories-of-the-nile",
       "destination_slug": "egypt",
       "category": "Culture",
       "duration_days": 4,
-      "price_from": 650,
+      "price_from": 325000,
       "image_url": "https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -2559,26 +2573,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 650
+          "price": 325000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 690
+          "price": 345000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 720
+          "price": 360000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "utah-red-rock-trails",
       "destination_slug": "usa",
       "category": "Adventure",
       "duration_days": 5,
-      "price_from": 1520,
+      "price_from": 760000,
       "image_url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -2721,26 +2736,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 1520
+          "price": 760000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1560
+          "price": 780000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1590
+          "price": 795000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "banff-lakes-and-forest-paths",
       "destination_slug": "canada",
       "category": "Nature",
       "duration_days": 4,
-      "price_from": 1320,
+      "price_from": 660000,
       "image_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -2868,26 +2884,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 1320
+          "price": 660000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1360
+          "price": 680000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1390
+          "price": 695000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "oaxaca-markets-and-artisans",
       "destination_slug": "mexico",
       "category": "Food",
       "duration_days": 4,
-      "price_from": 690,
+      "price_from": 345000,
       "image_url": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -3015,26 +3032,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 690
+          "price": 345000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 730
+          "price": 365000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 760
+          "price": 380000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "sacred-valley-villages-and-terraces",
       "destination_slug": "peru",
       "category": "Culture",
       "duration_days": 5,
-      "price_from": 920,
+      "price_from": 460000,
       "image_url": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -3177,26 +3195,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 920
+          "price": 460000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 960
+          "price": 480000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 990
+          "price": 495000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "rio-neighbourhoods-and-seafront",
       "destination_slug": "brazil",
       "category": "Beach",
       "duration_days": 4,
-      "price_from": 830,
+      "price_from": 415000,
       "image_url": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -3324,26 +3343,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 830
+          "price": 415000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 870
+          "price": 435000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 900
+          "price": 450000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "patagonia-walks-and-wide-skies",
       "destination_slug": "argentina",
       "category": "Adventure",
       "duration_days": 5,
-      "price_from": 1260,
+      "price_from": 630000,
       "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -3486,26 +3506,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 1260
+          "price": 630000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1300
+          "price": 650000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1330
+          "price": 665000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "queensland-rainforest-and-sea",
       "destination_slug": "australia",
       "category": "Beach",
       "duration_days": 5,
-      "price_from": 1440,
+      "price_from": 720000,
       "image_url": "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -3648,26 +3669,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 1440
+          "price": 720000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1480
+          "price": 740000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1510
+          "price": 755000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "south-island-lakes-and-valleys",
       "destination_slug": "new-zealand",
       "category": "Nature",
       "duration_days": 5,
-      "price_from": 1580,
+      "price_from": 790000,
       "image_url": "https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -3810,26 +3832,27 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 1580
+          "price": 790000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 1620
+          "price": 810000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 1650
+          "price": 825000
         }
-      ]
+      ],
+      "currency": "KZT"
     },
     {
       "slug": "monteverde-cloud-forest",
       "destination_slug": "costa-rica",
       "category": "Nature",
       "duration_days": 4,
-      "price_from": 790,
+      "price_from": 395000,
       "image_url": "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1400&q=85",
       "rating": 0,
       "review_count": 0,
@@ -3957,19 +3980,20 @@
         {
           "days_from_today": 14,
           "capacity": 12,
-          "price": 790
+          "price": 395000
         },
         {
           "days_from_today": 35,
           "capacity": 10,
-          "price": 830
+          "price": 415000
         },
         {
           "days_from_today": 63,
           "capacity": 14,
-          "price": 860
+          "price": 430000
         }
-      ]
+      ],
+      "currency": "KZT"
     }
   ]
 }

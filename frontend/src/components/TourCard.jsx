@@ -1,20 +1,38 @@
 import React from "react";
-import { ArrowUpRight, Clock3, MapPin, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import {
+  ArrowUpRight,
+  Clock3,
+  MapPin,
+  Star,
+  GitCompareArrows,
+} from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { useApp } from "../context";
 import { money } from "../i18n";
 import { Photo, SaveButton } from "./common";
 
 export default function TourCard({ tour }) {
-  const { lang, t } = useApp();
+  const { lang, t, comparison, toggleCompare } = useApp();
+  const compared = comparison.some((item) => item.id === tour.id);
+  const location = useLocation();
+  const href = `/trips/${tour.slug}${location.pathname === "/explore" && location.search ? `?from=${encodeURIComponent(location.search.slice(1))}` : tour.recommended_departure ? `?departure=${encodeURIComponent(tour.recommended_departure.id)}&travelers=${new URLSearchParams(location.search).get("travelers") || "1"}` : ""}`;
   return (
     <article className="tour-card">
       <div className="tour-card-image">
-        <Link to={`/trips/${tour.slug}`} aria-label={tour.title}>
+        <Link to={href} aria-label={tour.title}>
           <Photo src={tour.image_url} alt={tour.title} />
         </Link>
         <span className="image-label">{t(tour.category)}</span>
         <SaveButton tour={tour} />
+        <button
+          className={`compare-card-button ${compared ? "selected" : ""}`}
+          onClick={() => toggleCompare(tour)}
+          aria-label={t(compared ? "compareRemove" : "compareAdd")}
+          aria-pressed={compared}
+          title={t("compare")}
+        >
+          <GitCompareArrows size={17} />
+        </button>
       </div>
       <div className="tour-card-body">
         <div className="tour-location">
@@ -32,7 +50,7 @@ export default function TourCard({ tour }) {
           </span>
         </div>
         <h3>
-          <Link to={`/trips/${tour.slug}`}>{tour.title}</Link>
+          <Link to={href}>{tour.title}</Link>
         </h3>
         <p className="tour-duration">
           <Clock3 size={14} />
@@ -45,7 +63,7 @@ export default function TourCard({ tour }) {
             <small> / {t("perPerson")}</small>
           </span>
           <Link
-            to={`/trips/${tour.slug}`}
+            to={href}
             className="round-link"
             aria-label={`${t("details")}: ${tour.title}`}
           >

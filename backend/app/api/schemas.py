@@ -3,15 +3,16 @@ from decimal import Decimal
 from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field, HttpUrl, StringConstraints, field_validator, model_validator
+from app.core.clock import business_today
 
 Language = Literal["ru", "kk", "en"]
 Role = Literal["traveler", "vendor", "admin"]
-Category = Literal["Nature", "Culture", "Adventure", "Food", "Beach", "City"]
+Category = Annotated[str, StringConstraints(min_length=2, max_length=30, pattern=r"^[A-Za-z][A-Za-z0-9_-]*$")]
 Continent = Literal["Europe", "Asia", "Africa", "North America", "South America", "Oceania"]
 Name = Annotated[str, StringConstraints(strip_whitespace=True, min_length=2, max_length=120)]
 Title = Annotated[str, StringConstraints(strip_whitespace=True, min_length=3, max_length=180)]
 Description = Annotated[str, StringConstraints(strip_whitespace=True, min_length=20, max_length=10000)]
-Money = Annotated[Decimal, Field(ge=1, le=1000000, max_digits=12, decimal_places=2)]
+Money = Annotated[Decimal, Field(ge=1, le=100000000, max_digits=12, decimal_places=2)]
 ShortText = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=300)]
 
 
@@ -34,18 +35,51 @@ class ProfileInput(InputModel):
     name: Name
 
 
+class ParticipantInput(InputModel):
+    name: Name
+
+
 class BookingInput(InputModel):
     departure_id: str = Field(min_length=1, max_length=36)
     travelers_count: int = Field(ge=1, le=20, strict=True)
     contact_name: Name
     contact_email: EmailStr
     notes: str = Field(default="", max_length=2000)
+    participants: list[ParticipantInput] = Field(default_factory=list, max_length=20)
+    service_ids: list[str] = Field(default_factory=list, max_length=30)
+    promo_code: str = Field(default="", max_length=40)
+    accept_cancellation_policy: bool = True
+
+    @model_validator(mode="after")
+    def participant_count(self):
+        if self.participants and len(self.participants) != self.travelers_count:
+            raise ValueError("Количество участников должно совпадать с числом путешественников")
+        if len(set(self.service_ids)) != len(self.service_ids):
+            raise ValueError("Услуги не должны повторяться")
+        if not self.accept_cancellation_policy:
+            raise ValueError("Подтвердите условия отмены")
+        return self
 
 
 class ItineraryDay(InputModel):
     day: int = Field(ge=1, le=90)
     title: str = Field(min_length=1, max_length=180)
     description: str = Field(min_length=1, max_length=3000)
+
+
+class ServiceInput(InputModel):
+    id: str | None = None
+    name: Title
+    name_en: str = Field(default="", max_length=180)
+    name_kk: str = Field(default="", max_length=180)
+    price: Annotated[Decimal, Field(ge=0, le=100000000, max_digits=12, decimal_places=2)]
+    per_person: bool = True
+    is_active: bool = True
+
+
+class CancellationRuleInput(InputModel):
+    days_before: int = Field(ge=0, le=3650, strict=True)
+    refund_percent: int = Field(ge=0, le=100, strict=True)
 
 
 class ExperienceInput(InputModel):
@@ -60,7 +94,13 @@ class ExperienceInput(InputModel):
     duration_days: int = Field(ge=1, le=90, strict=True)
     price_from: Money
     image_url: HttpUrl
-    is_published: bool = True
+    is_published: bool = False
+    publication_status: Literal["draft", "published", "unpublished", "archived"] | None = None
+    min_participants: int = Field(default=1, ge=1, le=20)
+    max_participants: int = Field(default=20, ge=1, le=20)
+    gallery: list[HttpUrl] = Field(default_factory=list, max_length=12)
+    cancellation_rules: list[CancellationRuleInput] = Field(default_factory=list, max_length=10)
+    services: list["ServiceInput"] = Field(default_factory=list, max_length=20)
     tags: list[ShortText] = Field(default_factory=list, max_length=20)
     tags_en: list[ShortText] = Field(default_factory=list, max_length=20)
     tags_kk: list[ShortText] = Field(default_factory=list, max_length=20)
@@ -88,6 +128,12 @@ class ExperiencePatch(InputModel):
     price_from: Money | None = None
     image_url: HttpUrl | None = None
     is_published: bool | None = None
+    publication_status: Literal["draft", "published", "unpublished", "archived"] | None = None
+    min_participants: int | None = Field(default=None, ge=1, le=20)
+    max_participants: int | None = Field(default=None, ge=1, le=20)
+    gallery: list[HttpUrl] | None = Field(default=None, max_length=12)
+    cancellation_rules: list[CancellationRuleInput] | None = Field(default=None, max_length=10)
+    services: list["ServiceInput"] | None = Field(default=None, max_length=20)
     tags: list[ShortText] | None = Field(default=None, max_length=20)
     tags_en: list[ShortText] | None = Field(default=None, max_length=20)
     tags_kk: list[ShortText] | None = Field(default=None, max_length=20)
@@ -116,7 +162,7 @@ class DepartureInput(InputModel):
     @field_validator("start_date")
     @classmethod
     def future_date(cls, value: date) -> date:
-        if value <= date.today():
+        if value <= business_today():
             raise ValueError("Дата начала должна быть позже сегодняшнего дня")
         return value
 
@@ -161,4 +207,16 @@ class DestinationPatch(InputModel):
     def reject_nulls(self):
         if any(getattr(self, key) is None for key in self.model_fields_set):
             raise ValueError("Fields cannot be null; omit unchanged fields")
+        return self
+
+
+class DeparturePatch(InputModel):
+    capacity: int | None = Field(default=None, ge=1, le=1000, strict=True)
+    price: Money | None = None
+    status: Literal["scheduled", "cancelled"] | None = None
+
+    @model_validator(mode="after")
+    def reject_nulls(self):
+        if any(getattr(self, key) is None for key in self.model_fields_set):
+            raise ValueError("Fields cannot be null")
         return self

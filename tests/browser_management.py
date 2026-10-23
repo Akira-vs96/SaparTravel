@@ -236,11 +236,25 @@ def run(base_url: str) -> None:
                 set_translation(dialog, lang, values)
             dialog.get_by_role("combobox", name="Destination", exact=True).select_option(destination["id"])
             dialog.get_by_role("combobox", name="Experience", exact=True).select_option("Nature")
-            dialog.get_by_label("Price, USD", exact=True).fill("315.50")
+            dialog.get_by_label("Price, KZT", exact=True).fill("157750.50")
             dialog.get_by_label("Image URL", exact=True).fill(IMAGE_URL)
-            expect(dialog.get_by_label("Publish", exact=True)).not_to_be_checked()
+            gallery_urls = IMAGE_URL + "\n" + IMAGE_URL.replace("w=800", "w=1000")
+            dialog.get_by_role("textbox", name="Trip gallery", exact=False).fill(gallery_urls)
+            dialog.get_by_label("Minimum travelers", exact=True).fill("1")
+            dialog.get_by_label("Maximum travelers", exact=True).fill("8")
+            dialog.get_by_role("button", name="Add service", exact=True).click()
+            service = dialog.locator(".service-editor-row")
+            service.get_by_label("Name · RU", exact=True).fill("Трансфер к побережью")
+            service.get_by_label("Name · ҚАЗ", exact=True).fill("Жағалауға трансфер")
+            service.get_by_label("Name · EN", exact=True).fill("Coastal transfer")
+            service.get_by_label("Price, KZT · ₸", exact=True).fill("7500")
+            dialog.get_by_label("Days before departure", exact=True).first.fill("10")
+            expect(dialog.get_by_role("combobox", name="Status", exact=True)).to_have_value("draft")
             tour = save_dialog(page, dialog, "/manage/experiences", "POST")
             created_tour_id = tour["id"]
+            assert tour["currency"] == "KZT" and len(tour["gallery"]) == 2
+            assert tour["max_participants"] == 8 and tour["services"][0]["price"] == "7500.00"
+            assert tour["cancellation_rules"][0]["days_before"] == 10
             tour_title_ru = tour_values["ru"]["title"]
             card = page.locator(".manage-tour-card").filter(has_text=tour_title_ru)
             expect(card.get_by_text("Draft", exact=True)).to_be_visible()
@@ -249,7 +263,7 @@ def run(base_url: str) -> None:
             departure_date = (date.today() + timedelta(days=120)).isoformat()
             dialog.get_by_label("Start date", exact=True).fill(departure_date)
             dialog.get_by_label("Number of places", exact=True).fill("8")
-            dialog.get_by_label("Price, USD", exact=True).fill("315.50")
+            dialog.get_by_label("Price, KZT", exact=True).fill("157750.50")
             with page.expect_response(response_for(f"/manage/experiences/{tour['id']}/departures", "POST")) as result:
                 dialog.get_by_role("button", name="Add a departure", exact=True).click()
             assert result.value.ok, "Creating a departure failed"
@@ -271,8 +285,11 @@ def run(base_url: str) -> None:
                 expect(page.get_by_text(values["included"].splitlines()[0], exact=True)).to_be_visible()
                 expect(page.get_by_text(values["excluded"], exact=True)).to_be_visible()
                 expect(page.locator(".booking-panel select option")).to_have_count(1)
+                expect(page.get_by_text({"ru": "Трансфер к побережью", "kk": "Жағалауға трансфер", "en": "Coastal transfer"}[lang], exact=True)).to_be_visible()
             page.get_by_role("combobox", name="Language / Тіл / Язык", exact=True).select_option("en")
-            expect(page.locator(".booking-price strong")).to_have_text(re.compile(r"^\$315\.50?$"))
+            displayed_price = page.locator(".booking-price strong").inner_text()
+            assert "₸" in displayed_price or "KZT" in displayed_price
+            assert float(re.sub(r"[^0-9.]", "", displayed_price)) == 157750.5
             print("PASS: structured multilingual itinerary, departure, publishing and public details")
 
             page.goto(f"{base_url}/manage")
@@ -283,6 +300,9 @@ def run(base_url: str) -> None:
                 expect(dialog.locator(".itinerary-edit-day")).to_have_count(2)
                 expect(dialog.locator(".itinerary-edit-day").nth(1).get_by_label("Title", exact=True)).to_have_value(values["itinerary"][1]["title"])
             expect(dialog.get_by_label("Duration in days", exact=True)).to_be_disabled()
+            expect(dialog.get_by_label("Maximum travelers", exact=True)).to_have_value("8")
+            expect(dialog.locator(".service-editor-row").get_by_label("Name · EN", exact=True)).to_have_value("Coastal transfer")
+            expect(dialog.get_by_label("Days before departure", exact=True).first).to_have_value("10")
             dialog.get_by_role("button", name="Russian", exact=True).click()
             edited_title = f"{tour_title_ru} — обновлено"
             dialog.get_by_label("Title (Russian)", exact=True).fill(edited_title)
@@ -292,7 +312,7 @@ def run(base_url: str) -> None:
             with page.expect_response(response_for(f"/manage/experiences/{tour['id']}", "PATCH")) as result:
                 card.get_by_role("button", name="Unpublish", exact=True).click()
             assert result.value.ok, "Unpublishing the trip failed"
-            expect(card.get_by_text("Draft", exact=True)).to_be_visible()
+            expect(card.get_by_text("Unpublished", exact=True)).to_be_visible()
             expect(card.get_by_role("link", name="View trip", exact=True)).to_have_count(0)
             card.scroll_into_view_if_needed()
             page.screenshot(path=str(artifacts / "management.png"), full_page=True)
@@ -329,4 +349,7 @@ def run(base_url: str) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-url", default="http://127.0.0.1:4173")
-    run(parser.parse_args().base_url.rstrip("/"))
+    try:
+        run(parser.parse_args().base_url.rstrip("/"))
+    except Exception:
+        raise AssertionError("Management E2E failed; inspect test-results/management-failure.png and the last PASS checkpoint.") from None

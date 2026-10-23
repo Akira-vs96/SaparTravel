@@ -92,6 +92,11 @@ export default function Auth({ register = false }) {
             {register && <small>{t("passwordHint")}</small>}
           </label>
           <FormError error={error} />
+          {!register && (
+            <Link className="text-link forgot-link" to="/reset-password">
+              {t("forgotPassword")}
+            </Link>
+          )}
           <button disabled={busy} className="button primary full-width">
             {t(busy ? "sending" : register ? "register" : "login")}
             <ArrowRight size={17} />

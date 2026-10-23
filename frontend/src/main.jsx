@@ -10,6 +10,12 @@ import Trip from "./pages/Trip";
 import Auth from "./pages/Auth";
 import { Bookings, Favorites, Profile } from "./pages/Account";
 import Manage from "./pages/Manage";
+import Checkout from "./pages/Checkout";
+import BookingDetail from "./pages/BookingDetail";
+import { Compare, Notifications, SavedSearches } from "./pages/TravelTools";
+import Support, { SupportDetail } from "./pages/Support";
+import Password from "./pages/Password";
+import Recommendations from "./pages/Recommendations";
 import "./styles.css";
 
 function About() {
@@ -78,9 +84,69 @@ function App() {
           <Route element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="explore" element={<Catalog />} />
+            <Route path="recommendations" element={<Recommendations />} />
             <Route path="trips/:slug" element={<Trip />} />
             <Route path="login" element={<Auth key="login" />} />
             <Route path="register" element={<Auth key="register" register />} />
+            <Route path="reset-password" element={<Password />} />
+            <Route path="forgot-password" element={<Password />} />
+            <Route path="compare" element={<Compare />} />
+            <Route
+              path="checkout/:slug"
+              element={
+                <Protected>
+                  <Checkout />
+                </Protected>
+              }
+            />
+            <Route
+              path="bookings/:id"
+              element={
+                <Protected>
+                  <BookingDetail />
+                </Protected>
+              }
+            />
+            <Route
+              path="manage/bookings/:id"
+              element={
+                <Protected roles={["vendor", "admin"]}>
+                  <BookingDetail management />
+                </Protected>
+              }
+            />
+            <Route
+              path="notifications"
+              element={
+                <Protected>
+                  <Notifications />
+                </Protected>
+              }
+            />
+            <Route
+              path="saved-searches"
+              element={
+                <Protected>
+                  <SavedSearches />
+                </Protected>
+              }
+            />
+            <Route
+              path="support"
+              element={
+                <Protected>
+                  <Support />
+                </Protected>
+              }
+            />
+            <Route
+              path="support/:id"
+              element={
+                <Protected>
+                  <SupportDetail />
+                </Protected>
+              }
+            />
             <Route
               path="account"
               element={
