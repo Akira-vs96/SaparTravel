@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-23",
+  "rate": 447.94,
+  "base": "USD",
+  "quote": "KZT",
+  "source": "https://nationalbank.kz/rss/get_rates.cfm?fdate=23.10.2026",
+  "status": "official NBRK RSS; quant=1; response archived in nbrk-2026-10-23.xml",
+  "policy": "Fixed planning rate; no bank fees, spread or future FX forecast included"
+}

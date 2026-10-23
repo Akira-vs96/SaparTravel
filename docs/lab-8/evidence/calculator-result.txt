@@ -1,0 +1,70 @@
+Estimate cart
+Your custom price quote is shown below. You can download the summary if you'd like. Not sure how to get started or have questions about pricing? Contact our sales team
+Compute: Virtual Machine(Droplet) - Basic Nodes - Regular CPU
+4 GiB: 2 CPUs / 80 GiB SSD Disk / 4,000 GiB Transfer
+Quantity:
+
+$0.036/hr
+
+$24/mo
+
+Edit
+Delete
+Total
+
+$0.036/hr
+
+$24/mo
+
+Compute: Virtual Machine(Droplet) - Basic Nodes - Regular CPU
+1 GiB: 1 CPU / 25 GiB SSD Disk / 1,000 GiB Transfer
+Quantity:
+
+$0.009/hr
+
+$6/mo
+
+Edit
+Delete
+Total
+
+$0.009/hr
+
+$6/mo
+
+Databases: PostgreSQL - Standard Edition - Basic Nodes - Regular CPU
+2 GiB: 1 vCPU / 30 GiB SSD Disk
+Quantity:
+
+$0.045/hr
+
+$30.45/mo
+
+Edit
+Delete
+Total
+
+$0.045/hr
+
+$30.45/mo
+
+Storage: Spaces Object Storage
+250 GiB Storage + 1,024 GiB Outbound Transfer: 0 MiB additional storage, 0 MiB additional outbound transfer, 0 MiB cold storage, 0 MiB cold storage retrieval overage(after one free retrieval per month)
+Quantity:
+
+$5/mo
+
+Edit
+Delete
+Total
+
+$5/mo
+
+Estimate Summary
+Total hourly price
+$0.09/hr
+Total monthly price
+$65.45/mo
+Sign up
+Download estimate
+Cookie Preferences

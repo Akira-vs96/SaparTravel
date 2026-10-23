@@ -1,0 +1,1988 @@
+{
+  "as_of": "2026-10-23",
+  "currency": "KZT",
+  "exchange_rate_KZT_per_USD": 447.94,
+  "status": "PASS",
+  "scope": "Independent KZT arithmetic, formula caches and document packaging; no production SLO results claimed",
+  "formula_count": 338,
+  "results": [
+    {
+      "check": "exchange_rate_positive",
+      "pass": true,
+      "detail": {
+        "KZT_per_USD": 447.94
+      }
+    },
+    {
+      "check": "exchange_rate_documented",
+      "pass": true,
+      "detail": {
+        "date": "2026-10-23",
+        "rate": 447.94,
+        "base": "USD",
+        "quote": "KZT",
+        "source": "https://nationalbank.kz/rss/get_rates.cfm?fdate=23.10.2026",
+        "status": "official NBRK RSS; quant=1; response archived in nbrk-2026-10-23.xml",
+        "policy": "Fixed planning rate; no bank fees, spread or future FX forecast included"
+      }
+    },
+    {
+      "check": "no_spreadsheet_errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "formulas_recalculated",
+      "pass": true,
+      "detail": {
+        "formula_count": 338,
+        "uncached": []
+      }
+    },
+    {
+      "check": "workbook:Год по статьям минус месяцы",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Baseline минус план/EMV",
+      "pass": true,
+      "detail": {
+        "actual": -1.80443748831749e-09,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Лимит минус baseline/управление",
+      "pass": true,
+      "detail": {
+        "actual": 3.78349795937538e-10,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Поток = выручка − расходы",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Cloud TCO минус статьи",
+      "pass": true,
+      "detail": {
+        "actual": 9.45874489843845e-11,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Own TCO минус статьи",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Rent TCO минус статьи",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Разовые затраты не задвоены",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Недостающие часы при полном резерве",
+      "pass": true,
+      "detail": {
+        "actual": 46.2,
+        "expected": 46.2
+      }
+    },
+    {
+      "check": "workbook:Порог: N-1 убыточен",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Порог: N не убыточен",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Полный порог: N-1 убыточен",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Полный порог: N не убыточен",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Курс положителен",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Тариф VM переведен в тенге",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Backup fraction без валютной конвертации",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Базовый валютный сценарий: OPEX",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Базовый валютный сценарий: TCO",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "workbook:Распределение риск-резерва в тенге",
+      "pass": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "check": "KZT:Budget12!N12",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 13081550.172,
+        "expected_KZT": 13081550.172,
+        "source_USD": 29203.8
+      }
+    },
+    {
+      "check": "KZT:Budget12!N13",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 4300224,
+        "expected_KZT": 4300224.0,
+        "source_USD": 9600
+      }
+    },
+    {
+      "check": "KZT:Budget12!N17",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 283098.08,
+        "expected_KZT": 283098.08,
+        "source_USD": 632
+      }
+    },
+    {
+      "check": "KZT:Budget12!N18",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 13364648.252,
+        "expected_KZT": 13364648.252,
+        "source_USD": 29835.8
+      }
+    },
+    {
+      "check": "KZT:Budget12!N19",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 71670.4,
+        "expected_KZT": 71670.4,
+        "source_USD": 160
+      }
+    },
+    {
+      "check": "KZT:Budget12!N20",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 13436318.652,
+        "expected_KZT": 13436318.651999999,
+        "source_USD": 29995.8
+      }
+    },
+    {
+      "check": "KZT:Hosting!B12",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 50908.381,
+        "expected_KZT": 50908.381,
+        "source_USD": 113.65
+      }
+    },
+    {
+      "check": "KZT:Hosting!C12",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 80969.6344,
+        "expected_KZT": 80969.6344,
+        "source_USD": 180.76
+      }
+    },
+    {
+      "check": "KZT:Hosting!D12",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 94515.34,
+        "expected_KZT": 94515.34,
+        "source_USD": 211
+      }
+    },
+    {
+      "check": "KZT:Hosting!B15",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 1850619.316,
+        "expected_KZT": 1850619.3159999999,
+        "source_USD": 4131.4
+      }
+    },
+    {
+      "check": "KZT:Hosting!C15",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 4088509.6384,
+        "expected_KZT": 4088509.6384,
+        "source_USD": 9127.36
+      }
+    },
+    {
+      "check": "KZT:Hosting!D15",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 3464815.9,
+        "expected_KZT": 3464815.9,
+        "source_USD": 7735
+      }
+    },
+    {
+      "check": "KZT:Unit!B2",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 537.528,
+        "expected_KZT": 537.528,
+        "source_USD": 1.2
+      }
+    },
+    {
+      "check": "KZT:Unit!B3",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 89.588,
+        "expected_KZT": 89.58800000000001,
+        "source_USD": 0.2
+      }
+    },
+    {
+      "check": "KZT:Unit!B4",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 447.94,
+        "expected_KZT": 447.94,
+        "source_USD": 1
+      }
+    },
+    {
+      "check": "KZT:Unit!B5",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 319672.381,
+        "expected_KZT": 319672.381,
+        "source_USD": 713.65
+      }
+    },
+    {
+      "check": "KZT:Unit!B6",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 9335069.6,
+        "expected_KZT": 9335069.6,
+        "source_USD": 20840
+      }
+    },
+    {
+      "check": "KZT:Unit!B16",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 1635.1937715,
+        "expected_KZT": 1635.1937715000001,
+        "source_USD": 3.650475
+      }
+    },
+    {
+      "check": "KZT:Unit!B18",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 8781326.172,
+        "expected_KZT": 8781326.172,
+        "source_USD": 19603.8
+      }
+    },
+    {
+      "check": "KZT:Unit!B19",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 10184162.267,
+        "expected_KZT": 10184162.266999999,
+        "source_USD": 22735.55
+      }
+    },
+    {
+      "check": "KZT:Unit!B20",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 10538930.747,
+        "expected_KZT": 10538930.747,
+        "source_USD": 23527.55
+      }
+    },
+    {
+      "check": "JSON_currency_KZT",
+      "pass": true,
+      "detail": "KZT"
+    },
+    {
+      "check": "JSON_results:base",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 13081550.172,
+        "expected_KZT": 13081550.172
+      }
+    },
+    {
+      "check": "JSON_results:risk",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 283098.08,
+        "expected_KZT": 283098.08
+      }
+    },
+    {
+      "check": "JSON_results:management",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 71670.4,
+        "expected_KZT": 71670.4
+      }
+    },
+    {
+      "check": "JSON_results:baseline",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 13364648.252,
+        "expected_KZT": 13364648.252
+      }
+    },
+    {
+      "check": "JSON_results:funding",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 13436318.652,
+        "expected_KZT": 13436318.651999999
+      }
+    },
+    {
+      "check": "JSON_results:revenue",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 4300224.0,
+        "expected_KZT": 4300224.0
+      }
+    },
+    {
+      "check": "JSON_results:loss",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 8781326.172,
+        "expected_KZT": 8781326.172
+      }
+    },
+    {
+      "check": "JSON_results:fixed",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 319672.381,
+        "expected_KZT": 319672.381
+      }
+    },
+    {
+      "check": "JSON_results:initial",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 9335069.6,
+        "expected_KZT": 9335069.6
+      }
+    },
+    {
+      "check": "JSON_results:contribution",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 447.94,
+        "expected_KZT": 447.94
+      }
+    },
+    {
+      "check": "JSON_results:tco_cloud",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 1850619.316,
+        "expected_KZT": 1850619.3159999999
+      }
+    },
+    {
+      "check": "JSON_results:tco_own",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 4088509.6384,
+        "expected_KZT": 4088509.6384
+      }
+    },
+    {
+      "check": "JSON_results:tco_rent",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 3464815.9,
+        "expected_KZT": 3464815.9
+      }
+    },
+    {
+      "check": "JSON_results:peak_deficit",
+      "pass": true,
+      "detail": {
+        "actual_KZT": 10184162.267,
+        "expected_KZT": 10184162.266999999
+      }
+    },
+    {
+      "check": "unchanged:Budget12!N2",
+      "pass": true,
+      "detail": {
+        "actual": 8000,
+        "expected": 8000
+      }
+    },
+    {
+      "check": "unchanged:Unit!B8",
+      "pass": true,
+      "detail": {
+        "actual": 714,
+        "expected": 714
+      }
+    },
+    {
+      "check": "unchanged:Unit!B9",
+      "pass": true,
+      "detail": {
+        "actual": 1293,
+        "expected": 1293
+      }
+    },
+    {
+      "check": "unchanged:Unit!B10",
+      "pass": true,
+      "detail": {
+        "actual": 1315,
+        "expected": 1315
+      }
+    },
+    {
+      "check": "unchanged:Unit!B11",
+      "pass": true,
+      "detail": {
+        "actual": 2000,
+        "expected": 2000
+      }
+    },
+    {
+      "check": "unchanged:Unit!B23",
+      "pass": true,
+      "detail": {
+        "actual": 3068,
+        "expected": 3068
+      }
+    },
+    {
+      "check": "C1_error_budget_unchanged",
+      "pass": true,
+      "detail": {
+        "actual": [
+          43.2,
+          200
+        ],
+        "expected": [
+          43.2,
+          200
+        ]
+      }
+    },
+    {
+      "check": "C2_error_budget_unchanged",
+      "pass": true,
+      "detail": {
+        "actual": [
+          86.4000000000001,
+          40
+        ],
+        "expected": [
+          86.4,
+          40
+        ]
+      }
+    },
+    {
+      "check": "C3_error_budget_unchanged",
+      "pass": true,
+      "detail": {
+        "actual": [
+          129.6,
+          12
+        ],
+        "expected": [
+          129.6,
+          12
+        ]
+      }
+    },
+    {
+      "check": "budget_month_1_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          2687640,
+          0,
+          0,
+          0,
+          17917.6,
+          50908.381,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          2687640.0,
+          0.0,
+          0.0,
+          0.0,
+          17917.6,
+          50908.381,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "check": "budget_month_1_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 2756465.981,
+        "total": 2756465.981
+      }
+    },
+    {
+      "check": "budget_month_1_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 2756465.981,
+        "revenue_KZT": 0
+      }
+    },
+    {
+      "check": "budget_month_1_flow",
+      "pass": true,
+      "detail": {
+        "flow": -2756465.981,
+        "cumulative": -2756465.981
+      }
+    },
+    {
+      "check": "budget_month_1_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 94366.03,
+        "limit_KZT": 2850832.011
+      }
+    },
+    {
+      "check": "budget_month_2_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          2687640,
+          0,
+          0,
+          0,
+          0,
+          50908.381,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          2687640.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          50908.381,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "check": "budget_month_2_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 2738548.381,
+        "total": 2738548.381
+      }
+    },
+    {
+      "check": "budget_month_2_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 2738548.381,
+        "revenue_KZT": 0
+      }
+    },
+    {
+      "check": "budget_month_2_flow",
+      "pass": true,
+      "detail": {
+        "flow": -2738548.381,
+        "cumulative": -5495014.362
+      }
+    },
+    {
+      "check": "budget_month_2_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 94366.03,
+        "limit_KZT": 2832914.411
+      }
+    },
+    {
+      "check": "budget_month_3_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          2687640,
+          671910,
+          358352,
+          0,
+          0,
+          50908.381,
+          0,
+          0,
+          0
+        ],
+        "expected": [
+          2687640.0,
+          671910.0,
+          358352.0,
+          0.0,
+          0.0,
+          50908.381,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "check": "budget_month_3_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 3768810.381,
+        "total": 3768810.381
+      }
+    },
+    {
+      "check": "budget_month_3_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 3768810.381,
+        "revenue_KZT": 0
+      }
+    },
+    {
+      "check": "budget_month_3_flow",
+      "pass": true,
+      "detail": {
+        "flow": -3768810.381,
+        "cumulative": -9263824.743
+      }
+    },
+    {
+      "check": "budget_month_3_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 94366.02,
+        "limit_KZT": 3934846.801
+      }
+    },
+    {
+      "check": "budget_month_4_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          0,
+          0,
+          223970,
+          0,
+          50908.381,
+          223970,
+          44794,
+          8958.8
+        ],
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          223970.0,
+          0.0,
+          50908.381,
+          223970.0,
+          44794.0,
+          8958.8
+        ]
+      }
+    },
+    {
+      "check": "budget_month_4_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 552601.1810000001,
+        "total": 552601.181
+      }
+    },
+    {
+      "check": "budget_month_4_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 552601.181,
+        "revenue_KZT": 53752.8
+      }
+    },
+    {
+      "check": "budget_month_4_flow",
+      "pass": true,
+      "detail": {
+        "flow": -498848.381,
+        "cumulative": -9762673.124
+      }
+    },
+    {
+      "check": "budget_month_4_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 0,
+        "limit_KZT": 552601.181
+      }
+    },
+    {
+      "check": "budget_month_5_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          50908.381,
+          223970,
+          44794,
+          17917.6
+        ],
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          50908.381,
+          223970.0,
+          44794.0,
+          17917.6
+        ]
+      }
+    },
+    {
+      "check": "budget_month_5_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 337589.98099999997,
+        "total": 337589.981
+      }
+    },
+    {
+      "check": "budget_month_5_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 337589.981,
+        "revenue_KZT": 107505.6
+      }
+    },
+    {
+      "check": "budget_month_5_flow",
+      "pass": true,
+      "detail": {
+        "flow": -230084.381,
+        "cumulative": -9992757.505
+      }
+    },
+    {
+      "check": "budget_month_5_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 0,
+        "limit_KZT": 337589.981
+      }
+    },
+    {
+      "check": "budget_month_6_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          50908.381,
+          223970,
+          44794,
+          35835.2
+        ],
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          50908.381,
+          223970.0,
+          44794.0,
+          35835.2
+        ]
+      }
+    },
+    {
+      "check": "budget_month_6_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 355507.581,
+        "total": 355507.581
+      }
+    },
+    {
+      "check": "budget_month_6_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 355507.581,
+        "revenue_KZT": 215011.2
+      }
+    },
+    {
+      "check": "budget_month_6_flow",
+      "pass": true,
+      "detail": {
+        "flow": -140496.381,
+        "cumulative": -10133253.886
+      }
+    },
+    {
+      "check": "budget_month_6_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 0,
+        "limit_KZT": 355507.581
+      }
+    },
+    {
+      "check": "budget_month_7_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          50908.381,
+          223970,
+          44794,
+          53752.8
+        ],
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          50908.381,
+          223970.0,
+          44794.0,
+          53752.8
+        ]
+      }
+    },
+    {
+      "check": "budget_month_7_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 373425.181,
+        "total": 373425.181
+      }
+    },
+    {
+      "check": "budget_month_7_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 373425.181,
+        "revenue_KZT": 322516.8
+      }
+    },
+    {
+      "check": "budget_month_7_flow",
+      "pass": true,
+      "detail": {
+        "flow": -50908.381,
+        "cumulative": -10184162.267
+      }
+    },
+    {
+      "check": "budget_month_7_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 0,
+        "limit_KZT": 373425.181
+      }
+    },
+    {
+      "check": "budget_month_8_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          50908.381,
+          223970,
+          44794,
+          71670.4
+        ],
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          50908.381,
+          223970.0,
+          44794.0,
+          71670.4
+        ]
+      }
+    },
+    {
+      "check": "budget_month_8_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 391342.78099999996,
+        "total": 391342.781
+      }
+    },
+    {
+      "check": "budget_month_8_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 391342.781,
+        "revenue_KZT": 430022.4
+      }
+    },
+    {
+      "check": "budget_month_8_flow",
+      "pass": true,
+      "detail": {
+        "flow": 38679.6190000001,
+        "cumulative": -10145482.648
+      }
+    },
+    {
+      "check": "budget_month_8_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 0,
+        "limit_KZT": 391342.781
+      }
+    },
+    {
+      "check": "budget_month_9_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          50908.381,
+          223970,
+          44794,
+          89588
+        ],
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          50908.381,
+          223970.0,
+          44794.0,
+          89588.0
+        ]
+      }
+    },
+    {
+      "check": "budget_month_9_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 409260.381,
+        "total": 409260.381
+      }
+    },
+    {
+      "check": "budget_month_9_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 409260.381,
+        "revenue_KZT": 537528
+      }
+    },
+    {
+      "check": "budget_month_9_flow",
+      "pass": true,
+      "detail": {
+        "flow": 128267.619,
+        "cumulative": -10017215.029
+      }
+    },
+    {
+      "check": "budget_month_9_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 0,
+        "limit_KZT": 409260.381
+      }
+    },
+    {
+      "check": "budget_month_10_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          50908.381,
+          223970,
+          44794,
+          116464.4
+        ],
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          50908.381,
+          223970.0,
+          44794.0,
+          116464.4
+        ]
+      }
+    },
+    {
+      "check": "budget_month_10_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 436136.78099999996,
+        "total": 436136.781
+      }
+    },
+    {
+      "check": "budget_month_10_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 436136.781,
+        "revenue_KZT": 698786.4
+      }
+    },
+    {
+      "check": "budget_month_10_flow",
+      "pass": true,
+      "detail": {
+        "flow": 262649.619,
+        "cumulative": -9754565.41
+      }
+    },
+    {
+      "check": "budget_month_10_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 0,
+        "limit_KZT": 436136.781
+      }
+    },
+    {
+      "check": "budget_month_11_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          50908.381,
+          223970,
+          44794,
+          143340.8
+        ],
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          50908.381,
+          223970.0,
+          44794.0,
+          143340.8
+        ]
+      }
+    },
+    {
+      "check": "budget_month_11_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 463013.181,
+        "total": 463013.181
+      }
+    },
+    {
+      "check": "budget_month_11_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 463013.181,
+        "revenue_KZT": 860044.8
+      }
+    },
+    {
+      "check": "budget_month_11_flow",
+      "pass": true,
+      "detail": {
+        "flow": 397031.619,
+        "cumulative": -9357533.791
+      }
+    },
+    {
+      "check": "budget_month_11_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 0,
+        "limit_KZT": 463013.181
+      }
+    },
+    {
+      "check": "budget_month_12_items",
+      "pass": true,
+      "detail": {
+        "actual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          50908.381,
+          223970,
+          44794,
+          179176
+        ],
+        "expected": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          50908.381,
+          223970.0,
+          44794.0,
+          179176.0
+        ]
+      }
+    },
+    {
+      "check": "budget_month_12_sum",
+      "pass": true,
+      "detail": {
+        "items_sum": 498848.381,
+        "total": 498848.381
+      }
+    },
+    {
+      "check": "budget_month_12_converted",
+      "pass": true,
+      "detail": {
+        "cost_KZT": 498848.381,
+        "revenue_KZT": 1075056
+      }
+    },
+    {
+      "check": "budget_month_12_flow",
+      "pass": true,
+      "detail": {
+        "flow": 576207.619,
+        "cumulative": -8781326.172
+      }
+    },
+    {
+      "check": "budget_month_12_reserves",
+      "pass": true,
+      "detail": {
+        "risk_KZT": 0,
+        "limit_KZT": 498848.381
+      }
+    },
+    {
+      "check": "budget_annual_row_2",
+      "pass": true,
+      "detail": {
+        "annual": 8000,
+        "computed": 8000
+      }
+    },
+    {
+      "check": "budget_annual_row_3",
+      "pass": true,
+      "detail": {
+        "annual": 8062920,
+        "computed": 8062920
+      }
+    },
+    {
+      "check": "budget_annual_row_4",
+      "pass": true,
+      "detail": {
+        "annual": 671910,
+        "computed": 671910
+      }
+    },
+    {
+      "check": "budget_annual_row_5",
+      "pass": true,
+      "detail": {
+        "annual": 358352,
+        "computed": 358352
+      }
+    },
+    {
+      "check": "budget_annual_row_6",
+      "pass": true,
+      "detail": {
+        "annual": 223970,
+        "computed": 223970
+      }
+    },
+    {
+      "check": "budget_annual_row_7",
+      "pass": true,
+      "detail": {
+        "annual": 17917.6,
+        "computed": 17917.6
+      }
+    },
+    {
+      "check": "budget_annual_row_8",
+      "pass": true,
+      "detail": {
+        "annual": 610900.572,
+        "computed": 610900.572
+      }
+    },
+    {
+      "check": "budget_annual_row_9",
+      "pass": true,
+      "detail": {
+        "annual": 2015730,
+        "computed": 2015730
+      }
+    },
+    {
+      "check": "budget_annual_row_10",
+      "pass": true,
+      "detail": {
+        "annual": 403146,
+        "computed": 403146
+      }
+    },
+    {
+      "check": "budget_annual_row_11",
+      "pass": true,
+      "detail": {
+        "annual": 716704,
+        "computed": 716704.0
+      }
+    },
+    {
+      "check": "budget_annual_row_12",
+      "pass": true,
+      "detail": {
+        "annual": 13081550.172,
+        "computed": 13081550.172
+      }
+    },
+    {
+      "check": "budget_annual_row_13",
+      "pass": true,
+      "detail": {
+        "annual": 4300224,
+        "computed": 4300224.0
+      }
+    },
+    {
+      "check": "budget_annual_row_14",
+      "pass": true,
+      "detail": {
+        "annual": -8781326.172,
+        "computed": -8781326.172
+      }
+    },
+    {
+      "check": "budget_annual_row_15",
+      "pass": true,
+      "detail": {
+        "annual": -8781326.172,
+        "computed": -8781326.172
+      }
+    },
+    {
+      "check": "budget_annual_row_16",
+      "pass": true,
+      "detail": {
+        "annual": 1635.1937715,
+        "computed": 1635.1937715000001
+      }
+    },
+    {
+      "check": "budget_annual_row_17",
+      "pass": true,
+      "detail": {
+        "annual": 283098.08,
+        "computed": 283098.08
+      }
+    },
+    {
+      "check": "budget_annual_row_18",
+      "pass": true,
+      "detail": {
+        "annual": 13364648.252,
+        "computed": 13364648.252
+      }
+    },
+    {
+      "check": "budget_annual_row_19",
+      "pass": true,
+      "detail": {
+        "annual": 71670.4,
+        "computed": 71670.4
+      }
+    },
+    {
+      "check": "budget_annual_row_20",
+      "pass": true,
+      "detail": {
+        "annual": 13436318.652,
+        "computed": 13436318.651999999
+      }
+    },
+    {
+      "check": "CSV_is_KZT",
+      "pass": true,
+      "detail": [
+        "Месяц",
+        "MAU",
+        "Разработка, тг",
+        "Миграция, тг",
+        "Обучение, тг",
+        "Вывод старого, тг",
+        "Hosting setup, тг",
+        "Размещение, тг",
+        "Поддержка, тг",
+        "Продвижение, тг",
+        "Переменные, тг",
+        "Всего, тг",
+        "Выручка, тг",
+        "Поток, тг",
+        "Накопленный поток, тг",
+        "тг/MAU"
+      ]
+    },
+    {
+      "check": "CSV_has_12_months",
+      "pass": true,
+      "detail": 12
+    },
+    {
+      "check": "CSV_month_1_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 2756465.981,
+        "cost": 2756465.981,
+        "flow": -2756465.981
+      }
+    },
+    {
+      "check": "CSV_month_1_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 2756465.981,
+        "workbook_KZT": 2756465.981
+      }
+    },
+    {
+      "check": "CSV_month_2_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 2738548.381,
+        "cost": 2738548.381,
+        "flow": -2738548.381
+      }
+    },
+    {
+      "check": "CSV_month_2_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 2738548.381,
+        "workbook_KZT": 2738548.381
+      }
+    },
+    {
+      "check": "CSV_month_3_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 3768810.381,
+        "cost": 3768810.381,
+        "flow": -3768810.381
+      }
+    },
+    {
+      "check": "CSV_month_3_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 3768810.381,
+        "workbook_KZT": 3768810.381
+      }
+    },
+    {
+      "check": "CSV_month_4_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 552601.181,
+        "cost": 552601.181,
+        "flow": -498848.381
+      }
+    },
+    {
+      "check": "CSV_month_4_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 552601.181,
+        "workbook_KZT": 552601.181
+      }
+    },
+    {
+      "check": "CSV_month_4_CPU",
+      "pass": true,
+      "detail": {
+        "actual": "5526.011810",
+        "computed": 5526.01181
+      }
+    },
+    {
+      "check": "CSV_month_5_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 337589.981,
+        "cost": 337589.981,
+        "flow": -230084.381
+      }
+    },
+    {
+      "check": "CSV_month_5_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 337589.981,
+        "workbook_KZT": 337589.981
+      }
+    },
+    {
+      "check": "CSV_month_5_CPU",
+      "pass": true,
+      "detail": {
+        "actual": "1687.949905",
+        "computed": 1687.9499050000002
+      }
+    },
+    {
+      "check": "CSV_month_6_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 355507.581,
+        "cost": 355507.581,
+        "flow": -140496.381
+      }
+    },
+    {
+      "check": "CSV_month_6_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 355507.581,
+        "workbook_KZT": 355507.581
+      }
+    },
+    {
+      "check": "CSV_month_6_CPU",
+      "pass": true,
+      "detail": {
+        "actual": "888.768952",
+        "computed": 888.7689525000001
+      }
+    },
+    {
+      "check": "CSV_month_7_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 373425.181,
+        "cost": 373425.181,
+        "flow": -50908.381
+      }
+    },
+    {
+      "check": "CSV_month_7_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 373425.181,
+        "workbook_KZT": 373425.181
+      }
+    },
+    {
+      "check": "CSV_month_7_CPU",
+      "pass": true,
+      "detail": {
+        "actual": "622.375302",
+        "computed": 622.3753016666666
+      }
+    },
+    {
+      "check": "CSV_month_8_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 391342.781,
+        "cost": 391342.781,
+        "flow": 38679.619
+      }
+    },
+    {
+      "check": "CSV_month_8_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 391342.781,
+        "workbook_KZT": 391342.781
+      }
+    },
+    {
+      "check": "CSV_month_8_CPU",
+      "pass": true,
+      "detail": {
+        "actual": "489.178476",
+        "computed": 489.17847625
+      }
+    },
+    {
+      "check": "CSV_month_9_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 409260.381,
+        "cost": 409260.381,
+        "flow": 128267.619
+      }
+    },
+    {
+      "check": "CSV_month_9_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 409260.381,
+        "workbook_KZT": 409260.381
+      }
+    },
+    {
+      "check": "CSV_month_9_CPU",
+      "pass": true,
+      "detail": {
+        "actual": "409.260381",
+        "computed": 409.260381
+      }
+    },
+    {
+      "check": "CSV_month_10_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 436136.781,
+        "cost": 436136.781,
+        "flow": 262649.619
+      }
+    },
+    {
+      "check": "CSV_month_10_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 436136.781,
+        "workbook_KZT": 436136.781
+      }
+    },
+    {
+      "check": "CSV_month_10_CPU",
+      "pass": true,
+      "detail": {
+        "actual": "335.489832",
+        "computed": 335.48983153846154
+      }
+    },
+    {
+      "check": "CSV_month_11_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 463013.181,
+        "cost": 463013.181,
+        "flow": 397031.619
+      }
+    },
+    {
+      "check": "CSV_month_11_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 463013.181,
+        "workbook_KZT": 463013.181
+      }
+    },
+    {
+      "check": "CSV_month_11_CPU",
+      "pass": true,
+      "detail": {
+        "actual": "289.383238",
+        "computed": 289.383238125
+      }
+    },
+    {
+      "check": "CSV_month_12_arithmetic",
+      "pass": true,
+      "detail": {
+        "sum": 498848.381,
+        "cost": 498848.381,
+        "flow": 576207.619
+      }
+    },
+    {
+      "check": "CSV_month_12_matches_workbook",
+      "pass": true,
+      "detail": {
+        "CSV_KZT": 498848.381,
+        "workbook_KZT": 498848.381
+      }
+    },
+    {
+      "check": "CSV_month_12_CPU",
+      "pass": true,
+      "detail": {
+        "actual": "249.424190",
+        "computed": 249.4241905
+      }
+    },
+    {
+      "check": "CSV_annual_totals_KZT",
+      "pass": true,
+      "detail": {
+        "costs_KZT": 13081550.172,
+        "revenue_KZT": 4300224.0
+      }
+    },
+    {
+      "check": "FX_sheet_matches_evidence",
+      "pass": true,
+      "detail": 447.94
+    },
+    {
+      "check": "Tariffs_original_and_conversion_row_2",
+      "pass": true,
+      "detail": {
+        "original": 24,
+        "converted": 10750.56
+      }
+    },
+    {
+      "check": "Tariffs_original_and_conversion_row_3",
+      "pass": true,
+      "detail": {
+        "original": 30.45,
+        "converted": 13639.773
+      }
+    },
+    {
+      "check": "Tariffs_original_and_conversion_row_4",
+      "pass": true,
+      "detail": {
+        "original": 0.3,
+        "converted": 0.3
+      }
+    },
+    {
+      "check": "Tariffs_original_and_conversion_row_5",
+      "pass": true,
+      "detail": {
+        "original": 5,
+        "converted": 2239.7
+      }
+    },
+    {
+      "check": "Tariffs_original_and_conversion_row_6",
+      "pass": true,
+      "detail": {
+        "original": 6,
+        "converted": 2687.64
+      }
+    },
+    {
+      "check": "Tariffs_original_and_conversion_row_7",
+      "pass": true,
+      "detail": {
+        "original": 117.1,
+        "converted": 52453.774
+      }
+    },
+    {
+      "check": "Tariffs_original_and_conversion_row_8",
+      "pass": true,
+      "detail": {
+        "original": 1.9,
+        "converted": 851.086
+      }
+    },
+    {
+      "check": "Tariffs_original_and_conversion_row_9",
+      "pass": true,
+      "detail": {
+        "original": 59,
+        "converted": 26428.46
+      }
+    },
+    {
+      "check": "financial_sheets_use_tenge",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "financial_charts_use_tenge",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "report_contains_required_sections",
+      "pass": true,
+      "detail": {
+        "tables": 22,
+        "characters": 48955
+      }
+    },
+    {
+      "check": "report_has_KZT_totals",
+      "pass": true,
+      "detail": {
+        "annual_KZT": "13 081 550,17",
+        "limit_KZT": "13 436 318,65"
+      }
+    },
+    {
+      "check": "report_financial_tables_use_tenge",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "defense_has_eight_slides_and_notes",
+      "pass": true,
+      "detail": 8
+    },
+    {
+      "check": "presentation_uses_tenge",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "presentation_contains_KZT_totals",
+      "pass": true,
+      "detail": {
+        "annual_KZT": "13 081 550,17",
+        "limit_KZT": "13 436 318,65"
+      }
+    },
+    {
+      "check": "backlog_baseline.csv",
+      "pass": true,
+      "detail": {
+        "rows": 18,
+        "expected": 18
+      }
+    },
+    {
+      "check": "nfr_register.csv",
+      "pass": true,
+      "detail": {
+        "rows": 16,
+        "expected": 16
+      }
+    },
+    {
+      "check": "deliverable:SaparTravel_LZ8_Report.pdf",
+      "pass": true,
+      "detail": "SaparTravel_LZ8_Report.pdf"
+    },
+    {
+      "check": "deliverable:SaparTravel_LZ8_defense.pdf",
+      "pass": true,
+      "detail": "SaparTravel_LZ8_defense.pdf"
+    },
+    {
+      "check": "deliverable:evidence/calculator-inputs.json",
+      "pass": true,
+      "detail": "evidence/calculator-inputs.json"
+    },
+    {
+      "check": "deliverable:evidence/digitalocean-estimate.png",
+      "pass": true,
+      "detail": "evidence/digitalocean-estimate.png"
+    },
+    {
+      "check": "official_calculator_original_USD_evidence",
+      "pass": true,
+      "detail": {
+        "items": 4,
+        "original_monthly_USD": 65.45,
+        "converted_monthly_KZT": 29317.673000000003
+      }
+    },
+    {
+      "check": "calculator_inputs_original_currency_preserved",
+      "pass": true,
+      "detail": {
+        "as_of": "2026-10-23",
+        "url": "https://www.digitalocean.com/pricing/calculator",
+        "registration": false,
+        "paid_resources_created": false,
+        "region": "FRA1; monitor in another region",
+        "items": [
+          {
+            "product": "Basic Regular Droplet",
+            "vcpu": 2,
+            "ram_gib": 4,
+            "ssd_gib": 80,
+            "quantity": 1,
+            "monthly_usd": 24
+          },
+          {
+            "product": "PostgreSQL Standard Basic Regular",
+            "vcpu": 1,
+            "ram_gib": 2,
+            "storage_gib": 30,
+            "standby": 0,
+            "quantity": 1,
+            "monthly_usd": 30.45
+          },
+          {
+            "product": "Spaces",
+            "storage_gib": 250,
+            "transfer_tib": 1,
+            "quantity": 1,
+            "monthly_usd": 5
+          },
+          {
+            "product": "Basic Regular monitor Droplet",
+            "vcpu": 1,
+            "ram_gib": 1,
+            "ssd_gib": 25,
+            "quantity": 1,
+            "monthly_usd": 6
+          }
+        ],
+        "calculator_base_monthly_usd": 65.45,
+        "daily_backup_separate_official_formula": "24 * 0.30 = 7.20 USD/month",
+        "provider_monthly_usd": 72.65,
+        "domain_allowance_usd": 1,
+        "administration_usd": 40,
+        "total_monthly_usd": 113.65
+      }
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import os
+import string
 from pathlib import Path
 import shutil
 import tempfile
@@ -15,7 +16,8 @@ _test_url = os.environ.get("TEST_DATABASE_URL", f"sqlite:///{_test_directory}/te
 if make_url(_test_url).get_backend_name() != "sqlite" and not (make_url(_test_url).database or "").endswith("_test"):
     raise RuntimeError("TEST_DATABASE_URL must use a disposable database whose name ends with _test")
 os.environ.update(
-    DATABASE_URL=_test_url, ENVIRONMENT="testing", JWT_SECRET="pytest-secret-long-and-varied-47c90b126",
+    DATABASE_URL=_test_url, ENVIRONMENT="testing",
+    JWT_SECRET=string.ascii_letters + string.digits + string.punctuation,
     ADMIN_EMAIL="", ADMIN_PASSWORD="", AUTH_RATE_LIMIT="0", SEED_DEMO_DATA="false",
 )
 

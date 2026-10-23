@@ -1,0 +1,47 @@
+{
+  "as_of": "2026-10-23",
+  "url": "https://www.digitalocean.com/pricing/calculator",
+  "registration": false,
+  "paid_resources_created": false,
+  "region": "FRA1; monitor in another region",
+  "items": [
+    {
+      "product": "Basic Regular Droplet",
+      "vcpu": 2,
+      "ram_gib": 4,
+      "ssd_gib": 80,
+      "quantity": 1,
+      "monthly_usd": 24
+    },
+    {
+      "product": "PostgreSQL Standard Basic Regular",
+      "vcpu": 1,
+      "ram_gib": 2,
+      "storage_gib": 30,
+      "standby": 0,
+      "quantity": 1,
+      "monthly_usd": 30.45
+    },
+    {
+      "product": "Spaces",
+      "storage_gib": 250,
+      "transfer_tib": 1,
+      "quantity": 1,
+      "monthly_usd": 5
+    },
+    {
+      "product": "Basic Regular monitor Droplet",
+      "vcpu": 1,
+      "ram_gib": 1,
+      "ssd_gib": 25,
+      "quantity": 1,
+      "monthly_usd": 6
+    }
+  ],
+  "calculator_base_monthly_usd": 65.45,
+  "daily_backup_separate_official_formula": "24 * 0.30 = 7.20 USD/month",
+  "provider_monthly_usd": 72.65,
+  "domain_allowance_usd": 1,
+  "administration_usd": 40,
+  "total_monthly_usd": 113.65
+}

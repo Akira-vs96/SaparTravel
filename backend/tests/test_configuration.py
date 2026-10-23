@@ -1,3 +1,5 @@
+import string
+
 import pytest
 from pydantic import ValidationError
 
@@ -22,7 +24,7 @@ def test_secrets_and_database_configuration():
 def test_standard_postgres_urls_use_psycopg(scheme):
     settings = Settings(
         database_url=f"{scheme}postgres@example.com/postgres",
-        jwt_secret="pytest-secret-long-and-varied-47c90b126",
+        jwt_secret=string.ascii_letters + string.digits + string.punctuation,
     )
     assert settings.database_url == "postgresql+psycopg://postgres@example.com/postgres"
 

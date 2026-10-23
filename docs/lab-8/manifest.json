@@ -1,0 +1,330 @@
+{
+  "project": "SaparTravel",
+  "assignment": "ЛЗ8 + РК1, недели 1–8",
+  "version": "1.1",
+  "as_of": "2026-10-23",
+  "currency": "KZT",
+  "exchange_rate_KZT_per_USD": 447.94,
+  "entry_point": "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+  "financial_model": "docs/lab-8/SaparTravel_LZ8_Financial_Model.xlsx",
+  "defense": "docs/lab-8/SaparTravel_LZ8_defense.pptx",
+  "validation": "docs/lab-8/validation.json",
+  "notes": [
+    "Основные расчеты ЛЗ8 выражены в казахстанских тенге.",
+    "Исторические материалы недель 1–7 и первичные тарифы сохранены в исходном виде; денежные итоги ЛЗ8 пересчитаны в тенге.",
+    "Расчеты — прогноз, не фактические расходы или подтверждение соблюдения SLA.",
+    "Платные ресурсы не создавались; .env и рабочие секреты в архив не включены."
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 15177,
+      "sha256": "3856e720d7e08175b6184bab8248fba8364a765fed2a19f0538a396d473523e5"
+    },
+    {
+      "path": "SaparTravel_Business_Case_LZ3.docx",
+      "bytes": 12018,
+      "sha256": "0dc99f7e1ed00947b397fa257c9fb6550c39ad6c79278b785a2139111b08c779"
+    },
+    {
+      "path": "SaparTravel_Charter_V1.0.docx",
+      "bytes": 3930156,
+      "sha256": "0640db89b6cb6d179d2c59c4482735cd6ca18d1d9da18d5992a9516d98c62f76"
+    },
+    {
+      "path": "data/throughput.csv",
+      "bytes": 143,
+      "sha256": "fb3595846e2c6d242c050f0b7b1f112eba59ac06a1da795fd91e1481c4003d90"
+    },
+    {
+      "path": "docs/adr/ADR-001.md",
+      "bytes": 5949,
+      "sha256": "3268d0c23299f72ce69a8bd2ebd1a79d81d3c6c4b564fdfb09eeeac8536a14bf"
+    },
+    {
+      "path": "docs/adr/ADR-002.md",
+      "bytes": 3472,
+      "sha256": "d64649ca44402fc3d30f5529637aac047452e09c66025bc14a2e9d4a8a40b3d9"
+    },
+    {
+      "path": "docs/debugging-lab-report.md",
+      "bytes": 7664,
+      "sha256": "5c8539e230d413213987ecf49abaf4838946280e3206587e8c98450efca7877b"
+    },
+    {
+      "path": "docs/er-model.md",
+      "bytes": 5352,
+      "sha256": "8f5b6b3a10dc65bd04a02cf303194c3208e5a441f6823582938b1330451d731e"
+    },
+    {
+      "path": "docs/figures/lab-6-monte-carlo-cdf.png",
+      "bytes": 85484,
+      "sha256": "d2d12824006d8671c845c6d726c1ec1e3c5cd4608499feaf0e80b56b1e767f27"
+    },
+    {
+      "path": "docs/figures/lab-6-monte-carlo-hist.png",
+      "bytes": 49975,
+      "sha256": "fc4cebf8d4cf206aec3cd60138b675f15a9b4e45ab53bd2168bd9d0641420cff"
+    },
+    {
+      "path": "docs/finmodel.ods",
+      "bytes": 18743,
+      "sha256": "1d0d72083dc549f6abb3472242008a6839573948a51d3cefad016f815bcc35a7"
+    },
+    {
+      "path": "docs/lab-5-insight.md",
+      "bytes": 11975,
+      "sha256": "83f1d370bdc127a209161b2f8456021bdc4c8767369088f5580248e3f998d204"
+    },
+    {
+      "path": "docs/lab-6-customer-slide.md",
+      "bytes": 3184,
+      "sha256": "caed43d8a1c2546936c4e41a074f212a33012b6b1f33ed5c410e077f2371b93a"
+    },
+    {
+      "path": "docs/lab-6-customer-slide.pptx",
+      "bytes": 40081,
+      "sha256": "b77ba65f85006bf138c4f1675ca2adf96a5e33f2d5e16e5d5db2aa86dc2865f9"
+    },
+    {
+      "path": "docs/lab-6-insight.md",
+      "bytes": 26020,
+      "sha256": "eccb0b24749f32d3dc4573b2b215be86a9e85d8c96ed761b6925116014c5b8a6"
+    },
+    {
+      "path": "docs/lab-6-planning-poker.md",
+      "bytes": 7447,
+      "sha256": "411b24aec2ff2271c785df863a8c21390dbff77020c011402ea5647912f000a9"
+    },
+    {
+      "path": "docs/lab-8/SaparTravel_LZ8_Financial_Model.xlsx",
+      "bytes": 47081,
+      "sha256": "313a868733fa66ea35852270828dfc03421d5a6f758cab02e3056ca8daf3b463"
+    },
+    {
+      "path": "docs/lab-8/SaparTravel_LZ8_Report.docx",
+      "bytes": 68978,
+      "sha256": "6bcddf76ea024d716c3b042d9ee0e1c3b4cafd2a29fc5f90fced0cb644e14fb5"
+    },
+    {
+      "path": "docs/lab-8/SaparTravel_LZ8_Report.html",
+      "bytes": 88460,
+      "sha256": "b91fa2741bbbba93513695171bd25f8d9d9ef4697cde5f7fd13c00fb7a56df76"
+    },
+    {
+      "path": "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+      "bytes": 450295,
+      "sha256": "6468f98b1292b900161e9537983039853102461ff31e870420e12aa09a39e0f1"
+    },
+    {
+      "path": "docs/lab-8/SaparTravel_LZ8_defense.pdf",
+      "bytes": 72032,
+      "sha256": "f70c2e8764ffe9e9dff1f17390a29fefa59abaf924c07479a4921800def1df63"
+    },
+    {
+      "path": "docs/lab-8/SaparTravel_LZ8_defense.pptx",
+      "bytes": 54116,
+      "sha256": "ac12db19cd4e5991dc069c0abfd2c3d3cf231658e0e8e093e87a5350b8a133f5"
+    },
+    {
+      "path": "docs/lab-8/assumptions_and_results.json",
+      "bytes": 14555,
+      "sha256": "6b2e8fc0727655e627a5f88fa316810f994501936f84682350f6d9b85f8f7c43"
+    },
+    {
+      "path": "docs/lab-8/backlog_baseline.csv",
+      "bytes": 3589,
+      "sha256": "dfab3042140aea805328e9d205446b5c5130abd1aedc06e3d201495501cb9e92"
+    },
+    {
+      "path": "docs/lab-8/budget_12_months.csv",
+      "bytes": 2495,
+      "sha256": "0424805bd9867709f6321f63bfd7d9d40a5a940f1d4b5d54d6d7da3c417848ee"
+    },
+    {
+      "path": "docs/lab-8/evidence/DigitalOcean Estimate Cart.csv",
+      "bytes": 727,
+      "sha256": "06915e4f63c72e95d9cd03d00778f5487c13e5dbaa4383080f0647bee67d38c6"
+    },
+    {
+      "path": "docs/lab-8/evidence/calculator-cart-url.txt",
+      "bytes": 906,
+      "sha256": "5a5b3ab95590c4fe391a0490a2141009497699d242143734371e95cfe306aa75"
+    },
+    {
+      "path": "docs/lab-8/evidence/calculator-inputs.json",
+      "bytes": 1101,
+      "sha256": "44b60c9dc2b7da10ca9c65b9c9e2659de926c23791bacbad1567c23a1d61596b"
+    },
+    {
+      "path": "docs/lab-8/evidence/calculator-result.txt",
+      "bytes": 1116,
+      "sha256": "e2e5cffc9f1012c68b97053f8dff01900889859bee6217a8c44c7479b485d22d"
+    },
+    {
+      "path": "docs/lab-8/evidence/digitalocean-estimate.png",
+      "bytes": 175797,
+      "sha256": "567d57cebac05050f1b364e31f14d4d747351e4ae8684774ff26fb05b04cc6c1"
+    },
+    {
+      "path": "docs/lab-8/evidence/exchange-rate.json",
+      "bytes": 325,
+      "sha256": "0dd387b32a5000893bbf81528a39aa89c9556e921d7f27c6c07d75bd4c414a7c"
+    },
+    {
+      "path": "docs/lab-8/evidence/nbrk-2026-10-23.xml",
+      "bytes": 14023,
+      "sha256": "275c9d5a46990c2bacc8543f8a27ca171e866eac9d3dccf6a15e4cb0f7ffa25e"
+    },
+    {
+      "path": "docs/lab-8/nfr_register.csv",
+      "bytes": 3452,
+      "sha256": "57472155b758fc556f85bd06684661479c725bba20f7fbf85de918caa02860c0"
+    },
+    {
+      "path": "docs/lab-8/validation.json",
+      "bytes": 40292,
+      "sha256": "f712b808b65c1a9d18501f47b9c4cd8a6d70e3be17d67d598543e45760b49a86"
+    },
+    {
+      "path": "docs/ops/runbook.md",
+      "bytes": 8327,
+      "sha256": "4fdf90cb3e2192b03371e0cbd15271dd1a62ca80241fd328a5734b61b8582540"
+    },
+    {
+      "path": "docs/plan/dependencies.md",
+      "bytes": 6776,
+      "sha256": "a5e6868cb54a49c4b719be2f6987f4cc6427d9853268f611ecc947aa3bbb29dc"
+    },
+    {
+      "path": "docs/plan/dependency-reminders.ics",
+      "bytes": 3035,
+      "sha256": "b3e5940a385aeb1a8386717311f1a7a8443efbf14ddbc1e54aa9fb133f77838e"
+    },
+    {
+      "path": "docs/plan/sapartravel-models.drawio",
+      "bytes": 20823,
+      "sha256": "f0aeecdae793132cae6426dec7b3852fabf4d6e8d27423893f02efe77152bbb0"
+    },
+    {
+      "path": "docs/plan/wbs.md",
+      "bytes": 21034,
+      "sha256": "adc0880908fab0f9a053faa76089d37c3bddc2495914cc4ae7a0cfa0f0f3be32"
+    },
+    {
+      "path": "docs/portfolio/final-portfolio.md",
+      "bytes": 2653,
+      "sha256": "2602e07ada26202f6b1349b689febcfd03e3ab538a3472409ccf753158803b36"
+    },
+    {
+      "path": "docs/postgresql-schema.md",
+      "bytes": 6138,
+      "sha256": "f76149ff307e47b443e03a218c95c17eb8f7dc2fd8acf4aec90de4efa6793f30"
+    },
+    {
+      "path": "docs/project-board-workflow.md",
+      "bytes": 9017,
+      "sha256": "37fcc64c0d69da0bb828f3f10ea84a27a40dbb816796f0e7bb065faaa9e3a29e"
+    },
+    {
+      "path": "docs/project-charter.md",
+      "bytes": 31456,
+      "sha256": "533acef459ca5c65ad90e19e531274b13cdb71096b87994274ec3075c2636c5e"
+    },
+    {
+      "path": "docs/qa/test-plan.md",
+      "bytes": 6628,
+      "sha256": "782884ce4b8d225fe66dbf06a3604a8829a7d460ce2ef08e04fe054c480d84f0"
+    },
+    {
+      "path": "docs/requirements/non-functional-requirements.md",
+      "bytes": 2670,
+      "sha256": "25b41a479a8c79596f9b3ffa004da7527371c2c158317682957dd0438c350dcd"
+    },
+    {
+      "path": "docs/requirements/stakeholders.md",
+      "bytes": 2556,
+      "sha256": "e05142ad762bcc9f4222797589a051636d0353f86d866394a6e5843d6e3d25d5"
+    },
+    {
+      "path": "docs/requirements/story-map.md",
+      "bytes": 2401,
+      "sha256": "a127afeec04a051c76155ce18c0f17d658bcd89fc9cf3bfc43756c5e4b519c26"
+    },
+    {
+      "path": "docs/requirements/story-map.png",
+      "bytes": 105209,
+      "sha256": "ec9bb0f217d0aa78a30d0853256dc8e066993450456c0b6ebed9da363beb9858"
+    },
+    {
+      "path": "docs/security/compliance-checklist.md",
+      "bytes": 5554,
+      "sha256": "4f5eba4aa1cfc1b9ee4cb91c3e9233d4f5fa579971b8ab5e9e7ee56d61cf2157"
+    },
+    {
+      "path": "docs/security/raid.md",
+      "bytes": 11864,
+      "sha256": "397730a23fc796cd8098aca23d3dc09125e978adb39f30f47a6e4e22f88cb279"
+    },
+    {
+      "path": "docs/security/risk-assessment.md",
+      "bytes": 3175,
+      "sha256": "a3b500b39c81c6868b468ffe5b5b722db50b7e7ecd3ebf08aa3741b543070b4d"
+    },
+    {
+      "path": "docs/security/security-backlog.md",
+      "bytes": 1657,
+      "sha256": "f3e274f0a79d98f2e02a03baa31e93ccf941b0559216c83faaad0965017071e4"
+    },
+    {
+      "path": "docs/security/security-presentation-roles.md",
+      "bytes": 10379,
+      "sha256": "d957b519185543225c2f4854ad8ff490cc3fb48fb93e91253bdd027560e8058d"
+    },
+    {
+      "path": "docs/security/security-scan-report.md",
+      "bytes": 6300,
+      "sha256": "eecbadbc72eb838695b838c48b06e4b74ef0d95839d158bb3d1b7b481d0777cf"
+    },
+    {
+      "path": "docs/security/threat-model.json",
+      "bytes": 1336,
+      "sha256": "b2700e04109e9bf8bf390f54a4a1fe27edbda52548d8da47dce641752a5349fc"
+    },
+    {
+      "path": "docs/security/threat-model.md",
+      "bytes": 3743,
+      "sha256": "4864f0c8fb8e4381cd7eea751b3500e4e725981705e5aa1e3929dc7f3f3d0212"
+    },
+    {
+      "path": "notebooks/lab-6-monte-carlo.ipynb",
+      "bytes": 122310,
+      "sha256": "d1bdc0e86b46546d1f847542f98e453747eb8a4a22081ea165a3c1c74c870370"
+    },
+    {
+      "path": "scripts/convert_lab8_workbook_kzt.py",
+      "bytes": 19177,
+      "sha256": "ed47a2ad6a1570fecd9017ddfd8332716c95cf3e49a9ffbb9755b2b867eb3653"
+    },
+    {
+      "path": "scripts/create_lab8_kzt.py",
+      "bytes": 18641,
+      "sha256": "006a45b3081be20e8e2dbe984fe01b17e0328e019f52f68be092225766edf5f1"
+    },
+    {
+      "path": "scripts/create_lab8_package.py",
+      "bytes": 126044,
+      "sha256": "54cc7ca789ca739e3bb6f76340e50f48fbdeb13e9fd7772c709f68177c768429"
+    },
+    {
+      "path": "scripts/validate_lab8_kzt.py",
+      "bytes": 15745,
+      "sha256": "58fb6b37f20475f7edf8d7541eafd28acef1ef06c5bff2a5d2247f07b3f4ed68"
+    },
+    {
+      "path": "scripts/validate_lab8_package.py",
+      "bytes": 6045,
+      "sha256": "8bfb90edea80d0a7af89e5f8b1e464f9c0980c024b4486acad449ca4098cc257"
+    }
+  ]
+}
