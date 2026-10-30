@@ -1,0 +1,130 @@
+{
+  "capture_at_utc": "2026-10-30T07:38:22.286689+00:00",
+  "coverage_complete": false,
+  "unlocated_items": [],
+  "items_without_added_at": [],
+  "duplicate_events_removed": 0,
+  "gaps": [
+    {
+      "issue": 2,
+      "after_utc": "2026-09-18T08:30:29+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Backlog",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 3,
+      "after_utc": "2026-09-18T08:30:35+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Backlog",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 4,
+      "after_utc": "2026-09-18T08:31:06+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Ready",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 5,
+      "after_utc": "2026-09-18T08:31:22+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Ready",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 6,
+      "after_utc": "2026-09-18T08:32:22+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "In progress",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 9,
+      "after_utc": "2026-09-18T08:33:32+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Ready",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 10,
+      "after_utc": "2026-09-18T08:33:54+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Ready",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 11,
+      "after_utc": "2026-09-18T08:34:15+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Blocked",
+      "next_previous_status": "Backlog",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 13,
+      "after_utc": "2026-09-25T08:06:13+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Ready",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 14,
+      "after_utc": "2026-09-25T08:06:15+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Ready",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 15,
+      "after_utc": "2026-09-25T08:06:16+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Ready",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 16,
+      "after_utc": "2026-09-25T08:06:17+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Ready",
+      "next_previous_status": "Review",
+      "kind": "snapshot_mismatch"
+    },
+    {
+      "issue": 19,
+      "after_utc": "2026-09-25T08:06:19+00:00",
+      "before_utc": "2026-10-30T07:38:22.286689+00:00",
+      "last_observed": "Ready",
+      "next_previous_status": "Done",
+      "kind": "snapshot_mismatch"
+    }
+  ],
+  "schema_version": 2,
+  "source": "github-flow.json",
+  "source_sha256": "5f2bbbf97f011aa9f453cc5c209547ec9b441feb53af2daa86cfd99a1ed25564",
+  "project": {
+    "id": "PVT_kwHOCuk0E84Bj444",
+    "url": "https://github.com/users/Akira-vs96/projects/2"
+  },
+  "membership_scope": "Current Project items; removed historical items cannot be reconstructed completely",
+  "known_status_fraction": 0.5309127092105033,
+  "completed_without_witnessed_cycle": [
+    1,
+    7,
+    8
+  ],
+  "bottleneck": null,
+  "bottleneck_reason": "Incomplete status exposure; a flat or growing band cannot establish a process bottleneck.",
+  "periods_are_confirmed_sprints": false
+}

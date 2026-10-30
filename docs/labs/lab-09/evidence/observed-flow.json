@@ -8,34 +8,177 @@
     7,
     8
   ],
+  "completion_events": 3,
+  "completed_items": [
+    {
+      "issue": 1,
+      "completed_at_utc": "2026-09-25T08:08:00+00:00",
+      "started_at_utc": null,
+      "cycle_days": null
+    },
+    {
+      "issue": 7,
+      "completed_at_utc": "2026-09-25T08:08:05+00:00",
+      "started_at_utc": null,
+      "cycle_days": null
+    },
+    {
+      "issue": 8,
+      "completed_at_utc": "2026-09-25T08:08:06+00:00",
+      "started_at_utc": null,
+      "cycle_days": null
+    }
+  ],
   "cycle_time_samples": 0,
   "cycle_mean_days": null,
   "cycle_p85_days": null,
-  "observed_average_wip": 2.0,
+  "cycle_sample_coverage": 0.0,
+  "observed_average_wip": 0.0,
+  "average_wip": null,
+  "wip_lower_bound": 0.0,
+  "wip_upper_bound": 11.461459986772486,
   "observed_status_task_days": {
-    "Backlog": 70.00331018518519,
+    "Backlog": 42.00331018518518,
+    "Ready": 96.62251157407407,
+    "In progress": 0.0,
+    "Review": 0.0,
+    "Blocked": 0.0,
     "Done": 42.983206018518516,
-    "Ready": 200.93408564814817,
-    "In progress": 14.0,
-    "Blocked": 14.0
+    "Unknown": 160.4604398148148
   },
   "little_expected_wip": null,
   "little_law_evaluable": false,
+  "little_wip_difference": null,
   "history_matches_current_snapshot": false,
   "history_snapshot_mismatches": [
-    16,
     2,
-    13,
-    19,
-    15,
     3,
     4,
     5,
-    14,
     6,
     9,
     10,
-    11
+    11,
+    13,
+    14,
+    15,
+    16,
+    19
   ],
-  "limitation": "Observed transitions only; absent start times are never replaced with issue creation dates. Initial Done is not throughput."
+  "data_quality": {
+    "capture_at_utc": "2026-10-30T07:38:22.286689+00:00",
+    "coverage_complete": false,
+    "unlocated_items": [],
+    "items_without_added_at": [],
+    "duplicate_events_removed": 0,
+    "gaps": [
+      {
+        "issue": 2,
+        "after_utc": "2026-09-18T08:30:29+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Backlog",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 3,
+        "after_utc": "2026-09-18T08:30:35+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Backlog",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 4,
+        "after_utc": "2026-09-18T08:31:06+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Ready",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 5,
+        "after_utc": "2026-09-18T08:31:22+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Ready",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 6,
+        "after_utc": "2026-09-18T08:32:22+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "In progress",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 9,
+        "after_utc": "2026-09-18T08:33:32+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Ready",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 10,
+        "after_utc": "2026-09-18T08:33:54+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Ready",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 11,
+        "after_utc": "2026-09-18T08:34:15+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Blocked",
+        "next_previous_status": "Backlog",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 13,
+        "after_utc": "2026-09-25T08:06:13+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Ready",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 14,
+        "after_utc": "2026-09-25T08:06:15+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Ready",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 15,
+        "after_utc": "2026-09-25T08:06:16+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Ready",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 16,
+        "after_utc": "2026-09-25T08:06:17+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Ready",
+        "next_previous_status": "Review",
+        "kind": "snapshot_mismatch"
+      },
+      {
+        "issue": 19,
+        "after_utc": "2026-09-25T08:06:19+00:00",
+        "before_utc": "2026-10-30T07:38:22.286689+00:00",
+        "last_observed": "Ready",
+        "next_previous_status": "Done",
+        "kind": "snapshot_mismatch"
+      }
+    ]
+  },
+  "limitation": "Observed issue cohort only. Missing or inconsistent status intervals are Unknown; WIP is a bound. Cycle statistics use the final observed completion per issue and witnessed, continuous starts. Little's law needs complete inputs and a sufficiently stable observation window.",
+  "source": "github-flow.json",
+  "source_sha256": "5f2bbbf97f011aa9f453cc5c209547ec9b441feb53af2daa86cfd99a1ed25564"
 }

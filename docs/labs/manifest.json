@@ -2774,15 +2774,15 @@
       "number": 9,
       "title": "Симуляция двух спринтов",
       "report": "docs/labs/lab-09/README.md",
-      "findings": "По реальным переходам выгружены два недельных окна: наблюдаемый throughput 3 и 0. Начало In progress для завершённых карточек не известно, часть истории расходится со снимком; cycle time и проверка Литтла не выдуманы из даты создания. CFD построена по наблюдаемой истории и помечена неполной. Цели и фактическая ретроспектива/эксперимент двух спринтов не подтверждены.",
+      "findings": "По новой выгрузке GitHub Projects (36 карточек, 39 переходов) наблюдаемый throughput двух недельных окон — 3 и 0. Исправлены повторные циклы, UTC-порядок событий, дата вступления в Project и разрывы цепочки. CFD содержит все статусы и явный Unknown: найдены 13 разрывов, известно 53,09% времени статусов зафиксированной когорты. Достоверное среднее WIP, mean/p85 cycle time и закон Литтла пока не определяются. CSV, исходный снимок, SHA-256, анализ и регрессии воспроизводимы одной командой. Цели и фактическая ретроспектива/эксперимент двух спринтов не подтверждены.",
       "artifacts": [
         {
           "path": "docs/project-board-workflow.md",
           "label": "project-board-workflow.md"
         },
         {
-          "path": "docs/labs/evidence/github-2026-10-30.json",
-          "label": "github-2026-10-30.json"
+          "path": "docs/labs/lab-09/evidence/github-flow.json",
+          "label": "github-flow.json"
         },
         {
           "path": "docs/labs/lab-09/evidence/flow.json",
@@ -2799,10 +2799,43 @@
         {
           "path": "docs/labs/lab-09/sprint-experiment.md",
           "label": "sprint-experiment.md"
+        },
+        {
+          "path": "docs/labs/lab-09/evidence/observed-flow.json",
+          "label": "observed-flow.json"
+        },
+        {
+          "path": "docs/labs/lab-09/evidence/cfd.csv",
+          "label": "cfd.csv"
+        },
+        {
+          "path": "docs/labs/lab-09/evidence/transitions.csv",
+          "label": "transitions.csv"
+        },
+        {
+          "path": "docs/labs/lab-09/evidence/data-quality.json",
+          "label": "data-quality.json"
+        },
+        {
+          "path": "docs/labs/lab-09/evidence/analysis.md",
+          "label": "analysis.md"
+        },
+        {
+          "path": "scripts/course/flow_report.py",
+          "label": "flow_report.py"
+        },
+        {
+          "path": "tests/course/test_flow.py",
+          "label": "test_flow.py"
+        },
+        {
+          "path": "tests/course/test_github_facts.py",
+          "label": "test_github_facts.py"
         }
       ],
       "commands": [
-        ".venv/bin/python -m scripts.course.metrics --snapshot docs/labs/evidence/github-2026-10-30.json --start 2026-09-21T00:00:00Z --end 2026-10-05T00:00:00Z --output test-results/flow.json --plot"
+        ".venv/bin/python -m scripts.course.flow_report --snapshot docs/labs/lab-09/evidence/github-flow.json --start 2026-09-21T00:00:00Z --end 2026-10-05T00:00:00Z --output-directory docs/labs/lab-09/evidence",
+        ".venv/bin/python -m unittest discover -s tests/course -p 'test_*.py' -v"
       ],
       "steps": [
         {
@@ -2815,7 +2848,7 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -2832,7 +2865,7 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -2849,7 +2882,7 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -2866,7 +2899,7 @@
           "requires_people": true,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -2883,7 +2916,7 @@
           "requires_people": true,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -2900,7 +2933,7 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -2917,12 +2950,15 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
-            "docs/labs/lab-09/evidence/observed-flow.png"
+            "docs/labs/lab-09/evidence/observed-flow.png",
+            "docs/labs/lab-09/evidence/data-quality.json",
+            "docs/labs/lab-09/evidence/analysis.md",
+            "tests/course/test_flow.py"
           ],
-          "note": "Наблюдаемый throughput 3/0; нет достоверных start для cycle time, метрика null."
+          "note": "Throughput 3/0; у всех трёх завершений нет достоверного начала. Cycle time и средний WIP — null; границы WIP зафиксированной когорты: 0–9,923 и 0–13."
         },
         {
           "kind": "step",
@@ -2934,12 +2970,15 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
-            "docs/labs/lab-09/evidence/observed-flow.png"
+            "docs/labs/lab-09/evidence/observed-flow.png",
+            "docs/labs/lab-09/evidence/data-quality.json",
+            "docs/labs/lab-09/evidence/analysis.md",
+            "tests/course/test_flow.py"
           ],
-          "note": "Закон Литтла не удостоверяется без завершённых cycle-time samples и непротиворечивой истории."
+          "note": "Проверка не выполняется при неизвестной экспозиции WIP или неполных cycle samples; положительная проверка полного потока покрыта регрессией."
         },
         {
           "kind": "step",
@@ -2951,12 +2990,15 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
-            "docs/labs/lab-09/evidence/observed-flow.png"
+            "docs/labs/lab-09/evidence/observed-flow.png",
+            "docs/labs/lab-09/evidence/data-quality.json",
+            "docs/labs/lab-09/evidence/analysis.md",
+            "tests/course/test_flow.py"
           ],
-          "note": "CFD построена по наблюдениям, неполнота истории отмечена."
+          "note": "CFD/CSV содержат 7 стадий с Unknown, UTC-срезы и 13 разрывов; узкое место по неполной истории не доказано."
         },
         {
           "kind": "step",
@@ -2968,7 +3010,7 @@
           "requires_people": true,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -2985,7 +3027,7 @@
           "requires_people": true,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -3002,7 +3044,7 @@
           "requires_people": true,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -3019,7 +3061,7 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -3036,7 +3078,7 @@
           "requires_people": true,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"
@@ -3053,12 +3095,15 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
-            "docs/labs/lab-09/evidence/observed-flow.png"
+            "docs/labs/lab-09/evidence/observed-flow.png",
+            "docs/labs/lab-09/evidence/data-quality.json",
+            "docs/labs/lab-09/evidence/analysis.md",
+            "tests/course/test_flow.py"
           ],
-          "note": "История переходов неполная: mean/p85 cycle time и достоверное узкое место пока не определяются."
+          "note": "Оба календарных окна пересчитаны из одного снимка; это не подтверждает проведённые спринты. Mean/p85 cycle time и точный средний WIP недоступны."
         },
         {
           "kind": "check",
@@ -3070,12 +3115,15 @@
           "requires_people": false,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
-            "docs/labs/lab-09/evidence/observed-flow.png"
+            "docs/labs/lab-09/evidence/observed-flow.png",
+            "docs/labs/lab-09/evidence/data-quality.json",
+            "docs/labs/lab-09/evidence/analysis.md",
+            "tests/course/test_flow.py"
           ],
-          "note": "История переходов неполная: mean/p85 cycle time и достоверное узкое место пока не определяются."
+          "note": "Диаграмма, CSV и анализ качества готовы; отсутствующие 46,91% времени статусов не позволяют достоверно установить узкое место."
         },
         {
           "kind": "check",
@@ -3087,7 +3135,7 @@
           "requires_people": true,
           "evidence": [
             "docs/project-board-workflow.md",
-            "docs/labs/evidence/github-2026-10-30.json",
+            "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png"

@@ -1,0 +1,84 @@
+{
+  "periods": [
+    {
+      "start_utc": "2026-09-21T00:00:00+00:00",
+      "end_utc": "2026-09-28T00:00:00+00:00",
+      "calendar_days": 7.0,
+      "throughput": 3,
+      "completed_issues": [
+        1,
+        7,
+        8
+      ],
+      "cycle_time_samples": 0,
+      "cycle_mean_days": null,
+      "cycle_p85_days": null,
+      "observed_average_wip": 2.0,
+      "observed_status_task_days": {
+        "Backlog": 35.00331018518518,
+        "Done": 14.98320601851852,
+        "Ready": 67.93408564814816,
+        "In progress": 7.0,
+        "Blocked": 7.0
+      },
+      "little_expected_wip": null,
+      "little_law_evaluable": false,
+      "history_matches_current_snapshot": false,
+      "history_snapshot_mismatches": [
+        16,
+        2,
+        13,
+        19,
+        15,
+        3,
+        4,
+        5,
+        14,
+        6,
+        9,
+        10,
+        11
+      ],
+      "limitation": "Observed transitions only; absent start times are never replaced with issue creation dates. Initial Done is not throughput."
+    },
+    {
+      "start_utc": "2026-09-28T00:00:00+00:00",
+      "end_utc": "2026-10-05T00:00:00+00:00",
+      "calendar_days": 7.0,
+      "throughput": 0,
+      "completed_issues": [],
+      "cycle_time_samples": 0,
+      "cycle_mean_days": null,
+      "cycle_p85_days": null,
+      "observed_average_wip": 2.0,
+      "observed_status_task_days": {
+        "Backlog": 35.0,
+        "Done": 28.0,
+        "Ready": 133.0,
+        "In progress": 7.0,
+        "Blocked": 7.0
+      },
+      "little_expected_wip": null,
+      "little_law_evaluable": false,
+      "history_matches_current_snapshot": false,
+      "history_snapshot_mismatches": [
+        16,
+        2,
+        13,
+        19,
+        15,
+        3,
+        4,
+        5,
+        14,
+        6,
+        9,
+        10,
+        11
+      ],
+      "limitation": "Observed transitions only; absent start times are never replaced with issue creation dates. Initial Done is not throughput."
+    }
+  ],
+  "periods_are_confirmed_sprints": false,
+  "source": "../../evidence/github-2026-10-30.json"
+}

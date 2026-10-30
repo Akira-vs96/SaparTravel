@@ -1,0 +1,2476 @@
+{
+  "schema_version": 1,
+  "repository": "Akira-vs96/SaparTravel",
+  "captured_at_utc": "2026-10-30T07:38:22.286689+00:00",
+  "sources": [
+    "https://github.com/Akira-vs96/SaparTravel/issues",
+    "https://github.com/Akira-vs96/SaparTravel/actions",
+    "https://github.com/users/Akira-vs96/projects/2"
+  ],
+  "issues": [
+    {
+      "number": 37,
+      "title": "INC-03: Закрепить отрицательные ответы каталога в CI",
+      "body": "Добавлен реальный Chromium-сценарий browser_invalid_response; локальный запуск прошёл для JSON null и HTML.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI regression coverage.\n\nКритерий завершения: Сценарий включён в browser job; все восемь browser scripts зелёные; повторная оценка эффекта 13.11.2026.\n\nИсточник реализации/доказательства: `tests/browser_invalid_response.py`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:48:55Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/37"
+    },
+    {
+      "number": 36,
+      "title": "INC-02: Review отмены устаревших запросов интерфейса",
+      "body": "Общий useResource игнорирует результат отменённого запроса. Требуется независимая проверка переходов между экранами.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI stale response.\n\nКритерий завершения: После AbortSignal.aborted результат не меняет состояние нового запроса; проверить быстрые переходы и сетевую задержку.\n\nИсточник реализации/доказательства: `frontend/src/components/common.jsx`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:48:38Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/36"
+    },
+    {
+      "number": 35,
+      "title": "INC-01: Review обработки HTTP 200 с невалидным телом",
+      "body": "JSON null и HTML прокси отклоняются API-клиентом; сообщение ошибки доступно ru/kk/en. До исправления падение воспроизведено.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI null contract.\n\nКритерий завершения: Оба ответа дают error UI и возможность повтора без pageerror; обычный JSON и 204 продолжают работать; нужен независимый review.\n\nИсточник реализации/доказательства: `frontend/src/api.js`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:48:24Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/35"
+    },
+    {
+      "number": 34,
+      "title": "B-03: Проверить ограничения auth и нагрузочный контур",
+      "body": "Auth limiter и воспроизводимый 20 RPS тест существуют; локальное измерение 30.10 сохранено. Распределённый limiter для нескольких узлов пока отсутствует.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: M. Iteration: Methodology-2026-10-30. Risk ID: R-08, R-20 / DoS.\n\nКритерий завершения: Проверить 429 auth и 500 туров / 20 RPS / 600 секунд / p95 ≤500 мс; зафиксировать ограничения одного процесса и решение для публичного контура.\n\nИсточник реализации/доказательства: `docs/ops/catalog-load.md`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:48:10Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/34"
+    },
+    {
+      "number": 33,
+      "title": "B-02: Проверить аудит административных операций с request ID",
+      "body": "Связь серверного X-Request-ID с AuditLog.details реализована; actor, action, resource и timestamp сохраняются транзакционно.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: R-13 / Repudiation.\n\nКритерий завершения: API-тест связывает две смены роли/активности с двумя разными request ID; доступ к журналу ограничен администратором; review не выполнен.\n\nИсточник реализации/доказательства: `backend/tests/test_engagement.py`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:47:54Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/33"
+    },
+    {
+      "number": 32,
+      "title": "B-01: Проверить Trivy/Gitleaks в обязательном CI",
+      "body": "Реальные сканеры и шесть точных исключений исторических тестовых литералов добавлены. Требуется свежий удалённый CI и независимое review.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: M. Iteration: Methodology-2026-10-30. Risk ID: R-03, R-16.\n\nКритерий завершения: CI падает при находке секрета или HIGH/CRITICAL; JSON сохраняется; исключения ограничены конкретными отпечатками.\n\nИсточник реализации/доказательства: `docs/security/security-scan-report.md`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:47:39Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/32"
+    },
+    {
+      "number": 30,
+      "title": "ST-18 Синхронизация поставщика",
+      "body": "Как оператор, я хочу получать данные внешнего поставщика, чтобы не вводить их вручную.\n\nРелиз: после MVP. Историю размера L необходимо разбить перед взятием в работу.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:46Z",
+      "closed_at": null,
+      "labels": [
+        "priority:could",
+        "role:supplier",
+        "size:L"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/30"
+    },
+    {
+      "number": 29,
+      "title": "ST-17 Отзывы",
+      "body": "Как турист, я хочу оставить отзыв, чтобы поделиться опытом.\n\nРелиз: после MVP.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:44Z",
+      "closed_at": null,
+      "labels": [
+        "priority:could",
+        "role:traveler",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/29"
+    },
+    {
+      "number": 28,
+      "title": "ST-16 Онлайн-оплата",
+      "body": "Как турист, я хочу оплатить онлайн, чтобы завершить покупку сразу.\n\nРелиз: после MVP. Историю размера L необходимо разбить перед взятием в работу.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:41Z",
+      "closed_at": null,
+      "labels": [
+        "priority:could",
+        "role:traveler",
+        "size:L"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/28"
+    },
+    {
+      "number": 27,
+      "title": "ST-15 Заявки поставщика",
+      "body": "Как поставщик, я хочу видеть список заявок по своим турам, чтобы обрабатывать их.\n\nКритерии приёмки:\n- Дано у поставщика есть опубликованные туры; когда открывается кабинет поставщика; тогда видны только заявки по его турам.\n- Отрицательный сценарий: поставщик не видит заявки чужого тура.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:39Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:supplier",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/27"
+    },
+    {
+      "number": 26,
+      "title": "ST-14 Локализация RU/KK/EN",
+      "body": "Как турист, я хочу пользоваться интерфейсом на RU/KK/EN, чтобы выбрать язык.\n\nКритерии приёмки:\n- Дано выбран язык KK или EN; когда открывается страница; тогда основные подписи переведены.\n- Отрицательный сценарий: отсутствующий перевод использует RU без падения интерфейса.",
+      "state": "closed",
+      "created_at": "2026-09-25T07:54:36Z",
+      "closed_at": "2026-10-09T07:31:10Z",
+      "labels": [
+        "mvp",
+        "priority:should",
+        "role:traveler",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/26"
+    },
+    {
+      "number": 25,
+      "title": "ST-13 Назначение ролей",
+      "body": "Как администратор, я хочу назначать роли, чтобы ограничивать доступ.\n\nКритерии приёмки:\n- Дано администратор авторизован; когда назначает роль пользователю; тогда роль сохраняется и меняет доступ к кабинету.\n- Отрицательный сценарий: турист не может назначить себе роль администратора.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:33Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:admin",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/25"
+    },
+    {
+      "number": 24,
+      "title": "ST-12 Снятие тура с публикации",
+      "body": "Как администратор, я хочу снимать тур с публикации, чтобы скрывать неверные данные.\n\nКритерии приёмки:\n- Дано администратор авторизован; когда снимает тур; тогда тур исчезает из публичного каталога.\n- Отрицательный сценарий: обычный турист не может выполнить операцию.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:31Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:admin",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/24"
+    },
+    {
+      "number": 23,
+      "title": "ST-11 Отмена заявки",
+      "body": "Как турист, я хочу отменить свою заявку, чтобы исправить ошибку.\n\nКритерии приёмки:\n- Дано у туриста есть активная заявка; когда он нажимает отмену; тогда заявка получает отменённый статус и места освобождаются.\n- Отрицательный сценарий: турист не может отменить чужую заявку.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:29Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:should",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/23"
+    },
+    {
+      "number": 22,
+      "title": "ST-10 История заявок",
+      "body": "Как турист, я хочу видеть историю заявок и статусы, чтобы понимать результат.\n\nКритерии приёмки:\n- Дано у пользователя есть заявки; когда открывается кабинет; тогда видны только его номера, суммы и статусы.\n- Отрицательный сценарий: другой пользователь не видит заявку по ID.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:27Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/22"
+    },
+    {
+      "number": 21,
+      "title": "ST-09 Обработка заявки поставщиком",
+      "body": "Как поставщик, я хочу подтверждать или отклонять заявку, чтобы управлять продажами.\n\nКритерии приёмки:\n- Дано есть заявка поставщика; когда меняется её статус; тогда статус и история сохраняются.\n- Отрицательный сценарий: чужая заявка недоступна для изменения.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:24Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:supplier",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/21"
+    },
+    {
+      "number": 20,
+      "title": "ST-08 Управление туром поставщиком",
+      "body": "Как поставщик, я хочу создавать и редактировать тур, чтобы управлять предложением.\n\nКритерии приёмки:\n- Дано поставщик авторизован; когда сохраняет свой тур; тогда тур создаётся или обновляется.\n- Отрицательный сценарий: поставщик не может изменить чужой тур.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:21Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:supplier",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/20"
+    },
+    {
+      "number": 19,
+      "title": "ST-07 Регистрация и вход",
+      "body": "Как турист, я хочу зарегистрироваться и войти, чтобы пользоваться кабинетом.\n\nКритерии приёмки:\n- Дано пользователь не вошёл; когда отправляет форму входа с верными данными; тогда открывается кабинет.\n- Отрицательный сценарий: неверный пароль не раскрывает, существует ли email.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:17Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/19"
+    },
+    {
+      "number": 18,
+      "title": "ST-06 Свободные места",
+      "body": "Как турист, я хочу видеть свободные места, чтобы не отправлять невыполнимую заявку.\n\nКритерии приёмки:\n- Дано осталось 2 места; когда два пользователя отправляют по 2 места одновременно; тогда только одна заявка подтверждает резерв, вторая получает понятный отказ.\n- Отрицательный сценарий: количество мест не становится отрицательным.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:15Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/18"
+    },
+    {
+      "number": 17,
+      "title": "ST-05 Выбор даты выезда",
+      "body": "Как турист, я хочу выбрать дату выезда, чтобы отправить заявку на конкретный тур.\n\nКритерии приёмки:\n- Дано у тура есть будущий выезд; когда выбираются дата и количество; тогда форма допускает переход к заявке.\n- Отрицательный сценарий: прошедшая дата недоступна.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:11Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/17"
+    },
+    {
+      "number": 16,
+      "title": "ST-04 Карточка тура",
+      "body": "Как турист, я хочу открыть карточку тура, чтобы увидеть программу и условия.\n\nКритерии приёмки:\n- Дано тур опубликован; когда открывается карточка; тогда показаны программа, цена, даты и места.\n- Отрицательный сценарий: неизвестный ID возвращает 404.",
+      "state": "closed",
+      "created_at": "2026-09-25T07:54:10Z",
+      "closed_at": "2026-10-09T07:32:00Z",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/16"
+    },
+    {
+      "number": 15,
+      "title": "ST-03 Фильтры цены и длительности",
+      "body": "Как турист, я хочу фильтровать по цене и длительности, чтобы сузить выбор.\n\nКритерии приёмки:\n- Дано есть туры с разными ценами; когда задаётся диапазон; тогда список соответствует диапазону.\n- Отрицательный сценарий: некорректный диапазон отклоняется валидацией.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:08Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/15"
+    },
+    {
+      "number": 14,
+      "title": "ST-02 Поиск тура",
+      "body": "Как турист, я хочу искать тур по названию и направлению, чтобы быстро найти вариант.\n\nКритерии приёмки:\n- Дано каталог загружен; когда вводится направление; тогда остаются совпадающие туры.\n- Отрицательный сценарий: при отсутствии совпадений показывается пустое состояние, не ошибка 500.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:05Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/14"
+    },
+    {
+      "number": 13,
+      "title": "ST-01 Каталог опубликованных туров",
+      "body": "Как турист, я хочу видеть каталог опубликованных туров, чтобы выбрать направление.\n\nКритерии приёмки:\n- Дано опубликованные туры есть в БД; когда турист открывает каталог; тогда видит только опубликованные карточки с ценой и длительностью.\n- Отрицательный сценарий: снятый с публикации тур не показывается.",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:03Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/13"
+    },
+    {
+      "number": 12,
+      "title": "Создать приватный репозиторий на GitHub и добавить участников",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:37:01Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/12"
+    },
+    {
+      "number": 11,
+      "title": "Интеграция с внешним платежным шлюзом",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:34:14Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/11"
+    },
+    {
+      "number": 10,
+      "title": "Выполнить 2лаб работу",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:33:52Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/10"
+    },
+    {
+      "number": 9,
+      "title": "Выполнить 1лаб работу",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:33:30Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/9"
+    },
+    {
+      "number": 8,
+      "title": "Создать прототип базы данных",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:32:58Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/8"
+    },
+    {
+      "number": 7,
+      "title": "Написать модульные тесты для модуля аутентификации",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:32:46Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/7"
+    },
+    {
+      "number": 6,
+      "title": "Описать требования к системным интерфейсам",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:32:20Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/6"
+    },
+    {
+      "number": 5,
+      "title": "Написать ADR-001 по шаблону MADR",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:31:19Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/5"
+    },
+    {
+      "number": 4,
+      "title": "Создать структуру каталогов в репозитории и настроить ветки",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:31:04Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/4"
+    },
+    {
+      "number": 3,
+      "title": "Реализовать REST API для аутентификации пользователей (Backend)",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:30:33Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/3"
+    },
+    {
+      "number": 2,
+      "title": "Разработать экран авторизации и регистрации (Frontend)",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:30:24Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/2"
+    },
+    {
+      "number": 1,
+      "title": "Настроить CI/CD пайплайн для автоматического тестирования",
+      "body": "",
+      "state": "open",
+      "created_at": "2026-09-18T08:30:02Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/1"
+    }
+  ],
+  "runs": [
+    {
+      "id": 41014345515,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "38625937ebb2f94f288499bd41e9b948514119a8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-30T06:29:07Z",
+      "updated_at": "2026-10-30T06:30:32Z",
+      "run_started_at": "2026-10-30T06:29:07Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41014345515"
+    },
+    {
+      "id": 41014345479,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "38625937ebb2f94f288499bd41e9b948514119a8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T06:29:07Z",
+      "updated_at": "2026-10-30T06:32:24Z",
+      "run_started_at": "2026-10-30T06:29:07Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41014345479"
+    },
+    {
+      "id": 41013531587,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "bfb7b4b0d664c7e533412148ce900192dc22ab6e",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-30T06:20:44Z",
+      "updated_at": "2026-10-30T06:35:09Z",
+      "run_started_at": "2026-10-30T06:20:44Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41013531587"
+    },
+    {
+      "id": 41013531466,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "bfb7b4b0d664c7e533412148ce900192dc22ab6e",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T06:20:44Z",
+      "updated_at": "2026-10-30T06:24:44Z",
+      "run_started_at": "2026-10-30T06:20:44Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41013531466"
+    },
+    {
+      "id": 41011207735,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "64ef55abab0a9686d2bd4f62218b2186cc61aef8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T05:56:33Z",
+      "updated_at": "2026-10-30T06:15:08Z",
+      "run_started_at": "2026-10-30T05:56:33Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735"
+    },
+    {
+      "id": 41011207711,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "64ef55abab0a9686d2bd4f62218b2186cc61aef8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T05:56:33Z",
+      "updated_at": "2026-10-30T06:00:16Z",
+      "run_started_at": "2026-10-30T05:56:33Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711"
+    },
+    {
+      "id": 41010861839,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "d1d2341ace18d561642dca2913059e26f3d05ac8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-30T05:52:47Z",
+      "updated_at": "2026-10-30T05:53:19Z",
+      "run_started_at": "2026-10-30T05:52:47Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41010861839"
+    },
+    {
+      "id": 41010861779,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "d1d2341ace18d561642dca2913059e26f3d05ac8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T05:52:47Z",
+      "updated_at": "2026-10-30T05:57:12Z",
+      "run_started_at": "2026-10-30T05:52:47Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41010861779"
+    },
+    {
+      "id": 39927462884,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "a66f9d59904f7b0a4b0afe4618ec0fa1dcfb87a3",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-23T08:50:04Z",
+      "updated_at": "2026-10-23T08:52:24Z",
+      "run_started_at": "2026-10-23T08:50:04Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39927462884"
+    },
+    {
+      "id": 39927430518,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "8644d69712bdbaa9aa4f91d3c3567c7963114ce9",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T08:49:48Z",
+      "updated_at": "2026-10-23T08:52:54Z",
+      "run_started_at": "2026-10-23T08:49:48Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39927430518"
+    },
+    {
+      "id": 39926389565,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "e4fd3d85c1f83bb0617547dda008144a036a859c",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-23T08:41:04Z",
+      "updated_at": "2026-10-23T08:43:42Z",
+      "run_started_at": "2026-10-23T08:41:04Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39926389565"
+    },
+    {
+      "id": 39917507190,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "55e4807d07253cfdc77a4e853d1f689f02ad6b4d",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T07:24:28Z",
+      "updated_at": "2026-10-23T07:32:16Z",
+      "run_started_at": "2026-10-23T07:24:28Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39917507190"
+    },
+    {
+      "id": 39916335964,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "76adfdbbe7292f64ded04f8c5dbb19a2d17f9724",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T07:13:06Z",
+      "updated_at": "2026-10-23T07:17:06Z",
+      "run_started_at": "2026-10-23T07:13:06Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39916335964"
+    },
+    {
+      "id": 38870107077,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "d8438c3598089032035f6f14fac3189b793f292a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:53:47Z",
+      "updated_at": "2026-10-16T07:56:00Z",
+      "run_started_at": "2026-10-16T07:53:47Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38870107077"
+    },
+    {
+      "id": 38869450419,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "5823db720be9bf15b67eeb8ef094ecf7187e004a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:47:32Z",
+      "updated_at": "2026-10-16T07:49:34Z",
+      "run_started_at": "2026-10-16T07:47:32Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38869450419"
+    },
+    {
+      "id": 38868798827,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "4c0a3f878cd34f4d4dde6d3c0ca8e3b20a9259b7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:41:16Z",
+      "updated_at": "2026-10-16T07:43:25Z",
+      "run_started_at": "2026-10-16T07:41:16Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38868798827"
+    },
+    {
+      "id": 38868661903,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "3511fc0622a7fe2cff4986a304a7ee5968f61590",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:40:00Z",
+      "updated_at": "2026-10-16T07:42:14Z",
+      "run_started_at": "2026-10-16T07:40:00Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38868661903"
+    },
+    {
+      "id": 38867939151,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "1f008c44d7b7f6dee5539a64c52c753811c0199b",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:33:09Z",
+      "updated_at": "2026-10-16T07:35:22Z",
+      "run_started_at": "2026-10-16T07:33:09Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38867939151"
+    },
+    {
+      "id": 38867497984,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "95aceaf6703ed4a70e476e2be75d2c6993388b16",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:29:02Z",
+      "updated_at": "2026-10-16T07:30:49Z",
+      "run_started_at": "2026-10-16T07:29:02Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38867497984"
+    },
+    {
+      "id": 38867023638,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "5be2dde0a4bca839c45e62b32c7003aea841a3e2",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:24:33Z",
+      "updated_at": "2026-10-16T07:26:28Z",
+      "run_started_at": "2026-10-16T07:24:33Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38867023638"
+    },
+    {
+      "id": 38866947017,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "9484fb6b3988e4ce771744a9d70e86c070e7956e",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:23:50Z",
+      "updated_at": "2026-10-16T07:26:04Z",
+      "run_started_at": "2026-10-16T07:23:50Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866947017"
+    },
+    {
+      "id": 38866522822,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "582dd18583a0714e612e900d4cefd1c6053a2dcc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:19:55Z",
+      "updated_at": "2026-10-16T07:22:11Z",
+      "run_started_at": "2026-10-16T07:19:55Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866522822"
+    },
+    {
+      "id": 38866508756,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "4d1d903b6d796853fe0351b9c09b798ebd52239e",
+      "head_branch": "copilot/fix-browser-actions-job",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-16T07:19:46Z",
+      "updated_at": "2026-10-16T07:19:53Z",
+      "run_started_at": "2026-10-16T07:19:46Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866508756"
+    },
+    {
+      "id": 38866257899,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "cb8534a587f2c671ccba864c764e226f9d010336",
+      "head_branch": "copilot/fix-browser-actions-job",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:17:18Z",
+      "updated_at": "2026-10-16T07:20:07Z",
+      "run_started_at": "2026-10-16T07:17:58Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866257899"
+    },
+    {
+      "id": 38866255523,
+      "name": "Running Copilot cloud agent",
+      "event": "dynamic",
+      "head_sha": "cb8534a587f2c671ccba864c764e226f9d010336",
+      "head_branch": "copilot/fix-browser-actions-job",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-16T07:17:17Z",
+      "updated_at": "2026-10-16T07:20:25Z",
+      "run_started_at": "2026-10-16T07:17:17Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866255523"
+    },
+    {
+      "id": 38865797897,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "69acb68d86eede4a7bd72c95060b64aefb4b79a3",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-16T07:12:59Z",
+      "updated_at": "2026-10-16T07:14:58Z",
+      "run_started_at": "2026-10-16T07:12:59Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38865797897"
+    },
+    {
+      "id": 37905485171,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "7007ea658bc390bbfe62b5058dc6b512cfe9aa91",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:31:32Z",
+      "updated_at": "2026-10-09T08:34:13Z",
+      "run_started_at": "2026-10-09T08:31:32Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37905485171"
+    },
+    {
+      "id": 37903860750,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "84a32fbc813b59ca261f4e73e73f65a33a6b85ff",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:15:35Z",
+      "updated_at": "2026-10-09T08:17:48Z",
+      "run_started_at": "2026-10-09T08:15:35Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37903860750"
+    },
+    {
+      "id": 37903490300,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "297dcba52d93a172b501cceef3a2bdcaa45696ea",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:11:54Z",
+      "updated_at": "2026-10-09T08:14:26Z",
+      "run_started_at": "2026-10-09T08:11:54Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37903490300"
+    },
+    {
+      "id": 37903245619,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "8542a2d53d4537271d2b03448abb8a974603713c",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:09:35Z",
+      "updated_at": "2026-10-09T08:12:01Z",
+      "run_started_at": "2026-10-09T08:09:35Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37903245619"
+    },
+    {
+      "id": 37902872428,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "ba0713f61de9144f90e85a4821eb92b95400e5fe",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:05:55Z",
+      "updated_at": "2026-10-09T08:08:04Z",
+      "run_started_at": "2026-10-09T08:05:55Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37902872428"
+    },
+    {
+      "id": 37899663271,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "063485641847853fdf899238a86beef97c00902b",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T07:33:03Z",
+      "updated_at": "2026-10-09T07:35:20Z",
+      "run_started_at": "2026-10-09T07:33:03Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37899663271"
+    },
+    {
+      "id": 36983815519,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "af2479a11629b05c9af6b9c7211a5f619d4b0a13",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T08:24:08Z",
+      "updated_at": "2026-10-02T08:26:34Z",
+      "run_started_at": "2026-10-02T08:24:08Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36983815519"
+    },
+    {
+      "id": 36981128459,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "51527df19ec5711255eee96d9a6a46fcaa03f674",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:55:13Z",
+      "updated_at": "2026-10-02T07:57:40Z",
+      "run_started_at": "2026-10-02T07:55:13Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36981128459"
+    },
+    {
+      "id": 36980526938,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "ca69d51328195c81aac2a2cd7a7aaceb1a265c61",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:48:32Z",
+      "updated_at": "2026-10-02T07:50:48Z",
+      "run_started_at": "2026-10-02T07:48:32Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36980526938"
+    },
+    {
+      "id": 36980342822,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "07ed3b49fb5ae01a47b530da4951dea8709a3a83",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:46:27Z",
+      "updated_at": "2026-10-02T07:48:40Z",
+      "run_started_at": "2026-10-02T07:46:27Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36980342822"
+    },
+    {
+      "id": 36979647028,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "a418bf0426047b7e06c31d99b8181251e639f1ef",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:38:42Z",
+      "updated_at": "2026-10-02T07:40:58Z",
+      "run_started_at": "2026-10-02T07:38:42Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36979647028"
+    },
+    {
+      "id": 36978540093,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "6473bcbc21a9f29120643e9f7c9fce703ec05c00",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:26:11Z",
+      "updated_at": "2026-10-02T07:28:52Z",
+      "run_started_at": "2026-10-02T07:26:11Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36978540093"
+    },
+    {
+      "id": 36848595223,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "80d5416ae1b7b4499bb3bb11730f78d70a5830e8",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-01T10:21:12Z",
+      "updated_at": "2026-10-01T10:23:33Z",
+      "run_started_at": "2026-10-01T10:21:12Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36848595223"
+    },
+    {
+      "id": 36115714684,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "be830608b9937b0c3bf5b1b195c29c6232a72df6",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-09-25T08:57:08Z",
+      "updated_at": "2026-09-25T08:59:20Z",
+      "run_started_at": "2026-09-25T08:57:08Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36115714684"
+    },
+    {
+      "id": 36110923521,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "04ba943abf1f6b8d4d0b5ebe04a4029ce2f0dd5a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-09-25T08:04:16Z",
+      "updated_at": "2026-09-25T08:06:29Z",
+      "run_started_at": "2026-09-25T08:04:16Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36110923521"
+    },
+    {
+      "id": 35325337357,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "9b845cdf56d6d6dc4eb203d6419d7cd8765a4269",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:37:42Z",
+      "updated_at": "2026-09-18T08:37:56Z",
+      "run_started_at": "2026-09-18T08:37:42Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35325337357"
+    },
+    {
+      "id": 35324738343,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "fb74c04bda265fe768185bc55b0ae56e023c657b",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:30:40Z",
+      "updated_at": "2026-09-18T08:30:52Z",
+      "run_started_at": "2026-09-18T08:30:40Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35324738343"
+    },
+    {
+      "id": 35323860422,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "89ce24bbdce266960db68cf7fceb521267cbea1a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:20:18Z",
+      "updated_at": "2026-09-18T08:20:34Z",
+      "run_started_at": "2026-09-18T08:20:18Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35323860422"
+    },
+    {
+      "id": 35323802989,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "d85db0195172d243816140094d8fd036a871b968",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:19:38Z",
+      "updated_at": "2026-09-18T08:19:47Z",
+      "run_started_at": "2026-09-18T08:19:38Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35323802989"
+    },
+    {
+      "id": 35323384477,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "3470400f2fcc4cd8cd176d229b77a909fa00e172",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:14:40Z",
+      "updated_at": "2026-09-18T08:14:51Z",
+      "run_started_at": "2026-09-18T08:14:40Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35323384477"
+    }
+  ],
+  "project_items": [
+    {
+      "content": {
+        "body": "Как турист, я хочу открыть карточку тура, чтобы увидеть программу и условия.\n\nКритерии приёмки:\n- Дано тур опубликован; когда открывается карточка; тогда показаны программа, цена, даты и места.\n- Отрицательный сценарий: неизвестный ID возвращает 404.",
+        "number": 16,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-04 Карточка тура",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/16"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU2Q",
+      "iteration": "Инкремент 1 (недели 1-4)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:M"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Баекеева Бибінұр",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "M",
+      "status": "Review",
+      "title": "ST-04 Карточка тура"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 1,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Настроить CI/CD пайплайн для автоматического тестирования",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/1"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kICE",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Настроить CI/CD пайплайн для автоматического тестирования"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 2,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Разработать экран авторизации и регистрации (Frontend)",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/2"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kINc",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Разработать экран авторизации и регистрации (Frontend)"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу видеть каталог опубликованных туров, чтобы выбрать направление.\n\nКритерии приёмки:\n- Дано опубликованные туры есть в БД; когда турист открывает каталог; тогда видит только опубликованные карточки с ценой и длительностью.\n- Отрицательный сценарий: снятый с публикации тур не показывается.",
+        "number": 13,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-01 Каталог опубликованных туров",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/13"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tUyM",
+      "iteration": "Инкремент 1 (недели 1-4)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Баекеева Бибінұр",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Done",
+      "title": "ST-01 Каталог опубликованных туров"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу зарегистрироваться и войти, чтобы пользоваться кабинетом.\n\nКритерии приёмки:\n- Дано пользователь не вошёл; когда отправляет форму входа с верными данными; тогда открывается кабинет.\n- Отрицательный сценарий: неверный пароль не раскрывает, существует ли email.",
+        "number": 19,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-07 Регистрация и вход",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/19"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU9A",
+      "iteration": "Инкремент 1 (недели 1-4)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:M"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "M",
+      "status": "Done",
+      "title": "ST-07 Регистрация и вход"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу фильтровать по цене и длительности, чтобы сузить выбор.\n\nКритерии приёмки:\n- Дано есть туры с разными ценами; когда задаётся диапазон; тогда список соответствует диапазону.\n- Отрицательный сценарий: некорректный диапазон отклоняется валидацией.",
+        "number": 15,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-03 Фильтры цены и длительности",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/15"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU1E",
+      "iteration": "Инкремент 1 (недели 1-4)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Баекеева Бибінұр",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Done",
+      "title": "ST-03 Фильтры цены и длительности"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 3,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Реализовать REST API для аутентификации пользователей (Backend)",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/3"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kIRY",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Реализовать REST API для аутентификации пользователей (Backend)"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 4,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Создать структуру каталогов в репозитории и настроить ветки",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/4"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kIxg",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Создать структуру каталогов в репозитории и настроить ветки"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 5,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Написать ADR-001 по шаблону MADR",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/5"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJBo",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Написать ADR-001 по шаблону MADR"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу искать тур по названию и направлению, чтобы быстро найти вариант.\n\nКритерии приёмки:\n- Дано каталог загружен; когда вводится направление; тогда остаются совпадающие туры.\n- Отрицательный сценарий: при отсутствии совпадений показывается пустое состояние, не ошибка 500.",
+        "number": 14,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-02 Поиск тура",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/14"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tUzE",
+      "iteration": "Инкремент 1 (недели 1-4)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Баекеева Бибінұр",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Done",
+      "title": "ST-02 Поиск тура"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 6,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Описать требования к системным интерфейсам",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/6"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJo8",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Описать требования к системным интерфейсам"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 7,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Написать модульные тесты для модуля аутентификации",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/7"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJ0o",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Написать модульные тесты для модуля аутентификации"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 8,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Создать прототип базы данных",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/8"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJ7c",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Создать прототип базы данных"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 9,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Выполнить 1лаб работу",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/9"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kKRI",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Выполнить 1лаб работу"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 10,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Выполнить 2лаб работу",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/10"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kKcQ",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Выполнить 2лаб работу"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 11,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Интеграция с внешним платежным шлюзом",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/11"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kKo4",
+      "iteration": "После MVP",
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Could",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "L",
+      "status": "Backlog",
+      "title": "Интеграция с внешним платежным шлюзом"
+    },
+    {
+      "content": {
+        "body": "",
+        "number": 12,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "Создать приватный репозиторий на GitHub и добавить участников",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/12"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kMHM",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "status": "Done",
+      "title": "Создать приватный репозиторий на GitHub и добавить участников"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу выбрать дату выезда, чтобы отправить заявку на конкретный тур.\n\nКритерии приёмки:\n- Дано у тура есть будущий выезд; когда выбираются дата и количество; тогда форма допускает переход к заявке.\n- Отрицательный сценарий: прошедшая дата недоступна.",
+        "number": 17,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-05 Выбор даты выезда",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/17"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU3Y",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Ready",
+      "title": "ST-05 Выбор даты выезда"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу видеть свободные места, чтобы не отправлять невыполнимую заявку.\n\nКритерии приёмки:\n- Дано осталось 2 места; когда два пользователя отправляют по 2 места одновременно; тогда только одна заявка подтверждает резерв, вторая получает понятный отказ.\n- Отрицательный сценарий: количество мест не становится отрицательным.",
+        "number": 18,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-06 Свободные места",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/18"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU54",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Ready",
+      "title": "ST-06 Свободные места"
+    },
+    {
+      "content": {
+        "body": "Как поставщик, я хочу создавать и редактировать тур, чтобы управлять предложением.\n\nКритерии приёмки:\n- Дано поставщик авторизован; когда сохраняет свой тур; тогда тур создаётся или обновляется.\n- Отрицательный сценарий: поставщик не может изменить чужой тур.",
+        "number": 20,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-08 Управление туром поставщиком",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/20"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU_k",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:supplier",
+        "size:M"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Баекеева Бибінұр",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "M",
+      "status": "Ready",
+      "title": "ST-08 Управление туром поставщиком"
+    },
+    {
+      "content": {
+        "body": "Как поставщик, я хочу подтверждать или отклонять заявку, чтобы управлять продажами.\n\nКритерии приёмки:\n- Дано есть заявка поставщика; когда меняется её статус; тогда статус и история сохраняются.\n- Отрицательный сценарий: чужая заявка недоступна для изменения.",
+        "number": 21,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-09 Обработка заявки поставщиком",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/21"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVA0",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:supplier",
+        "size:M"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "M",
+      "status": "Ready",
+      "title": "ST-09 Обработка заявки поставщиком"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу видеть историю заявок и статусы, чтобы понимать результат.\n\nКритерии приёмки:\n- Дано у пользователя есть заявки; когда открывается кабинет; тогда видны только его номера, суммы и статусы.\n- Отрицательный сценарий: другой пользователь не видит заявку по ID.",
+        "number": 22,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-10 История заявок",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/22"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVBo",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Ready",
+      "title": "ST-10 История заявок"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу отменить свою заявку, чтобы исправить ошибку.\n\nКритерии приёмки:\n- Дано у туриста есть активная заявка; когда он нажимает отмену; тогда заявка получает отменённый статус и места освобождаются.\n- Отрицательный сценарий: турист не может отменить чужую заявку.",
+        "number": 23,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-11 Отмена заявки",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/23"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVDI",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:should",
+        "role:traveler",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Should",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Ready",
+      "title": "ST-11 Отмена заявки"
+    },
+    {
+      "content": {
+        "body": "Как администратор, я хочу снимать тур с публикации, чтобы скрывать неверные данные.\n\nКритерии приёмки:\n- Дано администратор авторизован; когда снимает тур; тогда тур исчезает из публичного каталога.\n- Отрицательный сценарий: обычный турист не может выполнить операцию.",
+        "number": 24,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-12 Снятие тура с публикации",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/24"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVEo",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:admin",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Ready",
+      "title": "ST-12 Снятие тура с публикации"
+    },
+    {
+      "content": {
+        "body": "Как администратор, я хочу назначать роли, чтобы ограничивать доступ.\n\nКритерии приёмки:\n- Дано администратор авторизован; когда назначает роль пользователю; тогда роль сохраняется и меняет доступ к кабинету.\n- Отрицательный сценарий: турист не может назначить себе роль администратора.",
+        "number": 25,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-13 Назначение ролей",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/25"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVFc",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:admin",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Ready",
+      "title": "ST-13 Назначение ролей"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу пользоваться интерфейсом на RU/KK/EN, чтобы выбрать язык.\n\nКритерии приёмки:\n- Дано выбран язык KK или EN; когда открывается страница; тогда основные подписи переведены.\n- Отрицательный сценарий: отсутствующий перевод использует RU без падения интерфейса.",
+        "number": 26,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-14 Локализация RU/KK/EN",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/26"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVH4",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:should",
+        "role:traveler",
+        "size:M"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Баекеева Бибінұр",
+      "priority": "Should",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "M",
+      "status": "Ready",
+      "title": "ST-14 Локализация RU/KK/EN"
+    },
+    {
+      "content": {
+        "body": "Как поставщик, я хочу видеть список заявок по своим турам, чтобы обрабатывать их.\n\nКритерии приёмки:\n- Дано у поставщика есть опубликованные туры; когда открывается кабинет поставщика; тогда видны только заявки по его турам.\n- Отрицательный сценарий: поставщик не видит заявки чужого тура.",
+        "number": 27,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-15 Заявки поставщика",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/27"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVJA",
+      "iteration": "Инкремент 2 (недели 5-8)",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:supplier",
+        "size:S"
+      ],
+      "milestone": {
+        "description": "MVP ЛЗ4: сквозной путь от каталога до статуса заявки",
+        "dueOn": "",
+        "title": "MVP"
+      },
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Must",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "S",
+      "status": "Ready",
+      "title": "ST-15 Заявки поставщика"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу оплатить онлайн, чтобы завершить покупку сразу.\n\nРелиз: после MVP. Историю размера L необходимо разбить перед взятием в работу.",
+        "number": 28,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-16 Онлайн-оплата",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/28"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVKQ",
+      "iteration": "После MVP",
+      "labels": [
+        "priority:could",
+        "role:traveler",
+        "size:L"
+      ],
+      "owner": "Абинсериков Нурасыл",
+      "priority": "Could",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "L",
+      "status": "Backlog",
+      "title": "ST-16 Онлайн-оплата"
+    },
+    {
+      "content": {
+        "body": "Как турист, я хочу оставить отзыв, чтобы поделиться опытом.\n\nРелиз: после MVP.",
+        "number": 29,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-17 Отзывы",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/29"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVLk",
+      "iteration": "После MVP",
+      "labels": [
+        "priority:could",
+        "role:traveler",
+        "size:M"
+      ],
+      "owner": "Баекеева Бибінұр",
+      "priority": "Could",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "M",
+      "status": "Backlog",
+      "title": "ST-17 Отзывы"
+    },
+    {
+      "content": {
+        "body": "Как оператор, я хочу получать данные внешнего поставщика, чтобы не вводить их вручную.\n\nРелиз: после MVP. Историю размера L необходимо разбить перед взятием в работу.",
+        "number": 30,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "ST-18 Синхронизация поставщика",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/30"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVNU",
+      "iteration": "После MVP",
+      "labels": [
+        "priority:could",
+        "role:supplier",
+        "size:L"
+      ],
+      "owner": "Баекеева Бибінұр",
+      "priority": "Could",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "size (S/M/L)": "L",
+      "status": "Backlog",
+      "title": "ST-18 Синхронизация поставщика"
+    },
+    {
+      "assignees": [
+        "Akira-vs96"
+      ],
+      "content": {
+        "body": "Реальные сканеры и шесть точных исключений исторических тестовых литералов добавлены. Требуется свежий удалённый CI и независимое review.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: M. Iteration: Methodology-2026-10-30. Risk ID: R-03, R-16.\n\nКритерий завершения: CI падает при находке секрета или HIGH/CRITICAL; JSON сохраняется; исключения ограничены конкретными отпечатками.\n\nИсточник реализации/доказательства: `docs/security/security-scan-report.md`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+        "number": 32,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "B-01: Проверить Trivy/Gitleaks в обязательном CI",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/32"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr2eg",
+      "iteration": "Methodology-2026-10-30; due 2026-11-06",
+      "owner": "Akira-vs96 (triage)",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "risk ID": "R-03, R-16",
+      "size (S/M/L)": "M",
+      "status": "Review",
+      "title": "B-01: Проверить Trivy/Gitleaks в обязательном CI"
+    },
+    {
+      "assignees": [
+        "Akira-vs96"
+      ],
+      "content": {
+        "body": "Связь серверного X-Request-ID с AuditLog.details реализована; actor, action, resource и timestamp сохраняются транзакционно.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: R-13 / Repudiation.\n\nКритерий завершения: API-тест связывает две смены роли/активности с двумя разными request ID; доступ к журналу ограничен администратором; review не выполнен.\n\nИсточник реализации/доказательства: `backend/tests/test_engagement.py`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+        "number": 33,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "B-02: Проверить аудит административных операций с request ID",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/33"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr2n8",
+      "iteration": "Methodology-2026-10-30; due 2026-11-06",
+      "owner": "Akira-vs96 (triage)",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "risk ID": "R-13 / Repudiation",
+      "size (S/M/L)": "S",
+      "status": "Review",
+      "title": "B-02: Проверить аудит административных операций с request ID"
+    },
+    {
+      "assignees": [
+        "Akira-vs96"
+      ],
+      "content": {
+        "body": "Auth limiter и воспроизводимый 20 RPS тест существуют; локальное измерение 30.10 сохранено. Распределённый limiter для нескольких узлов пока отсутствует.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: M. Iteration: Methodology-2026-10-30. Risk ID: R-08, R-20 / DoS.\n\nКритерий завершения: Проверить 429 auth и 500 туров / 20 RPS / 600 секунд / p95 ≤500 мс; зафиксировать ограничения одного процесса и решение для публичного контура.\n\nИсточник реализации/доказательства: `docs/ops/catalog-load.md`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+        "number": 34,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "B-03: Проверить ограничения auth и нагрузочный контур",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/34"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr2zE",
+      "iteration": "Methodology-2026-10-30; due 2026-11-06",
+      "owner": "Akira-vs96 (triage)",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "risk ID": "R-08, R-20 / DoS",
+      "size (S/M/L)": "M",
+      "status": "Review",
+      "title": "B-03: Проверить ограничения auth и нагрузочный контур"
+    },
+    {
+      "assignees": [
+        "Akira-vs96"
+      ],
+      "content": {
+        "body": "JSON null и HTML прокси отклоняются API-клиентом; сообщение ошибки доступно ru/kk/en. До исправления падение воспроизведено.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI null contract.\n\nКритерий завершения: Оба ответа дают error UI и возможность повтора без pageerror; обычный JSON и 204 продолжают работать; нужен независимый review.\n\nИсточник реализации/доказательства: `frontend/src/api.js`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+        "number": 35,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "INC-01: Review обработки HTTP 200 с невалидным телом",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/35"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr278",
+      "iteration": "Methodology-2026-10-30; due 2026-11-06",
+      "owner": "Akira-vs96 (triage)",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "risk ID": "UI null contract",
+      "size (S/M/L)": "S",
+      "status": "Review",
+      "title": "INC-01: Review обработки HTTP 200 с невалидным телом"
+    },
+    {
+      "assignees": [
+        "Akira-vs96"
+      ],
+      "content": {
+        "body": "Общий useResource игнорирует результат отменённого запроса. Требуется независимая проверка переходов между экранами.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI stale response.\n\nКритерий завершения: После AbortSignal.aborted результат не меняет состояние нового запроса; проверить быстрые переходы и сетевую задержку.\n\nИсточник реализации/доказательства: `frontend/src/components/common.jsx`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+        "number": 36,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "INC-02: Review отмены устаревших запросов интерфейса",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/36"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr3Fs",
+      "iteration": "Methodology-2026-10-30; due 2026-11-06",
+      "owner": "Akira-vs96 (triage)",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "risk ID": "UI stale response",
+      "size (S/M/L)": "S",
+      "status": "Review",
+      "title": "INC-02: Review отмены устаревших запросов интерфейса"
+    },
+    {
+      "assignees": [
+        "Akira-vs96"
+      ],
+      "content": {
+        "body": "Добавлен реальный Chromium-сценарий browser_invalid_response; локальный запуск прошёл для JSON null и HTML.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI regression coverage.\n\nКритерий завершения: Сценарий включён в browser job; все восемь browser scripts зелёные; повторная оценка эффекта 13.11.2026.\n\nИсточник реализации/доказательства: `tests/browser_invalid_response.py`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n",
+        "number": 37,
+        "repository": "Akira-vs96/SaparTravel",
+        "title": "INC-03: Закрепить отрицательные ответы каталога в CI",
+        "type": "Issue",
+        "url": "https://github.com/Akira-vs96/SaparTravel/issues/37"
+      },
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr3Pc",
+      "iteration": "Methodology-2026-10-30; due 2026-11-06",
+      "owner": "Akira-vs96 (triage)",
+      "repository": "https://github.com/Akira-vs96/SaparTravel",
+      "risk ID": "UI regression coverage",
+      "size (S/M/L)": "S",
+      "status": "Review",
+      "title": "INC-03: Закрепить отрицательные ответы каталога в CI"
+    }
+  ],
+  "project_items_truncated": false,
+  "project_evidence": "requested",
+  "project": {
+    "id": "PVT_kwHOCuk0E84Bj444",
+    "url": "https://github.com/users/Akira-vs96/projects/2"
+  },
+  "project_item_metadata": [
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU2Q",
+      "created_at": "2026-09-25T07:54:12Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 16,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kICE",
+      "created_at": "2026-09-18T08:30:04Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 1,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kINc",
+      "created_at": "2026-09-18T08:30:27Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 2,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tUyM",
+      "created_at": "2026-09-25T07:54:05Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 13,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU9A",
+      "created_at": "2026-09-25T07:54:21Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 19,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU1E",
+      "created_at": "2026-09-25T07:54:10Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 15,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kIRY",
+      "created_at": "2026-09-18T08:30:34Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 3,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kIxg",
+      "created_at": "2026-09-18T08:31:05Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 4,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJBo",
+      "created_at": "2026-09-18T08:31:20Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 5,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tUzE",
+      "created_at": "2026-09-25T07:54:07Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 14,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJo8",
+      "created_at": "2026-09-18T08:32:21Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 6,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJ0o",
+      "created_at": "2026-09-18T08:32:47Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 7,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJ7c",
+      "created_at": "2026-09-18T08:32:59Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 8,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kKRI",
+      "created_at": "2026-09-18T08:33:31Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 9,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kKcQ",
+      "created_at": "2026-09-18T08:33:52Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 10,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kKo4",
+      "created_at": "2026-09-18T08:34:15Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 11,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kMHM",
+      "created_at": "2026-09-18T08:37:02Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 12,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU3Y",
+      "created_at": "2026-09-25T07:54:13Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 17,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU54",
+      "created_at": "2026-09-25T07:54:17Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 18,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU_k",
+      "created_at": "2026-09-25T07:54:24Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 20,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVA0",
+      "created_at": "2026-09-25T07:54:26Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 21,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVBo",
+      "created_at": "2026-09-25T07:54:28Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 22,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVDI",
+      "created_at": "2026-09-25T07:54:30Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 23,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVEo",
+      "created_at": "2026-09-25T07:54:33Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 24,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVFc",
+      "created_at": "2026-09-25T07:54:34Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 25,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVH4",
+      "created_at": "2026-09-25T07:54:38Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 26,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVJA",
+      "created_at": "2026-09-25T07:54:41Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 27,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVKQ",
+      "created_at": "2026-09-25T07:54:44Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 28,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVLk",
+      "created_at": "2026-09-25T07:54:46Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 29,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVNU",
+      "created_at": "2026-09-25T07:54:49Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 30,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr2eg",
+      "created_at": "2026-10-30T05:47:40Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 32,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr2n8",
+      "created_at": "2026-10-30T05:47:56Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 33,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr2zE",
+      "created_at": "2026-10-30T05:48:12Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 34,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr278",
+      "created_at": "2026-10-30T05:48:26Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 35,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr3Fs",
+      "created_at": "2026-10-30T05:48:41Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 36,
+      "repository": "Akira-vs96/SaparTravel"
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr3Pc",
+      "created_at": "2026-10-30T05:48:57Z",
+      "archived": false,
+      "type": "ISSUE",
+      "issue": 37,
+      "repository": "Akira-vs96/SaparTravel"
+    }
+  ],
+  "membership_scope": "Current Project items; removed historical items cannot be reconstructed completely",
+  "transitions": [
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6xXSM8AAAAHTj9gEw",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 1,
+      "at": "2026-09-18T08:30:07Z",
+      "from": "",
+      "to": "Backlog"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6xj3s8AAAAHTj7t2w",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 2,
+      "at": "2026-09-18T08:30:29Z",
+      "from": "",
+      "to": "Backlog"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6xoc88AAAAHTj9o0w",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 3,
+      "at": "2026-09-18T08:30:35Z",
+      "from": "",
+      "to": "Backlog"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6x49c8AAAAHTj9kuw",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 4,
+      "at": "2026-09-18T08:31:06Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6yBHs8AAAAHTj-xaQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 5,
+      "at": "2026-09-18T08:31:22Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6yi4s8AAAAHTkBTGA",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 6,
+      "at": "2026-09-18T08:32:22Z",
+      "from": "",
+      "to": "In progress"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6ywUc8AAAAHTkCs1Q",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 7,
+      "at": "2026-09-18T08:32:49Z",
+      "from": "",
+      "to": "Backlog"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6y2yc8AAAAHTkDT6w",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 8,
+      "at": "2026-09-18T08:33:01Z",
+      "from": "",
+      "to": "Backlog"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6zJa88AAAAHTkFGkQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 9,
+      "at": "2026-09-18T08:33:32Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6zVC88AAAAHTkGCGw",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 10,
+      "at": "2026-09-18T08:33:54Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6zh488AAAAHTkHDaQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 11,
+      "at": "2026-09-18T08:34:15Z",
+      "from": "",
+      "to": "Blocked"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR609Oc8AAAAHTkPfhw",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 12,
+      "at": "2026-09-18T08:37:03Z",
+      "from": "",
+      "to": "Done"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdfOs8AAAAHbuCuBQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 13,
+      "at": "2026-09-25T08:06:13Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdhBM8AAAAHbNTnqg",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 14,
+      "at": "2026-09-25T08:06:15Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdlns8AAAAHa6NjPw",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 17,
+      "at": "2026-09-25T08:06:16Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdiXs8AAAAHbJL5ww",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 15,
+      "at": "2026-09-25T08:06:16Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdjmM8AAAAHbJL6Bg",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 16,
+      "at": "2026-09-25T08:06:17Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdoIc8AAAAHfDUUZg",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 18,
+      "at": "2026-09-25T08:06:18Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdr3M8AAAAHa61l3Q",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 20,
+      "at": "2026-09-25T08:06:19Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdpms8AAAAHbFohNQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 19,
+      "at": "2026-09-25T08:06:19Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJduh88AAAAHb_Limg",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 21,
+      "at": "2026-09-25T08:06:21Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdxas8AAAAHbNTqFQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 23,
+      "at": "2026-09-25T08:06:22Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdwDc8AAAAHb_LjbQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 22,
+      "at": "2026-09-25T08:06:22Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJdzGc8AAAAHbJL7ug",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 24,
+      "at": "2026-09-25T08:06:23Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJd0FM8AAAAHbuCvwg",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 25,
+      "at": "2026-09-25T08:06:24Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJd4Mc8AAAAHa-oA0w",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 27,
+      "at": "2026-09-25T08:06:25Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJd18M8AAAAHbNTqZA",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 26,
+      "at": "2026-09-25T08:06:25Z",
+      "from": "",
+      "to": "Ready"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJd6VM8AAAAHbNTqsg",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 28,
+      "at": "2026-09-25T08:06:27Z",
+      "from": "",
+      "to": "Backlog"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJd-Tc8AAAAHbJL9HA",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 30,
+      "at": "2026-09-25T08:06:29Z",
+      "from": "",
+      "to": "Backlog"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABTJd8Pc8AAAAHb3QyyA",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 29,
+      "at": "2026-09-25T08:06:29Z",
+      "from": "",
+      "to": "Backlog"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6xXSM8AAAAHgVy8XQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 1,
+      "at": "2026-09-25T08:08:00Z",
+      "from": "Backlog",
+      "to": "Done"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6ywUc8AAAAHgVy9vQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 7,
+      "at": "2026-09-25T08:08:05Z",
+      "from": "Backlog",
+      "to": "Done"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABR6y2yc8AAAAHbpWP8A",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 8,
+      "at": "2026-09-25T08:08:06Z",
+      "from": "Backlog",
+      "to": "Done"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABbGuxAc8AAAAIEgIjwQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 32,
+      "at": "2026-10-30T05:47:46Z",
+      "from": "",
+      "to": "Review"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABbGu6Wc8AAAAIEgJZbQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 33,
+      "at": "2026-10-30T05:48:02Z",
+      "from": "",
+      "to": "Review"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABbGvDnc8AAAAIEgKGig",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 34,
+      "at": "2026-10-30T05:48:15Z",
+      "from": "",
+      "to": "Review"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABbGvLV88AAAAIEgK38w",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 35,
+      "at": "2026-10-30T05:48:29Z",
+      "from": "",
+      "to": "Review"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABbGvUpM8AAAAIEgLvuw",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 36,
+      "at": "2026-10-30T05:48:45Z",
+      "from": "",
+      "to": "Review"
+    },
+    {
+      "id": "PVTISC_lADOUfzUR88AAAABbGvd6s8AAAAIEgMlzQ",
+      "project_id": "PVT_kwHOCuk0E84Bj444",
+      "issue": 37,
+      "at": "2026-10-30T05:49:02Z",
+      "from": "",
+      "to": "Review"
+    }
+  ],
+  "truncated_timelines": [],
+  "deployments": []
+}
