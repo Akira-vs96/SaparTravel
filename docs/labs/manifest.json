@@ -341,6 +341,18 @@
         {
           "path": "docs/labs/lab-02/evidence/wiki-publication.json",
           "label": "wiki-publication.json"
+        },
+        {
+          "path": "docs/labs/environment.md",
+          "label": "environment.md"
+        },
+        {
+          "path": "docs/labs/lab-02/evidence/environment.json",
+          "label": "environment.json"
+        },
+        {
+          "path": "docs/labs/lab-02/evidence/contributors.json",
+          "label": "contributors.json"
         }
       ],
       "commands": [
@@ -507,8 +519,8 @@
           "text": "Запишите в вики соглашения команды: имена веток (feat/ABC-12-short-name), формат коммитов (feat:, fix:, docs:), правило «одна ветка — одна задача, живёт не дольше трёх дней».",
           "source_paragraph": 217,
           "id": "LZ02-S10",
-          "status": "documented",
-          "requires_people": false,
+          "status": "partial",
+          "requires_people": true,
           "evidence": [
             "docs/labs/lab-02/cases.md",
             "docs/labs/lab-02/evidence/space.json",
@@ -609,16 +621,12 @@
           "text": "В репозитории есть коммиты от всех участников команды.",
           "source_paragraph": 231,
           "id": "LZ02-C04",
-          "status": "documented",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
-            "docs/labs/lab-02/cases.md",
-            "docs/labs/lab-02/evidence/space.json",
-            "docs/adr/ADR-001.md",
-            "docs/project-board-workflow.md",
-            ".github/ISSUE_TEMPLATE"
+            "docs/labs/lab-02/evidence/contributors.json"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "В истории основной ветки GitHub найдены commits от всех четырёх логинов участников; персональная самооценка и распределение вклада — отдельная проверка."
         },
         {
           "kind": "check",
@@ -3088,7 +3096,7 @@
       "number": 10,
       "title": "CI/CD-пайплайн и дашборд DORA",
       "report": "docs/labs/lab-10/README.md",
-      "findings": "Добавлены coverage gate 60%, линтер, Gitleaks/Trivy, сборки контейнеров и проверка целостности курса. Локально 86 тестов, покрытие 86,17%. Настоящий сборщик GitHub сохранил 38 исходных CI runs и 0 deployments: четыре DORA-показателя без источника остаются null. Определения и откат описаны отдельно; человеческий review, токен с минимальными правами и доказательство блокировки красного merge проверяются отдельно от наличия YAML.",
+      "findings": "Добавлены coverage gate 60%, линтер, Gitleaks/Trivy, сборки контейнеров и проверка целостности курса. Локально 86 тестов, покрытие 86,17%. Настоящий сборщик GitHub сохранил 38 исходных CI runs и 0 deployments: четыре DORA-показателя без источника остаются null. Определения и откат описаны отдельно; человеческий review, токен с минимальными правами и доказательство блокировки красного merge проверяются отдельно от наличия YAML. Свежий удалённый CI 41011207711 прошёл все шесть jobs; main защищена шестью проверками и одним review, определения DORA опубликованы в Wiki.",
       "artifacts": [
         {
           "path": ".github/workflows/ci.yml",
@@ -3129,6 +3137,14 @@
         {
           "path": "docs/labs/lab-10/evidence/branch-protection.json",
           "label": "branch-protection.json"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/remote-ci.json",
+          "label": "remote-ci.json"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/acceptance-initial-failure.json",
+          "label": "acceptance-initial-failure.json"
         }
       ],
       "commands": [
@@ -3141,18 +3157,12 @@
           "text": "Создайте файл .github/workflows/ci.yml по образцу ниже и отправьте в репозиторий. Пайплайн запустится сам; результат смотрите на вкладке Actions.",
           "source_paragraph": 445,
           "id": "LZ10-S01",
-          "status": "partial",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/remote-ci.json"
           ],
-          "note": "YAML и локальные проверки готовы; свежий удалённый run фиксируется в remote-ci.json после запуска."
+          "note": "Реальный CI 41011207711: шесть jobs success, 223.0 с от создания до последнего job; исходный CI также зелёный."
         },
         {
           "kind": "step",
@@ -3198,18 +3208,12 @@
           "text": "Держите общее время пайплайна в пределах 10 минут. Более долгий пайплайн люди перестают ждать и начинают обходить.",
           "source_paragraph": 448,
           "id": "LZ10-S04",
-          "status": "partial",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/remote-ci.json"
           ],
-          "note": "Локальные проверки завершены; общий wall time удалённого CI измеряется после первого run."
+          "note": "Реальный CI 41011207711: шесть jobs success, 223.0 с от создания до последнего job; исходный CI также зелёный."
         },
         {
           "kind": "step",
@@ -3420,18 +3424,12 @@
           "text": "Пайплайн зелёный; приложена ссылка на успешный прогон.",
           "source_paragraph": 489,
           "id": "LZ10-C01",
-          "status": "documented",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/remote-ci.json"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Реальный CI 41011207711: шесть jobs success, 223.0 с от создания до последнего job; исходный CI также зелёный."
         },
         {
           "kind": "check",
@@ -5356,7 +5354,7 @@
       "number": 15,
       "title": "Защита проекта и симуляция собеседования",
       "report": "docs/labs/lab-15/README.md",
-      "findings": "Собраны редактируемая презентация на 15 минут, план/факт, конкретные уроки, текст 90-секундного рассказа, вопросы собеседования и проектная запись CV. Главные доказательства доступны из оглавления. Личная роль/резюме, репетиция с таймером, защита, финальная ретроспектива и профессиональный профиль требуют самих участников; они не оформлены как состоявшиеся события.",
+      "findings": "Собраны редактируемая презентация на 15 минут, план/факт, конкретные уроки, текст 90-секундного рассказа, вопросы собеседования и проектная запись CV. Главные доказательства доступны из оглавления. Личная роль/резюме, репетиция с таймером, защита, финальная ретроспектива и профессиональный профиль требуют самих участников; они не оформлены как состоявшиеся события. Дополнительно записан и проверен резервный WebM реального smoke. Проверены 23 ссылки анонимно; 20 исходников доступны, Project требует доступа и часть UI ограничена 429.",
       "artifacts": [
         {
           "path": "docs/labs/lab-15/defense.pptx",
@@ -5381,6 +5379,22 @@
         {
           "path": "docs/portfolio/final-portfolio.md",
           "label": "final-portfolio.md"
+        },
+        {
+          "path": "docs/labs/lab-15/demo.md",
+          "label": "demo.md"
+        },
+        {
+          "path": "docs/labs/lab-15/evidence/browser-demo.webm",
+          "label": "browser-demo.webm"
+        },
+        {
+          "path": "docs/labs/lab-15/evidence/demo-run.json",
+          "label": "demo-run.json"
+        },
+        {
+          "path": "docs/labs/lab-15/evidence/anonymous-links.json",
+          "label": "anonymous-links.json"
         }
       ],
       "commands": [
@@ -5411,17 +5425,13 @@
           "text": "Подготовьте демонстрацию сквозного сценария от начала до конца и отрепетируйте её. Обязательно подготовьте запасной вариант: записанное видео или локальный запуск на случай, если сеть или стенд подведут.",
           "source_paragraph": 676,
           "id": "LZ15-S02",
-          "status": "requires-human",
+          "status": "partial",
           "requires_people": true,
           "evidence": [
-            "docs/labs/lab-15/defense.pptx",
-            "docs/labs/lab-15/defense-plan.md",
-            "docs/labs/lab-15/plan-vs-actual.md",
-            "docs/labs/lab-15/lessons.md",
-            "docs/labs/lab-15/interview-and-cv.md",
-            "docs/portfolio/final-portfolio.md"
+            "docs/labs/lab-15/demo.md",
+            "docs/labs/lab-15/evidence/demo-run.json"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "Реальный Chromium smoke записан в WebM, воспроизведение проверено; живая репетиция с выступающими пока не проведена."
         },
         {
           "kind": "step",
@@ -5519,17 +5529,12 @@
           "text": "Проверьте все ссылки из другого аккаунта или из режима инкогнито. Ссылка, которая открывается только у вас, на собеседовании не откроется.",
           "source_paragraph": 682,
           "id": "LZ15-S08",
-          "status": "requires-human",
-          "requires_people": true,
+          "status": "partial",
+          "requires_people": false,
           "evidence": [
-            "docs/labs/lab-15/defense.pptx",
-            "docs/labs/lab-15/defense-plan.md",
-            "docs/labs/lab-15/plan-vs-actual.md",
-            "docs/labs/lab-15/lessons.md",
-            "docs/labs/lab-15/interview-and-cv.md",
-            "docs/portfolio/final-portfolio.md"
+            "docs/labs/lab-15/evidence/anonymous-links.json"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "Проверено анонимно в Chromium: 20 публичных исходников доступны; часть UI ответила 429, закрытый Project — 404. Доступ конкретного преподавателя не предоставлен."
         },
         {
           "kind": "step",
@@ -5627,17 +5632,13 @@
           "text": "Демонстрация отрепетирована, запасной вариант готов.",
           "source_paragraph": 689,
           "id": "LZ15-C01",
-          "status": "requires-human",
+          "status": "partial",
           "requires_people": true,
           "evidence": [
-            "docs/labs/lab-15/defense.pptx",
-            "docs/labs/lab-15/defense-plan.md",
-            "docs/labs/lab-15/plan-vs-actual.md",
-            "docs/labs/lab-15/lessons.md",
-            "docs/labs/lab-15/interview-and-cv.md",
-            "docs/portfolio/final-portfolio.md"
+            "docs/labs/lab-15/demo.md",
+            "docs/labs/lab-15/evidence/demo-run.json"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "Реальный Chromium smoke записан в WebM, воспроизведение проверено; живая репетиция с выступающими пока не проведена."
         },
         {
           "kind": "check",
@@ -5681,17 +5682,12 @@
           "text": "Портфолио открывается по ссылке из режима инкогнито, доступ выдан.",
           "source_paragraph": 692,
           "id": "LZ15-C04",
-          "status": "requires-human",
-          "requires_people": true,
+          "status": "partial",
+          "requires_people": false,
           "evidence": [
-            "docs/labs/lab-15/defense.pptx",
-            "docs/labs/lab-15/defense-plan.md",
-            "docs/labs/lab-15/plan-vs-actual.md",
-            "docs/labs/lab-15/lessons.md",
-            "docs/labs/lab-15/interview-and-cv.md",
-            "docs/portfolio/final-portfolio.md"
+            "docs/labs/lab-15/evidence/anonymous-links.json"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "Проверено анонимно в Chromium: 20 публичных исходников доступны; часть UI ответила 429, закрытый Project — 404. Доступ конкретного преподавателя не предоставлен."
         },
         {
           "kind": "check",
@@ -5747,9 +5743,10 @@
       "id": "ADMIN-02",
       "status": "partial",
       "text": "Журнал сдач в Wiki и ссылки доступны принимающему",
-      "note": "Подготовка пакета не означает сдачу; обновление Wiki и внешняя проверка фиксируются отдельно",
+      "note": "В Wiki опубликован журнал подготовки 15 ЛЗ с датой и реальным автором Codex; сдача, личный вклад участников и доступ принимающего ещё не подтверждены.",
       "requires_people": true,
       "evidence": [
+        "docs/labs/lab-02/evidence/wiki-publication.json",
         "docs/labs/README.md"
       ]
     }

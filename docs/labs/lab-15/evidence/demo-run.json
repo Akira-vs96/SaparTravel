@@ -1,0 +1,30 @@
+{
+  "scope": "isolated PostgreSQL 17, Uvicorn, Vite preview and actual Chromium",
+  "scripts": [
+    {
+      "script": "browser_smoke.py",
+      "exit_code": 0,
+      "seconds": 20.905
+    }
+  ],
+  "passed": true,
+  "source_commit": "64ef55abab0a9686d2bd4f62218b2186cc61aef8",
+  "synthetic_data_only": true,
+  "real_payments": false,
+  "live_human_rehearsal": false,
+  "recording": {
+    "format": "webm",
+    "width": 1440,
+    "height": 1000,
+    "slow_mo_ms": 200,
+    "bytes": 2404863,
+    "sha256": "29af087c7d74199abd0a85a07555729c3fe23c32c5f5d59079925077db18e431"
+  },
+  "source_test_sha256": "97a467682fe5c5a96085791bc19ce1289de73920d0c22c0c1f038cd47def9449",
+  "playback_verified": {
+    "duration_seconds": 20.08,
+    "width": 1440,
+    "height": 1000,
+    "error": null
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "conclusion": "failure",
+  "createdAt": "2026-10-30T05:52:47Z",
+  "databaseId": 41010861839,
+  "headSha": "d1d2341ace18d561642dca2913059e26f3d05ac8",
+  "jobs": [
+    {
+      "name": "acceptance",
+      "conclusion": "failure",
+      "started_at": "2026-10-30T05:52:50Z",
+      "completed_at": "2026-10-30T05:53:19Z"
+    }
+  ],
+  "name": "Service level acceptance",
+  "status": "completed",
+  "url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41010861839",
+  "wall_seconds": 32.0,
+  "cause": "actions/setup-python selected an Ubuntu binary requiring GLIBC_2.38; postgres:17-bookworm contains older glibc. Acceptance did not reach load/recovery. Native Python image plus PGDG client 17 replaces it."
+}

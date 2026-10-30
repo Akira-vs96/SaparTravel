@@ -1,0 +1,30 @@
+{
+  "captured_at_utc": "2026-10-30T06:08:18.067113+00:00",
+  "local": {
+    "python": "3.13.5",
+    "node": "v20.19.2",
+    "git": "git version 2.47.3",
+    "postgresql": "17.11 (Debian 17.11-0+deb13u1)",
+    "libreoffice": "LibreOffice 25.2.3.2 520(Build:2)",
+    "github_cli": "gh version 2.103.2 (2026-10-23)",
+    "gitleaks": "8.30.1",
+    "trivy": "Version: 0.76.1"
+  },
+  "course_packages": {
+    "ruff": "0.14.3",
+    "pytest-cov": "6.3.0",
+    "nbconvert": "7.17.2",
+    "nbformat": "5.11.1",
+    "openpyxl": "3.1.5",
+    "python-pptx": "1.0.2"
+  },
+  "ci": {
+    "python": "3.12",
+    "node": "22",
+    "postgresql": "17",
+    "passed_run": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711"
+  },
+  "model_provenance": "docs/labs/lab-12/evidence/provenance.json",
+  "teacher_access_confirmed": false,
+  "environment_not_a_submission_certificate": true
+}

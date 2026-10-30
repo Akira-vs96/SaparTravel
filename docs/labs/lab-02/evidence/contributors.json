@@ -1,0 +1,294 @@
+{
+  "captured_date": "2026-10-30",
+  "source": "GitHub commits API, default branch",
+  "contributors": {
+    "Akira-vs96": 27,
+    "Bibinurb": 2,
+    "aberdebek": 5,
+    "Copilot": 2,
+    "berdebek5": 2,
+    "aidarrnara": 1
+  },
+  "expected_collaborators": [
+    "Akira-vs96",
+    "Bibinurb",
+    "aberdebek",
+    "aidarrnara"
+  ],
+  "each_collaborator_has_commits": true,
+  "commits": [
+    {
+      "sha": "a66f9d59904f7b0a4b0afe4618ec0fa1dcfb87a3",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/a66f9d59904f7b0a4b0afe4618ec0fa1dcfb87a3",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-23T08:49:58Z"
+    },
+    {
+      "sha": "8644d69712bdbaa9aa4f91d3c3567c7963114ce9",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/8644d69712bdbaa9aa4f91d3c3567c7963114ce9",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-23T08:49:41Z"
+    },
+    {
+      "sha": "e4fd3d85c1f83bb0617547dda008144a036a859c",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/e4fd3d85c1f83bb0617547dda008144a036a859c",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-23T08:40:53Z"
+    },
+    {
+      "sha": "55e4807d07253cfdc77a4e853d1f689f02ad6b4d",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/55e4807d07253cfdc77a4e853d1f689f02ad6b4d",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-23T07:24:17Z"
+    },
+    {
+      "sha": "76adfdbbe7292f64ded04f8c5dbb19a2d17f9724",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/76adfdbbe7292f64ded04f8c5dbb19a2d17f9724",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-23T07:12:50Z"
+    },
+    {
+      "sha": "d8438c3598089032035f6f14fac3189b793f292a",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/d8438c3598089032035f6f14fac3189b793f292a",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-16T07:53:40Z"
+    },
+    {
+      "sha": "5823db720be9bf15b67eeb8ef094ecf7187e004a",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/5823db720be9bf15b67eeb8ef094ecf7187e004a",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-16T07:46:33Z"
+    },
+    {
+      "sha": "4c0a3f878cd34f4d4dde6d3c0ca8e3b20a9259b7",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/4c0a3f878cd34f4d4dde6d3c0ca8e3b20a9259b7",
+      "author_login": "Bibinurb",
+      "author_name": "Bibinurb",
+      "date": "2026-10-16T07:41:14Z"
+    },
+    {
+      "sha": "3511fc0622a7fe2cff4986a304a7ee5968f61590",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/3511fc0622a7fe2cff4986a304a7ee5968f61590",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-16T07:39:53Z"
+    },
+    {
+      "sha": "1f008c44d7b7f6dee5539a64c52c753811c0199b",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/1f008c44d7b7f6dee5539a64c52c753811c0199b",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-16T07:32:59Z"
+    },
+    {
+      "sha": "95aceaf6703ed4a70e476e2be75d2c6993388b16",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/95aceaf6703ed4a70e476e2be75d2c6993388b16",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-16T07:28:52Z"
+    },
+    {
+      "sha": "5be2dde0a4bca839c45e62b32c7003aea841a3e2",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/5be2dde0a4bca839c45e62b32c7003aea841a3e2",
+      "author_login": "aberdebek",
+      "author_name": "Amir",
+      "date": "2026-10-16T07:24:30Z"
+    },
+    {
+      "sha": "9484fb6b3988e4ce771744a9d70e86c070e7956e",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/9484fb6b3988e4ce771744a9d70e86c070e7956e",
+      "author_login": "aberdebek",
+      "author_name": "Amir",
+      "date": "2026-10-16T07:23:47Z"
+    },
+    {
+      "sha": "582dd18583a0714e612e900d4cefd1c6053a2dcc",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/582dd18583a0714e612e900d4cefd1c6053a2dcc",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-16T07:19:51Z"
+    },
+    {
+      "sha": "4d1d903b6d796853fe0351b9c09b798ebd52239e",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/4d1d903b6d796853fe0351b9c09b798ebd52239e",
+      "author_login": "Copilot",
+      "author_name": "copilot-swe-agent[bot]",
+      "date": "2026-10-16T07:19:41Z"
+    },
+    {
+      "sha": "cb8534a587f2c671ccba864c764e226f9d010336",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/cb8534a587f2c671ccba864c764e226f9d010336",
+      "author_login": "Copilot",
+      "author_name": "copilot-swe-agent[bot]",
+      "date": "2026-10-16T07:17:11Z"
+    },
+    {
+      "sha": "69acb68d86eede4a7bd72c95060b64aefb4b79a3",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/69acb68d86eede4a7bd72c95060b64aefb4b79a3",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-16T07:12:51Z"
+    },
+    {
+      "sha": "7007ea658bc390bbfe62b5058dc6b512cfe9aa91",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/7007ea658bc390bbfe62b5058dc6b512cfe9aa91",
+      "author_login": "berdebek5",
+      "author_name": "Amir",
+      "date": "2026-10-09T08:31:23Z"
+    },
+    {
+      "sha": "84a32fbc813b59ca261f4e73e73f65a33a6b85ff",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/84a32fbc813b59ca261f4e73e73f65a33a6b85ff",
+      "author_login": "berdebek5",
+      "author_name": "Amir",
+      "date": "2026-10-09T08:15:28Z"
+    },
+    {
+      "sha": "297dcba52d93a172b501cceef3a2bdcaa45696ea",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/297dcba52d93a172b501cceef3a2bdcaa45696ea",
+      "author_login": "aidarrnara",
+      "author_name": "aidarrnara",
+      "date": "2026-10-09T08:11:52Z"
+    },
+    {
+      "sha": "8542a2d53d4537271d2b03448abb8a974603713c",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/8542a2d53d4537271d2b03448abb8a974603713c",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-09T08:09:27Z"
+    },
+    {
+      "sha": "ba0713f61de9144f90e85a4821eb92b95400e5fe",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/ba0713f61de9144f90e85a4821eb92b95400e5fe",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-09T08:05:47Z"
+    },
+    {
+      "sha": "063485641847853fdf899238a86beef97c00902b",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/063485641847853fdf899238a86beef97c00902b",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-09T07:32:51Z"
+    },
+    {
+      "sha": "af2479a11629b05c9af6b9c7211a5f619d4b0a13",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/af2479a11629b05c9af6b9c7211a5f619d4b0a13",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-02T08:21:30Z"
+    },
+    {
+      "sha": "51527df19ec5711255eee96d9a6a46fcaa03f674",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/51527df19ec5711255eee96d9a6a46fcaa03f674",
+      "author_login": "Bibinurb",
+      "author_name": "Bibinurb",
+      "date": "2026-10-02T07:55:11Z"
+    },
+    {
+      "sha": "ca69d51328195c81aac2a2cd7a7aaceb1a265c61",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/ca69d51328195c81aac2a2cd7a7aaceb1a265c61",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-02T07:48:30Z"
+    },
+    {
+      "sha": "07ed3b49fb5ae01a47b530da4951dea8709a3a83",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/07ed3b49fb5ae01a47b530da4951dea8709a3a83",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-02T07:46:19Z"
+    },
+    {
+      "sha": "a418bf0426047b7e06c31d99b8181251e639f1ef",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/a418bf0426047b7e06c31d99b8181251e639f1ef",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-02T07:38:12Z"
+    },
+    {
+      "sha": "6473bcbc21a9f29120643e9f7c9fce703ec05c00",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/6473bcbc21a9f29120643e9f7c9fce703ec05c00",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-02T07:26:04Z"
+    },
+    {
+      "sha": "80d5416ae1b7b4499bb3bb11730f78d70a5830e8",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/80d5416ae1b7b4499bb3bb11730f78d70a5830e8",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-10-01T10:21:05Z"
+    },
+    {
+      "sha": "be830608b9937b0c3bf5b1b195c29c6232a72df6",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/be830608b9937b0c3bf5b1b195c29c6232a72df6",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-09-25T08:56:57Z"
+    },
+    {
+      "sha": "04ba943abf1f6b8d4d0b5ebe04a4029ce2f0dd5a",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/04ba943abf1f6b8d4d0b5ebe04a4029ce2f0dd5a",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-09-25T08:04:04Z"
+    },
+    {
+      "sha": "9b845cdf56d6d6dc4eb203d6419d7cd8765a4269",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/9b845cdf56d6d6dc4eb203d6419d7cd8765a4269",
+      "author_login": "aberdebek",
+      "author_name": "Amir",
+      "date": "2026-09-18T08:37:40Z"
+    },
+    {
+      "sha": "fb74c04bda265fe768185bc55b0ae56e023c657b",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/fb74c04bda265fe768185bc55b0ae56e023c657b",
+      "author_login": "aberdebek",
+      "author_name": "Amir",
+      "date": "2026-09-18T08:30:38Z"
+    },
+    {
+      "sha": "89ce24bbdce266960db68cf7fceb521267cbea1a",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/89ce24bbdce266960db68cf7fceb521267cbea1a",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-09-18T08:19:55Z"
+    },
+    {
+      "sha": "d85db0195172d243816140094d8fd036a871b968",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/d85db0195172d243816140094d8fd036a871b968",
+      "author_login": "aberdebek",
+      "author_name": "Amir",
+      "date": "2026-09-18T08:19:36Z"
+    },
+    {
+      "sha": "3470400f2fcc4cd8cd176d229b77a909fa00e172",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/3470400f2fcc4cd8cd176d229b77a909fa00e172",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-09-18T08:14:32Z"
+    },
+    {
+      "sha": "3d5af4443afba14b36ca3c9d73af13ceb6fc3f51",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/3d5af4443afba14b36ca3c9d73af13ceb6fc3f51",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-09-18T08:12:46Z"
+    },
+    {
+      "sha": "825a05b0ef7d762fe89b72efa52163eaf9970c8c",
+      "url": "https://github.com/Akira-vs96/SaparTravel/commit/825a05b0ef7d762fe89b72efa52163eaf9970c8c",
+      "author_login": "Akira-vs96",
+      "author_name": "Akira-vs96",
+      "date": "2026-09-18T07:22:00Z"
+    }
+  ]
+}

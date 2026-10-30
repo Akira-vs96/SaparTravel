@@ -1,0 +1,272 @@
+{
+  "checked_date": "2026-10-30",
+  "browser": "Chromium, fresh anonymous context, no account cookies",
+  "portfolio_rendered": true,
+  "links": [
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/architecture.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/architecture.md",
+      "http_status": 429,
+      "anonymous_accessible": false
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/verification-results.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/verification-results.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-08/corrections.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-08/corrections.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/evidence/audit.json",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/evidence/audit.json",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-01/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-01/README.md",
+      "http_status": 429,
+      "anonymous_accessible": false
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-02/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-02/README.md",
+      "http_status": 429,
+      "anonymous_accessible": false
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-03/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-03/README.md",
+      "http_status": 429,
+      "anonymous_accessible": false
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-04/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-04/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-05/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-05/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-06/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-06/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-07/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-07/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-08/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-08/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-09/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-09/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-10/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-10/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-11/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-11/README.md",
+      "http_status": 429,
+      "anonymous_accessible": false
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-12/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-12/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-13/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-13/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-14/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-14/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-15/README.md",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/blob/feat/course-evidence-20261030/docs/labs/lab-15/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/pull/38",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/pull/38",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/Akira-vs96/SaparTravel/wiki",
+      "final_url": "https://github.com/Akira-vs96/SaparTravel/wiki",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "url": "https://github.com/users/Akira-vs96/projects/2",
+      "final_url": "https://github.com/users/Akira-vs96/projects/2",
+      "http_status": 404,
+      "anonymous_accessible": false
+    }
+  ],
+  "public_file_links_accessible": false,
+  "private_project_access_granted_to_teacher": false,
+  "limitations": "Some GitHub UI requests returned 429; public source availability is checked separately via the official raw endpoint. Private Project returns 404 anonymously; teacher account/access is not provided.",
+  "raw_file_verification": [
+    {
+      "path": "docs/labs/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/architecture.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/architecture.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/verification-results.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/verification-results.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-08/corrections.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-08/corrections.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/evidence/audit.json",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/evidence/audit.json",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-01/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-01/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-02/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-02/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-03/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-03/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-04/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-04/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-05/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-05/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-06/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-06/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-07/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-07/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-08/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-08/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-09/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-09/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-10/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-10/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-11/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-11/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-12/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-12/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-13/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-13/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-14/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-14/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    },
+    {
+      "path": "docs/labs/lab-15/README.md",
+      "url": "https://raw.githubusercontent.com/Akira-vs96/SaparTravel/refs/heads/feat/course-evidence-20261030/docs/labs/lab-15/README.md",
+      "http_status": 200,
+      "anonymous_accessible": true
+    }
+  ],
+  "all_public_sources_accessible": true,
+  "github_ui_rate_limited": true
+}

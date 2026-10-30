@@ -1,0 +1,97 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-10-30T05:56:33Z",
+  "databaseId": 41011207711,
+  "headSha": "64ef55abab0a9686d2bd4f62218b2186cc61aef8",
+  "jobs": [
+    {
+      "name": "containers",
+      "conclusion": "success",
+      "started_at": "2026-10-30T05:56:36Z",
+      "completed_at": "2026-10-30T05:57:02Z"
+    },
+    {
+      "name": "security",
+      "conclusion": "success",
+      "started_at": "2026-10-30T05:56:36Z",
+      "completed_at": "2026-10-30T05:56:55Z"
+    },
+    {
+      "name": "frontend",
+      "conclusion": "success",
+      "started_at": "2026-10-30T05:56:36Z",
+      "completed_at": "2026-10-30T05:56:49Z"
+    },
+    {
+      "name": "course",
+      "conclusion": "success",
+      "started_at": "2026-10-30T05:56:36Z",
+      "completed_at": "2026-10-30T05:56:44Z"
+    },
+    {
+      "name": "backend",
+      "conclusion": "success",
+      "started_at": "2026-10-30T05:56:36Z",
+      "completed_at": "2026-10-30T05:57:44Z"
+    },
+    {
+      "name": "browser",
+      "conclusion": "success",
+      "started_at": "2026-10-30T05:57:47Z",
+      "completed_at": "2026-10-30T06:00:16Z"
+    }
+  ],
+  "name": "CI",
+  "status": "completed",
+  "url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711",
+  "wall_seconds": 223.0,
+  "previous_successful_run": {
+    "conclusion": "success",
+    "createdAt": "2026-10-30T05:52:47Z",
+    "databaseId": 41010861779,
+    "headSha": "d1d2341ace18d561642dca2913059e26f3d05ac8",
+    "jobs": [
+      {
+        "name": "course",
+        "conclusion": "success",
+        "started_at": "2026-10-30T05:52:50Z",
+        "completed_at": "2026-10-30T05:52:58Z"
+      },
+      {
+        "name": "containers",
+        "conclusion": "success",
+        "started_at": "2026-10-30T05:52:51Z",
+        "completed_at": "2026-10-30T05:53:19Z"
+      },
+      {
+        "name": "frontend",
+        "conclusion": "success",
+        "started_at": "2026-10-30T05:52:50Z",
+        "completed_at": "2026-10-30T05:53:01Z"
+      },
+      {
+        "name": "backend",
+        "conclusion": "success",
+        "started_at": "2026-10-30T05:52:51Z",
+        "completed_at": "2026-10-30T05:54:21Z"
+      },
+      {
+        "name": "security",
+        "conclusion": "success",
+        "started_at": "2026-10-30T05:52:50Z",
+        "completed_at": "2026-10-30T05:53:04Z"
+      },
+      {
+        "name": "browser",
+        "conclusion": "success",
+        "started_at": "2026-10-30T05:54:24Z",
+        "completed_at": "2026-10-30T05:57:11Z"
+      }
+    ],
+    "name": "CI",
+    "status": "completed",
+    "url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41010861779",
+    "wall_seconds": 264.0
+  },
+  "scope": "Six required fast CI jobs; service-level acceptance is a separate workflow."
+}
