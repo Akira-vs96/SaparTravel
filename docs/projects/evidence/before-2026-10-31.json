@@ -1,0 +1,129 @@
+{
+  "captured_at_utc": "2026-10-30T20:06:01.741286+00:00",
+  "project": "https://github.com/users/Akira-vs96/projects/2",
+  "items": 38,
+  "fields": [
+    "Title",
+    "Assignees",
+    "Status",
+    "Labels",
+    "Linked pull requests",
+    "Milestone",
+    "Repository",
+    "Reviewers",
+    "Parent issue",
+    "Sub-issues progress",
+    "Created",
+    "Updated",
+    "Closed",
+    "Owner",
+    "Size (S/M/L)",
+    "Iteration",
+    "Risk ID",
+    "Priority"
+  ],
+  "views": [
+    {
+      "name": "Kanban Dashboard",
+      "number": 1,
+      "layout": "BOARD_LAYOUT",
+      "filter": ""
+    }
+  ],
+  "status_counts": {
+    "Review": 7,
+    "Done": 15,
+    "Backlog": 4,
+    "Ready": 10,
+    "FOR TEST": 2
+  },
+  "issue_state_mismatches": [
+    {
+      "issue": 16,
+      "project_status": "Review",
+      "issue_state": "closed"
+    },
+    {
+      "issue": 1,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 2,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 13,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 19,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 15,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 3,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 4,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 5,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 14,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 6,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 7,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 8,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 9,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 10,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 12,
+      "project_status": "Done",
+      "issue_state": "open"
+    },
+    {
+      "issue": 26,
+      "project_status": "Ready",
+      "issue_state": "closed"
+    }
+  ],
+  "status_updates": 0,
+  "meaning": "Snapshot before administrative reconciliation; source issue states and dates were not reconstructed"
+}

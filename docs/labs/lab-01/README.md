@@ -17,6 +17,8 @@
 - [frequency.csv](<evidence/frequency.csv>)
 - [market-sample.xlsx](<evidence/market-sample.xlsx>)
 - [Датированные HTTP-копии вакансий](<evidence/source-captures/index.json>)
+- [GitHub Project: карточки, поля и представления](<../../projects/README.md>)
+- [Актуальный API-снимок GitHub Project](<../../projects/evidence/current.json>)
 
 ## Воспроизведение
 

@@ -19,6 +19,8 @@
 - [customer-slide.md](<customer-slide.md>)
 - [customer-slide.pptx](<customer-slide.pptx>)
 - [planning-poker.md](<planning-poker.md>)
+- [GitHub Project: карточки, поля и представления](<../../projects/README.md>)
+- [Актуальный API-снимок GitHub Project](<../../projects/evidence/current.json>)
 
 ## Воспроизведение
 

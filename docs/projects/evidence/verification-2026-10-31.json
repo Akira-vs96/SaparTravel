@@ -1,0 +1,91 @@
+{
+  "captured_at_utc": "2026-10-30T20:31:33.743361+00:00",
+  "project": "https://github.com/users/Akira-vs96/projects/2",
+  "snapshot": "current.json",
+  "plan_sha256": "aaeb78bc539bac637c75a56e482c874df4faf40f87dc557eb2e94074c4813849",
+  "before": {
+    "items": 38,
+    "fields": 18,
+    "views": 1,
+    "issue_state_mismatches": 17
+  },
+  "after": {
+    "items": 81,
+    "fields": 27,
+    "views": 9,
+    "issue_state_mismatches": 0,
+    "features": 33,
+    "implemented_features": 31,
+    "labs": 15,
+    "initiatives": 10
+  },
+  "api_readback": {
+    "passed": true,
+    "pending_changes": 0,
+    "unmanaged_issues": [],
+    "managed_status_updates": 1
+  },
+  "tool_tests": {
+    "count": 125,
+    "seconds": 9.489,
+    "passed": true
+  },
+  "ruff": "passed",
+  "ide_diagnostics": "no errors",
+  "browser": {
+    "captured_at_utc": "2026-10-30T20:31:01.168500+00:00",
+    "engine": "Chromium / Playwright",
+    "html_sha256": "800d387087abc9a5fb31cecfc23923658c7ad6a0f186e40477c0c3ec7b97515d",
+    "checks": [
+      {
+        "width": 360,
+        "lab_links": 15,
+        "project_views": 9,
+        "panels": 6,
+        "feature_rows": 33,
+        "audience_filters": "passed",
+        "horizontal_overflow": false
+      },
+      {
+        "width": 768,
+        "lab_links": 15,
+        "project_views": 9,
+        "panels": 6,
+        "feature_rows": 33,
+        "audience_filters": "passed",
+        "horizontal_overflow": false
+      },
+      {
+        "width": 1440,
+        "lab_links": 15,
+        "project_views": 9,
+        "panels": 6,
+        "feature_rows": 33,
+        "audience_filters": "passed",
+        "horizontal_overflow": false
+      }
+    ],
+    "javascript_errors": [],
+    "passed": true,
+    "scope": "Local six-panel dashboard linked to actual saved GitHub Project views; not an authenticated Insights UI check"
+  },
+  "csv_rows": 81,
+  "wiki": {
+    "commit": "a8baa6de6b0ef1963b792ba97cf3b850ea26ab0a",
+    "remote_verified": true,
+    "policy_page": "https://github.com/Akira-vs96/SaparTravel/wiki/ЛЗ-9-политики-доски",
+    "policy_sha256": "f8801d47c264de34ae79f4c88b87f427a1edd27214f169c8e8bcb690ea010203"
+  },
+  "frozen_lab09_files": {
+    "docs/labs/lab-09/evidence/github-flow.json": "5f2bbbf97f011aa9f453cc5c209547ec9b441feb53af2daa86cfd99a1ed25564",
+    "docs/labs/lab-09/journal/events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/labs/lab-09/journal/journal.json": "fa726a61af84d23fe55a6ba8fc23eb623af4f5d6addad26dc266594e31682792"
+  },
+  "wsjf_source_sha256": "b0e3ef4fe17206fb29d65f1b215cab0de2ff9969ec12a4af170d240823402bf6",
+  "number_projection_decimal_places": 8,
+  "insights_charts": {
+    "configured": false,
+    "reason": "The shared browser has no authenticated GitHub session; native Insights charts were not edited."
+  },
+  "meaning": "Current Project metadata and actual technical checks; no historical sprint dates or independent acceptance were created."
+}

@@ -2043,7 +2043,9 @@
         "docs/labs/lab-09/evidence/flow.json",
         "docs/labs/lab-09/evidence/cfd.json",
         "docs/labs/lab-09/evidence/observed-flow.png",
-        "docs/labs/lab-09/evidence/policies-published.json"
+        "docs/labs/lab-09/evidence/policies-published.json",
+        "docs/projects/README.md",
+        "docs/projects/evidence/current.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2059,7 +2061,9 @@
         "docs/labs/lab-09/evidence/cfd.json",
         "docs/labs/lab-09/evidence/observed-flow.png",
         "docs/labs/lab-09/evidence/board-current-policy.json",
-        "scripts/course/flow_journal.py"
+        "scripts/course/flow_journal.py",
+        "docs/projects/README.md",
+        "docs/projects/evidence/current.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2120,7 +2124,9 @@
         "docs/labs/lab-09/evidence/github-flow.json",
         "docs/labs/lab-09/evidence/flow.json",
         "docs/labs/lab-09/evidence/cfd.json",
-        "docs/labs/lab-09/evidence/observed-flow.png"
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/projects/README.md",
+        "docs/projects/evidence/current.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2181,7 +2187,9 @@
         "docs/labs/lab-09/evidence/analysis.md",
         "tests/course/test_flow.py",
         "docs/labs/lab-09/evidence/board-current-policy.json",
-        "scripts/course/flow_journal.py"
+        "scripts/course/flow_journal.py",
+        "docs/projects/README.md",
+        "docs/projects/evidence/current.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2297,7 +2305,9 @@
         "docs/labs/lab-09/evidence/analysis.md",
         "tests/course/test_flow.py",
         "docs/labs/lab-09/evidence/board-current-policy.json",
-        "scripts/course/flow_journal.py"
+        "scripts/course/flow_journal.py",
+        "docs/projects/README.md",
+        "docs/projects/evidence/current.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3803,7 +3813,9 @@
         "docs/labs/lab-14/evidence/wsjf.xlsx",
         "scripts/course/dashboard.py",
         "docs/labs/lab-14/status.md",
-        "docs/labs/lab-14/change-plan.md"
+        "docs/labs/lab-14/change-plan.md",
+        "docs/projects/README.md",
+        "docs/projects/evidence/current.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3818,7 +3830,9 @@
         "docs/labs/lab-14/evidence/wsjf.xlsx",
         "scripts/course/dashboard.py",
         "docs/labs/lab-14/status.md",
-        "docs/labs/lab-14/change-plan.md"
+        "docs/labs/lab-14/change-plan.md",
+        "docs/projects/README.md",
+        "docs/projects/evidence/current.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3833,7 +3847,9 @@
         "docs/labs/lab-14/evidence/wsjf.xlsx",
         "scripts/course/dashboard.py",
         "docs/labs/lab-14/status.md",
-        "docs/labs/lab-14/change-plan.md"
+        "docs/labs/lab-14/change-plan.md",
+        "docs/projects/README.md",
+        "docs/projects/evidence/current.json"
       ],
       "human_event_certified_by_exercise": false
     },

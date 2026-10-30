@@ -1,0 +1,2840 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-31",
+  "repository": "Akira-vs96/SaparTravel",
+  "owner": "Akira-vs96",
+  "number": 2,
+  "project_url": "https://github.com/users/Akira-vs96/projects/2",
+  "source_url": "https://github.com/Akira-vs96/SaparTravel/blob/main",
+  "verified_source_commit": "5a29a614f7076aa6925bc27fd58df71158aa1a1c",
+  "ci_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397",
+  "required_fields": [
+    "Status",
+    "Owner",
+    "Size (S/M/L)",
+    "Iteration",
+    "Risk ID",
+    "Priority",
+    "Kind",
+    "Area",
+    "Implementation",
+    "Verification",
+    "Evidence",
+    "Dependencies",
+    "Lab"
+  ],
+  "fields": {
+    "Status": {
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Backlog",
+        "In progress",
+        "FOR TEST",
+        "Ready",
+        "Blocked",
+        "Review",
+        "Done"
+      ]
+    },
+    "Owner": {
+      "type": "TEXT"
+    },
+    "Size (S/M/L)": {
+      "type": "TEXT"
+    },
+    "Iteration": {
+      "type": "TEXT"
+    },
+    "Risk ID": {
+      "type": "TEXT"
+    },
+    "Priority": {
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Must",
+        "Should",
+        "Could"
+      ]
+    },
+    "Kind": {
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Feature",
+        "Tech",
+        "Bug",
+        "Lab",
+        "Dependency",
+        "Initiative"
+      ]
+    },
+    "Area": {
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Identity",
+        "Catalog",
+        "Booking",
+        "Commerce",
+        "Supplier",
+        "Administration",
+        "Support",
+        "Delivery"
+      ]
+    },
+    "Implementation": {
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Implemented",
+        "Partial",
+        "Not started",
+        "Prepared"
+      ]
+    },
+    "Verification": {
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Automated",
+        "Documented",
+        "Needs check",
+        "External"
+      ]
+    },
+    "Evidence": {
+      "type": "TEXT"
+    },
+    "Dependencies": {
+      "type": "TEXT"
+    },
+    "Lab": {
+      "type": "TEXT"
+    },
+    "Review date": {
+      "type": "DATE"
+    },
+    "WSJF": {
+      "type": "NUMBER"
+    }
+  },
+  "views": [
+    {
+      "name": "Kanban Dashboard",
+      "layout": "BOARD_LAYOUT",
+      "filter": "kind:Feature,Bug,Tech -status:Done,Backlog",
+      "visible": [
+        "Title",
+        "Status",
+        "Kind",
+        "Area",
+        "Implementation",
+        "Verification",
+        "Priority",
+        "Owner",
+        "Size (S/M/L)",
+        "Evidence",
+        "Dependencies",
+        "Lab"
+      ]
+    },
+    {
+      "name": "Функции — реализовано",
+      "layout": "TABLE_LAYOUT",
+      "filter": "kind:Feature implementation:Implemented",
+      "visible": [
+        "Title",
+        "Status",
+        "Kind",
+        "Area",
+        "Implementation",
+        "Verification",
+        "Priority",
+        "Owner",
+        "Size (S/M/L)",
+        "Evidence",
+        "Dependencies",
+        "Lab"
+      ]
+    },
+    {
+      "name": "Приёмка и проверки",
+      "layout": "TABLE_LAYOUT",
+      "filter": "status:\"FOR TEST\",Review",
+      "visible": [
+        "Title",
+        "Status",
+        "Kind",
+        "Area",
+        "Implementation",
+        "Verification",
+        "Priority",
+        "Owner",
+        "Size (S/M/L)",
+        "Evidence",
+        "Dependencies",
+        "Lab",
+        "Review date"
+      ]
+    },
+    {
+      "name": "Ошибки",
+      "layout": "TABLE_LAYOUT",
+      "filter": "kind:Bug",
+      "visible": [
+        "Title",
+        "Status",
+        "Kind",
+        "Area",
+        "Implementation",
+        "Verification",
+        "Priority",
+        "Owner",
+        "Size (S/M/L)",
+        "Evidence",
+        "Dependencies",
+        "Lab"
+      ]
+    },
+    {
+      "name": "Лабораторные 1–15",
+      "layout": "TABLE_LAYOUT",
+      "filter": "kind:Lab",
+      "visible": [
+        "Title",
+        "Status",
+        "Kind",
+        "Area",
+        "Implementation",
+        "Verification",
+        "Priority",
+        "Owner",
+        "Size (S/M/L)",
+        "Evidence",
+        "Dependencies",
+        "Lab"
+      ]
+    },
+    {
+      "name": "Внешние зависимости",
+      "layout": "TABLE_LAYOUT",
+      "filter": "kind:Dependency",
+      "visible": [
+        "Title",
+        "Status",
+        "Kind",
+        "Area",
+        "Implementation",
+        "Verification",
+        "Priority",
+        "Owner",
+        "Size (S/M/L)",
+        "Evidence",
+        "Dependencies",
+        "Lab",
+        "Review date"
+      ]
+    },
+    {
+      "name": "Портфель WSJF",
+      "layout": "TABLE_LAYOUT",
+      "filter": "kind:Initiative",
+      "visible": [
+        "Title",
+        "WSJF",
+        "Status",
+        "Implementation",
+        "Priority",
+        "Owner",
+        "Size (S/M/L)",
+        "Dependencies",
+        "Evidence"
+      ]
+    },
+    {
+      "name": "Бэклог",
+      "layout": "TABLE_LAYOUT",
+      "filter": "status:Backlog",
+      "visible": [
+        "Title",
+        "Status",
+        "Kind",
+        "Area",
+        "Implementation",
+        "Verification",
+        "Priority",
+        "Owner",
+        "Size (S/M/L)",
+        "Evidence",
+        "Dependencies",
+        "Lab"
+      ]
+    },
+    {
+      "name": "Реестр всех работ",
+      "layout": "TABLE_LAYOUT",
+      "filter": "",
+      "visible": [
+        "Title",
+        "Status",
+        "Kind",
+        "Area",
+        "Implementation",
+        "Verification",
+        "Priority",
+        "Owner",
+        "Size (S/M/L)",
+        "Evidence",
+        "Dependencies",
+        "Lab",
+        "Iteration",
+        "Risk ID",
+        "Review date"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "key": "TECH-01",
+      "title": "CI и обязательные проверки",
+      "summary": "Шесть jobs CI последней версии завершились успешно; backend, frontend, browser, course, security и containers. Это подтверждает проверки, а не production deployment.",
+      "sources": [
+        ".github/workflows/ci.yml",
+        "docs/verification-results.md"
+      ],
+      "acceptance": [
+        "Шесть jobs CI проходят на проверенной версии; логи и артефакты доступны из GitHub Actions.",
+        "Неуспешный тест, найденный секрет или HIGH/CRITICAL останавливает соответствующую проверку; CI не называется production deployment."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/.github/workflows/ci.yml",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 1
+    },
+    {
+      "key": "TECH-02",
+      "title": "Экран авторизации и регистрации",
+      "summary": "Регистрация, вход, переход к восстановлению и показ пароля проверены браузером.",
+      "sources": [
+        "frontend/src/pages/Auth.jsx",
+        "tests/browser_engagement.py"
+      ],
+      "acceptance": [
+        "Через формы можно зарегистрироваться, войти, открыть профиль и перейти по «Забыли пароль?».",
+        "Неверные данные показывают локализованную ошибку без падения; переключатель видимости не отправляет форму."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Identity",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Auth.jsx",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 2
+    },
+    {
+      "key": "TECH-03",
+      "title": "API аутентификации",
+      "summary": "Регистрация без повышения роли, вход, профиль, блокировка, выход и смена пароля реализованы с серверной проверкой.",
+      "sources": [
+        "backend/app/api/identity.py",
+        "backend/tests/test_api.py",
+        "backend/tests/test_engagement.py"
+      ],
+      "acceptance": [
+        "API выдаёт сессию для действующего пользователя и поддерживает безопасную смену/восстановление пароля.",
+        "Клиент не может назначить себе роль; заблокированный пользователь и неверный пароль не дают доступ."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Identity",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/identity.py",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "4, 7, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 3
+    },
+    {
+      "key": "TECH-04",
+      "title": "Структура репозитория и ветки",
+      "summary": "Код, документация, инфраструктура и проверки разделены. Основная ветка main; административный прямой push разрешён владельцем, остальные ограничения зафиксированы.",
+      "sources": [
+        "docs/architecture.md",
+        "docs/labs/lab-10/evidence/branch-protection-current.json"
+      ],
+      "acceptance": [
+        "Код backend/frontend, инструменты, проверки и материалы ЛЗ разделены по архитектуре, основная ветка — main.",
+        "Лабораторные не импортируются приложением; приватные настройки и доступы не попадают в Git."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/architecture.md",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "2, 10",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 4
+    },
+    {
+      "key": "TECH-05",
+      "title": "ADR-001",
+      "summary": "Решение о модели поставки содержит контекст, альтернативы и последствия.",
+      "sources": [
+        "docs/adr/ADR-001.md"
+      ],
+      "acceptance": [
+        "ADR содержит контекст, критерии, выбранный вариант, альтернативы и последствия решения.",
+        "Отвергнутые варианты имеют причины; ограничение выбранной модели не скрыто."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/adr/ADR-001.md",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "2",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 5
+    },
+    {
+      "key": "TECH-06",
+      "title": "Системные интерфейсы",
+      "summary": "API, БД, роли, ограничения и интеграции описаны в архитектуре и спецификации.",
+      "sources": [
+        "docs/architecture.md",
+        "docs/requirements/non-functional-requirements.md"
+      ],
+      "acceptance": [
+        "Архитектура связывает HTTP, роли, прикладные правила, PostgreSQL и адаптеры с НФТ и способами проверки.",
+        "Внешние интеграции без доступов не обозначены подключёнными; обязанности и ограничения не противоречат SoW."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/architecture.md",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "2, 4",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 6
+    },
+    {
+      "key": "TECH-07",
+      "title": "Проверки аутентификации",
+      "summary": "API-тесты проверяют пароль, роли, сброс, отзыв сессии и приватность; включены в успешный CI.",
+      "sources": [
+        "backend/tests/test_api.py",
+        "backend/tests/test_engagement.py",
+        "backend/tests/test_mail_delivery.py"
+      ],
+      "acceptance": [
+        "Тесты проверяют регистрацию, вход, роль, пароль, сброс и отзыв сессии на PostgreSQL.",
+        "Тесты ловят внедрение роли, повторный/просроченный токен и доступ к чужому аккаунту."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Identity",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "7, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 7
+    },
+    {
+      "key": "TECH-08",
+      "title": "Схема и миграции БД",
+      "summary": "Проверены PostgreSQL 17, миграции до 0006 и сохранение исторических значений.",
+      "sources": [
+        "backend/migrations/versions/0006_outbound_email.py",
+        "backend/tests/test_migrations.py"
+      ],
+      "acceptance": [
+        "На PostgreSQL последовательно применяются миграции до 0006 и alembic check не находит расхождений.",
+        "Миграции сохраняют исторические цены/заказы; изменение схемы не пересоздаёт рабочую базу."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/migrations/versions/0006_outbound_email.py",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "2, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 8
+    },
+    {
+      "key": "ACCESS-REPO",
+      "title": "Репозиторий и доступы",
+      "summary": "Репозиторий публичный, Project приватный. Четыре участника известны; требование Private и доступ преподавателя не подтверждены.",
+      "sources": [
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/labs/lab-02/README.md"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Partial",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-02/evidence/space.json",
+        "Dependencies": "Владелец подтверждает видимость и доступ преподавателя; настройки приватности автоматически не меняются.",
+        "Lab": "2",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 12
+    },
+    {
+      "key": "ST-01",
+      "title": "ST-01 Каталог опубликованных туров",
+      "summary": "Каталог отдаёт опубликованные туры с переводами, ценами, фильтрами и пагинацией.",
+      "sources": [
+        "backend/app/api/routes.py",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_smoke.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Баекеева Бибінұр",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 1 (недели 1-4)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 13
+    },
+    {
+      "key": "ST-02",
+      "title": "ST-02 Поиск тура",
+      "summary": "Поиск по названию и направлению, сортировка и пустое состояние проверены.",
+      "sources": [
+        "frontend/src/pages/Catalog.jsx",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Баекеева Бибінұр",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 1 (недели 1-4)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Catalog.jsx",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 14
+    },
+    {
+      "key": "ST-03",
+      "title": "ST-03 Фильтры цены и длительности",
+      "summary": "Цена, длительность и сочетания фильтров проверены API и браузером.",
+      "sources": [
+        "backend/app/api/routes.py",
+        "backend/tests/test_api.py",
+        "tests/browser_localization.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Баекеева Бибінұр",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 1 (недели 1-4)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 15
+    },
+    {
+      "key": "ST-04",
+      "title": "ST-04 Карточка тура",
+      "summary": "Программа, галерея, условия, выезды и 404 проверены. Закрытие issue уже существует в GitHub.",
+      "sources": [
+        "frontend/src/pages/Trip.jsx",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "Done",
+        "Owner": "Баекеева Бибінұр",
+        "Size (S/M/L)": "M",
+        "Iteration": "Инкремент 1 (недели 1-4)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Trip.jsx",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11"
+      },
+      "label": "enhancement",
+      "issue": 16,
+      "preserve_closed": true
+    },
+    {
+      "key": "ST-05",
+      "title": "ST-05 Выбор даты выезда",
+      "summary": "Выбор будущего выезда передаётся в checkout; сервер проверяет дату.",
+      "sources": [
+        "frontend/src/pages/Trip.jsx",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Booking",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Trip.jsx",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 17
+    },
+    {
+      "key": "ST-06",
+      "title": "ST-06 Свободные места",
+      "summary": "Остатки мест и конкурентное резервирование проверены PostgreSQL; отдельный дефект UI количества остаётся в #39.",
+      "sources": [
+        "backend/tests/test_concurrency.py",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Booking",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_concurrency.py",
+        "Dependencies": "UI-ограничение числа туристов отслеживается отдельно в #39; серверный резерв проверен.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 18
+    },
+    {
+      "key": "ST-07",
+      "title": "ST-07 Регистрация и вход",
+      "summary": "Регистрация и вход реализованы; недействительные данные не дают доступ.",
+      "sources": [
+        "frontend/src/pages/Auth.jsx",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "M",
+        "Iteration": "Инкремент 1 (недели 1-4)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Identity",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Auth.jsx",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 19
+    },
+    {
+      "key": "ST-08",
+      "title": "ST-08 Управление туром поставщиком",
+      "summary": "Поставщик создаёт и редактирует свои туры, переводы, программу, выезды и правила отмены.",
+      "sources": [
+        "backend/app/api/routes.py",
+        "tests/browser_management.py",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Баекеева Бибінұр",
+        "Size (S/M/L)": "M",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Supplier",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 20
+    },
+    {
+      "key": "ST-09",
+      "title": "ST-09 Обработка заявки поставщиком",
+      "summary": "Статусы заявки меняются по допустимым переходам; чужие заявки недоступны.",
+      "sources": [
+        "backend/app/api/commerce_routes.py",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "M",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Supplier",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 21
+    },
+    {
+      "key": "ST-10",
+      "title": "ST-10 История заявок",
+      "summary": "История, детали, суммы, статусы и документы доступны владельцу заявки.",
+      "sources": [
+        "frontend/src/pages/Account.jsx",
+        "frontend/src/pages/BookingDetail.jsx",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Booking",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Account.jsx",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 22
+    },
+    {
+      "key": "ST-11",
+      "title": "ST-11 Отмена заявки",
+      "summary": "Отмена сохраняет историю, освобождает места и применяет зафиксированную политику возврата.",
+      "sources": [
+        "backend/app/api/commerce_routes.py",
+        "backend/tests/test_commerce.py",
+        "tests/browser_smoke.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Feature",
+        "Area": "Booking",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 23
+    },
+    {
+      "key": "ST-12",
+      "title": "ST-12 Снятие тура с публикации",
+      "summary": "Снятый с публикации тур исчезает из каталога и недоступен для нового бронирования.",
+      "sources": [
+        "backend/app/api/routes.py",
+        "backend/tests/test_api.py",
+        "tests/browser_management.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Administration",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 24
+    },
+    {
+      "key": "ST-13",
+      "title": "ST-13 Назначение ролей",
+      "summary": "Роль и активность пользователя меняются только администратором; последний активный администратор защищён.",
+      "sources": [
+        "backend/app/api/engagement.py",
+        "backend/tests/test_api.py",
+        "backend/tests/test_engagement.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Administration",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 25
+    },
+    {
+      "key": "ST-14",
+      "title": "ST-14 Локализация RU/KK/EN",
+      "summary": "RU/KK/EN проверены в каталоге, checkout, документах, кабинетах и восстановлении. Закрытие issue уже существует; отдельная редакторская правка остаётся #40.",
+      "sources": [
+        "frontend/src/i18n.js",
+        "tests/browser_localization.py",
+        "tests/browser_roles_visual.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "Done",
+        "Owner": "Баекеева Бибінұр",
+        "Size (S/M/L)": "M",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/i18n.js",
+        "Dependencies": "Проверить согласование казахского заголовка в #40; существующее закрытие сохранено.",
+        "Lab": "4, 11"
+      },
+      "label": "enhancement",
+      "issue": 26,
+      "preserve_closed": true
+    },
+    {
+      "key": "ST-15",
+      "title": "ST-15 Заявки поставщика",
+      "summary": "Кабинет поставщика показывает только заявки его туров; изоляция проверена.",
+      "sources": [
+        "backend/app/api/routes.py",
+        "backend/tests/test_api.py",
+        "tests/browser_service_levels.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "S",
+        "Iteration": "Инкремент 2 (недели 5-8)",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Supplier",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py",
+        "Dependencies": "Критерии реализованы и проверены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 27
+    },
+    {
+      "key": "ST-16",
+      "title": "ST-16 Онлайн-оплата",
+      "summary": "Checkout, тестовая авторизация платежа, 3DS и возвраты реализованы. Банковский провайдер, webhook и коммерческая сверка не подключены.",
+      "sources": [
+        "backend/app/api/commerce_routes.py",
+        "backend/tests/test_commerce.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "L",
+        "Iteration": "После MVP",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Could",
+        "Kind": "Feature",
+        "Area": "Commerce",
+        "Implementation": "Partial",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py",
+        "Dependencies": "Завершение банковской интеграции — #11; тестовый платёжный контур вынесен отдельной карточкой.",
+        "Lab": "4, 8, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 28
+    },
+    {
+      "key": "ST-17",
+      "title": "ST-17 Отзывы",
+      "summary": "Отзывы привязаны к завершённой собственной поездке; дубликаты запрещены, публичный отзыв проходит модерацию.",
+      "sources": [
+        "backend/app/api/engagement.py",
+        "backend/tests/test_engagement.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Баекеева Бибінұр",
+        "Size (S/M/L)": "M",
+        "Iteration": "После MVP",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Could",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 29
+    },
+    {
+      "key": "ST-18",
+      "title": "ST-18 Синхронизация поставщика",
+      "summary": "Синхронизация с внешним поставщиком не реализована; ручное управление туром есть в ST-08.",
+      "sources": [
+        "docs/requirements/story-map.md",
+        "backend/app/api/routes.py"
+      ],
+      "acceptance": [
+        "Согласовать формат, владельца данных и идемпотентную синхронизацию.",
+        "При недоступности источника действующий каталог не повреждается."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Баекеева Бибінұр",
+        "Size (S/M/L)": "L",
+        "Iteration": "После MVP",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Could",
+        "Kind": "Feature",
+        "Area": "Supplier",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/requirements/story-map.md",
+        "Dependencies": "Нужны API/доступы внешнего поставщика, формат данных, правила конфликтов и разбиение L.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 30
+    },
+    {
+      "key": "DEP-PAYMENT",
+      "title": "Интеграция с внешним платежным шлюзом",
+      "summary": "Внешний банковский шлюз не подключён и не входит в исходный MVP; тестовая оплата не означает банковские списания.",
+      "sources": [
+        "docs/sow-sla-slo-sli.md",
+        "backend/app/api/commerce_routes.py"
+      ],
+      "acceptance": [
+        "Подключён согласованный провайдер и проверены авторизация, webhook, сверка и возврат.",
+        "Повтор webhook не списывает деньги дважды; недостоверная подпись отклоняется."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Абинсериков Нурасыл",
+        "Size (S/M/L)": "L",
+        "Iteration": "После MVP",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Could",
+        "Kind": "Dependency",
+        "Area": "Commerce",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/sow-sla-slo-sli.md",
+        "Dependencies": "Договор, выбранный провайдер, доступы, публичный HTTPS/webhook, решение о включении в объём.",
+        "Lab": "4, 8, 14",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 11
+    },
+    {
+      "key": "REVIEW-32",
+      "title": "B-01: Проверить Trivy/Gitleaks в обязательном CI",
+      "summary": "Gitleaks и Trivy работают в обязательном успешном CI; исключения адресные. Требуется независимая проверка политики.",
+      "sources": [
+        ".github/workflows/ci.yml",
+        "docs/security/security-scan-report.md"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "Risk ID": "R-03, R-16",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/.github/workflows/ci.yml",
+        "Dependencies": "Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.",
+        "Lab": "7, 9, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 32
+    },
+    {
+      "key": "REVIEW-33",
+      "title": "B-02: Проверить аудит административных операций с request ID",
+      "summary": "Аудит административных операций связывает actor/action/resource с серверным request ID; тесты проходят.",
+      "sources": [
+        "backend/app/services/engagement_service.py",
+        "backend/tests/test_engagement.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "S",
+        "Iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "Risk ID": "R-13 / Repudiation",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Administration",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/services/engagement_service.py",
+        "Dependencies": "Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.",
+        "Lab": "7, 9, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 33
+    },
+    {
+      "key": "REVIEW-34",
+      "title": "B-03: Проверить ограничения auth и нагрузочный контур",
+      "summary": "Проверены auth 429 и нагрузочный контур; распределённого limiter нет.",
+      "sources": [
+        "docs/ops/catalog-load.md",
+        "backend/tests/test_configuration.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "Risk ID": "R-08, R-20 / DoS",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Identity",
+        "Implementation": "Partial",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/ops/catalog-load.md",
+        "Dependencies": "Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.",
+        "Lab": "7, 9, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 34
+    },
+    {
+      "key": "REVIEW-35",
+      "title": "INC-01: Review обработки HTTP 200 с невалидным телом",
+      "summary": "API-клиент отклоняет JSON null и HTML; браузер показывает ошибку и повтор без падения.",
+      "sources": [
+        "frontend/src/api.js",
+        "tests/browser_invalid_response.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "S",
+        "Iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "Risk ID": "UI null contract",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/api.js",
+        "Dependencies": "Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.",
+        "Lab": "7, 9, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 35
+    },
+    {
+      "key": "REVIEW-36",
+      "title": "INC-02: Review отмены устаревших запросов интерфейса",
+      "summary": "useResource игнорирует результат отменённого запроса; самостоятельная реализация есть, независимая проверка задержек ожидается.",
+      "sources": [
+        "frontend/src/components/common.jsx",
+        "tests/browser_invalid_response.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "S",
+        "Iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "Risk ID": "UI stale response",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Needs check",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/components/common.jsx",
+        "Dependencies": "Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.",
+        "Lab": "7, 9, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 36
+    },
+    {
+      "key": "REVIEW-37",
+      "title": "INC-03: Закрепить отрицательные ответы каталога в CI",
+      "summary": "Все восемь browser scripts включены в зелёный browser job.",
+      "sources": [
+        ".github/workflows/ci.yml",
+        "tests/browser_invalid_response.py"
+      ],
+      "acceptance": [
+        "Положительный сценарий воспроизводится по указанному коду и проверкам.",
+        "Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "S",
+        "Iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "Risk ID": "UI regression coverage",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/.github/workflows/ci.yml",
+        "Dependencies": "Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.",
+        "Lab": "7, 9, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 37
+    },
+    {
+      "key": "BUG-39",
+      "title": "Количество туристов можно увеличить выше и ниже числа доступных мест",
+      "summary": "Подтверждён незакрытый дефект: input имеет min/max, но при вводе вне диапазона UI всё ещё вычисляет сумму и оставляет кнопку активной. Серверные ограничения существуют.",
+      "sources": [
+        "frontend/src/pages/Trip.jsx",
+        "backend/tests/test_api.py"
+      ],
+      "acceptance": [
+        "Количество ограничено доступными местами; для недопустимого значения нет итоговой суммы, кнопка недоступна.",
+        "Прямой API-запрос сверх лимита отклоняется без создания брони."
+      ],
+      "fields": {
+        "Status": "Ready",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Bug",
+        "Area": "Booking",
+        "Implementation": "Partial",
+        "Verification": "Needs check",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Trip.jsx",
+        "Dependencies": "Исправить UI в отдельной работе и воспроизвести критерии исходного сообщения.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "bug",
+      "issue": 39
+    },
+    {
+      "key": "BUG-40",
+      "title": "«Жоба туралы» бетіндегі қазақша тақырыпты түзету",
+      "summary": "Предложенная редакторская формулировка казахского заголовка ещё не внесена; исходный текст найден в i18n.",
+      "sources": [
+        "frontend/src/i18n.js",
+        "tests/browser_localization.py"
+      ],
+      "acceptance": [
+        "На странице About отображается согласованный казахский заголовок.",
+        "Русская и английская версии и вёрстка не нарушены."
+      ],
+      "fields": {
+        "Status": "Ready",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Bug",
+        "Area": "Catalog",
+        "Implementation": "Not started",
+        "Verification": "Needs check",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/i18n.js",
+        "Dependencies": "Подтвердить формулировку у автора запроса/редактора и внести правку.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "bug",
+      "issue": 40
+    },
+    {
+      "key": "F-RECOVERY",
+      "title": "Восстановление пароля и очередь SMTP",
+      "summary": "Одноразовые ссылки, подтверждение, повторный запрос, отзыв сессий; SMTP TLS, транзакционная очередь, повтор и отмена устаревшего письма.",
+      "sources": [
+        "backend/app/api/identity.py",
+        "backend/app/services/mail_service.py",
+        "backend/tests/test_mail_delivery.py",
+        "tests/browser_engagement.py"
+      ],
+      "acceptance": [
+        "Запрос формирует одноразовую ссылку; правильное подтверждение меняет пароль и отзывает старую сессию. SMTP-письмо попадает в транзакционную очередь и обрабатывается worker.",
+        "Неизвестный email не раскрывает наличие аккаунта; просроченная/повторная ссылка отклоняется, несовпадающие пароли не отправляются, без сервиса доступна понятная ошибка."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Identity",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/identity.py",
+        "Dependencies": "Код и локальный SMTP-сеанс проверены; внешний сервис требует настроек, см. DEP-SMTP.",
+        "Lab": "7, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 41
+    },
+    {
+      "key": "F-PROFILE",
+      "title": "Профиль, смена пароля и отзыв сессий",
+      "summary": "Профиль сохраняется; смена пароля и logout отзывают старую сессию.",
+      "sources": [
+        "frontend/src/pages/Account.jsx",
+        "frontend/src/pages/Password.jsx",
+        "backend/tests/test_engagement.py"
+      ],
+      "acceptance": [
+        "После сохранения профиль доступен при повторном входе; смена пароля выдаёт новую сессию, выход отзывает текущую.",
+        "Неверный текущий пароль не меняет доступ; прежний токен после смены/выхода получает 401."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Identity",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Account.jsx",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 7, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 42
+    },
+    {
+      "key": "F-FAVORITES",
+      "title": "Постоянное избранное",
+      "summary": "Избранные туры хранятся в БД и изолированы по пользователям.",
+      "sources": [
+        "backend/app/api/routes.py",
+        "backend/tests/test_api.py",
+        "tests/browser_smoke.py"
+      ],
+      "acceptance": [
+        "Добавленный тур остаётся в избранном после повторного входа; удаление и повторное добавление идемпотентны.",
+        "Другой пользователь не видит чужое избранное; неопубликованный тур нельзя добавить."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 43
+    },
+    {
+      "key": "F-COMPARE",
+      "title": "Сравнение до трёх туров",
+      "summary": "Список сравнения сохраняется при перезагрузке, ограничен тремя турами и работает на мобильном экране.",
+      "sources": [
+        "frontend/src/pages/TravelTools.jsx",
+        "tests/browser_engagement.py"
+      ],
+      "acceptance": [
+        "Три выбранных тура сравниваются по характеристикам и сохраняются после перезагрузки; удаление освобождает место.",
+        "Четвёртый тур не добавляется, показано объяснение; на мобильном экране сравнение остаётся доступным."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/TravelTools.jsx",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 44
+    },
+    {
+      "key": "F-SEARCHES",
+      "title": "Сохранённые поиски",
+      "summary": "Фильтры поиска сохраняются, применяются и удаляются только владельцем.",
+      "sources": [
+        "backend/app/api/engagement.py",
+        "backend/tests/test_engagement.py",
+        "tests/browser_engagement.py"
+      ],
+      "acceptance": [
+        "Пользователь сохраняет набор фильтров, повторно применяет его в каталоге и удаляет сохранённый поиск.",
+        "Чужие поиски не читаются и не удаляются; некорректные параметры отклоняются валидацией."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 45
+    },
+    {
+      "key": "F-NOTIFICATIONS",
+      "title": "Уведомления и отметка прочтения",
+      "summary": "Уведомления персональны; доступна отметка одного и всех прочитанных.",
+      "sources": [
+        "backend/app/api/engagement.py",
+        "backend/tests/test_engagement.py",
+        "tests/browser_engagement.py"
+      ],
+      "acceptance": [
+        "Уведомление появляется у нужного пользователя; отметка одного или всех прочитанных меняет счётчик.",
+        "Чужое уведомление нельзя прочитать или отметить через подмену ID."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Feature",
+        "Area": "Support",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 46
+    },
+    {
+      "key": "F-SUPPORT",
+      "title": "Обращения поддержки и SLA-метрики",
+      "summary": "Переписка, приоритет, статус, acknowledgment/first response и расчёт рабочих сроков реализованы с проверкой доступа.",
+      "sources": [
+        "backend/app/api/engagement.py",
+        "backend/tests/test_service_levels.py",
+        "tests/browser_service_levels.py"
+      ],
+      "acceptance": [
+        "Автор создаёт обращение и переписку; сотрудник меняет приоритет/статус, сроки acknowledgment и first response считаются по календарю.",
+        "Поставщик не видит обращения чужих туров; чтение/ответ без прав отклоняется, история выдаётся ограниченными страницами."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Support",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py",
+        "Dependencies": "Для договорного SLA нужно согласовать календарь и ответственных; это отдельно от реализации API.",
+        "Lab": "4, 8, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 47
+    },
+    {
+      "key": "F-QUOTE",
+      "title": "Расчёт заказа, услуги и промокоды",
+      "summary": "Сервер считает цену в KZT, фиксирует снимок заказа и проверяет дополнительные услуги, скидки и границы сумм.",
+      "sources": [
+        "frontend/src/pages/Checkout.jsx",
+        "backend/tests/test_commerce.py",
+        "tests/browser_service_levels.py"
+      ],
+      "acceptance": [
+        "Сервер возвращает точную цену KZT с количеством туристов, услугами и промокодом, а заказ хранит снимок суммы.",
+        "Подмена клиентской суммы, чужая услуга, превышение лимита промо и переполнение суммы отклоняются без резерва мест."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Commerce",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Checkout.jsx",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 8, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 48
+    },
+    {
+      "key": "F-PAYMENT-TEST",
+      "title": "Платёжный сценарий: 3DS, отказ и повтор",
+      "summary": "В существующем тестовом провайдере проверены успех, отказ, 3DS, таймаут, идемпотентность и сверка неизвестного результата.",
+      "sources": [
+        "backend/app/api/commerce_routes.py",
+        "backend/tests/test_commerce.py",
+        "tests/browser_smoke.py"
+      ],
+      "acceptance": [
+        "Документированный тестовый инструмент проходит оплату/3DS и обновляет состояние заказа; неизвестный результат доступен для сверки.",
+        "Отказ и таймаут не подтверждают заказ; повтор запроса не создаёт второе списание в тестовом провайдере."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Commerce",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py",
+        "Dependencies": "Реальные банковские списания сюда не входят; отдельная интеграция #11.",
+        "Lab": "4, 8, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 49
+    },
+    {
+      "key": "F-REFUNDS",
+      "title": "Возвраты и защита от повторного возврата",
+      "summary": "Возврат учитывает политику отмены и копейки, резервирует баланс и не допускает возврата сверх оплаты.",
+      "sources": [
+        "backend/app/api/commerce_routes.py",
+        "backend/tests/test_commerce.py"
+      ],
+      "acceptance": [
+        "Отмена рассчитывает возврат по сохранённой политике; администратор выполняет допустимый частичный возврат с точностью до тиына.",
+        "Повтор и конкурентные возвраты не превышают оплаченную сумму; отказ сохраняется для разрешённого повтора."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Commerce",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py",
+        "Dependencies": "Проверено с тестовым платёжным провайдером; внешний банк отдельно #11.",
+        "Lab": "4, 8, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 50
+    },
+    {
+      "key": "F-DOCUMENTS",
+      "title": "Подтверждение бронирования и календарь ICS",
+      "summary": "Владелец получает локализованное подтверждение и событие календаря; данные берутся из сохранённого заказа.",
+      "sources": [
+        "backend/app/api/commerce_routes.py",
+        "tests/browser_localization.py"
+      ],
+      "acceptance": [
+        "Владелец открывает подтверждение и скачивает корректный ICS с датами, языком и данными сохранённого заказа.",
+        "Чужой заказ не выдаёт документы; спецсимволы и переносы корректно экранируются в календаре."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Feature",
+        "Area": "Booking",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 51
+    },
+    {
+      "key": "F-CATALOG-ADMIN",
+      "title": "Управление направлениями, категориями, услугами и промокодами",
+      "summary": "Администратор меняет справочники и промо; удаление используемой категории и операции без прав отклоняются.",
+      "sources": [
+        "frontend/src/pages/ManageDestinations.jsx",
+        "frontend/src/pages/ManageExtras.jsx",
+        "backend/tests/test_engagement.py",
+        "tests/browser_management.py"
+      ],
+      "acceptance": [
+        "Администратор создаёт и редактирует направления, категории, услуги и промокоды; переводы доступны в каталоге.",
+        "Обычный турист не меняет справочники; используемая категория не удаляется и неверные ссылки промо отклоняются."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Feature",
+        "Area": "Administration",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/ManageDestinations.jsx",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 7, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 52
+    },
+    {
+      "key": "F-ANALYTICS",
+      "title": "Аналитика кабинетов и CSV",
+      "summary": "Заказы, поступления и возвраты различаются; поставщик видит только свои данные, CSV защищён от формул.",
+      "sources": [
+        "backend/app/api/analytics.py",
+        "backend/tests/test_analytics.py"
+      ],
+      "acceptance": [
+        "Показатели кабинета различают неоплаченные заказы, поступления и возвраты; CSV соответствует выбранному периоду и роли.",
+        "Поставщик не получает данные другого поставщика, турист не получает отчёт, неправильный диапазон дат отклоняется."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Feature",
+        "Area": "Administration",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/analytics.py",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "4, 11, 14",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 53
+    },
+    {
+      "key": "F-MAIL-ADMIN",
+      "title": "Почта администратора: состояние и повтор",
+      "summary": "Экран показывает режим, очередь и ошибки без SMTP-пароля/токенов; повтор допустим только для действующего неуспешного письма.",
+      "sources": [
+        "frontend/src/pages/MailDelivery.jsx",
+        "backend/app/api/identity.py",
+        "backend/tests/test_mail_delivery.py"
+      ],
+      "acceptance": [
+        "Администратор видит режим, отправителя, количества и последние состояния; действующее неуспешное письмо можно вернуть в очередь.",
+        "Поставщик/турист получает отказ в доступе; список SMTP не раскрывает тело/токен/пароль, отправленное или просроченное письмо повторно не ставится."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Feature",
+        "Area": "Administration",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/MailDelivery.jsx",
+        "Dependencies": "Автоматические проверки пройдены; независимое UAT учитывается отдельно.",
+        "Lab": "7, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 54
+    },
+    {
+      "key": "F-RECOMMENDATIONS",
+      "title": "Подбор туров и рекомендации",
+      "summary": "Интерфейс подбора связан с серверным endpoint; качество модели и сравнение с правилами хранятся отдельно.",
+      "sources": [
+        "frontend/src/pages/Recommendations.jsx",
+        "backend/app/api/routes.py",
+        "backend/tests/test_recommendations.py"
+      ],
+      "acceptance": [
+        "Пользователь задаёт пожелания и получает подходящие опубликованные туры через серверный endpoint.",
+        "Неизвестные ссылки и неподходящие туры не выдаются как достоверный результат; качество модели не объявляется выше измеренного."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Could",
+        "Kind": "Feature",
+        "Area": "Catalog",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Recommendations.jsx",
+        "Dependencies": "Оценка качества и независимая разметка — отдельное требование ЛЗ12; модель не объявлена лучше правил.",
+        "Lab": "4, 12",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 55
+    },
+    {
+      "key": "TECH-WORKER",
+      "title": "Фоновый worker: резервы, сверка и письма",
+      "summary": "Worker освобождает истёкшие резервы, завершает отложенную сверку/возврат и обрабатывает очередь писем. Повтор не создаёт вторую операцию.",
+      "sources": [
+        "backend/app/worker.py",
+        "backend/tests/test_commerce.py",
+        "backend/tests/test_mail_delivery.py"
+      ],
+      "acceptance": [
+        "По sweep истёкший резерв освобождается, отложенная оплата/возврат сверяется, готовое письмо обрабатывается.",
+        "Повтор sweep не меняет баланс дважды; конкурентные worker не захватывают одно письмо одновременно."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/worker.py",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "7, 10, 11",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 56
+    },
+    {
+      "key": "TECH-PROJECT",
+      "title": "Полнота GitHub Project и связь с лабораторными",
+      "summary": "Заполнить карточки, источники, поля, представления и статус-отчёт; сверить повторным чтением API.",
+      "sources": [
+        "scripts/course/project_sync.py",
+        "docs/project-board-workflow.md"
+      ],
+      "acceptance": [
+        "У каждой работы заполнены статус, область, готовность, владелец, размер, приоритет, источники и следующий шаг.",
+        "Повторный запуск не создаёт дубликаты; незавершённая приёмка не превращается в Done."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Tech",
+        "Area": "Delivery",
+        "Implementation": "Implemented",
+        "Verification": "Automated",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/scripts/course/project_sync.py",
+        "Dependencies": "Независимая приёмка по критериям; результат доступен для проверки.",
+        "Lab": "2, 4, 9, 10, 11, 14, 15",
+        "Review date": "2026-11-06"
+      },
+      "label": "enhancement",
+      "issue": 57
+    },
+    {
+      "key": "DEP-SMTP",
+      "title": "Подключить внешний SMTP-сервис",
+      "summary": "Реализация очереди и SMTP готова; реальные доступы и адрес отправителя не предоставлены.",
+      "sources": [
+        "docs/ops/mail-delivery.md",
+        "backend/tests/test_mail_delivery.py"
+      ],
+      "acceptance": [
+        "Есть конкретный владелец решения, доступы/среда и датированное подтверждение результата.",
+        "До подтверждения внешняя интеграция или приёмка не объявляется завершённой."
+      ],
+      "fields": {
+        "Status": "Blocked",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Dependency",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/ops/mail-delivery.md",
+        "Dependencies": "Владелец заполняет SMTP_* в приватной конфигурации; подтвердить доставку в свой внешний ящик.",
+        "Lab": "7, 10, 11, 14",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 58
+    },
+    {
+      "key": "DEP-UAT",
+      "title": "Назначить принимающего и провести внешний UAT",
+      "summary": "Браузерные проверки выполнены; независимая пользовательская приёмка и решение принимающего не подтверждены.",
+      "sources": [
+        "docs/qa/test-plan.md",
+        "docs/labs/lab-11/README.md"
+      ],
+      "acceptance": [
+        "Есть конкретный владелец решения, доступы/среда и датированное подтверждение результата.",
+        "До подтверждения внешняя интеграция или приёмка не объявляется завершённой."
+      ],
+      "fields": {
+        "Status": "Blocked",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Dependency",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/qa/test-plan.md",
+        "Dependencies": "Нужны принимающий, доступная среда и подписанный результат сценариев.",
+        "Lab": "4, 9, 11, 15",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 59
+    },
+    {
+      "key": "DEP-OPS",
+      "title": "Подтвердить среду, внешние точки и эксплуатацию",
+      "summary": "Локальные проверки и CI не подтверждают внешний SLA; нет зарегистрированных production deployments.",
+      "sources": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-10/evidence/dora.json"
+      ],
+      "acceptance": [
+        "Есть конкретный владелец решения, доступы/среда и датированное подтверждение результата.",
+        "До подтверждения внешняя интеграция или приёмка не объявляется завершённой."
+      ],
+      "fields": {
+        "Status": "Blocked",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Dependency",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/sow-sla-slo-sli.md",
+        "Dependencies": "Владелец предоставляет узлы/HTTPS, внешние точки, off-site backup и календарь ответственных.",
+        "Lab": "7, 8, 10, 14, 15",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 60
+    },
+    {
+      "key": "LAB-01",
+      "title": "ЛЗ 01 — Реверс-инжиниринг рынка труда и разбор провального проекта",
+      "summary": "Артефакты и аудит 16 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 7, \"partial\": 2, \"requires-human\": 4, \"verified\": 3}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-01/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-01/README.md",
+        "Dependencies": "Открытые требования: LZ01-S01, LZ01-S02, LZ01-S06, LZ01-S10, LZ01-S11, LZ01-C05. Подтверждения людей учитываются отдельно.",
+        "Lab": "1",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 9
+    },
+    {
+      "key": "LAB-02",
+      "title": "ЛЗ 02 — Выбор модели поставки и рабочее пространство проекта",
+      "summary": "Артефакты и аудит 17 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"partial\": 2, \"requires-human\": 4, \"verified\": 6}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-02/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-02/README.md",
+        "Dependencies": "Открытые требования: LZ02-S01, LZ02-S03, LZ02-S04, LZ02-S10, LZ02-C02, LZ02-C05. Подтверждения людей учитываются отдельно.",
+        "Lab": "2",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 10
+    },
+    {
+      "key": "LAB-03",
+      "title": "ЛЗ 03 — Бизнес-кейс, устав и финансовая модель",
+      "summary": "Артефакты и аудит 17 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 8, \"partial\": 1, \"requires-human\": 3, \"verified\": 5}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-03/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-03/README.md",
+        "Dependencies": "Открытые требования: LZ03-S01, LZ03-S04, LZ03-S08, LZ03-S12. Подтверждения людей учитываются отдельно.",
+        "Lab": "3",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 61
+    },
+    {
+      "key": "LAB-04",
+      "title": "ЛЗ 04 — Story map, бэклог и спецификация НФТ",
+      "summary": "Артефакты и аудит 16 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 8, \"requires-human\": 2, \"verified\": 6}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-04/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-04/README.md",
+        "Dependencies": "Открытые требования: LZ04-S05, LZ04-C02. Подтверждения людей учитываются отдельно.",
+        "Lab": "4",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 62
+    },
+    {
+      "key": "LAB-05",
+      "title": "ЛЗ 05 — WBS, план релизов и карта зависимостей",
+      "summary": "Артефакты и аудит 16 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"requires-human\": 3, \"verified\": 8}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-05/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-05/README.md",
+        "Dependencies": "Открытые требования: LZ05-S07, LZ05-S10, LZ05-C02. Подтверждения людей учитываются отдельно.",
+        "Lab": "5",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 63
+    },
+    {
+      "key": "LAB-06",
+      "title": "ЛЗ 06 — Вероятностный прогноз сроков (Монте-Карло)",
+      "summary": "Артефакты и аудит 16 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"partial\": 1, \"requires-human\": 4, \"verified\": 6}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-06/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-06/README.md",
+        "Dependencies": "Открытые требования: LZ06-S04, LZ06-S08, LZ06-S09, LZ06-S10, LZ06-C05. Подтверждения людей учитываются отдельно.",
+        "Lab": "6",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 64
+    },
+    {
+      "key": "LAB-07",
+      "title": "ЛЗ 07 — Реестр рисков, модель угроз и чек-лист соответствия",
+      "summary": "Артефакты и аудит 17 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 3, \"requires-human\": 2, \"verified\": 12}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-07/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-07/README.md",
+        "Dependencies": "Открытые требования: LZ07-S01, LZ07-S11. Подтверждения людей учитываются отдельно.",
+        "Lab": "7",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 65
+    },
+    {
+      "key": "LAB-08",
+      "title": "ЛЗ 08 — SoW, SLA/SLO и бюджет проекта. Рубежный контроль 1",
+      "summary": "Артефакты и аудит 18 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"requires-human\": 2, \"verified\": 11}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-08/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-08/README.md",
+        "Dependencies": "Открытые требования: LZ08-S11, LZ08-S12. Подтверждения людей учитываются отдельно.",
+        "Lab": "8",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 66
+    },
+    {
+      "key": "LAB-09",
+      "title": "ЛЗ 09 — Симуляция двух спринтов",
+      "summary": "Артефакты и аудит 17 требований приведены в отчёте. Статусы исходного аудита: {\"partial\": 6, \"requires-human\": 7, \"verified\": 4}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-09/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-09/README.md",
+        "Dependencies": "Открытые требования: LZ09-S02, LZ09-S04, LZ09-S05, LZ09-S07, LZ09-S08, LZ09-S09, LZ09-S10, LZ09-S11, LZ09-S12, LZ09-C02, LZ09-C03, LZ09-C04, LZ09-C05. Подтверждения людей учитываются отдельно.",
+        "Lab": "9",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 67
+    },
+    {
+      "key": "LAB-10",
+      "title": "ЛЗ 10 — CI/CD-пайплайн и дашборд DORA",
+      "summary": "Артефакты и аудит 21 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 2, \"partial\": 5, \"requires-human\": 3, \"verified\": 11}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-10/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-10/README.md",
+        "Dependencies": "Открытые требования: LZ10-S02, LZ10-S05, LZ10-S06, LZ10-S08, LZ10-S09, LZ10-S12, LZ10-S13, LZ10-C02. Подтверждения людей учитываются отдельно.",
+        "Lab": "10",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 68
+    },
+    {
+      "key": "LAB-11",
+      "title": "ЛЗ 11 — План тестирования, UAT и разбор инцидента",
+      "summary": "Артефакты и аудит 23 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 4, \"requires-human\": 6, \"verified\": 13}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-11/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-11/README.md",
+        "Dependencies": "Открытые требования: LZ11-S08, LZ11-S09, LZ11-S10, LZ11-S16, LZ11-C04, LZ11-C07. Подтверждения людей учитываются отдельно.",
+        "Lab": "11",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 69
+    },
+    {
+      "key": "LAB-12",
+      "title": "ЛЗ 12 — План ИИ-функции: evals, стоимость, риски",
+      "summary": "Артефакты и аудит 20 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 3, \"partial\": 5, \"requires-human\": 2, \"verified\": 10}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-12/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-12/README.md",
+        "Dependencies": "Открытые требования: LZ12-S04, LZ12-S05, LZ12-S09, LZ12-S12, LZ12-S13, LZ12-C01, LZ12-C03. Подтверждения людей учитываются отдельно.",
+        "Lab": "12",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 70
+    },
+    {
+      "key": "LAB-13",
+      "title": "ЛЗ 13 — Собственный ИИ-ассистент менеджера проекта",
+      "summary": "Артефакты и аудит 21 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"partial\": 3, \"requires-human\": 4, \"verified\": 9}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-13/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-13/README.md",
+        "Dependencies": "Открытые требования: LZ13-S03, LZ13-S09, LZ13-S10, LZ13-S12, LZ13-S13, LZ13-S14, LZ13-C03. Подтверждения людей учитываются отдельно.",
+        "Lab": "13",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 71
+    },
+    {
+      "key": "LAB-14",
+      "title": "ЛЗ 14 — Приоритизация портфеля и статус-отчёт руководству",
+      "summary": "Артефакты и аудит 21 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 1, \"partial\": 4, \"requires-human\": 2, \"verified\": 14}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-14/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/README.md",
+        "Dependencies": "Открытые требования: LZ14-S01, LZ14-S02, LZ14-S07, LZ14-S14, LZ14-S15, LZ14-C04. Подтверждения людей учитываются отдельно.",
+        "Lab": "14",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 72
+    },
+    {
+      "key": "LAB-15",
+      "title": "ЛЗ 15 — Защита проекта и симуляция собеседования",
+      "summary": "Артефакты и аудит 19 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 1, \"partial\": 6, \"requires-human\": 8, \"verified\": 4}. Сгенерированные упражнения не подтверждают внешние события.",
+      "sources": [
+        "docs/labs/lab-15/README.md",
+        "docs/labs/manifest.json"
+      ],
+      "acceptance": [
+        "Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.",
+        "Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся."
+      ],
+      "fields": {
+        "Status": "FOR TEST",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Course-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Lab",
+        "Area": "Delivery",
+        "Implementation": "Prepared",
+        "Verification": "Documented",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-15/README.md",
+        "Dependencies": "Открытые требования: LZ15-S02, LZ15-S03, LZ15-S05, LZ15-S06, LZ15-S08, LZ15-S09, LZ15-S10, LZ15-S12, LZ15-S13, LZ15-C01, LZ15-C03, LZ15-C04, LZ15-C05, LZ15-C06. Подтверждения людей учитываются отдельно.",
+        "Lab": "15",
+        "Review date": "2026-11-06"
+      },
+      "label": "documentation",
+      "issue": 73
+    },
+    {
+      "key": "PORT-P01",
+      "title": "P01 — Внешний UAT и runbook с принимающим",
+      "summary": "Предложение портфеля: value=13, urgency=13, risk reduction=13, size=3; WSJF=13.000000. Блокирует передачу; владелец и дата требуют согласования. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 13.0
+      },
+      "label": "documentation",
+      "issue": 74
+    },
+    {
+      "key": "PORT-P02",
+      "title": "P02 — Журнал deployments и связанных инцидентов",
+      "summary": "Предложение портфеля: value=8, urgency=8, risk reduction=13, size=3; WSJF=9.666667. Без источника DORA остаётся неизвестной. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 9.666666666666666
+      },
+      "label": "documentation",
+      "issue": 75
+    },
+    {
+      "key": "PORT-P03",
+      "title": "P03 — Согласованный календарь и ответственные поддержки",
+      "summary": "Предложение портфеля: value=8, urgency=8, risk reduction=8, size=3; WSJF=8.000000. Сроки API есть; договорные полномочия не назначены. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Must",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 8.0
+      },
+      "label": "documentation",
+      "issue": 76
+    },
+    {
+      "key": "PORT-P04",
+      "title": "P04 — Off-site копии и внешний restore drill",
+      "summary": "Предложение портфеля: value=13, urgency=13, risk reduction=13, size=5; WSJF=7.800000. Потеря единственного узла остаётся внешним риском. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 7.8
+      },
+      "label": "documentation",
+      "issue": 77
+    },
+    {
+      "key": "PORT-P05",
+      "title": "P05 — Три внешние точки мониторинга",
+      "summary": "Предложение портфеля: value=13, urgency=13, risk reduction=13, size=8; WSJF=4.875000. Локальный кворум не даёт эксплуатационного SLA. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 4.875
+      },
+      "label": "documentation",
+      "issue": 78
+    },
+    {
+      "key": "PORT-P06",
+      "title": "P06 — Независимая разметка набора AI и проверка качества",
+      "summary": "Предложение портфеля: value=5, urgency=5, risk reduction=8, size=3; WSJF=6.000000. Модель не превосходит правила; запускать без проверки нельзя. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 6.0
+      },
+      "label": "documentation",
+      "issue": 79
+    },
+    {
+      "key": "PORT-P07",
+      "title": "P07 — Общий rate limit для нескольких worker",
+      "summary": "Предложение портфеля: value=8, urgency=8, risk reduction=13, size=8; WSJF=3.625000. Текущий limiter привязан к процессу; публичный контур требует пересмотра. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 3.625
+      },
+      "label": "documentation",
+      "issue": 80
+    },
+    {
+      "key": "PORT-P08",
+      "title": "P08 — Реальная email-доставка с очередью и наблюдаемостью",
+      "summary": "Предложение портфеля: value=8, urgency=5, risk reduction=8, size=8; WSJF=2.625000. Внешний SMTP и согласие на канал не предоставлены. Очередь SMTP и наблюдаемость уже реализованы в 5a29a61; остаётся подключение внешнего сервиса. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Should",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Partial",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 2.625
+      },
+      "label": "documentation",
+      "issue": 81
+    },
+    {
+      "key": "PORT-P09",
+      "title": "P09 — Реальный платёжный провайдер с webhook и сверкой",
+      "summary": "Предложение портфеля: value=8, urgency=3, risk reduction=8, size=13; WSJF=1.461538. Вне базового SOW; нужен договор и доступ провайдера. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Could",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 1.4615384615384615
+      },
+      "label": "documentation",
+      "issue": 82
+    },
+    {
+      "key": "PORT-P10",
+      "title": "P10 — Визуальная полировка второстепенных экранов",
+      "summary": "Предложение портфеля: value=3, urgency=1, risk reduction=1, size=5; WSJF=1.000000. Основные бизнес-сценарии уже проверены. Оценки не являются утверждением спонсора.",
+      "sources": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/priorities.md"
+      ],
+      "acceptance": [
+        "Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.",
+        "Запуск инициативы не заявляется только на основании рассчитанного WSJF."
+      ],
+      "fields": {
+        "Status": "Backlog",
+        "Owner": "Akira-vs96 (triage)",
+        "Size (S/M/L)": "M",
+        "Iteration": "Project-2026-10-31",
+        "Risk ID": "Не выделен отдельно; см. реестр ЛЗ7",
+        "Priority": "Could",
+        "Kind": "Initiative",
+        "Area": "Delivery",
+        "Implementation": "Not started",
+        "Verification": "External",
+        "Evidence": "https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv",
+        "Dependencies": "Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.",
+        "Lab": "14",
+        "Review date": "2026-11-06",
+        "WSJF": 1.0
+      },
+      "label": "documentation",
+      "issue": 83
+    }
+  ],
+  "readme_path": "docs/project-board-workflow.md"
+}

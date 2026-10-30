@@ -18,6 +18,8 @@
 - [results.json](<evidence/results.json>)
 - [cost.json](<evidence/cost.json>)
 - [provenance.json](<evidence/provenance.json>)
+- [GitHub Project: карточки, поля и представления](<../../projects/README.md>)
+- [Актуальный API-снимок GitHub Project](<../../projects/evidence/current.json>)
 
 ## Воспроизведение
 

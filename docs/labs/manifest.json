@@ -49,6 +49,14 @@
         {
           "path": "docs/labs/lab-01/evidence/source-captures/index.json",
           "label": "Датированные HTTP-копии вакансий"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
         }
       ],
       "commands": [
@@ -342,7 +350,7 @@
       "number": 2,
       "title": "Выбор модели поставки и рабочее пространство проекта",
       "report": "docs/labs/lab-02/README.md",
-      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. GitHub существует: 30 карточек, 6 статусов, нужные поля, 4 collaborators и 5 Wiki-страниц. Репозиторий публичный, Project приватный; доступ преподавателя не подтверждён. Есть коммиты четырёх участников. Добавлены четыре issue-шаблона и соглашения. Вместо отсутствующих трёх кейсов преподавателя подготовлен явно обозначенный сравнительный анализ трёх контекстов; исходные кейсы нужно предоставить.",
+      "findings": "Сверка GitHub Project 31.10.2026: реестр 81 работы, семь статусов, 27 полей и девять сохранённых представлений; у каждой карточки есть Owner, Size, Priority, источники и связь с ЛЗ. Исходные тексты issues сохранены. Репозиторий публичный, Project приватный; четыре участника известны из предыдущего снимка, доступ преподавателя по-прежнему не подтверждён. Есть ADR, Wiki и шаблоны задач; фактические кейсы преподавателя и согласование командных правил требуют отдельного подтверждения.",
       "artifacts": [
         {
           "path": "docs/labs/lab-02/practice/README.md",
@@ -391,12 +399,25 @@
         {
           "path": "docs/labs/lab-02/evidence/contributors.json",
           "label": "contributors.json"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
+        },
+        {
+          "label": "Проверка Project, Wiki и дашборда — 31.10.2026",
+          "path": "docs/projects/evidence/verification-2026-10-31.json"
         }
       ],
       "commands": [
         ".venv/bin/python -m scripts.course.practice --check",
         "gh project field-list 2 --owner Akira-vs96 --format json",
-        "gh project item-list 2 --owner Akira-vs96 --format json --limit 100"
+        "gh project item-list 2 --owner Akira-vs96 --format json --limit 100",
+        ".venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json"
       ],
       "steps": [
         {
@@ -739,6 +760,14 @@
         {
           "path": "docs/labs/lab-03/defense.md",
           "label": "defense.md"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
         }
       ],
       "commands": [
@@ -1083,7 +1112,7 @@
       "number": 4,
       "title": "Story map, бэклог и спецификация НФТ",
       "report": "docs/labs/lab-04/README.md",
-      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Есть story map с PNG, 18 реальных историй в GitHub и негативные AC; подготовлена матрица влияния/интереса с ИБ, юристом и эксплуатацией, план коммуникаций и 18 числовых НФТ. Заметки двух реальных интервью отсутствуют: вместо придуманных цитат сохранены вопросы, структура протокола и требование связать ответы с изменением backlog.",
+      "findings": "Исходные 18 историй ST-01–ST-18 сохранены. В Project теперь 33 функциональные карточки: 31 с реализованным поведением и проверками, частичная банковская оплата и не начатая внешняя синхронизация. Добавлены отсутствовавшие возможности сайта, ссылки на код/тесты, положительные и отрицательные критерии, текущая готовность и зависимости. Исходная граница MVP отделена от фактически добавленных функций; два пользовательских дефекта открыты отдельно. Story map, матрица стейкхолдеров и числовые НФТ сохранены; два реальных интервью не подтверждены.",
       "artifacts": [
         {
           "path": "docs/labs/lab-04/practice/README.md",
@@ -1124,11 +1153,24 @@
         {
           "path": "docs/labs/evidence/github-2026-10-30.json",
           "label": "github-2026-10-30.json"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
+        },
+        {
+          "label": "Проверка Project, Wiki и дашборда — 31.10.2026",
+          "path": "docs/projects/evidence/verification-2026-10-31.json"
         }
       ],
       "commands": [
         ".venv/bin/python -m scripts.course.practice --check",
-        "gh issue list --repo Akira-vs96/SaparTravel --state all --limit 100"
+        "gh issue list --repo Akira-vs96/SaparTravel --state all --limit 100",
+        ".venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json"
       ],
       "steps": [
         {
@@ -1486,6 +1528,14 @@
         {
           "path": "docs/labs/evidence/planning.json",
           "label": "planning.json"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
         }
       ],
       "commands": [
@@ -1840,6 +1890,14 @@
         {
           "path": "docs/labs/lab-06/planning-poker.md",
           "label": "planning-poker.md"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
         }
       ],
       "commands": [
@@ -2182,7 +2240,7 @@
       "number": 7,
       "title": "Реестр рисков, модель угроз и чек-лист соответствия",
       "report": "docs/labs/lab-07/README.md",
-      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. 20 рисков и STRIDE/чек-лист сохранены; арифметическая ошибка EMV исправлена 63,2→62,0 ч. Запущены настоящие Trivy 0.76.1 и Gitleaks 8.30.1: HIGH/CRITICAL и новых секретов нет. Шесть старых тестовых литералов исключены только exact fingerprints после проверки; широкого исключения файлов нет. Pre-mortem, правовые основания и правила вуза требуют подтверждения людей. 31.10 повторно прошли Gitleaks истории/рабочих файлов и Trivy зависимостей.",
+      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. 20 рисков и STRIDE/чек-лист сохранены; арифметическая ошибка EMV исправлена 63,2→62,0 ч. Запущены настоящие Trivy 0.76.1 и Gitleaks 8.30.1: HIGH/CRITICAL и новых секретов нет. Шесть старых тестовых литералов исключены только exact fingerprints после проверки; широкого исключения файлов нет. Pre-mortem, правовые основания и правила вуза требуют подтверждения людей. 31.10 повторно прошли Gitleaks истории/рабочих файлов и Trivy зависимостей. Карточки B-01–B-03 в GitHub Project получили источники реализации, основания проверки и Risk ID; потребность в независимом review сохранена. Используется успешный CI функциональной версии 5a29a61.",
       "artifacts": [
         {
           "path": "docs/labs/lab-07/practice/README.md",
@@ -2231,11 +2289,24 @@
         {
           "path": "docs/labs/lab-07/evidence/2026-10-31/summary.json",
           "label": "Свежие Gitleaks/Trivy — 31.10.2026"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
+        },
+        {
+          "label": "Проверка Project, Wiki и дашборда — 31.10.2026",
+          "path": "docs/projects/evidence/verification-2026-10-31.json"
         }
       ],
       "commands": [
         ".venv/bin/python -m scripts.course.practice --check",
-        ".venv/bin/python -m scripts.course.security_scan --output-directory test-results/security"
+        ".venv/bin/python -m scripts.course.security_scan --output-directory test-results/security",
+        ".venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json"
       ],
       "steps": [
         {
@@ -2601,6 +2672,14 @@
         {
           "path": "docs/labs/lab-10/evidence/remote-acceptance.json",
           "label": "remote-acceptance.json"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
         }
       ],
       "commands": [
@@ -2946,7 +3025,7 @@
       "number": 9,
       "title": "Симуляция двух спринтов",
       "report": "docs/labs/lab-09/README.md",
-      "findings": "Учебная симуляция ЛЗ 9 полностью выполнена: 17/17 требований разобраны в отдельном отчёте, смоделированы два недельных спринта, 20 SIM-задач, WIP, CFD, закон Литтла и 30-минутная ретроспектива с одним изменением. Выпуск 10/10; среднее время цикла 31,2 → 33,5 ч, p85 50,925 → 49,3 ч. Гипотеза улучшения не подтвердилась; отрицательный эффект сохранён и проверен контрольным сценарием. Все события и участники явно модельные. Реальные снимки GitHub и рабочий журнал сохранены отдельно; нижняя таблица отражает фактические подтверждения.",
+      "findings": "Учебная симуляция ЛЗ 9 полностью выполнена: 17/17 требований разобраны в отдельном отчёте, смоделированы два недельных спринта, 20 SIM-задач, WIP, CFD, закон Литтла и 30-минутная ретроспектива с одним изменением. Выпуск 10/10; среднее время цикла 31,2 → 33,5 ч, p85 50,925 → 49,3 ч. Гипотеза улучшения не подтвердилась; отрицательный эффект сохранён и проверен контрольным сценарием. Все события и участники явно модельные. Реальные снимки GitHub и рабочий журнал сохранены отдельно; нижняя таблица отражает фактические подтверждения. При сверке GitHub Project 31.10.2026 текущие карточки согласованы с существующими закрытиями issues и подтверждённой реализацией. Независимая приёмка ожидается в FOR TEST; текущий Review=0. Это административная переклассификация, не эффект спринта. Исторический снимок, журнал и выводы двух исторических окон не переписаны.",
       "artifacts": [
         {
           "path": "docs/labs/lab-09/simulation/README.md",
@@ -3119,6 +3198,22 @@
         {
           "path": "tests/course/test_flow_journal.py",
           "label": "test_flow_journal.py"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
+        },
+        {
+          "label": "Проверка Project, Wiki и дашборда — 31.10.2026",
+          "path": "docs/projects/evidence/verification-2026-10-31.json"
+        },
+        {
+          "label": "Текущая выгрузка 81 работы Project в CSV",
+          "path": "docs/projects/evidence/items-2026-10-31.csv"
         }
       ],
       "commands": [
@@ -3126,7 +3221,8 @@
         ".venv/bin/python -m unittest tests.course.test_lab09_simulation -v",
         ".venv/bin/python -m scripts.course.flow_report --snapshot docs/labs/lab-09/evidence/github-flow.json --start 2026-09-21T00:00:00Z --end 2026-10-05T00:00:00Z --output-directory docs/labs/lab-09/evidence",
         ".venv/bin/python -m unittest discover -s tests/course -p 'test_*.py' -v",
-        ".venv/bin/python -m scripts.course.flow_journal --directory docs/labs/lab-09/journal export --output test-results/lab09-journal.json"
+        ".venv/bin/python -m scripts.course.flow_journal --directory docs/labs/lab-09/journal export --output test-results/lab09-journal.json",
+        ".venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json"
       ],
       "steps": [
         {
@@ -3143,9 +3239,11 @@
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png",
-            "docs/labs/lab-09/evidence/policies-published.json"
+            "docs/labs/lab-09/evidence/policies-published.json",
+            "docs/projects/README.md",
+            "docs/projects/evidence/current.json"
           ],
-          "note": "Политики всех семи рабочих статусов опубликованы в Wiki и Project; read-back и SHA сохранены, FOR TEST учтён."
+          "note": "Семь политик опубликованы в Wiki и Project. Текущий README Project, статус-отчёт и API read-back связаны со свежим общим снимком; прежний SHA публикации сохранён исторически."
         },
         {
           "kind": "step",
@@ -3162,9 +3260,11 @@
             "docs/labs/lab-09/evidence/cfd.json",
             "docs/labs/lab-09/evidence/observed-flow.png",
             "docs/labs/lab-09/evidence/board-current-policy.json",
-            "scripts/course/flow_journal.py"
+            "scripts/course/flow_journal.py",
+            "docs/projects/README.md",
+            "docs/projects/evidence/current.json"
           ],
-          "note": "Лимиты реализованы в рабочем журнале (2 In progress на владельца, 3 Review); реальная очередь Review=7 превышает лимит на 4 и требует разбора."
+          "note": "При сверке 31.10.2026 Review=0 при лимите 3 и In progress=0; прежнее превышение Review=7 сохранено в снимке до изменений. Административная переклассификация не подтверждает две недели соблюдения WIP."
         },
         {
           "kind": "step",
@@ -3235,9 +3335,11 @@
             "docs/labs/lab-09/evidence/github-flow.json",
             "docs/labs/lab-09/evidence/flow.json",
             "docs/labs/lab-09/evidence/cfd.json",
-            "docs/labs/lab-09/evidence/observed-flow.png"
+            "docs/labs/lab-09/evidence/observed-flow.png",
+            "docs/projects/README.md",
+            "docs/projects/evidence/current.json"
           ],
-          "note": "Приложены 36 карточек, 39 переходов, даты вступления в Project и CSV; SHA исходного снимка зафиксирован."
+          "note": "Историческая выгрузка 36 карточек/39 переходов и её SHA сохранены. Текущие 81 работа и девять представлений находятся в отдельном API-снимке Project; даты прошлых переходов не восстанавливались."
         },
         {
           "kind": "step",
@@ -3305,9 +3407,11 @@
             "docs/labs/lab-09/evidence/analysis.md",
             "tests/course/test_flow.py",
             "docs/labs/lab-09/evidence/board-current-policy.json",
-            "scripts/course/flow_journal.py"
+            "scripts/course/flow_journal.py",
+            "docs/projects/README.md",
+            "docs/projects/evidence/current.json"
           ],
-          "note": "CFD содержит 8 полос с FOR TEST и Unknown. Текущая очередь Review=7 установлена; историческое узкое место двух спринтов не доказано."
+          "note": "Исторический CFD содержит восемь полос с FOR TEST и Unknown. Review=7 относится к прежнему снимку; после административной сверки Review=0. Узкое место именно двух исторических спринтов по-прежнему не доказано."
         },
         {
           "kind": "step",
@@ -3442,9 +3546,11 @@
             "docs/labs/lab-09/evidence/analysis.md",
             "tests/course/test_flow.py",
             "docs/labs/lab-09/evidence/board-current-policy.json",
-            "scripts/course/flow_journal.py"
+            "scripts/course/flow_journal.py",
+            "docs/projects/README.md",
+            "docs/projects/evidence/current.json"
           ],
-          "note": "Факт текущей очереди Review подтверждён свежим снимком. Данных для узкого места именно двух исторических спринтов недостаточно."
+          "note": "Текущая очередь и прежние семь Review подтверждены двумя снимками. Изменение классификации не объявлено улучшением скорости; данных для исторического узкого места двух спринтов недостаточно."
         },
         {
           "kind": "check",
@@ -3478,7 +3584,7 @@
       "number": 10,
       "title": "CI/CD-пайплайн и дашборд DORA",
       "report": "docs/labs/lab-10/README.md",
-      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Добавлены coverage gate 60%, линтер, Gitleaks/Trivy, сборки контейнеров и проверка целостности курса. Локально 86 тестов, покрытие 86,17%. Настоящий сборщик GitHub сохранил 38 исходных CI runs и 0 deployments: четыре DORA-показателя без источника остаются null. Определения и откат описаны отдельно; человеческий review, токен с минимальными правами и доказательство блокировки красного merge проверяются отдельно от наличия YAML. Свежий удалённый CI 41011207711 прошёл все шесть jobs; main защищена шестью проверками и одним review, определения DORA опубликованы в Wiki. По требованию пользователя 30.10.2026 разрешён прямой push администратора: enforce_admins=false; остальные настройки защиты сохранены. Текущее исключение отражено в LZ10-S05.",
+      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Добавлены coverage gate 60%, линтер, Gitleaks/Trivy, сборки контейнеров и проверка целостности курса. Локально 86 тестов, покрытие 86,17%. Настоящий сборщик GitHub сохранил 38 исходных CI runs и 0 deployments: четыре DORA-показателя без источника остаются null. Определения и откат описаны отдельно; человеческий review, токен с минимальными правами и доказательство блокировки красного merge проверяются отдельно от наличия YAML. Свежий удалённый CI 41011207711 прошёл все шесть jobs; main защищена шестью проверками и одним review, определения DORA опубликованы в Wiki. По требованию пользователя 30.10.2026 разрешён прямой push администратора: enforce_admins=false; остальные настройки защиты сохранены. Текущее исключение отражено в LZ10-S05. Состояние Project и новых функций связано с успешным CI версии 5a29a61 (шесть jobs) и источниками проверок. GitHub API на 31.10.2026 вернул ноль deployments. Заполнение Project и зелёный CI не считаются фактом production deployment; DORA сохраняет прежние ограничения.",
       "artifacts": [
         {
           "path": "docs/labs/lab-10/practice/README.md",
@@ -3547,11 +3653,24 @@
         {
           "path": "docs/labs/lab-10/evidence/branch-protection-current.json",
           "label": "Текущая защита main и исключение администратора"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
+        },
+        {
+          "label": "Проверка Project, Wiki и дашборда — 31.10.2026",
+          "path": "docs/projects/evidence/verification-2026-10-31.json"
         }
       ],
       "commands": [
         ".venv/bin/python -m scripts.course.practice --check",
-        ".venv/bin/python -m scripts.course.metrics --snapshot docs/labs/evidence/github-2026-10-30.json --start 2026-09-18T00:00:00Z --end 2026-10-30T00:00:00Z --kind dora --output test-results/dora.json"
+        ".venv/bin/python -m scripts.course.metrics --snapshot docs/labs/evidence/github-2026-10-30.json --start 2026-09-18T00:00:00Z --end 2026-10-30T00:00:00Z --kind dora --output test-results/dora.json",
+        ".venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json"
       ],
       "steps": [
         {
@@ -3939,7 +4058,7 @@
       "number": 11,
       "title": "План тестирования, UAT и разбор инцидента",
       "report": "docs/labs/lab-11/README.md",
-      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Восемь браузерных сценариев и API прошли на отдельной БД. Новый тест воспроизвёл падение на HTTP 200 с null/HTML и подтвердил исправление. Отмена сотрудником без причины теперь отклоняется, причина сохраняется в истории. Есть 10 бизнес-сценариев UAT, стратегия, данные/среды/приоритеты дефектов и postmortem фактического CI-дефекта. Внешний UAT и runbook на другом человеке не подменены автотестами.",
+      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Восемь браузерных сценариев и API прошли на отдельной БД. Новый тест воспроизвёл падение на HTTP 200 с null/HTML и подтвердил исправление. Отмена сотрудником без причины теперь отклоняется, причина сохраняется в истории. Есть 10 бизнес-сценариев UAT, стратегия, данные/среды/приоритеты дефектов и postmortem фактического CI-дефекта. Внешний UAT и runbook на другом человеке не подменены автотестами. В GitHub Project добавлены ссылки на 96 серверных тестов и восемь браузерных наборов функциональной версии 5a29a61. Дефекты #39 и #40 остаются открытыми, отсутствие внешнего UAT выделено отдельной зависимостью. Автоматические проверки не заменяют независимую приёмку.",
       "artifacts": [
         {
           "path": "docs/labs/lab-11/practice/README.md",
@@ -3996,11 +4115,24 @@
         {
           "path": "docs/labs/lab-10/evidence/remote-acceptance.json",
           "label": "remote-acceptance.json"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
+        },
+        {
+          "label": "Проверка Project, Wiki и дашборда — 31.10.2026",
+          "path": "docs/projects/evidence/verification-2026-10-31.json"
         }
       ],
       "commands": [
         ".venv/bin/python -m scripts.course.practice --check",
-        ".venv/bin/python tests/browser_invalid_response.py --base-url http://127.0.0.1:5173"
+        ".venv/bin/python tests/browser_invalid_response.py --base-url http://127.0.0.1:5173",
+        ".venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json"
       ],
       "steps": [
         {
@@ -4534,6 +4666,14 @@
         {
           "path": "docs/labs/lab-12/evidence/provenance.json",
           "label": "provenance.json"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
         }
       ],
       "commands": [
@@ -4982,6 +5122,14 @@
         {
           "path": "docs/labs/lab-13/evidence/claim-review.json",
           "label": "Поутвержденческий разбор реальных ошибок"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
         }
       ],
       "commands": [
@@ -5402,7 +5550,7 @@
       "number": 14,
       "title": "Приоритизация портфеля и статус-отчёт руководству",
       "report": "docs/labs/lab-14/README.md",
-      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Подготовлены 10 инициатив с отдельными value/urgency/risk reduction/size, формулы и WIP=3. Оценки относительные и ещё не утверждены. Дашборд из шести панелей использует факты проекта, отделяет адресатов и показывает неизвестные значения. Есть одностраничный статус, три числовых варианта переноса и план параллельного внедрения; состоявшийся разговор и решения спонсора не выдуманы.",
+      "findings": "31.10.2026 десять инициатив ЛЗ14 опубликованы отдельными карточками GitHub Project с числовым WSJF и исходными value/urgency/risk reduction/size. Настроено представление портфеля, опубликованы статус-отчёт и README Project, добавлены представления функций, ошибок, приёмки, лабораторных и зависимостей. Шесть панелей локального дашборда читают свежий API-снимок и отделяют исторический поток. По P08 готова очередь SMTP, внешняя настройка остаётся зависимостью; исходные оценки не подгонялись. WIP портфеля равен трём; запуск инициатив и решения спонсора не объявлены состоявшимися.",
       "artifacts": [
         {
           "path": "docs/labs/lab-14/practice/README.md",
@@ -5451,12 +5599,29 @@
         {
           "path": "docs/labs/lab-14/evidence/dashboard-browser-2026-10-31.json",
           "label": "Проверка дашборда Chromium — 31.10.2026"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
+        },
+        {
+          "label": "Проверка Project, Wiki и дашборда — 31.10.2026",
+          "path": "docs/projects/evidence/verification-2026-10-31.json"
+        },
+        {
+          "label": "Дашборд с текущими функциями и ссылками Project: Chromium",
+          "path": "docs/labs/lab-14/evidence/project-dashboard-browser-2026-10-31.json"
         }
       ],
       "commands": [
         ".venv/bin/python -m scripts.course.practice --check",
         ".venv/bin/python -m scripts.course.prioritize --input docs/labs/lab-14/initiatives.csv --output-directory test-results/wsjf",
-        ".venv/bin/python -m scripts.course.dashboard --serve"
+        ".venv/bin/python -m scripts.course.dashboard --serve",
+        ".venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json"
       ],
       "steps": [
         {
@@ -5599,9 +5764,11 @@
             "docs/labs/lab-14/evidence/wsjf.xlsx",
             "scripts/course/dashboard.py",
             "docs/labs/lab-14/status.md",
-            "docs/labs/lab-14/change-plan.md"
+            "docs/labs/lab-14/change-plan.md",
+            "docs/projects/README.md",
+            "docs/projects/evidence/current.json"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Шесть панелей читают свежий API-снимок Project: функции, закрытия, очередь, зависимости и ссылки на девять представлений. Исторический поток и неизвестные DORA/затраты отделены."
         },
         {
           "kind": "step",
@@ -5617,9 +5784,11 @@
             "docs/labs/lab-14/evidence/wsjf.xlsx",
             "scripts/course/dashboard.py",
             "docs/labs/lab-14/status.md",
-            "docs/labs/lab-14/change-plan.md"
+            "docs/labs/lab-14/change-plan.md",
+            "docs/projects/README.md",
+            "docs/projects/evidence/current.json"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Спонсору доступны вехи, бюджет, риски и зависимости; команде — поток и DORA. Сохранены фильтры адресата и отдельные представления Project."
         },
         {
           "kind": "step",
@@ -5635,9 +5804,11 @@
             "docs/labs/lab-14/evidence/wsjf.xlsx",
             "scripts/course/dashboard.py",
             "docs/labs/lab-14/status.md",
-            "docs/labs/lab-14/change-plan.md"
+            "docs/labs/lab-14/change-plan.md",
+            "docs/projects/README.md",
+            "docs/projects/evidence/current.json"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Одностраничный статус обновлён по текущему Project; в самом Project опубликован статус AT_RISK со ссылками на функции, проверки, зависимости и срок решения."
         },
         {
           "kind": "step",
@@ -5851,7 +6022,7 @@
       "number": 15,
       "title": "Защита проекта и симуляция собеседования",
       "report": "docs/labs/lab-15/README.md",
-      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Собраны редактируемая презентация на 15 минут, план/факт, конкретные уроки, текст 90-секундного рассказа, вопросы собеседования и проектная запись CV. Главные доказательства доступны из оглавления. Личная роль/резюме, репетиция с таймером, защита, финальная ретроспектива и профессиональный профиль требуют самих участников; они не оформлены как состоявшиеся события. Дополнительно записан и проверен резервный WebM реального smoke. Проверены 23 ссылки анонимно; 20 исходников доступны, Project требует доступа и часть UI ограничена 429.",
+      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Собраны редактируемая презентация на 15 минут, план/факт, конкретные уроки, текст 90-секундного рассказа, вопросы собеседования и проектная запись CV. Главные доказательства доступны из оглавления. Личная роль/резюме, репетиция с таймером, защита, финальная ретроспектива и профессиональный профиль требуют самих участников; они не оформлены как состоявшиеся события. Дополнительно записан и проверен резервный WebM реального smoke. Проверены 23 ссылки анонимно; 20 исходников доступны, Project требует доступа и часть UI ограничена 429. Пакет передачи дополнен общим реестром GitHub Project: отдельные карточки всех 15 ЛЗ, функций сайта, дефектов, внешних решений и портфеля. Ссылки на приватный Project требуют доступа; публичность и доступ преподавателя автоматически не менялись.",
       "artifacts": [
         {
           "path": "docs/labs/lab-15/practice/README.md",
@@ -5908,11 +6079,24 @@
         {
           "path": "docs/labs/lab-15/defense.pdf",
           "label": "defense.pdf"
+        },
+        {
+          "label": "GitHub Project: карточки, поля и представления",
+          "path": "docs/projects/README.md"
+        },
+        {
+          "label": "Актуальный API-снимок GitHub Project",
+          "path": "docs/projects/evidence/current.json"
+        },
+        {
+          "label": "Проверка Project, Wiki и дашборда — 31.10.2026",
+          "path": "docs/projects/evidence/verification-2026-10-31.json"
         }
       ],
       "commands": [
         ".venv/bin/python -m scripts.course.practice --check",
-        ".venv/bin/python -m scripts.course.audit --require-complete --output test-results/course-complete.json"
+        ".venv/bin/python -m scripts.course.audit --require-complete --output test-results/course-complete.json",
+        ".venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json"
       ],
       "steps": [
         {

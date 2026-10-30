@@ -1,0 +1,37 @@
+{
+  "captured_at_utc": "2026-10-30T20:31:01.168500+00:00",
+  "engine": "Chromium / Playwright",
+  "html_sha256": "800d387087abc9a5fb31cecfc23923658c7ad6a0f186e40477c0c3ec7b97515d",
+  "checks": [
+    {
+      "width": 360,
+      "lab_links": 15,
+      "project_views": 9,
+      "panels": 6,
+      "feature_rows": 33,
+      "audience_filters": "passed",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "lab_links": 15,
+      "project_views": 9,
+      "panels": 6,
+      "feature_rows": 33,
+      "audience_filters": "passed",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1440,
+      "lab_links": 15,
+      "project_views": 9,
+      "panels": 6,
+      "feature_rows": 33,
+      "audience_filters": "passed",
+      "horizontal_overflow": false
+    }
+  ],
+  "javascript_errors": [],
+  "passed": true,
+  "scope": "Local six-panel dashboard linked to actual saved GitHub Project views; not an authenticated Insights UI check"
+}

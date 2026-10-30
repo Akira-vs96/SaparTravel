@@ -18,6 +18,8 @@
 - [business-case.json](<../../../data/labs/lab-03/business-case.json>)
 - [business-case.json](<evidence/business-case.json>)
 - [defense.md](<defense.md>)
+- [GitHub Project: карточки, поля и представления](<../../projects/README.md>)
+- [Актуальный API-снимок GitHub Project](<../../projects/evidence/current.json>)
 
 ## Воспроизведение
 

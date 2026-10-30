@@ -4,7 +4,7 @@
 
 ## Результат и границы
 
-Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. GitHub существует: 30 карточек, 6 статусов, нужные поля, 4 collaborators и 5 Wiki-страниц. Репозиторий публичный, Project приватный; доступ преподавателя не подтверждён. Есть коммиты четырёх участников. Добавлены четыре issue-шаблона и соглашения. Вместо отсутствующих трёх кейсов преподавателя подготовлен явно обозначенный сравнительный анализ трёх контекстов; исходные кейсы нужно предоставить.
+Сверка GitHub Project 31.10.2026: реестр 81 работы, семь статусов, 27 полей и девять сохранённых представлений; у каждой карточки есть Owner, Size, Priority, источники и связь с ЛЗ. Исходные тексты issues сохранены. Репозиторий публичный, Project приватный; четыре участника известны из предыдущего снимка, доступ преподавателя по-прежнему не подтверждён. Есть ADR, Wiki и шаблоны задач; фактические кейсы преподавателя и согласование командных правил требуют отдельного подтверждения.
 
 ## Артефакты
 
@@ -20,6 +20,9 @@
 - [environment.md](<../environment.md>)
 - [environment.json](<evidence/environment.json>)
 - [contributors.json](<evidence/contributors.json>)
+- [GitHub Project: карточки, поля и представления](<../../projects/README.md>)
+- [Актуальный API-снимок GitHub Project](<../../projects/evidence/current.json>)
+- [Проверка Project, Wiki и дашборда — 31.10.2026](<../../projects/evidence/verification-2026-10-31.json>)
 
 ## Воспроизведение
 
@@ -27,6 +30,7 @@
 .venv/bin/python -m scripts.course.practice --check
 gh project field-list 2 --owner Akira-vs96 --format json
 gh project item-list 2 --owner Akira-vs96 --format json --limit 100
+.venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json
 ```
 
 ## Каждый шаг методички — реальные подтверждения

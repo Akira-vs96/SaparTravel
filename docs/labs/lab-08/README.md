@@ -18,6 +18,8 @@
 - [SaparTravel_LZ8_Report.pdf](<../../lab-8/SaparTravel_LZ8_Report.pdf>)
 - [budget_12_months.csv](<../../lab-8/budget_12_months.csv>)
 - [remote-acceptance.json](<../lab-10/evidence/remote-acceptance.json>)
+- [GitHub Project: карточки, поля и представления](<../../projects/README.md>)
+- [Актуальный API-снимок GitHub Project](<../../projects/evidence/current.json>)
 
 ## Воспроизведение
 

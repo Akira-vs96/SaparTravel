@@ -13,6 +13,10 @@ PostgreSQL 17, Docker Compose и Nginx. Интерфейс: **ru / kk / en**.
 
 Курс: [все 15 лабораторных](docs/labs/README.md), [архитектура сайта и документов](docs/architecture.md), [портфолио](docs/portfolio/final-portfolio.md). Каждая ЛЗ имеет собственный отчёт и ссылки на доказательства; подготовленный документ не означает проведённое интервью или внешнюю приёмку.
 
+Учёт функций и работ: [GitHub Project](https://github.com/users/Akira-vs96/projects/2),
+[поля, представления и обновление](docs/projects/README.md),
+[реестр с источниками](docs/projects/plan.json).
+
 [Полный учебный комплект](docs/labs/course-completion.md) покрывает 275 шагов
 всех ЛЗ: код и настоящие проверки дополнены явно отмеченными симуляциями
 недостающих занятий. [Лист сдачи](docs/labs/submission.md) отделяет доступ,

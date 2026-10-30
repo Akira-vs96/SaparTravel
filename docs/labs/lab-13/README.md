@@ -19,6 +19,8 @@
 - [status.md](<evidence/2026-10-19/status.md>)
 - [verification.json](<evidence/2026-10-19/verification.json>)
 - [Поутвержденческий разбор реальных ошибок](<evidence/claim-review.json>)
+- [GitHub Project: карточки, поля и представления](<../../projects/README.md>)
+- [Актуальный API-снимок GitHub Project](<../../projects/evidence/current.json>)
 
 ## Воспроизведение
 

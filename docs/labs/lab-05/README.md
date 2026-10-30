@@ -17,6 +17,8 @@
 - [sapartravel-models.drawio](<../../plan/sapartravel-models.drawio>)
 - [planning-checks.json](<evidence/planning-checks.json>)
 - [planning.json](<../evidence/planning.json>)
+- [GitHub Project: карточки, поля и представления](<../../projects/README.md>)
+- [Актуальный API-снимок GitHub Project](<../../projects/evidence/current.json>)
 
 ## Воспроизведение
 
