@@ -14,6 +14,7 @@ SOW дополнен явным отсутствием бессрочной по
 - [finance-validation.json](<evidence/finance-validation.json>)
 - [SaparTravel_LZ8_Report.pdf](<../../lab-8/SaparTravel_LZ8_Report.pdf>)
 - [budget_12_months.csv](<../../lab-8/budget_12_months.csv>)
+- [remote-acceptance.json](<../lab-10/evidence/remote-acceptance.json>)
 
 ## Воспроизведение
 

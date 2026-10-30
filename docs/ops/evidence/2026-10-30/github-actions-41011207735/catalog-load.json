@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "scenario": "SLI-L",
+  "endpoint": "http://127.0.0.1:18000/api/v1/catalog",
+  "started_at_utc": "2026-10-30T05:57:46.204754+00:00",
+  "profile": {
+    "rps": 20,
+    "duration_seconds": 600,
+    "warmup_seconds": 120,
+    "timeout_seconds": 5,
+    "max_in_flight": 100,
+    "threshold_ms": 500
+  },
+  "acceptance_profile": true,
+  "stand": {
+    "revision": "c1cdcf1c7daedb78408e08f58fb598bc74242289",
+    "api": {
+      "host": "GitHub Actions container",
+      "workers": 2,
+      "cpu_count": 4
+    },
+    "database": {
+      "version": "PostgreSQL 17",
+      "name": "sapar_sli_load_test"
+    },
+    "client": {
+      "host": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.36",
+      "network": "TCP loopback, separate process"
+    }
+  },
+  "client": {
+    "python": "3.12.16",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.36",
+    "httpx": "0.28.1"
+  },
+  "latency_definition": "HTTP send through complete response body; nearest-rank p95; warmup excluded",
+  "schedule_lateness_limit_ms": 50.0,
+  "passed": true,
+  "accepted": true,
+  "warmup": {
+    "planned": 2400,
+    "executed": 2400,
+    "successful": 2400,
+    "missing": 0,
+    "duplicates": 0,
+    "invalid_indexes": 0,
+    "dropped": 0,
+    "errors": {},
+    "error_percent": 0.0,
+    "timeouts": 0,
+    "dispatched_rps": 20.0,
+    "p95_ms": 52.24465200001305,
+    "max_ms": 83.85247800001139,
+    "max_scheduling_delay_ms": 2.1117559999765945,
+    "status_codes": {
+      "200": 2400
+    },
+    "passed": true
+  },
+  "measurement": {
+    "planned": 12000,
+    "executed": 12000,
+    "successful": 12000,
+    "missing": 0,
+    "duplicates": 0,
+    "invalid_indexes": 0,
+    "dropped": 0,
+    "errors": {},
+    "error_percent": 0.0,
+    "timeouts": 0,
+    "dispatched_rps": 20.0,
+    "p95_ms": 53.45985200000314,
+    "max_ms": 106.48018799997772,
+    "max_scheduling_delay_ms": 2.1029410000892312,
+    "status_codes": {
+      "200": 12000
+    },
+    "passed": true
+  },
+  "finished_at_utc": "2026-10-30T06:09:47.161000+00:00"
+}

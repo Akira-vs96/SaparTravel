@@ -1,0 +1,53 @@
+{
+  "workflow_run_id": 41011207735,
+  "url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735",
+  "head_sha": "64ef55abab0a9686d2bd4f62218b2186cc61aef8",
+  "tested_pr_merge_revision": "c1cdcf1c7daedb78408e08f58fb598bc74242289",
+  "conclusion": "success",
+  "catalog": {
+    "measurement_seconds": 600,
+    "warmup_seconds": 120,
+    "requests": 12000,
+    "rps": 20.0,
+    "p95_ms": 53.45985200000314,
+    "errors_percent": 0.0,
+    "accepted": true
+  },
+  "recovery": {
+    "rto_seconds": 65.847767,
+    "successful_consecutive_minutes": 5,
+    "sli_r_confirmed": true,
+    "independent_points": false,
+    "accepted": true
+  },
+  "database_evidence": {
+    "schema_version": 1,
+    "kind": "sapartravel-restore-drill",
+    "scope": "isolated-database",
+    "failure_simulated_at_utc": "2026-10-30T06:09:54.152233+00:00",
+    "finished_at_utc": "2026-10-30T06:10:01.692945+00:00",
+    "restored_database": "sapar_recovery_2249b3af393daf48_test",
+    "archive_sha256": "0426977fed9740bfd2aad55d26addb69addd927848c834715adcf13917599a41",
+    "data_matches_snapshot": true,
+    "table_count": 37,
+    "row_count": 1516,
+    "restored_data_point_lower_bound_utc": "2026-10-30T06:09:54.013769+00:00",
+    "data_loss_upper_bound_seconds": 0.138464,
+    "rpo_target_seconds": 86400,
+    "rpo_met": true,
+    "restore_duration_seconds": 0.31,
+    "restore_within_15_minutes": true,
+    "sli_r_confirmed": false,
+    "sli_r_limitation": "No API outage or five consecutive successful SLI-A minutes measured",
+    "passed": true
+  },
+  "evidence_directory": "docs/ops/evidence/2026-10-30/github-actions-41011207735",
+  "sha256": {
+    "catalog-load.json": "76ce54059771669b4f5803199c6c87f9de7cc7201fbab0d1b8e5727402bab21d",
+    "catalog-load-fixture.json": "b4d7f6b06a87048673a9635cc9460e26b627afc970b927e0daf0c4f77eb02e12",
+    "catalog-load-stand.json": "627de885ab2a62f633e5b22691cbf5c50cfc3e1789f78c5f0c58463234ba15e3",
+    "recovery.json": "3eb26cbedfb3254397f5f847c3cf06cb3b032a5152dbc2e7afc2f4b6ecee6485",
+    "recovery-probes.jsonl": "f91b2e5e84518fea07c8bd1f80b7e79fe6bad2a2fc4c4d5fa76562ec2a146032"
+  },
+  "limitation": "A single GitHub Actions host; three local browser clients are not independent external points; this is not production SLA evidence."
+}

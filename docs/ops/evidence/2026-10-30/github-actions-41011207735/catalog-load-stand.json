@@ -1,0 +1,16 @@
+{
+  "revision": "c1cdcf1c7daedb78408e08f58fb598bc74242289",
+  "api": {
+    "host": "GitHub Actions container",
+    "workers": 2,
+    "cpu_count": 4
+  },
+  "database": {
+    "version": "PostgreSQL 17",
+    "name": "sapar_sli_load_test"
+  },
+  "client": {
+    "host": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.36",
+    "network": "TCP loopback, separate process"
+  }
+}

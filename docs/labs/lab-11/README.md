@@ -18,6 +18,7 @@
 - [catalog-load.json](<../../ops/evidence/2026-10-30/catalog-load.json>)
 - [recovery.json](<../../ops/evidence/2026-10-30/recovery.json>)
 - [handoff.json](<../evidence/handoff.json>)
+- [remote-acceptance.json](<../lab-10/evidence/remote-acceptance.json>)
 
 ## Воспроизведение
 

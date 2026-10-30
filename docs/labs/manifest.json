@@ -2434,6 +2434,10 @@
         {
           "path": "docs/lab-8/budget_12_months.csv",
           "label": "budget_12_months.csv"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/remote-acceptance.json",
+          "label": "remote-acceptance.json"
         }
       ],
       "commands": [
@@ -3145,6 +3149,10 @@
         {
           "path": "docs/labs/lab-10/evidence/acceptance-initial-failure.json",
           "label": "acceptance-initial-failure.json"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/remote-acceptance.json",
+          "label": "remote-acceptance.json"
         }
       ],
       "commands": [
@@ -3568,6 +3576,10 @@
         {
           "path": "docs/labs/evidence/handoff.json",
           "label": "handoff.json"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/remote-acceptance.json",
+          "label": "remote-acceptance.json"
         }
       ],
       "commands": [
@@ -5395,6 +5407,10 @@
         {
           "path": "docs/labs/lab-15/evidence/anonymous-links.json",
           "label": "anonymous-links.json"
+        },
+        {
+          "path": "docs/labs/lab-15/defense.pdf",
+          "label": "defense.pdf"
         }
       ],
       "commands": [
