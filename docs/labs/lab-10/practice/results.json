@@ -1,0 +1,23 @@
+{
+  "data_kind": "educational_simulation",
+  "lab": 10,
+  "human_events_confirmed": false,
+  "start_utc": "2026-10-05T00:00:00+00:00",
+  "end_utc": "2026-10-19T00:00:00+00:00",
+  "deployment_count": 4,
+  "deployment_frequency_per_week": 2.0,
+  "lead_time_median_hours": 2.0,
+  "change_failure_rate_percent": 25.0,
+  "recovery_median_minutes": 30.0,
+  "ci_runs": 0,
+  "ci_success": 0,
+  "ci_failure": 0,
+  "status": "measured",
+  "limitation": "A green CI run is not a deployment. Missing incident evidence is not a 0% failure rate.",
+  "repair_labor_hours": 2,
+  "reliability_capacity_fraction": 0.025,
+  "red_merge_allowed_for_non_admin": false,
+  "production_admin_push_exception": true,
+  "scenario_sha256": "a0bf4c7a78b6099cae219a571dbdfc2c47d5f698e14bf83ff7e8e7df58c25be9",
+  "generator_sha256": "217c2dfdde8f0eba3eb79fde6e8d00792f24c0d0bc3515d5c334a9eeb0288c80"
+}

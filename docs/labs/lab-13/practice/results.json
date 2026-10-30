@@ -1,0 +1,13 @@
+{
+  "data_kind": "educational_simulation",
+  "lab": 13,
+  "human_events_confirmed": false,
+  "manual_median_minutes": 23,
+  "assisted_minutes": 20.05,
+  "net_minutes_per_report": 2.9499999999999993,
+  "payback_reports": 122.03389830508478,
+  "semester_net_minutes": -324.6,
+  "economically_justified_this_semester": false,
+  "scenario_sha256": "fc00b8c0c922efe8c7c0301cba593d20ca0d2163ace918b0fdb42d5f34ebea3a",
+  "generator_sha256": "217c2dfdde8f0eba3eb79fde6e8d00792f24c0d0bc3515d5c334a9eeb0288c80"
+}

@@ -1,0 +1,29 @@
+{
+  "captured_at_utc": "2026-10-30T19:21:34.687666+00:00",
+  "kind": "actual_chromium_dashboard_check",
+  "page": "docs/labs/dashboard.html",
+  "lab_links": 15,
+  "all_panels": 6,
+  "sponsor_panels": 4,
+  "team_panels": 2,
+  "filter_check": "DOM click events; integrated browser pointer action timed out, so pointer hit testing is not certified",
+  "responsive_checks": [
+    {
+      "requested_width": 360,
+      "client_width": 345,
+      "scroll_width": 345
+    },
+    {
+      "requested_width": 768,
+      "client_width": 753,
+      "scroll_width": 753
+    },
+    {
+      "requested_width": 1440,
+      "client_width": 1425,
+      "scroll_width": 1425
+    }
+  ],
+  "horizontal_overflow": false,
+  "human_uat": false
+}

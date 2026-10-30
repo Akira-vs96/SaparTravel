@@ -1,0 +1,28 @@
+{
+  "data_kind": "educational_simulation",
+  "lab": 14,
+  "human_events_confirmed": false,
+  "initiatives": 10,
+  "wip_limit": 3,
+  "selected": [
+    "P01",
+    "P02",
+    "P03"
+  ],
+  "deferred": [
+    "P04",
+    "P06",
+    "P05",
+    "P07",
+    "P08",
+    "P09",
+    "P10"
+  ],
+  "delay_days": 28,
+  "delay_cost_usd": 1664.6575342465753,
+  "reduced_scope_hours": 147,
+  "extra_resource_usd": 240,
+  "sponsor_approved": false,
+  "scenario_sha256": "67ce64f67863c68cfd2bb02cfd7be10f0443263d10a4c4722bb4aed5a4b7ef39",
+  "generator_sha256": "217c2dfdde8f0eba3eb79fde6e8d00792f24c0d0bc3515d5c334a9eeb0288c80"
+}

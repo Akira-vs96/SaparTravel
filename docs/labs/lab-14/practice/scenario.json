@@ -1,0 +1,40 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 14,
+  "sections": [
+    "portfolio",
+    "sponsor-conversation",
+    "rollout"
+  ],
+  "wip_limit": 3,
+  "delay_days": 28,
+  "defer_hours": 24,
+  "extra_hours": 24,
+  "hourly_rate_usd": 10,
+  "portfolio_is_from_other_course_teams": false,
+  "approved_by_sponsor": false,
+  "requirements": {
+    "LZ14-S01": "docs/labs/lab-14/practice/README.md",
+    "LZ14-S02": "docs/labs/lab-14/practice/README.md",
+    "LZ14-S03": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S04": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S05": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S06": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S07": "docs/labs/lab-14/practice/README.md",
+    "LZ14-S08": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S09": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S10": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S11": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S12": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S13": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-S14": "docs/labs/lab-14/practice/README.md",
+    "LZ14-S15": "docs/labs/lab-14/practice/README.md",
+    "LZ14-S16": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-C01": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-C02": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-C03": "docs/labs/lab-14/initiatives.csv",
+    "LZ14-C04": "docs/labs/lab-14/practice/README.md",
+    "LZ14-C05": "docs/labs/lab-14/initiatives.csv"
+  }
+}

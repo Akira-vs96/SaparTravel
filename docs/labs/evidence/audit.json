@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-30T08:47:18.388203+00:00",
+  "generated_at_utc": "2026-10-30T19:21:34.924676+00:00",
   "structure_valid": true,
   "course_complete": false,
   "labs": 15,
@@ -7,8 +7,8 @@
   "status_counts": {
     "partial": 36,
     "documented": 62,
-    "verified": 120,
-    "requires-human": 59
+    "verified": 122,
+    "requires-human": 57
   },
   "errors": [],
   "pending_requirements": [
@@ -146,11 +146,6 @@
       "id": "LZ07-S01",
       "status": "requires-human",
       "reason": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
-    },
-    {
-      "id": "LZ07-S10",
-      "status": "requires-human",
-      "reason": "Шесть совпадений — исторические testing-only JWT-литералы, не активные доступы; точные fingerprints задокументированы, истории не переписывались."
     },
     {
       "id": "LZ07-S11",
@@ -294,11 +289,6 @@
     },
     {
       "id": "LZ11-C04",
-      "status": "requires-human",
-      "reason": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
-    },
-    {
-      "id": "LZ11-C06",
       "status": "requires-human",
       "reason": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
     },
@@ -485,7 +475,7 @@
     {
       "id": "ADMIN-02",
       "status": "partial",
-      "reason": "В Wiki опубликован журнал подготовки 15 ЛЗ с датой и реальным автором Codex; сдача, личный вклад участников и доступ принимающего ещё не подтверждены."
+      "reason": "В Wiki опубликованы журнал подготовки и полный учебный комплект 15 ЛЗ; автор Codex раскрыт, commit проверен на origin. Фактическая сдача, личный вклад и доступ принимающего отдельно не подтверждены."
     }
   ],
   "meaning": "A valid evidence package does not imply customer acceptance or completed human exercises"

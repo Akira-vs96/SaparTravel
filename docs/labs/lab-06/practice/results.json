@@ -1,0 +1,33 @@
+{
+  "data_kind": "educational_simulation",
+  "lab": 6,
+  "human_events_confirmed": false,
+  "stories": 10,
+  "first_round_spreads": [
+    3,
+    5,
+    3,
+    5,
+    8,
+    3,
+    5,
+    8,
+    5,
+    8
+  ],
+  "story_points": 53,
+  "point_forecast_weeks": 4.076923076923077,
+  "monte_carlo_weeks": {
+    "50": 8,
+    "70": 9,
+    "85": 11,
+    "95": 12
+  },
+  "runs": 10000,
+  "seed": 42,
+  "zero_weeks_in_history": 2,
+  "history_is_measured": false,
+  "story_point_velocity_is_measured": false,
+  "scenario_sha256": "55808703baa17045a012115ba9058790016299b3d3e68adbe91218ee0134580c",
+  "generator_sha256": "217c2dfdde8f0eba3eb79fde6e8d00792f24c0d0bc3515d5c334a9eeb0288c80"
+}

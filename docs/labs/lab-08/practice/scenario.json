@@ -1,0 +1,52 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 8,
+  "sections": [
+    "supplier-choice",
+    "checkpoint-defense"
+  ],
+  "options": [
+    {
+      "id": "SIM-HOST-A",
+      "monthly_usd": 24,
+      "database_in_kz": true,
+      "eligible": true
+    },
+    {
+      "id": "SIM-HOST-B",
+      "monthly_usd": 12,
+      "database_in_kz": false,
+      "eligible": false
+    }
+  ],
+  "quotes_are_real": false,
+  "checkpoint_minutes": [
+    1,
+    2,
+    2,
+    2,
+    1
+  ],
+  "accepted_by_customer": false,
+  "requirements": {
+    "LZ08-S01": "docs/sow-sla-slo-sli.md",
+    "LZ08-S02": "docs/sow-sla-slo-sli.md",
+    "LZ08-S03": "docs/sow-sla-slo-sli.md",
+    "LZ08-S04": "docs/sow-sla-slo-sli.md",
+    "LZ08-S05": "docs/sow-sla-slo-sli.md",
+    "LZ08-S06": "docs/sow-sla-slo-sli.md",
+    "LZ08-S07": "docs/sow-sla-slo-sli.md",
+    "LZ08-S08": "docs/sow-sla-slo-sli.md",
+    "LZ08-S09": "docs/sow-sla-slo-sli.md",
+    "LZ08-S10": "docs/sow-sla-slo-sli.md",
+    "LZ08-S11": "docs/labs/lab-08/practice/README.md",
+    "LZ08-S12": "docs/labs/lab-08/practice/README.md",
+    "LZ08-C01": "docs/sow-sla-slo-sli.md",
+    "LZ08-C02": "docs/sow-sla-slo-sli.md",
+    "LZ08-C03": "docs/sow-sla-slo-sli.md",
+    "LZ08-C04": "docs/sow-sla-slo-sli.md",
+    "LZ08-C05": "docs/sow-sla-slo-sli.md",
+    "LZ08-C06": "docs/sow-sla-slo-sli.md"
+  }
+}

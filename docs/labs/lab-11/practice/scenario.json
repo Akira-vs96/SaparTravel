@@ -1,0 +1,100 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 11,
+  "sections": [
+    "uat",
+    "findings",
+    "runbook-test"
+  ],
+  "participants": [
+    "SIM-ACCEPTOR",
+    "SIM-OBSERVER"
+  ],
+  "developer_hints": 0,
+  "uat_scenarios": [
+    {
+      "id": "SIM-UAT-01",
+      "model_result": "pass"
+    },
+    {
+      "id": "SIM-UAT-02",
+      "model_result": "pass"
+    },
+    {
+      "id": "SIM-UAT-03",
+      "model_result": "pass"
+    },
+    {
+      "id": "SIM-UAT-04",
+      "model_result": "pass"
+    },
+    {
+      "id": "SIM-UAT-05",
+      "model_result": "pass"
+    },
+    {
+      "id": "SIM-UAT-06",
+      "model_result": "pass"
+    },
+    {
+      "id": "SIM-UAT-07",
+      "model_result": "pass"
+    },
+    {
+      "id": "SIM-UAT-08",
+      "model_result": "fail"
+    },
+    {
+      "id": "SIM-UAT-09",
+      "model_result": "fail"
+    },
+    {
+      "id": "SIM-UAT-10",
+      "model_result": "pass"
+    }
+  ],
+  "findings": [
+    {
+      "id": "SIM-UAT-F1",
+      "priority": "high",
+      "owner": "SIM-FE",
+      "due": "2026-11-03",
+      "symptom": "Модель пользователя не поняла причину запрета пустой отмены"
+    },
+    {
+      "id": "SIM-UAT-F2",
+      "priority": "medium",
+      "owner": "SIM-QA",
+      "due": "2026-11-04",
+      "symptom": "Модель пользователя не заметила переключатель языка"
+    }
+  ],
+  "runbook_virtual_reader_minutes": 12,
+  "external_uat_passed": false,
+  "requirements": {
+    "LZ11-S01": "docs/qa/test-plan.md",
+    "LZ11-S02": "docs/qa/test-plan.md",
+    "LZ11-S03": "docs/qa/test-plan.md",
+    "LZ11-S04": "docs/qa/test-plan.md",
+    "LZ11-S05": "docs/qa/test-plan.md",
+    "LZ11-S06": "docs/qa/test-plan.md",
+    "LZ11-S07": "docs/qa/test-plan.md",
+    "LZ11-S08": "docs/labs/lab-11/practice/README.md",
+    "LZ11-S09": "docs/labs/lab-11/practice/README.md",
+    "LZ11-S10": "docs/labs/lab-11/practice/README.md",
+    "LZ11-S11": "docs/qa/test-plan.md",
+    "LZ11-S12": "docs/qa/test-plan.md",
+    "LZ11-S13": "docs/qa/test-plan.md",
+    "LZ11-S14": "docs/qa/test-plan.md",
+    "LZ11-S15": "docs/qa/test-plan.md",
+    "LZ11-S16": "docs/labs/lab-11/practice/README.md",
+    "LZ11-C01": "docs/qa/test-plan.md",
+    "LZ11-C02": "docs/qa/test-plan.md",
+    "LZ11-C03": "docs/qa/test-plan.md",
+    "LZ11-C04": "docs/labs/lab-11/practice/README.md",
+    "LZ11-C05": "docs/qa/test-plan.md",
+    "LZ11-C06": "docs/labs/lab-11/practice/README.md",
+    "LZ11-C07": "docs/labs/lab-11/practice/README.md"
+  }
+}

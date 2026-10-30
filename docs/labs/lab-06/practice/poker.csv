@@ -1,0 +1,11 @@
+data_kind,story,SIM-A,SIM-B,SIM-C,SIM-D,spread,final,clarified_ac
+educational_simulation,SIM-ST-01,2,3,3,5,3,3,учесть отказ доступа
+educational_simulation,SIM-ST-02,3,5,5,8,5,5,отделить 3DS от подтверждения
+educational_simulation,SIM-ST-03,2,3,5,3,3,3,проверить сохранение фильтра
+educational_simulation,SIM-ST-04,3,5,8,5,5,5,определить границы отмены
+educational_simulation,SIM-ST-05,5,8,8,13,8,8,включить конкуренцию мест
+educational_simulation,SIM-ST-06,2,3,3,5,3,3,не менять денежный снимок
+educational_simulation,SIM-ST-07,3,5,5,8,5,5,фиксировать причину отказа
+educational_simulation,SIM-ST-08,5,8,13,8,8,8,разделить почту и уведомление
+educational_simulation,SIM-ST-09,3,5,8,5,5,5,уточнить локализацию ошибок
+educational_simulation,SIM-ST-10,5,8,8,13,8,8,включить откат и smoke

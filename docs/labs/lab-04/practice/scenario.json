@@ -1,0 +1,45 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 4,
+  "sections": [
+    "interview-owner",
+    "interview-user",
+    "backlog-delta"
+  ],
+  "interviews": [
+    {
+      "id": "SIM-INT-01",
+      "role": "SIM-PO",
+      "quote": "Перед отменой хочу видеть сумму возврата и записанную причину.",
+      "story": "SIM-ST-10",
+      "change": "add refund preview + mandatory cancellation reason"
+    },
+    {
+      "id": "SIM-INT-02",
+      "role": "SIM-TOURIST",
+      "quote": "Если каталог не загрузился, я хочу повторить поиск без повторного заполнения.",
+      "story": "SIM-ST-03",
+      "change": "add retained search + retry on invalid response"
+    }
+  ],
+  "performed_with_real_people": false,
+  "requirements": {
+    "LZ04-S01": "docs/requirements/stakeholders.md",
+    "LZ04-S02": "docs/requirements/stakeholders.md",
+    "LZ04-S03": "docs/requirements/stakeholders.md",
+    "LZ04-S04": "docs/requirements/stakeholders.md",
+    "LZ04-S05": "docs/labs/lab-04/practice/README.md",
+    "LZ04-S06": "docs/requirements/stakeholders.md",
+    "LZ04-S07": "docs/requirements/stakeholders.md",
+    "LZ04-S08": "docs/requirements/stakeholders.md",
+    "LZ04-S09": "docs/requirements/stakeholders.md",
+    "LZ04-S10": "docs/requirements/stakeholders.md",
+    "LZ04-S11": "docs/requirements/stakeholders.md",
+    "LZ04-C01": "docs/requirements/stakeholders.md",
+    "LZ04-C02": "docs/labs/lab-04/practice/README.md",
+    "LZ04-C03": "docs/requirements/stakeholders.md",
+    "LZ04-C04": "docs/requirements/stakeholders.md",
+    "LZ04-C05": "docs/requirements/stakeholders.md"
+  }
+}

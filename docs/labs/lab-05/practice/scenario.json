@@ -1,0 +1,57 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 5,
+  "sections": [
+    "capacity",
+    "dependencies"
+  ],
+  "people": 4,
+  "weeks": 12,
+  "hours_per_week": 6,
+  "absence_hours": 48,
+  "reserve_fraction": 0.15,
+  "management_reserve_hours": 16,
+  "scope_hours": 171,
+  "dependencies": [
+    {
+      "id": "SIM-DEP-1",
+      "owner": "SIM-PO",
+      "due": "2026-11-06",
+      "blocks": "MVP scope",
+      "fallback": "freeze mandatory booking flow"
+    },
+    {
+      "id": "SIM-DEP-2",
+      "owner": "SIM-OPS",
+      "due": "2026-11-13",
+      "blocks": "pilot host",
+      "fallback": "isolated local demonstration"
+    },
+    {
+      "id": "SIM-DEP-3",
+      "owner": "SIM-VENDOR",
+      "due": "2026-11-20",
+      "blocks": "real catalog",
+      "fallback": "seeded synthetic catalog"
+    }
+  ],
+  "requirements": {
+    "LZ05-S01": "docs/plan/wbs.md",
+    "LZ05-S02": "docs/plan/wbs.md",
+    "LZ05-S03": "docs/plan/wbs.md",
+    "LZ05-S04": "docs/plan/wbs.md",
+    "LZ05-S05": "docs/plan/wbs.md",
+    "LZ05-S06": "docs/plan/wbs.md",
+    "LZ05-S07": "docs/labs/lab-05/practice/README.md",
+    "LZ05-S08": "docs/plan/wbs.md",
+    "LZ05-S09": "docs/plan/wbs.md",
+    "LZ05-S10": "docs/labs/lab-05/practice/README.md",
+    "LZ05-S11": "docs/plan/wbs.md",
+    "LZ05-C01": "docs/plan/wbs.md",
+    "LZ05-C02": "docs/labs/lab-05/practice/README.md",
+    "LZ05-C03": "docs/plan/wbs.md",
+    "LZ05-C04": "docs/plan/wbs.md",
+    "LZ05-C05": "docs/plan/wbs.md"
+  }
+}

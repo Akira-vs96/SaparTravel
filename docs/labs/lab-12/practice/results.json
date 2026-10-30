@@ -1,0 +1,71 @@
+{
+  "data_kind": "educational_simulation",
+  "lab": 12,
+  "human_events_confirmed": false,
+  "real_model_metrics_reproduced": true,
+  "examples": 30,
+  "difficult_examples": 6,
+  "diagnostic_metrics": {
+    "zero-shot": {
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "abstentions": 29,
+      "per_class": {
+        "catalog": {
+          "support": 8,
+          "f1": 0.0
+        },
+        "access": {
+          "support": 5,
+          "f1": 0.0
+        },
+        "booking": {
+          "support": 8,
+          "f1": 0.0
+        },
+        "operations": {
+          "support": 3,
+          "f1": 0.0
+        },
+        "process": {
+          "support": 6,
+          "f1": 0.0
+        }
+      }
+    },
+    "few-shot": {
+      "accuracy": 0.23333333333333334,
+      "macro_f1": 0.08235294117647059,
+      "abstentions": 2,
+      "per_class": {
+        "catalog": {
+          "support": 8,
+          "f1": 0.4117647058823529
+        },
+        "access": {
+          "support": 5,
+          "f1": 0.0
+        },
+        "booking": {
+          "support": 8,
+          "f1": 0.0
+        },
+        "operations": {
+          "support": 3,
+          "f1": 0.0
+        },
+        "process": {
+          "support": 6,
+          "f1": 0.0
+        }
+      }
+    }
+  },
+  "gold_human_approved": false,
+  "input_tokens_are_from_local_tokenizer": true,
+  "api_estimate_not_actual_billing": true,
+  "break_even_proxy_requests": 4760724.026779071,
+  "deployment_decision": "Keep rules and manual review; reject automatic LLM routing",
+  "scenario_sha256": "09bc2353871d1d4c57e4c70c756d6da53dd4651fddf0a59b92fd4e8dba233078",
+  "generator_sha256": "217c2dfdde8f0eba3eb79fde6e8d00792f24c0d0bc3515d5c334a9eeb0288c80"
+}

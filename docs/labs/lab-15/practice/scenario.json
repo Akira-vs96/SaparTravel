@@ -1,0 +1,43 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 15,
+  "sections": [
+    "defense",
+    "retrospective",
+    "cv-profile"
+  ],
+  "defense_minutes": [
+    1,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "words_per_minute": 110,
+  "speech": "SaparTravel — учебная платформа поиска и бронирования туров на трёх языках. В демонстрационной роли я отвечаю за качество и передачу результата. Команда разделила React, FastAPI и PostgreSQL, а материалы пятнадцати лабораторных собрала по отдельным разделам. Сервер рассчитывает стоимость в тенге и защищает последнее место от двойного бронирования. Мы проверили роли, тестовую оплату, отмену и возврат. Найденную ошибку HTTP 200 с некорректным содержимым воспроизвели и закрыли регрессионными проверками. Финансовую модель пересчитали: ошибка суммы рисков меняла вывод о резерве. В учебной симуляции двух спринтов выпуск сохранился, среднее время цикла ухудшилось, а p85 сократился. Поэтому мы не объявили изменение процесса успешным. Реальная локальная языковая модель уступила простым правилам; её автоматическое применение отклонено. Моя задача при передаче — показать исходные данные, команды проверок и границы результата. Настоящая приёмка заказчиком и личный вклад участников подтверждаются отдельно.",
+  "profile_update_is_draft": true,
+  "requirements": {
+    "LZ15-S01": "docs/labs/lab-15/defense.pptx",
+    "LZ15-S02": "docs/labs/lab-15/practice/README.md",
+    "LZ15-S03": "docs/labs/lab-15/practice/README.md",
+    "LZ15-S04": "docs/labs/lab-15/defense.pptx",
+    "LZ15-S05": "docs/labs/lab-15/practice/README.md",
+    "LZ15-S06": "docs/labs/lab-15/practice/README.md",
+    "LZ15-S07": "docs/labs/lab-15/defense.pptx",
+    "LZ15-S08": "docs/labs/lab-15/practice/README.md",
+    "LZ15-S09": "docs/labs/lab-15/practice/README.md",
+    "LZ15-S10": "docs/labs/lab-15/practice/README.md",
+    "LZ15-S11": "docs/labs/lab-15/defense.pptx",
+    "LZ15-S12": "docs/labs/lab-15/practice/README.md",
+    "LZ15-S13": "docs/labs/lab-15/practice/README.md",
+    "LZ15-C01": "docs/labs/lab-15/practice/README.md",
+    "LZ15-C02": "docs/labs/lab-15/defense.pptx",
+    "LZ15-C03": "docs/labs/lab-15/practice/README.md",
+    "LZ15-C04": "docs/labs/lab-15/practice/README.md",
+    "LZ15-C05": "docs/labs/lab-15/practice/README.md",
+    "LZ15-C06": "docs/labs/lab-15/practice/README.md"
+  }
+}

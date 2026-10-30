@@ -1,0 +1,53 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 12,
+  "sections": [
+    "annotation",
+    "quality",
+    "cost"
+  ],
+  "virtual_annotators": [
+    "SIM-A",
+    "SIM-B"
+  ],
+  "independent_humans_present": false,
+  "disagreements": [
+    {
+      "id": "SIM-ANNOT-01",
+      "left": "operations",
+      "right": "process",
+      "adjudicated": "process",
+      "reason": "организация репозитория, не выполнение пайплайна"
+    },
+    {
+      "id": "SIM-ANNOT-02",
+      "left": "catalog",
+      "right": "booking",
+      "adjudicated": "booking",
+      "reason": "резерв мест, не поиск"
+    }
+  ],
+  "requirements": {
+    "LZ12-S01": "evals/pm-routing/dataset.jsonl",
+    "LZ12-S02": "evals/pm-routing/dataset.jsonl",
+    "LZ12-S03": "evals/pm-routing/dataset.jsonl",
+    "LZ12-S04": "docs/labs/lab-12/practice/README.md",
+    "LZ12-S05": "docs/labs/lab-12/practice/README.md",
+    "LZ12-S06": "evals/pm-routing/dataset.jsonl",
+    "LZ12-S07": "evals/pm-routing/dataset.jsonl",
+    "LZ12-S08": "evals/pm-routing/dataset.jsonl",
+    "LZ12-S09": "docs/labs/lab-12/practice/README.md",
+    "LZ12-S10": "evals/pm-routing/dataset.jsonl",
+    "LZ12-S11": "evals/pm-routing/dataset.jsonl",
+    "LZ12-S12": "docs/labs/lab-12/practice/README.md",
+    "LZ12-S13": "docs/labs/lab-12/practice/README.md",
+    "LZ12-S14": "evals/pm-routing/dataset.jsonl",
+    "LZ12-S15": "evals/pm-routing/dataset.jsonl",
+    "LZ12-C01": "docs/labs/lab-12/practice/README.md",
+    "LZ12-C02": "evals/pm-routing/dataset.jsonl",
+    "LZ12-C03": "docs/labs/lab-12/practice/README.md",
+    "LZ12-C04": "evals/pm-routing/dataset.jsonl",
+    "LZ12-C05": "evals/pm-routing/dataset.jsonl"
+  }
+}

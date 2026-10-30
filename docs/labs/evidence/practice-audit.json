@@ -1,0 +1,4274 @@
+{
+  "data_kind": "course_exercise_coverage",
+  "labs": 15,
+  "requirements": 275,
+  "all_requirements_covered": true,
+  "human_events_confirmed": false,
+  "course_factually_complete": false,
+  "errors": [],
+  "coverage": [
+    {
+      "id": "LZ01-S01",
+      "lab": 1,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-01/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S02",
+      "lab": 1,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-01/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S03",
+      "lab": 1,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S04",
+      "lab": 1,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S05",
+      "lab": 1,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S06",
+      "lab": 1,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-01/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S07",
+      "lab": 1,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S08",
+      "lab": 1,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S09",
+      "lab": 1,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S10",
+      "lab": 1,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-01/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-S11",
+      "lab": 1,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-01/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-C01",
+      "lab": 1,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-C02",
+      "lab": 1,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-C03",
+      "lab": 1,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-C04",
+      "lab": 1,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-01/competencies.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ01-C05",
+      "lab": 1,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-01/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-01/competencies.md",
+        "docs/labs/lab-01/case-study.md",
+        "docs/labs/lab-01/evidence/vacancies.json",
+        "docs/labs/lab-01/evidence/frequency.csv",
+        "docs/labs/lab-01/evidence/market-sample.xlsx"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S01",
+      "lab": 2,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-02/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S02",
+      "lab": 2,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S03",
+      "lab": 2,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-02/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S04",
+      "lab": 2,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-02/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S05",
+      "lab": 2,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S06",
+      "lab": 2,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S07",
+      "lab": 2,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S08",
+      "lab": 2,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S09",
+      "lab": 2,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S10",
+      "lab": 2,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-02/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S11",
+      "lab": 2,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-S12",
+      "lab": 2,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-C01",
+      "lab": 2,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-C02",
+      "lab": 2,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-02/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-C03",
+      "lab": 2,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-02/cases.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-C04",
+      "lab": 2,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-02/evidence/contributors.json",
+      "factual_evidence": [
+        "docs/labs/lab-02/evidence/contributors.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ02-C05",
+      "lab": 2,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-02/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-02/cases.md",
+        "docs/labs/lab-02/evidence/space.json",
+        "docs/adr/ADR-001.md",
+        "docs/project-board-workflow.md",
+        ".github/ISSUE_TEMPLATE"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S01",
+      "lab": 3,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-03/practice/README.md",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S02",
+      "lab": 3,
+      "factual_status": "documented",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S03",
+      "lab": 3,
+      "factual_status": "documented",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S04",
+      "lab": 3,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-03/practice/README.md",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S05",
+      "lab": 3,
+      "factual_status": "verified",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S06",
+      "lab": 3,
+      "factual_status": "documented",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S07",
+      "lab": 3,
+      "factual_status": "verified",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S08",
+      "lab": 3,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-03/practice/README.md",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S09",
+      "lab": 3,
+      "factual_status": "verified",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S10",
+      "lab": 3,
+      "factual_status": "verified",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S11",
+      "lab": 3,
+      "factual_status": "documented",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-S12",
+      "lab": 3,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-03/practice/README.md",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-C01",
+      "lab": 3,
+      "factual_status": "verified",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-C02",
+      "lab": 3,
+      "factual_status": "documented",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-C03",
+      "lab": 3,
+      "factual_status": "documented",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-C04",
+      "lab": 3,
+      "factual_status": "documented",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ03-C05",
+      "lab": 3,
+      "factual_status": "documented",
+      "exercise_evidence": "SaparTravel_Business_Case_LZ3.docx",
+      "factual_evidence": [
+        "SaparTravel_Business_Case_LZ3.docx",
+        "SaparTravel_Charter_V1.0.docx",
+        "docs/project-charter.md",
+        "docs/finmodel.ods",
+        "data/labs/lab-03/business-case.json",
+        "docs/labs/lab-03/evidence/business-case.json",
+        "docs/labs/lab-03/defense.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S01",
+      "lab": 4,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S02",
+      "lab": 4,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S03",
+      "lab": 4,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S04",
+      "lab": 4,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S05",
+      "lab": 4,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-04/practice/README.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S06",
+      "lab": 4,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S07",
+      "lab": 4,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S08",
+      "lab": 4,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S09",
+      "lab": 4,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S10",
+      "lab": 4,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-S11",
+      "lab": 4,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-C01",
+      "lab": 4,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-C02",
+      "lab": 4,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-04/practice/README.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-C03",
+      "lab": 4,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-C04",
+      "lab": 4,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ04-C05",
+      "lab": 4,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/requirements/stakeholders.md",
+      "factual_evidence": [
+        "docs/requirements/stakeholders.md",
+        "docs/requirements/communication-plan.md",
+        "docs/requirements/interviews.md",
+        "docs/requirements/story-map.md",
+        "docs/requirements/story-map.png",
+        "docs/requirements/non-functional-requirements.md",
+        "docs/labs/evidence/github-2026-10-30.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S01",
+      "lab": 5,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S02",
+      "lab": 5,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S03",
+      "lab": 5,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S04",
+      "lab": 5,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S05",
+      "lab": 5,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S06",
+      "lab": 5,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S07",
+      "lab": 5,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-05/practice/README.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S08",
+      "lab": 5,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S09",
+      "lab": 5,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S10",
+      "lab": 5,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-05/practice/README.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-S11",
+      "lab": 5,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-C01",
+      "lab": 5,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-C02",
+      "lab": 5,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-05/practice/README.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-C03",
+      "lab": 5,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-C04",
+      "lab": 5,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ05-C05",
+      "lab": 5,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/plan/wbs.md",
+      "factual_evidence": [
+        "docs/plan/wbs.md",
+        "docs/plan/dependencies.md",
+        "docs/plan/dependency-reminders.ics",
+        "docs/plan/sapartravel-models.drawio",
+        "docs/labs/lab-05/evidence/planning-checks.json",
+        "docs/labs/evidence/planning.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S01",
+      "lab": 6,
+      "factual_status": "verified",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S02",
+      "lab": 6,
+      "factual_status": "verified",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S03",
+      "lab": 6,
+      "factual_status": "verified",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S04",
+      "lab": 6,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-06/practice/README.md",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S05",
+      "lab": 6,
+      "factual_status": "verified",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S06",
+      "lab": 6,
+      "factual_status": "verified",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S07",
+      "lab": 6,
+      "factual_status": "verified",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S08",
+      "lab": 6,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-06/practice/README.md",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S09",
+      "lab": 6,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-06/practice/README.md",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S10",
+      "lab": 6,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-06/practice/README.md",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-S11",
+      "lab": 6,
+      "factual_status": "documented",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-C01",
+      "lab": 6,
+      "factual_status": "documented",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-C02",
+      "lab": 6,
+      "factual_status": "documented",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-C03",
+      "lab": 6,
+      "factual_status": "documented",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-C04",
+      "lab": 6,
+      "factual_status": "documented",
+      "exercise_evidence": "notebooks/lab-6-monte-carlo.ipynb",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ06-C05",
+      "lab": 6,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-06/practice/README.md",
+      "factual_evidence": [
+        "notebooks/lab-6-monte-carlo.ipynb",
+        "data/labs/lab-06/throughput.csv",
+        "data/labs/lab-06/provenance.json",
+        "docs/labs/lab-06/evidence/forecast.json",
+        "docs/labs/lab-06/evidence/notebook.json",
+        "docs/labs/lab-06/customer-slide.md",
+        "docs/labs/lab-06/customer-slide.pptx",
+        "docs/labs/lab-06/planning-poker.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S01",
+      "lab": 7,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-07/practice/README.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S02",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S03",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S04",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S05",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S06",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S07",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S08",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S09",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S10",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-07/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-07/evidence/2026-10-31/summary.json",
+        "docs/security/security-scan-report.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S11",
+      "lab": 7,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-07/practice/README.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-S12",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/evidence/handoff.json",
+      "factual_evidence": [
+        "docs/labs/evidence/handoff.json",
+        "docs/security/security-backlog.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-C01",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-C02",
+      "lab": 7,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-C03",
+      "lab": 7,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-C04",
+      "lab": 7,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/security/raid.md",
+      "factual_evidence": [
+        "docs/security/raid.md",
+        "docs/security/threat-model.md",
+        "docs/security/threat-model.json",
+        "docs/security/compliance-checklist.md",
+        "docs/security/security-backlog.md",
+        "docs/security/security-scan-report.md",
+        "docs/labs/lab-07/evidence/2026-10-30/summary.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ07-C05",
+      "lab": 7,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/evidence/handoff.json",
+      "factual_evidence": [
+        "docs/labs/evidence/handoff.json",
+        "docs/security/security-backlog.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S01",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S02",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S03",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S04",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S05",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S06",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S07",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S08",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S09",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S10",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S11",
+      "lab": 8,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-08/practice/README.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-S12",
+      "lab": 8,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-08/practice/README.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-C01",
+      "lab": 8,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-C02",
+      "lab": 8,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-C03",
+      "lab": 8,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-C04",
+      "lab": 8,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-C05",
+      "lab": 8,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ08-C06",
+      "lab": 8,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/sow-sla-slo-sli.md",
+      "factual_evidence": [
+        "docs/sow-sla-slo-sli.md",
+        "docs/labs/lab-08/corrections.md",
+        "docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx",
+        "docs/labs/lab-08/evidence/finance-validation.json",
+        "docs/lab-8/SaparTravel_LZ8_Report.pdf",
+        "docs/lab-8/budget_12_months.csv"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S01",
+      "lab": 9,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/evidence/policies-published.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S02",
+      "lab": 9,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/evidence/board-current-policy.json",
+        "scripts/course/flow_journal.py"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S03",
+      "lab": 9,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/evidence/policies-published.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S04",
+      "lab": 9,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/sprint-experiment.md",
+        "docs/labs/lab-09/journal/README.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S05",
+      "lab": 9,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/sprint-experiment.md",
+        "docs/labs/lab-09/journal/README.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S06",
+      "lab": 9,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S07",
+      "lab": 9,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/evidence/data-quality.json",
+        "docs/labs/lab-09/evidence/analysis.md",
+        "tests/course/test_flow.py",
+        "docs/labs/lab-09/evidence/comparison.csv",
+        "docs/labs/lab-09/evidence/item-times.csv",
+        "docs/labs/lab-09/evidence/daily-wip.csv",
+        "docs/labs/lab-09/evidence/calc-percentile-check.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S08",
+      "lab": 9,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/evidence/data-quality.json",
+        "docs/labs/lab-09/evidence/analysis.md",
+        "tests/course/test_flow.py",
+        "docs/labs/lab-09/evidence/comparison.csv",
+        "docs/labs/lab-09/evidence/item-times.csv",
+        "docs/labs/lab-09/evidence/daily-wip.csv",
+        "docs/labs/lab-09/evidence/calc-percentile-check.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S09",
+      "lab": 9,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/evidence/data-quality.json",
+        "docs/labs/lab-09/evidence/analysis.md",
+        "tests/course/test_flow.py",
+        "docs/labs/lab-09/evidence/board-current-policy.json",
+        "scripts/course/flow_journal.py"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S10",
+      "lab": 9,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/retrospective.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S11",
+      "lab": 9,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/retrospective.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-S12",
+      "lab": 9,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/sprint-experiment.md",
+        "docs/labs/lab-09/journal/README.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-C01",
+      "lab": 9,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-C02",
+      "lab": 9,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/sprint-experiment.md",
+        "docs/labs/lab-09/journal/README.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-C03",
+      "lab": 9,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/evidence/data-quality.json",
+        "docs/labs/lab-09/evidence/analysis.md",
+        "tests/course/test_flow.py",
+        "docs/labs/lab-09/evidence/comparison.csv",
+        "docs/labs/lab-09/evidence/item-times.csv",
+        "docs/labs/lab-09/evidence/daily-wip.csv",
+        "docs/labs/lab-09/evidence/calc-percentile-check.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-C04",
+      "lab": 9,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/evidence/data-quality.json",
+        "docs/labs/lab-09/evidence/analysis.md",
+        "tests/course/test_flow.py",
+        "docs/labs/lab-09/evidence/board-current-policy.json",
+        "scripts/course/flow_journal.py"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ09-C05",
+      "lab": 9,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-09/simulation/README.md",
+      "factual_evidence": [
+        "docs/project-board-workflow.md",
+        "docs/labs/lab-09/evidence/github-flow.json",
+        "docs/labs/lab-09/evidence/flow.json",
+        "docs/labs/lab-09/evidence/cfd.json",
+        "docs/labs/lab-09/evidence/observed-flow.png",
+        "docs/labs/lab-09/retrospective.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S01",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-10/evidence/remote-ci.json",
+      "factual_evidence": [
+        "docs/labs/lab-10/evidence/remote-ci.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S02",
+      "lab": 10,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S03",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": ".github/workflows/ci.yml",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S04",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-10/evidence/remote-ci.json",
+      "factual_evidence": [
+        "docs/labs/lab-10/evidence/remote-ci.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S05",
+      "lab": 10,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-10/evidence/branch-protection.json",
+        "docs/labs/lab-10/evidence/branch-protection-current.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S06",
+      "lab": 10,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S07",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": ".github/workflows/ci.yml",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S08",
+      "lab": 10,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S09",
+      "lab": 10,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S10",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": ".github/workflows/ci.yml",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S11",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": ".github/workflows/ci.yml",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S12",
+      "lab": 10,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S13",
+      "lab": 10,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S14",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": ".github/workflows/ci.yml",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-S15",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": ".github/workflows/ci.yml",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-C01",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-10/evidence/remote-ci.json",
+      "factual_evidence": [
+        "docs/labs/lab-10/evidence/remote-ci.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-C02",
+      "lab": 10,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-C03",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-02/evidence/wiki-publication.json",
+      "factual_evidence": [
+        "docs/labs/lab-02/evidence/wiki-publication.json",
+        "docs/ops/release-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-C04",
+      "lab": 10,
+      "factual_status": "documented",
+      "exercise_evidence": ".github/workflows/ci.yml",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-C05",
+      "lab": 10,
+      "factual_status": "verified",
+      "exercise_evidence": ".github/workflows/ci.yml",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ10-C06",
+      "lab": 10,
+      "factual_status": "documented",
+      "exercise_evidence": ".github/workflows/ci.yml",
+      "factual_evidence": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/service-level-acceptance.yml",
+        "docs/ops/release-plan.md",
+        "scripts/course/github_facts.py",
+        "scripts/course/metrics.py",
+        "docs/labs/lab-10/evidence/dora.json",
+        "docs/labs/lab-10/evidence/backend-coverage.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S01",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S02",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S03",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S04",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S05",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S06",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S07",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S08",
+      "lab": 11,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-11/practice/README.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S09",
+      "lab": 11,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-11/practice/README.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S10",
+      "lab": 11,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-11/practice/README.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S11",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S12",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S13",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S14",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S15",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-S16",
+      "lab": 11,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-11/practice/README.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-C01",
+      "lab": 11,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-C02",
+      "lab": 11,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-C03",
+      "lab": 11,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-C04",
+      "lab": 11,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-11/practice/README.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-C05",
+      "lab": 11,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/qa/test-plan.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-C06",
+      "lab": 11,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-11/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/evidence/handoff.json",
+        "docs/qa/postmortem.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ11-C07",
+      "lab": 11,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-11/practice/README.md",
+      "factual_evidence": [
+        "docs/qa/test-plan.md",
+        "docs/qa/uat-protocol.md",
+        "docs/qa/postmortem.md",
+        "docs/ops/runbook.md",
+        "docs/labs/lab-11/evidence/browser.json",
+        "backend/tests/test_catalog_contract.py",
+        "tests/browser_invalid_response.py",
+        "docs/ops/evidence/2026-10-30/catalog-load.json",
+        "docs/ops/evidence/2026-10-30/recovery.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S01",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S02",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S03",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S04",
+      "lab": 12,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-12/practice/README.md",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S05",
+      "lab": 12,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-12/practice/README.md",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S06",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S07",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S08",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S09",
+      "lab": 12,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-12/practice/README.md",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S10",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S11",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S12",
+      "lab": 12,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-12/practice/README.md",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S13",
+      "lab": 12,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-12/practice/README.md",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S14",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-S15",
+      "lab": 12,
+      "factual_status": "verified",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-C01",
+      "lab": 12,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-12/practice/README.md",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-C02",
+      "lab": 12,
+      "factual_status": "documented",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-C03",
+      "lab": 12,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-12/practice/README.md",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-C04",
+      "lab": 12,
+      "factual_status": "documented",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ12-C05",
+      "lab": 12,
+      "factual_status": "documented",
+      "exercise_evidence": "evals/pm-routing/dataset.jsonl",
+      "factual_evidence": [
+        "evals/pm-routing/dataset.jsonl",
+        "scripts/course/ai.py",
+        "scripts/course/local_model.py",
+        "docs/adr/ADR-005.md",
+        "docs/labs/lab-12/evidence/results.json",
+        "docs/labs/lab-12/evidence/cost.json",
+        "docs/labs/lab-12/evidence/provenance.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S01",
+      "lab": 13,
+      "factual_status": "verified",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S02",
+      "lab": 13,
+      "factual_status": "verified",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S03",
+      "lab": 13,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-13/practice/README.md",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S04",
+      "lab": 13,
+      "factual_status": "verified",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S05",
+      "lab": 13,
+      "factual_status": "verified",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S06",
+      "lab": 13,
+      "factual_status": "verified",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S07",
+      "lab": 13,
+      "factual_status": "verified",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S08",
+      "lab": 13,
+      "factual_status": "verified",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S09",
+      "lab": 13,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-13/practice/README.md",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S10",
+      "lab": 13,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-13/practice/README.md",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S11",
+      "lab": 13,
+      "factual_status": "documented",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S12",
+      "lab": 13,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-13/practice/README.md",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S13",
+      "lab": 13,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-13/practice/README.md",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S14",
+      "lab": 13,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-13/practice/README.md",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S15",
+      "lab": 13,
+      "factual_status": "verified",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-S16",
+      "lab": 13,
+      "factual_status": "verified",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-C01",
+      "lab": 13,
+      "factual_status": "documented",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-C02",
+      "lab": 13,
+      "factual_status": "documented",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-C03",
+      "lab": 13,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-13/practice/README.md",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-C04",
+      "lab": 13,
+      "factual_status": "documented",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ13-C05",
+      "lab": 13,
+      "factual_status": "documented",
+      "exercise_evidence": "scripts/course/weekly_status.py",
+      "factual_evidence": [
+        "scripts/course/weekly_status.py",
+        ".github/workflows/weekly-status.yml",
+        "docs/labs/lab-13/instructions.md",
+        "docs/labs/lab-13/evidence/2026-10-12/status.md",
+        "docs/labs/lab-13/evidence/2026-10-12/verification.json",
+        "docs/labs/lab-13/evidence/2026-10-19/status.md",
+        "docs/labs/lab-13/evidence/2026-10-19/verification.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S01",
+      "lab": 14,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-14/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S02",
+      "lab": 14,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-14/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S03",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S04",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S05",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S06",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S07",
+      "lab": 14,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-14/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S08",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S09",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S10",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S11",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S12",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S13",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S14",
+      "lab": 14,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-14/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S15",
+      "lab": 14,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-14/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-S16",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-C01",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-C02",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-C03",
+      "lab": 14,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-C04",
+      "lab": 14,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-14/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ14-C05",
+      "lab": 14,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-14/initiatives.csv",
+      "factual_evidence": [
+        "docs/labs/lab-14/initiatives.csv",
+        "docs/labs/lab-14/evidence/wsjf.json",
+        "docs/labs/lab-14/evidence/wsjf.xlsx",
+        "scripts/course/dashboard.py",
+        "docs/labs/lab-14/status.md",
+        "docs/labs/lab-14/change-plan.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S01",
+      "lab": 15,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-15/defense.pptx",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S02",
+      "lab": 15,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/demo.md",
+        "docs/labs/lab-15/evidence/demo-run.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S03",
+      "lab": 15,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S04",
+      "lab": 15,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-15/defense.pptx",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S05",
+      "lab": 15,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S06",
+      "lab": 15,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S07",
+      "lab": 15,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-15/defense.pptx",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S08",
+      "lab": 15,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/evidence/anonymous-links.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S09",
+      "lab": 15,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S10",
+      "lab": 15,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S11",
+      "lab": 15,
+      "factual_status": "verified",
+      "exercise_evidence": "docs/labs/lab-15/defense.pptx",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S12",
+      "lab": 15,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-S13",
+      "lab": 15,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-C01",
+      "lab": 15,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/demo.md",
+        "docs/labs/lab-15/evidence/demo-run.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-C02",
+      "lab": 15,
+      "factual_status": "documented",
+      "exercise_evidence": "docs/labs/lab-15/defense.pptx",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-C03",
+      "lab": 15,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-C04",
+      "lab": 15,
+      "factual_status": "partial",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/evidence/anonymous-links.json"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-C05",
+      "lab": 15,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    },
+    {
+      "id": "LZ15-C06",
+      "lab": 15,
+      "factual_status": "requires-human",
+      "exercise_evidence": "docs/labs/lab-15/practice/README.md",
+      "factual_evidence": [
+        "docs/labs/lab-15/defense.pptx",
+        "docs/labs/lab-15/defense-plan.md",
+        "docs/labs/lab-15/plan-vs-actual.md",
+        "docs/labs/lab-15/lessons.md",
+        "docs/labs/lab-15/interview-and-cv.md",
+        "docs/portfolio/final-portfolio.md"
+      ],
+      "human_event_certified_by_exercise": false
+    }
+  ],
+  "note": "Coverage proves that an exercise exists. It does not prove interviews, signatures, independent annotation, access or acceptance."
+}

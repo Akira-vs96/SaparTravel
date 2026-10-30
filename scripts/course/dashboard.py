@@ -21,9 +21,12 @@ def render():
     security = read("docs/labs/lab-07/evidence/2026-10-30/summary.json") or {}
     planning = read("docs/labs/evidence/planning.json") or {}
     finance = read("docs/labs/lab-08/evidence/finance-validation.json") or {}
+    exercises = read("docs/labs/evidence/practice-audit.json") or {}
     panels = [
         ("Вехи", "Заказчик", {"лабораторных": audit.get("labs"), "требований": audit.get("requirements"),
-                              "весь курс принят": audit.get("course_complete"), "UAT заказчика": "ожидается"}),
+                              "весь курс принят": audit.get("course_complete"), "UAT заказчика": "ожидается",
+                              "учебных разборов": exercises.get("labs"), "шагов в учебном комплекте": exercises.get("requirements"),
+                              "учебные разборы не подтверждают участие людей": True}),
         ("Поток", "Команда", {"периоды": [{"throughput": r["throughput"], "cycle mean": r["cycle_mean_days"],
                                            "cycle p85": r["cycle_p85_days"]} for r in flow.get("periods", [])],
                                "источник": "переходы GitHub; история неполная"}),
@@ -52,7 +55,7 @@ body{{font:16px system-ui;margin:auto;max-width:1200px;padding:24px;color:#15332
 nav{{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}}a,button{{color:#075c50;background:white;border:1px solid #b5ccc5;padding:10px;border-radius:8px}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}}.panel{{min-width:0;background:white;border:1px solid #d4dfdb;border-radius:12px;padding:20px}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 monospace}}button{{cursor:pointer}}button:focus,a:focus{{outline:3px solid #ea9f35}}
 </style><h1>SaparTravel: 15 лабораторных</h1><p>Снимок 30.10.2026. Источники и ограничения доступны в отчётах. «Нет данных» сохраняется явно.</p>
-<nav aria-label="Лабораторные">{labs}</nav><nav aria-label="Адресат"><button onclick="filter('all')">Все панели</button><button onclick="filter('Заказчик')">Заказчику</button><button onclick="filter('Команда')">Команде</button></nav>
+<nav aria-label="Лабораторные">{labs}</nav><nav aria-label="Учебный комплект"><a href="course-completion.md">15 учебных разборов</a><a href="submission.md">Настоящая сдача и подтверждения</a></nav><nav aria-label="Адресат"><button onclick="filter('all')">Все панели</button><button onclick="filter('Заказчик')">Заказчику</button><button onclick="filter('Команда')">Команде</button></nav>
 <main class="grid">{cards}</main><script>function filter(a){{document.querySelectorAll('.panel').forEach(p=>p.hidden=a!=='all'&&p.dataset.audience!==a)}}</script></html>'''
 
 

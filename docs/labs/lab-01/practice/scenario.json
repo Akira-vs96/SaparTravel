@@ -1,0 +1,48 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 1,
+  "sections": [
+    "competency-assessment",
+    "customer-card",
+    "gap-plan"
+  ],
+  "virtual_customer": {
+    "name": "SIM-PO Дана",
+    "organization": "Учебное бюро туров",
+    "decision_right": "утверждает границы и решение UAT в модели"
+  },
+  "virtual_team": [
+    "SIM-A аналитик",
+    "SIM-B backend",
+    "SIM-C frontend",
+    "SIM-D QA/Delivery"
+  ],
+  "competencies": {
+    "planning": "есть",
+    "requirements": "есть",
+    "finance": "частично",
+    "risk": "есть",
+    "english": "нет",
+    "communication": "частично"
+  },
+  "baseline_is_observed": false,
+  "requirements": {
+    "LZ01-S01": "docs/labs/lab-01/practice/README.md",
+    "LZ01-S02": "docs/labs/lab-01/practice/README.md",
+    "LZ01-S03": "docs/labs/lab-01/competencies.md",
+    "LZ01-S04": "docs/labs/lab-01/competencies.md",
+    "LZ01-S05": "docs/labs/lab-01/competencies.md",
+    "LZ01-S06": "docs/labs/lab-01/practice/README.md",
+    "LZ01-S07": "docs/labs/lab-01/competencies.md",
+    "LZ01-S08": "docs/labs/lab-01/competencies.md",
+    "LZ01-S09": "docs/labs/lab-01/competencies.md",
+    "LZ01-S10": "docs/labs/lab-01/practice/README.md",
+    "LZ01-S11": "docs/labs/lab-01/practice/README.md",
+    "LZ01-C01": "docs/labs/lab-01/competencies.md",
+    "LZ01-C02": "docs/labs/lab-01/competencies.md",
+    "LZ01-C03": "docs/labs/lab-01/competencies.md",
+    "LZ01-C04": "docs/labs/lab-01/competencies.md",
+    "LZ01-C05": "docs/labs/lab-01/practice/README.md"
+  }
+}

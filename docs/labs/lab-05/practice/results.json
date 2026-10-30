@@ -1,0 +1,28 @@
+{
+  "data_kind": "educational_simulation",
+  "lab": 5,
+  "human_events_confirmed": false,
+  "gross_hours": 288,
+  "available_hours": 240,
+  "risk_reserve_hours": 36.0,
+  "baseline_capacity_hours": 204.0,
+  "capacity_after_emv_and_management_hours": 162.0,
+  "scope_reduction_hours": 9.0,
+  "dependency_count": 3,
+  "reminders": [
+    {
+      "id": "SIM-DEP-1",
+      "date": "2026-11-03"
+    },
+    {
+      "id": "SIM-DEP-2",
+      "date": "2026-11-10"
+    },
+    {
+      "id": "SIM-DEP-3",
+      "date": "2026-11-17"
+    }
+  ],
+  "scenario_sha256": "4042e1f14e6fc544d7a0417f82e844f96437a9fc03617872bcfdf9963c1e15ed",
+  "generator_sha256": "217c2dfdde8f0eba3eb79fde6e8d00792f24c0d0bc3515d5c334a9eeb0288c80"
+}

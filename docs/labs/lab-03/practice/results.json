@@ -1,0 +1,41 @@
+{
+  "data_kind": "educational_simulation",
+  "lab": 3,
+  "human_events_confirmed": false,
+  "observations": 60,
+  "before_mean_minutes": 30,
+  "after_mean_minutes": 8,
+  "saved_hours_per_week": 22.0,
+  "annual_benefit_usd": 21736.0,
+  "finance": {
+    "currency": "USD",
+    "status": "planning assumptions; customer measurements pending",
+    "tco": "46000",
+    "horizon_years": 3,
+    "roi": "0.4175652173913043478260869565",
+    "npv": "9714.31",
+    "payback_years": "1.559688062387522495500899820",
+    "cost_of_delay_per_month": "1811.33",
+    "break_even_annual_benefit": "15333.33333333333333333333333",
+    "sensitivity": [
+      {
+        "cost_factor": "1.3",
+        "benefit_factor": "1",
+        "roi": "0.09043478260869565217391304348"
+      },
+      {
+        "cost_factor": "1",
+        "benefit_factor": "0.5",
+        "roi": "-0.2912173913043478260869565217"
+      },
+      {
+        "cost_factor": "1.3",
+        "benefit_factor": "0.5",
+        "roi": "-0.4547826086956521739130434783"
+      }
+    ]
+  },
+  "horizon_decided_before_calculation": true,
+  "scenario_sha256": "1c9cf5ccd570397932e15915243be58f3605ee095174e5bd29b931dd858723db",
+  "generator_sha256": "217c2dfdde8f0eba3eb79fde6e8d00792f24c0d0bc3515d5c334a9eeb0288c80"
+}

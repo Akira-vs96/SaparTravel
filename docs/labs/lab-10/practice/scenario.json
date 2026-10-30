@@ -1,0 +1,84 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 10,
+  "sections": [
+    "delivery-metrics",
+    "red-build",
+    "reliability-budget"
+  ],
+  "start": "2026-10-05T00:00:00Z",
+  "end": "2026-10-19T00:00:00Z",
+  "facts": {
+    "runs": [],
+    "deployments": [
+      {
+        "id": "SIM-D1",
+        "state": "success",
+        "created_at": "2026-10-06T10:00:00Z",
+        "finished_at": "2026-10-06T10:30:00Z",
+        "commit_at": "2026-10-06T08:30:00Z"
+      },
+      {
+        "id": "SIM-D2",
+        "state": "success",
+        "created_at": "2026-10-08T10:00:00Z",
+        "finished_at": "2026-10-08T10:30:00Z",
+        "commit_at": "2026-10-08T08:30:00Z"
+      },
+      {
+        "id": "SIM-D3",
+        "state": "success",
+        "created_at": "2026-10-13T10:00:00Z",
+        "finished_at": "2026-10-13T10:30:00Z",
+        "commit_at": "2026-10-13T08:30:00Z"
+      },
+      {
+        "id": "SIM-D4",
+        "state": "success",
+        "created_at": "2026-10-15T10:00:00Z",
+        "finished_at": "2026-10-15T10:30:00Z",
+        "commit_at": "2026-10-15T08:30:00Z"
+      }
+    ]
+  },
+  "incidents": [
+    {
+      "deployment_id": "SIM-D2",
+      "started_at": "2026-10-08T10:30:00Z",
+      "recovered_at": "2026-10-08T11:00:00Z",
+      "repair_labor_hours": 2
+    }
+  ],
+  "team_capacity_hours": 80,
+  "rules_demo": {
+    "actor": "non-admin",
+    "ci": "failure",
+    "review_count": 0,
+    "expected": "blocked"
+  },
+  "minimal_token_strategy": "ephemeral built-in GITHUB_TOKEN with read-only repository permissions; no personal token copied",
+  "requirements": {
+    "LZ10-S01": "docs/labs/lab-10/evidence/remote-ci.json",
+    "LZ10-S02": "docs/labs/lab-10/practice/README.md",
+    "LZ10-S03": ".github/workflows/ci.yml",
+    "LZ10-S04": "docs/labs/lab-10/evidence/remote-ci.json",
+    "LZ10-S05": "docs/labs/lab-10/practice/README.md",
+    "LZ10-S06": "docs/labs/lab-10/practice/README.md",
+    "LZ10-S07": ".github/workflows/ci.yml",
+    "LZ10-S08": "docs/labs/lab-10/practice/README.md",
+    "LZ10-S09": "docs/labs/lab-10/practice/README.md",
+    "LZ10-S10": ".github/workflows/ci.yml",
+    "LZ10-S11": ".github/workflows/ci.yml",
+    "LZ10-S12": "docs/labs/lab-10/practice/README.md",
+    "LZ10-S13": "docs/labs/lab-10/practice/README.md",
+    "LZ10-S14": ".github/workflows/ci.yml",
+    "LZ10-S15": ".github/workflows/ci.yml",
+    "LZ10-C01": "docs/labs/lab-10/evidence/remote-ci.json",
+    "LZ10-C02": "docs/labs/lab-10/practice/README.md",
+    "LZ10-C03": "docs/labs/lab-02/evidence/wiki-publication.json",
+    "LZ10-C04": ".github/workflows/ci.yml",
+    "LZ10-C05": ".github/workflows/ci.yml",
+    "LZ10-C06": ".github/workflows/ci.yml"
+  }
+}

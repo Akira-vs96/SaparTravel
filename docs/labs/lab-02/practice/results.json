@@ -1,0 +1,8 @@
+{
+  "data_kind": "educational_simulation",
+  "lab": 2,
+  "human_events_confirmed": false,
+  "scenario_sections": 3,
+  "scenario_sha256": "7cf863de2a764881492fd23982aa69a9cb37368bc8e9b82db79331f623954fdb",
+  "generator_sha256": "217c2dfdde8f0eba3eb79fde6e8d00792f24c0d0bc3515d5c334a9eeb0288c80"
+}

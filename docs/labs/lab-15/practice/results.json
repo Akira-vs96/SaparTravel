@@ -1,0 +1,13 @@
+{
+  "data_kind": "educational_simulation",
+  "lab": 15,
+  "human_events_confirmed": false,
+  "defense_minutes": 15,
+  "speech_words": 131,
+  "estimated_speech_seconds": 71.45454545454545,
+  "actual_person_rehearsal_seconds": null,
+  "estimate_is_a_rehearsal": false,
+  "professional_profile_published": false,
+  "scenario_sha256": "23835f58b95a4d2e67cd116a55af63fb878e155c224b9d407a584d9c7e523bbd",
+  "generator_sha256": "217c2dfdde8f0eba3eb79fde6e8d00792f24c0d0bc3515d5c334a9eeb0288c80"
+}

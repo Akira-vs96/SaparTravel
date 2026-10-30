@@ -1,0 +1,44 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 13,
+  "sections": [
+    "manual-baseline",
+    "claim-review",
+    "payback"
+  ],
+  "manual_minutes": [
+    22,
+    24,
+    23
+  ],
+  "generation_minutes": 0.05,
+  "verification_minutes": 15,
+  "correction_minutes": 5,
+  "development_hours": 6,
+  "reports_per_semester": 12,
+  "timings_are_real": false,
+  "requirements": {
+    "LZ13-S01": "scripts/course/weekly_status.py",
+    "LZ13-S02": "scripts/course/weekly_status.py",
+    "LZ13-S03": "docs/labs/lab-13/practice/README.md",
+    "LZ13-S04": "scripts/course/weekly_status.py",
+    "LZ13-S05": "scripts/course/weekly_status.py",
+    "LZ13-S06": "scripts/course/weekly_status.py",
+    "LZ13-S07": "scripts/course/weekly_status.py",
+    "LZ13-S08": "scripts/course/weekly_status.py",
+    "LZ13-S09": "docs/labs/lab-13/practice/README.md",
+    "LZ13-S10": "docs/labs/lab-13/practice/README.md",
+    "LZ13-S11": "scripts/course/weekly_status.py",
+    "LZ13-S12": "docs/labs/lab-13/practice/README.md",
+    "LZ13-S13": "docs/labs/lab-13/practice/README.md",
+    "LZ13-S14": "docs/labs/lab-13/practice/README.md",
+    "LZ13-S15": "scripts/course/weekly_status.py",
+    "LZ13-S16": "scripts/course/weekly_status.py",
+    "LZ13-C01": "scripts/course/weekly_status.py",
+    "LZ13-C02": "scripts/course/weekly_status.py",
+    "LZ13-C03": "docs/labs/lab-13/practice/README.md",
+    "LZ13-C04": "scripts/course/weekly_status.py",
+    "LZ13-C05": "scripts/course/weekly_status.py"
+  }
+}

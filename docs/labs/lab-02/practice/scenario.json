@@ -1,0 +1,53 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 2,
+  "sections": [
+    "three-cases",
+    "access-matrix",
+    "working-agreements"
+  ],
+  "cases": [
+    {
+      "id": "SIM-C1",
+      "model": "Scrum",
+      "decision_cadence": "1 week",
+      "variable": "scope"
+    },
+    {
+      "id": "SIM-C2",
+      "model": "hybrid",
+      "decision_cadence": "weekly rehearsal + fixed migration gate",
+      "variable": "implementation approach"
+    },
+    {
+      "id": "SIM-C3",
+      "model": "Kanban",
+      "decision_cadence": "daily replenishment, incident immediately",
+      "variable": "next work item"
+    }
+  ],
+  "teacher_case_provenance": "not supplied; alternative exercises",
+  "branch_max_days": 3,
+  "private_repo_created": false,
+  "teacher_access_confirmed": false,
+  "requirements": {
+    "LZ02-S01": "docs/labs/lab-02/practice/README.md",
+    "LZ02-S02": "docs/labs/lab-02/cases.md",
+    "LZ02-S03": "docs/labs/lab-02/practice/README.md",
+    "LZ02-S04": "docs/labs/lab-02/practice/README.md",
+    "LZ02-S05": "docs/labs/lab-02/cases.md",
+    "LZ02-S06": "docs/labs/lab-02/cases.md",
+    "LZ02-S07": "docs/labs/lab-02/cases.md",
+    "LZ02-S08": "docs/labs/lab-02/cases.md",
+    "LZ02-S09": "docs/labs/lab-02/cases.md",
+    "LZ02-S10": "docs/labs/lab-02/practice/README.md",
+    "LZ02-S11": "docs/labs/lab-02/cases.md",
+    "LZ02-S12": "docs/labs/lab-02/cases.md",
+    "LZ02-C01": "docs/labs/lab-02/cases.md",
+    "LZ02-C02": "docs/labs/lab-02/practice/README.md",
+    "LZ02-C03": "docs/labs/lab-02/cases.md",
+    "LZ02-C04": "docs/labs/lab-02/evidence/contributors.json",
+    "LZ02-C05": "docs/labs/lab-02/practice/README.md"
+  }
+}

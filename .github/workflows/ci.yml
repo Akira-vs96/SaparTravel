@@ -178,6 +178,7 @@ jobs:
       - run: ruff check backend/app backend/tests scripts tests
       - run: python -m unittest discover -s tests/course -p 'test_*.py' -v
       - run: python -m scripts.course.audit --output test-results/course-audit.json
+      - run: python -m scripts.course.practice --check
 
   security:
     runs-on: ubuntu-latest

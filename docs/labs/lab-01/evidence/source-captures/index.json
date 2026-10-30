@@ -1,0 +1,112 @@
+{
+  "kind": "actual_http_captures",
+  "captures": [
+    {
+      "id": "JOB-01",
+      "url": "https://astanahub.com/ru/vacancy/6212",
+      "captured_at_utc": "2026-10-30T19:08:10.317956+00:00",
+      "status": 200,
+      "final_url": "https://astanahub.com/ru/vacancy/6212",
+      "content_type": "text/html; charset=utf-8",
+      "file": "job-01.html.gz",
+      "sha256": "8888e06e90f13b75bac8aa8fe5df9d15861cfae9921312d4e6c78683ba2c1c8a",
+      "bytes": 194784
+    },
+    {
+      "id": "JOB-02",
+      "url": "https://astanahub.com/ru/vacancy/6567",
+      "captured_at_utc": "2026-10-30T19:08:10.319123+00:00",
+      "status": 200,
+      "final_url": "https://astanahub.com/ru/vacancy/6567",
+      "content_type": "text/html; charset=utf-8",
+      "file": "job-02.html.gz",
+      "sha256": "73f4588033f8da8ef2eaae078b7580d728a2d6b9d9521c9829ba28bad3c8c92a",
+      "bytes": 199052
+    },
+    {
+      "id": "JOB-03",
+      "url": "https://astanahub.com/ru/vacancy/6462",
+      "captured_at_utc": "2026-10-30T19:08:10.319619+00:00",
+      "status": 404,
+      "error": "HTTPError"
+    },
+    {
+      "id": "JOB-04",
+      "url": "https://careers.epam.com/en/vacancy/bltf8583262f2e02ca2?country=Kazakhstan",
+      "captured_at_utc": "2026-10-30T19:08:10.320234+00:00",
+      "status": 200,
+      "final_url": "https://careers.epam.com/en/vacancy/bltf8583262f2e02ca2?country=Kazakhstan",
+      "content_type": "text/html; charset=utf-8",
+      "file": "job-04.html.gz",
+      "sha256": "7231eccefc485da7f24eabe85cfeb38310501a55f55ceba6b8d8f6aeb23b3181",
+      "bytes": 455642
+    },
+    {
+      "id": "JOB-05",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/4732475",
+      "captured_at_utc": "2026-10-30T19:08:10.320594+00:00",
+      "status": 200,
+      "final_url": "https://job-boards.greenhouse.io/canonical/jobs/4732475",
+      "content_type": "text/html; charset=utf-8",
+      "file": "job-05.html.gz",
+      "sha256": "e2783ebf9b5c3a9395fb8b08e8719c968dba23d9475f1e19f671e340368241ad",
+      "bytes": 142200
+    },
+    {
+      "id": "JOB-06",
+      "url": "https://job-boards.eu.greenhouse.io/wedev/jobs/4652223101",
+      "captured_at_utc": "2026-10-30T19:08:11.231703+00:00",
+      "status": 200,
+      "final_url": "https://job-boards.eu.greenhouse.io/wedev/jobs/4652223101",
+      "content_type": "text/html; charset=utf-8",
+      "file": "job-06.html.gz",
+      "sha256": "89efa49b10c418e18fecbc78544582a60f4789658438d6823b3488e42bdf422f",
+      "bytes": 43748
+    },
+    {
+      "id": "JOB-07",
+      "url": "https://job-boards.greenhouse.io/canonical/jobs/5861481",
+      "captured_at_utc": "2026-10-30T19:08:11.630989+00:00",
+      "status": 200,
+      "final_url": "https://job-boards.greenhouse.io/canonical/jobs/5861481",
+      "content_type": "text/html; charset=utf-8",
+      "file": "job-07.html.gz",
+      "sha256": "14bcdd2c9af467d90439487a7f1df75c29db0390754b5660dd05200254078608",
+      "bytes": 136562
+    },
+    {
+      "id": "JOB-08",
+      "url": "https://careers.societegenerale.com/en/job-offers/junior-project-manager-26000JUD-en",
+      "captured_at_utc": "2026-10-30T19:08:11.631728+00:00",
+      "status": 200,
+      "final_url": "https://careers.societegenerale.com/en/job-offers/junior-project-manager-26000JUD-en",
+      "content_type": "text/html; charset=utf-8",
+      "file": "job-08.html.gz",
+      "sha256": "b40399d349c4890958737f27d73479ddadb768759450ab373fc82e50d95e6398",
+      "bytes": 714944
+    },
+    {
+      "id": "JOB-09",
+      "url": "https://jobs.lever.co/tsmg/b1cde0d3-e32f-446b-9968-7041d6d90ae0",
+      "captured_at_utc": "2026-10-30T19:08:11.806356+00:00",
+      "status": 200,
+      "final_url": "https://jobs.lever.co/tsmg/b1cde0d3-e32f-446b-9968-7041d6d90ae0",
+      "content_type": "text/html; charset=utf-8",
+      "file": "job-09.html.gz",
+      "sha256": "cd949d938897323a29017a80123f0dab671d844d0c088edf928226cb235ac9d2",
+      "bytes": 720134
+    },
+    {
+      "id": "JOB-10",
+      "url": "https://astanahub.com/ru/vacancy/6708",
+      "captured_at_utc": "2026-10-30T19:08:11.922603+00:00",
+      "status": 200,
+      "final_url": "https://astanahub.com/ru/vacancy/6708",
+      "content_type": "text/html; charset=utf-8",
+      "file": "job-10.html.gz",
+      "sha256": "1ba46f96132187589997960d5bc0fa7bf412cf10f75e5585d11b3e67a73864c2",
+      "bytes": 192283
+    }
+  ],
+  "note": "HTTP 200 does not independently prove that a removed job or all original requirements remain visible."
+}

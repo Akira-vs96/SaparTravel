@@ -1,0 +1,61 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "lab": 7,
+  "sections": [
+    "premortem",
+    "risk-response",
+    "compliance"
+  ],
+  "silent_minutes": 25,
+  "participants": [
+    "SIM-A",
+    "SIM-B",
+    "SIM-C",
+    "SIM-D"
+  ],
+  "risk_ids": [
+    "R-01",
+    "R-02",
+    "R-03",
+    "R-04",
+    "R-05",
+    "R-06",
+    "R-07",
+    "R-08",
+    "R-09",
+    "R-10",
+    "R-11",
+    "R-12",
+    "R-13",
+    "R-14",
+    "R-15",
+    "R-16",
+    "R-17",
+    "R-18",
+    "R-19",
+    "R-20"
+  ],
+  "secret_rotation_needed_if_new_active_secret_found": true,
+  "actual_active_secret_found": false,
+  "university_policy_provided": false,
+  "requirements": {
+    "LZ07-S01": "docs/labs/lab-07/practice/README.md",
+    "LZ07-S02": "docs/security/raid.md",
+    "LZ07-S03": "docs/security/raid.md",
+    "LZ07-S04": "docs/security/raid.md",
+    "LZ07-S05": "docs/security/raid.md",
+    "LZ07-S06": "docs/security/raid.md",
+    "LZ07-S07": "docs/security/raid.md",
+    "LZ07-S08": "docs/security/raid.md",
+    "LZ07-S09": "docs/security/raid.md",
+    "LZ07-S10": "docs/labs/lab-07/practice/README.md",
+    "LZ07-S11": "docs/labs/lab-07/practice/README.md",
+    "LZ07-S12": "docs/labs/evidence/handoff.json",
+    "LZ07-C01": "docs/security/raid.md",
+    "LZ07-C02": "docs/security/raid.md",
+    "LZ07-C03": "docs/security/raid.md",
+    "LZ07-C04": "docs/security/raid.md",
+    "LZ07-C05": "docs/labs/evidence/handoff.json"
+  }
+}
