@@ -1,0 +1,41 @@
+{
+  "data_kind": "educational_simulation",
+  "stage": "Review",
+  "periods": [
+    {
+      "sprint": 1,
+      "dominant_stage": "Review",
+      "stage_elapsed_task_hours": {
+        "In progress": 66.0,
+        "FOR TEST": 19.5,
+        "Review": 226.5,
+        "Blocked": 0.0
+      },
+      "review_full_elapsed_hours": 57.5,
+      "review_share_of_cycle_time": 0.7259615384615384,
+      "peak_review": 3,
+      "peak_active": 5,
+      "peak_in_progress_per_owner": 1,
+      "review_service_hours": 5.0,
+      "reserved_review_hours": 5.0
+    },
+    {
+      "sprint": 2,
+      "dominant_stage": "Review",
+      "stage_elapsed_task_hours": {
+        "In progress": 51.0,
+        "FOR TEST": 31.5,
+        "Review": 252.49999999999997,
+        "Blocked": 0.0
+      },
+      "review_full_elapsed_hours": 55.0,
+      "review_share_of_cycle_time": 0.753731343283582,
+      "peak_review": 3,
+      "peak_active": 5,
+      "peak_in_progress_per_owner": 1,
+      "review_service_hours": 5.0,
+      "reserved_review_hours": 5.0
+    }
+  ],
+  "explanation": "The reviewer consumes all five reserved hours per week; the review band reaches its WIP cap and dominates elapsed cycle time."
+}

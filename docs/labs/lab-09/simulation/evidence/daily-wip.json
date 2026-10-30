@@ -1,0 +1,271 @@
+{
+  "data_kind": "educational_simulation",
+  "rows": [
+    {
+      "date": "2026-10-05",
+      "start_utc": "2026-10-05T00:00:00+00:00",
+      "end_utc": "2026-10-06T00:00:00+00:00",
+      "average_wip": 2.3125,
+      "wip_lower_bound": 2.3125,
+      "wip_upper_bound": 2.3125,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 3.75,
+        "Ready": 3.333333333333333,
+        "In progress": 0.37499999999999994,
+        "FOR TEST": 0.3541666666666667,
+        "Review": 1.5833333333333335,
+        "Blocked": 0.0,
+        "Done": 0.6041666666666667,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "start_utc": "2026-10-06T00:00:00+00:00",
+      "end_utc": "2026-10-07T00:00:00+00:00",
+      "average_wip": 3.0208333333333335,
+      "wip_lower_bound": 3.0208333333333335,
+      "wip_upper_bound": 3.0208333333333335,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 4.375,
+        "In progress": 0.625,
+        "FOR TEST": 0.0,
+        "Review": 2.3958333333333335,
+        "Blocked": 0.0,
+        "Done": 2.6041666666666665,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "start_utc": "2026-10-07T00:00:00+00:00",
+      "end_utc": "2026-10-08T00:00:00+00:00",
+      "average_wip": 3.5625,
+      "wip_lower_bound": 3.5625,
+      "wip_upper_bound": 3.5625,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 1.8333333333333333,
+        "In progress": 1.0,
+        "FOR TEST": 0.4375,
+        "Review": 2.125,
+        "Blocked": 0.0,
+        "Done": 4.604166666666667,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "start_utc": "2026-10-08T00:00:00+00:00",
+      "end_utc": "2026-10-09T00:00:00+00:00",
+      "average_wip": 2.7083333333333335,
+      "wip_lower_bound": 2.7083333333333335,
+      "wip_upper_bound": 2.7083333333333335,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 0.6875,
+        "In progress": 0.3125,
+        "FOR TEST": 0.0,
+        "Review": 2.3958333333333335,
+        "Blocked": 0.0,
+        "Done": 6.604166666666667,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "start_utc": "2026-10-09T00:00:00+00:00",
+      "end_utc": "2026-10-10T00:00:00+00:00",
+      "average_wip": 1.3958333333333333,
+      "wip_lower_bound": 1.3958333333333333,
+      "wip_upper_bound": 1.3958333333333333,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 0.0,
+        "In progress": 0.4375,
+        "FOR TEST": 0.020833333333333332,
+        "Review": 0.9375,
+        "Blocked": 0.0,
+        "Done": 8.604166666666666,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-10",
+      "start_utc": "2026-10-10T00:00:00+00:00",
+      "end_utc": "2026-10-11T00:00:00+00:00",
+      "average_wip": 0.0,
+      "wip_lower_bound": 0.0,
+      "wip_upper_bound": 0.0,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 0.0,
+        "In progress": 0.0,
+        "FOR TEST": 0.0,
+        "Review": 0.0,
+        "Blocked": 0.0,
+        "Done": 10.0,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "start_utc": "2026-10-11T00:00:00+00:00",
+      "end_utc": "2026-10-12T00:00:00+00:00",
+      "average_wip": 0.0,
+      "wip_lower_bound": 0.0,
+      "wip_upper_bound": 0.0,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 0.0,
+        "In progress": 0.0,
+        "FOR TEST": 0.0,
+        "Review": 0.0,
+        "Blocked": 0.0,
+        "Done": 10.0,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-12",
+      "start_utc": "2026-10-12T00:00:00+00:00",
+      "end_utc": "2026-10-13T00:00:00+00:00",
+      "average_wip": 2.5416666666666665,
+      "wip_lower_bound": 2.5416666666666665,
+      "wip_upper_bound": 2.5416666666666665,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 3.75,
+        "Ready": 2.875,
+        "In progress": 0.45833333333333326,
+        "FOR TEST": 0.5833333333333333,
+        "Review": 1.5,
+        "Blocked": 0.0,
+        "Done": 10.833333333333334,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "start_utc": "2026-10-13T00:00:00+00:00",
+      "end_utc": "2026-10-14T00:00:00+00:00",
+      "average_wip": 3.791666666666667,
+      "wip_lower_bound": 3.791666666666667,
+      "wip_upper_bound": 3.791666666666667,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 3.375,
+        "In progress": 0.625,
+        "FOR TEST": 0.4791666666666667,
+        "Review": 2.6875000000000004,
+        "Blocked": 0.0,
+        "Done": 12.833333333333334,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-14",
+      "start_utc": "2026-10-14T00:00:00+00:00",
+      "end_utc": "2026-10-15T00:00:00+00:00",
+      "average_wip": 3.7708333333333335,
+      "wip_lower_bound": 3.7708333333333335,
+      "wip_upper_bound": 3.7708333333333335,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 1.3958333333333333,
+        "In progress": 0.9583333333333333,
+        "FOR TEST": 0.22916666666666666,
+        "Review": 2.5833333333333335,
+        "Blocked": 0.0,
+        "Done": 14.833333333333334,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-15",
+      "start_utc": "2026-10-15T00:00:00+00:00",
+      "end_utc": "2026-10-16T00:00:00+00:00",
+      "average_wip": 2.6875,
+      "wip_lower_bound": 2.6875,
+      "wip_upper_bound": 2.6875,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 0.4791666666666667,
+        "In progress": 0.08333333333333333,
+        "FOR TEST": 0.020833333333333332,
+        "Review": 2.5833333333333335,
+        "Blocked": 0.0,
+        "Done": 16.833333333333332,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-16",
+      "start_utc": "2026-10-16T00:00:00+00:00",
+      "end_utc": "2026-10-17T00:00:00+00:00",
+      "average_wip": 1.1666666666666667,
+      "wip_lower_bound": 1.1666666666666667,
+      "wip_upper_bound": 1.1666666666666667,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 0.0,
+        "In progress": 0.0,
+        "FOR TEST": 0.0,
+        "Review": 1.1666666666666667,
+        "Blocked": 0.0,
+        "Done": 18.833333333333332,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-17",
+      "start_utc": "2026-10-17T00:00:00+00:00",
+      "end_utc": "2026-10-18T00:00:00+00:00",
+      "average_wip": 0.0,
+      "wip_lower_bound": 0.0,
+      "wip_upper_bound": 0.0,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 0.0,
+        "In progress": 0.0,
+        "FOR TEST": 0.0,
+        "Review": 0.0,
+        "Blocked": 0.0,
+        "Done": 20.0,
+        "Unknown": 0.0
+      }
+    },
+    {
+      "date": "2026-10-18",
+      "start_utc": "2026-10-18T00:00:00+00:00",
+      "end_utc": "2026-10-19T00:00:00+00:00",
+      "average_wip": 0.0,
+      "wip_lower_bound": 0.0,
+      "wip_upper_bound": 0.0,
+      "calendar_days": 1.0,
+      "status_task_days": {
+        "Backlog": 0.0,
+        "Ready": 0.0,
+        "In progress": 0.0,
+        "FOR TEST": 0.0,
+        "Review": 0.0,
+        "Blocked": 0.0,
+        "Done": 20.0,
+        "Unknown": 0.0
+      }
+    }
+  ]
+}

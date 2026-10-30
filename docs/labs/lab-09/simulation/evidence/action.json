@@ -1,0 +1,25 @@
+{
+  "data_kind": "educational_simulation",
+  "actions": [
+    {
+      "id": "SIM-ACTION-01",
+      "owner": "Reviewer (virtual role)",
+      "description": "Split the existing hour of daily review into two half-hour windows",
+      "before_slots_utc": [
+        "16:00",
+        "16:30"
+      ],
+      "after_slots_utc": [
+        "11:00",
+        "16:00"
+      ],
+      "deadline_virtual_utc": "2026-10-16T17:00:00+00:00",
+      "target": "Reduce mean time in Review by at least 10%",
+      "target_achieved": false,
+      "measured_review_change_percent": 11.479028697571739,
+      "decision_in_model": "Hypothesis not supported; do not claim a productivity improvement"
+    }
+  ],
+  "retrospective_duration_model_minutes": 30,
+  "real_meeting_confirmed": false
+}

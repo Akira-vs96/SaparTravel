@@ -1,0 +1,15 @@
+data_kind,date_virtual_utc,average_wip,Backlog_hours,Ready_hours,In progress_hours,FOR TEST_hours,Review_hours,Blocked_hours,Done_hours,Unknown_hours
+educational_simulation,2026-10-05,2.3125,90.0,80.0,8.999999999999998,8.5,38.0,0.0,14.500000000000002,0.0
+educational_simulation,2026-10-06,3.0208333333333335,0.0,105.0,15.0,0.0,57.5,0.0,62.5,0.0
+educational_simulation,2026-10-07,3.5625,0.0,44.0,24.0,10.5,51.0,0.0,110.5,0.0
+educational_simulation,2026-10-08,2.7083333333333335,0.0,16.5,7.5,0.0,57.5,0.0,158.5,0.0
+educational_simulation,2026-10-09,1.3958333333333333,0.0,0.0,10.5,0.5,22.5,0.0,206.5,0.0
+educational_simulation,2026-10-10,0.0,0.0,0.0,0.0,0.0,0.0,0.0,240.0,0.0
+educational_simulation,2026-10-11,0.0,0.0,0.0,0.0,0.0,0.0,0.0,240.0,0.0
+educational_simulation,2026-10-12,2.5416666666666665,90.0,69.0,10.999999999999998,13.999999999999998,36.0,0.0,260.0,0.0
+educational_simulation,2026-10-13,3.791666666666667,0.0,81.0,15.0,11.5,64.50000000000001,0.0,308.0,0.0
+educational_simulation,2026-10-14,3.7708333333333335,0.0,33.5,23.0,5.5,62.0,0.0,356.0,0.0
+educational_simulation,2026-10-15,2.6875,0.0,11.5,2.0,0.5,62.0,0.0,404.0,0.0
+educational_simulation,2026-10-16,1.1666666666666667,0.0,0.0,0.0,0.0,28.0,0.0,452.0,0.0
+educational_simulation,2026-10-17,0.0,0.0,0.0,0.0,0.0,0.0,0.0,480.0,0.0
+educational_simulation,2026-10-18,0.0,0.0,0.0,0.0,0.0,0.0,0.0,480.0,0.0

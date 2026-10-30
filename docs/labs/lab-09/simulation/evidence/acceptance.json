@@ -1,0 +1,107 @@
+{
+  "data_kind": "educational_simulation",
+  "simulation_complete": true,
+  "real_sprints_confirmed": false,
+  "real_meeting_confirmed": false,
+  "checks": {
+    "two_weekly_sprints": true,
+    "goals_written": true,
+    "all_tasks_completed": true,
+    "complete_status_history": true,
+    "cycle_mean_and_p85": true,
+    "little_calendar_and_working": true,
+    "wip_limits": true,
+    "bottleneck_from_data": true,
+    "one_action": true,
+    "capacity_unchanged": true,
+    "counterfactual": true,
+    "effect_measured": true
+  },
+  "requirements": [
+    {
+      "id": "LZ09-S01",
+      "status": "fulfilled_in_simulation",
+      "evidence": "../../../project-board-workflow.md"
+    },
+    {
+      "id": "LZ09-S02",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/wip-trace.json"
+    },
+    {
+      "id": "LZ09-S03",
+      "status": "fulfilled_in_simulation",
+      "evidence": "sprint-1.md"
+    },
+    {
+      "id": "LZ09-S04",
+      "status": "fulfilled_in_simulation",
+      "evidence": "sprint-1.md"
+    },
+    {
+      "id": "LZ09-S05",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/transitions.csv"
+    },
+    {
+      "id": "LZ09-S06",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/facts.json"
+    },
+    {
+      "id": "LZ09-S07",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/comparison.csv"
+    },
+    {
+      "id": "LZ09-S08",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/flow.json"
+    },
+    {
+      "id": "LZ09-S09",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/bottleneck.json"
+    },
+    {
+      "id": "LZ09-S10",
+      "status": "fulfilled_in_simulation",
+      "evidence": "retrospective.md"
+    },
+    {
+      "id": "LZ09-S11",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/action.json"
+    },
+    {
+      "id": "LZ09-S12",
+      "status": "fulfilled_in_simulation",
+      "evidence": "sprint-2.md"
+    },
+    {
+      "id": "LZ09-C01",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/transitions.csv"
+    },
+    {
+      "id": "LZ09-C02",
+      "status": "fulfilled_in_simulation",
+      "evidence": "sprint-2.md"
+    },
+    {
+      "id": "LZ09-C03",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/cycles.csv"
+    },
+    {
+      "id": "LZ09-C04",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/bottleneck.json"
+    },
+    {
+      "id": "LZ09-C05",
+      "status": "fulfilled_in_simulation",
+      "evidence": "evidence/effect.json"
+    }
+  ]
+}

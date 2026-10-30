@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-10-30T08:17:48.897120+00:00",
+  "generated_at_utc": "2026-10-30T08:47:18.388203+00:00",
   "structure_valid": true,
   "course_complete": false,
   "labs": 15,
   "requirements": 277,
   "status_counts": {
-    "partial": 35,
+    "partial": 36,
     "documented": 62,
-    "verified": 121,
+    "verified": 120,
     "requires-human": 59
   },
   "errors": [],
@@ -236,6 +236,11 @@
       "id": "LZ10-S02",
       "status": "partial",
       "reason": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+    },
+    {
+      "id": "LZ10-S05",
+      "status": "partial",
+      "reason": "По прямому требованию пользователя администратору разрешён обычный push в main (enforce_admins=false). Для остальных сохранены 6 обязательных CI, strict и 1 review; force push и удаление запрещены. Текущее состояние проверено чтением API; полный запрет прямого push из методички не применяется к admin."
     },
     {
       "id": "LZ10-S06",

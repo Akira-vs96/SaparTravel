@@ -1,0 +1,9 @@
+{
+  "data_kind": "educational_simulation",
+  "generated_at_utc": "2026-10-30T08:41:41.816975+00:00",
+  "scenario_sha256": "5e0118aba50ac1386323c0ba99232e61dd0bca24640a89ce7c58821305315c33",
+  "generator_sha256": "b7b38d3cfc7cb1bec48a09728ccbf1c37ad55e6ed0ecbba83f65efa463e70040",
+  "metrics_sha256": "e8177cf21e28b6c1347aacda5e4d4baa500540ab6bc256c77ae6dd960f212e84",
+  "facts_sha256": "6204c31244e3d0398664eaef7e81fea377f14646e59b54f601b609d4889dfa1b",
+  "randomness": "none; deterministic data, plotting appearance may depend on installed fonts"
+}

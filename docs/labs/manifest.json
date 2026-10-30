@@ -2774,8 +2774,56 @@
       "number": 9,
       "title": "Симуляция двух спринтов",
       "report": "docs/labs/lab-09/README.md",
-      "findings": "Политики семи рабочих статусов, включая FOR TEST, опубликованы в реальных Wiki и Project с проверкой чтением. Выгружены 36 карточек и 39 переходов. Исправлены p85 по формуле Calc (проверено LibreOffice), рабочая/календарная шкалы, время каждой задачи в статусах и средний WIP по дням; CSV и JSON воспроизводимы. Рабочий журнал фиксирует текущие timestamp, автора и источник, проверяет WIP и целостность записей. Пройдены 100 тестов инструментов. Фактический Review=7 при лимите 3; очередь ещё требует независимого ревью. Исторические окна дают throughput 3/0, 13 разрывов и неизвестный cycle time/WIP. Два состоявшихся спринта, ретроспектива и эффект одного изменения пока не подтверждены.",
+      "findings": "Учебная симуляция ЛЗ 9 полностью выполнена: 17/17 требований разобраны в отдельном отчёте, смоделированы два недельных спринта, 20 SIM-задач, WIP, CFD, закон Литтла и 30-минутная ретроспектива с одним изменением. Выпуск 10/10; среднее время цикла 31,2 → 33,5 ч, p85 50,925 → 49,3 ч. Гипотеза улучшения не подтвердилась; отрицательный эффект сохранён и проверен контрольным сценарием. Все события и участники явно модельные. Реальные снимки GitHub и рабочий журнал сохранены отдельно; нижняя таблица отражает фактические подтверждения.",
       "artifacts": [
+        {
+          "path": "docs/labs/lab-09/simulation/README.md",
+          "label": "Полный учебный отчёт — 17/17 требований"
+        },
+        {
+          "path": "docs/labs/lab-09/simulation/scenario.json",
+          "label": "Воспроизводимый сценарий"
+        },
+        {
+          "path": "docs/labs/lab-09/simulation/evidence/acceptance.json",
+          "label": "Проверка всех требований симуляции"
+        },
+        {
+          "path": "docs/labs/lab-09/simulation/sprint-1.md",
+          "label": "Модельный спринт 1"
+        },
+        {
+          "path": "docs/labs/lab-09/simulation/sprint-2.md",
+          "label": "Модельный спринт 2"
+        },
+        {
+          "path": "docs/labs/lab-09/simulation/retrospective.md",
+          "label": "Модельная ретроспектива"
+        },
+        {
+          "path": "docs/labs/lab-09/simulation/evidence/comparison.csv",
+          "label": "Сравнение метрик модели"
+        },
+        {
+          "path": "docs/labs/lab-09/simulation/evidence/effect.json",
+          "label": "Эффект одного изменения"
+        },
+        {
+          "path": "docs/labs/lab-09/simulation/evidence/cfd-sprint-1.png",
+          "label": "CFD модельного спринта 1"
+        },
+        {
+          "path": "docs/labs/lab-09/simulation/evidence/cfd-sprint-2.png",
+          "label": "CFD модельного спринта 2"
+        },
+        {
+          "path": "scripts/course/lab09_simulation.py",
+          "label": "Генератор учебной симуляции"
+        },
+        {
+          "path": "tests/course/test_lab09_simulation.py",
+          "label": "Проверки учебной симуляции"
+        },
         {
           "path": "docs/project-board-workflow.md",
           "label": "project-board-workflow.md"
@@ -2902,6 +2950,8 @@
         }
       ],
       "commands": [
+        ".venv/bin/python -m scripts.course.lab09_simulation --scenario docs/labs/lab-09/simulation/scenario.json --output docs/labs/lab-09/simulation",
+        ".venv/bin/python -m unittest tests.course.test_lab09_simulation -v",
         ".venv/bin/python -m scripts.course.flow_report --snapshot docs/labs/lab-09/evidence/github-flow.json --start 2026-09-21T00:00:00Z --end 2026-10-05T00:00:00Z --output-directory docs/labs/lab-09/evidence",
         ".venv/bin/python -m unittest discover -s tests/course -p 'test_*.py' -v",
         ".venv/bin/python -m scripts.course.flow_journal --directory docs/labs/lab-09/journal export --output test-results/lab09-journal.json"
@@ -3242,13 +3292,21 @@
           ],
           "note": "Предложено одно измеримое действие; фактическое принятие на ретроспективе и измеренный эффект ещё не подтверждены."
         }
-      ]
+      ],
+      "simulation": {
+        "mode": "educational_simulation",
+        "complete": true,
+        "requirements": 17,
+        "report": "docs/labs/lab-09/simulation/README.md",
+        "acceptance": "docs/labs/lab-09/simulation/evidence/acceptance.json",
+        "real_sprints_confirmed": false
+      }
     },
     {
       "number": 10,
       "title": "CI/CD-пайплайн и дашборд DORA",
       "report": "docs/labs/lab-10/README.md",
-      "findings": "Добавлены coverage gate 60%, линтер, Gitleaks/Trivy, сборки контейнеров и проверка целостности курса. Локально 86 тестов, покрытие 86,17%. Настоящий сборщик GitHub сохранил 38 исходных CI runs и 0 deployments: четыре DORA-показателя без источника остаются null. Определения и откат описаны отдельно; человеческий review, токен с минимальными правами и доказательство блокировки красного merge проверяются отдельно от наличия YAML. Свежий удалённый CI 41011207711 прошёл все шесть jobs; main защищена шестью проверками и одним review, определения DORA опубликованы в Wiki.",
+      "findings": "Добавлены coverage gate 60%, линтер, Gitleaks/Trivy, сборки контейнеров и проверка целостности курса. Локально 86 тестов, покрытие 86,17%. Настоящий сборщик GitHub сохранил 38 исходных CI runs и 0 deployments: четыре DORA-показателя без источника остаются null. Определения и откат описаны отдельно; человеческий review, токен с минимальными правами и доказательство блокировки красного merge проверяются отдельно от наличия YAML. Свежий удалённый CI 41011207711 прошёл все шесть jobs; main защищена шестью проверками и одним review, определения DORA опубликованы в Wiki. По требованию пользователя 30.10.2026 разрешён прямой push администратора: enforce_admins=false; остальные настройки защиты сохранены. Текущее исключение отражено в LZ10-S05.",
       "artifacts": [
         {
           "path": ".github/workflows/ci.yml",
@@ -3301,6 +3359,10 @@
         {
           "path": "docs/labs/lab-10/evidence/remote-acceptance.json",
           "label": "remote-acceptance.json"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/branch-protection-current.json",
+          "label": "Текущая защита main и исключение администратора"
         }
       ],
       "commands": [
@@ -3377,12 +3439,13 @@
           "text": "Защитите основную ветку: Settings → Branches (в новом интерфейсе — Settings → Rules → Rulesets) → создайте правило для main: запрет прямого push, обязательный pull request, обязательное прохождение проверки CI, одно одобрение ревью.",
           "source_paragraph": 449,
           "id": "LZ10-S05",
-          "status": "verified",
+          "status": "partial",
           "requires_people": false,
           "evidence": [
-            "docs/labs/lab-10/evidence/branch-protection.json"
+            "docs/labs/lab-10/evidence/branch-protection.json",
+            "docs/labs/lab-10/evidence/branch-protection-current.json"
           ],
-          "note": "main защищена через API: 6 обязательных CI, strict, 1 review, применение к admin, запрет force push/deletion; выполнен read-back."
+          "note": "По прямому требованию пользователя администратору разрешён обычный push в main (enforce_admins=false). Для остальных сохранены 6 обязательных CI, strict и 1 review; force push и удаление запрещены. Текущее состояние проверено чтением API; полный запрет прямого push из методички не применяется к admin."
         },
         {
           "kind": "step",

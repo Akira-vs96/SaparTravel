@@ -1,0 +1,14 @@
+{
+  "data_kind": "educational_simulation",
+  "changed_parameter": "distribution of two daily review slots",
+  "daily_review_minutes_before": 60,
+  "daily_review_minutes_after": 60,
+  "review_mean_hours_before": 22.65,
+  "review_mean_hours_after": 25.25,
+  "review_mean_change_percent": 11.479028697571739,
+  "cycle_mean_change_percent": 7.3717948717948785,
+  "cycle_p85_change_percent": -3.190967108492868,
+  "wip_change_percent": 7.371794871794858,
+  "throughput_change": 0,
+  "causal_scope": "Controlled deterministic model with identical effort and arrivals; not an observed team productivity effect"
+}

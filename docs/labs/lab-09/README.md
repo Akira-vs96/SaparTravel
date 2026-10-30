@@ -4,10 +4,22 @@
 
 ## Результат и границы
 
-Политики семи рабочих статусов, включая FOR TEST, опубликованы в реальных Wiki и Project с проверкой чтением. Выгружены 36 карточек и 39 переходов. Исправлены p85 по формуле Calc (проверено LibreOffice), рабочая/календарная шкалы, время каждой задачи в статусах и средний WIP по дням; CSV и JSON воспроизводимы. Рабочий журнал фиксирует текущие timestamp, автора и источник, проверяет WIP и целостность записей. Пройдены 100 тестов инструментов. Фактический Review=7 при лимите 3; очередь ещё требует независимого ревью. Исторические окна дают throughput 3/0, 13 разрывов и неизвестный cycle time/WIP. Два состоявшихся спринта, ретроспектива и эффект одного изменения пока не подтверждены.
+Учебная симуляция ЛЗ 9 полностью выполнена: 17/17 требований разобраны в отдельном отчёте, смоделированы два недельных спринта, 20 SIM-задач, WIP, CFD, закон Литтла и 30-минутная ретроспектива с одним изменением. Выпуск 10/10; среднее время цикла 31,2 → 33,5 ч, p85 50,925 → 49,3 ч. Гипотеза улучшения не подтвердилась; отрицательный эффект сохранён и проверен контрольным сценарием. Все события и участники явно модельные. Реальные снимки GitHub и рабочий журнал сохранены отдельно; нижняя таблица отражает фактические подтверждения.
 
 ## Артефакты
 
+- [Полный учебный отчёт — 17/17 требований](<simulation/README.md>)
+- [Воспроизводимый сценарий](<simulation/scenario.json>)
+- [Проверка всех требований симуляции](<simulation/evidence/acceptance.json>)
+- [Модельный спринт 1](<simulation/sprint-1.md>)
+- [Модельный спринт 2](<simulation/sprint-2.md>)
+- [Модельная ретроспектива](<simulation/retrospective.md>)
+- [Сравнение метрик модели](<simulation/evidence/comparison.csv>)
+- [Эффект одного изменения](<simulation/evidence/effect.json>)
+- [CFD модельного спринта 1](<simulation/evidence/cfd-sprint-1.png>)
+- [CFD модельного спринта 2](<simulation/evidence/cfd-sprint-2.png>)
+- [Генератор учебной симуляции](<../../../scripts/course/lab09_simulation.py>)
+- [Проверки учебной симуляции](<../../../tests/course/test_lab09_simulation.py>)
 - [project-board-workflow.md](<../../project-board-workflow.md>)
 - [github-flow.json](<evidence/github-flow.json>)
 - [flow.json](<evidence/flow.json>)
@@ -43,14 +55,16 @@
 ## Воспроизведение
 
 ```bash
+.venv/bin/python -m scripts.course.lab09_simulation --scenario docs/labs/lab-09/simulation/scenario.json --output docs/labs/lab-09/simulation
+.venv/bin/python -m unittest tests.course.test_lab09_simulation -v
 .venv/bin/python -m scripts.course.flow_report --snapshot docs/labs/lab-09/evidence/github-flow.json --start 2026-09-21T00:00:00Z --end 2026-10-05T00:00:00Z --output-directory docs/labs/lab-09/evidence
 .venv/bin/python -m unittest discover -s tests/course -p 'test_*.py' -v
 .venv/bin/python -m scripts.course.flow_journal --directory docs/labs/lab-09/journal export --output test-results/lab09-journal.json
 ```
 
-## Каждый шаг методички
+## Каждый шаг методички — реальные подтверждения
 
-Полная формулировка, номер абзаца источника и доказательства находятся в реестре. Нумерация сохранена.
+Учебный вариант полностью разобран в [отдельном отчёте](simulation/README.md). Ниже сохранён аудит фактической истории; модельные события не заменяют реальные подтверждения.
 
 | ID | Требование | Состояние | Результат / что осталось |
 |---|---|---|---|

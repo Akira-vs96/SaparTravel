@@ -1,0 +1,299 @@
+{
+  "data_kind": "educational_simulation",
+  "periods": [
+    {
+      "start_utc": "2026-10-05T00:00:00+00:00",
+      "end_utc": "2026-10-12T00:00:00+00:00",
+      "calendar_days": 7.0,
+      "throughput": 10,
+      "completed_issues": [
+        "SIM-S1-01",
+        "SIM-S1-02",
+        "SIM-S1-03",
+        "SIM-S1-04",
+        "SIM-S1-05",
+        "SIM-S1-06",
+        "SIM-S1-07",
+        "SIM-S1-08",
+        "SIM-S1-09",
+        "SIM-S1-10"
+      ],
+      "completion_events": 10,
+      "completed_items": [
+        {
+          "issue": "SIM-S1-01",
+          "completed_at_utc": "2026-10-05T16:30:00+00:00",
+          "started_at_utc": "2026-10-05T09:00:00+00:00",
+          "cycle_days": 0.3125,
+          "cycle_weekdays": 0.3125
+        },
+        {
+          "issue": "SIM-S1-02",
+          "completed_at_utc": "2026-10-05T17:00:00+00:00",
+          "started_at_utc": "2026-10-05T09:00:00+00:00",
+          "cycle_days": 0.3333333333333333,
+          "cycle_weekdays": 0.3333333333333333
+        },
+        {
+          "issue": "SIM-S1-03",
+          "completed_at_utc": "2026-10-06T16:30:00+00:00",
+          "started_at_utc": "2026-10-05T10:00:00+00:00",
+          "cycle_days": 1.2708333333333333,
+          "cycle_weekdays": 1.2708333333333335
+        },
+        {
+          "issue": "SIM-S1-04",
+          "completed_at_utc": "2026-10-06T17:00:00+00:00",
+          "started_at_utc": "2026-10-05T10:00:00+00:00",
+          "cycle_days": 1.2916666666666667,
+          "cycle_weekdays": 1.2916666666666667
+        },
+        {
+          "issue": "SIM-S1-05",
+          "completed_at_utc": "2026-10-07T16:30:00+00:00",
+          "started_at_utc": "2026-10-05T12:00:00+00:00",
+          "cycle_days": 2.1875,
+          "cycle_weekdays": 2.1875
+        },
+        {
+          "issue": "SIM-S1-06",
+          "completed_at_utc": "2026-10-07T17:00:00+00:00",
+          "started_at_utc": "2026-10-06T16:30:00+00:00",
+          "cycle_days": 1.0208333333333333,
+          "cycle_weekdays": 1.0208333333333335
+        },
+        {
+          "issue": "SIM-S1-07",
+          "completed_at_utc": "2026-10-08T16:30:00+00:00",
+          "started_at_utc": "2026-10-06T16:30:00+00:00",
+          "cycle_days": 2.0,
+          "cycle_weekdays": 2.0
+        },
+        {
+          "issue": "SIM-S1-08",
+          "completed_at_utc": "2026-10-08T17:00:00+00:00",
+          "started_at_utc": "2026-10-07T09:30:00+00:00",
+          "cycle_days": 1.3125,
+          "cycle_weekdays": 1.3125
+        },
+        {
+          "issue": "SIM-S1-09",
+          "completed_at_utc": "2026-10-09T16:30:00+00:00",
+          "started_at_utc": "2026-10-07T10:30:00+00:00",
+          "cycle_days": 2.25,
+          "cycle_weekdays": 2.25
+        },
+        {
+          "issue": "SIM-S1-10",
+          "completed_at_utc": "2026-10-09T17:00:00+00:00",
+          "started_at_utc": "2026-10-08T16:30:00+00:00",
+          "cycle_days": 1.0208333333333333,
+          "cycle_weekdays": 1.0208333333333335
+        }
+      ],
+      "cycle_time_samples": 10,
+      "cycle_mean_days": 1.3,
+      "cycle_p85_days": 2.1218749999999997,
+      "cycle_percentile_method": "PERCENTILE.INC: linear interpolation at (n-1)*0.85",
+      "cycle_sample_coverage": 1.0,
+      "observed_average_wip": 1.8571428571428572,
+      "average_wip": 1.8571428571428572,
+      "wip_lower_bound": 1.8571428571428572,
+      "wip_upper_bound": 1.8571428571428572,
+      "observed_status_task_days": {
+        "Backlog": 3.75,
+        "Ready": 10.229166666666666,
+        "In progress": 2.75,
+        "FOR TEST": 0.8125,
+        "Review": 9.4375,
+        "Blocked": 0.0,
+        "Done": 43.02083333333333,
+        "Unknown": 0.0
+      },
+      "little_expected_wip": 1.8571428571428572,
+      "little_law_evaluable": true,
+      "little_wip_difference": 0.0,
+      "history_matches_current_snapshot": true,
+      "history_snapshot_mismatches": [],
+      "data_quality": {
+        "capture_at_utc": "2026-10-19T00:00:00+00:00",
+        "coverage_complete": true,
+        "unlocated_items": [],
+        "items_without_added_at": [],
+        "duplicate_events_removed": 0,
+        "gaps": []
+      },
+      "working_time": {
+        "basis": "UTC Monday-Friday, 24 hours per weekday; no holiday exclusions",
+        "working_days": 5.0,
+        "cycle_mean_days": 1.3,
+        "cycle_p85_days": 2.1218749999999997,
+        "status_task_days": {
+          "Backlog": 3.75,
+          "Ready": 10.229166666666666,
+          "In progress": 2.75,
+          "FOR TEST": 0.8125,
+          "Review": 9.4375,
+          "Blocked": 0.0,
+          "Done": 23.02083333333334,
+          "Unknown": 0.0
+        },
+        "average_wip": 2.6,
+        "wip_lower_bound": 2.6,
+        "wip_upper_bound": 2.6,
+        "little_expected_wip": 2.6,
+        "little_law_evaluable": true,
+        "little_wip_difference": 0.0
+      },
+      "limitation": "Observed issue cohort only. Missing or inconsistent status intervals are Unknown; WIP is a bound. Cycle statistics use the final observed completion per issue and witnessed, continuous starts. Little's law needs complete inputs and a sufficiently stable observation window."
+    },
+    {
+      "start_utc": "2026-10-12T00:00:00+00:00",
+      "end_utc": "2026-10-19T00:00:00+00:00",
+      "calendar_days": 7.0,
+      "throughput": 10,
+      "completed_issues": [
+        "SIM-S2-01",
+        "SIM-S2-02",
+        "SIM-S2-03",
+        "SIM-S2-04",
+        "SIM-S2-05",
+        "SIM-S2-06",
+        "SIM-S2-07",
+        "SIM-S2-08",
+        "SIM-S2-09",
+        "SIM-S2-10"
+      ],
+      "completion_events": 10,
+      "completed_items": [
+        {
+          "issue": "SIM-S2-01",
+          "completed_at_utc": "2026-10-12T11:30:00+00:00",
+          "started_at_utc": "2026-10-12T09:00:00+00:00",
+          "cycle_days": 0.10416666666666667,
+          "cycle_weekdays": 0.10416666666666667
+        },
+        {
+          "issue": "SIM-S2-02",
+          "completed_at_utc": "2026-10-12T16:30:00+00:00",
+          "started_at_utc": "2026-10-12T09:00:00+00:00",
+          "cycle_days": 0.3125,
+          "cycle_weekdays": 0.3125
+        },
+        {
+          "issue": "SIM-S2-03",
+          "completed_at_utc": "2026-10-13T11:30:00+00:00",
+          "started_at_utc": "2026-10-12T10:00:00+00:00",
+          "cycle_days": 1.0625,
+          "cycle_weekdays": 1.0625
+        },
+        {
+          "issue": "SIM-S2-04",
+          "completed_at_utc": "2026-10-13T16:30:00+00:00",
+          "started_at_utc": "2026-10-12T10:00:00+00:00",
+          "cycle_days": 1.2708333333333333,
+          "cycle_weekdays": 1.2708333333333335
+        },
+        {
+          "issue": "SIM-S2-05",
+          "completed_at_utc": "2026-10-14T11:30:00+00:00",
+          "started_at_utc": "2026-10-12T12:00:00+00:00",
+          "cycle_days": 1.9791666666666667,
+          "cycle_weekdays": 1.9791666666666667
+        },
+        {
+          "issue": "SIM-S2-06",
+          "completed_at_utc": "2026-10-14T16:30:00+00:00",
+          "started_at_utc": "2026-10-12T13:00:00+00:00",
+          "cycle_days": 2.1458333333333335,
+          "cycle_weekdays": 2.145833333333333
+        },
+        {
+          "issue": "SIM-S2-07",
+          "completed_at_utc": "2026-10-15T16:30:00+00:00",
+          "started_at_utc": "2026-10-13T16:30:00+00:00",
+          "cycle_days": 2.0,
+          "cycle_weekdays": 2.0
+        },
+        {
+          "issue": "SIM-S2-08",
+          "completed_at_utc": "2026-10-15T11:30:00+00:00",
+          "started_at_utc": "2026-10-13T16:30:00+00:00",
+          "cycle_days": 1.7916666666666667,
+          "cycle_weekdays": 1.7916666666666667
+        },
+        {
+          "issue": "SIM-S2-09",
+          "completed_at_utc": "2026-10-16T16:30:00+00:00",
+          "started_at_utc": "2026-10-15T11:30:00+00:00",
+          "cycle_days": 1.2083333333333333,
+          "cycle_weekdays": 1.2083333333333335
+        },
+        {
+          "issue": "SIM-S2-10",
+          "completed_at_utc": "2026-10-16T11:30:00+00:00",
+          "started_at_utc": "2026-10-14T09:30:00+00:00",
+          "cycle_days": 2.0833333333333335,
+          "cycle_weekdays": 2.083333333333333
+        }
+      ],
+      "cycle_time_samples": 10,
+      "cycle_mean_days": 1.3958333333333335,
+      "cycle_p85_days": 2.0541666666666667,
+      "cycle_percentile_method": "PERCENTILE.INC: linear interpolation at (n-1)*0.85",
+      "cycle_sample_coverage": 1.0,
+      "observed_average_wip": 1.9940476190476188,
+      "average_wip": 1.9940476190476188,
+      "wip_lower_bound": 1.9940476190476188,
+      "wip_upper_bound": 1.9940476190476188,
+      "observed_status_task_days": {
+        "Backlog": 3.75,
+        "Ready": 8.125,
+        "In progress": 2.125,
+        "FOR TEST": 1.3125,
+        "Review": 10.520833333333332,
+        "Blocked": 0.0,
+        "Done": 114.16666666666664,
+        "Unknown": 0.0
+      },
+      "little_expected_wip": 1.9940476190476193,
+      "little_law_evaluable": true,
+      "little_wip_difference": -4.440892098500626e-16,
+      "history_matches_current_snapshot": true,
+      "history_snapshot_mismatches": [],
+      "data_quality": {
+        "capture_at_utc": "2026-10-19T00:00:00+00:00",
+        "coverage_complete": true,
+        "unlocated_items": [],
+        "items_without_added_at": [],
+        "duplicate_events_removed": 0,
+        "gaps": []
+      },
+      "working_time": {
+        "basis": "UTC Monday-Friday, 24 hours per weekday; no holiday exclusions",
+        "working_days": 5.0,
+        "cycle_mean_days": 1.3958333333333335,
+        "cycle_p85_days": 2.0541666666666663,
+        "status_task_days": {
+          "Backlog": 3.75,
+          "Ready": 8.125,
+          "In progress": 2.125,
+          "FOR TEST": 1.3125,
+          "Review": 10.520833333333334,
+          "Blocked": 0.0,
+          "Done": 74.16666666666666,
+          "Unknown": 0.0
+        },
+        "average_wip": 2.791666666666667,
+        "wip_lower_bound": 2.791666666666667,
+        "wip_upper_bound": 2.791666666666667,
+        "little_expected_wip": 2.791666666666667,
+        "little_law_evaluable": true,
+        "little_wip_difference": 0.0
+      },
+      "limitation": "Observed issue cohort only. Missing or inconsistent status intervals are Unknown; WIP is a bound. Cycle statistics use the final observed completion per issue and witnessed, continuous starts. Little's law needs complete inputs and a sufficiently stable observation window."
+    }
+  ],
+  "simulated_sprints": true,
+  "real_sprints_confirmed": false
+}
