@@ -1,0 +1,366 @@
+{
+  "captured_at_utc": "2026-10-30T08:08:29.934355+00:00",
+  "source": "https://github.com/users/Akira-vs96/projects/2",
+  "project_items": [
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU2Q",
+      "status": "Review",
+      "owner": "Баекеева Бибінұр",
+      "content": {
+        "number": 16,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kICE",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 1,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kINc",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 2,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tUyM",
+      "status": "Done",
+      "owner": "Баекеева Бибінұр",
+      "content": {
+        "number": 13,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU9A",
+      "status": "Done",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 19,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU1E",
+      "status": "Done",
+      "owner": "Баекеева Бибінұр",
+      "content": {
+        "number": 15,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kIRY",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 3,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kIxg",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 4,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJBo",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 5,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tUzE",
+      "status": "Done",
+      "owner": "Баекеева Бибінұр",
+      "content": {
+        "number": 14,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJo8",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 6,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJ0o",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 7,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kJ7c",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 8,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kKRI",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 9,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kKcQ",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 10,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kKo4",
+      "status": "Backlog",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 11,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg7kMHM",
+      "status": "Done",
+      "owner": null,
+      "content": {
+        "number": 12,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU3Y",
+      "status": "Ready",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 17,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU54",
+      "status": "Ready",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 18,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tU_k",
+      "status": "Ready",
+      "owner": "Баекеева Бибінұр",
+      "content": {
+        "number": 20,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVA0",
+      "status": "Ready",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 21,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVBo",
+      "status": "Ready",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 22,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVDI",
+      "status": "Ready",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 23,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVEo",
+      "status": "Ready",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 24,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVFc",
+      "status": "Ready",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 25,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVH4",
+      "status": "Ready",
+      "owner": "Баекеева Бибінұр",
+      "content": {
+        "number": 26,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVJA",
+      "status": "Ready",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 27,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVKQ",
+      "status": "Backlog",
+      "owner": "Абинсериков Нурасыл",
+      "content": {
+        "number": 28,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVLk",
+      "status": "Backlog",
+      "owner": "Баекеева Бибінұр",
+      "content": {
+        "number": 29,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zg8tVNU",
+      "status": "Backlog",
+      "owner": "Баекеева Бибінұр",
+      "content": {
+        "number": 30,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr2eg",
+      "status": "Review",
+      "owner": "Akira-vs96 (triage)",
+      "content": {
+        "number": 32,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr2n8",
+      "status": "Review",
+      "owner": "Akira-vs96 (triage)",
+      "content": {
+        "number": 33,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr2zE",
+      "status": "Review",
+      "owner": "Akira-vs96 (triage)",
+      "content": {
+        "number": 34,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr278",
+      "status": "Review",
+      "owner": "Akira-vs96 (triage)",
+      "content": {
+        "number": 35,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr3Fs",
+      "status": "Review",
+      "owner": "Akira-vs96 (triage)",
+      "content": {
+        "number": 36,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    },
+    {
+      "id": "PVTI_lAHOCuk0E84Bj444zhEr3Pc",
+      "status": "Review",
+      "owner": "Akira-vs96 (triage)",
+      "content": {
+        "number": 37,
+        "type": "Issue",
+        "repository": "Akira-vs96/SaparTravel"
+      }
+    }
+  ]
+}

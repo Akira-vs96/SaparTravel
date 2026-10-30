@@ -1,0 +1,530 @@
+[
+  {
+    "issue": 1,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 4.338888888888889,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 9.661111111111111,
+      "Unknown": 0.0
+    },
+    "coverage_complete": true,
+    "completion": {
+      "issue": 1,
+      "completed_at_utc": "2026-09-25T08:08:00+00:00",
+      "started_at_utc": null,
+      "cycle_days": null,
+      "cycle_weekdays": null
+    }
+  },
+  {
+    "issue": 2,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 14.0
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 3,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 14.0
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 4,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 14.0
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 5,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 14.0
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 6,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 14.0
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 7,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 4.338946759259259,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 9.66105324074074,
+      "Unknown": 0.0
+    },
+    "coverage_complete": true,
+    "completion": {
+      "issue": 7,
+      "completed_at_utc": "2026-09-25T08:08:05+00:00",
+      "started_at_utc": null,
+      "cycle_days": null,
+      "cycle_weekdays": null
+    }
+  },
+  {
+    "issue": 8,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 4.338958333333333,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 9.661041666666666,
+      "Unknown": 0.0
+    },
+    "coverage_complete": true,
+    "completion": {
+      "issue": 8,
+      "completed_at_utc": "2026-09-25T08:08:06+00:00",
+      "started_at_utc": null,
+      "cycle_days": null,
+      "cycle_weekdays": null
+    }
+  },
+  {
+    "issue": 9,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 14.0
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 10,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 14.0
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 11,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 14.0
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 12,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 14.0,
+      "Unknown": 0.0
+    },
+    "coverage_complete": true,
+    "completion": null
+  },
+  {
+    "issue": 13,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 9.670775462962963
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 14,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 9.670752314814814
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 15,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 9.670717592592593
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 16,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 9.670694444444445
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 17,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662314814814815,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008368055555555556
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 18,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662291666666667,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008344907407407407
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 19,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 9.670590277777777
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 20,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662280092592592,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008275462962962964
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 21,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662256944444444,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008275462962962964
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 22,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662245370370371,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008263888888888888
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 23,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662245370370371,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008240740740740741
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 24,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662233796296297,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008217592592592592
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 25,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662222222222223,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008217592592592592
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 26,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662210648148148,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.00818287037037037
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 27,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 0.0,
+      "Ready": 9.662210648148148,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008148148148148147
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 28,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 9.6621875,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008136574074074074
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 29,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 9.662164351851851,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008136574074074074
+    },
+    "coverage_complete": false,
+    "completion": null
+  },
+  {
+    "issue": 30,
+    "start_utc": "2026-09-21T00:00:00+00:00",
+    "end_utc": "2026-10-05T00:00:00+00:00",
+    "status_task_days": {
+      "Backlog": 9.662164351851851,
+      "Ready": 0.0,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 0.0,
+      "Unknown": 0.008101851851851851
+    },
+    "coverage_complete": false,
+    "completion": null
+  }
+]

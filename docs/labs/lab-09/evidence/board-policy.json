@@ -1,0 +1,32 @@
+{
+  "captured_at_utc": "2026-10-30T07:38:22.286689+00:00",
+  "status_counts": {
+    "Backlog": 4,
+    "Ready": 10,
+    "In progress": 0,
+    "FOR TEST": 0,
+    "Review": 7,
+    "Blocked": 0,
+    "Done": 15,
+    "Unknown": 0
+  },
+  "review_limit": 3,
+  "review_count": 7,
+  "review_limit_passed": false,
+  "review_over_limit": 4,
+  "review_issues": [
+    16,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37
+  ],
+  "per_person_limit": 2,
+  "per_person_historical_check": "not_evaluable_without_historical_assignees",
+  "current_in_progress_by_owner": {},
+  "current_items_without_owner": [],
+  "per_person_current_limit_passed": true,
+  "action": "Finish or explicitly resolve existing review before pulling new work"
+}

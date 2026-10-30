@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "baseline_snapshot": "../evidence/github-flow.json",
+  "baseline_sha256": "5f2bbbf97f011aa9f453cc5c209547ec9b441feb53af2daa86cfd99a1ed25564",
+  "observation_started_at_utc": "2026-10-30T07:38:22.286689+00:00",
+  "initialized_at_utc": "2026-10-30T08:06:51.203404+00:00",
+  "scope": "Fixed baseline issue cohort; manual observations are separate from GitHub history"
+}

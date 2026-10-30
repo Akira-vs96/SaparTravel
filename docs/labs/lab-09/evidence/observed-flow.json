@@ -14,24 +14,28 @@
       "issue": 1,
       "completed_at_utc": "2026-09-25T08:08:00+00:00",
       "started_at_utc": null,
-      "cycle_days": null
+      "cycle_days": null,
+      "cycle_weekdays": null
     },
     {
       "issue": 7,
       "completed_at_utc": "2026-09-25T08:08:05+00:00",
       "started_at_utc": null,
-      "cycle_days": null
+      "cycle_days": null,
+      "cycle_weekdays": null
     },
     {
       "issue": 8,
       "completed_at_utc": "2026-09-25T08:08:06+00:00",
       "started_at_utc": null,
-      "cycle_days": null
+      "cycle_days": null,
+      "cycle_weekdays": null
     }
   ],
   "cycle_time_samples": 0,
   "cycle_mean_days": null,
   "cycle_p85_days": null,
+  "cycle_percentile_method": "PERCENTILE.INC: linear interpolation at (n-1)*0.85",
   "cycle_sample_coverage": 0.0,
   "observed_average_wip": 0.0,
   "average_wip": null,
@@ -41,6 +45,7 @@
     "Backlog": 42.00331018518518,
     "Ready": 96.62251157407407,
     "In progress": 0.0,
+    "FOR TEST": 0.0,
     "Review": 0.0,
     "Blocked": 0.0,
     "Done": 42.983206018518516,
@@ -177,6 +182,28 @@
         "kind": "snapshot_mismatch"
       }
     ]
+  },
+  "working_time": {
+    "basis": "UTC Monday-Friday, 24 hours per weekday; no holiday exclusions",
+    "working_days": 10.0,
+    "cycle_mean_days": null,
+    "cycle_p85_days": null,
+    "status_task_days": {
+      "Backlog": 30.00331018518518,
+      "Ready": 56.62251157407407,
+      "In progress": 0.0,
+      "FOR TEST": 0.0,
+      "Review": 0.0,
+      "Blocked": 0.0,
+      "Done": 26.98320601851852,
+      "Unknown": 108.46043981481478
+    },
+    "average_wip": null,
+    "wip_lower_bound": 0.0,
+    "wip_upper_bound": 10.846043981481477,
+    "little_expected_wip": null,
+    "little_law_evaluable": false,
+    "little_wip_difference": null
   },
   "limitation": "Observed issue cohort only. Missing or inconsistent status intervals are Unknown; WIP is a bound. Cycle statistics use the final observed completion per issue and witnessed, continuous starts. Little's law needs complete inputs and a sufficiently stable observation window.",
   "source": "github-flow.json",

@@ -1,0 +1,13 @@
+{
+  "captured_at_utc": "2026-10-30T08:17:47.731544+00:00",
+  "python": "3.13.5",
+  "tool_tests": {
+    "count": 100,
+    "seconds": 9.366,
+    "passed": true,
+    "command": ".venv/bin/python -m unittest discover -s tests -p 'test_*.py' -q"
+  },
+  "ruff_passed": true,
+  "diff_check_passed": true,
+  "scope": "Lab 9 calculations, evidence exports and factual journal; does not certify human sprint events"
+}

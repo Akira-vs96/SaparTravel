@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import tempfile
 
-from scripts.course.metrics import cfd, flow, stamp
+from scripts.course.metrics import cfd, flow, flow_details, stamp
 from scripts.course.flow_report import build
 
 
@@ -151,6 +151,63 @@ class FlowHistoryTests(unittest.TestCase):
         self.assertEqual(result["cycle_time_samples"], 1)
         self.assertEqual(result["cycle_mean_days"], 2)
 
+    def test_p85_uses_the_interpolation_from_the_methodology_calc_formula(self):
+        self.facts["transitions"] = [
+            event("2026-10-01T00:00:00Z", "Ready", "In progress", issue)
+            for issue in (1, 2)] + [
+            event("2026-10-02T00:00:00Z", "In progress", "Done", 1),
+            event("2026-10-04T00:00:00Z", "In progress", "Done", 2)]
+        self.assertAlmostEqual(flow(self.facts, self.start, self.end)["cycle_p85_days"], 2.7)
+
+    def test_the_actual_for_test_column_has_known_exposure_and_counts_as_wip(self):
+        self.facts.update(captured_at_utc="2026-10-08T00:00:00Z",
+                          project_items=[{"content": {"number": 1}, "status": "Done"}],
+                          project_item_metadata=[{"issue": 1, "created_at": "2026-10-01T00:00:00Z"}])
+        self.facts["transitions"] = [
+            event("2026-10-01T00:00:00Z", "Ready", "In progress"),
+            event("2026-10-02T00:00:00Z", "In progress", "FOR TEST"),
+            event("2026-10-03T00:00:00Z", "FOR TEST", "Done")]
+        result = flow(self.facts, self.start, self.end)
+        self.assertEqual(result["observed_status_task_days"]["Unknown"], 0)
+        self.assertAlmostEqual(result["average_wip"], 2 / 7)
+        self.assertEqual(cfd(self.facts, self.start, self.end)[1]["FOR TEST"], 1)
+
+    def test_daily_wip_integrates_intraday_work_that_midnight_cfd_does_not_show(self):
+        self.facts.update(captured_at_utc=self.end.isoformat(),
+                          project_items=[{"content": {"number": 1}, "status": "Done"}],
+                          project_item_metadata=[{"issue": 1, "created_at": self.start.isoformat()}])
+        self.facts["transitions"] = [event("2026-10-01T00:00:00Z", "", "Ready"),
+                                    event("2026-10-01T09:00:00Z", "Ready", "In progress"),
+                                    event("2026-10-01T17:00:00Z", "In progress", "Done")]
+        result = flow_details(self.facts, self.start, self.end)
+        self.assertAlmostEqual(result["daily_wip"][0]["average_wip"], 8 / 24)
+        self.assertTrue(all(r["In progress"] == 0 for r in cfd(self.facts, self.start, self.end)))
+        self.assertAlmostEqual(result["items"][0]["status_task_days"]["In progress"], 8 / 24)
+        self.assertEqual(sum(result["items"][0]["status_task_days"].values()), 7)
+        self.assertEqual(result["items"][0]["completion"]["issue"], 1)
+
+    def test_little_law_uses_consistent_working_day_units_including_cycles(self):
+        self.facts.update(captured_at_utc=self.end.isoformat(),
+                          project_items=[{"content": {"number": 1}, "status": "Done"}],
+                          project_item_metadata=[{"issue": 1, "created_at": "2026-10-02T12:00:00Z"}])
+        self.facts["transitions"] = [event("2026-10-02T12:00:00Z", "Ready", "In progress"),
+                                    event("2026-10-05T12:00:00Z", "In progress", "Done")]
+        result = flow(self.facts, self.start, self.end)
+        working = result["working_time"]
+        self.assertEqual(result["cycle_mean_days"], 3)
+        self.assertEqual(working["working_days"], 5)
+        self.assertEqual(working["cycle_mean_days"], 1)
+        self.assertAlmostEqual(working["average_wip"], .2)
+        self.assertEqual(working["little_wip_difference"], 0)
+
+    def test_weekend_only_window_does_not_divide_by_zero_working_days(self):
+        start, end = stamp("2026-10-03T00:00:00Z"), stamp("2026-10-05T00:00:00Z")
+        result = flow(self.facts, start, end)["working_time"]
+        self.assertEqual(result["working_days"], 0)
+        self.assertIsNone(result["average_wip"])
+        self.assertIsNone(result["little_expected_wip"])
+        self.assertFalse(result["little_law_evaluable"])
+
     def test_report_package_preserves_source_identity_and_csv_json_agreement(self):
         self.facts["transitions"] = [event("2026-10-01T00:00:00Z", "", "Ready")]
         with tempfile.TemporaryDirectory() as directory:
@@ -168,6 +225,12 @@ class FlowHistoryTests(unittest.TestCase):
             self.assertEqual(len(rows), len(exported))
             self.assertEqual([r['at_utc'] for r in rows], [r['at_utc'] for r in exported])
             self.assertEqual([r['Review'] for r in rows], [int(r['Review']) for r in exported])
+            for name in ('item-times.csv', 'daily-wip.csv', 'comparison.csv', 'board-policy.json'):
+                self.assertTrue((output / name).is_file())
+            with (output / 'comparison.csv').open() as stream:
+                comparison = list(csv.DictReader(stream))
+            self.assertEqual(len(comparison), 1)
+            self.assertEqual(comparison[0]['working_days'], '5.0')
 
 
 if __name__ == "__main__":

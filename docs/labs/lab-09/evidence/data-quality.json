@@ -110,7 +110,7 @@
       "kind": "snapshot_mismatch"
     }
   ],
-  "schema_version": 2,
+  "schema_version": 3,
   "source": "github-flow.json",
   "source_sha256": "5f2bbbf97f011aa9f453cc5c209547ec9b441feb53af2daa86cfd99a1ed25564",
   "project": {

@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "periods": [
     {
       "start_utc": "2026-09-21T00:00:00+00:00",
@@ -17,24 +17,28 @@
           "issue": 1,
           "completed_at_utc": "2026-09-25T08:08:00+00:00",
           "started_at_utc": null,
-          "cycle_days": null
+          "cycle_days": null,
+          "cycle_weekdays": null
         },
         {
           "issue": 7,
           "completed_at_utc": "2026-09-25T08:08:05+00:00",
           "started_at_utc": null,
-          "cycle_days": null
+          "cycle_days": null,
+          "cycle_weekdays": null
         },
         {
           "issue": 8,
           "completed_at_utc": "2026-09-25T08:08:06+00:00",
           "started_at_utc": null,
-          "cycle_days": null
+          "cycle_days": null,
+          "cycle_weekdays": null
         }
       ],
       "cycle_time_samples": 0,
       "cycle_mean_days": null,
       "cycle_p85_days": null,
+      "cycle_percentile_method": "PERCENTILE.INC: linear interpolation at (n-1)*0.85",
       "cycle_sample_coverage": 0.0,
       "observed_average_wip": 0.0,
       "average_wip": null,
@@ -44,6 +48,7 @@
         "Backlog": 21.003310185185185,
         "Ready": 26.62251157407407,
         "In progress": 0.0,
+        "FOR TEST": 0.0,
         "Review": 0.0,
         "Blocked": 0.0,
         "Done": 14.98320601851852,
@@ -181,6 +186,28 @@
           }
         ]
       },
+      "working_time": {
+        "basis": "UTC Monday-Friday, 24 hours per weekday; no holiday exclusions",
+        "working_days": 5.0,
+        "cycle_mean_days": null,
+        "cycle_p85_days": null,
+        "status_task_days": {
+          "Backlog": 15.003310185185184,
+          "Ready": 6.622511574074075,
+          "In progress": 0.0,
+          "FOR TEST": 0.0,
+          "Review": 0.0,
+          "Blocked": 0.0,
+          "Done": 6.983206018518519,
+          "Unknown": 43.46043981481481
+        },
+        "average_wip": null,
+        "wip_lower_bound": 0.0,
+        "wip_upper_bound": 8.692087962962962,
+        "little_expected_wip": null,
+        "little_law_evaluable": false,
+        "little_wip_difference": null
+      },
       "limitation": "Observed issue cohort only. Missing or inconsistent status intervals are Unknown; WIP is a bound. Cycle statistics use the final observed completion per issue and witnessed, continuous starts. Little's law needs complete inputs and a sufficiently stable observation window."
     },
     {
@@ -194,6 +221,7 @@
       "cycle_time_samples": 0,
       "cycle_mean_days": null,
       "cycle_p85_days": null,
+      "cycle_percentile_method": "PERCENTILE.INC: linear interpolation at (n-1)*0.85",
       "cycle_sample_coverage": null,
       "observed_average_wip": 0.0,
       "average_wip": null,
@@ -203,6 +231,7 @@
         "Backlog": 21.0,
         "Ready": 70.0,
         "In progress": 0.0,
+        "FOR TEST": 0.0,
         "Review": 0.0,
         "Blocked": 0.0,
         "Done": 28.0,
@@ -339,6 +368,28 @@
             "kind": "snapshot_mismatch"
           }
         ]
+      },
+      "working_time": {
+        "basis": "UTC Monday-Friday, 24 hours per weekday; no holiday exclusions",
+        "working_days": 5.0,
+        "cycle_mean_days": null,
+        "cycle_p85_days": null,
+        "status_task_days": {
+          "Backlog": 15.0,
+          "Ready": 50.0,
+          "In progress": 0.0,
+          "FOR TEST": 0.0,
+          "Review": 0.0,
+          "Blocked": 0.0,
+          "Done": 20.0,
+          "Unknown": 65.0
+        },
+        "average_wip": null,
+        "wip_lower_bound": 0.0,
+        "wip_upper_bound": 13.0,
+        "little_expected_wip": null,
+        "little_law_evaluable": false,
+        "little_wip_difference": null
       },
       "limitation": "Observed issue cohort only. Missing or inconsistent status intervals are Unknown; WIP is a bound. Cycle statistics use the final observed completion per issue and witnessed, continuous starts. Little's law needs complete inputs and a sufficiently stable observation window."
     }

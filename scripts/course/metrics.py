@@ -15,9 +15,33 @@ def percentile(values, fraction):
     return sorted(values)[max(0, math.ceil(len(values) * fraction) - 1)] if values else None
 
 
+def _calc_percentile(values, fraction):
+    """Calc PERCENTILE / PERCENTILE.INC: inclusive linear interpolation."""
+    if not values:
+        return None
+    ordered = sorted(values)
+    position = (len(ordered) - 1) * fraction
+    lower = math.floor(position)
+    upper = math.ceil(position)
+    return ordered[lower] + (position - lower) * (ordered[upper] - ordered[lower])
+
+
 IN_PROGRESS = "In progress"
-STATUSES = ("Backlog", "Ready", IN_PROGRESS, "Review", "Blocked", "Done", "Unknown")
-WIP = (IN_PROGRESS, "Review", "Blocked")
+STATUSES = ("Backlog", "Ready", IN_PROGRESS, "FOR TEST", "Review", "Blocked", "Done", "Unknown")
+WIP = (IN_PROGRESS, "FOR TEST", "Review", "Blocked")
+
+
+def _elapsed_days(left, right, *, weekdays_only=False):
+    if not weekdays_only:
+        return max(0.0, (right - left).total_seconds() / 86400)
+    days = 0.0
+    while left < right:
+        midnight = left.replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
+        stop = min(midnight, right)
+        if left.weekday() < 5:
+            days += (stop - left).total_seconds() / 86400
+        left = stop
+    return days
 
 
 def _normalised_events(facts):
@@ -98,6 +122,8 @@ def _history(facts, start, end):
     if start.tzinfo is None or end.tzinfo is None or start >= end:
         raise ValueError("Expected a nonempty timezone-aware time window")
     start, end = start.astimezone(timezone.utc), end.astimezone(timezone.utc)
+    if facts.get("observation_started_at_utc") and start < stamp(facts["observation_started_at_utc"]):
+        raise ValueError("The window begins before the journal's first real observation")
     captured = stamp(facts["captured_at_utc"]) if facts.get("captured_at_utc") else end
     if end > captured:
         raise ValueError("The requested window extends beyond the evidence capture")
@@ -129,7 +155,8 @@ def _update_start(starts, previous, row):
 def _completion_record(row, begun):
     return {"issue": row["issue"], "completed_at_utc": row["instant"].isoformat(),
             "started_at_utc": begun.isoformat() if begun else None,
-            "cycle_days": (row["instant"] - begun).total_seconds() / 86400 if begun else None}
+            "cycle_days": _elapsed_days(begun, row["instant"]) if begun else None,
+            "cycle_weekdays": _elapsed_days(begun, row["instant"], weekdays_only=True) if begun else None}
 
 
 def _completions(events, start, end):
@@ -148,11 +175,11 @@ def _completions(events, start, end):
     return completions, count
 
 
-def _status_exposure(history, start, end):
+def _status_exposure(history, start, end, *, weekdays_only=False):
     by_status = Counter(dict.fromkeys(STATUSES, 0.0))
     for spans in history["intervals"].values():
         for left, right, status in spans:
-            overlap = max(0, (min(right, end) - max(left, start)).total_seconds()) / 86400
+            overlap = _elapsed_days(max(left, start), min(right, end), weekdays_only=weekdays_only)
             by_status[status] += overlap
     return by_status
 
@@ -184,7 +211,8 @@ def flow(facts, start, end):
             "throughput": len(completions), "completed_issues": sorted(completions),
             "completion_events": count, "completed_items": [completions[k] for k in sorted(completions)],
             "cycle_time_samples": len(cycles), "cycle_mean_days": mean_cycle,
-            "cycle_p85_days": percentile(cycles, .85),
+            "cycle_p85_days": _calc_percentile(cycles, .85),
+            "cycle_percentile_method": "PERCENTILE.INC: linear interpolation at (n-1)*0.85",
             "cycle_sample_coverage": len(cycles) / len(completions) if completions else None,
             "observed_average_wip": lower_wip, "average_wip": lower_wip if quality["coverage_complete"] else None,
             "wip_lower_bound": lower_wip, "wip_upper_bound": upper_wip if not history["unlocated_items"] else None,
@@ -192,7 +220,56 @@ def flow(facts, start, end):
             "little_law_evaluable": evaluable, "little_wip_difference": lower_wip - expected_wip if evaluable else None,
             "history_matches_current_snapshot": not history["snapshot_mismatches"],
             "history_snapshot_mismatches": history["snapshot_mismatches"], "data_quality": quality,
+            "working_time": _working_time(history, completions, quality, start, end),
             "limitation": "Observed issue cohort only. Missing or inconsistent status intervals are Unknown; WIP is a bound. Cycle statistics use the final observed completion per issue and witnessed, continuous starts. Little's law needs complete inputs and a sufficiently stable observation window."}
+
+
+def _working_time(history, completions, quality, start, end):
+    days = _elapsed_days(start, end, weekdays_only=True)
+    exposure = _status_exposure(history, start, end, weekdays_only=True)
+    cycles = [r["cycle_weekdays"] for r in completions.values() if r["cycle_weekdays"] is not None]
+    mean = sum(cycles) / len(cycles) if cycles else None
+    lower = sum(exposure[s] for s in WIP) / days if days else None
+    complete_cycles = bool(completions) and len(cycles) == len(completions)
+    expected = len(completions) / days * mean if days and complete_cycles else None
+    evaluable = bool(days) and complete_cycles and quality["coverage_complete"]
+    return {"basis": "UTC Monday-Friday, 24 hours per weekday; no holiday exclusions",
+            "working_days": days, "cycle_mean_days": mean,
+            "cycle_p85_days": _calc_percentile(cycles, .85),
+            "status_task_days": dict(exposure),
+            "average_wip": lower if quality["coverage_complete"] else None,
+            "wip_lower_bound": lower,
+            "wip_upper_bound": lower + exposure["Unknown"] / days if days and not history["unlocated_items"] else None,
+            "little_expected_wip": expected, "little_law_evaluable": evaluable,
+            "little_wip_difference": lower - expected if evaluable else None}
+
+
+def flow_details(facts, start, end):
+    """Export each item's exposure and integrated daily WIP, including intraday work."""
+    history = _history(facts, start, end)
+    start, end = history["start"], history["end"]
+    completions, _ = _completions(history["events"], start, end)
+    items = []
+    for issue in sorted(history["intervals"]):
+        spans = history["intervals"][issue]
+        exposure = _status_exposure({"intervals": {issue: spans}}, start, end)
+        if not sum(exposure.values()):
+            continue
+        row = {"issue": issue, "start_utc": start.isoformat(), "end_utc": end.isoformat(),
+               "status_task_days": dict(exposure),
+               "coverage_complete": exposure["Unknown"] == 0,
+               "completion": completions.get(issue)}
+        items.append(row)
+    daily, cursor = [], start
+    while cursor < end:
+        stop = min(cursor + timedelta(days=1), end)
+        row = flow(facts, cursor, stop)
+        daily.append({"date": cursor.date().isoformat(), "start_utc": cursor.isoformat(), "end_utc": stop.isoformat(),
+                      "average_wip": row["average_wip"], "wip_lower_bound": row["wip_lower_bound"],
+                      "wip_upper_bound": row["wip_upper_bound"], "calendar_days": row["calendar_days"],
+                      "status_task_days": row["observed_status_task_days"]})
+        cursor = stop
+    return {"items": items, "daily_wip": daily, "unlocated_items": history["unlocated_items"]}
 
 
 def cfd(facts, start, end):

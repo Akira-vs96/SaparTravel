@@ -1,0 +1,3 @@
+start_utc,end_utc,throughput,cycle_time_samples,cycle_mean_days,cycle_p85_days,average_wip,little_expected_wip,little_law_evaluable,little_wip_difference,working_days,working_cycle_mean_days,working_cycle_p85_days,working_average_wip,working_little_expected_wip,working_little_law_evaluable,working_little_wip_difference
+2026-09-21T00:00:00+00:00,2026-09-28T00:00:00+00:00,3,0,,,,,False,,5.0,,,,,False,
+2026-09-28T00:00:00+00:00,2026-10-05T00:00:00+00:00,0,0,,,,,False,,5.0,,,,,False,
