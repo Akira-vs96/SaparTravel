@@ -15,7 +15,8 @@ def write_json(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
 
 
-def plot_cfd(rows, path):
+def plot_cfd(rows, path, *, title="CFD: recorded states and explicit gaps",
+             note="Grey hatch = unknown status, not idle work. Daily samples do not locate missing transitions."):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.dates as mdates
@@ -30,13 +31,14 @@ def plot_cfd(rows, path):
     bands[-1].set_hatch("///")
     bands[-1].set_edgecolor("#777777")
     ax.set(xlabel="UTC daily observation", ylabel="Items in the recorded issue cohort",
-           title="CFD: recorded states and explicit gaps")
+           title=title)
     ax.xaxis.set_major_locator(mdates.AutoDateLocator(minticks=3, maxticks=8))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%d.%m"))
-    ax.set_xlim(dates[0], dates[-1] + timedelta(days=1))
+    step = dates[-1] - dates[-2] if len(dates) > 1 else timedelta(days=1)
+    ax.set_xlim(dates[0], dates[-1] + step)
     ax.set_ylim(bottom=0)
     ax.legend(loc="upper left", ncols=4)
-    fig.text(.05, .025, "Grey hatch = unknown status, not idle work. Daily samples do not locate missing transitions.", fontsize=9)
+    fig.text(.05, .025, note, fontsize=9)
     fig.tight_layout(rect=(0, .05, 1, 1))
     fig.savefig(path, dpi=160)
     plt.close(fig)
