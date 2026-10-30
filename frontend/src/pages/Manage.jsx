@@ -32,6 +32,7 @@ import {
   Categories,
 } from "./ManageExtras";
 import Support from "./Support";
+import MailDelivery from "./MailDelivery";
 
 export default function Manage() {
   const { user, lang, t, token, notify, errorText } = useApp();
@@ -99,6 +100,7 @@ export default function Manage() {
                   "vendors",
                   "categories",
                   "auditLog",
+                  "mailDelivery",
                 ]
               : []),
           ].map((key) => (
@@ -237,6 +239,7 @@ export default function Manage() {
           {tab === "vendors" && <Vendors />}
           {tab === "categories" && <Categories />}
           {tab === "auditLog" && <Audit />}
+          {tab === "mailDelivery" && <MailDelivery />}
         </>
       )}
       {editing && (

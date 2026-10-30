@@ -135,7 +135,7 @@ def run(base_url, api_url):
                 expect(page.locator("html")).to_have_attribute("lang", lang)
                 page.get_by_label(words["name"], exact=True).fill("Locale Traveler " + suffix)
                 page.get_by_label(words["email"], exact=True).fill(email)
-                page.get_by_label(words["password"], exact=False).fill(password)
+                page.get_by_label(words["password"], exact=True).fill(password)
                 page.get_by_role("button", name=words["register"], exact=True).click()
                 expect(page).to_have_url(re.compile(r"/account$"))
                 token = page.evaluate("localStorage.getItem('sapar-token')")

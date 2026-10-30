@@ -19,6 +19,7 @@ logger = logging.getLogger("sapartravel.worker")
 
 def sweep():
     from app.services.commerce_service import process_pending
+    from app.services.mail_service import process_mail_queue
     # Keep the session-level advisory lock on a dedicated connection: each job
     # commits independently and must not release the sweeper lock between jobs.
     with engine.connect() as lock_connection:
@@ -27,7 +28,10 @@ def sweep():
             return {"skipped": "another_worker"}
         try:
             with SessionLocal() as db:
-                return process_pending(db)
+                commerce = process_pending(db)
+            with SessionLocal() as db:
+                mail = process_mail_queue(db)
+            return {**commerce, "mail": mail}
         finally:
             if engine.dialect.name == "postgresql":
                 lock_connection.execute(text("SELECT pg_advisory_unlock(7240019402)"))

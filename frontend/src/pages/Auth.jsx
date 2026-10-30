@@ -4,6 +4,7 @@ import { Link, Navigate, useSearchParams } from "react-router-dom";
 import { api } from "../api";
 import { useApp } from "../context";
 import { FormError, Photo } from "../components/common";
+import PasswordField from "../components/PasswordField";
 
 export default function Auth({ register = false }) {
   const { t, authenticated, user } = useApp();
@@ -78,22 +79,19 @@ export default function Auth({ register = false }) {
               autoComplete="email"
             />
           </label>
-          <label>
-            {t("password")}
-            <input
-              type="password"
+          <PasswordField
+              label={t("password")}
               required
               minLength={register ? 10 : 1}
               maxLength="128"
               value={form.password}
               onChange={change("password")}
               autoComplete={register ? "new-password" : "current-password"}
-            />
-            {register && <small>{t("passwordHint")}</small>}
-          </label>
+              hint={register ? t("passwordHint") : null}
+          />
           <FormError error={error} />
           {!register && (
-            <Link className="text-link forgot-link" to="/reset-password">
+            <Link className="text-link forgot-link" to="/forgot-password">
               {t("forgotPassword")}
             </Link>
           )}

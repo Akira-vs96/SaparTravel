@@ -38,3 +38,30 @@ def test_authentication_rate_limit(client, monkeypatch):
     assert second.status_code == 429
     assert second.headers["retry-after"] == "60"
     security._auth_attempts.clear()
+
+
+def test_smtp_configuration_requires_sender_credentials_and_encryption():
+    base = {"database_url": "postgresql+psycopg://test@localhost/test", "auth_rate_limit": 20,
+            "environment": "production", "mail_delivery_mode": "smtp", "smtp_host": "mail.example.com",
+            "smtp_from_email": "support@example.com", "smtp_username": "", "smtp_password": None}
+    assert Settings(**base).resolved_mail_mode == "smtp"
+    with pytest.raises(ValidationError, match="Unencrypted SMTP"):
+        Settings(**{**base, "smtp_security": "none"})
+    with pytest.raises(ValidationError, match="SMTP_HOST and SMTP_FROM_EMAIL"):
+        Settings(**{**base, "smtp_from_email": None})
+    with pytest.raises(ValidationError, match="configured together"):
+        Settings(**{**base, "smtp_username": "sender"})
+
+
+def test_recovery_urls_cannot_contain_credentials_queries_or_fragments():
+    for url in ("https://user:pass@example.com", "https://example.com?redirect=other", "https://example.com#fragment", "https://"):
+        with pytest.raises(ValidationError, match="PUBLIC_WEB_URL"):
+            Settings(public_web_url=url)
+
+
+def test_smtp_configuration_errors_do_not_echo_passwords():
+    value = "redaction-check-password-2026"
+    with pytest.raises(ValidationError) as error:
+        Settings(mail_delivery_mode="smtp", smtp_host="mail.example.com", smtp_from_email="support@example.com",
+                 smtp_username="", smtp_password=value)
+    assert value not in str(error.value)

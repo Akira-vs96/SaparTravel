@@ -40,7 +40,7 @@ def api(context, api_url, path, *, method="GET", token=None, body=None, expected
 def login(page, base_url, email, password):
     page.goto(base_url + "/login")
     page.get_by_label("Email address", exact=True).fill(email)
-    page.get_by_label("Password", exact=False).fill(password)
+    page.get_by_label("Password", exact=True).fill(password)
     page.get_by_role("button", name="Log in", exact=True).click()
     expect(page).to_have_url(re.compile(r"/account$"))
 
@@ -89,7 +89,11 @@ def run(base_url, api_url):
             traveler.goto(base_url + "/register")
             traveler.get_by_label("Name", exact=True).fill("Engagement Traveler " + suffix)
             traveler.get_by_label("Email address", exact=True).fill(traveler_email)
-            traveler.get_by_label("Password", exact=False).fill(traveler_password)
+            traveler.get_by_label("Password", exact=True).fill(traveler_password)
+            traveler.get_by_role("button", name="Show password", exact=True).click()
+            expect(traveler.get_by_label("Password", exact=True)).to_have_attribute("type", "text")
+            traveler.get_by_role("button", name="Hide password", exact=True).click()
+            expect(traveler.get_by_label("Password", exact=True)).to_have_attribute("type", "password")
             traveler.get_by_role("button", name="Create account", exact=True).click()
             expect(traveler).to_have_url(re.compile(r"/account$"))
             old_token = traveler.evaluate("localStorage.getItem('sapar-token')")
@@ -99,12 +103,26 @@ def run(base_url, api_url):
             api(traveler_context, api_url, "/auth/me", token=old_token, expected=401)
 
             step = "one-use recovery through the private mailbox"
-            traveler.goto(base_url + "/reset-password")
+            traveler.goto(base_url + "/login")
+            traveler.get_by_role("link", name="Forgot password?", exact=True).click()
+            expect(traveler).to_have_url(re.compile(r"/forgot-password$"))
             traveler.get_by_label("Email address", exact=True).fill(traveler_email)
             with traveler.expect_response(response_for("/auth/forgot-password", "POST")) as requested:
                 traveler.get_by_role("button", name="Send reset link", exact=True).click()
             assert requested.value.status == 200
             expect(traveler.get_by_role("status")).to_contain_text("If the account exists")
+            expect(traveler.get_by_role("button", name=re.compile("Send another link"))).to_be_disabled()
+            admin_context = browser.new_context(viewport={"width": 1440, "height": 1000})
+            admin_context.add_init_script("localStorage.setItem('sapar-language','en')")
+            admin_page = admin_context.new_page()
+            admin_page.on("pageerror", capture_error)
+            login(admin_page, base_url, admin_email, admin_password)
+            admin_page.goto(base_url + "/manage")
+            admin_page.get_by_role("button", name="Mail", exact=True).click()
+            expect(admin_page.get_by_role("heading", name="Email delivery", exact=True)).to_be_visible()
+            admin_page.get_by_role("button", name="Open private mailbox", exact=True).click()
+            expect(admin_page.get_by_role("dialog").locator("article").filter(has_text=traveler_email)).to_have_count(1)
+            admin_context.close()
             mailbox = api(traveler_context, api_url, f"/admin/demo-mailbox?recipient={traveler_email}", token=admin_token)
             assert len(mailbox["items"]) == 1 and mailbox["items"][0]["recipient"] == traveler_email
             match = re.search(r"token=([A-Za-z0-9_-]+)", mailbox["items"][0]["body"])
@@ -116,7 +134,12 @@ def run(base_url, api_url):
             reset_link = re.search(r"https?://[^\s]+", mailbox["items"][0]["body"]).group(0)
             assert urlsplit(reset_link).path == "/reset-password", "Unexpected recovery route"
             traveler.goto(reset_link)
-            traveler.get_by_label("New password", exact=False).fill(replacement_password)
+            traveler.get_by_label("New password", exact=True).fill(replacement_password)
+            traveler.get_by_label("Confirm new password", exact=True).fill(replacement_password)
+            traveler.get_by_label("Confirm new password", exact=True).fill(replacement_password + "-different")
+            traveler.get_by_role("button", name="Change password", exact=True).click()
+            expect(traveler.get_by_role("alert")).to_contain_text("Passwords do not match")
+            traveler.get_by_label("Confirm new password", exact=True).fill(replacement_password)
             with traveler.expect_response(response_for("/auth/reset-password", "POST")) as reset:
                 traveler.get_by_role("button", name="Change password", exact=True).click()
             assert reset.value.status == 200
@@ -127,7 +150,28 @@ def run(base_url, api_url):
             login(traveler, base_url, traveler_email, replacement_password)
             traveler_token = traveler.evaluate("localStorage.getItem('sapar-token')")
             private_values.append(traveler_token)
+            step = "profile password change keeps the new session and revokes the old one"
+            traveler.goto(base_url + "/account")
+            password_section = traveler.locator(".password-section")
+            changed_password = secrets.token_urlsafe(24)
+            private_values.append(changed_password)
+            password_section.get_by_label("Current password", exact=True).fill("incorrect-current-password")
+            password_section.get_by_label("New password", exact=True).fill(changed_password)
+            password_section.get_by_label("Confirm new password", exact=True).fill(changed_password)
+            with traveler.expect_response(response_for("/auth/change-password", "POST")) as rejected:
+                password_section.get_by_role("button", name="Change password", exact=True).click()
+            assert rejected.value.status == 422
+            expect(password_section.get_by_role("alert")).to_contain_text("Your current password is incorrect")
+            password_section.get_by_label("Current password", exact=True).fill(replacement_password)
+            with traveler.expect_response(response_for("/auth/change-password", "POST")) as changed:
+                password_section.get_by_role("button", name="Change password", exact=True).click()
+            assert changed.value.status == 200
+            expect(password_section.get_by_role("status")).to_contain_text("Password updated")
+            api(traveler_context, api_url, "/auth/me", token=traveler_token, expected=401)
+            traveler_token = traveler.evaluate("localStorage.getItem('sapar-token')")
+            private_values.append(traveler_token)
             print("PASS: UI registration, persisted logout, private reset delivery, password reset and one-use rejection")
+            print("PASS: password visibility, mismatched confirmation, administrator mailbox and profile password rotation")
 
             step = "isolated supplier and owned booking setup"
             host = api(traveler_context, api_url, "/auth/register", method="POST", expected=201,

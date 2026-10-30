@@ -1,0 +1,122 @@
+{
+  "recorded_at_utc": "2026-10-30T19:52:29.761144+00:00",
+  "scope": "Website functional verification on isolated local PostgreSQL; no historical course records changed",
+  "environment": {
+    "database": "PostgreSQL 17",
+    "api": "http://127.0.0.1:8000",
+    "frontend": "http://127.0.0.1:5173",
+    "production_preview": "http://127.0.0.1:5174"
+  },
+  "backend": {
+    "runner": "pytest",
+    "tests": 96,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 21.66,
+    "covers": [
+      "SMTP protocol with controlled loopback receiver",
+      "transactional queue, retries and concurrency",
+      "password reset, authentication and role access",
+      "catalog, booking, support, payment and refunds"
+    ]
+  },
+  "repository_tools": {
+    "tests": 111,
+    "passed": true
+  },
+  "browser": {
+    "checks": [
+      {
+        "script": "browser_smoke.py",
+        "passed": true
+      },
+      {
+        "script": "browser_management.py",
+        "passed": true
+      },
+      {
+        "script": "browser_localization.py",
+        "passed": true
+      },
+      {
+        "script": "browser_visual.py",
+        "passed": true
+      },
+      {
+        "script": "browser_roles_visual.py",
+        "passed": true
+      },
+      {
+        "script": "browser_service_levels.py",
+        "passed": true
+      },
+      {
+        "script": "browser_invalid_response.py",
+        "passed": true
+      },
+      {
+        "script": "browser_engagement.py",
+        "passed": true
+      }
+    ],
+    "engagement_observed": [
+      "login recovery link",
+      "password visibility and confirmation",
+      "admin private mailbox",
+      "password change and old session rejection"
+    ],
+    "languages": [
+      "ru",
+      "kk",
+      "en"
+    ]
+  },
+  "build": {
+    "vite_production_build": "passed",
+    "chromium_production_preview": "passed",
+    "mobile_width_px": 390,
+    "javascript_errors": 0,
+    "horizontal_overflow": false
+  },
+  "database_migration": {
+    "revision": "0006",
+    "upgrade": "passed",
+    "alembic_check": "passed"
+  },
+  "static_checks": {
+    "ruff": "passed",
+    "ide_diagnostics": "no errors",
+    "git_diff_check": "passed",
+    "docker_compose_config": "passed"
+  },
+  "security": {
+    "captured_at_utc": "2026-10-30T19:44:37.814467+00:00",
+    "versions": {
+      "gitleaks": "8.30.1",
+      "trivy": "0.76.1"
+    },
+    "scope": "Git history and tracked/nonignored working files; private ignored environments are not exported",
+    "checks": [
+      {
+        "name": "git-secrets",
+        "exit_code": 0
+      },
+      {
+        "name": "working-files-secrets",
+        "exit_code": 0
+      },
+      {
+        "name": "dependencies",
+        "exit_code": 0
+      }
+    ],
+    "passed": true
+  },
+  "integration_boundaries": {
+    "external_smtp_provider_configured": false,
+    "smtp_delivery_verified_with": "controlled local SMTP receiver",
+    "payments": "existing test payment provider; no bank charges",
+    "docker_daemon": "unavailable; functional checks used native PostgreSQL and local application processes"
+  }
+}

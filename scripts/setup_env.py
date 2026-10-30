@@ -32,6 +32,8 @@ def main() -> None:
         f"DEMO_PRIVATE_DATA={'true' if args.demo else 'false'}\n"
         f"DEMO_MAILBOX_ENABLED={'true' if args.demo else 'false'}\n"
         "PASSWORD_RESET_EXPIRE_MINUTES=30\nPUBLIC_WEB_URL=http://localhost:5173\nLOG_LEVEL=INFO\nSUPPORT_CALENDAR_FILE=\n"
+        "MAIL_DELIVERY_MODE=auto\nSMTP_HOST=\nSMTP_PORT=587\nSMTP_FROM_EMAIL=\nSMTP_USERNAME=\nSMTP_PASSWORD=\n"
+        "SMTP_SECURITY=starttls\nSMTP_TIMEOUT_SECONDS=10\nMAIL_MAX_ATTEMPTS=5\nMAIL_RETRY_SECONDS=60\n"
         "CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173\n"
         "DB_PORT=5432\nAPI_PORT=8000\nWEB_PORT=5173\n"
         f"DATABASE_URL=postgresql+psycopg://sapar:{password}@localhost:5432/sapartravel\n"

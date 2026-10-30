@@ -5,18 +5,18 @@ import secrets
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
 from pydantic import EmailStr, Field
-from sqlalchemy import select, update
+from sqlalchemy import func, select, update
 from sqlalchemy.exc import IntegrityError
 
 from app.api.schemas import InputModel, LoginInput, ProfileInput, RegisterInput
 from app.core.config import get_settings
 from app.core.security import (Admin, CurrentUser, DbSession, DUMMY_HASH, check_auth_rate,
                                credential_digest, password_hash, token_for)
-from app.domain.engagement import DemoEmail, PasswordReset, RevokedAccessToken
+from app.domain.engagement import DemoEmail, OutboundEmail, PasswordReset, RevokedAccessToken
 from app.domain.models import User, utc_now
 from app.services.catalog_service import user_data
 from app.services.engagement_service import audit
-from app.services.mail_service import get_mail_delivery
+from app.services.mail_service import get_mail_delivery, usable_reset
 
 router = APIRouter()
 
@@ -115,6 +115,7 @@ def change_password(data: ChangePasswordInput, user: CurrentUser, db: DbSession)
 
 @router.post("/auth/forgot-password", dependencies=[Depends(check_auth_rate)])
 def forgot_password(data: ForgotPasswordInput, db: DbSession):
+    delivery = get_mail_delivery()
     # The response is identical for existing, blocked and unknown accounts. The local
     # delivery adapter is inspectable only through admin access or the private CLI.
     user = db.scalar(select(User).where(User.email == str(data.email).casefold(), User.is_active.is_(True)).with_for_update())
@@ -122,16 +123,18 @@ def forgot_password(data: ForgotPasswordInput, db: DbSession):
         token = secrets.token_urlsafe(32)
         now = utc_now()
         db.execute(update(PasswordReset).where(PasswordReset.user_id == user.id, PasswordReset.used_at.is_(None)).values(used_at=now))
-        db.add(PasswordReset(user_id=user.id, token_hash=sha256(token.encode()).hexdigest(),
+        reset = PasswordReset(user_id=user.id, token_hash=sha256(token.encode()).hexdigest(),
                              credential_digest=credential_digest(user),
-                             expires_at=now + timedelta(minutes=get_settings().password_reset_expire_minutes)))
+                             expires_at=now + timedelta(minutes=get_settings().password_reset_expire_minutes))
+        db.add(reset)
         link = get_settings().public_web_url.rstrip("/") + "/reset-password?token=" + token
-        get_mail_delivery().deliver(db, recipient=user.email, subject="SaparTravel — восстановление пароля / Password reset / Құпиясөзді қалпына келтіру",
+        delivery.deliver(db, recipient=user.email, subject="SaparTravel — восстановление пароля / Password reset / Құпиясөзді қалпына келтіру",
                          body=f"Восстановление пароля / Password reset / Құпиясөзді қалпына келтіру:\n{link}\n\n"
-                              f"Ссылка одноразовая, срок {get_settings().password_reset_expire_minutes} мин. / One use only. Ignore if you did not request it.")
+                              f"Ссылка одноразовая, срок {get_settings().password_reset_expire_minutes} мин. / One use only. Ignore if you did not request it.", reset=reset)
         audit(db, user.id, "account.password_reset_requested", "user", user.id)
         db.commit()
-    return {"message": "Если аккаунт существует, инструкция отправлена на его адрес.", "code": "reset_requested"}
+    return {"message": "Если аккаунт существует, инструкция будет отправлена на его адрес.", "code": "reset_requested",
+            "delivery": "email" if get_settings().resolved_mail_mode == "smtp" else "local"}
 
 
 @router.post("/auth/reset-password", dependencies=[Depends(check_auth_rate)])
@@ -167,3 +170,32 @@ def demo_mailbox(user: Admin, db: DbSession, recipient: str | None = Query(defau
     db.commit()
     return {"items": [{"id": item.id, "recipient": item.recipient, "subject": item.subject,
                        "body": item.body, "created_at": item.created_at.isoformat()} for item in rows]}
+
+
+@router.get("/admin/mail-delivery")
+def mail_delivery_status(user: Admin, db: DbSession):
+    settings = get_settings()
+    counts = dict(db.execute(select(OutboundEmail.state, func.count()).group_by(OutboundEmail.state)).all())
+    rows = db.scalars(select(OutboundEmail).order_by(OutboundEmail.created_at.desc()).limit(30)).all()
+    return {"mode": settings.resolved_mail_mode, "from_address": str(settings.smtp_from_email) if settings.smtp_from_email else None,
+            "local_mailbox_enabled": settings.demo_mailbox_enabled and settings.environment != "production",
+            "counts": {state: counts.get(state, 0) for state in ("pending", "sent", "failed", "cancelled")},
+            "items": [{"id": row.id, "recipient": row.recipient, "subject": row.subject,
+                       "state": row.state, "attempts": row.attempts, "error_code": row.error_code,
+                       "created_at": row.created_at.isoformat(), "sent_at": row.sent_at.isoformat() if row.sent_at else None}
+                      for row in rows]}
+
+
+@router.post("/admin/mail-delivery/{message_id}/retry")
+def retry_mail(message_id: str, user: Admin, db: DbSession):
+    if get_settings().resolved_mail_mode != "smtp":
+        raise HTTPException(503, "Почтовый сервис не настроен.")
+    row = db.scalar(select(OutboundEmail).where(OutboundEmail.id == message_id).with_for_update())
+    if row is None:
+        raise HTTPException(404, "Письмо не найдено.")
+    if row.state != "failed" or not usable_reset(db, row.password_reset):
+        raise HTTPException(409, "Повторная отправка этого письма недоступна. Запросите новую ссылку.")
+    row.state, row.attempts, row.error_code, row.next_attempt_at = "pending", 0, "", utc_now()
+    audit(db, user.id, "mail.retry", "outbound_email", row.id)
+    db.commit()
+    return {"state": "pending"}

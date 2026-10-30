@@ -188,7 +188,9 @@ function App() {
     </AppProvider>
   );
 }
-createRoot(document.getElementById("root")).render(
+const root = import.meta.hot?.data.root || createRoot(document.getElementById("root"));
+if (import.meta.hot) import.meta.hot.data.root = root;
+root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

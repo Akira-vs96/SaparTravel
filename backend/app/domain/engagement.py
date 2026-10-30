@@ -42,6 +42,27 @@ class DemoEmail(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, index=True)
 
 
+class OutboundEmail(Base):
+    __tablename__ = "outbound_emails"
+    __table_args__ = (
+        CheckConstraint("state IN ('pending','sent','failed','cancelled')", name="ck_outbound_email_state"),
+        CheckConstraint("attempts >= 0", name="ck_outbound_email_attempts"),
+        Index("ix_outbound_email_pending", "state", "next_attempt_at"),
+    )
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
+    recipient: Mapped[str] = mapped_column(String(254))
+    subject: Mapped[str] = mapped_column(String(200))
+    body: Mapped[str] = mapped_column(Text)
+    state: Mapped[str] = mapped_column(String(12), default="pending")
+    attempts: Mapped[int] = mapped_column(Integer, default=0)
+    next_attempt_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
+    sent_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    error_code: Mapped[str] = mapped_column(String(80), default="")
+    password_reset_id: Mapped[str | None] = mapped_column(ForeignKey("password_resets.id", ondelete="CASCADE"), nullable=True)
+    password_reset: Mapped[PasswordReset | None] = relationship()
+
+
 class Notification(Base):
     __tablename__ = "notifications"
     __table_args__ = (Index("ix_notifications_user_read_created", "user_id", "is_read", "created_at"),)

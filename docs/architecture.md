@@ -13,6 +13,10 @@ flowchart LR
   API --> Services[Catalog / Commerce / Engagement / Support]
   Services --> DB[(PostgreSQL: транзакции и миграции)]
   Worker[Worker: резервы и сверка операций] --> Services
+  API --> Mail[Mail delivery: транзакционная очередь]
+  Mail --> DB
+  Worker --> Mail
+  Mail --> SMTP[Настроенный SMTP-сервис]
   Ops[Внешние probes и backup/restore] --> Proxy
   Ops --> DB
   Course[Инструменты курса] --> GitHub[GitHub: задачи, переходы, CI, deployments]
@@ -31,7 +35,7 @@ flowchart LR
 | HTTP | [backend/app/api](../backend/app/api/) | Схемы, роли, владение, HTTP-ответы |
 | Прикладные правила | [backend/app/services](../backend/app/services/) | Серверная цена, резерв, возврат, поддержка, поиск |
 | Данные | [domain](../backend/app/domain/), [migrations](../backend/migrations/) | Ограничения БД и исторические снимки; миграции добавляются последовательно |
-| Интеграции | [adapters](../backend/app/adapters/), [mail service](../backend/app/services/mail_service.py) | Явный тестовый провайдер и почта; не выдаются за банковский эквайринг/SMTP |
+| Интеграции | [adapters](../backend/app/adapters/), [mail service](../backend/app/services/mail_service.py) | Тестовый платёжный провайдер; SMTP с очередью и повторами, отдельный частный локальный почтовый режим |
 | Эксплуатация | [scripts](../scripts/), [ops](ops/) | Проверки сервиса, backup/restore, отчёт SLI и расписания |
 | Курс | [scripts/course](../scripts/course/), [docs/labs](labs/) | Получение фактов, расчёты и отчёты; отдельная команда запуска |
 

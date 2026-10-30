@@ -4526,6 +4526,13 @@ p {
   margin-top: -4px;
   align-self: flex-end;
 }
+
+.password-field { display: grid; gap: 8px; }
+.password-input-wrap { position: relative; }
+.password-input-wrap input { width: 100%; padding-right: 50px; }
+.password-visibility { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); }
+.password-field small { color: var(--muted); }
+.mail-message-body { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }
 .auth-page {
   margin-top: 48px;
   margin-bottom: 70px;

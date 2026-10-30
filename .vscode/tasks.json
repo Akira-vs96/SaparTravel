@@ -1,0 +1,79 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "SaparTravel: API for functional checks",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-c",
+				"set -ea; source .env.functional; set +a; cd backend; exec ../.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload --no-access-log"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "SaparTravel: frontend",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"dev",
+				"--",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"5173",
+				"--strictPort"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "SaparTravel: frontend build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "SaparTravel: background worker",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-c",
+				"set -ea; source .env.functional; set +a; cd backend; exec ../.venv/bin/python -m app.worker --interval 5"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "SaparTravel: production preview",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"preview",
+				"--",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"5174",
+				"--strictPort"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

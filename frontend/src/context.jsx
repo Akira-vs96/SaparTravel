@@ -9,7 +9,8 @@ import React, {
 import { api } from "./api";
 import { LANGUAGES, translate } from "./i18n";
 
-const AppContext = createContext(null);
+const AppContext = import.meta.hot?.data.appContext || createContext(null);
+if (import.meta.hot) import.meta.hot.data.appContext = AppContext;
 export const useApp = () => useContext(AppContext);
 const readStorage = (key, fallback = "") => {
   try {
@@ -179,9 +180,14 @@ export function AppProvider({ children }) {
     (error) => {
       if (error?.code === "network") return t("network");
       if (error?.code === "invalid_response") return t("invalidResponse");
+      if (error?.code === "passwords_mismatch") return t("passwordsMismatch");
       const specific = {
         "Неверный адрес электронной почты или пароль.": "invalidCredentials",
         "Аккаунт с таким адресом уже существует.": "emailExists",
+        "Ссылка недействительна или срок её действия истёк.": "resetLinkInvalid",
+        "Текущий пароль указан неверно.": "currentPasswordIncorrect",
+        "Новый пароль должен отличаться от текущего.": "newPasswordSame",
+        "Восстановление пароля по почте временно недоступно. Попробуйте позже.": "resetUnavailable",
         "Некорректный номер тестовой карты или контрольная сумма.":
           "invalid_card",
         "Разрешены только документированные тестовые карты. Не вводите реальные банковские данные.":

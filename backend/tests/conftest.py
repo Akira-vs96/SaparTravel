@@ -20,6 +20,7 @@ os.environ.update(
     JWT_SECRET=string.ascii_letters + string.digits + string.punctuation,
     ADMIN_EMAIL="", ADMIN_PASSWORD="", AUTH_RATE_LIMIT="0", SEED_DEMO_DATA="false",
     PAYMENT_DEMO_ENABLED="true", DEMO_MAILBOX_ENABLED="false", DEMO_PRIVATE_DATA="false",
+    MAIL_DELIVERY_MODE="local", SMTP_HOST="", SMTP_FROM_EMAIL="", SMTP_USERNAME="", SMTP_PASSWORD="",
 )
 
 from app.core.security import password_hash, token_for

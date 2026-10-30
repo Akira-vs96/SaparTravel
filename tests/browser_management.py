@@ -81,7 +81,7 @@ def check_host_workflow(browser, admin_page, base_url: str, destination_id: str,
         host.goto(f"{base_url}/register")
         host.get_by_label("Name", exact=True).fill(f"Browser Host {suffix}")
         host.get_by_label("Email address", exact=True).fill(email)
-        host.get_by_label("Password", exact=False).fill(secrets.token_urlsafe(24))
+        host.get_by_label("Password", exact=True).fill(secrets.token_urlsafe(24))
         host.get_by_role("button", name="Create account", exact=True).click()
         expect(host).to_have_url(re.compile("/account$"))
         admin_page.goto(f"{base_url}/manage")
@@ -201,7 +201,7 @@ def run(base_url: str) -> None:
         try:
             page.goto(f"{base_url}/login")
             page.get_by_label("Email address", exact=True).fill(email)
-            page.get_by_label("Password", exact=False).fill(password)
+            page.get_by_label("Password", exact=True).fill(password)
             page.get_by_role("button", name="Log in", exact=True).click()
             expect(page).to_have_url(re.compile("/account$"))
             page.goto(f"{base_url}/manage")
