@@ -1,0 +1,13 @@
+{
+  "annual_benefit": "21700",
+  "initial_cost": "20300",
+  "annual_costs": [
+    "8900",
+    "8400",
+    "8400"
+  ],
+  "discount_rate": "0.15",
+  "currency": "USD",
+  "source": "SaparTravel_Business_Case_LZ3.docx",
+  "assumptions_not_customer_measurements": true
+}

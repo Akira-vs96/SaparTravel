@@ -1,0 +1,15 @@
+requirement,vacancies,denominator,percent,group
+agile,7,10,70.0,50%+
+analytics,6,10,60.0,50%+
+automation,4,10,40.0,20–49%
+budget,4,10,40.0,20–49%
+communication,10,10,100.0,50%+
+documentation,7,10,70.0,50%+
+education,7,10,70.0,50%+
+english,7,10,70.0,50%+
+planning,10,10,100.0,50%+
+requirements,7,10,70.0,50%+
+risk,8,10,80.0,50%+
+teamwork,9,10,90.0,50%+
+technical,9,10,90.0,50%+
+tracker,3,10,30.0,20–49%

@@ -1,0 +1,361 @@
+{
+  "examples": 30,
+  "gold_approved": false,
+  "certified": false,
+  "reference_status": "assistant-proposed labels; human annotation pending",
+  "diagnostic_metrics": {
+    "rules": {
+      "accuracy": 0.8333333333333334,
+      "macro_f1": 0.8958730158730159,
+      "abstentions": 5,
+      "per_class": {
+        "catalog": {
+          "support": 8,
+          "f1": 0.8571428571428571
+        },
+        "access": {
+          "support": 5,
+          "f1": 0.8888888888888888
+        },
+        "booking": {
+          "support": 8,
+          "f1": 0.9333333333333333
+        },
+        "operations": {
+          "support": 3,
+          "f1": 0.8
+        },
+        "process": {
+          "support": 6,
+          "f1": 1.0
+        }
+      }
+    },
+    "zero-shot": {
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "abstentions": 29,
+      "per_class": {
+        "catalog": {
+          "support": 8,
+          "f1": 0.0
+        },
+        "access": {
+          "support": 5,
+          "f1": 0.0
+        },
+        "booking": {
+          "support": 8,
+          "f1": 0.0
+        },
+        "operations": {
+          "support": 3,
+          "f1": 0.0
+        },
+        "process": {
+          "support": 6,
+          "f1": 0.0
+        }
+      }
+    },
+    "few-shot": {
+      "accuracy": 0.23333333333333334,
+      "macro_f1": 0.08235294117647059,
+      "abstentions": 2,
+      "per_class": {
+        "catalog": {
+          "support": 8,
+          "f1": 0.4117647058823529
+        },
+        "access": {
+          "support": 5,
+          "f1": 0.0
+        },
+        "booking": {
+          "support": 8,
+          "f1": 0.0
+        },
+        "operations": {
+          "support": 3,
+          "f1": 0.0
+        },
+        "process": {
+          "support": 6,
+          "f1": 0.0
+        }
+      }
+    }
+  },
+  "errors": [
+    {
+      "id": "GH-001",
+      "reference": "operations",
+      "predictions": {
+        "rules": "operations",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-002",
+      "reference": "access",
+      "predictions": {
+        "rules": "access",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-003",
+      "reference": "access",
+      "predictions": {
+        "rules": "access",
+        "zero-shot": "operations",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-004",
+      "reference": "process",
+      "predictions": {
+        "rules": "process",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-005",
+      "reference": "process",
+      "predictions": {
+        "rules": "process",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-006",
+      "reference": "process",
+      "predictions": {
+        "rules": "process",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-007",
+      "reference": "access",
+      "predictions": {
+        "rules": "abstain",
+        "zero-shot": "abstain",
+        "few-shot": "abstain"
+      }
+    },
+    {
+      "id": "GH-008",
+      "reference": "operations",
+      "predictions": {
+        "rules": "operations",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-009",
+      "reference": "process",
+      "predictions": {
+        "rules": "process",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-010",
+      "reference": "process",
+      "predictions": {
+        "rules": "process",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-011",
+      "reference": "booking",
+      "predictions": {
+        "rules": "booking",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-012",
+      "reference": "process",
+      "predictions": {
+        "rules": "process",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-013",
+      "reference": "catalog",
+      "predictions": {
+        "rules": "catalog",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-014",
+      "reference": "catalog",
+      "predictions": {
+        "rules": "catalog",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-015",
+      "reference": "catalog",
+      "predictions": {
+        "rules": "catalog",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-016",
+      "reference": "catalog",
+      "predictions": {
+        "rules": "catalog",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-017",
+      "reference": "booking",
+      "predictions": {
+        "rules": "booking",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-018",
+      "reference": "booking",
+      "predictions": {
+        "rules": "booking",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-019",
+      "reference": "access",
+      "predictions": {
+        "rules": "access",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-020",
+      "reference": "catalog",
+      "predictions": {
+        "rules": "abstain",
+        "zero-shot": "abstain",
+        "few-shot": "operations"
+      }
+    },
+    {
+      "id": "GH-021",
+      "reference": "booking",
+      "predictions": {
+        "rules": "booking",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-022",
+      "reference": "booking",
+      "predictions": {
+        "rules": "abstain",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-023",
+      "reference": "booking",
+      "predictions": {
+        "rules": "booking",
+        "zero-shot": "abstain",
+        "few-shot": "abstain"
+      }
+    },
+    {
+      "id": "GH-024",
+      "reference": "catalog",
+      "predictions": {
+        "rules": "catalog",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-025",
+      "reference": "access",
+      "predictions": {
+        "rules": "access",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-026",
+      "reference": "catalog",
+      "predictions": {
+        "rules": "abstain",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-027",
+      "reference": "booking",
+      "predictions": {
+        "rules": "booking",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-028",
+      "reference": "booking",
+      "predictions": {
+        "rules": "booking",
+        "zero-shot": "abstain",
+        "few-shot": "operations"
+      }
+    },
+    {
+      "id": "GH-029",
+      "reference": "catalog",
+      "predictions": {
+        "rules": "catalog",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    },
+    {
+      "id": "GH-030",
+      "reference": "operations",
+      "predictions": {
+        "rules": "abstain",
+        "zero-shot": "abstain",
+        "few-shot": "catalog"
+      }
+    }
+  ]
+}

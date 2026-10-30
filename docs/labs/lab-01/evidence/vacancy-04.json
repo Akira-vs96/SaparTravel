@@ -1,0 +1,26 @@
+{
+  "id": "JOB-04",
+  "role": "Senior Delivery Manager",
+  "employer": "EPAM",
+  "city": "Kazakhstan / hybrid",
+  "channel": "Employer careers",
+  "url": "https://careers.epam.com/en/vacancy/bltf8583262f2e02ca2?country=Kazakhstan",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "requirements",
+    "budget",
+    "risk",
+    "agile",
+    "analytics",
+    "communication",
+    "technical",
+    "automation",
+    "documentation",
+    "teamwork",
+    "english"
+  ],
+  "paraphrased_requirements": "Семь лет лидерства; delivery от требований до production; WBS, бюджет, риски, UAT, Agile/SAFe/Kanban, GenAI и английский B2.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}

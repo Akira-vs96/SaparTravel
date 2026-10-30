@@ -1,0 +1,6 @@
+[tool.ruff]
+target-version = "py312"
+extend-exclude = ["backend/debugging_lab", ".venv", "frontend/node_modules"]
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]

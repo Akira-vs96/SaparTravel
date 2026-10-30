@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "coverage_percent": 86.17,
+  "tests_passed": 86,
+  "duration_seconds": 41.01,
+  "threshold_percent": 60,
+  "scope": "isolated PostgreSQL 17; Python 3.13.5; cancellation reason and request-linked administrative audit"
+}

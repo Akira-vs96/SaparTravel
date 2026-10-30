@@ -3,7 +3,7 @@ from decimal import Decimal
 from typing import Annotated, Literal
 from pydantic import Field, field_validator, model_validator
 
-from app.api.schemas import InputModel, Money
+from app.api.schemas import Category, InputModel, Money
 
 
 class PaymentInput(InputModel):
@@ -39,7 +39,7 @@ class PromoInput(InputModel):
     per_user_limit: int = Field(default=1, ge=1, le=1000)
     is_active: bool = True
     experience_id: str | None = None
-    category: Literal["Nature", "Culture", "Adventure", "Food", "Beach", "City"] | None = None
+    category: Category | None = None
 
     @field_validator("starts_at", "ends_at")
     @classmethod

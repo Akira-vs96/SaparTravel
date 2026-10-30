@@ -27,6 +27,7 @@ export default function Support({ embedded = false }) {
     subject: "",
     body: "",
     booking_id: params.get("booking") || null,
+    priority: "P3",
   });
   const [error, setError] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -62,6 +63,7 @@ export default function Support({ embedded = false }) {
                   <MessageCircle size={25} />
                   <div>
                     <h2>{ticket.subject}</h2>
+                    <small>{ticket.priority} · {t(`priority${ticket.priority}`)}</small>
                     <small>
                       {formatTime(ticket.updated_at || ticket.created_at, lang)}
                     </small>
@@ -122,6 +124,14 @@ export default function Support({ embedded = false }) {
                 onChange={(e) => setForm({ ...form, body: e.target.value })}
               />
             </label>
+            <label>
+              {t("priority")}
+              <select value={form.priority} onChange={(e) => setForm({ ...form, priority: e.target.value })}>
+                {["P1", "P2", "P3"].map((priority) => (
+                  <option value={priority} key={priority}>{priority} · {t(`priority${priority}`)}</option>
+                ))}
+              </select>
+            </label>
             <FormError error={error} />
             <button className="button primary" disabled={busy}>
               {t(busy ? "sending" : "sendMessage")}
@@ -141,6 +151,7 @@ export function SupportDetail() {
   const [error, setError] = useState(null);
   const [busy, setBusy] = useState(false);
   const [older, setOlder] = useState([]);
+  const [acknowledge, setAcknowledge] = useState(true);
   const changeStatus = async (status) => {
     setBusy(true);
     setError(null);
@@ -171,6 +182,26 @@ export function SupportDetail() {
                 {t(ticket.status)}
               </span>
             </PageHeading>
+            <div className="surface info-note">
+              <p>{ticket.priority} · {t(`priority${ticket.priority}`)}</p>
+              {ticket.response_due_at && <p>{t("responseDue")}: {formatTime(ticket.response_due_at, lang)}</p>}
+              {ticket.first_response_at && <p>{t("firstResponse")}: {formatTime(ticket.first_response_at, lang)}</p>}
+              {ticket.response_overdue && <p role="status">{t("responseOverdue")}</p>}
+              {["vendor", "admin"].includes(user.role) && ticket.user_id !== user.id && ticket.can_acknowledge && (
+                <label>{t("priority")}
+                  <select value={ticket.priority} disabled={busy} onChange={async (event) => {
+                    setBusy(true);
+                    setError(null);
+                    try {
+                      await api(`/support/tickets/${id}/priority`, { token, method: "PATCH", body: { priority: event.target.value } });
+                      resource.reload();
+                    } catch (error) { setError(error); } finally { setBusy(false); }
+                  }}>
+                    {["P1", "P2", "P3"].map((priority) => <option value={priority} key={priority}>{priority} · {t(`priority${priority}`)}</option>)}
+                  </select>
+                </label>
+              )}
+            </div>
             <div className="surface conversation">
               {ticket.messages_total >
                 ticket.messages.length + older.length && (
@@ -223,7 +254,7 @@ export function SupportDetail() {
                     await api(`/support/tickets/${id}/messages`, {
                       token,
                       method: "POST",
-                      body: { body },
+                      body: { body, acknowledge: Boolean(acknowledge && ticket.can_acknowledge && ["vendor", "admin"].includes(user.role) && ticket.user_id !== user.id) },
                     });
                     setBody("");
                     setOlder([]);
@@ -246,6 +277,12 @@ export function SupportDetail() {
                     onChange={(e) => setBody(e.target.value)}
                   />
                 </label>
+                {["vendor", "admin"].includes(user.role) && ticket.user_id !== user.id && ticket.can_acknowledge && (
+                  <label className="checkbox-label">
+                    <input type="checkbox" checked={acknowledge} onChange={(event) => setAcknowledge(event.target.checked)} />
+                    {t("acknowledgeResponse")}
+                  </label>
+                )}
                 <FormError error={error} />
                 <div className="button-row">
                   <button

@@ -1,0 +1,23 @@
+{
+  "id": "JOB-08",
+  "role": "Junior Project Manager",
+  "employer": "Société Générale",
+  "city": "Bucuresti, Romania",
+  "channel": "Employer careers",
+  "url": "https://careers.societegenerale.com/en/job-offers/junior-project-manager-26000JUD-en",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "requirements",
+    "risk",
+    "agile",
+    "analytics",
+    "communication",
+    "documentation",
+    "teamwork",
+    "english"
+  ],
+  "paraphrased_requirements": "Один–три года в PM/BA/операциях/аналитике; Excel/PowerPoint, данные, статусы, KPI и риски, французский и английский; Agile/Power BI как плюс.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}

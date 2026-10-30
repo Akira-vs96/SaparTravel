@@ -1,0 +1,10 @@
+{
+  "code_cells": 5,
+  "executed_cells": 5,
+  "errors": 0,
+  "seed": 42,
+  "runs": 10000,
+  "source": "data/labs/lab-06/throughput.csv",
+  "sha256": "ad8e97b0ba45a51f28f55a0a7fe6e65ebf6af273ebac75672dd6ff79e2603115",
+  "nbconvert_version": "7.17.2"
+}

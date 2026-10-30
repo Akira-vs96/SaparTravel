@@ -1,0 +1,114 @@
+[
+  {
+    "date": "2026-09-21",
+    "Backlog": 5,
+    "Ready": 4,
+    "In progress": 1,
+    "Blocked": 1,
+    "Done": 1
+  },
+  {
+    "date": "2026-09-22",
+    "Backlog": 5,
+    "Ready": 4,
+    "In progress": 1,
+    "Blocked": 1,
+    "Done": 1
+  },
+  {
+    "date": "2026-09-23",
+    "Backlog": 5,
+    "Ready": 4,
+    "In progress": 1,
+    "Blocked": 1,
+    "Done": 1
+  },
+  {
+    "date": "2026-09-24",
+    "Backlog": 5,
+    "Ready": 4,
+    "In progress": 1,
+    "Blocked": 1,
+    "Done": 1
+  },
+  {
+    "date": "2026-09-25",
+    "Backlog": 5,
+    "Ready": 4,
+    "In progress": 1,
+    "Blocked": 1,
+    "Done": 1
+  },
+  {
+    "date": "2026-09-26",
+    "Done": 4,
+    "Backlog": 5,
+    "Ready": 19,
+    "In progress": 1,
+    "Blocked": 1
+  },
+  {
+    "date": "2026-09-27",
+    "Done": 4,
+    "Backlog": 5,
+    "Ready": 19,
+    "In progress": 1,
+    "Blocked": 1
+  },
+  {
+    "date": "2026-09-28",
+    "Done": 4,
+    "Backlog": 5,
+    "Ready": 19,
+    "In progress": 1,
+    "Blocked": 1
+  },
+  {
+    "date": "2026-09-29",
+    "Done": 4,
+    "Backlog": 5,
+    "Ready": 19,
+    "In progress": 1,
+    "Blocked": 1
+  },
+  {
+    "date": "2026-09-30",
+    "Done": 4,
+    "Backlog": 5,
+    "Ready": 19,
+    "In progress": 1,
+    "Blocked": 1
+  },
+  {
+    "date": "2026-10-01",
+    "Done": 4,
+    "Backlog": 5,
+    "Ready": 19,
+    "In progress": 1,
+    "Blocked": 1
+  },
+  {
+    "date": "2026-10-02",
+    "Done": 4,
+    "Backlog": 5,
+    "Ready": 19,
+    "In progress": 1,
+    "Blocked": 1
+  },
+  {
+    "date": "2026-10-03",
+    "Done": 4,
+    "Backlog": 5,
+    "Ready": 19,
+    "In progress": 1,
+    "Blocked": 1
+  },
+  {
+    "date": "2026-10-04",
+    "Done": 4,
+    "Backlog": 5,
+    "Ready": 19,
+    "In progress": 1,
+    "Blocked": 1
+  }
+]

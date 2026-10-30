@@ -186,8 +186,8 @@ const strings = {
   allContinents: ["Все континенты", "Барлық құрлықтар", "All continents"],
   category: ["Впечатления", "Әсерлер", "Experience"],
   allCategories: ["Все впечатления", "Барлық әсерлер", "All experiences"],
-  minPrice: ["Цена от, $", "Бағасы, $ бастап", "Min price, $"],
-  maxPrice: ["Цена до, $", "Бағасы, $ дейін", "Max price, $"],
+  minPrice: ["Минимальная цена", "Ең төмен баға", "Minimum price"],
+  maxPrice: ["Максимальная цена", "Ең жоғары баға", "Maximum price"],
   durationMax: ["Не более дней", "Күн саны, ең көбі", "Maximum days"],
   sort: ["Сортировка", "Сұрыптау", "Sort by"],
   recommended: ["Рекомендуемые", "Ұсынылған", "Recommended"],
@@ -232,6 +232,11 @@ const strings = {
     "The server is unavailable. Check your connection and try again.",
   ],
   retry: ["Попробовать снова", "Қайталау", "Try again"],
+  invalidResponse: [
+    "Сервер вернул некорректный ответ. Попробуйте снова.",
+    "Сервер қате жауап қайтарды. Қайталап көріңіз.",
+    "The server returned an invalid response. Please try again.",
+  ],
   backCatalog: ["Все маршруты", "Барлық бағыттар", "All trips"],
   hostedBy: ["Организатор", "Ұйымдастырушы", "Hosted by"],
   overview: ["О путешествии", "Саяхат туралы", "The experience"],
@@ -1254,6 +1259,17 @@ Object.assign(strings, {
     "Бюджетіңізге, қызығушылығыңызға және ұзақтығына сай таңдалды",
     "Matched to your budget, interests, and trip length",
   ],
+});
+Object.assign(strings, {
+  organizerCancellationFull: ["При отмене организатором положен полный возврат за вычетом уже выполненных или обрабатываемых возвратов.", "Ұйымдастырушы тоқтатса, орындалған немесе өңделіп жатқан қайтарымдар шегеріліп, толық сома қайтарылады.", "Organizer cancellation gives a full refund, less refunds already completed or in progress."],
+  priority: ["Приоритет", "Басымдық", "Priority"],
+  priorityP1: ["Критическая проблема", "Күрделі мәселе", "Critical issue"],
+  priorityP2: ["Существенная проблема", "Маңызды мәселе", "Major issue"],
+  priorityP3: ["Обычный вопрос", "Жалпы сұрақ", "General request"],
+  responseDue: ["Ответ ожидается до", "Жауап күтілетін уақыт", "Response due by"],
+  firstResponse: ["Первая реакция сотрудника", "Қызметкердің алғашқы жауабы", "First staff response"],
+  responseOverdue: ["Срок первой реакции истёк", "Алғашқы жауап мерзімі өтті", "The first response is overdue"],
+  acknowledgeResponse: ["Подтверждаю приоритет и сообщаю следующий шаг (от 20 символов)", "Басымдықты растап, келесі қадамды хабарлаймын (кемінде 20 таңба)", "I confirm the priority and describe the next step (at least 20 characters)"],
 });
 export const LANGUAGES = ["ru", "kk", "en"];
 export const CONTINENTS = [

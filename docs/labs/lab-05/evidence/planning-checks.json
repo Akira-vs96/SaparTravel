@@ -1,0 +1,52 @@
+{
+  "package_count": 18,
+  "package_hours_total": 171,
+  "capacity_gross": 288,
+  "absence": 48,
+  "baseline_reserve": 36,
+  "net": 204,
+  "raci": [
+    {
+      "artifact": "Цель, границы и приоритеты MVP",
+      "accountable_count": 1
+    },
+    {
+      "artifact": "WBS, оценки и календарный baseline",
+      "accountable_count": 1
+    },
+    {
+      "artifact": "UX-потоки и словарь локализации",
+      "accountable_count": 1
+    },
+    {
+      "artifact": "Схема БД и миграции",
+      "accountable_count": 1
+    },
+    {
+      "artifact": "Реализация API и интерфейса",
+      "accountable_count": 1
+    },
+    {
+      "artifact": "Тест-план и результаты quality gate",
+      "accountable_count": 1
+    },
+    {
+      "artifact": "Проверка безопасности и ПДн",
+      "accountable_count": 1
+    },
+    {
+      "artifact": "Развёртывание и инфраструктурный runbook",
+      "accountable_count": 1
+    },
+    {
+      "artifact": "UAT и решение о приёмке продукта",
+      "accountable_count": 1
+    },
+    {
+      "artifact": "Обучение и эксплуатационная передача",
+      "accountable_count": 1
+    }
+  ],
+  "passed": true,
+  "values_are_estimates_not_actuals": true
+}

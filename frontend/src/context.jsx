@@ -178,6 +178,7 @@ export function AppProvider({ children }) {
   const errorText = useCallback(
     (error) => {
       if (error?.code === "network") return t("network");
+      if (error?.code === "invalid_response") return t("invalidResponse");
       const specific = {
         "Неверный адрес электронной почты или пароль.": "invalidCredentials",
         "Аккаунт с таким адресом уже существует.": "emailExists",

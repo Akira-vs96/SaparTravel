@@ -1,0 +1,10 @@
+{
+  "browser": "Chromium",
+  "panels": 6,
+  "sponsor_panels": 4,
+  "team_panels": 2,
+  "mobile_width": 360,
+  "horizontal_overflow": false,
+  "javascript_errors": [],
+  "passed": true
+}

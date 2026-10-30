@@ -23,9 +23,7 @@ import {
 import PaymentForm from "../components/PaymentForm";
 import { BookingReview } from "../components/Reviews";
 import { CheckoutSteps } from "./Checkout";
-import CancellationPolicy, {
-  refundPercent,
-} from "../components/CancellationPolicy";
+import CancellationPolicy from "../components/CancellationPolicy";
 export default function BookingDetail({ management = false }) {
   const { id } = useParams();
   const { lang } = useApp();
@@ -50,6 +48,8 @@ export default function BookingDetail({ management = false }) {
 function Detail({ booking, reload, management }) {
   const { t, lang, token, notify, errorText } = useApp();
   const [cancelOpen, setCancelOpen] = useState(false);
+  const [cancelQuote, setCancelQuote] = useState(null);
+  const [cancelReason, setCancelReason] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
   const cancel = async () => {
@@ -64,7 +64,7 @@ function Detail({ booking, reload, management }) {
           token,
           method: management ? "PATCH" : "POST",
           body: management
-            ? { status: "cancelled" }
+            ? { status: "cancelled", reason: cancelReason.trim() }
             : { reason: "traveler_request" },
         },
       );
@@ -431,7 +431,24 @@ function Detail({ booking, reload, management }) {
           {["pending", "confirmed"].includes(booking.status) && (
             <button
               className="text-button danger-text"
-              onClick={() => setCancelOpen(true)}
+              onClick={async () => {
+                setBusy(true);
+                setError(null);
+                try {
+                  const quote = await api(
+                    `${management ? "/manage" : ""}/bookings/${booking.id}/cancellation-quote`,
+                    { token },
+                  );
+                  setCancelQuote(quote);
+                  setCancelReason("");
+                  setCancelOpen(true);
+                } catch (error) {
+                  notify(errorText(error));
+                } finally {
+                  setBusy(false);
+                }
+              }}
+              disabled={busy}
             >
               {t("cancelBooking")}
             </button>
@@ -445,15 +462,28 @@ function Detail({ booking, reload, management }) {
         >
           <p>{booking.experience.title}</p>
           <CancellationPolicy policy={booking.cancellation_policy} />
+          {management && <p className="info-note">{t("organizerCancellationFull")}</p>}
           <p className="info-note">
             {t("estimatedRefund")}:{" "}
             {money(
-              (Number(booking.paid_amount || 0) * refundPercent(booking)) / 100,
+              cancelQuote?.amount || "0",
               lang,
               booking.currency,
             )}
           </p>
           <p>{t("refundNotice")}</p>
+          {management && (
+            <label>
+              {t("reason")}
+              <textarea
+                required
+                minLength={3}
+                maxLength={500}
+                value={cancelReason}
+                onChange={(event) => setCancelReason(event.target.value)}
+              />
+            </label>
+          )}
           <FormError error={error} />
           <div className="modal-actions">
             <button
@@ -463,7 +493,7 @@ function Detail({ booking, reload, management }) {
             >
               {t("keepBooking")}
             </button>
-            <button className="button danger" disabled={busy} onClick={cancel}>
+            <button className="button danger" disabled={busy || (management && cancelReason.trim().length < 3)} onClick={cancel}>
               {t(busy ? "sending" : "cancelBooking")}
             </button>
           </div>

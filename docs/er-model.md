@@ -1,6 +1,6 @@
 # ER-модель и обоснование третьей нормальной формы
 
-Текущая схема: 36 таблиц, миграции `0001 → 0002 → 0003 → 0004`. История MVP
+Текущая схема: 36 таблиц, миграции `0001 → 0002 → 0003 → 0004 → 0005`. История MVP
 не удаляется: `0001_initial.py` остаётся исходной схемой. Словарь колонок,
 ключей, CHECK и индексов: [postgresql-schema.md](postgresql-schema.md).
 Результаты запусков: [verification-results.md](verification-results.md).
@@ -11,6 +11,7 @@ erDiagram
     USERS ||--o{ BOOKINGS : books
     USERS ||--o{ REVOKED_ACCESS_TOKENS : revokes
     USERS ||--o{ PASSWORD_RESETS : requests
+    USERS |o--o{ SUPPORT_TICKETS : acknowledges
     DESTINATIONS ||--o{ DESTINATION_TRANSLATIONS : translates
     DESTINATIONS ||--o{ EXPERIENCES : contains
     CATEGORIES ||--o{ EXPERIENCES : categorizes
@@ -75,6 +76,18 @@ erDiagram
 | Reviews | `booking_id → review`; `id → rating,text,moderation` | Одна запись на завершённую поездку; автор и тур проверены по брони |
 | Favorites | `(user_id,experience_id) → created_at` | Полный составной PK запрещает повтор |
 | Support | `ticket_id → owner,subject,status`; `message_id → ticket,author,body` | Ответы — отдельные строки с автором и правами доступа |
+
+Миграция `0005` добавляет факты приоритета, срока и первой реакции поддержки.
+`first_response_by` — FK сотрудника, `(response_due_at,priority)` индексирует
+месячную выборку. `response_calendar` — исторический снимок согласованного
+правила, а не изменяемый справочник: новая версия не переписывает старые сроки.
+`response_working_seconds` — контролируемая проекция фактов регистрации и
+первой реакции в этом снимке. Для старых записей неизвестные значения остаются NULL.
+
+`users.is_monitoring` и `experiences.is_monitoring` отделяют технические
+ресурсы; `bookings.is_synthetic` фиксирует происхождение контрольной операции.
+Флаг задаёт сервер, технический турист бронирует только технический тур.
+Аналитика/CSV исключают такие сделки, каталог/рекомендации — такие туры.
 
 В реляционном ядре атрибуты зависят от кандидатного ключа, полного ключа
 и не зависят транзитивно от другого неключевого атрибута. Суррогатные ID

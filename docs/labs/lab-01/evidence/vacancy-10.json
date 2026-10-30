@@ -1,0 +1,22 @@
+{
+  "id": "JOB-10",
+  "role": "IT Project Manager",
+  "employer": "MAXINUM CONSULTING",
+  "city": "Алматы",
+  "channel": "Astana Hub",
+  "url": "https://astanahub.com/ru/vacancy/6708",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "requirements",
+    "communication",
+    "technical",
+    "automation",
+    "documentation",
+    "english",
+    "education"
+  ],
+  "paraphrased_requirements": "Без опыта; университет или PM-курсы, регулярная практика ИИ, системное мышление, коммуникации и ответственность; русский, казахский/английский как плюс; небольшие проекты от брифа до поддержки.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}

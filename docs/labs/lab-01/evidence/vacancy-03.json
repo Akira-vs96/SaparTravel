@@ -1,0 +1,25 @@
+{
+  "id": "JOB-03",
+  "role": "Менеджер проектов",
+  "employer": "QazCode",
+  "city": "Алматы",
+  "channel": "Astana Hub",
+  "url": "https://astanahub.com/ru/vacancy/6462",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "budget",
+    "risk",
+    "agile",
+    "analytics",
+    "communication",
+    "technical",
+    "documentation",
+    "teamwork",
+    "english",
+    "education"
+  ],
+  "paraphrased_requirements": "Пять лет PM и восемь лет профессионального опыта; Agile/Waterfall/Hybrid, ресурсы, бюджет, риски, MS Project/Excel/PowerPoint, русский и английский.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}

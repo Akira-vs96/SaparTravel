@@ -1,0 +1,28 @@
+{
+  "currency": "USD",
+  "status": "planning assumptions; customer measurements pending",
+  "tco": "46000",
+  "horizon_years": 3,
+  "roi": "0.4152173913043478260869565217",
+  "npv": "9632.11",
+  "payback_years": "1.563909774436090225563909774",
+  "cost_of_delay_per_month": "1808.33",
+  "break_even_annual_benefit": "15333.33333333333333333333333",
+  "sensitivity": [
+    {
+      "cost_factor": "1.3",
+      "benefit_factor": "1",
+      "roi": "0.08862876254180602006688963211"
+    },
+    {
+      "cost_factor": "1",
+      "benefit_factor": "0.5",
+      "roi": "-0.2923913043478260869565217391"
+    },
+    {
+      "cost_factor": "1.3",
+      "benefit_factor": "0.5",
+      "roi": "-0.4556856187290969899665551839"
+    }
+  ]
+}

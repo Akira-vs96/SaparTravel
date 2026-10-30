@@ -1,0 +1,16 @@
+{
+  "text": "{\"summary\":\"CI success, no manual deployment, 3 recorded deployments, 2 issues closed, 0 issues created, 0 sprint goal, 0 customer approval\"}",
+  "usage": {
+    "completion_tokens": 36,
+    "prompt_tokens": 204,
+    "total_tokens": 240,
+    "prompt_tokens_details": {
+      "cached_tokens": 121
+    }
+  },
+  "model": "sapar-pm-qwen",
+  "temperature": 0,
+  "seed": 42,
+  "seconds": 1.9666,
+  "timestamp_utc": "2026-10-30T05:15:32.673143+00:00"
+}

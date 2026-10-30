@@ -1,0 +1,14 @@
+{
+  "start_utc": "2026-09-18T00:00:00+00:00",
+  "end_utc": "2026-10-30T00:00:00+00:00",
+  "deployment_count": 0,
+  "deployment_frequency_per_week": null,
+  "lead_time_median_hours": null,
+  "change_failure_rate_percent": null,
+  "recovery_median_minutes": null,
+  "ci_runs": 38,
+  "ci_success": 27,
+  "ci_failure": 10,
+  "status": "no_deployment_evidence",
+  "limitation": "A green CI run is not a deployment. Missing incident evidence is not a 0% failure rate."
+}

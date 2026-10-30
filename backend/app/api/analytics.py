@@ -44,13 +44,13 @@ def analytics(user: Manager, db: DbSession,
               start: date | None = Query(default=None, alias="from"),
               end: date | None = Query(default=None, alias="to")):
     lower, upper = bounds(start, end)
-    base = scope(select(Booking.id).join(Departure).join(Experience), user)
+    base = scope(select(Booking.id).join(Departure).join(Experience).where(Booking.is_synthetic.is_(False)), user)
     booking_ids = period(base, Booking.created_at, lower, upper)
     bookings_count, travelers_count = db.execute(select(func.count(), func.coalesce(func.sum(Booking.travelers_count), 0)).where(
         Booking.id.in_(booking_ids))).one()
     turnover = db.execute(select(Booking.currency, func.sum(Booking.total_amount)).where(
         Booking.id.in_(booking_ids), Booking.status.in_(("confirmed", "completed"))).group_by(Booking.currency)).all()
-    owned_bookings = scope(select(Booking.id).join(Departure).join(Experience), user)
+    owned_bookings = scope(select(Booking.id).join(Departure).join(Experience).where(Booking.is_synthetic.is_(False)), user)
     payments = period(select(PaymentAttempt.currency, func.sum(PaymentAttempt.amount)).where(
         PaymentAttempt.booking_id.in_(owned_bookings), PaymentAttempt.status == "succeeded"), PaymentAttempt.created_at, lower, upper)
     refunds = period(select(Refund.currency, func.sum(Refund.amount)).where(
@@ -62,7 +62,8 @@ def analytics(user: Manager, db: DbSession,
                    "successful_payments": amount(paid.get(currency)), "refunds_amount": amount(returned.get(currency)),
                    "net_received": amount(paid.get(currency, 0)-returned.get(currency, 0))}
                   for currency in sorted(set(sales) | set(paid) | set(returned) | {"KZT"})]
-    departures_query = scope(select(Departure.id, Departure.capacity).join(Experience).where(Departure.status == "scheduled"), user)
+    departures_query = scope(select(Departure.id, Departure.capacity).join(Experience).where(
+        Departure.status == "scheduled", Experience.is_monitoring.is_(False)), user)
     if start:
         departures_query = departures_query.where(Departure.start_date >= start)
     if end:
@@ -101,6 +102,7 @@ def export_analytics(user: Manager, db: DbSession,
                    func.coalesce(paid.c.amount, 0), func.coalesce(refunded.c.amount, 0), Booking.start_date,
                    Booking.end_date).join(Departure).join(Experience).outerjoin(paid, paid.c.booking_id == Booking.id).outerjoin(
                        refunded, refunded.c.booking_id == Booking.id)
+    query = query.where(Booking.is_synthetic.is_(False))
     query = period(scope(query, user), Booking.created_at, lower, upper).order_by(Booking.created_at.desc()).limit(10000)
     output = StringIO(newline="")
     output.write("\ufeff")

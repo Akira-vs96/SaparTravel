@@ -1,0 +1,106 @@
+name: Service level acceptance
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'backend/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/service-level-acceptance.yml'
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    # Matching pg_dump/pg_restore 17 clients; no host client/server version mismatch.
+    container: postgres:17-bookworm
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: sapar
+          POSTGRES_PASSWORD: ci-test-password
+          POSTGRES_DB: sapar_sli_load_test
+        options: >-
+          --health-cmd "pg_isready -U sapar -d sapar_sli_load_test"
+          --health-interval 5s --health-timeout 5s --health-retries 15
+    env:
+      ENVIRONMENT: testing
+      DATABASE_URL: postgresql+psycopg://sapar:ci-test-password@postgres:5432/sapar_sli_load_test
+      CATALOG_LOAD_DATABASE_URL: postgresql+psycopg://sapar:ci-test-password@postgres:5432/sapar_sli_load_test
+      RECOVERY_DATABASE_URL: postgresql+psycopg://sapar:ci-test-password@postgres:5432/sapar_sli_recovery_test
+      JWT_SECRET: ci-only-2cf70549bf091a9d4b70045b94453f8d0a65cc68
+      ADMIN_EMAIL: ''
+      ADMIN_PASSWORD: ''
+      AUTH_RATE_LIMIT: '20'
+      SEED_DEMO_DATA: 'false'
+      PAYMENT_DEMO_ENABLED: 'false'
+      DEMO_PRIVATE_DATA: 'false'
+      DEMO_MAILBOX_ENABLED: 'false'
+      LOG_LEVEL: WARNING
+    steps:
+      - run: apt-get update && apt-get install -y --no-install-recommends git ca-certificates
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install -r backend/requirements-dev.txt -r tests/requirements-browser.txt
+      - run: python -m playwright install --with-deps chromium
+      - run: python -m unittest discover -s tests -p test_browser_probe.py -v
+      - run: npm ci && npm run build
+        working-directory: frontend
+      - name: Prepare the dedicated 500-tour database
+        run: python -m scripts.prepare_catalog_load --manifest test-results/catalog-load-fixture.json
+      - name: Start load API and record stand configuration
+        run: |
+          cd backend
+          uvicorn app.main:app --host 127.0.0.1 --port 18000 --workers 2 --no-access-log > ../test-results/load-api.log 2>&1 &
+          echo $! > ../test-results/load-api.pid
+          cd ..
+          python - <<'PY'
+          import json, os, platform, time, urllib.request
+          from pathlib import Path
+          config = {
+              'revision': os.environ['GITHUB_SHA'],
+              'api': {'host': 'GitHub Actions container', 'workers': 2, 'cpu_count': os.cpu_count()},
+              'database': {'version': 'PostgreSQL 17', 'name': 'sapar_sli_load_test'},
+              'client': {'host': platform.platform(), 'network': 'TCP loopback, separate process'},
+          }
+          Path('test-results/catalog-load-stand.json').write_text(json.dumps(config, indent=2))
+          for _ in range(80):
+              try:
+                  urllib.request.urlopen('http://127.0.0.1:18000/api/v1/health', timeout=2).close()
+                  break
+              except OSError:
+                  time.sleep(.25)
+          else:
+              raise SystemExit('Load API did not become ready')
+          PY
+      - name: Full 20 RPS acceptance, 120s warmup and 600s measurement
+        run: python -m scripts.catalog_load --base-url http://127.0.0.1:18000 --stand-config test-results/catalog-load-stand.json --output test-results/catalog-load.json
+      - name: Stop the owned load API and create the dedicated recovery database
+        if: always()
+        run: |
+          if test -f test-results/load-api.pid; then kill "$(cat test-results/load-api.pid)" || true; fi
+          python - <<'PY'
+          import psycopg
+          with psycopg.connect(host='postgres', user='sapar', password='ci-test-password', dbname='sapar_sli_load_test', autocommit=True) as db:
+              db.execute('CREATE DATABASE sapar_sli_recovery_test')
+          PY
+      - name: API outage, verified restore and five real control minutes
+        if: always()
+        run: python -u -m scripts.recovery_acceptance --output test-results/recovery.json --probe-output test-results/recovery-probes.jsonl
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: service-level-evidence
+          path: test-results/

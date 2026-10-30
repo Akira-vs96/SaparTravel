@@ -25,6 +25,7 @@ def recommend(db, *, budget: Decimal | None = None, category: str | None = None,
                          func.min(Departure.price).label("lowest_price")).group_by(Departure.experience_id).subquery()
     query = select(Experience).join(eligible_prices, eligible_prices.c.experience_id == Experience.id).where(
         Experience.is_published.is_(True), Experience.publication_status == "published", Experience.currency == "KZT",
+        Experience.is_monitoring.is_(False),
         Experience.min_participants <= travelers, Experience.max_participants >= travelers,
     )
     if category:

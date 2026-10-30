@@ -102,6 +102,8 @@ def quote_context(db, user, data):
     if not departure or not departure.experience.is_published or departure.experience.publication_status != "published":
         raise HTTPException(404, "Заезд не найден или тур снят с публикации.")
     experience = departure.experience
+    if experience.is_monitoring != user.is_monitoring:
+        raise HTTPException(403, "Технический аккаунт и контрольный тур используются только вместе.")
     if departure.status != "scheduled" or departure.start_date <= today():
         raise HTTPException(409, "Бронирование этого заезда уже закрыто.")
     if not experience.min_participants <= data.travelers_count <= experience.max_participants:
@@ -155,7 +157,8 @@ def create_booking(db, user, data):
                       total_amount=rounded(subtotal-discount), currency="KZT", contact_name=data.contact_name,
                       contact_email=str(data.contact_email).casefold(), notes=data.notes, status="pending",
                       experience_snapshot=snapshot, start_date=departure.start_date, end_date=departure.end_date,
-                      cancellation_policy=cancellation_policy(experience), expires_at=now() + timedelta(minutes=get_settings().reservation_minutes))
+                      cancellation_policy=cancellation_policy(experience), expires_at=now() + timedelta(minutes=get_settings().reservation_minutes),
+                      is_synthetic=user.is_monitoring)
     db.add(booking)
     db.flush()
     names = [participant.name for participant in data.participants] or [data.contact_name] + [f"Участник {i+1}" for i in range(1, data.travelers_count)]
@@ -390,6 +393,23 @@ def apply_refund_state(db, booking, refund, status):
          f"Возврат {refund.amount} {refund.currency}: {status}.", refund.actor_id)
 
 
+def cancellation_quote(db, booking, *, force_full=False):
+    from app.services.catalog_service import money
+    payment = db.scalar(select(PaymentAttempt).where(PaymentAttempt.booking_id == booking.id, PaymentAttempt.status == "succeeded"))
+    paid = payment.amount if payment else Decimal(0)
+    committed = db.scalar(select(func.coalesce(func.sum(Refund.amount), 0)).where(
+        Refund.booking_id == booking.id, Refund.status.in_(("pending", "succeeded"))))
+    days_before = (booking.start_date - today()).days
+    rules = booking.cancellation_policy.get("rules", cancellation_policy()["rules"])
+    percent = 100 if force_full else next((rule["refund_percent"] for rule in sorted(
+        rules, key=lambda rule: rule["days_before"], reverse=True) if days_before >= rule["days_before"]), 50)
+    amount = max(Decimal(0), rounded(paid * Decimal(percent) / 100) - committed)
+    if booking.status not in ("pending", "confirmed"):
+        amount = Decimal(0)
+    return {"amount": money(amount), "currency": booking.currency, "refund_percent": percent,
+            "paid_amount": money(paid), "committed_refunds_amount": money(committed)}
+
+
 def cancel_booking(db, user, booking_id, reason="Отмена путешественником", manage=False, force_full=False):
     booking = lock_booking(db, booking_id, user, manage)
     expire_if_needed(db, booking)
@@ -397,16 +417,12 @@ def cancel_booking(db, user, booking_id, reason="Отмена путешеств
         return booking
     if booking.status == "completed" or (not manage and booking.start_date <= today()):
         raise HTTPException(409, "Начавшийся или завершённый тур нельзя отменить самостоятельно.")
+    quote = cancellation_quote(db, booking, force_full=force_full)
     booking.status = "cancelled"
     history(db, booking, user, reason)
     payment = db.scalar(select(PaymentAttempt).where(PaymentAttempt.booking_id == booking.id, PaymentAttempt.status == "succeeded"))
     if payment:
-        days_before = (booking.start_date - today()).days
-        rules = booking.cancellation_policy.get("rules", cancellation_policy()["rules"])
-        percent = 100 if force_full else next((rule["refund_percent"] for rule in sorted(rules, key=lambda rule: rule["days_before"], reverse=True) if days_before >= rule["days_before"]), 50)
-        amount = rounded(payment.amount * Decimal(percent) / 100)
-        committed = db.scalar(select(func.coalesce(func.sum(Refund.amount), 0)).where(Refund.payment_id == payment.id, Refund.status.in_(("pending", "succeeded"))))
-        amount = max(Decimal(0), amount-committed)
+        amount = Decimal(quote["amount"])
         if amount > 0:
             create_refund(db, booking, payment, amount, reason, "cancel-"+booking.id, user)
     emit(db, booking, "booking.cancelled", "Бронирование отменено", f"Бронь {booking.reference} отменена. Места освобождены.", user)

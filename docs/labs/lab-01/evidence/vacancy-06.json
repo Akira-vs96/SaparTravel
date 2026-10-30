@@ -1,0 +1,20 @@
+{
+  "id": "JOB-06",
+  "role": "Junior Project Manager",
+  "employer": "WeDev",
+  "city": "Holon, Israel",
+  "channel": "Employer ATS",
+  "url": "https://job-boards.eu.greenhouse.io/wedev/jobs/4652223101",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "requirements",
+    "communication",
+    "technical",
+    "documentation",
+    "teamwork"
+  ],
+  "paraphrased_requirements": "Базовые HTML/JavaScript/CSS; user stories, DoD и SoW; встречи с клиентом, организация времени, самостоятельное обучение; eCommerce как плюс.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}

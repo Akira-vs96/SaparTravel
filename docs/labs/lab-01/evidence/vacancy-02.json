@@ -1,0 +1,26 @@
+{
+  "id": "JOB-02",
+  "role": "Senior Project Manager, Payment Systems",
+  "employer": "DataArt Kazakhstan",
+  "city": "Астана / удалённо",
+  "channel": "Astana Hub",
+  "url": "https://astanahub.com/ru/vacancy/6567",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "risk",
+    "agile",
+    "tracker",
+    "analytics",
+    "communication",
+    "technical",
+    "automation",
+    "documentation",
+    "teamwork",
+    "english",
+    "education"
+  ],
+  "paraphrased_requirements": "Пять лет PM в Agile и платежах; настройка Jira, улучшение процессов, ИИ-автоматизация, английский B2; DORA и Python как преимущество.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}

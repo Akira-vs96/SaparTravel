@@ -1,0 +1,41 @@
+{
+  "scope": "isolated local PostgreSQL 17 and Vite production preview",
+  "results": [
+    {
+      "script": "browser_smoke.py",
+      "exit_code": 0,
+      "duration_seconds": 12.7
+    },
+    {
+      "script": "browser_management.py",
+      "exit_code": 0,
+      "duration_seconds": 11.19
+    },
+    {
+      "script": "browser_engagement.py",
+      "exit_code": 0,
+      "duration_seconds": 7.29
+    },
+    {
+      "script": "browser_localization.py",
+      "exit_code": 0,
+      "duration_seconds": 14.15
+    },
+    {
+      "script": "browser_visual.py",
+      "exit_code": 0,
+      "duration_seconds": 36.34
+    },
+    {
+      "script": "browser_roles_visual.py",
+      "exit_code": 0,
+      "duration_seconds": 15.01
+    },
+    {
+      "script": "browser_service_levels.py",
+      "exit_code": 0,
+      "duration_seconds": 4.08
+    }
+  ],
+  "passed": true
+}

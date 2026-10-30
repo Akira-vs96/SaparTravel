@@ -26,6 +26,7 @@ class User(Base):
     password_hash: Mapped[str] = mapped_column(String(255))
     role: Mapped[str] = mapped_column(String(20), default="traveler")
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    is_monitoring: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 
 
@@ -60,6 +61,7 @@ class Experience(Base):
     review_count: Mapped[int] = mapped_column(Integer, default=0)
     image_url: Mapped[str] = mapped_column(String(2000))
     is_published: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+    is_monitoring: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
     publication_status: Mapped[str] = mapped_column(String(20), default="published")
     min_participants: Mapped[int] = mapped_column(Integer, default=1)
@@ -127,6 +129,7 @@ class Booking(Base):
     travelers_count: Mapped[int] = mapped_column(Integer)
     total_amount: Mapped[Decimal] = mapped_column(Numeric(12, 2))
     currency: Mapped[str] = mapped_column(String(3), default="KZT")
+    is_synthetic: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
     contact_name: Mapped[str] = mapped_column(String(120))
     contact_email: Mapped[str] = mapped_column(String(254))
     notes: Mapped[str] = mapped_column(Text, default="")

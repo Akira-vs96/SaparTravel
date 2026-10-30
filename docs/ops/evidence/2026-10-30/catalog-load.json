@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "scenario": "SLI-L",
+  "endpoint": "http://127.0.0.1:18000/api/v1/catalog",
+  "started_at_utc": "2026-10-30T04:42:23.096382+00:00",
+  "profile": {
+    "rps": 20,
+    "duration_seconds": 600,
+    "warmup_seconds": 120,
+    "timeout_seconds": 5,
+    "max_in_flight": 100,
+    "threshold_ms": 500
+  },
+  "acceptance_profile": true,
+  "stand": {
+    "revision": "a66f9d59904f7b0a4b0afe4618ec0fa1dcfb87a3",
+    "working_tree": "SOW implementation with migration 0005; backend source fingerprint recorded",
+    "backend_source_sha256": "2373a3a00b73fc378a159f2439dc48fe135f83b3b7de4df4da8340c5966963b5",
+    "api": {
+      "host": "local Linux",
+      "workers": 2,
+      "cpu": "AMD Ryzen 7 5700U, shared 16 logical CPUs",
+      "ram_mb": 7261
+    },
+    "database": {
+      "version": "PostgreSQL 17",
+      "name": "sapar_catalog_final_test",
+      "cpu": "shared host",
+      "ram_mb": "shared host"
+    },
+    "client": {
+      "host": "local Linux, separate Python process",
+      "network": "TCP loopback"
+    },
+    "scope": "local acceptance stand"
+  },
+  "client": {
+    "python": "3.13.5",
+    "platform": "Linux-6.12.113+deb13-amd64-x86_64-with-glibc2.41",
+    "httpx": "0.28.1"
+  },
+  "latency_definition": "HTTP send through complete response body; nearest-rank p95; warmup excluded",
+  "schedule_lateness_limit_ms": 50.0,
+  "passed": true,
+  "accepted": true,
+  "warmup": {
+    "planned": 2400,
+    "executed": 2400,
+    "successful": 2400,
+    "missing": 0,
+    "duplicates": 0,
+    "invalid_indexes": 0,
+    "dropped": 0,
+    "errors": {},
+    "error_percent": 0.0,
+    "timeouts": 0,
+    "dispatched_rps": 20.0,
+    "p95_ms": 92.54374400006782,
+    "max_ms": 163.8728099999298,
+    "max_scheduling_delay_ms": 6.214008000142712,
+    "status_codes": {
+      "200": 2400
+    },
+    "passed": true
+  },
+  "measurement": {
+    "planned": 12000,
+    "executed": 12000,
+    "successful": 12000,
+    "missing": 0,
+    "duplicates": 0,
+    "invalid_indexes": 0,
+    "dropped": 0,
+    "errors": {},
+    "error_percent": 0.0,
+    "timeouts": 0,
+    "dispatched_rps": 20.0,
+    "p95_ms": 93.46614300011424,
+    "max_ms": 284.07628900004056,
+    "max_scheduling_delay_ms": 23.578928999995696,
+    "status_codes": {
+      "200": 12000
+    },
+    "passed": true
+  },
+  "finished_at_utc": "2026-10-30T04:54:24.833528+00:00"
+}

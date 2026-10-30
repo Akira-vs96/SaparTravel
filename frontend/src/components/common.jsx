@@ -25,9 +25,12 @@ export function useResource(path, options = {}) {
     const controller = new AbortController();
     setState((old) => ({ ...old, loading: true, error: null }));
     api(path, { signal: controller.signal, token: auth ? token : undefined })
-      .then((data) => setState({ data, loading: false, error: null }))
+      .then((data) => {
+        if (!controller.signal.aborted)
+          setState({ data, loading: false, error: null });
+      })
       .catch((error) => {
-        if (error.name !== "AbortError")
+        if (!controller.signal.aborted && error.name !== "AbortError")
           setState({ data: null, loading: false, error });
       });
     return () => controller.abort();

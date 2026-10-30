@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "tests_run": 49,
+  "duration_seconds": 11.952,
+  "scope": "unit and real Chromium positive/negative probe checks"
+}

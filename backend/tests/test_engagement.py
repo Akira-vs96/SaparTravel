@@ -169,16 +169,23 @@ def test_last_active_admin_and_immediate_blocking_are_enforced(client, catalog, 
     traveler = headers(catalog["traveler"])
     outstanding_reset = reset_token(client, db, "traveler@example.com")
     target = f"{API}/admin/users/{catalog['traveler'].id}"
-    assert client.patch(target, headers=admin, json={"is_active": False}).status_code == 200
+    blocked = client.patch(target, headers=admin, json={"is_active": False})
+    assert blocked.status_code == 200
     assert client.get(f"{API}/auth/me", headers=traveler).status_code == 401
     assert client.post(f"{API}/auth/login", json={"email": "traveler@example.com", "password": "Correct-password-2026"}).status_code == 401
-    assert client.patch(target, headers=admin, json={"is_active": True, "role": "vendor"}).status_code == 200
+    unblocked = client.patch(target, headers=admin, json={"is_active": True, "role": "vendor"})
+    assert unblocked.status_code == 200
     assert client.get(f"{API}/manage/experiences", headers=traveler).status_code == 401
     assert client.post(f"{API}/auth/reset-password", json={"token": outstanding_reset, "new_password": "Should-not-be-accepted-2026"}).status_code == 422
     new_token = client.post(f"{API}/auth/login", json={"email": "traveler@example.com", "password": "Correct-password-2026"}).json()["access_token"]
     assert client.get(f"{API}/manage/experiences", headers={"Authorization": "Bearer " + new_token}).status_code == 200
     log = client.get(f"{API}/admin/audit?action=user.updated", headers=admin).json()
     assert len(log["items"]) == 2
+    assert blocked.headers["X-Request-ID"] != unblocked.headers["X-Request-ID"]
+    assert {row["details"]["request_id"] for row in log["items"]} == {
+        blocked.headers["X-Request-ID"], unblocked.headers["X-Request-ID"]}
+    assert all(row["actor_id"] == catalog["admin"].id and row["resource_id"] == catalog["traveler"].id
+               and row["created_at"] for row in log["items"])
     assert client.get(f"{API}/admin/audit", headers={"Authorization": "Bearer " + new_token}).status_code == 403
 
 

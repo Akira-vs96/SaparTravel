@@ -1,0 +1,27 @@
+{
+  "measured_requests": 60,
+  "mean_input_tokens_qwen": 123.03333333333333,
+  "mean_output_tokens_qwen": 11.4,
+  "mean_seconds": 0.5165483333333333,
+  "api_candidate": "Ministral 3 3B",
+  "api_source": "https://docs.mistral.ai/inference/pricing",
+  "price_accessed_on": "2026-10-30",
+  "input_usd_per_million": 0.1,
+  "output_usd_per_million": 0.1,
+  "local_fixed_monthly_usd_assumption": 64,
+  "local_fixed_basis": "24 infrastructure + 40 administration; planning assumptions inherited from LZ8, not an incurred bill",
+  "monthly_scenarios": [
+    {
+      "requests_assumption": 10000,
+      "estimated_api_usd": 0.13443333333333335
+    },
+    {
+      "requests_assumption": 100000,
+      "estimated_api_usd": 1.3443333333333336
+    }
+  ],
+  "break_even_requests_per_month_estimate": 4760724.026779071,
+  "limitation": "Qwen token counts are measured by its tokenizer. Applying these counts to a different API model is a planning proxy, not its actual billing; tokenizer/quality and CPU capacity at break-even are unverified. External API not called.",
+  "api_cost_is_actual": false,
+  "local_invoice_total": null
+}

@@ -1,0 +1,17 @@
+{
+  "runtime": "llama.cpp b12000 / 0.8.0-dev / commit 68d20b884",
+  "model": "Qwen2.5-0.5B-Instruct Q4_K_M",
+  "model_source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "runtime_source": "https://github.com/ggml-org/llama.cpp/releases/download/b12000/llama-b12000-bin-ubuntu-x64.tar.gz",
+  "runtime_sha256": "c56588b49ed4be846b115188407ea2b601fa3a5c30b8c25ad60e8344dfc7a4fd",
+  "model_license": "Apache-2.0",
+  "runtime_license": "MIT",
+  "hardware": "AMD Ryzen 7 5700U, shared host, CPU 4 threads, 2048 context, 1 slot",
+  "model_is_real": true,
+  "dataset_sha256": "6efa3a3a8349704bef1511aaf4274bfd4f58023f84402aa17487c38761d5437f",
+  "harness_sha256": "1e1b161e605a0cb6258740e060c9f856b332d90e01f3b183a8b68ccc39367eec",
+  "seed": 42,
+  "temperature": 0,
+  "human_gold_approved": false
+}

@@ -1,0 +1,23 @@
+{
+  "captured_at_utc": "2026-10-30T05:50:28.958518+00:00",
+  "versions": {
+    "gitleaks": "8.30.1",
+    "trivy": "0.76.1"
+  },
+  "scope": "Git history and tracked/nonignored working files; private ignored environments are not exported",
+  "checks": [
+    {
+      "name": "git-secrets",
+      "exit_code": 0
+    },
+    {
+      "name": "working-files-secrets",
+      "exit_code": 0
+    },
+    {
+      "name": "dependencies",
+      "exit_code": 0
+    }
+  ],
+  "passed": true
+}

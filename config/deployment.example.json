@@ -1,0 +1,5 @@
+{
+  "deployment_id": "replace-with-agreed-deployment",
+  "scope": "operational",
+  "points": ["point-a", "point-b", "point-c"]
+}

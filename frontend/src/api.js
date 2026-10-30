@@ -70,6 +70,11 @@ export async function api(path, { token, body, headers, ...options } = {}) {
     }
     throw error;
   }
+  if (response.status !== 204 && data === null) {
+    const error = new Error("invalidResponse");
+    error.code = "invalid_response";
+    throw error;
+  }
   return data;
 }
 

@@ -1,0 +1,9 @@
+# Exact historical fixture findings, inspected 2026-10-30.
+# Public testing-only JWT literals; no path-wide or future-commit exemption.
+# See docs/security/security-scan-report.md.
+01aecdbe2ddc3177f0272bdca8e5cb434ff6e6fa:backend/tests/test_configuration.py:generic-api-key:25
+01aecdbe2ddc3177f0272bdca8e5cb434ff6e6fa:backend/tests/conftest.py:generic-api-key:18
+f2c0db35e4236331a0649024403b8a8866b313b2:backend/tests/conftest.py:generic-api-key:18
+f2c0db35e4236331a0649024403b8a8866b313b2:backend/tests/test_configuration.py:generic-api-key:25
+063485641847853fdf899238a86beef97c00902b:backend/tests/test_configuration.py:generic-api-key:25
+04ba943abf1f6b8d4d0b5ebe04a4029ce2f0dd5a:backend/tests/conftest.py:generic-api-key:18

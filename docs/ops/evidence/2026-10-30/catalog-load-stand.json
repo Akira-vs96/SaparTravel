@@ -1,0 +1,22 @@
+{
+  "revision": "a66f9d59904f7b0a4b0afe4618ec0fa1dcfb87a3",
+  "working_tree": "SOW implementation with migration 0005; backend source fingerprint recorded",
+  "backend_source_sha256": "2373a3a00b73fc378a159f2439dc48fe135f83b3b7de4df4da8340c5966963b5",
+  "api": {
+    "host": "local Linux",
+    "workers": 2,
+    "cpu": "AMD Ryzen 7 5700U, shared 16 logical CPUs",
+    "ram_mb": 7261
+  },
+  "database": {
+    "version": "PostgreSQL 17",
+    "name": "sapar_catalog_final_test",
+    "cpu": "shared host",
+    "ram_mb": "shared host"
+  },
+  "client": {
+    "host": "local Linux, separate Python process",
+    "network": "TCP loopback"
+  },
+  "scope": "local acceptance stand"
+}

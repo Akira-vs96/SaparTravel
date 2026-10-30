@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "scenario": "SLI-L",
+  "tours": 500,
+  "prepared_at_utc": "2026-10-30T04:42:20.960982+00:00",
+  "database_name": "sapar_catalog_final_test",
+  "fixture_sha256": "71b3523275c441523057a66bc3d914d3e70ba77b55c5199f7d7476bfca749f60",
+  "slug_prefix": "catalog-load-",
+  "departures_per_tour": 3
+}

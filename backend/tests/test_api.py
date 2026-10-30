@@ -195,7 +195,11 @@ def test_manage_bookings_scope_and_state_machine(client, catalog):
     pay_booking(client, catalog, booked)
     assert client.patch(path, headers=vendor, json={"status": "confirmed"}).json()["status"] == "confirmed"
     assert client.patch(path, headers=vendor, json={"status": "completed"}).status_code == 409
-    assert client.patch(path, headers=vendor, json={"status": "cancelled"}).status_code == 200
+    for reason in (None, "", "   ", "xy"):
+        assert client.patch(path, headers=vendor, json={"status": "cancelled", "reason": reason}).status_code == 422
+    cancelled = client.patch(path, headers=vendor, json={"status": "cancelled", "reason": "  Supplier cannot run this departure  "})
+    assert cancelled.status_code == 200
+    assert cancelled.json()["history"][-1]["reason"] == "Supplier cannot run this departure"
     assert client.patch(path, headers=vendor, json={"status": "confirmed"}).status_code == 409
 
 
@@ -246,7 +250,7 @@ def test_completed_trip_is_terminal_and_cannot_be_cancelled(client, catalog, db)
     stored.end_date = date.today() - timedelta(days=1)
     db.commit()
     assert client.patch(path, headers=vendor, json={"status": "completed"}).json()["status"] == "completed"
-    assert client.patch(path, headers=vendor, json={"status": "cancelled"}).status_code == 409
+    assert client.patch(path, headers=vendor, json={"status": "cancelled", "reason": "Cannot cancel a completed trip"}).status_code == 409
     assert client.post(f"{API}/bookings/{booking['id']}/cancel", headers=traveler).status_code == 409
 
 

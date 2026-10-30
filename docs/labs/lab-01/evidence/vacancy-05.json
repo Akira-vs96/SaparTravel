@@ -1,0 +1,24 @@
+{
+  "id": "JOB-05",
+  "role": "Public Cloud Project Manager",
+  "employer": "Canonical",
+  "city": "Americas / remote",
+  "channel": "Employer ATS",
+  "url": "https://job-boards.greenhouse.io/canonical/jobs/4732475",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "requirements",
+    "budget",
+    "risk",
+    "agile",
+    "communication",
+    "technical",
+    "teamwork",
+    "english",
+    "education"
+  ],
+  "paraphrased_requirements": "Проекты публичного облака: Linux, open source, опыт разработки, сроки/стоимость/ресурсы, SoW, технические риски и зависимости; английский, переговоры и распределённые команды; PMP/Scrum как преимущество.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}

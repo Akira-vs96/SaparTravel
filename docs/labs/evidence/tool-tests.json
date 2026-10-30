@@ -1,0 +1,7 @@
+{
+  "command": ".venv/bin/python -m unittest discover -s tests -p test_*.py -v",
+  "passed": true,
+  "tests": 67,
+  "duration_seconds": 13.754,
+  "scope": "49 service operation tests and 18 course calculation/evidence tests"
+}

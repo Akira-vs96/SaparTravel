@@ -1,0 +1,25 @@
+{
+  "id": "JOB-09",
+  "role": "Junior Project Manager (AV)",
+  "employer": "TSMG",
+  "city": "Melbourne / remote",
+  "channel": "Employer ATS",
+  "url": "https://jobs.lever.co/tsmg/b1cde0d3-e32f-446b-9968-7041d6d90ae0",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "requirements",
+    "risk",
+    "agile",
+    "tracker",
+    "analytics",
+    "communication",
+    "technical",
+    "teamwork",
+    "education",
+    "automation"
+  ],
+  "paraphrased_requirements": "Несмотря на Junior в названии, требуется 3–5 лет. Проекты испытаний автономных автомобилей, безопасность/регуляторика, Jira/MS Project/Asana, метрики; Agile-сертификация как плюс.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}

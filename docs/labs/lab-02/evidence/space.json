@@ -1,0 +1,157 @@
+{
+  "captured_on": "2026-10-30",
+  "repository": "https://github.com/Akira-vs96/SaparTravel",
+  "repository_private": false,
+  "project": "https://github.com/users/Akira-vs96/projects/2",
+  "project_private": true,
+  "wiki_pages": [
+    "Глоссарий",
+    "Журнал решений",
+    "Контакты и доступы",
+    "О проекте",
+    "Процесс команды"
+  ],
+  "fields": {
+    "fields": [
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk58",
+        "name": "Title",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk6E",
+        "name": "Assignees",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTSSF_lAHOCuk0E84Bj444zhirk6Q",
+        "name": "Status",
+        "options": [
+          {
+            "id": "dfbe6b31",
+            "name": "Ready"
+          },
+          {
+            "id": "4369f04a",
+            "name": "In progress"
+          },
+          {
+            "id": "f5ac6c76",
+            "name": "Blocked"
+          },
+          {
+            "id": "0638a7f4",
+            "name": "Review"
+          },
+          {
+            "id": "132aefca",
+            "name": "Backlog"
+          },
+          {
+            "id": "ac2367dd",
+            "name": "Done"
+          }
+        ],
+        "type": "ProjectV2SingleSelectField"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk6Y",
+        "name": "Labels",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk6g",
+        "name": "Linked pull requests",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk6o",
+        "name": "Milestone",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk6s",
+        "name": "Repository",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk60",
+        "name": "Reviewers",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk64",
+        "name": "Parent issue",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk68",
+        "name": "Sub-issues progress",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk7A",
+        "name": "Created",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk7E",
+        "name": "Updated",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirk7I",
+        "name": "Closed",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirrTc",
+        "name": "Owner",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirrZ8",
+        "name": "Size (S/M/L)",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirrfU",
+        "name": "Iteration",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTF_lAHOCuk0E84Bj444zhirrkk",
+        "name": "Risk ID",
+        "type": "ProjectV2Field"
+      },
+      {
+        "id": "PVTSSF_lAHOCuk0E84Bj444zhkBdH4",
+        "name": "Priority",
+        "options": [
+          {
+            "id": "e9325f9a",
+            "name": "Must"
+          },
+          {
+            "id": "fa683ac4",
+            "name": "Should"
+          },
+          {
+            "id": "bbde1651",
+            "name": "Could"
+          }
+        ],
+        "type": "ProjectV2SingleSelectField"
+      }
+    ],
+    "totalCount": 18
+  },
+  "collaborators": [
+    "Akira-vs96",
+    "Bibinurb",
+    "aberdebek",
+    "aidarrnara"
+  ],
+  "teacher_access_confirmed": false,
+  "branch_protection_at_initial_audit": false
+}

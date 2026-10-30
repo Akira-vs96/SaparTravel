@@ -1,6 +1,6 @@
 # Схема PostgreSQL и словарь полей
 
-Актуальная схема: 36 таблиц, Alembic `0001 → 0002 → 0003 → 0004`.
+Актуальная схема: 36 таблиц, Alembic `0001 → 0002 → 0003 → 0004 → 0005`.
 Проверки миграций: [журнал](verification-results.md). Обоснование 3НФ: [ER](er-model.md).
 
 Деньги: `NUMERIC(12,2)`, API — строки Decimal. Моменты времени: UTC `TIMESTAMPTZ`;
@@ -66,6 +66,7 @@ CHECK `amount >= 0`.
 | `password_hash` | `VARCHAR(255)` | NOT NULL |
 | `role` | `VARCHAR(20)` | NOT NULL |
 | `is_active` | `BOOLEAN` | NOT NULL |
+| `is_monitoring` | `BOOLEAN` | NOT NULL, default false; только явное provisioning |
 | `created_at` | `DATETIME` | NOT NULL |
 
 CHECK `role IN ('traveler', 'vendor', 'admin')`.
@@ -112,6 +113,7 @@ CHECK `role IN ('traveler', 'vendor', 'admin')`.
 | `review_count` | `INTEGER` | NOT NULL |
 | `image_url` | `VARCHAR(2000)` | NOT NULL |
 | `is_published` | `BOOLEAN` | NOT NULL |
+| `is_monitoring` | `BOOLEAN` | NOT NULL, default false; скрыт в обычном каталоге |
 | `created_at` | `DATETIME` | NOT NULL |
 | `publication_status` | `VARCHAR(20)` | NOT NULL |
 | `min_participants` | `INTEGER` | NOT NULL |
@@ -473,10 +475,21 @@ UNIQUE `booking_id`; CHECK `status IN ('pending','approved','rejected')`; CHECK 
 | `status` | `VARCHAR(20)` | NOT NULL |
 | `created_at` | `DATETIME` | NOT NULL |
 | `updated_at` | `DATETIME` | NOT NULL |
+| `priority` | `VARCHAR(2)` | NOT NULL, P1/P2/P3 |
+| `response_due_at` | `TIMESTAMPTZ` | NULL для неизвестных старых сроков |
+| `first_response_at` | `TIMESTAMPTZ` | NULL до содержательной реакции |
+| `first_response_by` | `VARCHAR(36)` | NULL, FK → users.id |
+| `response_working_seconds` | `INTEGER` | NULL либо ≥ 0 |
+| `response_calendar` | `JSON` | NULL либо исторический снимок календаря |
 
 CHECK `status IN ('open','in_progress','resolved','closed')`.
 
-Индексы: ix_support_tickets_user_id (user_id); ix_support_tickets_booking_id (booking_id); ix_support_tickets_vendor_id (vendor_id).
+Индексы: ix_support_tickets_user_id (user_id); ix_support_tickets_booking_id (booking_id); ix_support_tickets_vendor_id (vendor_id); ix_support_response_due_priority (response_due_at, priority).
+
+В `bookings` также добавлен `is_synthetic BOOLEAN NOT NULL DEFAULT false`
+с индексом `ix_bookings_is_synthetic`. Его задаёт сервер из типа технической
+учётной записи; пользователь не может передать этот флаг в оформлении.
+В `experiences` добавлен индекс `ix_experiences_is_monitoring`.
 
 ## `payment_events`
 

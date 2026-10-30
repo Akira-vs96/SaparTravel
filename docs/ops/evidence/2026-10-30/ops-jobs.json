@@ -1,0 +1,23 @@
+{
+  "scope": "local isolated PostgreSQL; separate local second copy is a transport check, not off-site deployment",
+  "jobs": [
+    {
+      "job": "backup",
+      "exit_code": 0
+    },
+    {
+      "job": "age",
+      "exit_code": 0
+    },
+    {
+      "job": "restore",
+      "exit_code": 0
+    }
+  ],
+  "missing_month_is_incomplete": true,
+  "passed": true,
+  "systemd_unit_count": 10,
+  "systemd_analyze_user_verify_exit_code": 0,
+  "transient_backup_service_exit_code": 0,
+  "recurring_timers_enabled": false
+}

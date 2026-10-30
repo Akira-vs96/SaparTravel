@@ -1,0 +1,27 @@
+{
+  "claims": [
+    {
+      "prompt_version": 1,
+      "machine_numeric_discrepancies": [],
+      "machine_check_passed": true,
+      "human_review": "pending",
+      "reviewer": null,
+      "semantic_error_rate": null,
+      "generation_seconds": 1.1468
+    },
+    {
+      "prompt_version": 2,
+      "machine_numeric_discrepancies": [],
+      "machine_check_passed": true,
+      "human_review": "pending",
+      "reviewer": null,
+      "semantic_error_rate": null,
+      "generation_seconds": 1.9666
+    }
+  ],
+  "automatic_check_limitation": "Numeric whitelist cannot verify causes, approvals or sentence meaning",
+  "manual_baseline_runs": [],
+  "net_savings_minutes": null,
+  "payback_runs": null,
+  "status": "draft_requires_human_review"
+}

@@ -70,13 +70,24 @@ class SavedSearch(Base):
 
 class SupportTicket(Base):
     __tablename__ = "support_tickets"
-    __table_args__ = (CheckConstraint("status IN ('open','in_progress','resolved','closed')", name="ck_support_ticket_status"),)
+    __table_args__ = (
+        CheckConstraint("status IN ('open','in_progress','resolved','closed')", name="ck_support_ticket_status"),
+        CheckConstraint("priority IN ('P1','P2','P3')", name="ck_support_priority"),
+        CheckConstraint("response_working_seconds IS NULL OR response_working_seconds >= 0", name="ck_support_response_seconds"),
+        Index("ix_support_response_due_priority", "response_due_at", "priority"),
+    )
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
     user_id: Mapped[str] = mapped_column(ForeignKey("users.id"), index=True)
     vendor_id: Mapped[str | None] = mapped_column(ForeignKey("users.id"), nullable=True, index=True)
     booking_id: Mapped[str | None] = mapped_column(ForeignKey("bookings.id"), nullable=True, index=True)
     subject: Mapped[str] = mapped_column(String(180))
     status: Mapped[str] = mapped_column(String(20), default="open")
+    priority: Mapped[str] = mapped_column(String(2), default="P3")
+    response_due_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    first_response_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    first_response_by: Mapped[str | None] = mapped_column(ForeignKey("users.id"))
+    response_working_seconds: Mapped[int | None] = mapped_column(Integer)
+    response_calendar: Mapped[dict | None] = mapped_column(JSON)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now)
 

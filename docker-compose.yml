@@ -35,6 +35,9 @@ services:
       PASSWORD_RESET_EXPIRE_MINUTES: ${PASSWORD_RESET_EXPIRE_MINUTES:-30}
       PUBLIC_WEB_URL: ${PUBLIC_WEB_URL:-http://localhost:5173}
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      SUPPORT_CALENDAR_FILE: ${SUPPORT_CALENDAR_FILE:-}
+    volumes:
+      - ./config:/app/config:ro
     depends_on:
       db:
         condition: service_healthy
@@ -52,6 +55,8 @@ services:
     build: ./backend
     command: ["python", "-m", "app.worker"]
     environment: *api-environment
+    volumes:
+      - ./config:/app/config:ro
     depends_on:
       api:
         condition: service_healthy

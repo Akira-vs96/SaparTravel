@@ -1,0 +1,12 @@
+{
+  "period_start": "2026-10-19",
+  "period_end_exclusive": "2026-10-26",
+  "issues_created": 0,
+  "issues_closed": 0,
+  "ci_success": 3,
+  "ci_failure": 2,
+  "recorded_deployments": 0,
+  "customer_approval": null,
+  "sprint_goal": null,
+  "measured_manual_minutes": null
+}

@@ -11,6 +11,8 @@ PostgreSQL 17, Docker Compose и Nginx. Интерфейс: **ru / kk / en**.
 турами и клиентами. Администратор управляет каталогом, ролями, модерацией,
 платежами, возвратами и обращениями.
 
+Курс: [все 15 лабораторных](docs/labs/README.md), [архитектура сайта и документов](docs/architecture.md), [портфолио](docs/portfolio/final-portfolio.md). Каждая ЛЗ имеет собственный отчёт и ссылки на доказательства; подготовленный документ не означает проведённое интервью или внешнюю приёмку.
+
 Актуальные результаты запусков: [журнал проверок](docs/verification-results.md).
 План и прогресс: [implementation-plan.md](docs/implementation-plan.md).
 Эти локальные проверки не подтверждают готовность публичного коммерческого сервиса.
@@ -311,6 +313,8 @@ npm --prefix frontend run build
 .venv/bin/python tests/browser_localization.py --base-url http://127.0.0.1:5173
 .venv/bin/python tests/browser_visual.py --base-url http://127.0.0.1:5173
 .venv/bin/python tests/browser_roles_visual.py --base-url http://127.0.0.1:5173
+.venv/bin/python tests/browser_service_levels.py --base-url http://127.0.0.1:5173
+.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 Браузерные тесты требуют Playwright/Chromium и отдельной среды с каталогом;
@@ -336,6 +340,11 @@ CI: [.github/workflows/ci.yml](.github/workflows/ci.yml).
   документы не моделируются. ICS и подтверждение брони — демонстрационные.
 
 ## Документация и учебные материалы
+
+Технические проверки SOW/SLA/SLO/SLI, приоритеты поддержки, рабочий календарь,
+внешние пробы, backup/restore, systemd timers и месячная отчётность описаны
+в [эксплуатационной инструкции](docs/ops/service-levels.md). Согласованные
+показатели и правила приёмки: [SOW](docs/sow-sla-slo-sli.md).
 
 | Раздел | Материалы |
 |---|---|

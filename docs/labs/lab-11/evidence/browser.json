@@ -1,0 +1,46 @@
+{
+  "scope": "isolated PostgreSQL 17, Uvicorn, Vite preview and actual Chromium",
+  "scripts": [
+    {
+      "script": "browser_smoke.py",
+      "exit_code": 0,
+      "seconds": 14.083
+    },
+    {
+      "script": "browser_management.py",
+      "exit_code": 0,
+      "seconds": 12.974
+    },
+    {
+      "script": "browser_engagement.py",
+      "exit_code": 0,
+      "seconds": 7.921
+    },
+    {
+      "script": "browser_localization.py",
+      "exit_code": 0,
+      "seconds": 14.593
+    },
+    {
+      "script": "browser_visual.py",
+      "exit_code": 0,
+      "seconds": 37.522
+    },
+    {
+      "script": "browser_roles_visual.py",
+      "exit_code": 0,
+      "seconds": 16.009
+    },
+    {
+      "script": "browser_service_levels.py",
+      "exit_code": 0,
+      "seconds": 3.815
+    },
+    {
+      "script": "browser_invalid_response.py",
+      "exit_code": 0,
+      "seconds": 3.077
+    }
+  ],
+  "passed": true
+}

@@ -54,9 +54,14 @@ async def database_error(_: Request, exc: SQLAlchemyError):
 
 @app.middleware("http")
 async def request_logging(request: Request, call_next):
+    from app.core.logging import request_id_context
     request_id = str(uuid4())
     started = time.perf_counter()
-    response = await call_next(request)
+    context_token = request_id_context.set(request_id)
+    try:
+        response = await call_next(request)
+    finally:
+        request_id_context.reset(context_token)
     duration_ms = round((time.perf_counter() - started) * 1000, 2)
     response.headers["X-Request-ID"] = request_id
     response.headers["X-Content-Type-Options"] = "nosniff"

@@ -1,0 +1,25 @@
+{
+  "id": "JOB-01",
+  "role": "Senior IT Project Manager",
+  "employer": "Jana Soft Engineering",
+  "city": "Алматы",
+  "channel": "Astana Hub",
+  "url": "https://astanahub.com/ru/vacancy/6212",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "requirements",
+    "risk",
+    "agile",
+    "tracker",
+    "analytics",
+    "communication",
+    "technical",
+    "documentation",
+    "teamwork",
+    "education"
+  ],
+  "paraphrased_requirements": "Пять лет управления IT; кросс-функциональные команды; Scrum/Kanban, delivery-метрики, GitFlow, требования и коммуникации; казахский и русский.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}

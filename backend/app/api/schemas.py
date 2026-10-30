@@ -169,6 +169,15 @@ class DepartureInput(InputModel):
 
 class BookingStatusInput(InputModel):
     status: Literal["confirmed", "cancelled", "completed"]
+    reason: str | None = Field(default=None, max_length=500)
+
+    @model_validator(mode="after")
+    def cancellation_requires_reason(self):
+        if self.reason is not None:
+            self.reason = self.reason.strip()
+        if self.status == "cancelled" and (not self.reason or len(self.reason) < 3):
+            raise ValueError("Укажите причину отмены: не менее 3 символов.")
+        return self
 
 
 class RoleInput(InputModel):

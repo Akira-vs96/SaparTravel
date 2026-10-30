@@ -12,7 +12,7 @@ from app.api.schemas import BookingInput, BookingStatusInput, Language
 from app.api.commerce_schemas import CancellationInput, ConfirmationInput, PaymentInput, PromoInput, RefundInput
 from app.adapters.demo_payments import TEST_INSTRUMENTS
 from app.core.security import Admin, CurrentUser, DbSession, Manager
-from app.domain.models import Booking, PaymentAttempt, PromoCode, Refund
+from app.domain.models import Booking, CategoryRecord, Experience, PaymentAttempt, PromoCode, Refund
 from app.services.catalog_service import booking_data, money, payment_data, refund_data
 from app.services import commerce_service as commerce
 
@@ -66,6 +66,18 @@ def cancel_booking(booking_id: str, user: CurrentUser, db: DbSession, data: Canc
     db.commit()
     db.expire(item)
     return booking_data(item, lang)
+
+
+@router.get("/bookings/{booking_id}/cancellation-quote")
+def cancellation_quote(booking_id: str, user: CurrentUser, db: DbSession):
+    item = commerce.lock_booking(db, booking_id, user)
+    return commerce.cancellation_quote(db, item)
+
+
+@router.get("/manage/bookings/{booking_id}/cancellation-quote")
+def manager_cancellation_quote(booking_id: str, user: Manager, db: DbSession):
+    item = commerce.lock_booking(db, booking_id, user, manage=True)
+    return commerce.cancellation_quote(db, item, force_full=True)
 
 
 @router.get("/payments/test-instruments")
@@ -162,7 +174,7 @@ def manage_booking_detail(booking_id: str, user: Manager, db: DbSession, lang: L
 @router.patch("/manage/bookings/{booking_id}")
 def manage_booking(booking_id: str, data: BookingStatusInput, user: Manager, db: DbSession, lang: Language = "ru"):
     if data.status == "cancelled":
-        item = commerce.cancel_booking(db, user, booking_id, "Отмена поставщиком или администратором", manage=True, force_full=True)
+        item = commerce.cancel_booking(db, user, booking_id, data.reason, manage=True, force_full=True)
     elif data.status == "completed":
         item = commerce.complete_booking(db, user, booking_id)
     else:
@@ -188,6 +200,7 @@ def promocodes(user: Admin, db: DbSession):
 
 @router.post("/manage/promocodes", status_code=201)
 def create_promo(data: PromoInput, user: Admin, db: DbSession):
+    validate_promo_scope(db, data)
     item = PromoCode(**{**data.model_dump(), "code": data.code.upper()})
     db.add(item)
     try:
@@ -203,6 +216,7 @@ def update_promo(promo_id: str, data: PromoInput, user: Admin, db: DbSession):
     item = db.get(PromoCode, promo_id, with_for_update=True)
     if not item:
         raise HTTPException(404, "Промокод не найден.")
+    validate_promo_scope(db, data)
     for field, value in data.model_dump().items():
         setattr(item, field, value.upper() if field == "code" else value)
     try:
@@ -211,6 +225,13 @@ def update_promo(promo_id: str, data: PromoInput, user: Admin, db: DbSession):
         db.rollback()
         raise HTTPException(409, "Некорректные параметры промокода.") from None
     return promo_data(item)
+
+
+def validate_promo_scope(db, data):
+    if data.category and not db.get(CategoryRecord, data.category):
+        raise HTTPException(422, "Категория не найдена.")
+    if data.experience_id and not db.get(Experience, data.experience_id):
+        raise HTTPException(422, "Тур не найден.")
 
 
 @router.get("/bookings/{booking_id}/confirmation")

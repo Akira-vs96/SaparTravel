@@ -14,6 +14,7 @@ from app.domain.engagement import AuditLog, Notification, PasswordReset, Review,
 from app.domain.models import Booking, CategoryRecord, Departure, Experience, User, utc_now
 from app.services.catalog_service import user_data
 from app.services.engagement_service import audit, emit_event, refresh_review_rating
+from app.services import support_service
 
 router = APIRouter()
 TextBody = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=5000)]
@@ -41,10 +42,16 @@ class TicketInput(InputModel):
     subject: Annotated[str, StringConstraints(strip_whitespace=True, min_length=3, max_length=180)]
     body: TextBody
     booking_id: str | None = Field(default=None, min_length=1, max_length=36)
+    priority: Literal["P1", "P2", "P3"] = "P3"
 
 
 class MessageInput(InputModel):
     body: TextBody
+    acknowledge: bool = False
+
+
+class TicketPriorityInput(InputModel):
+    priority: Literal["P1", "P2", "P3"]
 
 
 class TicketStatusInput(InputModel):
@@ -164,7 +171,13 @@ def find_ticket(db, ticket_id, user, lock=False):
 
 
 def ticket_data(item):
-    return columns(item, ("id", "user_id", "booking_id", "subject", "status", "created_at", "updated_at"))
+    result = columns(item, ("id", "user_id", "booking_id", "subject", "status", "created_at", "updated_at",
+                            "priority", "response_due_at", "first_response_at", "first_response_by"))
+    result["response_working_minutes"] = round(item.response_working_seconds / 60, 4) if item.response_working_seconds is not None else None
+    result["response_overdue"] = bool(item.response_due_at and item.first_response_at is None
+                                      and support_service.aware(item.response_due_at) < utc_now())
+    result["can_acknowledge"] = item.first_response_at is None
+    return result
 
 
 def message_data(item):
@@ -202,7 +215,11 @@ def create_ticket(data: TicketInput, user: CurrentUser, db: DbSession):
             raise HTTPException(404, "Бронирование не найдено.")
         vendor_id = booking.departure.experience.vendor_id
     item = SupportTicket(user_id=user.id, vendor_id=vendor_id, booking_id=data.booking_id,
-                         subject=data.subject.strip())
+                         subject=data.subject.strip(), priority=data.priority, created_at=utc_now())
+    try:
+        support_service.set_deadline(item)
+    except (ValueError, OSError, KeyError, TypeError):
+        raise HTTPException(503, "Календарь поддержки временно недоступен.") from None
     db.add(item)
     db.flush()
     db.add(SupportMessage(ticket_id=item.id, author_id=user.id, author_role=user.role, body=data.body))
@@ -237,6 +254,17 @@ def add_message(ticket_id: str, data: MessageInput, user: CurrentUser, db: DbSes
     item = find_ticket(db, ticket_id, user, lock=True)
     if item.status == "closed":
         raise HTTPException(409, "Сначала откройте закрытое обращение.")
+    if data.acknowledge:
+        staff = user.role == "admin" or (user.role == "vendor" and item.vendor_id == user.id)
+        if not staff or item.user_id == user.id:
+            raise HTTPException(403, "Реакцию фиксирует ответственный сотрудник поддержки.")
+        if len(data.body.strip()) < 20:
+            raise HTTPException(422, "Сообщите принятие обращения и следующий шаг: не менее 20 символов.")
+        try:
+            support_service.acknowledge(item, user)
+        except ValueError:
+            raise HTTPException(503, "Календарь поддержки не покрывает время реакции.") from None
+        audit(db, user.id, "support.acknowledged", "support_ticket", item.id)
     message = SupportMessage(ticket_id=item.id, author_id=user.id, author_role=user.role, body=data.body)
     item.updated_at = utc_now()
     if item.status == "resolved" and item.user_id == user.id:
@@ -246,6 +274,56 @@ def add_message(ticket_id: str, data: MessageInput, user: CurrentUser, db: DbSes
     audit(db, user.id, "support.message", "support_ticket", item.id)
     db.commit()
     return message_data(message)
+
+
+@router.patch("/support/tickets/{ticket_id}/priority")
+def ticket_priority(ticket_id: str, data: TicketPriorityInput, user: Manager, db: DbSession):
+    item = find_ticket(db, ticket_id, user, lock=True)
+    if item.user_id == user.id or (user.role != "admin" and item.vendor_id != user.id):
+        raise HTTPException(403, "Приоритет проверяет ответственный сотрудник.")
+    if item.first_response_at is not None:
+        raise HTTPException(409, "Приоритет первой реакции уже зафиксирован.")
+    previous = item.priority
+    if item.response_calendar:
+        proposed = support_service.response_deadline(item.created_at, data.priority, item.response_calendar)
+        if (item.response_due_at and support_service.aware(item.response_due_at) <= utc_now()
+                and proposed > support_service.aware(item.response_due_at)):
+            raise HTTPException(409, "Нельзя переносить уже нарушенный срок первой реакции.")
+    item.priority = data.priority
+    if item.response_calendar:
+        support_service.set_deadline(item, item.response_calendar)
+    audit(db, user.id, "support.priority", "support_ticket", item.id, {"from": previous, "to": data.priority})
+    db.commit()
+    return ticket_data(item)
+
+
+@router.get("/manage/support-metrics")
+def support_metrics(user: Manager, db: DbSession, month: str = Query(pattern=r"^\d{4}-\d{2}$")):
+    try:
+        start, end = support_service.month_window(month)
+    except ValueError:
+        raise HTTPException(422, "Укажите существующий месяц YYYY-MM.") from None
+    query = select(SupportTicket).where(or_(
+        (SupportTicket.response_due_at >= start) & (SupportTicket.response_due_at < end),
+        (SupportTicket.response_due_at.is_(None)) & (SupportTicket.created_at >= start) & (SupportTicket.created_at < end)))
+    if user.role != "admin":
+        query = query.where(SupportTicket.vendor_id == user.id, SupportTicket.user_id != user.id)
+    return support_service.response_report(db.scalars(query), month)
+
+
+@router.get("/manage/support-metrics/evidence")
+def support_metric_evidence(user: Manager, db: DbSession, month: str = Query(pattern=r"^\d{4}-\d{2}$")):
+    try:
+        start, end = support_service.month_window(month)
+    except ValueError:
+        raise HTTPException(422, "Укажите существующий месяц YYYY-MM.") from None
+    query = select(SupportTicket).where(SupportTicket.response_due_at >= start, SupportTicket.response_due_at < end)
+    if user.role != "admin":
+        query = query.where(SupportTicket.vendor_id == user.id, SupportTicket.user_id != user.id)
+    return {"month": month, "items": [{**columns(item, ("id", "priority", "created_at", "response_due_at", "first_response_at")),
+                                       "response_working_seconds": item.response_working_seconds,
+                                       "calendar_id": (item.response_calendar or {}).get("id")}
+                                      for item in db.scalars(query.order_by(SupportTicket.response_due_at))]}
 
 
 @router.patch("/support/tickets/{ticket_id}/status")
@@ -420,7 +498,8 @@ def category_data(item, lang="ru", count=0):
 
 @router.get("/categories")
 def categories(db: DbSession, lang: Language = "ru", limit: int = Query(default=100, ge=1, le=100), offset: int = Query(default=0, ge=0, le=1000000)):
-    counts = dict(db.execute(select(Experience.category, func.count()).where(Experience.is_published.is_(True)).group_by(Experience.category)).all())
+    counts = dict(db.execute(select(Experience.category, func.count()).where(
+        Experience.is_published.is_(True), Experience.is_monitoring.is_(False)).group_by(Experience.category)).all())
     rows = db.scalars(select(CategoryRecord).order_by(CategoryRecord.code).offset(offset).limit(limit))
     return {"items": [category_data(item, lang, counts.get(item.code, 0)) for item in rows]}
 

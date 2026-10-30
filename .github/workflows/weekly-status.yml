@@ -1,0 +1,57 @@
+name: Weekly status draft
+
+on:
+  schedule:
+    - cron: '0 10 * * 5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+  actions: read
+  deployments: read
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read repository facts without owner-level project permissions
+        run: python -m scripts.course.github_facts --repo "$GITHUB_REPOSITORY" --skip-project --output test-results/weekly/github.json
+      - name: Prepare and start pinned CPU model
+        run: |
+          python -m scripts.course.local_model --directory /tmp/sapar-course-model --serve > /tmp/sapar-course-model.log 2>&1 &
+          echo $! > /tmp/sapar-course-model.pid
+          python - <<'PY'
+          import time, urllib.request
+          for _ in range(180):
+              try:
+                  urllib.request.urlopen('http://127.0.0.1:18087/health', timeout=2).close()
+                  break
+              except OSError:
+                  time.sleep(2)
+          else:
+              raise SystemExit('Local model did not become ready; no report is certified')
+          PY
+      - name: Generate a file for human review; never post it to issues or mail
+        run: |
+          python - <<'PY'
+          from datetime import datetime, timedelta, timezone
+          from pathlib import Path
+          import json
+          from scripts.course.weekly_status import build
+          today = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+          end = today - timedelta(days=today.weekday())
+          build(json.loads(Path('test-results/weekly/github.json').read_text()), end-timedelta(days=7), end, Path('test-results/weekly/draft'))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: weekly-status-draft
+          path: test-results/weekly/

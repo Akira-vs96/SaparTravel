@@ -3,6 +3,7 @@ from decimal import Decimal, ROUND_HALF_UP
 
 from sqlalchemy import func, select
 
+from app.core.logging import request_id_context
 from app.domain.engagement import AuditLog, Notification, Review
 from app.domain.models import Experience
 
@@ -31,8 +32,12 @@ def emit_event(db, user_id, event, title, body, booking_id=None, *, title_en=Non
 
 
 def audit(db, actor_id, action, resource_type, resource_id=None, details=None):
+    details = dict(details or {})
+    request_id = request_id_context.get()
+    if request_id is not None:
+        details["request_id"] = request_id
     db.add(AuditLog(actor_id=actor_id, action=action, resource_type=resource_type,
-                    resource_id=resource_id, details=details or {}))
+                    resource_id=resource_id, details=details))
 
 
 def refresh_review_rating(db, experience_id):

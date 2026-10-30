@@ -1,0 +1,168 @@
+{
+  "status": "agent-reviewed; human review still required",
+  "observed_semantic_errors_v1": 5,
+  "observed_semantic_errors_v2": 9,
+  "conclusion": "No improvement demonstrated; numeric whitelist passed despite attribution and null errors. Publish only the deterministic factual report after human review.",
+  "entries": [
+    {
+      "period": "2026-10-12",
+      "prompt_version": 1,
+      "claim": "no manual deployment",
+      "source_fact": "recorded_deployments=0; manual operations unknown",
+      "kind": "semantic",
+      "explanation": "Отсутствие записи не доказывает отсутствие ручного развёртывания",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 1,
+      "claim": "0 customer approval",
+      "source_fact": "customer_approval=null",
+      "kind": "semantic",
+      "explanation": "Неизвестное согласование не является нулём согласований",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 1,
+      "claim": "0 sprint goal",
+      "source_fact": "sprint_goal=null",
+      "kind": "semantic",
+      "explanation": "Неизвестная цель не равна числу 0",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 1,
+      "claim": "10 completed",
+      "source_fact": "ci_success=10; issues_closed=0",
+      "kind": "ambiguous",
+      "explanation": "Нужно явно назвать CI success, не выполненные задачи",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 2,
+      "claim": "no manual deployment",
+      "source_fact": "recorded_deployments=0; manual operations unknown",
+      "kind": "semantic",
+      "explanation": "Необоснованный вывод о ручной работе",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 2,
+      "claim": "0 customer approval",
+      "source_fact": "customer_approval=null",
+      "kind": "semantic",
+      "explanation": "null заменён нулём",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 2,
+      "claim": "0 sprint goal",
+      "source_fact": "sprint_goal=null",
+      "kind": "semantic",
+      "explanation": "null заменён нулём",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 2,
+      "claim": "0 manual minutes",
+      "source_fact": "measured_manual_minutes=null",
+      "kind": "semantic",
+      "explanation": "Непроведённый замер представлен как нулевая длительность",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 2,
+      "claim": "10 completed",
+      "source_fact": "ci_success=10; issues_closed=0",
+      "kind": "ambiguous",
+      "explanation": "Не назван знаменатель/тип операции",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 1,
+      "claim": "no manual deployment",
+      "source_fact": "recorded_deployments=0; manual operations unknown",
+      "kind": "semantic",
+      "explanation": "Отсутствие журнала не доказывает отсутствие действия",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 1,
+      "claim": "3 issues created",
+      "source_fact": "issues_created=0; ci_success=3",
+      "kind": "semantic",
+      "explanation": "Число CI отнесено к созданным issues",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 2,
+      "claim": "no manual deployment",
+      "source_fact": "recorded_deployments=0; manual operations unknown",
+      "kind": "semantic",
+      "explanation": "Необоснованный вывод о ручной работе",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 2,
+      "claim": "3 recorded deployments",
+      "source_fact": "recorded_deployments=0; ci_success=3",
+      "kind": "semantic",
+      "explanation": "Число CI отнесено к deployments",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 2,
+      "claim": "2 issues closed",
+      "source_fact": "issues_closed=0; ci_failure=2",
+      "kind": "semantic",
+      "explanation": "Число failed CI отнесено к закрытым issues",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 2,
+      "claim": "0 sprint goal",
+      "source_fact": "sprint_goal=null",
+      "kind": "semantic",
+      "explanation": "null заменён нулём",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 2,
+      "claim": "0 customer approval",
+      "source_fact": "customer_approval=null",
+      "kind": "semantic",
+      "explanation": "null заменён нулём",
+      "reviewer": "Codex: source-grounded agent review, not student sign-off",
+      "human_approval": false
+    }
+  ]
+}

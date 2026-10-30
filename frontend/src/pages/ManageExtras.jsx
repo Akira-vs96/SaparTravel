@@ -535,6 +535,7 @@ export function Promocodes() {
 function PromoEditor({ item, onClose, onSaved }) {
   const { t, token, lang } = useApp();
   const tours = useResource(`/manage/experiences?lang=${lang}`, { auth: true });
+  const categories = useResource(`/categories?lang=${lang}`);
   const [form, setForm] = useState({
     code: item.code || "",
     kind: item.kind || "percent",
@@ -688,6 +689,15 @@ function PromoEditor({ item, onClose, onSaved }) {
               <option key={tour.id} value={tour.id}>
                 {tour.title}
               </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          {t("category")}
+          <select value={form.category} onChange={(e) => update("category", e.target.value)}>
+            <option value="">{t("allCategories")}</option>
+            {categories.data?.items.map((category) => (
+              <option key={category.code} value={category.code}>{category.name}</option>
             ))}
           </select>
         </label>

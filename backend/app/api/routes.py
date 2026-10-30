@@ -47,6 +47,7 @@ def health(db: DbSession) -> dict:
 def destinations(db: DbSession, lang: Language = "ru"):
     counts = dict(db.execute(select(Experience.destination_id, func.count()).where(
         Experience.is_published.is_(True),
+        Experience.is_monitoring.is_(False),
     ).group_by(Experience.destination_id)).all())
     items = []
     for item in db.scalars(select(Destination).order_by(Destination.slug)):
@@ -72,6 +73,7 @@ def recommendations(
     return recommend(db, budget=budget, category=category, duration_max=duration_max, travelers=travelers, lang=lang)
 
 
+@router.get("/catalog")
 @router.get("/experiences")
 def experiences(
     db: DbSession,
@@ -92,7 +94,7 @@ def experiences(
 ):
     if min_price is not None and max_price is not None and min_price > max_price:
         raise HTTPException(422, "Минимальная цена не может быть больше максимальной.")
-    query = select(Experience).join(Destination).where(Experience.is_published.is_(True))
+    query = select(Experience).join(Destination).where(Experience.is_published.is_(True), Experience.is_monitoring.is_(False))
     if q and q.strip():
         needle = q.strip()
         query = query.where(or_(

@@ -1,0 +1,49 @@
+{
+  "scope": "isolated rootless Docker Compose; Python 3.12, PostgreSQL 17, Nginx and worker",
+  "migration_head": "0005",
+  "alembic_check": true,
+  "restart_health": true,
+  "browser": [
+    {
+      "script": "browser_smoke.py",
+      "exit_code": 0,
+      "duration_seconds": 10.84
+    },
+    {
+      "script": "browser_service_levels.py",
+      "exit_code": 0,
+      "duration_seconds": 3.22
+    },
+    {
+      "script": "browser_management.py",
+      "exit_code": 0,
+      "duration_seconds": 12.35
+    },
+    {
+      "script": "browser_engagement.py",
+      "exit_code": 0,
+      "duration_seconds": 7.83
+    },
+    {
+      "script": "browser_localization.py",
+      "exit_code": 0,
+      "duration_seconds": 14.55
+    },
+    {
+      "script": "browser_visual.py",
+      "exit_code": 0,
+      "duration_seconds": 35.32
+    },
+    {
+      "script": "browser_roles_visual.py",
+      "exit_code": 0,
+      "duration_seconds": 16.11
+    }
+  ],
+  "passed": true,
+  "backend_pytest": {
+    "exit_code": 0,
+    "duration_seconds": 47.95,
+    "scope": "separate disposable database and disposable Python 3.12 container"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-30",
+  "basis": "Existing business-case assumptions, not observed customer results",
+  "currency": "USD (historical LZ3 model)",
+  "horizon_years": 3,
+  "annual_benefit": "21700",
+  "tco": "46000",
+  "roi": "0.4152173913043478260869565217",
+  "npv_15_percent": "9632.11",
+  "payback_years": "1.563909774436090225563909774",
+  "cost_of_delay_per_month": "1808.33",
+  "sensitivity": [
+    {
+      "cost_factor": "1.3",
+      "benefit_factor": "1",
+      "roi": "0.08862876254180602006688963211"
+    },
+    {
+      "cost_factor": "1",
+      "benefit_factor": "0.5",
+      "roi": "-0.2923913043478260869565217391"
+    },
+    {
+      "cost_factor": "1.3",
+      "benefit_factor": "0.5",
+      "roi": "-0.4556856187290969899665551839"
+    }
+  ],
+  "break_even_annual_benefit": "15333.33333333333333333333333",
+  "ods_formula_count": 56,
+  "source_sha256": "1d0d72083dc549f6abb3472242008a6839573948a51d3cefad016f815bcc35a7"
+}

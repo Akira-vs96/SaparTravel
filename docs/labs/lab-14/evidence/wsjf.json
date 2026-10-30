@@ -1,0 +1,117 @@
+{
+  "wip_limit": 3,
+  "scores_are_customer_approved": false,
+  "status": "proposed planning estimates",
+  "initiatives": [
+    {
+      "id": "P01",
+      "initiative": "Внешний UAT и runbook с принимающим",
+      "value": "13",
+      "urgency": "13",
+      "risk_reduction": "13",
+      "size": "3",
+      "basis": "Блокирует передачу; владелец и дата требуют согласования",
+      "cost_of_delay": 39,
+      "wsjf": 13.0
+    },
+    {
+      "id": "P02",
+      "initiative": "Журнал deployments и связанных инцидентов",
+      "value": "8",
+      "urgency": "8",
+      "risk_reduction": "13",
+      "size": "3",
+      "basis": "Без источника DORA остаётся неизвестной",
+      "cost_of_delay": 29,
+      "wsjf": 9.666666666666666
+    },
+    {
+      "id": "P03",
+      "initiative": "Согласованный календарь и ответственные поддержки",
+      "value": "8",
+      "urgency": "8",
+      "risk_reduction": "8",
+      "size": "3",
+      "basis": "Сроки API есть; договорные полномочия не назначены",
+      "cost_of_delay": 24,
+      "wsjf": 8.0
+    },
+    {
+      "id": "P04",
+      "initiative": "Off-site копии и внешний restore drill",
+      "value": "13",
+      "urgency": "13",
+      "risk_reduction": "13",
+      "size": "5",
+      "basis": "Потеря единственного узла остаётся внешним риском",
+      "cost_of_delay": 39,
+      "wsjf": 7.8
+    },
+    {
+      "id": "P06",
+      "initiative": "Независимая разметка набора AI и проверка качества",
+      "value": "5",
+      "urgency": "5",
+      "risk_reduction": "8",
+      "size": "3",
+      "basis": "Модель не превосходит правила; запускать без проверки нельзя",
+      "cost_of_delay": 18,
+      "wsjf": 6.0
+    },
+    {
+      "id": "P05",
+      "initiative": "Три внешние точки мониторинга",
+      "value": "13",
+      "urgency": "13",
+      "risk_reduction": "13",
+      "size": "8",
+      "basis": "Локальный кворум не даёт эксплуатационного SLA",
+      "cost_of_delay": 39,
+      "wsjf": 4.875
+    },
+    {
+      "id": "P07",
+      "initiative": "Общий rate limit для нескольких worker",
+      "value": "8",
+      "urgency": "8",
+      "risk_reduction": "13",
+      "size": "8",
+      "basis": "Текущий limiter привязан к процессу; публичный контур требует пересмотра",
+      "cost_of_delay": 29,
+      "wsjf": 3.625
+    },
+    {
+      "id": "P08",
+      "initiative": "Реальная email-доставка с очередью и наблюдаемостью",
+      "value": "8",
+      "urgency": "5",
+      "risk_reduction": "8",
+      "size": "8",
+      "basis": "Внешний SMTP и согласие на канал не предоставлены",
+      "cost_of_delay": 21,
+      "wsjf": 2.625
+    },
+    {
+      "id": "P09",
+      "initiative": "Реальный платёжный провайдер с webhook и сверкой",
+      "value": "8",
+      "urgency": "3",
+      "risk_reduction": "8",
+      "size": "13",
+      "basis": "Вне базового SOW; нужен договор и доступ провайдера",
+      "cost_of_delay": 19,
+      "wsjf": 1.4615384615384615
+    },
+    {
+      "id": "P10",
+      "initiative": "Визуальная полировка второстепенных экранов",
+      "value": "3",
+      "urgency": "1",
+      "risk_reduction": "1",
+      "size": "5",
+      "basis": "Основные бизнес-сценарии уже проверены",
+      "cost_of_delay": 5,
+      "wsjf": 1.0
+    }
+  ]
+}

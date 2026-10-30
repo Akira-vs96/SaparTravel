@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-30",
+  "repository": "Akira-vs96/SaparTravel",
+  "project_url": "https://github.com/users/Akira-vs96/projects/2",
+  "triage_owner": "Akira-vs96",
+  "due_date": "2026-11-06",
+  "issues": [
+    {
+      "title": "B-01: Проверить Trivy/Gitleaks в обязательном CI",
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/32",
+      "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr2eg",
+      "status": "Review",
+      "risk_id": "R-03, R-16",
+      "source": "docs/security/security-scan-report.md"
+    },
+    {
+      "title": "B-02: Проверить аудит административных операций с request ID",
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/33",
+      "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr2n8",
+      "status": "Review",
+      "risk_id": "R-13 / Repudiation",
+      "source": "backend/tests/test_engagement.py"
+    },
+    {
+      "title": "B-03: Проверить ограничения auth и нагрузочный контур",
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/34",
+      "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr2zE",
+      "status": "Review",
+      "risk_id": "R-08, R-20 / DoS",
+      "source": "docs/ops/catalog-load.md"
+    },
+    {
+      "title": "INC-01: Review обработки HTTP 200 с невалидным телом",
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/35",
+      "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr278",
+      "status": "Review",
+      "risk_id": "UI null contract",
+      "source": "frontend/src/api.js"
+    },
+    {
+      "title": "INC-02: Review отмены устаревших запросов интерфейса",
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/36",
+      "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr3Fs",
+      "status": "Review",
+      "risk_id": "UI stale response",
+      "source": "frontend/src/components/common.jsx"
+    },
+    {
+      "title": "INC-03: Закрепить отрицательные ответы каталога в CI",
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/37",
+      "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr3Pc",
+      "status": "Review",
+      "risk_id": "UI regression coverage",
+      "source": "tests/browser_invalid_response.py"
+    }
+  ],
+  "human_review_completed": false
+}

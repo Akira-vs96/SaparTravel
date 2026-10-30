@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     demo_private_data: bool = False
     password_reset_expire_minutes: int = Field(default=30, ge=5, le=120)
     public_web_url: str = "http://localhost:5173"
+    support_calendar_file: str = ""
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

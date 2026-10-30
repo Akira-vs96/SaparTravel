@@ -1,0 +1,22 @@
+{
+  "id": "JOB-07",
+  "role": "Junior Project Manager",
+  "employer": "Canonical",
+  "city": "Americas / APAC, remote",
+  "channel": "Employer ATS",
+  "url": "https://job-boards.greenhouse.io/canonical/jobs/5861481",
+  "accessed_on": "2026-10-30",
+  "normalized_requirements": [
+    "planning",
+    "budget",
+    "risk",
+    "communication",
+    "technical",
+    "teamwork",
+    "english",
+    "education"
+  ],
+  "paraphrased_requirements": "Техническое образование или обоснованный альтернативный путь; английский, коммуникации и лидерство; сроки/объём/ресурсы, риски, встречи заказчика и зависимости.",
+  "content_completeness": "requirements-read",
+  "source_kind": "primary employer posting"
+}
