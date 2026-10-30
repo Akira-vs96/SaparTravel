@@ -18,8 +18,9 @@ jobs:
   acceptance:
     runs-on: ubuntu-latest
     timeout-minutes: 35
-    # Matching pg_dump/pg_restore 17 clients; no host client/server version mismatch.
-    container: postgres:17-bookworm
+    # Use the image's native Python: setup-python's Ubuntu binary requires
+    # a newer glibc than Debian bookworm. Install matching PostgreSQL 17 clients.
+    container: python:3.12-bookworm
     services:
       postgres:
         image: postgres:17-alpine
@@ -45,20 +46,28 @@ jobs:
       DEMO_MAILBOX_ENABLED: 'false'
       LOG_LEVEL: WARNING
     steps:
-      - run: apt-get update && apt-get install -y --no-install-recommends git ca-certificates
+      - name: Install PostgreSQL 17 clients from the official PGDG repository
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends git curl ca-certificates
+          install -d /usr/share/postgresql-common/pgdg
+          curl --fail --silent --show-error https://www.postgresql.org/media/keys/ACCC4CF8.asc -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
+          echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt bookworm-pgdg main' > /etc/apt/sources.list.d/pgdg.list
+          apt-get update
+          apt-get install -y --no-install-recommends postgresql-client-17
+          pg_dump --version
+          pg_restore --version
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: pip install -r backend/requirements-dev.txt -r tests/requirements-browser.txt
+      - run: python -m pip install -r backend/requirements-dev.txt -r tests/requirements-browser.txt
       - run: python -m playwright install --with-deps chromium
       - run: python -m unittest discover -s tests -p test_browser_probe.py -v
       - run: npm ci && npm run build
         working-directory: frontend
       - name: Prepare the dedicated 500-tour database
+        id: fixture
         run: python -m scripts.prepare_catalog_load --manifest test-results/catalog-load-fixture.json
       - name: Start load API and record stand configuration
         run: |
@@ -88,7 +97,7 @@ jobs:
       - name: Full 20 RPS acceptance, 120s warmup and 600s measurement
         run: python -m scripts.catalog_load --base-url http://127.0.0.1:18000 --stand-config test-results/catalog-load-stand.json --output test-results/catalog-load.json
       - name: Stop the owned load API and create the dedicated recovery database
-        if: always()
+        if: always() && steps.fixture.outcome == 'success'
         run: |
           if test -f test-results/load-api.pid; then kill "$(cat test-results/load-api.pid)" || true; fi
           python - <<'PY'
@@ -97,7 +106,7 @@ jobs:
               db.execute('CREATE DATABASE sapar_sli_recovery_test')
           PY
       - name: API outage, verified restore and five real control minutes
-        if: always()
+        if: always() && steps.fixture.outcome == 'success'
         run: python -u -m scripts.recovery_acceptance --output test-results/recovery.json --probe-output test-results/recovery-probes.jsonl
       - uses: actions/upload-artifact@v4
         if: always()

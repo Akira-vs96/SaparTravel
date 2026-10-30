@@ -337,6 +337,10 @@
         {
           "path": ".github/ISSUE_TEMPLATE",
           "label": "ISSUE_TEMPLATE"
+        },
+        {
+          "path": "docs/labs/lab-02/evidence/wiki-publication.json",
+          "label": "wiki-publication.json"
         }
       ],
       "commands": [
@@ -512,7 +516,7 @@
             "docs/project-board-workflow.md",
             ".github/ISSUE_TEMPLATE"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Предложения правил опубликованы в Wiki; явное согласование всей командой не подтверждено."
         },
         {
           "kind": "step",
@@ -3117,6 +3121,14 @@
         {
           "path": "docs/labs/evidence/handoff.json",
           "label": "handoff.json"
+        },
+        {
+          "path": "docs/labs/lab-02/evidence/wiki-publication.json",
+          "label": "wiki-publication.json"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/branch-protection.json",
+          "label": "branch-protection.json"
         }
       ],
       "commands": [
@@ -3205,18 +3217,12 @@
           "text": "Защитите основную ветку: Settings → Branches (в новом интерфейсе — Settings → Rules → Rulesets) → создайте правило для main: запрет прямого push, обязательный pull request, обязательное прохождение проверки CI, одно одобрение ревью.",
           "source_paragraph": 449,
           "id": "LZ10-S05",
-          "status": "requires-human",
-          "requires_people": true,
+          "status": "verified",
+          "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/branch-protection.json"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "main защищена через API: 6 обязательных CI, strict, 1 review, применение к admin, запрет force push/deletion; выполнен read-back."
         },
         {
           "kind": "step",
@@ -3338,8 +3344,8 @@
           "text": "Определите свой уровень по каждой метрике и предложите два улучшения. Улучшение должно менять систему, а не намерения: «настроить автоматическое развёртывание при слиянии», а не «писать код аккуратнее». Для каждого укажите ожидаемый эффект в числах и дату пересчёта метрик.",
           "source_paragraph": 456,
           "id": "LZ10-S12",
-          "status": "requires-human",
-          "requires_people": true,
+          "status": "partial",
+          "requires_people": false,
           "evidence": [
             ".github/workflows/ci.yml",
             ".github/workflows/service-level-acceptance.yml",
@@ -3349,7 +3355,7 @@
             "docs/labs/lab-10/evidence/dora.json",
             "docs/labs/lab-10/evidence/backend-coverage.json"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "Четыре уровня DORA не классифицируются без deployments; два числовых улучшения и даты подготовлены в release-plan."
         },
         {
           "kind": "step",
@@ -3452,18 +3458,13 @@
           "text": "Определения четырёх метрик записаны в вики.",
           "source_paragraph": 491,
           "id": "LZ10-C03",
-          "status": "requires-human",
-          "requires_people": true,
+          "status": "verified",
+          "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-02/evidence/wiki-publication.json",
+            "docs/ops/release-plan.md"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "Определения опубликованы в Wiki, commit 301d833; источник и ссылка сохранены."
         },
         {
           "kind": "check",

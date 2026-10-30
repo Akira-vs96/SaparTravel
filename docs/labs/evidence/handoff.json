@@ -11,7 +11,28 @@
       "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr2eg",
       "status": "Review",
       "risk_id": "R-03, R-16",
-      "source": "docs/security/security-scan-report.md"
+      "source": "docs/security/security-scan-report.md",
+      "board_read_back": {
+        "assignees": [
+          "Akira-vs96"
+        ],
+        "content": {
+          "body": "Реальные сканеры и шесть точных исключений исторических тестовых литералов добавлены. Требуется свежий удалённый CI и независимое review.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: M. Iteration: Methodology-2026-10-30. Risk ID: R-03, R-16.\n\nКритерий завершения: CI падает при находке секрета или HIGH/CRITICAL; JSON сохраняется; исключения ограничены конкретными отпечатками.\n\nИсточник реализации/доказательства: `docs/security/security-scan-report.md`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n",
+          "number": 32,
+          "repository": "Akira-vs96/SaparTravel",
+          "title": "B-01: Проверить Trivy/Gitleaks в обязательном CI",
+          "type": "Issue",
+          "url": "https://github.com/Akira-vs96/SaparTravel/issues/32"
+        },
+        "id": "PVTI_lAHOCuk0E84Bj444zhEr2eg",
+        "iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "owner": "Akira-vs96 (triage)",
+        "repository": "https://github.com/Akira-vs96/SaparTravel",
+        "risk ID": "R-03, R-16",
+        "size (S/M/L)": "M",
+        "status": "Review",
+        "title": "B-01: Проверить Trivy/Gitleaks в обязательном CI"
+      }
     },
     {
       "title": "B-02: Проверить аудит административных операций с request ID",
@@ -19,7 +40,28 @@
       "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr2n8",
       "status": "Review",
       "risk_id": "R-13 / Repudiation",
-      "source": "backend/tests/test_engagement.py"
+      "source": "backend/tests/test_engagement.py",
+      "board_read_back": {
+        "assignees": [
+          "Akira-vs96"
+        ],
+        "content": {
+          "body": "Связь серверного X-Request-ID с AuditLog.details реализована; actor, action, resource и timestamp сохраняются транзакционно.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: R-13 / Repudiation.\n\nКритерий завершения: API-тест связывает две смены роли/активности с двумя разными request ID; доступ к журналу ограничен администратором; review не выполнен.\n\nИсточник реализации/доказательства: `backend/tests/test_engagement.py`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n",
+          "number": 33,
+          "repository": "Akira-vs96/SaparTravel",
+          "title": "B-02: Проверить аудит административных операций с request ID",
+          "type": "Issue",
+          "url": "https://github.com/Akira-vs96/SaparTravel/issues/33"
+        },
+        "id": "PVTI_lAHOCuk0E84Bj444zhEr2n8",
+        "iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "owner": "Akira-vs96 (triage)",
+        "repository": "https://github.com/Akira-vs96/SaparTravel",
+        "risk ID": "R-13 / Repudiation",
+        "size (S/M/L)": "S",
+        "status": "Review",
+        "title": "B-02: Проверить аудит административных операций с request ID"
+      }
     },
     {
       "title": "B-03: Проверить ограничения auth и нагрузочный контур",
@@ -27,7 +69,28 @@
       "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr2zE",
       "status": "Review",
       "risk_id": "R-08, R-20 / DoS",
-      "source": "docs/ops/catalog-load.md"
+      "source": "docs/ops/catalog-load.md",
+      "board_read_back": {
+        "assignees": [
+          "Akira-vs96"
+        ],
+        "content": {
+          "body": "Auth limiter и воспроизводимый 20 RPS тест существуют; локальное измерение 30.10 сохранено. Распределённый limiter для нескольких узлов пока отсутствует.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: M. Iteration: Methodology-2026-10-30. Risk ID: R-08, R-20 / DoS.\n\nКритерий завершения: Проверить 429 auth и 500 туров / 20 RPS / 600 секунд / p95 ≤500 мс; зафиксировать ограничения одного процесса и решение для публичного контура.\n\nИсточник реализации/доказательства: `docs/ops/catalog-load.md`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n",
+          "number": 34,
+          "repository": "Akira-vs96/SaparTravel",
+          "title": "B-03: Проверить ограничения auth и нагрузочный контур",
+          "type": "Issue",
+          "url": "https://github.com/Akira-vs96/SaparTravel/issues/34"
+        },
+        "id": "PVTI_lAHOCuk0E84Bj444zhEr2zE",
+        "iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "owner": "Akira-vs96 (triage)",
+        "repository": "https://github.com/Akira-vs96/SaparTravel",
+        "risk ID": "R-08, R-20 / DoS",
+        "size (S/M/L)": "M",
+        "status": "Review",
+        "title": "B-03: Проверить ограничения auth и нагрузочный контур"
+      }
     },
     {
       "title": "INC-01: Review обработки HTTP 200 с невалидным телом",
@@ -35,7 +98,28 @@
       "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr278",
       "status": "Review",
       "risk_id": "UI null contract",
-      "source": "frontend/src/api.js"
+      "source": "frontend/src/api.js",
+      "board_read_back": {
+        "assignees": [
+          "Akira-vs96"
+        ],
+        "content": {
+          "body": "JSON null и HTML прокси отклоняются API-клиентом; сообщение ошибки доступно ru/kk/en. До исправления падение воспроизведено.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI null contract.\n\nКритерий завершения: Оба ответа дают error UI и возможность повтора без pageerror; обычный JSON и 204 продолжают работать; нужен независимый review.\n\nИсточник реализации/доказательства: `frontend/src/api.js`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n",
+          "number": 35,
+          "repository": "Akira-vs96/SaparTravel",
+          "title": "INC-01: Review обработки HTTP 200 с невалидным телом",
+          "type": "Issue",
+          "url": "https://github.com/Akira-vs96/SaparTravel/issues/35"
+        },
+        "id": "PVTI_lAHOCuk0E84Bj444zhEr278",
+        "iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "owner": "Akira-vs96 (triage)",
+        "repository": "https://github.com/Akira-vs96/SaparTravel",
+        "risk ID": "UI null contract",
+        "size (S/M/L)": "S",
+        "status": "Review",
+        "title": "INC-01: Review обработки HTTP 200 с невалидным телом"
+      }
     },
     {
       "title": "INC-02: Review отмены устаревших запросов интерфейса",
@@ -43,7 +127,28 @@
       "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr3Fs",
       "status": "Review",
       "risk_id": "UI stale response",
-      "source": "frontend/src/components/common.jsx"
+      "source": "frontend/src/components/common.jsx",
+      "board_read_back": {
+        "assignees": [
+          "Akira-vs96"
+        ],
+        "content": {
+          "body": "Общий useResource игнорирует результат отменённого запроса. Требуется независимая проверка переходов между экранами.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI stale response.\n\nКритерий завершения: После AbortSignal.aborted результат не меняет состояние нового запроса; проверить быстрые переходы и сетевую задержку.\n\nИсточник реализации/доказательства: `frontend/src/components/common.jsx`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n",
+          "number": 36,
+          "repository": "Akira-vs96/SaparTravel",
+          "title": "INC-02: Review отмены устаревших запросов интерфейса",
+          "type": "Issue",
+          "url": "https://github.com/Akira-vs96/SaparTravel/issues/36"
+        },
+        "id": "PVTI_lAHOCuk0E84Bj444zhEr3Fs",
+        "iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "owner": "Akira-vs96 (triage)",
+        "repository": "https://github.com/Akira-vs96/SaparTravel",
+        "risk ID": "UI stale response",
+        "size (S/M/L)": "S",
+        "status": "Review",
+        "title": "INC-02: Review отмены устаревших запросов интерфейса"
+      }
     },
     {
       "title": "INC-03: Закрепить отрицательные ответы каталога в CI",
@@ -51,8 +156,32 @@
       "project_item_id": "PVTI_lAHOCuk0E84Bj444zhEr3Pc",
       "status": "Review",
       "risk_id": "UI regression coverage",
-      "source": "tests/browser_invalid_response.py"
+      "source": "tests/browser_invalid_response.py",
+      "board_read_back": {
+        "assignees": [
+          "Akira-vs96"
+        ],
+        "content": {
+          "body": "Добавлен реальный Chromium-сценарий browser_invalid_response; локальный запуск прошёл для JSON null и HTML.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI regression coverage.\n\nКритерий завершения: Сценарий включён в browser job; все восемь browser scripts зелёные; повторная оценка эффекта 13.11.2026.\n\nИсточник реализации/доказательства: `tests/browser_invalid_response.py`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n",
+          "number": 37,
+          "repository": "Akira-vs96/SaparTravel",
+          "title": "INC-03: Закрепить отрицательные ответы каталога в CI",
+          "type": "Issue",
+          "url": "https://github.com/Akira-vs96/SaparTravel/issues/37"
+        },
+        "id": "PVTI_lAHOCuk0E84Bj444zhEr3Pc",
+        "iteration": "Methodology-2026-10-30; due 2026-11-06",
+        "owner": "Akira-vs96 (triage)",
+        "repository": "https://github.com/Akira-vs96/SaparTravel",
+        "risk ID": "UI regression coverage",
+        "size (S/M/L)": "S",
+        "status": "Review",
+        "title": "INC-03: Закрепить отрицательные ответы каталога в CI"
+      }
     }
   ],
-  "human_review_completed": false
+  "human_review_completed": false,
+  "pull_request": "https://github.com/Akira-vs96/SaparTravel/pull/38",
+  "branch": "feat/course-evidence-20261030",
+  "project_items_at_handoff": 36
 }

@@ -359,9 +359,12 @@ CI: [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
 ### ЛЗ 8: финансовая модель и комплект сдачи
 
-Материалы в [docs/lab-8/](docs/lab-8/) включают бюджет на 12 месяцев, сравнение вариантов размещения, юнит-экономику, реестр NFR и baseline backlog. Расчёты проекта выражены в тенге; исходные свидетельства тарифов провайдера сохраняют исходную валюту.
+Актуальные материалы находятся в [разделе ЛЗ 8](docs/labs/lab-08/README.md): бюджет на 12 месяцев, сравнение размещения и юнит-экономика. [Исправления версии 1.2](docs/labs/lab-08/corrections.md) устраняют ошибки суммы EMV и двойного учёта резерва. Расчёты выражены в тенге; тарифы и курс имеют указанную историческую дату.
 
-- [Финансовая модель XLSX](docs/lab-8/SaparTravel_LZ8_Financial_Model.xlsx).
+- [Актуальная финансовая модель XLSX](docs/labs/lab-08/evidence/SaparTravel_LZ8_Financial_Model.xlsx), [проверка](docs/labs/lab-08/evidence/finance-validation.json).
+
+Следующие файлы — [исторический пакет 23.10, версия 1.1](docs/lab-8/README.md):
+
 - Отчёт: [DOCX](docs/lab-8/SaparTravel_LZ8_Report.docx), [PDF](docs/lab-8/SaparTravel_LZ8_Report.pdf), [HTML](docs/lab-8/SaparTravel_LZ8_Report.html).
 - Презентация: [PPTX](docs/lab-8/SaparTravel_LZ8_defense.pptx), [PDF](docs/lab-8/SaparTravel_LZ8_defense.pdf).
 - [Готовый комплект ZIP](docs/lab-8/SaparTravel_LZ8_Submission.zip).
