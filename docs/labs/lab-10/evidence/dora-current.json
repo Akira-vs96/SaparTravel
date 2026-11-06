@@ -1,0 +1,25 @@
+{
+  "start_utc": "2026-10-30T06:29:57.457631+00:00",
+  "end_utc": "2026-11-06T06:29:57.457631+00:00",
+  "deployment_count": 1,
+  "deployment_frequency_per_week": 1.0,
+  "lead_time_median_hours": 0.5138888888888888,
+  "change_failure_rate_percent": null,
+  "recovery_median_minutes": null,
+  "ci_runs": 13,
+  "ci_success": 9,
+  "ci_failure": 3,
+  "status": "measured",
+  "limitation": "A green CI run is not a deployment. Missing incident evidence is not a 0% failure rate.",
+  "environment": "local-compose",
+  "deployment_ids": [
+    7593623885
+  ],
+  "incident_register_complete": false,
+  "incident_count": 0,
+  "repair_automation_hours": null,
+  "human_labor_hours": null,
+  "source_repository": "Akira-vs96/SaparTravel",
+  "source_captured_at_utc": "2026-11-06T06:29:57.457631+00:00",
+  "scope_note": "One named environment; automation elapsed time is not human labor. Short samples do not establish a team performance tier."
+}

@@ -1,0 +1,103 @@
+{
+  "data_kind": "observed_github_ci",
+  "captured_at_utc": "2026-11-06T07:21:08.770976+00:00",
+  "id": 42179504335,
+  "head_sha": "375d365486c103bd6f9f68880fd1449424733903",
+  "head_branch": "main",
+  "event": "push",
+  "status": "completed",
+  "conclusion": "success",
+  "created_at": "2026-11-06T07:13:55Z",
+  "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335",
+  "completed_at_utc": "2026-11-06T07:18:05+00:00",
+  "wall_seconds": 250.0,
+  "jobs": [
+    {
+      "id": 127765580923,
+      "name": "backend",
+      "conclusion": "success",
+      "started_at": "2026-11-06T07:13:59Z",
+      "completed_at": "2026-11-06T07:15:10Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335/job/127765580923"
+    },
+    {
+      "id": 127765581130,
+      "name": "frontend",
+      "conclusion": "success",
+      "started_at": "2026-11-06T07:13:58Z",
+      "completed_at": "2026-11-06T07:14:07Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335/job/127765581130"
+    },
+    {
+      "id": 127765581173,
+      "name": "course",
+      "conclusion": "success",
+      "started_at": "2026-11-06T07:13:59Z",
+      "completed_at": "2026-11-06T07:14:15Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335/job/127765581173"
+    },
+    {
+      "id": 127765581262,
+      "name": "containers",
+      "conclusion": "success",
+      "started_at": "2026-11-06T07:13:58Z",
+      "completed_at": "2026-11-06T07:14:34Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335/job/127765581262"
+    },
+    {
+      "id": 127765581263,
+      "name": "security",
+      "conclusion": "success",
+      "started_at": "2026-11-06T07:13:58Z",
+      "completed_at": "2026-11-06T07:14:13Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335/job/127765581263"
+    },
+    {
+      "id": 127766013794,
+      "name": "browser",
+      "conclusion": "success",
+      "started_at": "2026-11-06T07:15:13Z",
+      "completed_at": "2026-11-06T07:18:05Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335/job/127766013794"
+    }
+  ],
+  "ephemeral_readonly_collector_verified": true,
+  "artifacts": [
+    {
+      "id": 13485136003,
+      "name": "dora-source",
+      "size_in_bytes": 26563,
+      "created_at": "2026-11-06T07:14:12Z",
+      "expires_at": "2027-02-04T07:13:56Z",
+      "expired": false,
+      "digest": "sha256:39afcefea6aef5eb31815341cf27b427f3f88acefd0d6486d4804cd1e8be7c04"
+    },
+    {
+      "id": 13485101128,
+      "name": "sapartravel-application-images",
+      "size_in_bytes": 98434305,
+      "created_at": "2026-11-06T07:14:32Z",
+      "expires_at": "2026-11-13T07:14:30Z",
+      "expired": false,
+      "digest": "sha256:d9ec8f514a32c61bf6844633adf1afc01c8b15c6535dcc771adccd7152ff8999"
+    },
+    {
+      "id": 13484299426,
+      "name": "browser-smoke",
+      "size_in_bytes": 15531727,
+      "created_at": "2026-11-06T07:18:02Z",
+      "expires_at": "2027-02-04T07:13:56Z",
+      "expired": false,
+      "digest": "sha256:7730f053a1353ea39b01dc0193f6ce5056fac2c05f09f20654fcbb2e295300ef"
+    },
+    {
+      "id": 13484203711,
+      "name": "security-scan",
+      "size_in_bytes": 4395,
+      "created_at": "2026-11-06T07:14:11Z",
+      "expires_at": "2027-02-04T07:13:56Z",
+      "expired": false,
+      "digest": "sha256:60f36ab5deab54168f9b050978e384e913398dfdb555d3be72ccecfc7016795b"
+    }
+  ]
+}

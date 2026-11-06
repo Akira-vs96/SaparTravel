@@ -1,0 +1,1484 @@
+{
+  "captured_at_utc": "2026-11-06T05:51:07.024Z",
+  "kind": "executed_functional_audit",
+  "environments": {
+    "main": {
+      "api_url": "http://127.0.0.1:8000",
+      "web_url": "http://127.0.0.1:5173",
+      "health": {
+        "status": "ok",
+        "service": "sapartravel-api",
+        "database": "ok"
+      },
+      "endpoint_count": 76,
+      "endpoints": [
+        "DELETE /api/v1/admin/categories/{code}",
+        "DELETE /api/v1/favorites/{experience_id}",
+        "DELETE /api/v1/manage/departures/{departure_id}",
+        "DELETE /api/v1/saved-searches/{search_id}",
+        "GET /api/v1/admin/audit",
+        "GET /api/v1/admin/demo-mailbox",
+        "GET /api/v1/admin/users",
+        "GET /api/v1/admin/vendors",
+        "GET /api/v1/auth/me",
+        "GET /api/v1/bookings",
+        "GET /api/v1/bookings/{booking_id}",
+        "GET /api/v1/bookings/{booking_id}/calendar.ics",
+        "GET /api/v1/bookings/{booking_id}/confirmation",
+        "GET /api/v1/categories",
+        "GET /api/v1/destinations",
+        "GET /api/v1/experiences",
+        "GET /api/v1/experiences/{experience_id}/reviews",
+        "GET /api/v1/experiences/{slug}",
+        "GET /api/v1/favorites",
+        "GET /api/v1/health",
+        "GET /api/v1/manage/analytics",
+        "GET /api/v1/manage/analytics.csv",
+        "GET /api/v1/manage/bookings",
+        "GET /api/v1/manage/bookings/{booking_id}",
+        "GET /api/v1/manage/destinations",
+        "GET /api/v1/manage/experiences",
+        "GET /api/v1/manage/payments",
+        "GET /api/v1/manage/promocodes",
+        "GET /api/v1/manage/refunds",
+        "GET /api/v1/manage/reviews",
+        "GET /api/v1/notifications",
+        "GET /api/v1/payments/test-instruments",
+        "GET /api/v1/payments/{payment_id}",
+        "GET /api/v1/recommendations",
+        "GET /api/v1/reviews/mine",
+        "GET /api/v1/saved-searches",
+        "GET /api/v1/support/tickets",
+        "GET /api/v1/support/tickets/{ticket_id}",
+        "GET /api/v1/support/tickets/{ticket_id}/messages",
+        "PATCH /api/v1/admin/categories/{code}",
+        "PATCH /api/v1/admin/reviews/{review_id}",
+        "PATCH /api/v1/admin/users/{user_id}",
+        "PATCH /api/v1/auth/me",
+        "PATCH /api/v1/manage/bookings/{booking_id}",
+        "PATCH /api/v1/manage/departures/{departure_id}",
+        "PATCH /api/v1/manage/destinations/{destination_id}",
+        "PATCH /api/v1/manage/experiences/{experience_id}",
+        "PATCH /api/v1/manage/experiences/{experience_id}/departures/{departure_id}",
+        "PATCH /api/v1/support/tickets/{ticket_id}/status",
+        "POST /api/v1/admin/categories",
+        "POST /api/v1/auth/change-password",
+        "POST /api/v1/auth/forgot-password",
+        "POST /api/v1/auth/login",
+        "POST /api/v1/auth/logout",
+        "POST /api/v1/auth/register",
+        "POST /api/v1/auth/reset-password",
+        "POST /api/v1/bookings",
+        "POST /api/v1/bookings/quote",
+        "POST /api/v1/bookings/{booking_id}/cancel",
+        "POST /api/v1/bookings/{booking_id}/payments",
+        "POST /api/v1/manage/bookings/{booking_id}/refunds",
+        "POST /api/v1/manage/destinations",
+        "POST /api/v1/manage/experiences",
+        "POST /api/v1/manage/experiences/{experience_id}/departures",
+        "POST /api/v1/manage/promocodes",
+        "POST /api/v1/notifications/read-all",
+        "POST /api/v1/notifications/{notification_id}/read",
+        "POST /api/v1/payments/{payment_id}/confirm",
+        "POST /api/v1/payments/{payment_id}/reconcile",
+        "POST /api/v1/refunds/{refund_id}/retry",
+        "POST /api/v1/reviews",
+        "POST /api/v1/saved-searches",
+        "POST /api/v1/support/tickets",
+        "POST /api/v1/support/tickets/{ticket_id}/messages",
+        "PUT /api/v1/favorites/{experience_id}",
+        "PUT /api/v1/manage/promocodes/{promo_id}"
+      ],
+      "backend_files_compared": 29,
+      "backend_differences": [
+        "app/api/analytics.py",
+        "app/api/commerce_routes.py",
+        "app/api/commerce_schemas.py",
+        "app/api/engagement.py",
+        "app/api/identity.py",
+        "app/api/routes.py",
+        "app/api/schemas.py",
+        "app/core/config.py",
+        "app/core/logging.py",
+        "app/domain/engagement.py",
+        "app/domain/models.py",
+        "app/main.py",
+        "app/monitoring.py",
+        "app/services/commerce_service.py",
+        "app/services/engagement_service.py",
+        "app/services/mail_service.py",
+        "app/services/recommendation_service.py",
+        "app/services/support_service.py",
+        "app/worker.py"
+      ],
+      "backend_tree_sha256": "bc68fd83f55834dcff10485d060fe6221d9e95af115f1affbe4c42092e0d4122",
+      "frontend_assets": [
+        {
+          "asset": "/assets/index-Bp3cD8Bl.js",
+          "sha256": "686f276f8f3f0e06bc8cb5965c16a4285dbef62ee760c55b237d9711bc275e6a",
+          "matches_current_build": false
+        },
+        {
+          "asset": "/assets/index-BgGv45sz.css",
+          "sha256": "f67139cecd9ad18ff1a1ff69cffb8e1fb6fb925310ccbc599dcbe150a7ad33a0",
+          "matches_current_build": false
+        }
+      ]
+    },
+    "existing_qa": {
+      "api_url": "http://127.0.0.1:8012",
+      "web_url": "http://127.0.0.1:5182",
+      "health": {
+        "status": "ok",
+        "service": "sapartravel-api",
+        "database": "ok"
+      },
+      "endpoint_count": 76,
+      "endpoints": [
+        "DELETE /api/v1/admin/categories/{code}",
+        "DELETE /api/v1/favorites/{experience_id}",
+        "DELETE /api/v1/manage/departures/{departure_id}",
+        "DELETE /api/v1/saved-searches/{search_id}",
+        "GET /api/v1/admin/audit",
+        "GET /api/v1/admin/demo-mailbox",
+        "GET /api/v1/admin/users",
+        "GET /api/v1/admin/vendors",
+        "GET /api/v1/auth/me",
+        "GET /api/v1/bookings",
+        "GET /api/v1/bookings/{booking_id}",
+        "GET /api/v1/bookings/{booking_id}/calendar.ics",
+        "GET /api/v1/bookings/{booking_id}/confirmation",
+        "GET /api/v1/categories",
+        "GET /api/v1/destinations",
+        "GET /api/v1/experiences",
+        "GET /api/v1/experiences/{experience_id}/reviews",
+        "GET /api/v1/experiences/{slug}",
+        "GET /api/v1/favorites",
+        "GET /api/v1/health",
+        "GET /api/v1/manage/analytics",
+        "GET /api/v1/manage/analytics.csv",
+        "GET /api/v1/manage/bookings",
+        "GET /api/v1/manage/bookings/{booking_id}",
+        "GET /api/v1/manage/destinations",
+        "GET /api/v1/manage/experiences",
+        "GET /api/v1/manage/payments",
+        "GET /api/v1/manage/promocodes",
+        "GET /api/v1/manage/refunds",
+        "GET /api/v1/manage/reviews",
+        "GET /api/v1/notifications",
+        "GET /api/v1/payments/test-instruments",
+        "GET /api/v1/payments/{payment_id}",
+        "GET /api/v1/recommendations",
+        "GET /api/v1/reviews/mine",
+        "GET /api/v1/saved-searches",
+        "GET /api/v1/support/tickets",
+        "GET /api/v1/support/tickets/{ticket_id}",
+        "GET /api/v1/support/tickets/{ticket_id}/messages",
+        "PATCH /api/v1/admin/categories/{code}",
+        "PATCH /api/v1/admin/reviews/{review_id}",
+        "PATCH /api/v1/admin/users/{user_id}",
+        "PATCH /api/v1/auth/me",
+        "PATCH /api/v1/manage/bookings/{booking_id}",
+        "PATCH /api/v1/manage/departures/{departure_id}",
+        "PATCH /api/v1/manage/destinations/{destination_id}",
+        "PATCH /api/v1/manage/experiences/{experience_id}",
+        "PATCH /api/v1/manage/experiences/{experience_id}/departures/{departure_id}",
+        "PATCH /api/v1/support/tickets/{ticket_id}/status",
+        "POST /api/v1/admin/categories",
+        "POST /api/v1/auth/change-password",
+        "POST /api/v1/auth/forgot-password",
+        "POST /api/v1/auth/login",
+        "POST /api/v1/auth/logout",
+        "POST /api/v1/auth/register",
+        "POST /api/v1/auth/reset-password",
+        "POST /api/v1/bookings",
+        "POST /api/v1/bookings/quote",
+        "POST /api/v1/bookings/{booking_id}/cancel",
+        "POST /api/v1/bookings/{booking_id}/payments",
+        "POST /api/v1/manage/bookings/{booking_id}/refunds",
+        "POST /api/v1/manage/destinations",
+        "POST /api/v1/manage/experiences",
+        "POST /api/v1/manage/experiences/{experience_id}/departures",
+        "POST /api/v1/manage/promocodes",
+        "POST /api/v1/notifications/read-all",
+        "POST /api/v1/notifications/{notification_id}/read",
+        "POST /api/v1/payments/{payment_id}/confirm",
+        "POST /api/v1/payments/{payment_id}/reconcile",
+        "POST /api/v1/refunds/{refund_id}/retry",
+        "POST /api/v1/reviews",
+        "POST /api/v1/saved-searches",
+        "POST /api/v1/support/tickets",
+        "POST /api/v1/support/tickets/{ticket_id}/messages",
+        "PUT /api/v1/favorites/{experience_id}",
+        "PUT /api/v1/manage/promocodes/{promo_id}"
+      ],
+      "backend_files_compared": 29,
+      "backend_differences": [
+        "app/api/analytics.py",
+        "app/api/commerce_routes.py",
+        "app/api/commerce_schemas.py",
+        "app/api/engagement.py",
+        "app/api/identity.py",
+        "app/api/routes.py",
+        "app/api/schemas.py",
+        "app/core/config.py",
+        "app/core/logging.py",
+        "app/domain/engagement.py",
+        "app/domain/models.py",
+        "app/main.py",
+        "app/monitoring.py",
+        "app/services/commerce_service.py",
+        "app/services/engagement_service.py",
+        "app/services/mail_service.py",
+        "app/services/recommendation_service.py",
+        "app/services/support_service.py",
+        "app/worker.py"
+      ],
+      "backend_tree_sha256": "cf30dbc193ebd521e1955de1e9c85ff6cd616481a70817de9d96dc4405cf1dc0",
+      "frontend_assets": [
+        {
+          "asset": "/assets/index-Bf9F9PCZ.js",
+          "sha256": "287dc7a3eb7357b918dfb6b278a958122b5dd9fc687a659e6bfa66e67fea6c6f",
+          "matches_current_build": false
+        },
+        {
+          "asset": "/assets/index-BgGv45sz.css",
+          "sha256": "f67139cecd9ad18ff1a1ff69cffb8e1fb6fb925310ccbc599dcbe150a7ad33a0",
+          "matches_current_build": false
+        }
+      ]
+    },
+    "current": {
+      "web_url": "http://127.0.0.1:5185",
+      "api_url": "http://127.0.0.1:8013",
+      "database": "sapartravel_audit_20261106_browser",
+      "source": "Current workspace; production frontend build; PostgreSQL 17; migrations upgrade and check completed",
+      "temporary": true
+    }
+  },
+  "findings": [
+    {
+      "id": "WEB-01",
+      "severity": "high",
+      "title": "Running containers differ from current source",
+      "main_operation_count": 76,
+      "current_operation_count": 84,
+      "missing_operations": [
+        "GET /api/v1/admin/mail-delivery",
+        "GET /api/v1/bookings/{booking_id}/cancellation-quote",
+        "GET /api/v1/catalog",
+        "GET /api/v1/manage/bookings/{booking_id}/cancellation-quote",
+        "GET /api/v1/manage/support-metrics",
+        "GET /api/v1/manage/support-metrics/evidence",
+        "PATCH /api/v1/support/tickets/{ticket_id}/priority",
+        "POST /api/v1/admin/mail-delivery/{message_id}/retry"
+      ],
+      "changed_backend_files": [
+        "app/api/analytics.py",
+        "app/api/commerce_routes.py",
+        "app/api/commerce_schemas.py",
+        "app/api/engagement.py",
+        "app/api/identity.py",
+        "app/api/routes.py",
+        "app/api/schemas.py",
+        "app/core/config.py",
+        "app/core/logging.py",
+        "app/domain/engagement.py",
+        "app/domain/models.py",
+        "app/main.py",
+        "app/monitoring.py",
+        "app/services/commerce_service.py",
+        "app/services/engagement_service.py",
+        "app/services/mail_service.py",
+        "app/services/recommendation_service.py",
+        "app/services/support_service.py",
+        "app/worker.py"
+      ]
+    },
+    {
+      "id": "WEB-02",
+      "severity": "high",
+      "title": "Malformed successful catalog response crashes the running UI",
+      "reproduction": "Intercept the catalog response with HTTP 200 and null JSON or proxy HTML, then open /explore",
+      "observations": [
+        {
+          "content_type": "application/json",
+          "js_errors": [
+            "Cannot read properties of null (reading 'items')"
+          ],
+          "main_present": false,
+          "alert_count": 0
+        },
+        {
+          "content_type": "text/html",
+          "js_errors": [
+            "Cannot read properties of null (reading 'items')"
+          ],
+          "main_present": false,
+          "alert_count": 0
+        }
+      ],
+      "corrected_in_current_source": true
+    },
+    {
+      "id": "WEB-03",
+      "severity": "medium",
+      "title": "Dollar label in the running promo editor",
+      "reproduction": "Administrator > Promo codes > Create promo code: inspect fixed discount and minimum amount labels",
+      "observed_on_primary": true,
+      "corrected_in_current_source": true
+    },
+    {
+      "id": "WEB-04",
+      "severity": "medium",
+      "title": "Mail administration and additional support API features are not deployed",
+      "main_mail_tab_available": false,
+      "current_mail_ui_verified": true,
+      "missing_operations": [
+        "GET /api/v1/admin/mail-delivery",
+        "GET /api/v1/manage/support-metrics",
+        "GET /api/v1/manage/support-metrics/evidence",
+        "PATCH /api/v1/support/tickets/{ticket_id}/priority",
+        "POST /api/v1/admin/mail-delivery/{message_id}/retry"
+      ]
+    }
+  ],
+  "checks": {
+    "frontend_production_build": {
+      "passed": true,
+      "tool": "Vite 8.3.5"
+    },
+    "backend": {
+      "exit_code": 0,
+      "duration_seconds": 41.602,
+      "database": "sapartravel_audit_20261106_test",
+      "log": "backend.log",
+      "passed": 96,
+      "failed": 0,
+      "skipped": 0,
+      "coverage_percent": 86.18581907090464,
+      "observed_test_requests": 444
+    },
+    "api_operations": {
+      "total": 84,
+      "successful": 84,
+      "all_successful": true,
+      "checks": [
+        {
+          "method": "DELETE",
+          "path": "/api/v1/admin/categories/{code}",
+          "statuses": [
+            204,
+            409
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/v1/favorites/{experience_id}",
+          "statuses": [
+            204
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/v1/manage/departures/{departure_id}",
+          "statuses": [
+            409,
+            204
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "DELETE",
+          "path": "/api/v1/saved-searches/{search_id}",
+          "statuses": [
+            204,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/admin/audit",
+          "statuses": [
+            200,
+            403
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/admin/demo-mailbox",
+          "statuses": [
+            200,
+            403,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/admin/mail-delivery",
+          "statuses": [
+            200,
+            403
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/admin/users",
+          "statuses": [
+            403,
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/admin/vendors",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/auth/me",
+          "statuses": [
+            200,
+            401
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/bookings",
+          "statuses": [
+            200,
+            401
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/bookings/{booking_id}",
+          "statuses": [
+            200,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/bookings/{booking_id}/calendar.ics",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/bookings/{booking_id}/cancellation-quote",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/bookings/{booking_id}/confirmation",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/catalog",
+          "statuses": [
+            200,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/categories",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/destinations",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/experiences",
+          "statuses": [
+            200,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/experiences/{experience_id}/reviews",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/experiences/{slug}",
+          "statuses": [
+            200,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/favorites",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/health",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/analytics",
+          "statuses": [
+            200,
+            403,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/analytics.csv",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/bookings",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/bookings/{booking_id}",
+          "statuses": [
+            200,
+            403,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/bookings/{booking_id}/cancellation-quote",
+          "statuses": [
+            200,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/destinations",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/experiences",
+          "statuses": [
+            200,
+            401,
+            403
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/payments",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/promocodes",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/refunds",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/reviews",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/support-metrics",
+          "statuses": [
+            200,
+            403
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/manage/support-metrics/evidence",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/notifications",
+          "statuses": [
+            200,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/payments/{payment_id}",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/payments/test-instruments",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/recommendations",
+          "statuses": [
+            200,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/reviews/mine",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/saved-searches",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/support/tickets",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/support/tickets/{ticket_id}",
+          "statuses": [
+            200,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/support/tickets/{ticket_id}/messages",
+          "statuses": [
+            200,
+            404,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/admin/categories/{code}",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/admin/reviews/{review_id}",
+          "statuses": [
+            200,
+            403
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/admin/users/{user_id}",
+          "statuses": [
+            200,
+            409
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/auth/me",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/manage/bookings/{booking_id}",
+          "statuses": [
+            200,
+            404,
+            409,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/manage/departures/{departure_id}",
+          "statuses": [
+            200,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/manage/destinations/{destination_id}",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/manage/experiences/{experience_id}",
+          "statuses": [
+            200,
+            404,
+            409,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/manage/experiences/{experience_id}/departures/{departure_id}",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/support/tickets/{ticket_id}/priority",
+          "statuses": [
+            409,
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/support/tickets/{ticket_id}/status",
+          "statuses": [
+            200,
+            403
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/admin/categories",
+          "statuses": [
+            201,
+            403,
+            409
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/admin/mail-delivery/{message_id}/retry",
+          "statuses": [
+            200,
+            403,
+            409
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/auth/change-password",
+          "statuses": [
+            200,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/auth/forgot-password",
+          "statuses": [
+            200,
+            503
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/auth/login",
+          "statuses": [
+            200,
+            401,
+            429
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/auth/logout",
+          "statuses": [
+            204
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/auth/register",
+          "statuses": [
+            201,
+            409,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/auth/reset-password",
+          "statuses": [
+            200,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/bookings",
+          "statuses": [
+            201,
+            403,
+            404,
+            409,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/bookings/{booking_id}/cancel",
+          "statuses": [
+            200,
+            404,
+            409
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/bookings/{booking_id}/payments",
+          "statuses": [
+            200,
+            409,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/bookings/quote",
+          "statuses": [
+            200,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/manage/bookings/{booking_id}/refunds",
+          "statuses": [
+            201,
+            409
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/manage/destinations",
+          "statuses": [
+            201,
+            403,
+            409
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/manage/experiences",
+          "statuses": [
+            201,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/manage/experiences/{experience_id}/departures",
+          "statuses": [
+            201,
+            409,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/manage/promocodes",
+          "statuses": [
+            201,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/notifications/{notification_id}/read",
+          "statuses": [
+            200,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/notifications/read-all",
+          "statuses": [
+            204
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/payments/{payment_id}/confirm",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/payments/{payment_id}/reconcile",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/refunds/{refund_id}/retry",
+          "statuses": [
+            200,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/reviews",
+          "statuses": [
+            201,
+            404,
+            409
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/saved-searches",
+          "statuses": [
+            201,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/support/tickets",
+          "statuses": [
+            201,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests",
+            "isolated HTTP application"
+          ],
+          "successful": true
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/support/tickets/{ticket_id}/messages",
+          "statuses": [
+            201,
+            403,
+            404,
+            409,
+            422
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/favorites/{experience_id}",
+          "statuses": [
+            204,
+            404
+          ],
+          "sources": [
+            "PostgreSQL API tests"
+          ],
+          "successful": true
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/manage/promocodes/{promo_id}",
+          "statuses": [
+            200
+          ],
+          "sources": [
+            "isolated HTTP application"
+          ],
+          "successful": true
+        }
+      ]
+    },
+    "browser": {
+      "scenarios": [
+        {
+          "script": "browser_smoke",
+          "exit_code": 0,
+          "duration_seconds": 11.027
+        },
+        {
+          "script": "browser_management",
+          "exit_code": 0,
+          "duration_seconds": 10.295
+        },
+        {
+          "script": "browser_engagement",
+          "exit_code": 0,
+          "duration_seconds": 8.503
+        },
+        {
+          "script": "browser_localization",
+          "exit_code": 0,
+          "duration_seconds": 13.668
+        },
+        {
+          "script": "browser_visual",
+          "exit_code": 0,
+          "duration_seconds": 31.392
+        },
+        {
+          "script": "browser_roles_visual",
+          "exit_code": 0,
+          "duration_seconds": 11.78
+        },
+        {
+          "script": "browser_service_levels",
+          "exit_code": 0,
+          "duration_seconds": 3.145
+        },
+        {
+          "script": "browser_invalid_response",
+          "exit_code": 0,
+          "duration_seconds": 1.509
+        }
+      ],
+      "passed": 8,
+      "failed": 0,
+      "public_screen_combinations": 45,
+      "role_screen_combinations": 9
+    },
+    "extended_ui": [
+      {
+        "check": "All 15 administrator tabs render without errors",
+        "passed": true
+      },
+      {
+        "check": "Category create, edit and delete buttons persist changes",
+        "passed": true
+      },
+      {
+        "check": "Promo edit and disable controls update the API record",
+        "passed": true
+      },
+      {
+        "check": "Mail refresh, private mailbox and close controls work",
+        "passed": true
+      },
+      {
+        "check": "Analytics CSV button produces a nonempty downloadable report",
+        "passed": true
+      },
+      {
+        "check": "Audit Next and Previous buttons paginate records",
+        "passed": true
+      },
+      {
+        "check": "Traveler review form and staff approve/reject buttons persist moderation",
+        "passed": true
+      },
+      {
+        "check": "Recommendation apply button handles empty and matching budgets",
+        "passed": true
+      }
+    ],
+    "additional_unittests": {
+      "passed": 129,
+      "failed": 0,
+      "elapsed_seconds": 9.298,
+      "scope": "Course, availability, browser measurement, load-accounting and operations tools"
+    },
+    "ruff": {
+      "passed": true,
+      "scope": "backend/app backend/tests scripts tests"
+    }
+  },
+  "limitations": [
+    "Main application was inspected without creating bookings, payments or customer accounts. Writable workflows ran on separate QA databases.",
+    "The 84-operation matrix combines current-source PostgreSQL TestClient tests with additional live HTTP checks. It is not a statement that the deployed main has those 84 operations.",
+    "A successful operation and 86.19% statement coverage do not cover every payload, state, browser or concurrent schedule.",
+    "Payments use the existing simulator; real banking and delivery to an external SMTP mailbox were not tested.",
+    "No load/SLA certification or deployment/rebuild of the main containers was performed."
+  ]
+}

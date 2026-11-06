@@ -1,0 +1,56 @@
+{
+  "data_kind": "observed_ci_fix",
+  "failed_run_id": 42175958314,
+  "failed_run_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42175958314",
+  "diagnostic": {
+    "step": "recovery: request reset delivery",
+    "exception_type": "TimeoutError",
+    "operation": "Timeout 20000ms exceeded while waiting for event \"response\"",
+    "pathname": "/forgot-password",
+    "language": "en",
+    "auth_requests": [
+      {
+        "method": "POST",
+        "path": "/api/v1/auth/register"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/auth/me"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/auth/logout"
+      }
+    ],
+    "javascript_errors": [],
+    "form_state": [
+      {
+        "valid": false,
+        "controls": [
+          {
+            "tag": "INPUT",
+            "type": "email",
+            "disabled": false,
+            "valid": false,
+            "valueLength": 0,
+            "emptyRequired": true,
+            "typeMismatch": false
+          },
+          {
+            "tag": "BUTTON",
+            "type": "submit",
+            "disabled": false,
+            "valid": true,
+            "valueLength": 0,
+            "emptyRequired": false,
+            "typeMismatch": false
+          }
+        ]
+      }
+    ]
+  },
+  "fix": "Wait for the destination recovery form, identified by its submit button, before filling the email input shared with the login page",
+  "verified_run_id": 42179504335,
+  "verified_run_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335",
+  "all_six_jobs_succeeded": true
+}

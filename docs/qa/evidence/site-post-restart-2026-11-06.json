@@ -1,0 +1,17 @@
+{
+  "data_kind": "observed_post_restart_verification",
+  "captured_at_utc": "2026-11-06T07:23:14.283527+00:00",
+  "url": "http://127.0.0.1:5173",
+  "health": {
+    "status": "ok",
+    "service": "sapartravel-api",
+    "database": "ok"
+  },
+  "api_operations": 84,
+  "backend_files_compared": 29,
+  "backend_differences": [],
+  "frontend_assets_match": true,
+  "mail_api_http_status": 200,
+  "malformed_response_browser_checks_passed": 2,
+  "passed": true
+}

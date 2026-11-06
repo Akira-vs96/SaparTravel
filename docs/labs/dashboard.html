@@ -41,12 +41,26 @@ nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}a,button{color:#075c50;ba
   &quot;источник периодов&quot;: &quot;исторические переходы GitHub; история неполная&quot;,
   &quot;сверка статусов&quot;: &quot;административная; не измерение скорости спринта&quot;
 }</pre></section><section class="panel" data-audience="Команда"><h2>DORA</h2><p>Команда</p><pre>{
-  &quot;частота деплоев/неделю&quot;: &quot;нет данных&quot;,
-  &quot;lead time, часы&quot;: &quot;нет данных&quot;,
+  &quot;частота деплоев/неделю&quot;: 1.0,
+  &quot;lead time, часы&quot;: 0.5138888888888888,
   &quot;доля неудачных изменений, %&quot;: &quot;нет данных&quot;,
   &quot;восстановление, минуты&quot;: &quot;нет данных&quot;,
-  &quot;CI в историческом расчёте&quot;: 38,
-  &quot;последний проверенный CI&quot;: &quot;https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397&quot;
+  &quot;CI в историческом расчёте&quot;: 13,
+  &quot;стенд основного расчёта&quot;: &quot;local-compose&quot;,
+  &quot;период&quot;: [
+    &quot;2026-10-30T06:29:57.457631+00:00&quot;,
+    &quot;2026-11-06T06:29:57.457631+00:00&quot;
+  ],
+  &quot;изолированная проверка восстановления&quot;: {
+    &quot;стенд&quot;: &quot;lab10-recovery-drill&quot;,
+    &quot;попыток&quot;: 3,
+    &quot;частота/неделю&quot;: 1.0,
+    &quot;lead time, часы&quot;: 0.6269444444444444,
+    &quot;ошибки, %&quot;: 66.66666666666666,
+    &quot;восстановление, минуты&quot;: 0.90548725,
+    &quot;граница&quot;: &quot;Реальный контролируемый отказ; короткая выборка не определяет уровень команды&quot;
+  },
+  &quot;последний проверенный CI&quot;: &quot;https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335&quot;
 }</pre></section><section class="panel" data-audience="Заказчик"><h2>Бюджет</h2><p>Заказчик</p><pre>{
   &quot;план, KZT / 12 месяцев&quot;: 13081550.172,
   &quot;лимит с резервами, KZT&quot;: 13430943.372,

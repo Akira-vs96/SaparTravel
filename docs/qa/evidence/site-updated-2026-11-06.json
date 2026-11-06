@@ -1,0 +1,18 @@
+{
+  "captured_at_utc": "2026-11-06T06:14:28.990580+00:00",
+  "malformed_responses": [
+    {
+      "content_type": "application/json",
+      "javascript_errors": [],
+      "recoverable_error": true
+    },
+    {
+      "content_type": "text/html",
+      "javascript_errors": [],
+      "recoverable_error": true
+    }
+  ],
+  "mail_ui_present": true,
+  "promo_currency_is_kzt": true,
+  "passed": true
+}

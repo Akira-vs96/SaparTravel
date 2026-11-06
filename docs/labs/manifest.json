@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-31",
+  "as_of": "2026-11-06",
   "source": {
     "path": "Методичка по лабораторным работам (для студентов)(1).docx",
     "sha256": "809d807c719793d826b4edbbac54d7a92e62fd52897368109b4621fe7190ee7f",
@@ -3584,8 +3584,60 @@
       "number": 10,
       "title": "CI/CD-пайплайн и дашборд DORA",
       "report": "docs/labs/lab-10/README.md",
-      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Добавлены coverage gate 60%, линтер, Gitleaks/Trivy, сборки контейнеров и проверка целостности курса. Локально 86 тестов, покрытие 86,17%. Настоящий сборщик GitHub сохранил 38 исходных CI runs и 0 deployments: четыре DORA-показателя без источника остаются null. Определения и откат описаны отдельно; человеческий review, токен с минимальными правами и доказательство блокировки красного merge проверяются отдельно от наличия YAML. Свежий удалённый CI 41011207711 прошёл все шесть jobs; main защищена шестью проверками и одним review, определения DORA опубликованы в Wiki. По требованию пользователя 30.10.2026 разрешён прямой push администратора: enforce_admins=false; остальные настройки защиты сохранены. Текущее исключение отражено в LZ10-S05. Состояние Project и новых функций связано с успешным CI версии 5a29a61 (шесть jobs) и источниками проверок. GitHub API на 31.10.2026 вернул ноль deployments. Заполнение Project и зелёный CI не считаются фактом production deployment; DORA сохраняет прежние ограничения.",
+      "findings": "06.11.2026 сайт пересобран и обновлён: 84 API-операции, 96 backend-тестов, покрытие 86,19%, 8 браузерных сценариев. Реальные GitHub Deployments и журнал отказов дают четыре DORA-метрики для отдельного стенда восстановления; основной сайт считается отдельно. Обычное слияние PR #86 с красным CI отклонено, PR закрыт без слияния. CI 42179504335 зелёный: шесть jobs, 250.0 с; опубликованы runnable-образы и исходная история DORA. Wiki обновлена. Сохраняются три границы: разрешённый владельцем admin push, неподтверждённое соглашение команды о ветках и отсутствие исторических человеко-часов. Измеренные результаты — в measured-results.md.",
       "artifacts": [
+        {
+          "path": "docs/labs/lab-10/measured-results.md",
+          "label": "Фактический отчёт 06.11.2026"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/remote-ci-current.json",
+          "label": "Зелёный CI и опубликованные образы"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/ci-recovery-fix.json",
+          "label": "Причина и исправление сбоя CI"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/deployment-2026-11-06.json",
+          "label": "Фактическое обновление сайта и проверенная копия БД"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/red-ci-proof.json",
+          "label": "Реальный отказ слияния PR с красным CI"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/github-2026-11-06.json",
+          "label": "Исходный снимок GitHub API"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/dora-current.json",
+          "label": "DORA основного сайта"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/drill-dora.json",
+          "label": "Четыре DORA-метрики отдельного стенда"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/drill-dora.png",
+          "label": "Диаграмма четырёх измеренных показателей"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/observed-incidents.json",
+          "label": "Журнал реальных отказов отдельного стенда"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/recovery-drill-2026-11-06.json",
+          "label": "Фактическое восстановление и длительность исправления"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/branch-protection-2026-11-06.json",
+          "label": "Текущая защита main: исключение администратора сохранено"
+        },
+        {
+          "path": "docs/labs/lab-10/evidence/wiki-publication-2026-11-06.json",
+          "label": "Проверка публикации определений в Wiki"
+        },
         {
           "path": "docs/labs/lab-10/practice/README.md",
           "label": "Выполненное учебное упражнение"
@@ -3620,7 +3672,7 @@
         },
         {
           "path": "docs/labs/lab-10/evidence/dora.json",
-          "label": "dora.json"
+          "label": "Исторический расчёт 30.10 без deployments"
         },
         {
           "path": "docs/labs/lab-10/evidence/backend-coverage.json",
@@ -3668,9 +3720,11 @@
         }
       ],
       "commands": [
-        ".venv/bin/python -m scripts.course.practice --check",
-        ".venv/bin/python -m scripts.course.metrics --snapshot docs/labs/evidence/github-2026-10-30.json --start 2026-09-18T00:00:00Z --end 2026-10-30T00:00:00Z --kind dora --output test-results/dora.json",
-        ".venv/bin/python -m scripts.course.project_sync --check --output test-results/project-check.json"
+        ".venv/bin/python -m scripts.course.github_facts --skip-project --output test-results/github-current.json",
+        ".venv/bin/python -m scripts.course.metrics --snapshot docs/labs/lab-10/evidence/github-2026-11-06.json --start 2026-10-30T06:29:57.457631+00:00 --end 2026-11-06T06:29:57.457631+00:00 --kind dora --environment lab10-recovery-drill --incidents docs/labs/lab-10/evidence/observed-incidents.json --output test-results/dora-drill.json --plot",
+        ".venv/bin/python -m scripts.course.dashboard",
+        ".venv/bin/python -m unittest tests.course.test_dora_register -v",
+        ".venv/bin/python -m scripts.course.practice --check"
       ],
       "steps": [
         {
@@ -3682,9 +3736,10 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            "docs/labs/lab-10/evidence/remote-ci.json"
+            "docs/labs/lab-10/evidence/remote-ci-current.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Реальный CI 41011207711: шесть jobs success, 223.0 с от создания до последнего job; исходный CI также зелёный."
+          "note": "CI 42179504335: все шесть обязательных jobs success; приложена прямая ссылка."
         },
         {
           "kind": "step",
@@ -3692,18 +3747,13 @@
           "text": "Добавляйте шаги по одному и убеждайтесь, что сборка зелёная после каждого. Пайплайн, который добавили целиком и который сразу красный, обычно так и остаётся красным.",
           "source_paragraph": 446,
           "id": "LZ10-S02",
-          "status": "partial",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/ci-recovery-fix.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Сохранены неудачные CI и последующие исправления; после ожидания нужной формы получен зелёный удалённый прогон."
         },
         {
           "kind": "step",
@@ -3714,15 +3764,10 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/remote-ci-current.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Coverage gate 60% сохранён; полный backend: 96 тестов, локальное покрытие 86,19%, удалённый job прошёл."
         },
         {
           "kind": "step",
@@ -3733,9 +3778,10 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            "docs/labs/lab-10/evidence/remote-ci.json"
+            "docs/labs/lab-10/evidence/remote-ci-current.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Реальный CI 41011207711: шесть jobs success, 223.0 с от создания до последнего job; исходный CI также зелёный."
+          "note": "Весь успешный CI занял 250.0 с; требование ≤600 с выполнено."
         },
         {
           "kind": "step",
@@ -3746,10 +3792,10 @@
           "status": "partial",
           "requires_people": false,
           "evidence": [
-            "docs/labs/lab-10/evidence/branch-protection.json",
-            "docs/labs/lab-10/evidence/branch-protection-current.json"
+            "docs/labs/lab-10/evidence/branch-protection-2026-11-06.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "По прямому требованию пользователя администратору разрешён обычный push в main (enforce_admins=false). Для остальных сохранены 6 обязательных CI, strict и 1 review; force push и удаление запрещены. Текущее состояние проверено чтением API; полный запрет прямого push из методички не применяется к admin."
+          "note": "Исключение по прямому требованию владельца: admin push разрешён. Сохранены шесть CI, strict и одно review; полный запрет push из методички не применяется к admin."
         },
         {
           "kind": "step",
@@ -3758,17 +3804,12 @@
           "source_paragraph": 450,
           "id": "LZ10-S06",
           "status": "partial",
-          "requires_people": false,
+          "requires_people": true,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/wiki-publication-2026-11-06.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Правило жизни ветки ≤3 дней записано; явное командное соглашение ещё не подтверждено."
+          "note": "Правило ветки ≤3 дней опубликовано в Wiki; согласие остальных участников не подтверждено."
         },
         {
           "kind": "step",
@@ -3779,15 +3820,10 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/wiki-publication-2026-11-06.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "В Wiki определены попытка/успех deployment, знаменатель CFR, lead time и восстановление; среды считаются отдельно."
         },
         {
           "kind": "step",
@@ -3795,18 +3831,14 @@
           "text": "Создайте токен для доступа к API: аватар профиля → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token, дайте доступ только к своему репозиторию на чтение.",
           "source_paragraph": 452,
           "id": "LZ10-S08",
-          "status": "partial",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/remote-ci-current.json",
+            "docs/labs/lab-10/measured-results.md",
+            ".github/workflows/ci.yml"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Функциональный эквивалент PAT: временный GITHUB_TOKEN только с contents/issues/actions/deployments:read. Реальный сбор API в CI успешен; личный PAT не создавался."
         },
         {
           "kind": "step",
@@ -3814,18 +3846,14 @@
           "text": "Положите токен в переменную окружения (локально) и в секреты репозитория (Settings → Secrets and variables → Actions → New repository secret). В код токен не пишется никогда — это проверит gitleaks из вашего же пайплайна.",
           "source_paragraph": 453,
           "id": "LZ10-S09",
-          "status": "requires-human",
-          "requires_people": true,
+          "status": "verified",
+          "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/remote-ci-current.json",
+            "docs/labs/lab-10/measured-results.md",
+            ".github/workflows/ci.yml"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "Токен внедряется Actions в GH_TOKEN через github.token на время шага; результат сбора опубликован как dora-source. Отдельный постоянный PAT-secret не нужен."
         },
         {
           "kind": "step",
@@ -3836,15 +3864,10 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/drill-dora.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Сборщик работает; 0 deployments, DORA null; CI измерен отдельно."
+          "note": "Четыре метрики рассчитаны по трём реальным попыткам отдельного стенда и журналу отказов; у основного сайта нет измеренного recovery."
         },
         {
           "kind": "step",
@@ -3855,15 +3878,10 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/drill-dora.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Общий HTML-дашборд читает новые JSON; matplotlib выводит четыре показателя вместо ошибочного CFD для --kind dora --plot."
         },
         {
           "kind": "step",
@@ -3871,18 +3889,14 @@
           "text": "Определите свой уровень по каждой метрике и предложите два улучшения. Улучшение должно менять систему, а не намерения: «настроить автоматическое развёртывание при слиянии», а не «писать код аккуратнее». Для каждого укажите ожидаемый эффект в числах и дату пересчёта метрик.",
           "source_paragraph": 456,
           "id": "LZ10-S12",
-          "status": "partial",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/drill-dora.json",
+            "docs/labs/lab-10/measured-results.md",
+            "docs/ops/release-plan.md"
           ],
-          "note": "Четыре уровня DORA не классифицируются без deployments; два числовых улучшения и даты подготовлены в release-plan."
+          "note": "По целям проекта: частота ниже цели, lead/recovery в пределах, CFR выше предела. Два системных улучшения с числами и пересчётом 20.11.2026; устойчивый уровень команды по короткой выборке не заявлен."
         },
         {
           "kind": "step",
@@ -3890,18 +3904,14 @@
           "text": "Посчитайте, сколько часов ушло на исправления после неудачных развёртываний, и предложите долю capacity на надёжность. Такой разговор с заказчиком выигрывается таблицей, а не словами «нам нужно время на техдолг».",
           "source_paragraph": 457,
           "id": "LZ10-S13",
-          "status": "requires-human",
+          "status": "partial",
           "requires_people": true,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/recovery-drill-2026-11-06.json",
+            "docs/labs/lab-10/measured-results.md",
+            "docs/ops/release-plan.md"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "Измерено 3,345980 с последней автоматической команды и 103,329235 с простоя. Предложено 20% capacity; личные часы участников и прошлые исправления не хронометрировались."
         },
         {
           "kind": "step",
@@ -3912,15 +3922,11 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/deployment-2026-11-06.json",
+            "docs/labs/lab-10/measured-results.md",
+            "docs/ops/release-plan.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Окна, локальный владелец Akira-vs96, оператор и канал сообщения заданы в release-plan; выпуск 06.11 по запросу владельца отражён отдельно."
         },
         {
           "kind": "step",
@@ -3931,15 +3937,11 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/deployment-2026-11-06.json",
+            "docs/labs/lab-10/measured-results.md",
+            "docs/ops/release-plan.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Чек-листы выпуска и отката обновлены: после восстановления выполнить миграции и проверить каталог; решение об откате первым пунктом, начало ≤5 мин."
         },
         {
           "kind": "check",
@@ -3950,9 +3952,10 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            "docs/labs/lab-10/evidence/remote-ci.json"
+            "docs/labs/lab-10/evidence/remote-ci-current.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Реальный CI 41011207711: шесть jobs success, 223.0 с от создания до последнего job; исходный CI также зелёный."
+          "note": "Успешный прогон: https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335."
         },
         {
           "kind": "check",
@@ -3960,18 +3963,13 @@
           "text": "Красная сборка действительно блокирует слияние — проверьте это опытом, а не настройкой.",
           "source_paragraph": 490,
           "id": "LZ10-C02",
-          "status": "requires-human",
-          "requires_people": true,
+          "status": "verified",
+          "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/red-ci-proof.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "PR #86: backend failure, mergeable_state=blocked, обычное gh pr merge отклонено политикой; закрыт без слияния. Review также отсутствовал, влияние одного CI не изолировалось."
         },
         {
           "kind": "check",
@@ -3982,10 +3980,10 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            "docs/labs/lab-02/evidence/wiki-publication.json",
-            "docs/ops/release-plan.md"
+            "docs/labs/lab-10/evidence/wiki-publication-2026-11-06.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Определения опубликованы в Wiki, commit 301d833; источник и ссылка сохранены."
+          "note": "Определения опубликованы и проверены в Wiki, commit 79add41."
         },
         {
           "kind": "check",
@@ -3993,18 +3991,13 @@
           "text": "Метрики посчитаны по вашей истории, скрипт лежит в репозитории.",
           "source_paragraph": 492,
           "id": "LZ10-C04",
-          "status": "documented",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/drill-dora.json",
+            "docs/labs/lab-10/measured-results.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Сохранены исходный GitHub API, deployment ID, журнал отказов и воспроизводимая CLI-команда; события предыдущих месяцев не придуманы."
         },
         {
           "kind": "check",
@@ -4015,15 +4008,11 @@
           "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/drill-dora.json",
+            "docs/labs/lab-10/measured-results.md",
+            "docs/ops/release-plan.md"
           ],
-          "note": "Проверено по документу/расчёту; фактическое согласование и проведение событий учитываются отдельными шагами."
+          "note": "В release-plan два системных улучшения, численные цели и дата 20.11.2026."
         },
         {
           "kind": "check",
@@ -4031,18 +4020,14 @@
           "text": "В чек-листе отката указано, кто принимает решение и за сколько минут.",
           "source_paragraph": 494,
           "id": "LZ10-C06",
-          "status": "documented",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
-            ".github/workflows/ci.yml",
-            ".github/workflows/service-level-acceptance.yml",
-            "docs/ops/release-plan.md",
-            "scripts/course/github_facts.py",
-            "scripts/course/metrics.py",
-            "docs/labs/lab-10/evidence/dora.json",
-            "docs/labs/lab-10/evidence/backend-coverage.json"
+            "docs/labs/lab-10/evidence/deployment-2026-11-06.json",
+            "docs/labs/lab-10/measured-results.md",
+            "docs/ops/release-plan.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Первый пункт отката: локальный владелец Akira-vs96, начало ≤5 минут обнаружения."
         }
       ],
       "practice": {

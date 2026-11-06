@@ -1,0 +1,27 @@
+{
+  "start_utc": "2026-10-30T06:29:57.457631+00:00",
+  "end_utc": "2026-11-06T06:29:57.457631+00:00",
+  "deployment_count": 3,
+  "deployment_frequency_per_week": 1.0,
+  "lead_time_median_hours": 0.6269444444444444,
+  "change_failure_rate_percent": 66.66666666666666,
+  "recovery_median_minutes": 0.90548725,
+  "ci_runs": 13,
+  "ci_success": 9,
+  "ci_failure": 3,
+  "status": "measured",
+  "limitation": "A green CI run is not a deployment. Missing incident evidence is not a 0% failure rate.",
+  "environment": "lab10-recovery-drill",
+  "deployment_ids": [
+    7593906281,
+    7593907784,
+    7593932195
+  ],
+  "incident_register_complete": true,
+  "incident_count": 2,
+  "repair_automation_hours": null,
+  "human_labor_hours": null,
+  "source_repository": "Akira-vs96/SaparTravel",
+  "source_captured_at_utc": "2026-11-06T06:29:57.457631+00:00",
+  "scope_note": "One named environment; automation elapsed time is not human labor. Short samples do not establish a team performance tier."
+}

@@ -1,0 +1,81 @@
+{
+  "branch": "lab10/red-ci-20261106-060627",
+  "base_sha": "1b6b5023bc501a220f2069e05f3fbb3167fb8150",
+  "head_sha": "6c844fdba4e8212e5106c845a96c7548c9aa1598",
+  "created_at_utc": "2026-11-06T06:06:30.536950+00:00",
+  "number": 86,
+  "url": "https://github.com/Akira-vs96/SaparTravel/pull/86",
+  "captured_at_utc": "2026-11-06T06:14:36.238899+00:00",
+  "pull_request": {
+    "state": "open",
+    "merged": false,
+    "draft": false,
+    "mergeable_state": "blocked",
+    "head_sha": "6c844fdba4e8212e5106c845a96c7548c9aa1598",
+    "base_sha": "1b6b5023bc501a220f2069e05f3fbb3167fb8150"
+  },
+  "run": {
+    "id": 42172368098,
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42172368098"
+  },
+  "jobs": [
+    {
+      "id": 127742916488,
+      "name": "frontend",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42172368098/job/127742916488"
+    },
+    {
+      "id": 127742916704,
+      "name": "security",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42172368098/job/127742916704"
+    },
+    {
+      "id": 127742916787,
+      "name": "course",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42172368098/job/127742916787"
+    },
+    {
+      "id": 127742916880,
+      "name": "containers",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42172368098/job/127742916880"
+    },
+    {
+      "id": 127742916972,
+      "name": "backend",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42172368098/job/127742916972"
+    },
+    {
+      "id": 127743248898,
+      "name": "browser",
+      "status": "completed",
+      "conclusion": "skipped",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42172368098/job/127743248898"
+    }
+  ],
+  "admin_push_exception_preserved": true,
+  "independent_human_review_confirmed": false,
+  "merge_attempt": {
+    "at_utc": "2026-11-06T06:14:48.381886+00:00",
+    "command": "gh pr merge --squash (without --admin)",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "X Pull request Akira-vs96/SaparTravel#86 is not mergeable: the base branch policy prohibits the merge.\nTo have the pull request merged after all the requirements have been met, add the `--auto` flag.\nTo use administrator privileges to immediately merge the pull request, add the `--admin` flag.\n",
+    "merged": false,
+    "red_required_job_observed": "backend",
+    "required_review_also_pending": true
+  },
+  "closed_at": "2026-11-06T06:20:12Z",
+  "closed_without_merge": true
+}

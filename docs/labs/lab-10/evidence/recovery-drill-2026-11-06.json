@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "data_kind": "observed_recovery_drill",
+  "environment": "lab10-recovery-drill",
+  "sha": "1b6b5023bc501a220f2069e05f3fbb3167fb8150",
+  "scope": "Isolated container and restored copy; main site unaffected",
+  "first_failed_deployment_id": 7593906281,
+  "second_failed_deployment_id": 7593907784,
+  "failure_recorded_at_utc": "2026-11-06T06:25:27Z",
+  "second_failure_recorded_at_utc": "2026-11-06T06:27:05Z",
+  "timestamp_limitation": "Failure start uses GitHub failure receipt after the observed HTTP 503; request-to-receipt latency was not measured.",
+  "symptoms": [
+    "Invalid database name: actual health HTTP 503",
+    "Correct restored database without migration: health HTTP 200, catalog HTTP 503"
+  ],
+  "repair": "Apply current Alembic migrations to the isolated restored database before starting the API",
+  "human_labor_hours": null,
+  "operator": "Codex executing the project owner lab completion request",
+  "recovery_deployment_id": 7593932195,
+  "repair_execution_started_at_utc": "2026-11-06T06:27:06.285921+00:00",
+  "recovered_at_utc": "2026-11-06T06:27:10.329235+00:00",
+  "recovery_seconds": 103.329235,
+  "final_repair_execution_seconds": 3.3459801349999907,
+  "health_probe": {
+    "at_utc": "2026-11-06T06:27:10.232894+00:00",
+    "http_status": 200,
+    "database": "ok"
+  },
+  "catalog_status": 200,
+  "passed": true,
+  "repair_automation_hours": null,
+  "labor_limitation": "Only the final repair command was continuously timed; elapsed incident time is not billed labor."
+}

@@ -1,0 +1,58 @@
+{
+  "sha": "1b6b5023bc501a220f2069e05f3fbb3167fb8150",
+  "environment": "local-compose",
+  "deployment_id": 7593623885,
+  "deployment_url": "https://api.github.com/repos/Akira-vs96/SaparTravel/deployments/7593623885",
+  "deployment_started_at_utc": "2026-11-06T06:05:09.852216+00:00",
+  "deployment_finished_at_utc": "2026-11-06T06:20:24Z",
+  "verified_at_utc": "2026-11-06T06:20:23.712151+00:00",
+  "build": {
+    "finished_at_utc": "2026-11-06T06:02:42.535865+00:00",
+    "seconds": 51.553,
+    "exit_code": 0
+  },
+  "apply": {
+    "exit_code": 0,
+    "healthy": true,
+    "seconds": 17.388
+  },
+  "verified": {
+    "original_ids_retained": {
+      "users": true,
+      "destinations": true,
+      "experiences": true,
+      "bookings": true,
+      "payment_attempts": true,
+      "refunds": true
+    },
+    "money_ledger_unchanged": true,
+    "api_operations": 84
+  },
+  "backup_sha256": "a7b48aa50afc4c0c9ae27ce628708c97106803d10f253762cc357893e45dca78",
+  "restore": {
+    "schema_version": 1,
+    "kind": "sapartravel-restore-drill",
+    "scope": "isolated-database",
+    "failure_simulated_at_utc": "2026-11-06T05:59:36.042268+00:00",
+    "finished_at_utc": "2026-11-06T05:59:36.641990+00:00",
+    "restored_database": "sapar_recovery_1cca817a67a8cc0a_test",
+    "archive_sha256": "a7b48aa50afc4c0c9ae27ce628708c97106803d10f253762cc357893e45dca78",
+    "data_matches_snapshot": true,
+    "table_count": 37,
+    "row_count": 1682,
+    "restored_data_point_lower_bound_utc": "2026-11-06T05:59:35.690678+00:00",
+    "data_loss_upper_bound_seconds": 0.35159,
+    "rpo_target_seconds": 86400,
+    "rpo_met": true,
+    "restore_duration_seconds": 0.599,
+    "restore_within_15_minutes": true,
+    "sli_r_confirmed": false,
+    "sli_r_limitation": "No API outage or five consecutive successful SLI-A minutes measured",
+    "passed": true
+  },
+  "data_kind": "observed_deployment",
+  "scope": "Local Compose application, not public production",
+  "environment_url": "http://127.0.0.1:5173",
+  "operator": "Codex executing the project owner update request",
+  "user_authorized_on": "2026-11-06"
+}

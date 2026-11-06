@@ -7,11 +7,20 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+CUSTOMER = "Заказчик"
 
 
 def read(relative):
     path = ROOT / relative
     return json.loads(path.read_text()) if path.is_file() else None
+
+
+def first_snapshot(*paths):
+    for path in paths:
+        value = read(path)
+        if value:
+            return value
+    return {}
 
 
 def render():
@@ -22,14 +31,15 @@ def render():
     project_audit = project.get("audit", {})
     audit = read("docs/labs/evidence/audit.json") or {}
     flow = read("docs/labs/lab-09/evidence/flow.json") or {}
-    dora = read("docs/labs/lab-10/evidence/dora-current.json") or read("docs/labs/lab-10/evidence/dora.json") or {}
+    dora = first_snapshot("docs/labs/lab-10/evidence/dora-current.json", "docs/labs/lab-10/evidence/dora.json")
     drill = read("docs/labs/lab-10/evidence/drill-dora.json") or {}
+    ci = read("docs/labs/lab-10/evidence/remote-ci-current.json") or {}
     security = read("docs/labs/lab-07/evidence/2026-10-31/summary.json") or {}
     planning = read("docs/labs/evidence/planning.json") or {}
     finance = read("docs/labs/lab-08/evidence/finance-validation.json") or {}
     exercises = read("docs/labs/evidence/practice-audit.json") or {}
     panels = [
-        ("Вехи", "Заказчик", {"лабораторных": audit.get("labs"), "требований": audit.get("requirements"),
+        ("Вехи", CUSTOMER, {"лабораторных": audit.get("labs"), "требований": audit.get("requirements"),
                               "функций в Project": len(features) if items else None,
                               "реализовано функций": sum(row.get("implementation") == "Implemented" for row in features) if items else None,
                               "закрытых историй функций": sum(row.get("status") == "Done" for row in features) if items else None,
@@ -58,16 +68,16 @@ def render():
                                   "ошибки, %": drill.get("change_failure_rate_percent"),
                                   "восстановление, минуты": drill.get("recovery_median_minutes"),
                                   "граница": "Реальный контролируемый отказ; короткая выборка не определяет уровень команды"},
-                              "последний проверенный CI": project.get("ci_url")}),
-        ("Бюджет", "Заказчик", {"план, KZT / 12 месяцев": finance.get("annual_base_kzt"),
+                              "последний проверенный CI": ci.get("html_url") or project.get("ci_url")}),
+        ("Бюджет", CUSTOMER, {"план, KZT / 12 месяцев": finance.get("annual_base_kzt"),
                                  "лимит с резервами, KZT": finance.get("funding_limit_kzt"),
                                  "факт затрат": None, "факт трудозатрат": None,
                                  "источник": "финансовая модель ЛЗ8; допущения не являются платежами"}),
-        ("Риски", "Заказчик", {"EMV известных рисков, часы": planning.get("risk_emv_hours"),
+        ("Риски", CUSTOMER, {"EMV известных рисков, часы": planning.get("risk_emv_hours"),
                                 "резерв WBS, часы": planning.get("baseline_risk_reserve_hours"),
                                 "разрыв резерва, часы": planning.get("risk_reserve_gap_hours"),
                                 "проверка сканеров": security.get("passed"), "проверка внешнего SLA": "ожидается"}),
-        ("Зависимости", "Заказчик", {"открытых задач GitHub на дату снимка": sum(r["state"] == "open" for r in facts.get("issues", [])),
+        ("Зависимости", CUSTOMER, {"открытых задач GitHub на дату снимка": sum(r["state"] == "open" for r in facts.get("issues", [])),
                                       "зарегистрировано работ": len(items) if items else None,
                                       "виды работ": dict(Counter(row.get("kind", "Unknown") for row in items)),
                                       "внешние зависимости": [row["title"] for row in items if row.get("kind") == "Dependency"],
@@ -106,7 +116,7 @@ def main():
     if args.serve:
         from functools import partial
         server = ThreadingHTTPServer(("127.0.0.1", args.port), partial(SimpleHTTPRequestHandler, directory=str(directory)))
-        server.serve_forever()
+        server.serve_forever()  # NOSONAR(S5332) loopback-only public evidence preview; no credentials or external binding.
 
 
 if __name__ == "__main__":

@@ -2332,23 +2332,19 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/evidence/remote-ci.json",
       "factual_evidence": [
-        "docs/labs/lab-10/evidence/remote-ci.json"
+        "docs/labs/lab-10/evidence/remote-ci-current.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ10-S02",
       "lab": 10,
-      "factual_status": "partial",
+      "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/ci-recovery-fix.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2358,13 +2354,8 @@
       "factual_status": "verified",
       "exercise_evidence": ".github/workflows/ci.yml",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/remote-ci-current.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2374,7 +2365,8 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/evidence/remote-ci.json",
       "factual_evidence": [
-        "docs/labs/lab-10/evidence/remote-ci.json"
+        "docs/labs/lab-10/evidence/remote-ci-current.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2384,8 +2376,8 @@
       "factual_status": "partial",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        "docs/labs/lab-10/evidence/branch-protection.json",
-        "docs/labs/lab-10/evidence/branch-protection-current.json"
+        "docs/labs/lab-10/evidence/branch-protection-2026-11-06.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2395,13 +2387,8 @@
       "factual_status": "partial",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/wiki-publication-2026-11-06.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2411,45 +2398,32 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/wiki-publication-2026-11-06.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ10-S08",
       "lab": 10,
-      "factual_status": "partial",
+      "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/remote-ci-current.json",
+        "docs/labs/lab-10/measured-results.md",
+        ".github/workflows/ci.yml"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ10-S09",
       "lab": 10,
-      "factual_status": "requires-human",
+      "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/remote-ci-current.json",
+        "docs/labs/lab-10/measured-results.md",
+        ".github/workflows/ci.yml"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2459,13 +2433,8 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/drill-dora.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2475,45 +2444,32 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/drill-dora.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ10-S12",
       "lab": 10,
-      "factual_status": "partial",
+      "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/drill-dora.json",
+        "docs/labs/lab-10/measured-results.md",
+        "docs/ops/release-plan.md"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ10-S13",
       "lab": 10,
-      "factual_status": "requires-human",
+      "factual_status": "partial",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/recovery-drill-2026-11-06.json",
+        "docs/labs/lab-10/measured-results.md",
+        "docs/ops/release-plan.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2523,13 +2479,9 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/ops/release-plan.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/deployment-2026-11-06.json",
+        "docs/labs/lab-10/measured-results.md",
+        "docs/ops/release-plan.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2539,13 +2491,9 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/ops/release-plan.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/deployment-2026-11-06.json",
+        "docs/labs/lab-10/measured-results.md",
+        "docs/ops/release-plan.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2555,23 +2503,19 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/evidence/remote-ci.json",
       "factual_evidence": [
-        "docs/labs/lab-10/evidence/remote-ci.json"
+        "docs/labs/lab-10/evidence/remote-ci-current.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ10-C02",
       "lab": 10,
-      "factual_status": "requires-human",
+      "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/red-ci-proof.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2581,24 +2525,19 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-02/evidence/wiki-publication.json",
       "factual_evidence": [
-        "docs/labs/lab-02/evidence/wiki-publication.json",
-        "docs/ops/release-plan.md"
+        "docs/labs/lab-10/evidence/wiki-publication-2026-11-06.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ10-C04",
       "lab": 10,
-      "factual_status": "documented",
+      "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/drill-dora.json",
+        "docs/labs/lab-10/measured-results.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -2608,29 +2547,21 @@
       "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/drill-dora.json",
+        "docs/labs/lab-10/measured-results.md",
+        "docs/ops/release-plan.md"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ10-C06",
       "lab": 10,
-      "factual_status": "documented",
+      "factual_status": "verified",
       "exercise_evidence": "docs/ops/release-plan.md",
       "factual_evidence": [
-        ".github/workflows/ci.yml",
-        ".github/workflows/service-level-acceptance.yml",
-        "docs/ops/release-plan.md",
-        "scripts/course/github_facts.py",
-        "scripts/course/metrics.py",
-        "docs/labs/lab-10/evidence/dora.json",
-        "docs/labs/lab-10/evidence/backend-coverage.json"
+        "docs/labs/lab-10/evidence/deployment-2026-11-06.json",
+        "docs/labs/lab-10/measured-results.md",
+        "docs/ops/release-plan.md"
       ],
       "human_event_certified_by_exercise": false
     },

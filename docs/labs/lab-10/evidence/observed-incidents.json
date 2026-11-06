@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "data_kind": "observed_incident_register",
+  "environment": "lab10-recovery-drill",
+  "complete": true,
+  "covered_deployment_ids": [
+    7593906281,
+    7593907784,
+    7593932195
+  ],
+  "incidents": [
+    {
+      "deployment_id": 7593906281,
+      "started_at": "2026-11-06T06:25:27Z",
+      "recovered_at": "2026-11-06T06:27:10.329235+00:00",
+      "kind": "controlled_configuration_failure",
+      "repair_automation_hours": null,
+      "human_labor_hours": null,
+      "recovered_by_deployment_id": 7593932195
+    },
+    {
+      "deployment_id": 7593907784,
+      "started_at": "2026-11-06T06:27:05Z",
+      "recovered_at": "2026-11-06T06:27:10.329235+00:00",
+      "kind": "missing_migration_on_restored_copy",
+      "repair_automation_hours": null,
+      "human_labor_hours": null,
+      "recovered_by_deployment_id": 7593932195
+    }
+  ],
+  "linked_incidents_share_one_repair": true,
+  "total_final_repair_automation_hours": 0.0009294389263888863,
+  "human_labor_hours": null,
+  "evidence": "recovery-drill-2026-11-06.json"
+}
