@@ -1,0 +1,36 @@
+# One Free service; PostgreSQL is provisioned separately on Neon Free.
+services:
+  - type: web
+    name: sapartravel
+    runtime: docker
+    plan: free
+    region: frankfurt
+    branch: main
+    dockerfilePath: ./Dockerfile.public
+    dockerContext: .
+    autoDeployTrigger: "off"
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ENVIRONMENT
+        value: production
+      - key: SEED_DEMO_DATA
+        value: "true"
+      - key: PAYMENT_DEMO_ENABLED
+        value: "true"
+      - key: DEMO_PRIVATE_DATA
+        value: "false"
+      - key: DEMO_MAILBOX_ENABLED
+        value: "false"
+      - key: MAIL_DELIVERY_MODE
+        value: disabled
+      - key: AUTH_RATE_LIMIT
+        value: "20"
+

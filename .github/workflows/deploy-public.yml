@@ -1,0 +1,61 @@
+name: Deploy public site
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-demo
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: >-
+      vars.PUBLIC_DEPLOY_ENABLED == 'true' &&
+      ((github.event_name == 'workflow_run' &&
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_repository.full_name == github.repository &&
+        contains(fromJSON('["push", "workflow_dispatch"]'), github.event.workflow_run.event)) ||
+       (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      actions: read
+      issues: read
+      deployments: write
+    env:
+      DEPLOY_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.DEPLOY_SHA }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Deploy the verified commit and check the public application
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+        run: python -m scripts.course.deploy_public --commit "$DEPLOY_SHA"
+      - name: Collect actual deployment history
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m scripts.course.github_facts --repo "$GITHUB_REPOSITORY" --skip-project --output test-results/public-history.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: public-deployment
+          path: |
+            test-results/public-deployment.json
+            test-results/public-history.json
+          retention-days: 7
+

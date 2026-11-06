@@ -360,22 +360,61 @@ def measured_dora(facts, start, end, *, environment=None, register=None):
             "scope_note": "One named environment; automation elapsed time is not human labor. Short samples do not establish a team performance tier."}
 
 
+DORA_GOALS = {
+    "deployment_frequency_per_week_min": 5,
+    "lead_time_median_minutes_max": 15,
+    "change_failure_rate_percent_max": 15,
+    "recovery_median_minutes_max": 5,
+}
+
+
+def dora_cards(result):
+    """Readable observed values and separately labelled process targets."""
+    def number(value, suffix=""):
+        if value is None:
+            return "Нет измерения"
+        return f"{value:.2f}".rstrip("0").rstrip(".").replace(".", ",") + suffix
+
+    lead = result.get("lead_time_median_hours")
+    recovery = result.get("recovery_median_minutes")
+    return [
+        ("Успешных выпусков за неделю", number(result.get("deployment_frequency_per_week")),
+         f"Цель: ≥{DORA_GOALS['deployment_frequency_per_week_min']} в неделю"),
+        ("Медиана commit → работающий сайт", number(lead * 60 if lead is not None else None, " мин"),
+         f"Цель: ≤{DORA_GOALS['lead_time_median_minutes_max']} минут"),
+        ("Изменений, вызвавших отказ", number(result.get("change_failure_rate_percent"), "%"),
+         f"Цель: ≤{DORA_GOALS['change_failure_rate_percent_max']}%"),
+        ("Медиана восстановления", number(recovery * 60, " с") if recovery is not None and recovery < 1
+         else number(recovery, " мин"), f"Цель: ≤{DORA_GOALS['recovery_median_minutes_max']} минут"),
+    ]
+
+
 def plot_dora(result, path):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    metrics = [("deployment_frequency_per_week", "Successful deployments / week"),
-               ("lead_time_median_hours", "Median lead time, hours"),
-               ("change_failure_rate_percent", "Change failure rate, %"),
-               ("recovery_median_minutes", "Median recovery, minutes")]
-    figure, axes = plt.subplots(2, 2, figsize=(10, 6), constrained_layout=True)
-    for axis, (key, label) in zip(axes.flat, metrics):
-        value = result.get(key)
-        axis.text(.5, .5, "Not measured" if value is None else f"{value:.4g}",
-                  ha="center", va="center", fontsize=25, transform=axis.transAxes)
-        axis.set_title(label)
+    from matplotlib.patches import FancyBboxPatch
+    figure, axes = plt.subplots(2, 2, figsize=(12, 7))
+    figure.patch.set_facecolor("#f3f7f5")
+    for axis, (label, value, target) in zip(axes.flat, dora_cards(result)):
+        axis.add_patch(FancyBboxPatch((0, 0), 1, 1, boxstyle="round,pad=0,rounding_size=.05",
+                                     facecolor="white", edgecolor="none", transform=axis.transAxes))
+        axis.text(.06, .83, label, fontsize=12, color="#48655f", transform=axis.transAxes)
+        axis.text(.06, .40, value, fontsize=33 if len(value) < 15 else 23,
+                  color="#143d34", fontweight="bold", transform=axis.transAxes)
+        axis.text(.06, .12, target, fontsize=11, color="#48655f", transform=axis.transAxes)
         axis.set_axis_off()
-    figure.suptitle(f"DORA: {result.get('environment') or 'all environments'} ({result['deployment_count']} deployments)")
+    drill = result.get("environment") == "lab10-recovery-drill"
+    title = "Проверка восстановления" if drill else "SaparTravel · DORA"
+    figure.suptitle(title, x=.06, y=.96, ha="left", fontsize=22, fontweight="bold", color="#143d34")
+    start, end = result.get("start_utc", "")[:10], result.get("end_utc", "")[:10]
+    figure.text(.06, .89, f"{result.get('environment') or 'Все среды'} · {result['deployment_count']} попытки · {start} — {end}",
+                fontsize=11, color="#48655f")
+    note = ("Два отказа из трёх попыток в изолированной проверке восстановления."
+            if drill else "Факт и цели показаны отдельно. Частота нормирована на длину окна наблюдения.")
+    figure.text(.06, .055, note, fontsize=10, color="#48655f")
+    figure.text(.06, .025, "Короткая выборка не определяет устойчивый уровень команды.", fontsize=10, color="#48655f")
+    figure.subplots_adjust(left=.035, right=.97, bottom=.12, top=.84, wspace=.10, hspace=.20)
     figure.savefig(path, dpi=150)
     plt.close(figure)
 

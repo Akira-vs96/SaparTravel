@@ -5,7 +5,7 @@ from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
 
-from scripts.course.metrics import main, measured_dora, stamp
+from scripts.course.metrics import dora_cards, main, measured_dora, stamp
 
 
 class ObservedDoraTests(unittest.TestCase):
@@ -67,3 +67,12 @@ class ObservedDoraTests(unittest.TestCase):
         self.register["incidents"].append({"deployment_id": 2, "started_at": "2026-11-02T11:00:00Z",
                                            "recovered_at": "2026-11-02T11:20:00Z"})
         self.assertEqual(self.measure(self.register)["recovery_median_minutes"], 15)
+
+    def test_readable_cards_keep_observations_distinct_from_targets(self):
+        result = self.measure(self.register)
+        cards = dora_cards(result)
+        self.assertEqual(cards[0][1], "1")
+        self.assertEqual(cards[0][2], "Цель: ≥5 в неделю")
+        self.assertEqual(cards[1][1], "60 мин")
+        self.assertEqual(result["lead_time_median_hours"], 1)
+        self.assertEqual(dora_cards({})[0][1], "Нет измерения")

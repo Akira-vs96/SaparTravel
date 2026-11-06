@@ -6,6 +6,8 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
 
+from scripts.course.metrics import DORA_GOALS, dora_cards
+
 ROOT = Path(__file__).resolve().parents[2]
 CUSTOMER = "Заказчик"
 
@@ -59,6 +61,8 @@ def render():
                               "восстановление, минуты": dora.get("recovery_median_minutes"),
                               "CI в историческом расчёте": dora.get("ci_runs"),
                               "стенд основного расчёта": dora.get("environment"),
+                              "завершённых попыток": dora.get("deployment_count"),
+                              "цели следующего цикла (не измерения)": DORA_GOALS,
                               "период": [dora.get("start_utc"), dora.get("end_utc")],
                               "изолированная проверка восстановления": {
                                   "стенд": drill.get("environment"),
@@ -85,6 +89,13 @@ def render():
                                       "календарь/приёмка/разметка": "нужны решения людей"}),
     ]
     cards = "".join(f'<section class="panel" data-audience="{audience}"><h2>{escape(title)}</h2><p>{audience}</p><pre>{escape(json.dumps(data,ensure_ascii=False,indent=2).replace("null", "\"нет данных\""))}</pre></section>' for title, audience, data in panels)
+    dora_tiles = "".join(f'<article class="dora-card"><p>{escape(label)}</p><strong>{escape(value)}</strong><p>{escape(goal)}</p></article>'
+                         for label, value, goal in dora_cards(dora))
+    dora_summary = (f'<section class="dora-summary"><h2>DORA · основной сайт</h2><p>{escape(dora.get("environment") or "Среда не измерена")} · '
+                    f'{dora.get("deployment_count", 0)} завершённых попыток · '
+                    f'{escape((dora.get("start_utc") or "")[:10])} — {escape((dora.get("end_utc") or "")[:10])}</p>'
+                    f'<div class="dora-tiles">{dora_tiles}</div><p>Числа крупным шрифтом — измерения. Цели — план следующего цикла. '
+                    'Изолированная проверка восстановления приведена отдельно; её отказы не относятся к основному сайту.</p></section>')
     labs = "".join(f'<a href="lab-{i:02d}/README.md">ЛЗ {i:02d}</a>' for i in range(1,16))
     project_url = project.get("project", {}).get("url", "https://github.com/users/Akira-vs96/projects/2")
     views = "".join(f'<a href="{escape(project_url)}/views/{row["number"]}">{escape(row["name"])}</a>' for row in project.get("views", []))
@@ -97,9 +108,10 @@ def render():
 body{{font:16px system-ui;margin:auto;max-width:1200px;padding:24px;color:#15332e;background:#f7f7f1}}h1{{font-size:32px}}
 nav{{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}}a,button{{color:#075c50;background:white;border:1px solid #b5ccc5;padding:10px;border-radius:8px}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}}.panel{{min-width:0;background:white;border:1px solid #d4dfdb;border-radius:12px;padding:20px}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 monospace}}button{{cursor:pointer}}button:focus,a:focus{{outline:3px solid #ea9f35}}.feature-register{{margin-top:24px;background:white;padding:16px;border-radius:12px}}.table-scroll{{overflow:auto}}table{{width:100%;border-collapse:collapse}}th,td{{text-align:left;padding:12px;border-bottom:1px solid #d4dfdb}}td a{{border:0;padding:0;background:transparent}}summary{{cursor:pointer;font-weight:700}}
+.dora-summary{{padding:24px;background:#e7f0eb;border-radius:16px;margin:24px 0}}.dora-tiles{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}}.dora-card{{padding:20px;background:white;border-radius:12px}}.dora-card p{{font-size:14px;color:#48655f}}.dora-card strong{{font-size:32px;color:#143d34}}
 </style><h1>SaparTravel: 15 лабораторных и функции сайта</h1><p>Снимок GitHub: {escape(captured)}. Исторические измерения потока приведены отдельно. «Нет данных» сохраняется явно.</p>
 <nav aria-label="Лабораторные">{labs}</nav><nav aria-label="Учебный комплект"><a href="course-completion.md">15 учебных разборов</a><a href="submission.md">Настоящая сдача и подтверждения</a></nav><nav aria-label="Адресат"><button onclick="filter('all')">Все панели</button><button onclick="filter('Заказчик')">Заказчику</button><button onclick="filter('Команда')">Команде</button></nav>
-<nav aria-label="GitHub Project">{views}</nav><main class="grid">{cards}</main>
+<nav aria-label="GitHub Project">{views}</nav>{dora_summary}<main class="grid">{cards}</main>
 <details class="feature-register" open><summary>Функции сайта: {len(features)} карточек</summary><div class="table-scroll"><table><thead><tr><th>Функция</th><th>Область</th><th>Реализация</th><th>Проверка</th><th>Этап</th></tr></thead><tbody>{feature_rows}</tbody></table></div></details>
 <script>function filter(a){{document.querySelectorAll('.panel').forEach(p=>p.hidden=a!=='all'&&p.dataset.audience!==a)}}</script></html>'''
 

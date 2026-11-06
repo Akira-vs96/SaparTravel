@@ -218,8 +218,10 @@ jobs:
       - uses: actions/checkout@v4
       - run: docker build -t sapar-api:ci ./backend
       - run: docker build -t sapar-web:ci ./frontend
+      - name: Build the single-container Free hosting application
+        run: docker build -f Dockerfile.public -t sapar-public:ci .
       - name: Export runnable application images
-        run: docker save sapar-api:ci sapar-web:ci | gzip > /tmp/sapartravel-images.tar.gz
+        run: docker save sapar-api:ci sapar-web:ci sapar-public:ci | gzip > /tmp/sapartravel-images.tar.gz
       - uses: actions/upload-artifact@v4
         with:
           name: sapartravel-application-images

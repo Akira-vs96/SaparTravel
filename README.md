@@ -26,6 +26,11 @@ PostgreSQL 17, Docker Compose и Nginx. Интерфейс: **ru / kk / en**.
 План и прогресс: [implementation-plan.md](docs/implementation-plan.md).
 Эти локальные проверки не подтверждают готовность публичного коммерческого сервиса.
 
+Бесплатная публикация через GitHub: [Render Free + Neon Free](docs/ops/free-hosting.md).
+Единый образ включает сайт, API и worker; выпуск проверенного commit выполняет
+[автодеплой](.github/workflows/deploy-public.yml). Публичный адрес появится после
+подключения аккаунтов и первого успешного развёртывания.
+
 ## Чистая демонстрационная среда
 
 Нужны Docker Engine, Compose v2 и Python 3 для генератора конфигурации.
