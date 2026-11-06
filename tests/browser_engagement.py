@@ -116,13 +116,19 @@ def run(base_url, api_url):
             traveler.get_by_role("link", name="Forgot password?", exact=True).click()
             expect(traveler).to_have_url(re.compile(r"/forgot-password$"))
             step = "recovery: request reset delivery"
-            recovery_email = traveler.get_by_label("Email address", exact=True)
+            # React Router can update the URL before replacing the login form.
+            # Both forms have an email input: bind to the destination form before
+            # typing, otherwise a fast fill can be discarded by its mount.
+            request_reset = traveler.get_by_role("button", name="Send reset link", exact=True)
+            recovery_form = traveler.locator("form").filter(has=request_reset)
+            expect(recovery_form).to_be_visible()
+            recovery_email = recovery_form.get_by_label("Email address", exact=True)
             recovery_email.fill(traveler_email)
             expect(recovery_email).to_have_value(traveler_email)
             assert recovery_email.evaluate("input => input.validity.valid"), "Recovery email input must be valid"
-            expect(traveler.get_by_role("button", name="Send reset link", exact=True)).to_be_enabled()
+            expect(request_reset).to_be_enabled()
             with traveler.expect_response(response_for("/auth/forgot-password", "POST")) as requested:
-                traveler.get_by_role("button", name="Send reset link", exact=True).click()
+                request_reset.click()
             assert requested.value.status == 200
             expect(traveler.get_by_role("status")).to_contain_text("If the account exists")
             expect(traveler.get_by_role("button", name=re.compile("Send another link"))).to_be_disabled()

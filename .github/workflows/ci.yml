@@ -170,6 +170,11 @@ jobs:
   course:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: read
+      actions: read
+      deployments: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -180,6 +185,14 @@ jobs:
       - run: python -m unittest discover -s tests/course -p 'test_*.py' -v
       - run: python -m scripts.course.audit --output test-results/course-audit.json
       - run: python -m scripts.course.practice --check
+      - name: Collect repository evidence with an ephemeral read-only token
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m scripts.course.github_facts --repo "$GITHUB_REPOSITORY" --skip-project --output test-results/dora-source/github.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dora-source
+          path: test-results/dora-source/
 
   security:
     runs-on: ubuntu-latest
