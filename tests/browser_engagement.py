@@ -10,6 +10,7 @@ E2E_ADMIN_EMAIL=... E2E_ADMIN_PASSWORD=... python tests/browser_engagement.py \
 """
 import argparse
 from datetime import date, timedelta
+import json
 import os
 from pathlib import Path
 import re
@@ -38,7 +39,7 @@ def api(context, api_url, path, *, method="GET", token=None, body=None, expected
 
 
 def login(page, base_url, email, password):
-    page.goto(base_url + "/login")
+    page.goto(base_url + "/login", wait_until="domcontentloaded")
     page.get_by_label("Email address", exact=True).fill(email)
     page.get_by_label("Password", exact=True).fill(password)
     page.get_by_role("button", name="Log in", exact=True).click()
@@ -100,18 +101,24 @@ def run(base_url, api_url):
             with traveler.expect_response(response_for("/auth/logout", "POST")) as logout_response:
                 traveler.locator(".account-nav").get_by_role("button", name="Log out", exact=True).click()
             assert logout_response.value.status == 204
+            # The logout response can arrive before React's protected-route
+            # redirect finishes. Do not race a second document navigation.
+            expect(traveler).to_have_url(re.compile(r"/login(?:\?|$)"))
+            expect(traveler.get_by_role("link", name="Forgot password?", exact=True)).to_be_visible()
             api(traveler_context, api_url, "/auth/me", token=old_token, expected=401)
 
-            step = "one-use recovery through the private mailbox"
-            traveler.goto(base_url + "/login")
+            step = "recovery: open forgot-password form"
+            traveler.goto(base_url + "/login", wait_until="domcontentloaded")
             traveler.get_by_role("link", name="Forgot password?", exact=True).click()
             expect(traveler).to_have_url(re.compile(r"/forgot-password$"))
+            step = "recovery: request reset delivery"
             traveler.get_by_label("Email address", exact=True).fill(traveler_email)
             with traveler.expect_response(response_for("/auth/forgot-password", "POST")) as requested:
                 traveler.get_by_role("button", name="Send reset link", exact=True).click()
             assert requested.value.status == 200
             expect(traveler.get_by_role("status")).to_contain_text("If the account exists")
             expect(traveler.get_by_role("button", name=re.compile("Send another link"))).to_be_disabled()
+            step = "recovery: administrator mailbox"
             admin_context = browser.new_context(viewport={"width": 1440, "height": 1000})
             admin_context.add_init_script("localStorage.setItem('sapar-language','en')")
             admin_page = admin_context.new_page()
@@ -133,7 +140,8 @@ def run(base_url, api_url):
             # step name below; Playwright call logs must never print this token.
             reset_link = re.search(r"https?://[^\s]+", mailbox["items"][0]["body"]).group(0)
             assert urlsplit(reset_link).path == "/reset-password", "Unexpected recovery route"
-            traveler.goto(reset_link)
+            step = "recovery: reset link and confirmation"
+            traveler.goto(reset_link, wait_until="domcontentloaded")
             traveler.get_by_label("New password", exact=True).fill(replacement_password)
             traveler.get_by_label("Confirm new password", exact=True).fill(replacement_password)
             traveler.get_by_label("Confirm new password", exact=True).fill(replacement_password + "-different")
@@ -144,6 +152,7 @@ def run(base_url, api_url):
                 traveler.get_by_role("button", name="Change password", exact=True).click()
             assert reset.value.status == 200
             expect(traveler.get_by_role("status")).to_have_text("Password reset. Sign in using your new password.")
+            step = "recovery: one-use token and login checks"
             api(traveler_context, api_url, "/auth/reset-password", method="POST", body={"token": recovery_token, "new_password": secrets.token_urlsafe(24)}, expected=422)
             recovery_token = None
             api(traveler_context, api_url, "/auth/login", method="POST", body={"email": traveler_email, "password": traveler_password}, expected=401)
@@ -294,6 +303,14 @@ def run(base_url, api_url):
                 raise SafeCheckError("JavaScript page errors: " + "; ".join(errors))
             print("PASS: saved search persistence and restoration, comparison limit, removal and 360/768/1440px layouts")
         except Exception as error:
+            # Save only structural diagnostics: reset URLs, message bodies,
+            # passwords and the underlying Playwright call log stay private.
+            (artifacts / "engagement-failure.json").write_text(json.dumps({
+                "step": step, "exception_type": type(error).__name__,
+                "operation": str(error).split(":", 1)[0].splitlines()[0][:80],
+                "pathname": urlsplit(traveler.url).path,
+                "language": traveler.locator("html").get_attribute("lang"),
+            }, ensure_ascii=False, indent=2) + "\n")
             if isinstance(error, SafeCheckError):
                 raise AssertionError(str(error)) from None
             if "recovery" not in step:

@@ -4,6 +4,7 @@ on:
   push:
     branches: [main, master]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -204,3 +205,10 @@ jobs:
       - uses: actions/checkout@v4
       - run: docker build -t sapar-api:ci ./backend
       - run: docker build -t sapar-web:ci ./frontend
+      - name: Export runnable application images
+        run: docker save sapar-api:ci sapar-web:ci | gzip > /tmp/sapartravel-images.tar.gz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sapartravel-application-images
+          path: /tmp/sapartravel-images.tar.gz
+          retention-days: 7

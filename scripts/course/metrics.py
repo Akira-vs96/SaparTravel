@@ -319,6 +319,66 @@ def dora(facts, start, end, incidents=None, incident_register_complete=False):
             "limitation": "A green CI run is not a deployment. Missing incident evidence is not a 0% failure rate."}
 
 
+def measured_dora(facts, start, end, *, environment=None, register=None):
+    """Scope real deployments and require explicit incident-register coverage."""
+    if start.tzinfo is None or end.tzinfo is None or start >= end:
+        raise ValueError("Expected a nonempty timezone-aware time window")
+    selected = [row for row in facts["deployments"]
+                if environment is None or row.get("environment") == environment]
+    denominator = {row["id"] for row in selected if row.get("finished_at")
+                   and start <= stamp(row["finished_at"]) < end}
+    incidents, complete = [], False
+    if register is not None:
+        if environment is None or register.get("environment") != environment:
+            raise ValueError("An incident register must match one explicit environment")
+        covered = set(register.get("covered_deployment_ids", []))
+        if not covered.issubset({row["id"] for row in selected}):
+            raise ValueError("Incident coverage contains an unknown or foreign deployment")
+        complete = register.get("complete") is True and denominator.issubset(covered)
+        for incident in register.get("incidents", []):
+            if incident["deployment_id"] not in covered:
+                raise ValueError("Incident deployment is missing from register coverage")
+            begun = stamp(incident["started_at"])
+            recovered = stamp(incident["recovered_at"]) if incident.get("recovered_at") else None
+            if recovered is not None and recovered < begun:
+                raise ValueError("Recovery cannot precede the observed failure")
+            hours = incident.get("repair_automation_hours")
+            if hours is not None and (not math.isfinite(hours) or hours < 0):
+                raise ValueError("Repair automation hours must be finite and nonnegative")
+            if incident["deployment_id"] in denominator and start <= begun < end:
+                incidents.append({**incident, "recovered_at": incident.get("recovered_at")
+                                  if recovered is not None and recovered < end else None})
+    result = dora({**facts, "deployments": selected}, start, end, incidents, complete)
+    return {**result, "environment": environment, "deployment_ids": sorted(denominator),
+            "incident_register_complete": complete,
+            "incident_count": len(incidents),
+            "repair_automation_hours": sum(row.get("repair_automation_hours") or 0 for row in incidents)
+                if incidents and all(row.get("repair_automation_hours") is not None for row in incidents) else None,
+            "human_labor_hours": None,
+            "source_repository": facts.get("repository"), "source_captured_at_utc": facts.get("captured_at_utc"),
+            "scope_note": "One named environment; automation elapsed time is not human labor. Short samples do not establish a team performance tier."}
+
+
+def plot_dora(result, path):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    metrics = [("deployment_frequency_per_week", "Successful deployments / week"),
+               ("lead_time_median_hours", "Median lead time, hours"),
+               ("change_failure_rate_percent", "Change failure rate, %"),
+               ("recovery_median_minutes", "Median recovery, minutes")]
+    figure, axes = plt.subplots(2, 2, figsize=(10, 6), constrained_layout=True)
+    for axis, (key, label) in zip(axes.flat, metrics):
+        value = result.get(key)
+        axis.text(.5, .5, "Not measured" if value is None else f"{value:.4g}",
+                  ha="center", va="center", fontsize=25, transform=axis.transAxes)
+        axis.set_title(label)
+        axis.set_axis_off()
+    figure.suptitle(f"DORA: {result.get('environment') or 'all environments'} ({result['deployment_count']} deployments)")
+    figure.savefig(path, dpi=150)
+    plt.close(figure)
+
+
 def main():
     import argparse
     import json
@@ -330,14 +390,23 @@ def main():
     parser.add_argument("--kind", choices=("flow", "dora"), default="flow")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--plot", action="store_true")
+    parser.add_argument("--environment", help="Measure one named deployment environment")
+    parser.add_argument("--incidents", type=Path, help="Observed incident register with explicit deployment coverage")
     args = parser.parse_args()
     facts = json.loads(args.snapshot.read_text())
-    result = flow(facts, args.start, args.end) if args.kind == "flow" else dora(facts, args.start, args.end)
+    register = json.loads(args.incidents.read_text()) if args.incidents else None
+    if args.kind == "flow" and (args.environment or register is not None):
+        parser.error("--environment and --incidents apply only to --kind dora")
+    result = flow(facts, args.start, args.end) if args.kind == "flow" else measured_dora(
+        facts, args.start, args.end, environment=args.environment, register=register)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     if args.plot:
-        from scripts.course.flow_report import plot_cfd
-        plot_cfd(cfd(facts, args.start, args.end), args.output.with_suffix(".png"))
+        if args.kind == "dora":
+            plot_dora(result, args.output.with_suffix(".png"))
+        else:
+            from scripts.course.flow_report import plot_cfd
+            plot_cfd(cfd(facts, args.start, args.end), args.output.with_suffix(".png"))
     print("Recorded evidence calculated; missing metrics remain null")
 
 
