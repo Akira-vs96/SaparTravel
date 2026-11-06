@@ -1,0 +1,19 @@
+{
+  "data_kind": "observed_ci_fix",
+  "captured_at_utc": "2026-11-06T07:36:35.893032+00:00",
+  "failed_run_id": 42180871415,
+  "failed_run_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42180871415",
+  "failure_stage": "English cancellation after a cancelled 3DS attempt",
+  "observed_api_cancel_status": 200,
+  "evidence": "CI API log and localization-en-failure.png show successful cancellation and refund, with Cancelled badges on both booking and 3DS payment history",
+  "previous_selector": ".booking-detail .status-badge.cancelled",
+  "fixed_selector": ".booking-detail .page-heading .status-badge.cancelled",
+  "local_smoke_passed": true,
+  "local_localization_passed": [
+    "ru:360",
+    "kk:768",
+    "en:1440"
+  ],
+  "local_cpu_slowdown_factor": 4,
+  "all_money_and_seat_assertions_preserved": true
+}

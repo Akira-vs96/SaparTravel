@@ -17,6 +17,7 @@ from pathlib import Path
 import re
 import secrets
 import subprocess
+import traceback
 from urllib.parse import urlsplit
 from uuid import uuid4
 
@@ -260,25 +261,44 @@ def run(base_url, api_url):
                 assert "DTSTART;VALUE=DATE:" + departure["start_date"].replace("-", "") in ics
 
                 stage = "localized cancellation and full refund"
+                stage = "open localized cancellation dialog"
                 page.locator(".detail-summary").get_by_role("button", name=words["cancelBooking"], exact=True).click()
                 dialog = page.get_by_role("dialog")
                 expect(dialog).to_be_visible()
+                stage = "submit localized cancellation"
                 with page.expect_response(response_for(f"/bookings/{booking_id}/cancel", "POST")) as cancelled:
                     dialog.get_by_role("button", name=words["cancelBooking"], exact=True).click()
                 assert cancelled.value.status == 200
-                expect(page.locator(".booking-detail .status-badge.cancelled")).to_have_text(words["cancelled"])
+                stage = "render localized cancelled status"
+                # A cancelled 3DS attempt has the same badge class. Wait for
+                # the booking header, not a matching payment-history badge.
+                expect(page.locator(".booking-detail .page-heading .status-badge.cancelled")).to_have_text(words["cancelled"])
+                stage = "verify cancellation ledger and full refund"
                 final = api(context, api_url, f"/bookings/{booking_id}?lang={lang}", token=token)
                 assert final["status"] == "cancelled"
                 assert Decimal(final["paid_amount"]) == Decimal(final["refunded_amount"]) == Decimal("60000")
                 assert final["refunds"] and all(refund["status"] == "succeeded" for refund in final["refunds"])
+                stage = "verify released seats after cancellation"
                 assert api(context, api_url, f"/experiences/{tour['slug']}?lang={lang}")["departures"][0]["available_seats"] == 2
+                stage = "render localized succeeded transaction"
                 expect(page.locator(".transaction-row .status-badge.succeeded").first).to_have_text(words["succeeded"])
+                stage = "verify cancelled booking layout"
                 no_overflow(page, lang, "cancelled booking")
                 capture(page, artifacts / f"localization-{lang}-{width}-cancelled.png")
+                stage = "verify storage after cancellation"
                 private_payment_storage(page, pans, cvc)
+                stage = "verify no JavaScript errors"
                 assert not errors, "A JavaScript page error occurred"
                 print(f"PASS: {lang} at {width}px — UI registration, preserved checkout, participant/service quote, localized payment errors, 3DS cancellation/retry, payment, localized HTML/ICS, full refund and released seats")
             except Exception as error:
+                frames = traceback.extract_tb(error.__traceback__)
+                (artifacts / f"localization-{lang}-failure.json").write_text(json.dumps({
+                    "stage": stage, "language": lang, "width": width,
+                    "exception_type": type(error).__name__,
+                    "local_line": next((frame.lineno for frame in reversed(frames) if frame.filename == __file__), None),
+                    "pathname": urlsplit(page.url).path, "javascript_error_types": errors,
+                    "overflow": page.evaluate("document.documentElement.scrollWidth > innerWidth"),
+                }, ensure_ascii=False, indent=2) + "\n")
                 if stage != "localized traveler registration":
                     capture(page, artifacts / f"localization-{lang}-failure.png")
                 # Do not print Playwright call logs: registration and payment

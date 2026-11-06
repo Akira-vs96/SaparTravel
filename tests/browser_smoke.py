@@ -164,7 +164,7 @@ def run(base_url: str) -> None:
         page.screenshot(path=str(artifacts / "booking-confirmed-desktop.png"), full_page=True)
         page.locator(".detail-summary .danger-text").click()
         page.get_by_role("dialog").get_by_role("button", name="Cancel booking", exact=True).click()
-        expect(page.locator(".booking-detail .status-badge.cancelled")).to_be_visible()
+        expect(page.locator(".booking-detail .page-heading .status-badge.cancelled")).to_be_visible()
         token = page.evaluate("localStorage.getItem('sapar-token')")
         result = context.request.get(f"{base_url}/api/v1/bookings/{booking_id}", headers={"Authorization": "Bearer " + token}).json()
         assert result["status"] == "cancelled"
