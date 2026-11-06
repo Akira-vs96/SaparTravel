@@ -3,13 +3,19 @@
 Подготовлена схема **GitHub → Render Free + Neon Free**. Один контейнер
 обслуживает React, FastAPI и worker; PostgreSQL хранится отдельно в Neon.
 Платные сервисы, диски, отдельные worker и cron не используются.
-До подключения аккаунтов, первого выпуска и успешной проверки публичного URL
-эта конфигурация означает готовность к публикации, а не работающий внешний сайт.
+Сайт опубликован: **https://sapartravel.onrender.com**. Первый успешный выпуск
+06.11.2026 08:46:07 UTC подтверждён
+[GitHub Actions](https://github.com/Akira-vs96/SaparTravel/actions/runs/42189769502)
+и [проверкой публичного сервера](../labs/lab-10/evidence/public-verification-2026-11-06.json).
+В Render сохранены 13 переменных, Auto-Deploy выключен: выпусками управляет
+проверенный workflow GitHub. Переменные GitHub и секрет hook настроены.
 
 ## Подключение
 
 1. В Neon выбрать организацию **Free**, создать новый проект `sapartravel`
-   в AWS Frankfurt, PostgreSQL 17. Использовать прямое подключение `postgresql://…`
+   в AWS Frankfurt. Текущий созданный проект использует PostgreSQL **18.6**;
+   миграции применены, публичные API проверены, CI отдельно проверяет PostgreSQL 17.
+   Использовать прямое подключение `postgresql://…`
    с `sslmode=require`: session advisory lock worker требует одной настоящей
    PostgreSQL-сессии; transaction pooler здесь не подходит. Это новая БД, локальные
    аккаунты, платежи и персональные данные в неё не копируются.

@@ -26,10 +26,11 @@ PostgreSQL 17, Docker Compose и Nginx. Интерфейс: **ru / kk / en**.
 План и прогресс: [implementation-plan.md](docs/implementation-plan.md).
 Эти локальные проверки не подтверждают готовность публичного коммерческого сервиса.
 
+Публичный сайт: **[sapartravel.onrender.com](https://sapartravel.onrender.com)**.
 Бесплатная публикация через GitHub: [Render Free + Neon Free](docs/ops/free-hosting.md).
 Единый образ включает сайт, API и worker; выпуск проверенного commit выполняет
-[автодеплой](.github/workflows/deploy-public.yml). Публичный адрес появится после
-подключения аккаунтов и первого успешного развёртывания.
+[автодеплой](.github/workflows/deploy-public.yml). Первый публичный выпуск
+06.11.2026 проверен: [протокол](docs/labs/lab-10/evidence/public-verification-2026-11-06.json).
 
 ## Чистая демонстрационная среда
 

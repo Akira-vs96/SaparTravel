@@ -1,0 +1,63 @@
+{
+  "commit": "53061ba1c1a6049f36a4927b21bc17322de9466f",
+  "health": {
+    "http": 200,
+    "status": "ok",
+    "database": "ok"
+  },
+  "catalog": {
+    "ru": {
+      "http": 200,
+      "total": 24,
+      "items": 12
+    },
+    "kk": {
+      "http": 200,
+      "total": 24,
+      "items": 12
+    },
+    "en": {
+      "http": 200,
+      "total": 24,
+      "items": 12
+    }
+  },
+  "recommendations": {
+    "ru": {
+      "http": 200,
+      "items": 1
+    },
+    "kk": {
+      "http": 200,
+      "items": 1
+    },
+    "en": {
+      "http": 200,
+      "items": 1
+    }
+  },
+  "administrator": {
+    "login_http": 200,
+    "profile_http": 200,
+    "role": "admin"
+  },
+  "unknown_api_http": 404,
+  "captured_at_utc": "2026-11-06T08:51:05.539Z",
+  "url": "https://sapartravel.onrender.com",
+  "ci_run": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42187795470",
+  "deployment_run": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42189769502",
+  "github_deployment_id": 7596018502,
+  "render_deploy_id": "dep-dbmp6rs9v7es73ad47dg",
+  "hosting": {
+    "web": "Render Free",
+    "database": "Neon Free",
+    "postgresql_version": "18.6",
+    "client_tls": true
+  },
+  "public_visual_matrix": {
+    "completed": false,
+    "passed_combinations": 10,
+    "reason": "A recommendation card wait exceeded 10 seconds. A later local curl also reported a DNS resolution timeout. Focused public checks passed for RU/KK/EN."
+  },
+  "password_reset_mail": "disabled_pending_external_mail_transport"
+}

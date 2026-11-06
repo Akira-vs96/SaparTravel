@@ -1,0 +1,17 @@
+{
+  "commit": "53061ba1c1a6049f36a4927b21bc17322de9466f",
+  "environment": "public-demo",
+  "url": "https://sapartravel.onrender.com",
+  "checked_at_utc": "2026-11-06T08:44:00.133780+00:00",
+  "ci_run_id": 42187795470,
+  "state": "success",
+  "requested_at_utc": "2026-11-06T08:44:31.791000+00:00",
+  "github_deployment_id": 7596018502,
+  "finished_at_utc": "2026-11-06T08:46:07.898150+00:00",
+  "smoke": [
+    "exact_commit",
+    "health",
+    "catalog",
+    "frontend_deep_link"
+  ]
+}

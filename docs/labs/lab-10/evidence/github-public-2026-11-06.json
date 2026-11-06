@@ -1,0 +1,1938 @@
+{
+  "schema_version": 1,
+  "repository": "Akira-vs96/SaparTravel",
+  "captured_at_utc": "2026-11-06T08:46:11.067350+00:00",
+  "sources": [
+    "https://github.com/Akira-vs96/SaparTravel/issues",
+    "https://github.com/Akira-vs96/SaparTravel/actions",
+    "https://github.com/users/Akira-vs96/projects/2"
+  ],
+  "issues": [
+    {
+      "number": 85,
+      "title": "Список туров не показывает наличие мест и ближайший заезд",
+      "body": "Описание:\nGET /api/v1/experiences возвращает price_from, но не показывает есть ли вообще доступные места и когда ближайший заезд. Клиент вынужден делать N дополнительных запросов по каждому туру на листинге\n\nКритерии приёмки:\nДобавить в объект листинга поля: next_departure_date: \"2026-11-06\" | null и has_availability: true/false\n\nP2 — High",
+      "state": "open",
+      "created_at": "2026-11-02T10:07:33Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/85"
+    },
+    {
+      "number": 84,
+      "title": "404 не различает «заезд не найден» и «тур снят с публикации»",
+      "body": "Описание:\nПри отправке POST /api/v1/bookings с несуществующим или невалидным departure_id API возвращает одно и то же сообщение независимо от причины отказа: «Заезд не найден или тур снят с публикации». Клиент не может определить, что именно пошло не так\n\nШаги воспроизведения:\nПередать несуществующий UUID в departure_id → 404\nПередать UUID существующего заезда, но тур с него снят → 404\nОба запроса возвращают идентичное detail\n\nКритерии приёмки:\nDeparture не найден → 422 с loc: [\"body\",\"departure_id\"], msg: \"Departure not found\"\nТур снят → 422, msg: \"Tour is not available for booking\"",
+      "state": "open",
+      "created_at": "2026-11-02T10:05:15Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/84"
+    },
+    {
+      "number": 83,
+      "title": "P10 — Визуальная полировка второстепенных экранов",
+      "body": "<!-- sapar-project:PORT-P10 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=3, urgency=1, risk reduction=1, size=5; WSJF=1.000000. Основные бизнес-сценарии уже проверены. Оценки не являются утверждением спонсора.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:12:50Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/83"
+    },
+    {
+      "number": 82,
+      "title": "P09 — Реальный платёжный провайдер с webhook и сверкой",
+      "body": "<!-- sapar-project:PORT-P09 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=8, urgency=3, risk reduction=8, size=13; WSJF=1.461538. Вне базового SOW; нужен договор и доступ провайдера. Оценки не являются утверждением спонсора.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:12:41Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/82"
+    },
+    {
+      "number": 81,
+      "title": "P08 — Реальная email-доставка с очередью и наблюдаемостью",
+      "body": "<!-- sapar-project:PORT-P08 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=8, urgency=5, risk reduction=8, size=8; WSJF=2.625000. Внешний SMTP и согласие на канал не предоставлены. Очередь SMTP и наблюдаемость уже реализованы в 5a29a61; остаётся подключение внешнего сервиса. Оценки не являются утверждением спонсора.\n\nРеализация: **Partial**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:12:35Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/81"
+    },
+    {
+      "number": 80,
+      "title": "P07 — Общий rate limit для нескольких worker",
+      "body": "<!-- sapar-project:PORT-P07 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=8, urgency=8, risk reduction=13, size=8; WSJF=3.625000. Текущий limiter привязан к процессу; публичный контур требует пересмотра. Оценки не являются утверждением спонсора.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:12:30Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/80"
+    },
+    {
+      "number": 79,
+      "title": "P06 — Независимая разметка набора AI и проверка качества",
+      "body": "<!-- sapar-project:PORT-P06 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=5, urgency=5, risk reduction=8, size=3; WSJF=6.000000. Модель не превосходит правила; запускать без проверки нельзя. Оценки не являются утверждением спонсора.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:12:25Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/79"
+    },
+    {
+      "number": 78,
+      "title": "P05 — Три внешние точки мониторинга",
+      "body": "<!-- sapar-project:PORT-P05 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=13, urgency=13, risk reduction=13, size=8; WSJF=4.875000. Локальный кворум не даёт эксплуатационного SLA. Оценки не являются утверждением спонсора.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:12:19Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/78"
+    },
+    {
+      "number": 77,
+      "title": "P04 — Off-site копии и внешний restore drill",
+      "body": "<!-- sapar-project:PORT-P04 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=13, urgency=13, risk reduction=13, size=5; WSJF=7.800000. Потеря единственного узла остаётся внешним риском. Оценки не являются утверждением спонсора.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:12:12Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/77"
+    },
+    {
+      "number": 76,
+      "title": "P03 — Согласованный календарь и ответственные поддержки",
+      "body": "<!-- sapar-project:PORT-P03 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=8, urgency=8, risk reduction=8, size=3; WSJF=8.000000. Сроки API есть; договорные полномочия не назначены. Оценки не являются утверждением спонсора.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:12:05Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/76"
+    },
+    {
+      "number": 75,
+      "title": "P02 — Журнал deployments и связанных инцидентов",
+      "body": "<!-- sapar-project:PORT-P02 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=8, urgency=8, risk reduction=13, size=3; WSJF=9.666667. Без источника DORA остаётся неизвестной. Оценки не являются утверждением спонсора.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:11:57Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/75"
+    },
+    {
+      "number": 74,
+      "title": "P01 — Внешний UAT и runbook с принимающим",
+      "body": "<!-- sapar-project:PORT-P01 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложение портфеля: value=13, urgency=13, risk reduction=13, size=3; WSJF=13.000000. Блокирует передачу; владелец и дата требуют согласования. Оценки не являются утверждением спонсора.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Видны отдельно три составляющие стоимости задержки и размер; рейтинг воспроизводится формулой.\n- Запуск инициативы не заявляется только на основании рассчитанного WSJF.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/initiatives.csv](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/initiatives.csv)\n- [docs/labs/lab-14/priorities.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/priorities.md)\n\nЗависимости / следующий шаг: Решение о запуске и доступный ресурс подтверждаются отдельно; портфельный WIP не более 3.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:11:49Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/74"
+    },
+    {
+      "number": 73,
+      "title": "ЛЗ 15 — Защита проекта и симуляция собеседования",
+      "body": "<!-- sapar-project:LAB-15 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 19 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 1, \"partial\": 6, \"requires-human\": 8, \"verified\": 4}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-15/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-15/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ15-S02, LZ15-S03, LZ15-S05, LZ15-S06, LZ15-S08, LZ15-S09, LZ15-S10, LZ15-S12, LZ15-S13, LZ15-C01, LZ15-C03, LZ15-C04, LZ15-C05, LZ15-C06. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 15. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:11:43Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/73"
+    },
+    {
+      "number": 72,
+      "title": "ЛЗ 14 — Приоритизация портфеля и статус-отчёт руководству",
+      "body": "<!-- sapar-project:LAB-14 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 21 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 1, \"partial\": 4, \"requires-human\": 2, \"verified\": 14}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-14/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-14/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ14-S01, LZ14-S02, LZ14-S07, LZ14-S14, LZ14-S15, LZ14-C04. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:11:36Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/72"
+    },
+    {
+      "number": 71,
+      "title": "ЛЗ 13 — Собственный ИИ-ассистент менеджера проекта",
+      "body": "<!-- sapar-project:LAB-13 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 21 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"partial\": 3, \"requires-human\": 4, \"verified\": 9}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-13/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-13/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ13-S03, LZ13-S09, LZ13-S10, LZ13-S12, LZ13-S13, LZ13-S14, LZ13-C03. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 13. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:11:29Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/71"
+    },
+    {
+      "number": 70,
+      "title": "ЛЗ 12 — План ИИ-функции: evals, стоимость, риски",
+      "body": "<!-- sapar-project:LAB-12 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 20 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 3, \"partial\": 5, \"requires-human\": 2, \"verified\": 10}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-12/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-12/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ12-S04, LZ12-S05, LZ12-S09, LZ12-S12, LZ12-S13, LZ12-C01, LZ12-C03. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 12. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:11:21Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/70"
+    },
+    {
+      "number": 69,
+      "title": "ЛЗ 11 — План тестирования, UAT и разбор инцидента",
+      "body": "<!-- sapar-project:LAB-11 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 23 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 4, \"requires-human\": 6, \"verified\": 13}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-11/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-11/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ11-S08, LZ11-S09, LZ11-S10, LZ11-S16, LZ11-C04, LZ11-C07. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:11:15Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/69"
+    },
+    {
+      "number": 68,
+      "title": "ЛЗ 10 — CI/CD-пайплайн и дашборд DORA",
+      "body": "<!-- sapar-project:LAB-10 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 21 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 2, \"partial\": 5, \"requires-human\": 3, \"verified\": 11}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-10/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-10/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ10-S02, LZ10-S05, LZ10-S06, LZ10-S08, LZ10-S09, LZ10-S12, LZ10-S13, LZ10-C02. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 10. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:11:04Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/68"
+    },
+    {
+      "number": 67,
+      "title": "ЛЗ 09 — Симуляция двух спринтов",
+      "body": "<!-- sapar-project:LAB-09 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 17 требований приведены в отчёте. Статусы исходного аудита: {\"partial\": 6, \"requires-human\": 7, \"verified\": 4}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-09/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-09/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ09-S02, LZ09-S04, LZ09-S05, LZ09-S07, LZ09-S08, LZ09-S09, LZ09-S10, LZ09-S11, LZ09-S12, LZ09-C02, LZ09-C03, LZ09-C04, LZ09-C05. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 9. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:10:57Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/67"
+    },
+    {
+      "number": 66,
+      "title": "ЛЗ 08 — SoW, SLA/SLO и бюджет проекта. Рубежный контроль 1",
+      "body": "<!-- sapar-project:LAB-08 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 18 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"requires-human\": 2, \"verified\": 11}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-08/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-08/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ08-S11, LZ08-S12. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 8. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:10:47Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/66"
+    },
+    {
+      "number": 65,
+      "title": "ЛЗ 07 — Реестр рисков, модель угроз и чек-лист соответствия",
+      "body": "<!-- sapar-project:LAB-07 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 17 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 3, \"requires-human\": 2, \"verified\": 12}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-07/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-07/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ07-S01, LZ07-S11. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 7. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:10:40Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/65"
+    },
+    {
+      "number": 64,
+      "title": "ЛЗ 06 — Вероятностный прогноз сроков (Монте-Карло)",
+      "body": "<!-- sapar-project:LAB-06 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 16 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"partial\": 1, \"requires-human\": 4, \"verified\": 6}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-06/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-06/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ06-S04, LZ06-S08, LZ06-S09, LZ06-S10, LZ06-C05. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 6. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:10:33Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/64"
+    },
+    {
+      "number": 63,
+      "title": "ЛЗ 05 — WBS, план релизов и карта зависимостей",
+      "body": "<!-- sapar-project:LAB-05 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 16 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"requires-human\": 3, \"verified\": 8}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-05/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-05/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ05-S07, LZ05-S10, LZ05-C02. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 5. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:10:26Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/63"
+    },
+    {
+      "number": 62,
+      "title": "ЛЗ 04 — Story map, бэклог и спецификация НФТ",
+      "body": "<!-- sapar-project:LAB-04 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 16 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 8, \"requires-human\": 2, \"verified\": 6}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-04/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-04/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ04-S05, LZ04-C02. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 4. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:10:19Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/62"
+    },
+    {
+      "number": 61,
+      "title": "ЛЗ 03 — Бизнес-кейс, устав и финансовая модель",
+      "body": "<!-- sapar-project:LAB-03 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 17 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 8, \"partial\": 1, \"requires-human\": 3, \"verified\": 5}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-03/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-03/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ03-S01, LZ03-S04, LZ03-S08, LZ03-S12. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 3. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:10:14Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/61"
+    },
+    {
+      "number": 60,
+      "title": "Подтвердить среду, внешние точки и эксплуатацию",
+      "body": "<!-- sapar-project:DEP-OPS -->\n## Состояние и подтверждения — 2026-10-31\n\nЛокальные проверки и CI не подтверждают внешний SLA; нет зарегистрированных production deployments.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Blocked**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Есть конкретный владелец решения, доступы/среда и датированное подтверждение результата.\n- До подтверждения внешняя интеграция или приёмка не объявляется завершённой.\n\n### Реализация и проверки\n\n- [docs/sow-sla-slo-sli.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/sow-sla-slo-sli.md)\n- [docs/labs/lab-10/evidence/dora.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-10/evidence/dora.json)\n\nЗависимости / следующий шаг: Владелец предоставляет узлы/HTTPS, внешние точки, off-site backup и календарь ответственных.\n\nСвязанные ЛЗ: 7, 8, 10, 14, 15. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:10:04Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/60"
+    },
+    {
+      "number": 59,
+      "title": "Назначить принимающего и провести внешний UAT",
+      "body": "<!-- sapar-project:DEP-UAT -->\n## Состояние и подтверждения — 2026-10-31\n\nБраузерные проверки выполнены; независимая пользовательская приёмка и решение принимающего не подтверждены.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Blocked**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Есть конкретный владелец решения, доступы/среда и датированное подтверждение результата.\n- До подтверждения внешняя интеграция или приёмка не объявляется завершённой.\n\n### Реализация и проверки\n\n- [docs/qa/test-plan.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/qa/test-plan.md)\n- [docs/labs/lab-11/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-11/README.md)\n\nЗависимости / следующий шаг: Нужны принимающий, доступная среда и подписанный результат сценариев.\n\nСвязанные ЛЗ: 4, 9, 11, 15. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:09:56Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/59"
+    },
+    {
+      "number": 58,
+      "title": "Подключить внешний SMTP-сервис",
+      "body": "<!-- sapar-project:DEP-SMTP -->\n## Состояние и подтверждения — 2026-10-31\n\nРеализация очереди и SMTP готова; реальные доступы и адрес отправителя не предоставлены.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Blocked**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Есть конкретный владелец решения, доступы/среда и датированное подтверждение результата.\n- До подтверждения внешняя интеграция или приёмка не объявляется завершённой.\n\n### Реализация и проверки\n\n- [docs/ops/mail-delivery.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/ops/mail-delivery.md)\n- [backend/tests/test_mail_delivery.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_mail_delivery.py)\n\nЗависимости / следующий шаг: Владелец заполняет SMTP_* в приватной конфигурации; подтвердить доставку в свой внешний ящик.\n\nСвязанные ЛЗ: 7, 10, 11, 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:09:50Z",
+      "closed_at": null,
+      "labels": [
+        "documentation"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/58"
+    },
+    {
+      "number": 57,
+      "title": "Полнота GitHub Project и связь с лабораторными",
+      "body": "<!-- sapar-project:TECH-PROJECT -->\n## Состояние и подтверждения — 2026-10-31\n\nЗаполнить карточки, источники, поля, представления и статус-отчёт; сверить повторным чтением API.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- У каждой работы заполнены статус, область, готовность, владелец, размер, приоритет, источники и следующий шаг.\n- Повторный запуск не создаёт дубликаты; незавершённая приёмка не превращается в Done.\n\n### Реализация и проверки\n\n- [scripts/course/project_sync.py](https://github.com/Akira-vs96/SaparTravel/blob/main/scripts/course/project_sync.py)\n- [docs/project-board-workflow.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/project-board-workflow.md)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 2, 4, 9, 10, 11, 14, 15. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:09:43Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/57"
+    },
+    {
+      "number": 56,
+      "title": "Фоновый worker: резервы, сверка и письма",
+      "body": "<!-- sapar-project:TECH-WORKER -->\n## Состояние и подтверждения — 2026-10-31\n\nWorker освобождает истёкшие резервы, завершает отложенную сверку/возврат и обрабатывает очередь писем. Повтор не создаёт вторую операцию.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- По sweep истёкший резерв освобождается, отложенная оплата/возврат сверяется, готовое письмо обрабатывается.\n- Повтор sweep не меняет баланс дважды; конкурентные worker не захватывают одно письмо одновременно.\n\n### Реализация и проверки\n\n- [backend/app/worker.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/worker.py)\n- [backend/tests/test_commerce.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_commerce.py)\n- [backend/tests/test_mail_delivery.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_mail_delivery.py)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 7, 10, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:09:36Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/56"
+    },
+    {
+      "number": 55,
+      "title": "Подбор туров и рекомендации",
+      "body": "<!-- sapar-project:F-RECOMMENDATIONS -->\n## Состояние и подтверждения — 2026-10-31\n\nИнтерфейс подбора связан с серверным endpoint; качество модели и сравнение с правилами хранятся отдельно.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Пользователь задаёт пожелания и получает подходящие опубликованные туры через серверный endpoint.\n- Неизвестные ссылки и неподходящие туры не выдаются как достоверный результат; качество модели не объявляется выше измеренного.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Recommendations.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Recommendations.jsx)\n- [backend/app/api/routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py)\n- [backend/tests/test_recommendations.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_recommendations.py)\n\nЗависимости / следующий шаг: Оценка качества и независимая разметка — отдельное требование ЛЗ12; модель не объявлена лучше правил.\n\nСвязанные ЛЗ: 4, 12. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:09:29Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/55"
+    },
+    {
+      "number": 54,
+      "title": "Почта администратора: состояние и повтор",
+      "body": "<!-- sapar-project:F-MAIL-ADMIN -->\n## Состояние и подтверждения — 2026-10-31\n\nЭкран показывает режим, очередь и ошибки без SMTP-пароля/токенов; повтор допустим только для действующего неуспешного письма.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Администратор видит режим, отправителя, количества и последние состояния; действующее неуспешное письмо можно вернуть в очередь.\n- Поставщик/турист получает отказ в доступе; список SMTP не раскрывает тело/токен/пароль, отправленное или просроченное письмо повторно не ставится.\n\n### Реализация и проверки\n\n- [frontend/src/pages/MailDelivery.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/MailDelivery.jsx)\n- [backend/app/api/identity.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/identity.py)\n- [backend/tests/test_mail_delivery.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_mail_delivery.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 7, 10, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:09:22Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/54"
+    },
+    {
+      "number": 53,
+      "title": "Аналитика кабинетов и CSV",
+      "body": "<!-- sapar-project:F-ANALYTICS -->\n## Состояние и подтверждения — 2026-10-31\n\nЗаказы, поступления и возвраты различаются; поставщик видит только свои данные, CSV защищён от формул.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Показатели кабинета различают неоплаченные заказы, поступления и возвраты; CSV соответствует выбранному периоду и роли.\n- Поставщик не получает данные другого поставщика, турист не получает отчёт, неправильный диапазон дат отклоняется.\n\n### Реализация и проверки\n\n- [backend/app/api/analytics.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/analytics.py)\n- [backend/tests/test_analytics.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_analytics.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11, 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:09:16Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/53"
+    },
+    {
+      "number": 52,
+      "title": "Управление направлениями, категориями, услугами и промокодами",
+      "body": "<!-- sapar-project:F-CATALOG-ADMIN -->\n## Состояние и подтверждения — 2026-10-31\n\nАдминистратор меняет справочники и промо; удаление используемой категории и операции без прав отклоняются.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Администратор создаёт и редактирует направления, категории, услуги и промокоды; переводы доступны в каталоге.\n- Обычный турист не меняет справочники; используемая категория не удаляется и неверные ссылки промо отклоняются.\n\n### Реализация и проверки\n\n- [frontend/src/pages/ManageDestinations.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/ManageDestinations.jsx)\n- [frontend/src/pages/ManageExtras.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/ManageExtras.jsx)\n- [backend/tests/test_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_engagement.py)\n- [tests/browser_management.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_management.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 7, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:09:10Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/52"
+    },
+    {
+      "number": 51,
+      "title": "Подтверждение бронирования и календарь ICS",
+      "body": "<!-- sapar-project:F-DOCUMENTS -->\n## Состояние и подтверждения — 2026-10-31\n\nВладелец получает локализованное подтверждение и событие календаря; данные берутся из сохранённого заказа.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Владелец открывает подтверждение и скачивает корректный ICS с датами, языком и данными сохранённого заказа.\n- Чужой заказ не выдаёт документы; спецсимволы и переносы корректно экранируются в календаре.\n\n### Реализация и проверки\n\n- [backend/app/api/commerce_routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py)\n- [tests/browser_localization.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_localization.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:09:03Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/51"
+    },
+    {
+      "number": 50,
+      "title": "Возвраты и защита от повторного возврата",
+      "body": "<!-- sapar-project:F-REFUNDS -->\n## Состояние и подтверждения — 2026-10-31\n\nВозврат учитывает политику отмены и копейки, резервирует баланс и не допускает возврата сверх оплаты.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Отмена рассчитывает возврат по сохранённой политике; администратор выполняет допустимый частичный возврат с точностью до тиына.\n- Повтор и конкурентные возвраты не превышают оплаченную сумму; отказ сохраняется для разрешённого повтора.\n\n### Реализация и проверки\n\n- [backend/app/api/commerce_routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py)\n- [backend/tests/test_commerce.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_commerce.py)\n\nЗависимости / следующий шаг: Проверено с тестовым платёжным провайдером; внешний банк отдельно #11.\n\nСвязанные ЛЗ: 4, 8, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:08:56Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/50"
+    },
+    {
+      "number": 49,
+      "title": "Платёжный сценарий: 3DS, отказ и повтор",
+      "body": "<!-- sapar-project:F-PAYMENT-TEST -->\n## Состояние и подтверждения — 2026-10-31\n\nВ существующем тестовом провайдере проверены успех, отказ, 3DS, таймаут, идемпотентность и сверка неизвестного результата.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Документированный тестовый инструмент проходит оплату/3DS и обновляет состояние заказа; неизвестный результат доступен для сверки.\n- Отказ и таймаут не подтверждают заказ; повтор запроса не создаёт второе списание в тестовом провайдере.\n\n### Реализация и проверки\n\n- [backend/app/api/commerce_routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py)\n- [backend/tests/test_commerce.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_commerce.py)\n- [tests/browser_smoke.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_smoke.py)\n\nЗависимости / следующий шаг: Реальные банковские списания сюда не входят; отдельная интеграция #11.\n\nСвязанные ЛЗ: 4, 8, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:08:49Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/49"
+    },
+    {
+      "number": 48,
+      "title": "Расчёт заказа, услуги и промокоды",
+      "body": "<!-- sapar-project:F-QUOTE -->\n## Состояние и подтверждения — 2026-10-31\n\nСервер считает цену в KZT, фиксирует снимок заказа и проверяет дополнительные услуги, скидки и границы сумм.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Сервер возвращает точную цену KZT с количеством туристов, услугами и промокодом, а заказ хранит снимок суммы.\n- Подмена клиентской суммы, чужая услуга, превышение лимита промо и переполнение суммы отклоняются без резерва мест.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Checkout.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Checkout.jsx)\n- [backend/tests/test_commerce.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_commerce.py)\n- [tests/browser_service_levels.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_service_levels.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 8, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:08:39Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/48"
+    },
+    {
+      "number": 47,
+      "title": "Обращения поддержки и SLA-метрики",
+      "body": "<!-- sapar-project:F-SUPPORT -->\n## Состояние и подтверждения — 2026-10-31\n\nПереписка, приоритет, статус, acknowledgment/first response и расчёт рабочих сроков реализованы с проверкой доступа.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Автор создаёт обращение и переписку; сотрудник меняет приоритет/статус, сроки acknowledgment и first response считаются по календарю.\n- Поставщик не видит обращения чужих туров; чтение/ответ без прав отклоняется, история выдаётся ограниченными страницами.\n\n### Реализация и проверки\n\n- [backend/app/api/engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py)\n- [backend/tests/test_service_levels.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_service_levels.py)\n- [tests/browser_service_levels.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_service_levels.py)\n\nЗависимости / следующий шаг: Для договорного SLA нужно согласовать календарь и ответственных; это отдельно от реализации API.\n\nСвязанные ЛЗ: 4, 8, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:08:33Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/47"
+    },
+    {
+      "number": 46,
+      "title": "Уведомления и отметка прочтения",
+      "body": "<!-- sapar-project:F-NOTIFICATIONS -->\n## Состояние и подтверждения — 2026-10-31\n\nУведомления персональны; доступна отметка одного и всех прочитанных.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Уведомление появляется у нужного пользователя; отметка одного или всех прочитанных меняет счётчик.\n- Чужое уведомление нельзя прочитать или отметить через подмену ID.\n\n### Реализация и проверки\n\n- [backend/app/api/engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py)\n- [backend/tests/test_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_engagement.py)\n- [tests/browser_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_engagement.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:08:28Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/46"
+    },
+    {
+      "number": 45,
+      "title": "Сохранённые поиски",
+      "body": "<!-- sapar-project:F-SEARCHES -->\n## Состояние и подтверждения — 2026-10-31\n\nФильтры поиска сохраняются, применяются и удаляются только владельцем.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Пользователь сохраняет набор фильтров, повторно применяет его в каталоге и удаляет сохранённый поиск.\n- Чужие поиски не читаются и не удаляются; некорректные параметры отклоняются валидацией.\n\n### Реализация и проверки\n\n- [backend/app/api/engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py)\n- [backend/tests/test_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_engagement.py)\n- [tests/browser_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_engagement.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:08:20Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/45"
+    },
+    {
+      "number": 44,
+      "title": "Сравнение до трёх туров",
+      "body": "<!-- sapar-project:F-COMPARE -->\n## Состояние и подтверждения — 2026-10-31\n\nСписок сравнения сохраняется при перезагрузке, ограничен тремя турами и работает на мобильном экране.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Три выбранных тура сравниваются по характеристикам и сохраняются после перезагрузки; удаление освобождает место.\n- Четвёртый тур не добавляется, показано объяснение; на мобильном экране сравнение остаётся доступным.\n\n### Реализация и проверки\n\n- [frontend/src/pages/TravelTools.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/TravelTools.jsx)\n- [tests/browser_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_engagement.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:08:13Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/44"
+    },
+    {
+      "number": 43,
+      "title": "Постоянное избранное",
+      "body": "<!-- sapar-project:F-FAVORITES -->\n## Состояние и подтверждения — 2026-10-31\n\nИзбранные туры хранятся в БД и изолированы по пользователям.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Добавленный тур остаётся в избранном после повторного входа; удаление и повторное добавление идемпотентны.\n- Другой пользователь не видит чужое избранное; неопубликованный тур нельзя добавить.\n\n### Реализация и проверки\n\n- [backend/app/api/routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n- [tests/browser_smoke.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_smoke.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:08:07Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/43"
+    },
+    {
+      "number": 42,
+      "title": "Профиль, смена пароля и отзыв сессий",
+      "body": "<!-- sapar-project:F-PROFILE -->\n## Состояние и подтверждения — 2026-10-31\n\nПрофиль сохраняется; смена пароля и logout отзывают старую сессию.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- После сохранения профиль доступен при повторном входе; смена пароля выдаёт новую сессию, выход отзывает текущую.\n- Неверный текущий пароль не меняет доступ; прежний токен после смены/выхода получает 401.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Account.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Account.jsx)\n- [frontend/src/pages/Password.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Password.jsx)\n- [backend/tests/test_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_engagement.py)\n\nЗависимости / следующий шаг: Автоматические проверки пройдены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 7, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:08:00Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/42"
+    },
+    {
+      "number": 41,
+      "title": "Восстановление пароля и очередь SMTP",
+      "body": "<!-- sapar-project:F-RECOVERY -->\n## Состояние и подтверждения — 2026-10-31\n\nОдноразовые ссылки, подтверждение, повторный запрос, отзыв сессий; SMTP TLS, транзакционная очередь, повтор и отмена устаревшего письма.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Запрос формирует одноразовую ссылку; правильное подтверждение меняет пароль и отзывает старую сессию. SMTP-письмо попадает в транзакционную очередь и обрабатывается worker.\n- Неизвестный email не раскрывает наличие аккаунта; просроченная/повторная ссылка отклоняется, несовпадающие пароли не отправляются, без сервиса доступна понятная ошибка.\n\n### Реализация и проверки\n\n- [backend/app/api/identity.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/identity.py)\n- [backend/app/services/mail_service.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/services/mail_service.py)\n- [backend/tests/test_mail_delivery.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_mail_delivery.py)\n- [tests/browser_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_engagement.py)\n\nЗависимости / следующий шаг: Код и локальный SMTP-сеанс проверены; внешний сервис требует настроек, см. DEP-SMTP.\n\nСвязанные ЛЗ: 7, 10, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T20:07:53Z",
+      "closed_at": null,
+      "labels": [
+        "enhancement"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/41"
+    },
+    {
+      "number": 40,
+      "title": "«Жоба туралы» бетіндегі қазақша тақырыпты түзету",
+      "body": "**Среда / версия:**\nSaparTravel, локальная версия; Safari, язык интерфейса — қазақша.\n\n**Шаги и минимальные тестовые данные:**\n1. Открыть сайт.\n2. Выбрать казахский язык.\n3. Открыть страницу «Жоба туралы».\n\n**Ожидалось / произошло:**\nПроизошло: в заголовке отображается текст «Саяхат қызығушылықтан басталады».\nОжидалось: заголовок звучит естественно и соответствует утверждённому казахскому тексту.\nПредлагаемый вариант: «Әр сапар қызығушылықтан басталады».\nПожалуйста, подтвердить формулировку у редактора/носителя казахского языка.\n\n**Приоритет и влияние на приёмку:**\nP3 / низкий. Не мешает пользоваться сайтом, но влияет на качество казахской локализации.\n\n**Owner / срок:**\nАбинсериков Нұрасыл\n\n<img width=\"1512\" height=\"982\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/7c56d6b1-bc32-41fe-9292-ee6196492c9e\" />\n\n**Ссылка на требование и проверку исправления:**\nУточнить утверждённую казахскую формулировку и проверить её на странице «Жоба туралы».\n\n<!-- sapar-project:BUG-40 -->\n## Состояние и подтверждения — 2026-10-31\n\nПредложенная редакторская формулировка казахского заголовка ещё не внесена; исходный текст найден в i18n.\n\nРеализация: **Not started**. Проверка: **Needs check**. Статус Project: **Ready**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- На странице About отображается согласованный казахский заголовок.\n- Русская и английская версии и вёрстка не нарушены.\n\n### Реализация и проверки\n\n- [frontend/src/i18n.js](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/i18n.js)\n- [tests/browser_localization.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_localization.py)\n\nЗависимости / следующий шаг: Подтвердить формулировку у автора запроса/редактора и внести правку.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T08:37:43Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/40"
+    },
+    {
+      "number": 39,
+      "title": "Количество туристов можно увеличить выше и ниже числа доступных мест",
+      "body": "**Среда / версия:**\nЛокальный сайт SaparTravel, язык интерфейса — казахский. Страница тура, выбранный выезд показывает 10 свободных мест. Браузер: Google Chrome\n\n**Шаги и минимальные тестовые данные:**\n1. Открыть страницу тура и выбрать выезд, где указано 10 свободных мест.\n2. В поле «Саяхатшылар саны» ввести число, превышающее доступное количество мест, например 100000000000.\n3. Посмотреть рассчитанную сумму и проверить доступность кнопки бронирования.\n\n**Ожидалось / произошло:**\nОжидалось: количество туристов нельзя установить выше числа доступных мест. Пользователь видит понятную ошибку, а бронирование с недопустимым количеством недоступно.\nПроизошло: поле принимает чрезмерно большое число и интерфейс показывает рассчитанную сумму на его основе за пределы поля и выходит за рамки\n\n**Приоритет и влияние на приёмку:**\nP2 / средний. Пользователь может увидеть некорректную сумму и попытаться оформить бронь с заведомо недопустимым количеством туристов. Проверить также, отклоняет ли такое количество API\n\n**Критерии исправления:**\n- Ограничить число туристов количеством доступных мест выбранного выезда.\n- Не показывать итоговую сумму для недопустимого значения и отключать бронирование.\n- Проверять количество на сервере, чтобы нельзя было обойти ограничение через API.\n- Добавить проверку: ввод количества больше доступных мест приводит к ошибке и не создаёт бронь\n\n**Owner / срок:**\nАбинсериков Нұрасыл\n\n<img width=\"1512\" height=\"843\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/2a25c8e3-548a-42e0-84d4-aa69808597b7\" />\n\n<!-- sapar-project:BUG-39 -->\n## Состояние и подтверждения — 2026-10-31\n\nПодтверждён незакрытый дефект: input имеет min/max, но при вводе вне диапазона UI всё ещё вычисляет сумму и оставляет кнопку активной. Серверные ограничения существуют.\n\nРеализация: **Partial**. Проверка: **Needs check**. Статус Project: **Ready**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Количество ограничено доступными местами; для недопустимого значения нет итоговой суммы, кнопка недоступна.\n- Прямой API-запрос сверх лимита отклоняется без создания брони.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Trip.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Trip.jsx)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n\nЗависимости / следующий шаг: Исправить UI в отдельной работе и воспроизвести критерии исходного сообщения.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T08:13:26Z",
+      "closed_at": null,
+      "labels": [
+        "bug"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/39"
+    },
+    {
+      "number": 37,
+      "title": "INC-03: Закрепить отрицательные ответы каталога в CI",
+      "body": "Добавлен реальный Chromium-сценарий browser_invalid_response; локальный запуск прошёл для JSON null и HTML.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI regression coverage.\n\nКритерий завершения: Сценарий включён в browser job; все восемь browser scripts зелёные; повторная оценка эффекта 13.11.2026.\n\nИсточник реализации/доказательства: `tests/browser_invalid_response.py`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n\n<!-- sapar-project:REVIEW-37 -->\n## Состояние и подтверждения — 2026-10-31\n\nВсе восемь browser scripts включены в зелёный browser job.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [.github/workflows/ci.yml](https://github.com/Akira-vs96/SaparTravel/blob/main/.github/workflows/ci.yml)\n- [tests/browser_invalid_response.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_invalid_response.py)\n\nЗависимости / следующий шаг: Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.\n\nСвязанные ЛЗ: 7, 9, 10, 11. Risk ID: UI regression coverage.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:48:55Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/37"
+    },
+    {
+      "number": 36,
+      "title": "INC-02: Review отмены устаревших запросов интерфейса",
+      "body": "Общий useResource игнорирует результат отменённого запроса. Требуется независимая проверка переходов между экранами.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI stale response.\n\nКритерий завершения: После AbortSignal.aborted результат не меняет состояние нового запроса; проверить быстрые переходы и сетевую задержку.\n\nИсточник реализации/доказательства: `frontend/src/components/common.jsx`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n\n<!-- sapar-project:REVIEW-36 -->\n## Состояние и подтверждения — 2026-10-31\n\nuseResource игнорирует результат отменённого запроса; самостоятельная реализация есть, независимая проверка задержек ожидается.\n\nРеализация: **Implemented**. Проверка: **Needs check**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [frontend/src/components/common.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/components/common.jsx)\n- [tests/browser_invalid_response.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_invalid_response.py)\n\nЗависимости / следующий шаг: Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.\n\nСвязанные ЛЗ: 7, 9, 10, 11. Risk ID: UI stale response.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:48:38Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/36"
+    },
+    {
+      "number": 35,
+      "title": "INC-01: Review обработки HTTP 200 с невалидным телом",
+      "body": "JSON null и HTML прокси отклоняются API-клиентом; сообщение ошибки доступно ru/kk/en. До исправления падение воспроизведено.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: UI null contract.\n\nКритерий завершения: Оба ответа дают error UI и возможность повтора без pageerror; обычный JSON и 204 продолжают работать; нужен независимый review.\n\nИсточник реализации/доказательства: `frontend/src/api.js`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n\n<!-- sapar-project:REVIEW-35 -->\n## Состояние и подтверждения — 2026-10-31\n\nAPI-клиент отклоняет JSON null и HTML; браузер показывает ошибку и повтор без падения.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [frontend/src/api.js](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/api.js)\n- [tests/browser_invalid_response.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_invalid_response.py)\n\nЗависимости / следующий шаг: Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.\n\nСвязанные ЛЗ: 7, 9, 10, 11. Risk ID: UI null contract.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:48:24Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/35"
+    },
+    {
+      "number": 34,
+      "title": "B-03: Проверить ограничения auth и нагрузочный контур",
+      "body": "Auth limiter и воспроизводимый 20 RPS тест существуют; локальное измерение 30.10 сохранено. Распределённый limiter для нескольких узлов пока отсутствует.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: M. Iteration: Methodology-2026-10-30. Risk ID: R-08, R-20 / DoS.\n\nКритерий завершения: Проверить 429 auth и 500 туров / 20 RPS / 600 секунд / p95 ≤500 мс; зафиксировать ограничения одного процесса и решение для публичного контура.\n\nИсточник реализации/доказательства: `docs/ops/catalog-load.md`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n\n<!-- sapar-project:REVIEW-34 -->\n## Состояние и подтверждения — 2026-10-31\n\nПроверены auth 429 и нагрузочный контур; распределённого limiter нет.\n\nРеализация: **Partial**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [docs/ops/catalog-load.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/ops/catalog-load.md)\n- [backend/tests/test_configuration.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_configuration.py)\n\nЗависимости / следующий шаг: Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.\n\nСвязанные ЛЗ: 7, 9, 10, 11. Risk ID: R-08, R-20 / DoS.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:48:10Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/34"
+    },
+    {
+      "number": 33,
+      "title": "B-02: Проверить аудит административных операций с request ID",
+      "body": "Связь серверного X-Request-ID с AuditLog.details реализована; actor, action, resource и timestamp сохраняются транзакционно.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: S. Iteration: Methodology-2026-10-30. Risk ID: R-13 / Repudiation.\n\nКритерий завершения: API-тест связывает две смены роли/активности с двумя разными request ID; доступ к журналу ограничен администратором; review не выполнен.\n\nИсточник реализации/доказательства: `backend/tests/test_engagement.py`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n\n<!-- sapar-project:REVIEW-33 -->\n## Состояние и подтверждения — 2026-10-31\n\nАудит административных операций связывает actor/action/resource с серверным request ID; тесты проходят.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/services/engagement_service.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/services/engagement_service.py)\n- [backend/tests/test_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_engagement.py)\n\nЗависимости / следующий шаг: Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.\n\nСвязанные ЛЗ: 7, 9, 10, 11. Risk ID: R-13 / Repudiation.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:47:54Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/33"
+    },
+    {
+      "number": 32,
+      "title": "B-01: Проверить Trivy/Gitleaks в обязательном CI",
+      "body": "Реальные сканеры и шесть точных исключений исторических тестовых литералов добавлены. Требуется свежий удалённый CI и независимое review.\n\nOwner для передачи и triage: @Akira-vs96. Проверяющий по WBS назначается отдельно; чужое review не заявляется.\nСрок проверки: 06.11.2026.\nSize: M. Iteration: Methodology-2026-10-30. Risk ID: R-03, R-16.\n\nКритерий завершения: CI падает при находке секрета или HIGH/CRITICAL; JSON сохраняется; исключения ограничены конкретными отпечатками.\n\nИсточник реализации/доказательства: `docs/security/security-scan-report.md`.\n\nКод подготовлен Codex; независимая приёмка ожидается. Карточка остаётся в Review, до подтверждения не закрывать как Done.\n\n\nРеализация и доказательства: https://github.com/Akira-vs96/SaparTravel/pull/38 (draft). Быстрый CI: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711. Полная SLI-приёмка: https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735. Независимый review и решение по оставшимся ограничениям ожидаются.\n\n<!-- sapar-project:REVIEW-32 -->\n## Состояние и подтверждения — 2026-10-31\n\nGitleaks и Trivy работают в обязательном успешном CI; исключения адресные. Требуется независимая проверка политики.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [.github/workflows/ci.yml](https://github.com/Akira-vs96/SaparTravel/blob/main/.github/workflows/ci.yml)\n- [docs/security/security-scan-report.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/security/security-scan-report.md)\n\nЗависимости / следующий шаг: Ожидается назначение независимого проверяющего; перенос в FOR TEST обозначает очередь приёмки, а не пройденное review.\n\nСвязанные ЛЗ: 7, 9, 10, 11. Risk ID: R-03, R-16.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-10-30T05:47:39Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/32"
+    },
+    {
+      "number": 30,
+      "title": "ST-18 Синхронизация поставщика",
+      "body": "Как оператор, я хочу получать данные внешнего поставщика, чтобы не вводить их вручную.\n\nРелиз: после MVP. Историю размера L необходимо разбить перед взятием в работу.\n\n<!-- sapar-project:ST-18 -->\n## Состояние и подтверждения — 2026-10-31\n\nСинхронизация с внешним поставщиком не реализована; ручное управление туром есть в ST-08.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Баекеева Бибінұр. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Согласовать формат, владельца данных и идемпотентную синхронизацию.\n- При недоступности источника действующий каталог не повреждается.\n\n### Реализация и проверки\n\n- [docs/requirements/story-map.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/requirements/story-map.md)\n- [backend/app/api/routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py)\n\nЗависимости / следующий шаг: Нужны API/доступы внешнего поставщика, формат данных, правила конфликтов и разбиение L.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:46Z",
+      "closed_at": null,
+      "labels": [
+        "priority:could",
+        "role:supplier",
+        "size:L"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/30"
+    },
+    {
+      "number": 29,
+      "title": "ST-17 Отзывы",
+      "body": "Как турист, я хочу оставить отзыв, чтобы поделиться опытом.\n\nРелиз: после MVP.\n\n<!-- sapar-project:ST-17 -->\n## Состояние и подтверждения — 2026-10-31\n\nОтзывы привязаны к завершённой собственной поездке; дубликаты запрещены, публичный отзыв проходит модерацию.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Баекеева Бибінұр. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py)\n- [backend/tests/test_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_engagement.py)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:44Z",
+      "closed_at": null,
+      "labels": [
+        "priority:could",
+        "role:traveler",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/29"
+    },
+    {
+      "number": 28,
+      "title": "ST-16 Онлайн-оплата",
+      "body": "Как турист, я хочу оплатить онлайн, чтобы завершить покупку сразу.\n\nРелиз: после MVP. Историю размера L необходимо разбить перед взятием в работу.\n\n<!-- sapar-project:ST-16 -->\n## Состояние и подтверждения — 2026-10-31\n\nCheckout, тестовая авторизация платежа, 3DS и возвраты реализованы. Банковский провайдер, webhook и коммерческая сверка не подключены.\n\nРеализация: **Partial**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/commerce_routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py)\n- [backend/tests/test_commerce.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_commerce.py)\n\nЗависимости / следующий шаг: Завершение банковской интеграции — #11; тестовый платёжный контур вынесен отдельной карточкой.\n\nСвязанные ЛЗ: 4, 8, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:41Z",
+      "closed_at": null,
+      "labels": [
+        "priority:could",
+        "role:traveler",
+        "size:L"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/28"
+    },
+    {
+      "number": 27,
+      "title": "ST-15 Заявки поставщика",
+      "body": "Как поставщик, я хочу видеть список заявок по своим турам, чтобы обрабатывать их.\n\nКритерии приёмки:\n- Дано у поставщика есть опубликованные туры; когда открывается кабинет поставщика; тогда видны только заявки по его турам.\n- Отрицательный сценарий: поставщик не видит заявки чужого тура.\n\n<!-- sapar-project:ST-15 -->\n## Состояние и подтверждения — 2026-10-31\n\nКабинет поставщика показывает только заявки его туров; изоляция проверена.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n- [tests/browser_service_levels.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_service_levels.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:39Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:supplier",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/27"
+    },
+    {
+      "number": 26,
+      "title": "ST-14 Локализация RU/KK/EN",
+      "body": "Как турист, я хочу пользоваться интерфейсом на RU/KK/EN, чтобы выбрать язык.\n\nКритерии приёмки:\n- Дано выбран язык KK или EN; когда открывается страница; тогда основные подписи переведены.\n- Отрицательный сценарий: отсутствующий перевод использует RU без падения интерфейса.\n\n<!-- sapar-project:ST-14 -->\n## Состояние и подтверждения — 2026-10-31\n\nRU/KK/EN проверены в каталоге, checkout, документах, кабинетах и восстановлении. Закрытие issue уже существует; отдельная редакторская правка остаётся #40.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **Done**.\n\nКонтакт для передачи: Баекеева Бибінұр. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [frontend/src/i18n.js](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/i18n.js)\n- [tests/browser_localization.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_localization.py)\n- [tests/browser_roles_visual.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_roles_visual.py)\n\nЗависимости / следующий шаг: Проверить согласование казахского заголовка в #40; существующее закрытие сохранено.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "closed",
+      "created_at": "2026-09-25T07:54:36Z",
+      "closed_at": "2026-10-09T07:31:10Z",
+      "labels": [
+        "mvp",
+        "priority:should",
+        "role:traveler",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/26"
+    },
+    {
+      "number": 25,
+      "title": "ST-13 Назначение ролей",
+      "body": "Как администратор, я хочу назначать роли, чтобы ограничивать доступ.\n\nКритерии приёмки:\n- Дано администратор авторизован; когда назначает роль пользователю; тогда роль сохраняется и меняет доступ к кабинету.\n- Отрицательный сценарий: турист не может назначить себе роль администратора.\n\n<!-- sapar-project:ST-13 -->\n## Состояние и подтверждения — 2026-10-31\n\nРоль и активность пользователя меняются только администратором; последний активный администратор защищён.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/engagement.py)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n- [backend/tests/test_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_engagement.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:33Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:admin",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/25"
+    },
+    {
+      "number": 24,
+      "title": "ST-12 Снятие тура с публикации",
+      "body": "Как администратор, я хочу снимать тур с публикации, чтобы скрывать неверные данные.\n\nКритерии приёмки:\n- Дано администратор авторизован; когда снимает тур; тогда тур исчезает из публичного каталога.\n- Отрицательный сценарий: обычный турист не может выполнить операцию.\n\n<!-- sapar-project:ST-12 -->\n## Состояние и подтверждения — 2026-10-31\n\nСнятый с публикации тур исчезает из каталога и недоступен для нового бронирования.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n- [tests/browser_management.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_management.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:31Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:admin",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/24"
+    },
+    {
+      "number": 23,
+      "title": "ST-11 Отмена заявки",
+      "body": "Как турист, я хочу отменить свою заявку, чтобы исправить ошибку.\n\nКритерии приёмки:\n- Дано у туриста есть активная заявка; когда он нажимает отмену; тогда заявка получает отменённый статус и места освобождаются.\n- Отрицательный сценарий: турист не может отменить чужую заявку.\n\n<!-- sapar-project:ST-11 -->\n## Состояние и подтверждения — 2026-10-31\n\nОтмена сохраняет историю, освобождает места и применяет зафиксированную политику возврата.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/commerce_routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py)\n- [backend/tests/test_commerce.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_commerce.py)\n- [tests/browser_smoke.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_smoke.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:29Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:should",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/23"
+    },
+    {
+      "number": 22,
+      "title": "ST-10 История заявок",
+      "body": "Как турист, я хочу видеть историю заявок и статусы, чтобы понимать результат.\n\nКритерии приёмки:\n- Дано у пользователя есть заявки; когда открывается кабинет; тогда видны только его номера, суммы и статусы.\n- Отрицательный сценарий: другой пользователь не видит заявку по ID.\n\n<!-- sapar-project:ST-10 -->\n## Состояние и подтверждения — 2026-10-31\n\nИстория, детали, суммы, статусы и документы доступны владельцу заявки.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Account.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Account.jsx)\n- [frontend/src/pages/BookingDetail.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/BookingDetail.jsx)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:27Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/22"
+    },
+    {
+      "number": 21,
+      "title": "ST-09 Обработка заявки поставщиком",
+      "body": "Как поставщик, я хочу подтверждать или отклонять заявку, чтобы управлять продажами.\n\nКритерии приёмки:\n- Дано есть заявка поставщика; когда меняется её статус; тогда статус и история сохраняются.\n- Отрицательный сценарий: чужая заявка недоступна для изменения.\n\n<!-- sapar-project:ST-09 -->\n## Состояние и подтверждения — 2026-10-31\n\nСтатусы заявки меняются по допустимым переходам; чужие заявки недоступны.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/commerce_routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:24Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:supplier",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/21"
+    },
+    {
+      "number": 20,
+      "title": "ST-08 Управление туром поставщиком",
+      "body": "Как поставщик, я хочу создавать и редактировать тур, чтобы управлять предложением.\n\nКритерии приёмки:\n- Дано поставщик авторизован; когда сохраняет свой тур; тогда тур создаётся или обновляется.\n- Отрицательный сценарий: поставщик не может изменить чужой тур.\n\n<!-- sapar-project:ST-08 -->\n## Состояние и подтверждения — 2026-10-31\n\nПоставщик создаёт и редактирует свои туры, переводы, программу, выезды и правила отмены.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Баекеева Бибінұр. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py)\n- [tests/browser_management.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_management.py)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:21Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:supplier",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/20"
+    },
+    {
+      "number": 19,
+      "title": "ST-07 Регистрация и вход",
+      "body": "Как турист, я хочу зарегистрироваться и войти, чтобы пользоваться кабинетом.\n\nКритерии приёмки:\n- Дано пользователь не вошёл; когда отправляет форму входа с верными данными; тогда открывается кабинет.\n- Отрицательный сценарий: неверный пароль не раскрывает, существует ли email.\n\n<!-- sapar-project:ST-07 -->\n## Состояние и подтверждения — 2026-10-31\n\nРегистрация и вход реализованы; недействительные данные не дают доступ.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Auth.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Auth.jsx)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:17Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/19"
+    },
+    {
+      "number": 18,
+      "title": "ST-06 Свободные места",
+      "body": "Как турист, я хочу видеть свободные места, чтобы не отправлять невыполнимую заявку.\n\nКритерии приёмки:\n- Дано осталось 2 места; когда два пользователя отправляют по 2 места одновременно; тогда только одна заявка подтверждает резерв, вторая получает понятный отказ.\n- Отрицательный сценарий: количество мест не становится отрицательным.\n\n<!-- sapar-project:ST-06 -->\n## Состояние и подтверждения — 2026-10-31\n\nОстатки мест и конкурентное резервирование проверены PostgreSQL; отдельный дефект UI количества остаётся в #39.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/tests/test_concurrency.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_concurrency.py)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n\nЗависимости / следующий шаг: UI-ограничение числа туристов отслеживается отдельно в #39; серверный резерв проверен.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:15Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/18"
+    },
+    {
+      "number": 17,
+      "title": "ST-05 Выбор даты выезда",
+      "body": "Как турист, я хочу выбрать дату выезда, чтобы отправить заявку на конкретный тур.\n\nКритерии приёмки:\n- Дано у тура есть будущий выезд; когда выбираются дата и количество; тогда форма допускает переход к заявке.\n- Отрицательный сценарий: прошедшая дата недоступна.\n\n<!-- sapar-project:ST-05 -->\n## Состояние и подтверждения — 2026-10-31\n\nВыбор будущего выезда передаётся в checkout; сервер проверяет дату.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Trip.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Trip.jsx)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:11Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/17"
+    },
+    {
+      "number": 16,
+      "title": "ST-04 Карточка тура",
+      "body": "Как турист, я хочу открыть карточку тура, чтобы увидеть программу и условия.\n\nКритерии приёмки:\n- Дано тур опубликован; когда открывается карточка; тогда показаны программа, цена, даты и места.\n- Отрицательный сценарий: неизвестный ID возвращает 404.\n\n<!-- sapar-project:ST-04 -->\n## Состояние и подтверждения — 2026-10-31\n\nПрограмма, галерея, условия, выезды и 404 проверены. Закрытие issue уже существует в GitHub.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **Done**.\n\nКонтакт для передачи: Баекеева Бибінұр. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Trip.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Trip.jsx)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "closed",
+      "created_at": "2026-09-25T07:54:10Z",
+      "closed_at": "2026-10-09T07:32:00Z",
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:M"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/16"
+    },
+    {
+      "number": 15,
+      "title": "ST-03 Фильтры цены и длительности",
+      "body": "Как турист, я хочу фильтровать по цене и длительности, чтобы сузить выбор.\n\nКритерии приёмки:\n- Дано есть туры с разными ценами; когда задаётся диапазон; тогда список соответствует диапазону.\n- Отрицательный сценарий: некорректный диапазон отклоняется валидацией.\n\n<!-- sapar-project:ST-03 -->\n## Состояние и подтверждения — 2026-10-31\n\nЦена, длительность и сочетания фильтров проверены API и браузером.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Баекеева Бибінұр. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n- [tests/browser_localization.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_localization.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:08Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/15"
+    },
+    {
+      "number": 14,
+      "title": "ST-02 Поиск тура",
+      "body": "Как турист, я хочу искать тур по названию и направлению, чтобы быстро найти вариант.\n\nКритерии приёмки:\n- Дано каталог загружен; когда вводится направление; тогда остаются совпадающие туры.\n- Отрицательный сценарий: при отсутствии совпадений показывается пустое состояние, не ошибка 500.\n\n<!-- sapar-project:ST-02 -->\n## Состояние и подтверждения — 2026-10-31\n\nПоиск по названию и направлению, сортировка и пустое состояние проверены.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Баекеева Бибінұр. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Catalog.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Catalog.jsx)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:05Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/14"
+    },
+    {
+      "number": 13,
+      "title": "ST-01 Каталог опубликованных туров",
+      "body": "Как турист, я хочу видеть каталог опубликованных туров, чтобы выбрать направление.\n\nКритерии приёмки:\n- Дано опубликованные туры есть в БД; когда турист открывает каталог; тогда видит только опубликованные карточки с ценой и длительностью.\n- Отрицательный сценарий: снятый с публикации тур не показывается.\n\n<!-- sapar-project:ST-01 -->\n## Состояние и подтверждения — 2026-10-31\n\nКаталог отдаёт опубликованные туры с переводами, ценами, фильтрами и пагинацией.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Баекеева Бибінұр. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [backend/app/api/routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/routes.py)\n- [backend/tests/test_catalog_contract.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_catalog_contract.py)\n- [tests/browser_smoke.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_smoke.py)\n\nЗависимости / следующий шаг: Критерии реализованы и проверены; независимое UAT учитывается отдельно.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-25T07:54:03Z",
+      "closed_at": null,
+      "labels": [
+        "mvp",
+        "priority:must",
+        "role:traveler",
+        "size:S"
+      ],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/13"
+    },
+    {
+      "number": 12,
+      "title": "Создать приватный репозиторий на GitHub и добавить участников",
+      "body": "<!-- sapar-project:ACCESS-REPO -->\n## Состояние и подтверждения — 2026-10-31\n\nРепозиторий публичный, Project приватный. Четыре участника известны; требование Private и доступ преподавателя не подтверждены.\n\nРеализация: **Partial**. Проверка: **External**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Положительный сценарий воспроизводится по указанному коду и проверкам.\n- Отрицательный сценарий отклоняется без нарушения прав доступа и сохранённых данных.\n\n### Реализация и проверки\n\n- [docs/labs/lab-02/evidence/space.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-02/evidence/space.json)\n- [docs/labs/lab-02/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-02/README.md)\n\nЗависимости / следующий шаг: Владелец подтверждает видимость и доступ преподавателя; настройки приватности автоматически не меняются.\n\nСвязанные ЛЗ: 2. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:37:01Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/12"
+    },
+    {
+      "number": 11,
+      "title": "Интеграция с внешним платежным шлюзом",
+      "body": "<!-- sapar-project:DEP-PAYMENT -->\n## Состояние и подтверждения — 2026-10-31\n\nВнешний банковский шлюз не подключён и не входит в исходный MVP; тестовая оплата не означает банковские списания.\n\nРеализация: **Not started**. Проверка: **External**. Статус Project: **Backlog**.\n\nКонтакт для передачи: Абинсериков Нурасыл. Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Подключён согласованный провайдер и проверены авторизация, webhook, сверка и возврат.\n- Повтор webhook не списывает деньги дважды; недостоверная подпись отклоняется.\n\n### Реализация и проверки\n\n- [docs/sow-sla-slo-sli.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/sow-sla-slo-sli.md)\n- [backend/app/api/commerce_routes.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/commerce_routes.py)\n\nЗависимости / следующий шаг: Договор, выбранный провайдер, доступы, публичный HTTPS/webhook, решение о включении в объём.\n\nСвязанные ЛЗ: 4, 8, 14. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:34:14Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/11"
+    },
+    {
+      "number": 10,
+      "title": "Выполнить 2лаб работу",
+      "body": "<!-- sapar-project:LAB-02 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 17 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 5, \"partial\": 2, \"requires-human\": 4, \"verified\": 6}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-02/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-02/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ02-S01, LZ02-S03, LZ02-S04, LZ02-S10, LZ02-C02, LZ02-C05. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 2. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:33:52Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/10"
+    },
+    {
+      "number": 9,
+      "title": "Выполнить 1лаб работу",
+      "body": "<!-- sapar-project:LAB-01 -->\n## Состояние и подтверждения — 2026-10-31\n\nАртефакты и аудит 16 требований приведены в отчёте. Статусы исходного аудита: {\"documented\": 7, \"partial\": 2, \"requires-human\": 4, \"verified\": 3}. Сгенерированные упражнения не подтверждают внешние события.\n\nРеализация: **Prepared**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Все артефакты доступны по отчёту и соответствуют пунктам исходной методички.\n- Неподтверждённые события и внешняя приёмка не отмечены как состоявшиеся.\n\n### Реализация и проверки\n\n- [docs/labs/lab-01/README.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-01/README.md)\n- [docs/labs/manifest.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/manifest.json)\n\nЗависимости / следующий шаг: Открытые требования: LZ01-S01, LZ01-S02, LZ01-S06, LZ01-S10, LZ01-S11, LZ01-C05. Подтверждения людей учитываются отдельно.\n\nСвязанные ЛЗ: 1. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:33:30Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/9"
+    },
+    {
+      "number": 8,
+      "title": "Создать прототип базы данных",
+      "body": "<!-- sapar-project:TECH-08 -->\n## Состояние и подтверждения — 2026-10-31\n\nПроверены PostgreSQL 17, миграции до 0006 и сохранение исторических значений.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- На PostgreSQL последовательно применяются миграции до 0006 и alembic check не находит расхождений.\n- Миграции сохраняют исторические цены/заказы; изменение схемы не пересоздаёт рабочую базу.\n\n### Реализация и проверки\n\n- [backend/migrations/versions/0006_outbound_email.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/migrations/versions/0006_outbound_email.py)\n- [backend/tests/test_migrations.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_migrations.py)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 2, 10, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:32:58Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/8"
+    },
+    {
+      "number": 7,
+      "title": "Написать модульные тесты для модуля аутентификации",
+      "body": "<!-- sapar-project:TECH-07 -->\n## Состояние и подтверждения — 2026-10-31\n\nAPI-тесты проверяют пароль, роли, сброс, отзыв сессии и приватность; включены в успешный CI.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Тесты проверяют регистрацию, вход, роль, пароль, сброс и отзыв сессии на PostgreSQL.\n- Тесты ловят внедрение роли, повторный/просроченный токен и доступ к чужому аккаунту.\n\n### Реализация и проверки\n\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n- [backend/tests/test_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_engagement.py)\n- [backend/tests/test_mail_delivery.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_mail_delivery.py)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 7, 10, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:32:46Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/7"
+    },
+    {
+      "number": 6,
+      "title": "Описать требования к системным интерфейсам",
+      "body": "<!-- sapar-project:TECH-06 -->\n## Состояние и подтверждения — 2026-10-31\n\nAPI, БД, роли, ограничения и интеграции описаны в архитектуре и спецификации.\n\nРеализация: **Implemented**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Архитектура связывает HTTP, роли, прикладные правила, PostgreSQL и адаптеры с НФТ и способами проверки.\n- Внешние интеграции без доступов не обозначены подключёнными; обязанности и ограничения не противоречат SoW.\n\n### Реализация и проверки\n\n- [docs/architecture.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/architecture.md)\n- [docs/requirements/non-functional-requirements.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/requirements/non-functional-requirements.md)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 2, 4. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:32:20Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/6"
+    },
+    {
+      "number": 5,
+      "title": "Написать ADR-001 по шаблону MADR",
+      "body": "<!-- sapar-project:TECH-05 -->\n## Состояние и подтверждения — 2026-10-31\n\nРешение о модели поставки содержит контекст, альтернативы и последствия.\n\nРеализация: **Implemented**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- ADR содержит контекст, критерии, выбранный вариант, альтернативы и последствия решения.\n- Отвергнутые варианты имеют причины; ограничение выбранной модели не скрыто.\n\n### Реализация и проверки\n\n- [docs/adr/ADR-001.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/adr/ADR-001.md)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 2. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:31:19Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/5"
+    },
+    {
+      "number": 4,
+      "title": "Создать структуру каталогов в репозитории и настроить ветки",
+      "body": "<!-- sapar-project:TECH-04 -->\n## Состояние и подтверждения — 2026-10-31\n\nКод, документация, инфраструктура и проверки разделены. Основная ветка main; административный прямой push разрешён владельцем, остальные ограничения зафиксированы.\n\nРеализация: **Implemented**. Проверка: **Documented**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Код backend/frontend, инструменты, проверки и материалы ЛЗ разделены по архитектуре, основная ветка — main.\n- Лабораторные не импортируются приложением; приватные настройки и доступы не попадают в Git.\n\n### Реализация и проверки\n\n- [docs/architecture.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/architecture.md)\n- [docs/labs/lab-10/evidence/branch-protection-current.json](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/labs/lab-10/evidence/branch-protection-current.json)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 2, 10. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:31:04Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/4"
+    },
+    {
+      "number": 3,
+      "title": "Реализовать REST API для аутентификации пользователей (Backend)",
+      "body": "<!-- sapar-project:TECH-03 -->\n## Состояние и подтверждения — 2026-10-31\n\nРегистрация без повышения роли, вход, профиль, блокировка, выход и смена пароля реализованы с серверной проверкой.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- API выдаёт сессию для действующего пользователя и поддерживает безопасную смену/восстановление пароля.\n- Клиент не может назначить себе роль; заблокированный пользователь и неверный пароль не дают доступ.\n\n### Реализация и проверки\n\n- [backend/app/api/identity.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/app/api/identity.py)\n- [backend/tests/test_api.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_api.py)\n- [backend/tests/test_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/backend/tests/test_engagement.py)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 4, 7, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:30:33Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/3"
+    },
+    {
+      "number": 2,
+      "title": "Разработать экран авторизации и регистрации (Frontend)",
+      "body": "<!-- sapar-project:TECH-02 -->\n## Состояние и подтверждения — 2026-10-31\n\nРегистрация, вход, переход к восстановлению и показ пароля проверены браузером.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Через формы можно зарегистрироваться, войти, открыть профиль и перейти по «Забыли пароль?».\n- Неверные данные показывают локализованную ошибку без падения; переключатель видимости не отправляет форму.\n\n### Реализация и проверки\n\n- [frontend/src/pages/Auth.jsx](https://github.com/Akira-vs96/SaparTravel/blob/main/frontend/src/pages/Auth.jsx)\n- [tests/browser_engagement.py](https://github.com/Akira-vs96/SaparTravel/blob/main/tests/browser_engagement.py)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 4, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:30:24Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/2"
+    },
+    {
+      "number": 1,
+      "title": "Настроить CI/CD пайплайн для автоматического тестирования",
+      "body": "<!-- sapar-project:TECH-01 -->\n## Состояние и подтверждения — 2026-10-31\n\nШесть jobs CI последней версии завершились успешно; backend, frontend, browser, course, security и containers. Это подтверждает проверки, а не production deployment.\n\nРеализация: **Implemented**. Проверка: **Automated**. Статус Project: **FOR TEST**.\n\nКонтакт для передачи: Akira-vs96 (triage). Поле Owner не удостоверяет авторство кода или проведённую независимую приёмку. Размер — оценка, а не фактические часы.\n\n### Критерии проверки\n\n- Шесть jobs CI проходят на проверенной версии; логи и артефакты доступны из GitHub Actions.\n- Неуспешный тест, найденный секрет или HIGH/CRITICAL останавливает соответствующую проверку; CI не называется production deployment.\n\n### Реализация и проверки\n\n- [.github/workflows/ci.yml](https://github.com/Akira-vs96/SaparTravel/blob/main/.github/workflows/ci.yml)\n- [docs/verification-results.md](https://github.com/Akira-vs96/SaparTravel/blob/main/docs/verification-results.md)\n\nЗависимости / следующий шаг: Независимая приёмка по критериям; результат доступен для проверки.\n\nСвязанные ЛЗ: 10, 11. Risk ID: Не выделен отдельно; см. реестр ЛЗ7.\n\n[Проверенный CI](https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397) · [Доска](https://github.com/users/Akira-vs96/projects/2)\n<!-- /sapar-project -->\n",
+      "state": "open",
+      "created_at": "2026-09-18T08:30:02Z",
+      "closed_at": null,
+      "labels": [],
+      "url": "https://github.com/Akira-vs96/SaparTravel/issues/1"
+    }
+  ],
+  "runs": [
+    {
+      "id": 42189769502,
+      "name": "Deploy public site",
+      "event": "workflow_dispatch",
+      "head_sha": "53061ba1c1a6049f36a4927b21bc17322de9466f",
+      "head_branch": "main",
+      "status": "in_progress",
+      "conclusion": null,
+      "created_at": "2026-11-06T08:43:52Z",
+      "updated_at": "2026-11-06T08:43:57Z",
+      "run_started_at": "2026-11-06T08:43:52Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42189769502"
+    },
+    {
+      "id": 42188271734,
+      "name": "Deploy public site",
+      "event": "workflow_run",
+      "head_sha": "53061ba1c1a6049f36a4927b21bc17322de9466f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-11-06T08:31:20Z",
+      "updated_at": "2026-11-06T08:31:21Z",
+      "run_started_at": "2026-11-06T08:31:20Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42188271734"
+    },
+    {
+      "id": 42187795470,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "53061ba1c1a6049f36a4927b21bc17322de9466f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-06T08:27:22Z",
+      "updated_at": "2026-11-06T08:31:17Z",
+      "run_started_at": "2026-11-06T08:27:22Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42187795470"
+    },
+    {
+      "id": 42182015218,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "a6355e406e875dc50cbd8aeb937afa502e2c0d81",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-06T07:36:42Z",
+      "updated_at": "2026-11-06T07:40:56Z",
+      "run_started_at": "2026-11-06T07:36:42Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42182015218"
+    },
+    {
+      "id": 42180871415,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "b79bf30ce71cc79c1f7de188a701d0a90117cb9b",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-06T07:26:19Z",
+      "updated_at": "2026-11-06T07:29:41Z",
+      "run_started_at": "2026-11-06T07:26:19Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42180871415"
+    },
+    {
+      "id": 42179504335,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "375d365486c103bd6f9f68880fd1449424733903",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-06T07:13:55Z",
+      "updated_at": "2026-11-06T07:18:06Z",
+      "run_started_at": "2026-11-06T07:13:55Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42179504335"
+    },
+    {
+      "id": 42175958314,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "0e4499e3bcaec329359625eece67bdcdd8277a54",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-06T06:40:40Z",
+      "updated_at": "2026-11-06T06:43:50Z",
+      "run_started_at": "2026-11-06T06:40:40Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42175958314"
+    },
+    {
+      "id": 42174759937,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "7efb5d4c3f93c44360a11bfdc8c0d6ffbf6e45cb",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-06T06:29:36Z",
+      "updated_at": "2026-11-06T06:32:18Z",
+      "run_started_at": "2026-11-06T06:29:36Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42174759937"
+    },
+    {
+      "id": 42172368098,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "6c844fdba4e8212e5106c845a96c7548c9aa1598",
+      "head_branch": "lab10/red-ci-20261106-060627",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-06T06:06:35Z",
+      "updated_at": "2026-11-06T06:07:37Z",
+      "run_started_at": "2026-11-06T06:06:35Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42172368098"
+    },
+    {
+      "id": 42172368074,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "6c844fdba4e8212e5106c845a96c7548c9aa1598",
+      "head_branch": "lab10/red-ci-20261106-060627",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-06T06:06:35Z",
+      "updated_at": "2026-11-06T06:25:08Z",
+      "run_started_at": "2026-11-06T06:06:35Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42172368074"
+    },
+    {
+      "id": 42170700930,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "1b6b5023bc501a220f2069e05f3fbb3167fb8150",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-06T05:49:42Z",
+      "updated_at": "2026-11-06T05:52:42Z",
+      "run_started_at": "2026-11-06T05:49:42Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/42170700930"
+    },
+    {
+      "id": 41124166901,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "e0a2e1be514f0beeddaeca08e89805ab3308e939",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-30T20:33:27Z",
+      "updated_at": "2026-10-30T20:36:34Z",
+      "run_started_at": "2026-10-30T20:33:27Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41124166901"
+    },
+    {
+      "id": 41118844397,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "5a29a614f7076aa6925bc27fd58df71158aa1a1c",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T19:52:59Z",
+      "updated_at": "2026-10-30T19:57:02Z",
+      "run_started_at": "2026-10-30T19:52:59Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41118844397"
+    },
+    {
+      "id": 41114707527,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "b736b2042b8f3e61bfb0e22b7009628665d74a58",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T19:22:20Z",
+      "updated_at": "2026-10-30T19:25:50Z",
+      "run_started_at": "2026-10-30T19:22:20Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41114707527"
+    },
+    {
+      "id": 41090888995,
+      "name": "Weekly status draft",
+      "event": "schedule",
+      "head_sha": "27848d81667509b161dd93b536665ffbb8226bec",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T16:32:55Z",
+      "updated_at": "2026-10-30T16:33:15Z",
+      "run_started_at": "2026-10-30T16:32:55Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41090888995"
+    },
+    {
+      "id": 41028897679,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "27848d81667509b161dd93b536665ffbb8226bec",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T08:48:06Z",
+      "updated_at": "2026-10-30T08:51:25Z",
+      "run_started_at": "2026-10-30T08:48:06Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41028897679"
+    },
+    {
+      "id": 41026055406,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "87d58a99dfb3604d1ec1ed4df880db9a0f323df4",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T08:22:57Z",
+      "updated_at": "2026-10-30T08:26:56Z",
+      "run_started_at": "2026-10-30T08:22:57Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41026055406"
+    },
+    {
+      "id": 41022654391,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "52506fe96a28af4f782e1e6c2b1639285b1d9d6e",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T07:51:29Z",
+      "updated_at": "2026-10-30T07:55:11Z",
+      "run_started_at": "2026-10-30T07:51:29Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41022654391"
+    },
+    {
+      "id": 41022258137,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "52506fe96a28af4f782e1e6c2b1639285b1d9d6e",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T07:47:34Z",
+      "updated_at": "2026-10-30T07:50:52Z",
+      "run_started_at": "2026-10-30T07:47:34Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41022258137"
+    },
+    {
+      "id": 41022257985,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "52506fe96a28af4f782e1e6c2b1639285b1d9d6e",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T07:47:34Z",
+      "updated_at": "2026-10-30T08:06:08Z",
+      "run_started_at": "2026-10-30T07:47:34Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41022257985"
+    },
+    {
+      "id": 41014345515,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "38625937ebb2f94f288499bd41e9b948514119a8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-30T06:29:07Z",
+      "updated_at": "2026-10-30T06:30:32Z",
+      "run_started_at": "2026-10-30T06:29:07Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41014345515"
+    },
+    {
+      "id": 41014345479,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "38625937ebb2f94f288499bd41e9b948514119a8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T06:29:07Z",
+      "updated_at": "2026-10-30T06:32:24Z",
+      "run_started_at": "2026-10-30T06:29:07Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41014345479"
+    },
+    {
+      "id": 41013531587,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "bfb7b4b0d664c7e533412148ce900192dc22ab6e",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-30T06:20:44Z",
+      "updated_at": "2026-10-30T06:35:09Z",
+      "run_started_at": "2026-10-30T06:20:44Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41013531587"
+    },
+    {
+      "id": 41013531466,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "bfb7b4b0d664c7e533412148ce900192dc22ab6e",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T06:20:44Z",
+      "updated_at": "2026-10-30T06:24:44Z",
+      "run_started_at": "2026-10-30T06:20:44Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41013531466"
+    },
+    {
+      "id": 41011207735,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "64ef55abab0a9686d2bd4f62218b2186cc61aef8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T05:56:33Z",
+      "updated_at": "2026-10-30T06:15:08Z",
+      "run_started_at": "2026-10-30T05:56:33Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207735"
+    },
+    {
+      "id": 41011207711,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "64ef55abab0a9686d2bd4f62218b2186cc61aef8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T05:56:33Z",
+      "updated_at": "2026-10-30T06:00:16Z",
+      "run_started_at": "2026-10-30T05:56:33Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41011207711"
+    },
+    {
+      "id": 41010861839,
+      "name": "Service level acceptance",
+      "event": "pull_request",
+      "head_sha": "d1d2341ace18d561642dca2913059e26f3d05ac8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-30T05:52:47Z",
+      "updated_at": "2026-10-30T05:53:19Z",
+      "run_started_at": "2026-10-30T05:52:47Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41010861839"
+    },
+    {
+      "id": 41010861779,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "d1d2341ace18d561642dca2913059e26f3d05ac8",
+      "head_branch": "feat/course-evidence-20261030",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-30T05:52:47Z",
+      "updated_at": "2026-10-30T05:57:12Z",
+      "run_started_at": "2026-10-30T05:52:47Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/41010861779"
+    },
+    {
+      "id": 39927462884,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "a66f9d59904f7b0a4b0afe4618ec0fa1dcfb87a3",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-23T08:50:04Z",
+      "updated_at": "2026-10-23T08:52:24Z",
+      "run_started_at": "2026-10-23T08:50:04Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39927462884"
+    },
+    {
+      "id": 39927430518,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "8644d69712bdbaa9aa4f91d3c3567c7963114ce9",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T08:49:48Z",
+      "updated_at": "2026-10-23T08:52:54Z",
+      "run_started_at": "2026-10-23T08:49:48Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39927430518"
+    },
+    {
+      "id": 39926389565,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "e4fd3d85c1f83bb0617547dda008144a036a859c",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-23T08:41:04Z",
+      "updated_at": "2026-10-23T08:43:42Z",
+      "run_started_at": "2026-10-23T08:41:04Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39926389565"
+    },
+    {
+      "id": 39917507190,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "55e4807d07253cfdc77a4e853d1f689f02ad6b4d",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T07:24:28Z",
+      "updated_at": "2026-10-23T07:32:16Z",
+      "run_started_at": "2026-10-23T07:24:28Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39917507190"
+    },
+    {
+      "id": 39916335964,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "76adfdbbe7292f64ded04f8c5dbb19a2d17f9724",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T07:13:06Z",
+      "updated_at": "2026-10-23T07:17:06Z",
+      "run_started_at": "2026-10-23T07:13:06Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/39916335964"
+    },
+    {
+      "id": 38870107077,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "d8438c3598089032035f6f14fac3189b793f292a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:53:47Z",
+      "updated_at": "2026-10-16T07:56:00Z",
+      "run_started_at": "2026-10-16T07:53:47Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38870107077"
+    },
+    {
+      "id": 38869450419,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "5823db720be9bf15b67eeb8ef094ecf7187e004a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:47:32Z",
+      "updated_at": "2026-10-16T07:49:34Z",
+      "run_started_at": "2026-10-16T07:47:32Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38869450419"
+    },
+    {
+      "id": 38868798827,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "4c0a3f878cd34f4d4dde6d3c0ca8e3b20a9259b7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:41:16Z",
+      "updated_at": "2026-10-16T07:43:25Z",
+      "run_started_at": "2026-10-16T07:41:16Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38868798827"
+    },
+    {
+      "id": 38868661903,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "3511fc0622a7fe2cff4986a304a7ee5968f61590",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:40:00Z",
+      "updated_at": "2026-10-16T07:42:14Z",
+      "run_started_at": "2026-10-16T07:40:00Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38868661903"
+    },
+    {
+      "id": 38867939151,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "1f008c44d7b7f6dee5539a64c52c753811c0199b",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:33:09Z",
+      "updated_at": "2026-10-16T07:35:22Z",
+      "run_started_at": "2026-10-16T07:33:09Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38867939151"
+    },
+    {
+      "id": 38867497984,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "95aceaf6703ed4a70e476e2be75d2c6993388b16",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:29:02Z",
+      "updated_at": "2026-10-16T07:30:49Z",
+      "run_started_at": "2026-10-16T07:29:02Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38867497984"
+    },
+    {
+      "id": 38867023638,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "5be2dde0a4bca839c45e62b32c7003aea841a3e2",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:24:33Z",
+      "updated_at": "2026-10-16T07:26:28Z",
+      "run_started_at": "2026-10-16T07:24:33Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38867023638"
+    },
+    {
+      "id": 38866947017,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "9484fb6b3988e4ce771744a9d70e86c070e7956e",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:23:50Z",
+      "updated_at": "2026-10-16T07:26:04Z",
+      "run_started_at": "2026-10-16T07:23:50Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866947017"
+    },
+    {
+      "id": 38866522822,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "582dd18583a0714e612e900d4cefd1c6053a2dcc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:19:55Z",
+      "updated_at": "2026-10-16T07:22:11Z",
+      "run_started_at": "2026-10-16T07:19:55Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866522822"
+    },
+    {
+      "id": 38866508756,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "4d1d903b6d796853fe0351b9c09b798ebd52239e",
+      "head_branch": "copilot/fix-browser-actions-job",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-16T07:19:46Z",
+      "updated_at": "2026-10-16T07:19:53Z",
+      "run_started_at": "2026-10-16T07:19:46Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866508756"
+    },
+    {
+      "id": 38866257899,
+      "name": "CI",
+      "event": "pull_request",
+      "head_sha": "cb8534a587f2c671ccba864c764e226f9d010336",
+      "head_branch": "copilot/fix-browser-actions-job",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-16T07:17:18Z",
+      "updated_at": "2026-10-16T07:20:07Z",
+      "run_started_at": "2026-10-16T07:17:58Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866257899"
+    },
+    {
+      "id": 38866255523,
+      "name": "Running Copilot cloud agent",
+      "event": "dynamic",
+      "head_sha": "cb8534a587f2c671ccba864c764e226f9d010336",
+      "head_branch": "copilot/fix-browser-actions-job",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-16T07:17:17Z",
+      "updated_at": "2026-10-16T07:20:25Z",
+      "run_started_at": "2026-10-16T07:17:17Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38866255523"
+    },
+    {
+      "id": 38865797897,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "69acb68d86eede4a7bd72c95060b64aefb4b79a3",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-16T07:12:59Z",
+      "updated_at": "2026-10-16T07:14:58Z",
+      "run_started_at": "2026-10-16T07:12:59Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/38865797897"
+    },
+    {
+      "id": 37905485171,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "7007ea658bc390bbfe62b5058dc6b512cfe9aa91",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:31:32Z",
+      "updated_at": "2026-10-09T08:34:13Z",
+      "run_started_at": "2026-10-09T08:31:32Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37905485171"
+    },
+    {
+      "id": 37903860750,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "84a32fbc813b59ca261f4e73e73f65a33a6b85ff",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:15:35Z",
+      "updated_at": "2026-10-09T08:17:48Z",
+      "run_started_at": "2026-10-09T08:15:35Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37903860750"
+    },
+    {
+      "id": 37903490300,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "297dcba52d93a172b501cceef3a2bdcaa45696ea",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:11:54Z",
+      "updated_at": "2026-10-09T08:14:26Z",
+      "run_started_at": "2026-10-09T08:11:54Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37903490300"
+    },
+    {
+      "id": 37903245619,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "8542a2d53d4537271d2b03448abb8a974603713c",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:09:35Z",
+      "updated_at": "2026-10-09T08:12:01Z",
+      "run_started_at": "2026-10-09T08:09:35Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37903245619"
+    },
+    {
+      "id": 37902872428,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "ba0713f61de9144f90e85a4821eb92b95400e5fe",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T08:05:55Z",
+      "updated_at": "2026-10-09T08:08:04Z",
+      "run_started_at": "2026-10-09T08:05:55Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37902872428"
+    },
+    {
+      "id": 37899663271,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "063485641847853fdf899238a86beef97c00902b",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T07:33:03Z",
+      "updated_at": "2026-10-09T07:35:20Z",
+      "run_started_at": "2026-10-09T07:33:03Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/37899663271"
+    },
+    {
+      "id": 36983815519,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "af2479a11629b05c9af6b9c7211a5f619d4b0a13",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T08:24:08Z",
+      "updated_at": "2026-10-02T08:26:34Z",
+      "run_started_at": "2026-10-02T08:24:08Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36983815519"
+    },
+    {
+      "id": 36981128459,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "51527df19ec5711255eee96d9a6a46fcaa03f674",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:55:13Z",
+      "updated_at": "2026-10-02T07:57:40Z",
+      "run_started_at": "2026-10-02T07:55:13Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36981128459"
+    },
+    {
+      "id": 36980526938,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "ca69d51328195c81aac2a2cd7a7aaceb1a265c61",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:48:32Z",
+      "updated_at": "2026-10-02T07:50:48Z",
+      "run_started_at": "2026-10-02T07:48:32Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36980526938"
+    },
+    {
+      "id": 36980342822,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "07ed3b49fb5ae01a47b530da4951dea8709a3a83",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:46:27Z",
+      "updated_at": "2026-10-02T07:48:40Z",
+      "run_started_at": "2026-10-02T07:46:27Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36980342822"
+    },
+    {
+      "id": 36979647028,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "a418bf0426047b7e06c31d99b8181251e639f1ef",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:38:42Z",
+      "updated_at": "2026-10-02T07:40:58Z",
+      "run_started_at": "2026-10-02T07:38:42Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36979647028"
+    },
+    {
+      "id": 36978540093,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "6473bcbc21a9f29120643e9f7c9fce703ec05c00",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-02T07:26:11Z",
+      "updated_at": "2026-10-02T07:28:52Z",
+      "run_started_at": "2026-10-02T07:26:11Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36978540093"
+    },
+    {
+      "id": 36848595223,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "80d5416ae1b7b4499bb3bb11730f78d70a5830e8",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-01T10:21:12Z",
+      "updated_at": "2026-10-01T10:23:33Z",
+      "run_started_at": "2026-10-01T10:21:12Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36848595223"
+    },
+    {
+      "id": 36115714684,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "be830608b9937b0c3bf5b1b195c29c6232a72df6",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-09-25T08:57:08Z",
+      "updated_at": "2026-09-25T08:59:20Z",
+      "run_started_at": "2026-09-25T08:57:08Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36115714684"
+    },
+    {
+      "id": 36110923521,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "04ba943abf1f6b8d4d0b5ebe04a4029ce2f0dd5a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-09-25T08:04:16Z",
+      "updated_at": "2026-09-25T08:06:29Z",
+      "run_started_at": "2026-09-25T08:04:16Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/36110923521"
+    },
+    {
+      "id": 35325337357,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "9b845cdf56d6d6dc4eb203d6419d7cd8765a4269",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:37:42Z",
+      "updated_at": "2026-09-18T08:37:56Z",
+      "run_started_at": "2026-09-18T08:37:42Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35325337357"
+    },
+    {
+      "id": 35324738343,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "fb74c04bda265fe768185bc55b0ae56e023c657b",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:30:40Z",
+      "updated_at": "2026-09-18T08:30:52Z",
+      "run_started_at": "2026-09-18T08:30:40Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35324738343"
+    },
+    {
+      "id": 35323860422,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "89ce24bbdce266960db68cf7fceb521267cbea1a",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:20:18Z",
+      "updated_at": "2026-09-18T08:20:34Z",
+      "run_started_at": "2026-09-18T08:20:18Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35323860422"
+    },
+    {
+      "id": 35323802989,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "d85db0195172d243816140094d8fd036a871b968",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:19:38Z",
+      "updated_at": "2026-09-18T08:19:47Z",
+      "run_started_at": "2026-09-18T08:19:38Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35323802989"
+    },
+    {
+      "id": 35323384477,
+      "name": "CI",
+      "event": "push",
+      "head_sha": "3470400f2fcc4cd8cd176d229b77a909fa00e172",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-18T08:14:40Z",
+      "updated_at": "2026-09-18T08:14:51Z",
+      "run_started_at": "2026-09-18T08:14:40Z",
+      "html_url": "https://github.com/Akira-vs96/SaparTravel/actions/runs/35323384477"
+    }
+  ],
+  "project_items": [],
+  "project_items_truncated": false,
+  "project_evidence": "not_requested",
+  "project": {},
+  "project_item_metadata": [],
+  "membership_scope": "Current Project items; removed historical items cannot be reconstructed completely",
+  "transitions": [],
+  "truncated_timelines": [],
+  "deployments": [
+    {
+      "id": 7596018502,
+      "sha": "53061ba1c1a6049f36a4927b21bc17322de9466f",
+      "environment": "public-demo",
+      "created_at": "2026-11-06T08:44:32Z",
+      "finished_at": "2026-11-06T08:46:07Z",
+      "state": "success",
+      "commit_at": "2026-11-06T08:27:11Z"
+    },
+    {
+      "id": 7593932195,
+      "sha": "1b6b5023bc501a220f2069e05f3fbb3167fb8150",
+      "environment": "lab10-recovery-drill",
+      "created_at": "2026-11-06T06:27:06Z",
+      "finished_at": "2026-11-06T06:27:11Z",
+      "state": "success",
+      "commit_at": "2026-11-06T05:49:34Z"
+    },
+    {
+      "id": 7593907784,
+      "sha": "1b6b5023bc501a220f2069e05f3fbb3167fb8150",
+      "environment": "lab10-recovery-drill",
+      "created_at": "2026-11-06T06:25:28Z",
+      "finished_at": "2026-11-06T06:27:05Z",
+      "state": "failure",
+      "commit_at": "2026-11-06T05:49:34Z"
+    },
+    {
+      "id": 7593906281,
+      "sha": "1b6b5023bc501a220f2069e05f3fbb3167fb8150",
+      "environment": "lab10-recovery-drill",
+      "created_at": "2026-11-06T06:25:23Z",
+      "finished_at": "2026-11-06T06:25:27Z",
+      "state": "failure",
+      "commit_at": "2026-11-06T05:49:34Z"
+    },
+    {
+      "id": 7593623885,
+      "sha": "1b6b5023bc501a220f2069e05f3fbb3167fb8150",
+      "environment": "local-compose",
+      "created_at": "2026-11-06T06:05:09Z",
+      "finished_at": "2026-11-06T06:20:24Z",
+      "state": "success",
+      "commit_at": "2026-11-06T05:49:34Z"
+    }
+  ]
+}
