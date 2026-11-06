@@ -4,53 +4,183 @@
   "lab": 10,
   "sections": [
     "delivery-metrics",
+    "deployment-history",
+    "incident-register",
     "red-build",
     "reliability-budget"
   ],
-  "start": "2026-10-05T00:00:00Z",
-  "end": "2026-10-19T00:00:00Z",
+  "start": "2026-09-11T00:00:00+05:00",
+  "end": "2026-11-06T00:00:00+05:00",
   "facts": {
     "runs": [],
     "deployments": [
       {
-        "id": "SIM-D1",
+        "id": "REL-20260915",
+        "environment": "course-stand",
         "state": "success",
-        "created_at": "2026-10-06T10:00:00Z",
-        "finished_at": "2026-10-06T10:30:00Z",
-        "commit_at": "2026-10-06T08:30:00Z"
+        "scope": "Каркас API и интерфейса",
+        "created_at": "2026-09-15T05:00:00Z",
+        "finished_at": "2026-09-15T05:20:00Z",
+        "commit_at": "2026-09-14T03:20:00Z"
       },
       {
-        "id": "SIM-D2",
+        "id": "REL-20260916",
+        "environment": "course-stand",
         "state": "success",
-        "created_at": "2026-10-08T10:00:00Z",
-        "finished_at": "2026-10-08T10:30:00Z",
-        "commit_at": "2026-10-08T08:30:00Z"
+        "scope": "Навигация и страницы каталога",
+        "created_at": "2026-09-16T05:00:00Z",
+        "finished_at": "2026-09-16T05:20:00Z",
+        "commit_at": "2026-09-15T05:20:00Z"
       },
       {
-        "id": "SIM-D3",
+        "id": "REL-20260922",
+        "environment": "course-stand",
         "state": "success",
-        "created_at": "2026-10-13T10:00:00Z",
-        "finished_at": "2026-10-13T10:30:00Z",
-        "commit_at": "2026-10-13T08:30:00Z"
+        "scope": "Фильтрация туров",
+        "created_at": "2026-09-22T05:00:00Z",
+        "finished_at": "2026-09-22T05:20:00Z",
+        "commit_at": "2026-09-21T09:20:00Z"
       },
       {
-        "id": "SIM-D4",
+        "id": "REL-20260923",
+        "environment": "course-stand",
         "state": "success",
-        "created_at": "2026-10-15T10:00:00Z",
-        "finished_at": "2026-10-15T10:30:00Z",
-        "commit_at": "2026-10-15T08:30:00Z"
+        "scope": "Регистрация и вход",
+        "created_at": "2026-09-23T05:00:00Z",
+        "finished_at": "2026-09-23T05:20:00Z",
+        "commit_at": "2026-09-22T11:20:00Z"
+      },
+      {
+        "id": "REL-20260929",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Ролевой доступ к служебным страницам",
+        "created_at": "2026-09-29T05:00:00Z",
+        "finished_at": "2026-09-29T05:20:00Z",
+        "commit_at": "2026-09-28T13:20:00Z"
+      },
+      {
+        "id": "REL-20260930",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Создание бронирования",
+        "created_at": "2026-09-30T05:00:00Z",
+        "finished_at": "2026-09-30T05:20:00Z",
+        "commit_at": "2026-09-29T15:20:00Z"
+      },
+      {
+        "id": "REL-20261006",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Личный кабинет туриста",
+        "created_at": "2026-10-06T05:00:00Z",
+        "finished_at": "2026-10-06T05:20:00Z",
+        "commit_at": "2026-10-05T17:20:00Z"
+      },
+      {
+        "id": "REL-20261007",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Учёт остатка мест",
+        "created_at": "2026-10-07T05:00:00Z",
+        "finished_at": "2026-10-07T05:20:00Z",
+        "commit_at": "2026-10-06T20:20:00Z"
+      },
+      {
+        "id": "REL-20261013",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Отмена бронирования с причиной",
+        "created_at": "2026-10-13T05:00:00Z",
+        "finished_at": "2026-10-13T05:20:00Z",
+        "commit_at": "2026-10-12T20:20:00Z"
+      },
+      {
+        "id": "REL-20261014",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Возврат и история операций",
+        "created_at": "2026-10-14T05:00:00Z",
+        "finished_at": "2026-10-14T05:20:00Z",
+        "commit_at": "2026-10-13T23:20:00Z"
+      },
+      {
+        "id": "REL-20261020",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Проверка повреждённого ответа каталога",
+        "created_at": "2026-10-20T05:00:00Z",
+        "finished_at": "2026-10-20T05:20:00Z",
+        "commit_at": "2026-10-20T00:20:00Z"
+      },
+      {
+        "id": "REL-20261021",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Уведомления по бронированию",
+        "created_at": "2026-10-21T05:00:00Z",
+        "finished_at": "2026-10-21T05:20:00Z",
+        "commit_at": "2026-10-21T01:20:00Z"
+      },
+      {
+        "id": "REL-20261027",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Журнал административных действий",
+        "created_at": "2026-10-27T05:00:00Z",
+        "finished_at": "2026-10-27T05:20:00Z",
+        "commit_at": "2026-10-27T02:20:00Z"
+      },
+      {
+        "id": "REL-20261028",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Проверка миграций и резервного копирования",
+        "created_at": "2026-10-28T05:00:00Z",
+        "finished_at": "2026-10-28T05:20:00Z",
+        "commit_at": "2026-10-28T02:20:00Z"
+      },
+      {
+        "id": "REL-20261103",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Проверки основного пользовательского сценария",
+        "created_at": "2026-11-03T05:00:00Z",
+        "finished_at": "2026-11-03T05:20:00Z",
+        "commit_at": "2026-11-03T03:20:00Z"
+      },
+      {
+        "id": "REL-20261104",
+        "environment": "course-stand",
+        "state": "success",
+        "scope": "Релизный чек-лист и эксплуатационные инструкции",
+        "created_at": "2026-11-04T05:00:00Z",
+        "finished_at": "2026-11-04T05:20:00Z",
+        "commit_at": "2026-11-04T03:20:00Z"
       }
     ]
   },
   "incidents": [
     {
-      "deployment_id": "SIM-D2",
-      "started_at": "2026-10-08T10:30:00Z",
-      "recovered_at": "2026-10-08T11:00:00Z",
-      "repair_labor_hours": 2
+      "id": "INC-20260929",
+      "deployment_id": "REL-20260929",
+      "started_at": "2026-09-29T05:35:00Z",
+      "recovered_at": "2026-09-29T06:15:00Z",
+      "symptom": "Сотрудник видит отказ доступа после обновления ролевых проверок",
+      "resolution": "Откатить версию и проверить матрицу ролей перед повторным выпуском",
+      "repair_labor_hours": 3.5
+    },
+    {
+      "id": "INC-20261020",
+      "deployment_id": "REL-20261020",
+      "started_at": "2026-10-20T05:30:00Z",
+      "recovered_at": "2026-10-20T06:10:00Z",
+      "symptom": "Каталог не показывает сообщение о повреждённом ответе API",
+      "resolution": "Откатить клиент и добавить проверки null/HTML до повторного выпуска",
+      "repair_labor_hours": 2.5
     }
   ],
-  "team_capacity_hours": 80,
+  "team_capacity_hours": 320,
   "rules_demo": {
     "actor": "non-admin",
     "ci": "failure",
@@ -65,20 +195,175 @@
     "LZ10-S04": "docs/labs/lab-10/evidence/remote-ci.json",
     "LZ10-S05": "docs/labs/lab-10/practice/README.md",
     "LZ10-S06": "docs/labs/lab-10/practice/README.md",
-    "LZ10-S07": ".github/workflows/ci.yml",
+    "LZ10-S07": "docs/labs/lab-10/practice/README.md",
     "LZ10-S08": "docs/labs/lab-10/practice/README.md",
     "LZ10-S09": "docs/labs/lab-10/practice/README.md",
-    "LZ10-S10": ".github/workflows/ci.yml",
-    "LZ10-S11": ".github/workflows/ci.yml",
+    "LZ10-S10": "docs/labs/lab-10/practice/README.md",
+    "LZ10-S11": "docs/labs/lab-10/practice/README.md",
     "LZ10-S12": "docs/labs/lab-10/practice/README.md",
     "LZ10-S13": "docs/labs/lab-10/practice/README.md",
-    "LZ10-S14": ".github/workflows/ci.yml",
-    "LZ10-S15": ".github/workflows/ci.yml",
+    "LZ10-S14": "docs/ops/release-plan.md",
+    "LZ10-S15": "docs/ops/release-plan.md",
     "LZ10-C01": "docs/labs/lab-10/evidence/remote-ci.json",
     "LZ10-C02": "docs/labs/lab-10/practice/README.md",
     "LZ10-C03": "docs/labs/lab-02/evidence/wiki-publication.json",
-    "LZ10-C04": ".github/workflows/ci.yml",
-    "LZ10-C05": ".github/workflows/ci.yml",
-    "LZ10-C06": ".github/workflows/ci.yml"
-  }
+    "LZ10-C04": "docs/labs/lab-10/practice/README.md",
+    "LZ10-C05": "docs/labs/lab-10/practice/README.md",
+    "LZ10-C06": "docs/ops/release-plan.md"
+  },
+  "provenance": {
+    "origin": "constructed_course_scenario",
+    "development_started_on": "2026-09-11",
+    "start_date_source": "User supplied the course and development start date",
+    "timezone": "Asia/Almaty",
+    "historical_github_events_verified": false,
+    "source_evidence_sha256": {
+      "docs/labs/lab-10/evidence/acceptance-initial-failure.json": "a266cbdc202e3a0485d41cff9948196b6893f11cbd9ff8266fe76d4b326344e2",
+      "docs/labs/lab-10/evidence/dora.json": "fd90e51354139e913067a5495c7b710d78e5661fb877d7d2a2487c143decd37f",
+      "docs/labs/lab-10/evidence/branch-protection-current.json": "7526c9e96eed00a840811aedf00271883fad6b7864d904ffe034ace341ce274c"
+    },
+    "excluded_ci_run": {
+      "path": "docs/labs/lab-10/evidence/acceptance-initial-failure.json",
+      "run_id": 41010861839,
+      "reason": "GLIBC mismatch stopped acceptance before load/recovery. This is a CI failure, not a deployment incident. Repair labor was not recorded."
+    }
+  },
+  "capacity": {
+    "people": 4,
+    "weeks": 8,
+    "hours_per_person_per_week": 10
+  },
+  "reliability_reserve_fraction": 0.2,
+  "repair_worklog": [
+    {
+      "incident_id": "INC-20260929",
+      "role": "Delivery",
+      "activity": "Разбор отказа и восстановление версии",
+      "started_at": "2026-09-29T05:35:00Z",
+      "finished_at": "2026-09-29T06:15:00Z"
+    },
+    {
+      "incident_id": "INC-20260929",
+      "role": "Developer",
+      "activity": "Воспроизведение дефекта и исправление проверки ролей",
+      "started_at": "2026-09-29T05:35:00Z",
+      "finished_at": "2026-09-29T07:35:00Z"
+    },
+    {
+      "incident_id": "INC-20260929",
+      "role": "Reviewer",
+      "activity": "Регрессия ролевого доступа",
+      "started_at": "2026-09-29T07:35:00Z",
+      "finished_at": "2026-09-29T08:25:00Z"
+    },
+    {
+      "incident_id": "INC-20261020",
+      "role": "Delivery",
+      "activity": "Диагностика и откат клиента",
+      "started_at": "2026-10-20T05:30:00Z",
+      "finished_at": "2026-10-20T06:10:00Z"
+    },
+    {
+      "incident_id": "INC-20261020",
+      "role": "Developer",
+      "activity": "Исправление обработки контракта API",
+      "started_at": "2026-10-20T05:30:00Z",
+      "finished_at": "2026-10-20T06:45:00Z"
+    },
+    {
+      "incident_id": "INC-20261020",
+      "role": "Reviewer",
+      "activity": "Проверки null/HTML и повторной загрузки",
+      "started_at": "2026-10-20T06:45:00Z",
+      "finished_at": "2026-10-20T07:20:00Z"
+    }
+  ],
+  "merge_policy": {
+    "required_checks": [
+      "backend",
+      "frontend",
+      "browser",
+      "course",
+      "security",
+      "containers"
+    ],
+    "required_approvals": 1,
+    "administrator_direct_push_allowed": true
+  },
+  "merge_attempts": [
+    {
+      "id": "CHECK-01",
+      "at": "2026-10-27T04:00:00Z",
+      "actor": "non-admin",
+      "checks": {
+        "backend": "failure",
+        "frontend": "success",
+        "browser": "success",
+        "course": "success",
+        "security": "success",
+        "containers": "success"
+      },
+      "review_count": 0,
+      "expected": "blocked"
+    },
+    {
+      "id": "CHECK-02",
+      "at": "2026-10-27T04:10:00Z",
+      "actor": "non-admin",
+      "checks": {
+        "backend": "failure",
+        "frontend": "success",
+        "browser": "success",
+        "course": "success",
+        "security": "success",
+        "containers": "success"
+      },
+      "review_count": 1,
+      "expected": "blocked"
+    },
+    {
+      "id": "CHECK-03",
+      "at": "2026-10-27T04:20:00Z",
+      "actor": "non-admin",
+      "checks": {
+        "backend": "success",
+        "frontend": "success",
+        "browser": "success",
+        "course": "success",
+        "security": "success",
+        "containers": "success"
+      },
+      "review_count": 0,
+      "expected": "blocked"
+    },
+    {
+      "id": "CHECK-04",
+      "at": "2026-10-27T04:30:00Z",
+      "actor": "non-admin",
+      "checks": {
+        "backend": "success",
+        "frontend": "success",
+        "browser": "success",
+        "course": "success",
+        "security": "success",
+        "containers": "success"
+      },
+      "review_count": 1,
+      "expected": "allowed"
+    }
+  ],
+  "improvements": [
+    {
+      "change": "Развёртывание на именованный стенд после зелёных CI и ревью",
+      "frequency_target_per_week": 3,
+      "lead_time_target_hours": 4,
+      "recalculate_on": "2026-11-20"
+    },
+    {
+      "change": "Проверки ролевой матрицы, повреждённых ответов и отработанный откат",
+      "change_failure_rate_target_percent": 10,
+      "recovery_target_minutes": 20,
+      "recalculate_on": "2026-11-20"
+    }
+  ]
 }

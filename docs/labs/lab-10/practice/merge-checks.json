@@ -1,0 +1,94 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "policy": {
+    "required_checks": [
+      "backend",
+      "frontend",
+      "browser",
+      "course",
+      "security",
+      "containers"
+    ],
+    "required_approvals": 1,
+    "administrator_direct_push_allowed": true
+  },
+  "attempts": [
+    {
+      "id": "CHECK-01",
+      "at": "2026-10-27T04:00:00Z",
+      "actor": "non-admin",
+      "checks": {
+        "backend": "failure",
+        "frontend": "success",
+        "browser": "success",
+        "course": "success",
+        "security": "success",
+        "containers": "success"
+      },
+      "review_count": 0,
+      "expected": "blocked",
+      "calculated": "blocked",
+      "blockers": [
+        "backend",
+        "review"
+      ]
+    },
+    {
+      "id": "CHECK-02",
+      "at": "2026-10-27T04:10:00Z",
+      "actor": "non-admin",
+      "checks": {
+        "backend": "failure",
+        "frontend": "success",
+        "browser": "success",
+        "course": "success",
+        "security": "success",
+        "containers": "success"
+      },
+      "review_count": 1,
+      "expected": "blocked",
+      "calculated": "blocked",
+      "blockers": [
+        "backend"
+      ]
+    },
+    {
+      "id": "CHECK-03",
+      "at": "2026-10-27T04:20:00Z",
+      "actor": "non-admin",
+      "checks": {
+        "backend": "success",
+        "frontend": "success",
+        "browser": "success",
+        "course": "success",
+        "security": "success",
+        "containers": "success"
+      },
+      "review_count": 0,
+      "expected": "blocked",
+      "calculated": "blocked",
+      "blockers": [
+        "review"
+      ]
+    },
+    {
+      "id": "CHECK-04",
+      "at": "2026-10-27T04:30:00Z",
+      "actor": "non-admin",
+      "checks": {
+        "backend": "success",
+        "frontend": "success",
+        "browser": "success",
+        "course": "success",
+        "security": "success",
+        "containers": "success"
+      },
+      "review_count": 1,
+      "expected": "allowed",
+      "calculated": "allowed",
+      "blockers": []
+    }
+  ],
+  "github_merge_attempt_performed": false
+}

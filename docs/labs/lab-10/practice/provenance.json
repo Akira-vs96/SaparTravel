@@ -1,0 +1,29 @@
+{
+  "data_kind": "educational_simulation",
+  "human_events_confirmed": false,
+  "origin": "constructed_course_scenario",
+  "development_started_on": "2026-09-11",
+  "start_date_source": "User supplied the course and development start date",
+  "timezone": "Asia/Almaty",
+  "historical_github_events_verified": false,
+  "source_evidence_sha256": {
+    "docs/labs/lab-10/evidence/acceptance-initial-failure.json": "a266cbdc202e3a0485d41cff9948196b6893f11cbd9ff8266fe76d4b326344e2",
+    "docs/labs/lab-10/evidence/dora.json": "fd90e51354139e913067a5495c7b710d78e5661fb877d7d2a2487c143decd37f",
+    "docs/labs/lab-10/evidence/branch-protection-current.json": "7526c9e96eed00a840811aedf00271883fad6b7864d904ffe034ace341ce274c"
+  },
+  "excluded_ci_run": {
+    "path": "docs/labs/lab-10/evidence/acceptance-initial-failure.json",
+    "run_id": 41010861839,
+    "reason": "GLIBC mismatch stopped acceptance before load/recovery. This is a CI failure, not a deployment incident. Repair labor was not recorded."
+  },
+  "scenario_sha256": "c92bc7adc2d4a3e74e069d523cc530eff1f7e7dbb7d611d2af576725a1b16399",
+  "generator_sha256": "cb0b2303abeafff723c190fb4c6d8804b3306730b162869b35512d385e1ec53a",
+  "artifact_sha256": {
+    "deployments.csv": "e79c6919422f21fbcfb45867ab641d5b5f93696dbe3753b0fea9427c758a8209",
+    "incidents.csv": "5f1ab89f54740014ee2d52213ca3cb3bd307b3a5b8313170f43cade900998f01",
+    "repair-hours.csv": "4d5a3fcb2a8534bf33297624da10cd8109f0aaea7d6c9c3b3415a52fe8d6309f",
+    "merge-checks.json": "323f7f01fe080e024479cd53efa71251bbffa21f4b09252315044bffda2b288e",
+    "weekly.json": "a78288902fda15ca5486dd7ef997d649a504db2848901f54f65b39ee54d43952",
+    "dashboard.html": "699c556ff30e294adce576d85b5542436639bfeff40617818a609d0519594a24"
+  }
+}

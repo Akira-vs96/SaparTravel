@@ -2409,7 +2409,7 @@
       "id": "LZ10-S07",
       "lab": 10,
       "factual_status": "verified",
-      "exercise_evidence": ".github/workflows/ci.yml",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
         ".github/workflows/ci.yml",
         ".github/workflows/service-level-acceptance.yml",
@@ -2457,7 +2457,7 @@
       "id": "LZ10-S10",
       "lab": 10,
       "factual_status": "verified",
-      "exercise_evidence": ".github/workflows/ci.yml",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
         ".github/workflows/ci.yml",
         ".github/workflows/service-level-acceptance.yml",
@@ -2473,7 +2473,7 @@
       "id": "LZ10-S11",
       "lab": 10,
       "factual_status": "verified",
-      "exercise_evidence": ".github/workflows/ci.yml",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
         ".github/workflows/ci.yml",
         ".github/workflows/service-level-acceptance.yml",
@@ -2521,7 +2521,7 @@
       "id": "LZ10-S14",
       "lab": 10,
       "factual_status": "verified",
-      "exercise_evidence": ".github/workflows/ci.yml",
+      "exercise_evidence": "docs/ops/release-plan.md",
       "factual_evidence": [
         ".github/workflows/ci.yml",
         ".github/workflows/service-level-acceptance.yml",
@@ -2537,7 +2537,7 @@
       "id": "LZ10-S15",
       "lab": 10,
       "factual_status": "verified",
-      "exercise_evidence": ".github/workflows/ci.yml",
+      "exercise_evidence": "docs/ops/release-plan.md",
       "factual_evidence": [
         ".github/workflows/ci.yml",
         ".github/workflows/service-level-acceptance.yml",
@@ -2590,7 +2590,7 @@
       "id": "LZ10-C04",
       "lab": 10,
       "factual_status": "documented",
-      "exercise_evidence": ".github/workflows/ci.yml",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
         ".github/workflows/ci.yml",
         ".github/workflows/service-level-acceptance.yml",
@@ -2606,7 +2606,7 @@
       "id": "LZ10-C05",
       "lab": 10,
       "factual_status": "verified",
-      "exercise_evidence": ".github/workflows/ci.yml",
+      "exercise_evidence": "docs/labs/lab-10/practice/README.md",
       "factual_evidence": [
         ".github/workflows/ci.yml",
         ".github/workflows/service-level-acceptance.yml",
@@ -2622,7 +2622,7 @@
       "id": "LZ10-C06",
       "lab": 10,
       "factual_status": "documented",
-      "exercise_evidence": ".github/workflows/ci.yml",
+      "exercise_evidence": "docs/ops/release-plan.md",
       "factual_evidence": [
         ".github/workflows/ci.yml",
         ".github/workflows/service-level-acceptance.yml",

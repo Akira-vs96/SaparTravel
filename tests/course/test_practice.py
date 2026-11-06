@@ -29,11 +29,12 @@ class PracticeTests(unittest.TestCase):
     def test_full_incident_denominator_and_labor_are_distinct(self):
         result = calculate_exercise(10, scenario(10))
         self.assertEqual(result["deployment_frequency_per_week"], 2)
-        self.assertEqual(result["lead_time_median_hours"], 2)
-        self.assertEqual(result["change_failure_rate_percent"], 25)
-        self.assertEqual(result["recovery_median_minutes"], 30)
-        self.assertEqual(result["repair_labor_hours"], 2)
-        self.assertAlmostEqual(result["reliability_capacity_fraction"], .025)
+        self.assertEqual(result["deployment_count"], 16)
+        self.assertEqual(result["lead_time_median_hours"], 9)
+        self.assertEqual(result["change_failure_rate_percent"], 12.5)
+        self.assertEqual(result["recovery_median_minutes"], 40)
+        self.assertEqual(result["repair_labor_hours"], 6)
+        self.assertAlmostEqual(result["reliability_capacity_fraction"], .01875)
         self.assertFalse(result["human_events_confirmed"])
 
     def test_unprofitable_automation_and_timing_estimates_stay_honest(self):
