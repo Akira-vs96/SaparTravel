@@ -62,3 +62,8 @@ class ObservedDoraTests(unittest.TestCase):
     def test_recovery_not_observed_by_window_end_remains_unknown(self):
         self.register["incidents"][0]["recovered_at"] = "2026-11-09T00:00:00Z"
         self.assertIsNone(self.measure(self.register)["recovery_median_minutes"])
+
+    def test_even_recovery_sample_uses_the_arithmetic_median(self):
+        self.register["incidents"].append({"deployment_id": 2, "started_at": "2026-11-02T11:00:00Z",
+                                           "recovered_at": "2026-11-02T11:20:00Z"})
+        self.assertEqual(self.measure(self.register)["recovery_median_minutes"], 15)

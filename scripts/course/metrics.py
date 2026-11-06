@@ -2,6 +2,7 @@
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 import math
+from statistics import median
 
 
 def stamp(value):
@@ -310,9 +311,9 @@ def dora(facts, start, end, incidents=None, incident_register_complete=False):
     runs = [r for r in facts["runs"] if start <= stamp(r["created_at"]) < end]
     return {"start_utc": start.isoformat(), "end_utc": end.isoformat(), "deployment_count": len(deployments),
             "deployment_frequency_per_week": len(successes) / ((end - start).total_seconds() / 604800) if deployments else None,
-            "lead_time_median_hours": percentile(leads, .5),
+            "lead_time_median_hours": median(leads) if leads else None,
             "change_failure_rate_percent": len(failed_ids) / len(deployments) * 100 if deployments and incident_register_complete else None,
-            "recovery_median_minutes": percentile(recovery, .5),
+            "recovery_median_minutes": median(recovery) if recovery else None,
             "ci_runs": len(runs), "ci_success": sum(r["conclusion"] == "success" for r in runs),
             "ci_failure": sum(r["conclusion"] == "failure" for r in runs),
             "status": "measured" if deployments else "no_deployment_evidence",

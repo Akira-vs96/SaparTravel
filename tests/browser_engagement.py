@@ -61,6 +61,7 @@ def run(base_url, api_url):
     vendor_email = f"engagement-host-{suffix}@example.com"
     vendor_password = secrets.token_urlsafe(24)
     errors = []
+    auth_requests = []
     private_values = [admin_password, traveler_password, replacement_password, vendor_password]
     def capture_error(error):
         message = str(error).splitlines()[0]
@@ -82,6 +83,9 @@ def run(base_url, api_url):
         for page in (traveler, vendor):
             page.set_default_timeout(20000)
             page.on("pageerror", capture_error)
+        traveler.on("request", lambda request: auth_requests.append({
+            "method": request.method, "path": urlsplit(request.url).path,
+        }) if "/api/v1/auth/" in urlsplit(request.url).path else None)
         try:
             step = "traveler registration"
             admin = api(traveler_context, api_url, "/auth/login", method="POST", body={"email": admin_email, "password": admin_password})
@@ -112,7 +116,11 @@ def run(base_url, api_url):
             traveler.get_by_role("link", name="Forgot password?", exact=True).click()
             expect(traveler).to_have_url(re.compile(r"/forgot-password$"))
             step = "recovery: request reset delivery"
-            traveler.get_by_label("Email address", exact=True).fill(traveler_email)
+            recovery_email = traveler.get_by_label("Email address", exact=True)
+            recovery_email.fill(traveler_email)
+            expect(recovery_email).to_have_value(traveler_email)
+            assert recovery_email.evaluate("input => input.validity.valid"), "Recovery email input must be valid"
+            expect(traveler.get_by_role("button", name="Send reset link", exact=True)).to_be_enabled()
             with traveler.expect_response(response_for("/auth/forgot-password", "POST")) as requested:
                 traveler.get_by_role("button", name="Send reset link", exact=True).click()
             assert requested.value.status == 200
@@ -310,6 +318,14 @@ def run(base_url, api_url):
                 "operation": str(error).split(":", 1)[0].splitlines()[0][:80],
                 "pathname": urlsplit(traveler.url).path,
                 "language": traveler.locator("html").get_attribute("lang"),
+                "auth_requests": auth_requests,
+                "javascript_errors": errors,
+                "form_state": traveler.locator("form").evaluate_all("""forms => forms.map(form => ({
+                    valid: form.checkValidity(),
+                    controls: [...form.elements].map(el => ({tag:el.tagName,type:el.type,
+                        disabled:el.disabled,valid:el.validity?.valid,valueLength:el.value?.length,
+                        emptyRequired:el.validity?.valueMissing,typeMismatch:el.validity?.typeMismatch}))
+                }))"""),
             }, ensure_ascii=False, indent=2) + "\n")
             if isinstance(error, SafeCheckError):
                 raise AssertionError(str(error)) from None

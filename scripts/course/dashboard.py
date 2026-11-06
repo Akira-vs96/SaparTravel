@@ -22,7 +22,8 @@ def render():
     project_audit = project.get("audit", {})
     audit = read("docs/labs/evidence/audit.json") or {}
     flow = read("docs/labs/lab-09/evidence/flow.json") or {}
-    dora = read("docs/labs/lab-10/evidence/dora.json") or {}
+    dora = read("docs/labs/lab-10/evidence/dora-current.json") or read("docs/labs/lab-10/evidence/dora.json") or {}
+    drill = read("docs/labs/lab-10/evidence/drill-dora.json") or {}
     security = read("docs/labs/lab-07/evidence/2026-10-31/summary.json") or {}
     planning = read("docs/labs/evidence/planning.json") or {}
     finance = read("docs/labs/lab-08/evidence/finance-validation.json") or {}
@@ -47,6 +48,16 @@ def render():
                               "доля неудачных изменений, %": dora.get("change_failure_rate_percent"),
                               "восстановление, минуты": dora.get("recovery_median_minutes"),
                               "CI в историческом расчёте": dora.get("ci_runs"),
+                              "стенд основного расчёта": dora.get("environment"),
+                              "период": [dora.get("start_utc"), dora.get("end_utc")],
+                              "изолированная проверка восстановления": {
+                                  "стенд": drill.get("environment"),
+                                  "попыток": drill.get("deployment_count"),
+                                  "частота/неделю": drill.get("deployment_frequency_per_week"),
+                                  "lead time, часы": drill.get("lead_time_median_hours"),
+                                  "ошибки, %": drill.get("change_failure_rate_percent"),
+                                  "восстановление, минуты": drill.get("recovery_median_minutes"),
+                                  "граница": "Реальный контролируемый отказ; короткая выборка не определяет уровень команды"},
                               "последний проверенный CI": project.get("ci_url")}),
         ("Бюджет", "Заказчик", {"план, KZT / 12 месяцев": finance.get("annual_base_kzt"),
                                  "лимит с резервами, KZT": finance.get("funding_limit_kzt"),
