@@ -244,12 +244,79 @@ def confirmation(booking_id: str, user: CurrentUser, db: DbSession, lang: Langua
     notice = {"ru": "Демонстрационное подтверждение. Тестовая оплата. Деньги не списываются.",
               "en": "Demonstration confirmation. Test payment. No money is charged.",
               "kk": "Демонстрациялық растау. Сынақ төлемі. Ақша алынбайды."}[lang]
-    document = f'''<!doctype html><html lang="{lang}"><meta charset="utf-8"><title>{escape(item.reference)}</title>
-    <style>body{{font:18px system-ui;max-width:800px;margin:60px auto;padding:24px;color:#153f37}}h1{{font-size:28px}}</style>
-    <h1>SaparTravel · {title}</h1><h2>{escape(item.reference)}</h2><h3>{escape(data["experience"]["title"])}</h3>
-    <p>{item.start_date.isoformat()} — {item.end_date.isoformat()}</p><p>{escape(item.contact_name)} · {item.travelers_count}</p>
-    <p>{money(item.total_amount)} {escape(item.currency)}</p><p>{escape(data['cancellation_policy'].get("description", ""))}</p>
-    <p>{notice}</p></html>'''
+    snapshot = data["experience"]
+    items = "".join(
+        f"""<tr><td>{escape(str(entry["name"]))}</td>
+        <td class="number">{entry["quantity"]}</td>
+        <td class="number">{money(entry["total_amount"])} {escape(entry["currency"])}</td></tr>"""
+        for entry in data["items"]
+    )
+    participants = "".join(
+        f"<li>{escape(str(participant['name']))}</li>"
+        for participant in data["participants"]
+    )
+    document = f'''<!doctype html>
+<html lang="{lang}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaparTravel · {escape(item.reference)}</title>
+  <style>
+    :root {{ color-scheme: light; --ink:#173d35; --muted:#718078; --line:#dfe6df; --accent:#ed795d; --soft:#f3f6f1; }}
+    * {{ box-sizing:border-box; }}
+    body {{ margin:0; background:#eef2ed; color:var(--ink); font:14px/1.55 Arial, sans-serif; }}
+    .sheet {{ max-width:860px; margin:40px auto; padding:48px; background:#fff; box-shadow:0 12px 40px rgba(23,61,53,.12); }}
+    .top {{ display:flex; justify-content:space-between; gap:24px; align-items:flex-start; border-bottom:1px solid var(--line); padding-bottom:28px; }}
+    .brand {{ color:var(--ink); font-size:25px; font-weight:800; letter-spacing:-.04em; }}
+    .brand span {{ color:var(--accent); }}
+    .eyebrow {{ color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }}
+    h1 {{ margin:34px 0 8px; font-size:34px; letter-spacing:-.04em; }}
+    h2 {{ margin:0 0 8px; font-size:20px; }}
+    p {{ margin:6px 0; }}
+    .reference {{ text-align:right; }}
+    .badge {{ display:inline-block; margin-top:10px; padding:6px 11px; border-radius:999px; background:#e4f2e8; color:#237044; font-size:12px; font-weight:700; }}
+    .hero {{ display:grid; grid-template-columns:1.4fr 1fr; gap:18px; margin:28px 0; }}
+    .card {{ border:1px solid var(--line); border-radius:14px; padding:20px; }}
+    .muted {{ color:var(--muted); }}
+    .facts {{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:16px; }}
+    .fact strong {{ display:block; margin-top:2px; }}
+    table {{ width:100%; margin-top:14px; border-collapse:collapse; }}
+    th,td {{ padding:12px 8px; border-bottom:1px solid var(--line); text-align:left; }}
+    th {{ color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }}
+    .number {{ text-align:right; white-space:nowrap; }}
+    .total {{ display:flex; justify-content:space-between; align-items:center; margin-top:18px; padding-top:18px; border-top:2px solid var(--ink); font-size:22px; font-weight:800; }}
+    .notice {{ margin-top:28px; padding:16px 18px; border-radius:12px; background:var(--soft); color:#53645c; }}
+    ul {{ margin:8px 0 0; padding-left:20px; }}
+    footer {{ display:flex; justify-content:space-between; gap:20px; margin-top:36px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:11px; }}
+    @media (max-width:650px) {{ body {{ background:#fff; }} .sheet {{ margin:0; padding:24px; box-shadow:none; }} .top,.hero,footer {{ display:block; }} .reference {{ margin-top:18px; text-align:left; }} .facts {{ grid-template-columns:1fr; }} h1 {{ font-size:28px; }} }}
+    @media print {{ body {{ background:#fff; }} .sheet {{ margin:0; max-width:none; padding:0; box-shadow:none; }} }}
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <header class="top">
+      <div><div class="brand">sapar<span>travel</span>.</div><p class="eyebrow">{title}</p></div>
+      <div class="reference"><div class="eyebrow">Booking reference</div><strong>{escape(item.reference)}</strong><div class="badge">Confirmed</div></div>
+    </header>
+    <h1>{escape(str(snapshot.get("title", "")))}</h1>
+    <p class="muted">{escape(str(snapshot.get("destination", snapshot.get("country", ""))))}</p>
+    <section class="hero">
+      <div class="card"><div class="eyebrow">Trip dates</div><h2>{item.start_date.isoformat()} — {item.end_date.isoformat()}</h2><p class="muted">{data["travelers_count"]} traveler(s)</p></div>
+      <div class="card"><div class="eyebrow">Contact</div><strong>{escape(data["contact_name"])}</strong><p class="muted">{escape(data["contact_email"])}</p></div>
+    </section>
+    <section class="card">
+      <div class="eyebrow">Travelers</div><ul>{participants}</ul>
+    </section>
+    <section class="card" style="margin-top:18px">
+      <div class="eyebrow">Booking summary</div>
+      <table><thead><tr><th>Item</th><th class="number">Qty</th><th class="number">Amount</th></tr></thead><tbody>{items}</tbody></table>
+      <div class="total"><span>Total</span><span>{money(data["total_amount"])} {escape(item.currency)}</span></div>
+    </section>
+    <div class="notice"><strong>{escape(notice)}</strong><p>{escape(data["cancellation_policy"].get("description", ""))}</p></div>
+    <footer><span>SaparTravel · {escape(item.reference)}</span><span>Keep this confirmation for your records</span></footer>
+  </main>
+</body>
+</html>'''
     return Response(document, media_type="text/html", headers={"Content-Disposition": f'attachment; filename="{item.reference}.html"', "Cache-Control": "no-store"})
 
 
