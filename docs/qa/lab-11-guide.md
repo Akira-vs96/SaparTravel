@@ -46,6 +46,8 @@
   error budget и поддержка.
 - [docs/ops/handoff.md](../ops/handoff.md) — передача в эксплуатацию,
   quality gates и роли.
+- [docs/ops/free-hosting.md](../ops/free-hosting.md) — фактический деплой
+  через GitHub → Render Free и Neon Free.
 - [docs/ops/monitoring-setup.md](../ops/monitoring-setup.md) — настройка
   Uptime Kuma.
 
@@ -116,8 +118,21 @@ python3 scripts/setup_env.py --demo
 Запустить все сервисы:
 
 ```bash
+set -euo pipefail
+docker info >/dev/null
 docker compose up --build -d
 ```
+
+Если `docker info` не проходит, сначала запустите Docker Engine:
+
+```bash
+sudo systemctl start docker
+docker info
+```
+
+Для Docker Desktop сначала откройте Docker Desktop. Не запускайте browser-
+тесты, пока health endpoint не отвечает: иначе появится вторичная ошибка
+`ECONNREFUSED`.
 
 Проверить состояние:
 
@@ -346,6 +361,16 @@ curl --fail http://localhost:8000/api/v1/health
 .venv/bin/python tests/browser_roles_visual.py \
   --base-url http://localhost:5173
 ```
+
+Для `browser_roles_visual.py` нужны временные доступы администратора:
+
+```bash
+export E2E_ADMIN_EMAIL='admin@example.test'
+export E2E_ADMIN_PASSWORD='use-a-private-demo-password'
+```
+
+Замените значения на доступы из приватной demo-конфигурации. Не сохраняйте
+пароль в репозитории.
 
 Подробное описание находится в [uat-execution.md](uat-execution.md).
 
@@ -638,6 +663,8 @@ npm --prefix frontend run build
 - сохранение формы при переключении языка;
 - accessibility-проверки `Tab`, `Shift+Tab`, `Escape`;
 - запрет хранения PAN/CVC;
+- защита от повторной оплаты: backend Idempotency-Key, уникальная БД-операция
+  и сохранение ключа в sessionStorage до терминального результата;
 - сохранение данных после restart и корректность миграций.
 
 ### 4. Бердебек Әмір

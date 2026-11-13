@@ -6,6 +6,7 @@ import {
   RefreshCw,
   TriangleAlert,
 } from "lucide-react";
+import { Alert, CircularProgress } from "@mui/material";
 import { api } from "../api";
 import { useApp } from "../context";
 import { money, formatTime } from "../i18n";
@@ -22,6 +23,18 @@ const scenarios = {
   timeout_failure: "cardTimeoutFailure",
   expired: "cardExpired",
 };
+function paymentOperationKey(bookingId) {
+  const storageKey = `sapar-payment-key:${bookingId}`;
+  try {
+    const saved = sessionStorage.getItem(storageKey);
+    if (saved) return saved;
+    const created = crypto.randomUUID();
+    sessionStorage.setItem(storageKey, created);
+    return created;
+  } catch {
+    return crypto.randomUUID();
+  }
+}
 export default function PaymentForm({ booking, onChange }) {
   const { t, lang, token } = useApp();
   const instruments = useResource("/payments/test-instruments", { auth: true });
@@ -41,7 +54,7 @@ export default function PaymentForm({ booking, onChange }) {
   const [error, setError] = useState(null);
   const [busy, setBusy] = useState(false);
   const guard = useRef(false);
-  const idem = useRef(crypto.randomUUID());
+  const idem = useRef(paymentOperationKey(booking.id));
   const update = (key, value) =>
     setForm((current) => ({ ...current, [key]: value }));
   const run = async (path, body) => {
@@ -57,8 +70,12 @@ export default function PaymentForm({ booking, onChange }) {
         body,
       });
       setPayment(result);
-      if (["succeeded", "failed", "cancelled"].includes(result.status))
+      if (["succeeded", "failed", "cancelled"].includes(result.status)) {
+        try {
+          sessionStorage.removeItem(`sapar-payment-key:${booking.id}`);
+        } catch {}
         idem.current = crypto.randomUUID();
+      }
       if (result.status === "succeeded") onChange();
     } catch (error) {
       setError(error);
@@ -103,10 +120,10 @@ export default function PaymentForm({ booking, onChange }) {
         </div>
       )}
       {payment?.status === "succeeded" && (
-        <div className="payment-status succeeded" role="status">
+        <Alert severity="success" className="payment-status succeeded" role="status">
           <CheckCircle2 size={25} />
           {t("paymentSuccess")}
-        </div>
+        </Alert>
       )}
       {payment?.status === "unknown" && (
         <div className="payment-status unknown">
@@ -118,7 +135,9 @@ export default function PaymentForm({ booking, onChange }) {
               className="button secondary"
               disabled={busy}
               onClick={() => run(`/payments/${payment.id}/reconcile`)}
+              aria-busy={busy}
             >
+              {busy && <CircularProgress size={16} aria-label={t("loading")} />}
               {t(busy ? "loading" : "reconcile")}
             </button>
           </div>
@@ -260,7 +279,12 @@ export default function PaymentForm({ booking, onChange }) {
             </label>
           </div>
           <FormError error={error} />
-          <button className="button primary full-width" disabled={busy}>
+          <button
+            className="button primary full-width"
+            disabled={busy}
+            aria-busy={busy}
+          >
+            {busy && <CircularProgress size={18} color="inherit" aria-label={t("loading")} />}
             {t(
               busy
                 ? "sending"
