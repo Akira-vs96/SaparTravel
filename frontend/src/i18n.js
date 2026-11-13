@@ -104,6 +104,11 @@ const strings = {
     "Демонстрациялық каталог. Брондаулар сервисті тексеруге арналған.",
     "Demonstration catalog. Bookings are intended for testing the service.",
   ],
+  indicativeRates: [
+    "Ориентир: эквивалент в USD/RUB по справочному курсу, оплата только в KZT.",
+    "Бағдар: USD/RUB баламасы анықтамалық бағаммен, төлем тек KZT-мен.",
+    "Guide only: USD/RUB equivalents use an indicative rate; payment is in KZT.",
+  ],
   heroLabel: [
     "МЕНЬШЕ ПЛАНОВ. БОЛЬШЕ ОТКРЫТИЙ.",
     "АЗ ЖОСПАР. КӨП ЖАҢАЛЫҚ.",
@@ -1333,6 +1338,15 @@ export const money = (amount, lang = "ru", currency = "KZT") =>
     maximumFractionDigits: 2,
     currencyDisplay: "narrowSymbol",
   }).format(Number(amount || 0));
+const DISPLAY_RATES = { USD: 500, RUB: 5.5 };
+export const priceBreakdown = (amount, lang = "ru") => {
+  const value = Number(amount || 0);
+  return {
+    primary: money(value, lang, "KZT"),
+    usd: money(value / DISPLAY_RATES.USD, "en", "USD"),
+    rub: money(value / DISPLAY_RATES.RUB, "ru", "RUB"),
+  };
+};
 export const formatTime = (value, lang = "ru") =>
   new Intl.DateTimeFormat(localeFor(lang), {
     dateStyle: "medium",

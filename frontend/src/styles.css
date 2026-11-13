@@ -235,6 +235,18 @@ hr {
 .intro-text {
   color: var(--muted);
 }
+.price-display {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.price-display small {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
 .intro-text {
   font-size: 15px;
   max-width: 660px;

@@ -10,6 +10,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useApp } from "../context";
 import { money } from "../i18n";
 import { Photo, SaveButton } from "./common";
+import PriceDisplay from "./PriceDisplay";
 
 export default function TourCard({ tour }) {
   const { lang, t, comparison, toggleCompare } = useApp();
@@ -59,7 +60,11 @@ export default function TourCard({ tour }) {
         <div className="tour-card-footer">
           <span>
             <small>{t("from")} </small>
-            <strong>{money(tour.price_from, lang)}</strong>
+            <PriceDisplay
+              amount={tour.price_from}
+              lang={lang}
+              note={t("indicativeRates")}
+            />
             <small> / {t("perPerson")}</small>
           </span>
           <Link

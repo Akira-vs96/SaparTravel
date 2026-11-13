@@ -29,6 +29,7 @@ import {
 } from "../components/common";
 import Reviews from "../components/Reviews";
 import CancellationPolicy from "../components/CancellationPolicy";
+import PriceDisplay from "../components/PriceDisplay";
 export default function Trip() {
   const { slug } = useParams();
   const { lang } = useApp();
@@ -246,7 +247,11 @@ function TripContent({ tour }) {
           <form className="booking-panel" onSubmit={book}>
             <div className="booking-price">
               <span>{t("from")}</span>
-              <strong>{money(tour.price_from, lang)}</strong>
+              <PriceDisplay
+                amount={tour.price_from}
+                lang={lang}
+                note={t("indicativeRates")}
+              />
               <span>{t("perPerson")}</span>
             </div>
             <div className="booking-divider" />
