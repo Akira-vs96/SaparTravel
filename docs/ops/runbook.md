@@ -32,6 +32,27 @@ docker compose logs --tail=100 api
 3. Проверить регистрацию, поиск, создание и отмену брони, доступ к чужим данным и кабинеты разных ролей.
 4. Проверить три языка и узкий экран.
 5. Сделать резервную копию рабочей базы и проверить её восстановление в отдельной среде.
+6. Проверить мониторинг демо-стенда в [monitoring-setup.md](monitoring-setup.md).
+
+## Инструменты QA и мониторинга
+
+Быстрый API smoke запускается через коллекцию Bruno:
+
+```bash
+bruno run api/bruno --env Local
+```
+
+Нагрузочный smoke запускается через k6; полный CI-профиль остаётся в
+`scripts.catalog_load`:
+
+```bash
+k6 run -e BASE_URL=http://localhost:8000 \
+  -e K6_RATE=20 -e K6_DURATION=30s load/k6/catalog-health.js
+```
+
+Uptime Kuma поднимается вместе с Compose и доступен на
+http://localhost:3001. Инструкция создания HTTP-мониторов и ограничения
+демо-проверки находятся в [monitoring-setup.md](monitoring-setup.md).
 
 ## Резервное копирование
 
