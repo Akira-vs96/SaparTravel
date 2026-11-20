@@ -146,7 +146,10 @@ def _date_filter(value: str) -> date | None:
 def answer(db: Session, *, api_key: str, model: str, lang: str, history: list[dict]) -> dict:
     category_rows = db.scalars(select(CategoryRecord).order_by(CategoryRecord.code)).all()
     destination_rows = db.scalars(select(Destination).order_by(Destination.slug).limit(200)).all()
-    categories = [{"code": item.code, "name": localized(item, "name", lang)} for item in category_rows]
+    categories = [{
+        "code": item.code,
+        "name": getattr(item, "name_" + lang, None) or item.code,
+    } for item in category_rows]
     destinations = [{
         "slug": item.slug,
         "name": localized(item, "name", lang),
