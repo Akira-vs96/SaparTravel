@@ -31,6 +31,24 @@ export default function Assistant() {
     inputRef.current?.focus();
   };
 
+  const filterSummary = (filters = {}) => {
+    const values = [];
+    const locale = lang === "en" ? "en-US" : lang === "kk" ? "kk-KZ" : "ru-KZ";
+    const amount = new Intl.NumberFormat(locale).format(filters.budget || 0);
+    if (filters.budget) values.push(`${t("assistantFilterBudget")}: ${amount} ₸`);
+    if (filters.category) values.push(`${t("assistantFilterCategory")}: ${t(filters.category)}`);
+    if (filters.duration_max) values.push(`${t("assistantFilterDuration")}: ${filters.duration_max}`);
+    if (filters.travelers) values.push(`${t("assistantFilterTravelers")}: ${filters.travelers}`);
+    if (filters.destination_slug) {
+      const destination = filters.destination_slug.split("-").map((word) => word === "usa" ? "USA" : word).join(" ");
+      values.push(`${t("assistantFilterDestination")}: ${destination}`);
+    }
+    if (filters.date_from || filters.date_to) {
+      values.push(`${t("assistantFilterDates")}: ${filters.date_from || "…"} — ${filters.date_to || "…"}`);
+    }
+    return values;
+  };
+
   const send = async (value = draft) => {
     const content = value.trim();
     if (!content || busy) return;
@@ -46,13 +64,16 @@ export default function Assistant() {
       { role: "user", content },
     ].slice(-10);
     while (history[0]?.role === "assistant") history.shift();
+    const currentFilters = [...messages].reverse().find(
+      (message) => message.role === "assistant" && !message.welcome && message.filters,
+    )?.filters;
     setMessages((current) => [...current, userMessage]);
     setDraft("");
     setBusy(true);
     try {
       const data = await api("/travel-assistant/chat", {
         method: "POST",
-        body: { lang, messages: history },
+        body: { lang, messages: history, current_filters: currentFilters || null },
       });
       setMessages((current) => [
         ...current,
@@ -62,6 +83,7 @@ export default function Assistant() {
           content: data.reply,
           items: data.items || [],
           search: Boolean(data.search),
+          filters: data.filters || {},
         },
       ]);
     } catch (error) {
@@ -112,6 +134,18 @@ export default function Assistant() {
                   <div className={`assistant-bubble${message.error ? " is-error" : ""}`}>
                     {message.content}
                   </div>
+                  {!message.error && message.filters && (() => {
+                    const summary = filterSummary(message.filters);
+                    return (
+                      <div className="assistant-applied-filters">
+                        <strong>{t("assistantAppliedFiltersTitle")}</strong>
+                        {summary.length ? (
+                          <ul>{summary.map((value) => <li key={value}>{value}</li>)}</ul>
+                        ) : <p>{t("assistantNoFilters")}</p>}
+                        <small>{t("assistantAppliedFiltersHint")}</small>
+                      </div>
+                    );
+                  })()}
                   {message.items?.length > 0 && (
                     <div className="assistant-results">
                       <h2>{t("assistantToursFound")}</h2>

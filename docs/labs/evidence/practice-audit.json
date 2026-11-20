@@ -2984,7 +2984,9 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/README.md",
+        "docs/adr/ADR-006.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3000,7 +3002,9 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/README.md",
+        "docs/labs/lab-12/travel-risk-card.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3016,7 +3020,10 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "scripts/course/travel_assistant_eval.py",
+        "docs/labs/lab-12/travel-assistant-evidence/rules.jsonl",
+        "docs/labs/lab-12/travel-assistant-evidence/results.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3032,7 +3039,10 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "evals/travel-assistant/dataset.jsonl",
+        "evals/travel-assistant/annotation-a.csv",
+        "evals/travel-assistant/annotation-b.csv"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3048,7 +3058,10 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "scripts/course/compare_travel_annotations.py",
+        "evals/travel-assistant/annotation-a.csv",
+        "evals/travel-assistant/annotation-b.csv"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3064,7 +3077,8 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "evals/travel-assistant/dataset.jsonl"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3080,7 +3094,8 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "evals/travel-assistant/dataset.jsonl"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3096,7 +3111,9 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-assistant-evidence/zero-shot.jsonl",
+        "docs/labs/lab-12/travel-assistant-evidence/few-shot.jsonl"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3112,7 +3129,8 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-assistant-evidence/results.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3128,7 +3146,9 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-assistant-evidence/results.json",
+        "docs/labs/lab-12/travel-assistant-evidence/error-analysis.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3144,14 +3164,16 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "backend/app/services/travel_assistant_service.py",
+        "docs/labs/lab-12/travel-risk-card.md"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ12-S12",
       "lab": 12,
-      "factual_status": "partial",
+      "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-12/practice/README.md",
       "factual_evidence": [
         "evals/pm-routing/dataset.jsonl",
@@ -3160,14 +3182,15 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-assistant-evidence/cost.json"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ12-S13",
       "lab": 12,
-      "factual_status": "partial",
+      "factual_status": "verified",
       "exercise_evidence": "docs/labs/lab-12/practice/README.md",
       "factual_evidence": [
         "evals/pm-routing/dataset.jsonl",
@@ -3176,7 +3199,9 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-assistant-evidence/cost.json",
+        "docs/adr/ADR-006.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3192,14 +3217,15 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-risk-card.md"
       ],
       "human_event_certified_by_exercise": false
     },
     {
       "id": "LZ12-S15",
       "lab": 12,
-      "factual_status": "verified",
+      "factual_status": "documented",
       "exercise_evidence": "evals/pm-routing/dataset.jsonl",
       "factual_evidence": [
         "evals/pm-routing/dataset.jsonl",
@@ -3208,7 +3234,8 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/adr/ADR-006.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3224,7 +3251,10 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "evals/travel-assistant/annotation-a.csv",
+        "evals/travel-assistant/annotation-b.csv",
+        "scripts/course/compare_travel_annotations.py"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3240,7 +3270,10 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-assistant-evidence/zero-shot.jsonl",
+        "docs/labs/lab-12/travel-assistant-evidence/few-shot.jsonl",
+        "docs/labs/lab-12/travel-assistant-evidence/results.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3256,7 +3289,9 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-assistant-evidence/results.json",
+        "docs/adr/ADR-006.md"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3272,7 +3307,8 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-assistant-evidence/cost.json"
       ],
       "human_event_certified_by_exercise": false
     },
@@ -3288,7 +3324,10 @@
         "docs/adr/ADR-005.md",
         "docs/labs/lab-12/evidence/results.json",
         "docs/labs/lab-12/evidence/cost.json",
-        "docs/labs/lab-12/evidence/provenance.json"
+        "docs/labs/lab-12/evidence/provenance.json",
+        "docs/labs/lab-12/travel-risk-card.md",
+        "frontend/src/pages/Assistant.jsx",
+        "frontend/src/i18n.js"
       ],
       "human_event_certified_by_exercise": false
     },

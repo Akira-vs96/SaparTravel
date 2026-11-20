@@ -1,0 +1,322 @@
+{
+  "data_kind": "synthetic_provisional_evaluation",
+  "lab": 12,
+  "function": "Extract travel search filters from natural language",
+  "gold_human_approved": false,
+  "independent_human_annotators": 0,
+  "examples": 34,
+  "difficult_examples": 12,
+  "model": "gemini-3.5-flash-lite",
+  "actual_model_versions": [
+    "gemini-3.5-flash-lite"
+  ],
+  "temperature": 0,
+  "seed": 42,
+  "catalog_context": "Production-equivalent shape per locale: category code/name; destination slug/name/country. No descriptions, image URLs or tour facts are sent.",
+  "script_sha256": "30b8a80fcb38841aed0a674c3e690efb02564f9a42ba1c024b7173ced8b2d7d6",
+  "dataset_sha256": "b63487e9198b265ee387348e52c5a7b4bc74d90c6d44f34daa2549c643665588",
+  "run_date_utc": "2026-11-20T07:39:00.653437+00:00",
+  "acceptance_criterion": ">= 0.90 exact-record match, >= 0.95 exact accuracy for each field, and zero unsupported category/destination values; human review required before acceptance.",
+  "metrics_are_provisional": true,
+  "baseline_was_tuned_alongside_this_synthetic_development_set": true,
+  "diagnostic_metrics": {
+    "rules": {
+      "examples": 34,
+      "exact_record_match": 1.0,
+      "macro_f1_slots": 1.0,
+      "micro_f1_slots": 1.0,
+      "search_accuracy": 1.0,
+      "per_field": {
+        "search": {
+          "support": 34,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 34,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "budget": {
+          "support": 30,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 30,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "category": {
+          "support": 29,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 29,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "duration_max": {
+          "support": 26,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 26,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "travelers": {
+          "support": 34,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 34,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "destination_slug": {
+          "support": 25,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 25,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "date_from": {
+          "support": 3,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "date_to": {
+          "support": 3,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        }
+      }
+    },
+    "zero-shot": {
+      "examples": 34,
+      "exact_record_match": 1.0,
+      "macro_f1_slots": 1.0,
+      "micro_f1_slots": 1.0,
+      "search_accuracy": 1.0,
+      "per_field": {
+        "search": {
+          "support": 34,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 34,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "budget": {
+          "support": 30,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 30,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "category": {
+          "support": 29,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 29,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "duration_max": {
+          "support": 26,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 26,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "travelers": {
+          "support": 34,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 34,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "destination_slug": {
+          "support": 25,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 25,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "date_from": {
+          "support": 3,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "date_to": {
+          "support": 3,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        }
+      }
+    },
+    "few-shot": {
+      "examples": 34,
+      "exact_record_match": 0.9705882352941176,
+      "macro_f1_slots": 0.9945054945054945,
+      "micro_f1_slots": 0.9933333333333333,
+      "search_accuracy": 1.0,
+      "per_field": {
+        "search": {
+          "support": 34,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 34,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "budget": {
+          "support": 30,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 30,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "category": {
+          "support": 29,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 29,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "duration_max": {
+          "support": 26,
+          "exact_correct": 33,
+          "exact_accuracy": 0.9705882352941176,
+          "tp": 25,
+          "fp": 1,
+          "fn": 1,
+          "f1": 0.9615384615384616
+        },
+        "travelers": {
+          "support": 34,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 34,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "destination_slug": {
+          "support": 25,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 25,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "date_from": {
+          "support": 3,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        },
+        "date_to": {
+          "support": 3,
+          "exact_correct": 34,
+          "exact_accuracy": 1.0,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "f1": 1.0
+        }
+      }
+    }
+  },
+  "errors": {
+    "rules": [],
+    "zero-shot": [],
+    "few-shot": [
+      {
+        "id": "TA-009",
+        "difficulty": "standard",
+        "expected": {
+          "search": true,
+          "filters": {
+            "budget": 200000,
+            "category": "Nature",
+            "duration_max": 3,
+            "travelers": 2,
+            "destination_slug": "kazakhstan",
+            "date_from": null,
+            "date_to": null
+          }
+        },
+        "predicted": {
+          "search": true,
+          "filters": {
+            "budget": 200000,
+            "category": "Nature",
+            "duration_max": 2,
+            "travelers": 2,
+            "destination_slug": "kazakhstan",
+            "date_from": null,
+            "date_to": null
+          }
+        }
+      }
+    ]
+  },
+  "abstention_policy": "Unknown destinations/categories and invalid dates are cleared to null; prompt instructs the model to ask a clarification when dates are ambiguous. No calibrated numeric confidence score is exposed.",
+  "limitations": [
+    "Every case is synthetic and authored for this dry run; the set is not representative customer data.",
+    "The deterministic baseline was built alongside these examples, so its score is a harness check rather than an unbiased comparison. Freeze rules and evaluate on new human-reviewed cases before deciding whether AI wins.",
+    "Expected filters are AI-authored and remain provisional until two people independently annotate and a product owner adjudicates disagreements.",
+    "Synthetic results do not establish conversion lift, time saved, or production error rates.",
+    "The rules baseline is a deterministic extraction benchmark, while the deployed manual catalog form remains a stronger no-model fallback for actual visitors."
+  ],
+  "raw_generation_script_sha256": "0e8dce7172b867a050c3b00b07b1f6fe444e0df2c1118756a3a9de54a529b8ad",
+  "raw_generation_run_date_utc": "2026-11-20T07:39:00.653437+00:00",
+  "metrics_recomputed_at_utc": "2026-11-20T07:45:44.367579+00:00",
+  "postprocessing": [
+    "carry forward the previous validated search filters unless the latest user message changes them",
+    "normalize explicit KZT amounts, including Kazakh inflections such as теңгеден, without multiplying unless the user explicitly says per person",
+    "search with useful known filters when a budget changes, the user repeats a search, or explicitly asks for destination suggestions",
+    "search broad catalog recommendations for explicit trip-finding requests even when no filter is available",
+    "do not search across all destinations when the assistant has rejected an unsupported destination and the user has not asked it to choose"
+  ],
+  "postprocessing_note": "Metrics were recomputed from saved raw Gemini JSON after deterministic budget normalization and search-intent safeguards were added. Raw model responses and token usage were not changed.",
+  "postprocessing_script_sha256": "7b454178e4190f439d410615690f0c1c18ce52d5c9318f1a44713613f0eacc03",
+  "service_postprocessing_sha256": "64f7200897068b04c30ba7e0ba6db291e7ebed4d89b341e8358b62983420db53"
+}

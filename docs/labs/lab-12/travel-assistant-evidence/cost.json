@@ -1,0 +1,50 @@
+{
+  "price_date": "2026-11-20",
+  "api_source": "https://ai.google.dev/gemini-api/docs/pricing",
+  "model": "gemini-3.5-flash-lite",
+  "input_usd_per_million": 0.3,
+  "output_usd_per_million": 2.5,
+  "self_host_fixed_monthly_usd_assumption": 64.0,
+  "self_host_fixed_basis": "Planning assumption inherited from LZ8: USD 24 infrastructure + USD 40 administration; not an actual invoice.",
+  "scenarios_are_paid_tier_estimates": true,
+  "token_counts_source": "Gemini usageMetadata returned by the actual generateContent requests; includes the model tokenizer's input/output counts.",
+  "api_invoice_is_actual": false,
+  "local_invoice_total": null,
+  "models": {
+    "zero-shot": {
+      "measured_requests": 34,
+      "mean_input_tokens_gemini": 1183.6764705882354,
+      "mean_output_billable_tokens_gemini": 105.67647058823529,
+      "mean_visible_output_tokens_gemini": 105.67647058823529,
+      "mean_thinking_tokens_gemini": 0,
+      "total_input_tokens": 40245,
+      "total_output_tokens": 3593,
+      "estimated_cost_per_request_paid_usd": 0.0006192941176470588,
+      "scenarios_paid_usd": {
+        "10000": 6.192941176470588,
+        "100000": 61.92941176470588
+      },
+      "estimated_break_even_requests_month": 103343.4650455927
+    },
+    "few-shot": {
+      "measured_requests": 34,
+      "mean_input_tokens_gemini": 1498.6764705882354,
+      "mean_output_billable_tokens_gemini": 87.76470588235294,
+      "mean_visible_output_tokens_gemini": 87.76470588235294,
+      "mean_thinking_tokens_gemini": 0,
+      "total_input_tokens": 50955,
+      "total_output_tokens": 2984,
+      "estimated_cost_per_request_paid_usd": 0.0006690147058823529,
+      "scenarios_paid_usd": {
+        "10000": 6.690147058823529,
+        "100000": 66.90147058823528
+      },
+      "estimated_break_even_requests_month": 95663.06904358913
+    }
+  },
+  "limitations": [
+    "A free tier may make actual API charges zero within its quotas; estimates use the published standard paid tier.",
+    "Self-host break-even is arithmetic only; required throughput, hardware capacity, availability and quality at that scale are not measured.",
+    "Synthetic provisional test prompts are not real customer traffic and are not human-approved gold labels."
+  ]
+}

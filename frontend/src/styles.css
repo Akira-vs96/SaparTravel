@@ -6824,6 +6824,35 @@ table caption {
   background: #fff6f1;
   color: #843e2d;
 }
+.assistant-applied-filters {
+  width: min(620px, 88%);
+  padding: 12px 15px;
+  border: 1px solid #d9e0d8;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.assistant-applied-filters strong {
+  font-size: 12px;
+}
+.assistant-applied-filters ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 8px 0;
+  padding-left: 17px;
+}
+.assistant-applied-filters p {
+  margin: 6px 0;
+  color: var(--muted);
+}
+.assistant-applied-filters small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
 .assistant-loading {
   display: inline-flex;
   align-items: center;
