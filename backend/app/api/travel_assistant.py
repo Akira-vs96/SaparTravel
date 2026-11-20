@@ -21,9 +21,20 @@ class ChatMessage(InputModel):
     content: Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=1200)]
 
 
+class CurrentSearchFilters(InputModel):
+    budget: int | None = Field(default=None, ge=0, le=100_000_000, strict=True)
+    category: str | None = Field(default=None, max_length=30)
+    duration_max: int | None = Field(default=None, ge=0, le=90, strict=True)
+    travelers: int | None = Field(default=None, ge=0, le=20, strict=True)
+    destination_slug: str | None = Field(default=None, max_length=100)
+    date_from: str | None = Field(default=None, max_length=10)
+    date_to: str | None = Field(default=None, max_length=10)
+
+
 class TravelAssistantInput(InputModel):
     lang: Language = "ru"
     messages: list[ChatMessage] = Field(min_length=1, max_length=10)
+    current_filters: CurrentSearchFilters | None = None
 
     @model_validator(mode="after")
     def valid_conversation(self):
@@ -105,6 +116,7 @@ def travel_assistant_chat(data: TravelAssistantInput, request: Request, db: DbSe
             model=settings.gemini_model,
             lang=data.lang,
             history=history,
+            current_filters=data.current_filters.model_dump() if data.current_filters else None,
         )
     except GeminiUnavailable:
         raise HTTPException(503, _detail(data.lang, "unavailable")) from None

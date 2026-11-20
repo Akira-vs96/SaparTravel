@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-11-06",
+  "as_of": "2026-11-20",
   "source": {
     "path": "Методичка по лабораторным работам (для студентов)(1).docx",
     "sha256": "809d807c719793d826b4edbbac54d7a92e62fd52897368109b4621fe7190ee7f",
@@ -4622,7 +4622,7 @@
       "number": 12,
       "title": "План ИИ-функции: evals, стоимость, риски",
       "report": "docs/labs/lab-12/README.md",
-      "findings": "Учебные недостающие действия разобраны в отдельном упражнении с исходными данными и расчётом; фактическая приёмка учитывается отдельно. Работает настоящая локальная Qwen2.5-0.5B через llama.cpp CPU, с pinned weights/runtime. 30 реальных названий issues, два промпта по 30 запусков, raw replies, token counts и F1 сохранены. По предложенным ассистентом меткам правила лучше модели; ADR отклоняет автоматическое применение. Две независимые человеческие разметки и решение спорных случаев отсутствуют; качество предварительное. Стоимость API — оценка по актуальному прайсу и измеренным Qwen tokens, не реальный счёт другого tokenizer.",
+      "findings": "Основная функция проекта — Gemini-подбор туров из естественного языка; live endpoint проверен отдельно. Для неё есть 34 синтетических кейса, rule baseline, zero/few-shot прогоны, сырые ответы, токены, error analysis, стоимость, risk card и ADR-006. Результаты остаются диагностическими: датасет синтетический, baseline разработан вместе с примерами, конверсия не измерена. Для финальной сдачи нужны реальные обезличенные запросы, две независимые человеческие разметки, PO-арбитраж и holdout. Предыдущий PM-routing эксперимент оставлен как дополнительный артефакт и не подменяет туристическую функцию.",
       "artifacts": [
         {
           "path": "docs/labs/lab-12/practice/README.md",
@@ -4671,13 +4671,74 @@
         {
           "label": "Актуальный API-снимок GitHub Project",
           "path": "docs/projects/evidence/current.json"
+        },
+        {
+          "path": "evals/travel-assistant/README.md",
+          "label": "Набор и методика eval туристического консультанта"
+        },
+        {
+          "path": "evals/travel-assistant/dataset.jsonl",
+          "label": "34 синтетических запроса туристического поиска"
+        },
+        {
+          "path": "evals/travel-assistant/annotation-a.csv",
+          "label": "Слепая форма разметчика A"
+        },
+        {
+          "path": "evals/travel-assistant/annotation-b.csv",
+          "label": "Слепая форма разметчика B"
+        },
+        {
+          "path": "scripts/course/travel_assistant_eval.py",
+          "label": "Генератор и измерение rule/zero-shot/few-shot"
+        },
+        {
+          "path": "scripts/course/compare_travel_annotations.py",
+          "label": "Сравнение независимых человеческих аннотаций"
+        },
+        {
+          "path": "docs/labs/lab-12/travel-assistant-evidence/README.md",
+          "label": "Пояснение к артефактам туристического eval"
+        },
+        {
+          "path": "docs/labs/lab-12/travel-assistant-evidence/results.json",
+          "label": "Метрики и поштучные ошибки Gemini"
+        },
+        {
+          "path": "docs/labs/lab-12/travel-assistant-evidence/error-analysis.md",
+          "label": "Поштучный разбор ошибок Gemini"
+        },
+        {
+          "path": "docs/labs/lab-12/travel-assistant-evidence/cost.json",
+          "label": "Фактические токены и оценка стоимости"
+        },
+        {
+          "path": "docs/labs/lab-12/travel-assistant-evidence/zero-shot.jsonl",
+          "label": "Сырые zero-shot ответы Gemini"
+        },
+        {
+          "path": "docs/labs/lab-12/travel-assistant-evidence/few-shot.jsonl",
+          "label": "Сырые few-shot ответы Gemini"
+        },
+        {
+          "path": "docs/labs/lab-12/travel-assistant-evidence/rules.jsonl",
+          "label": "Предсказания детерминированного baseline"
+        },
+        {
+          "path": "docs/labs/lab-12/travel-risk-card.md",
+          "label": "Карточка рисков Gemini-подбора"
+        },
+        {
+          "path": "docs/adr/ADR-006.md",
+          "label": "ADR-006: ограниченный пилот туристического поиска"
         }
       ],
       "commands": [
         ".venv/bin/python -m scripts.course.practice --check",
         ".venv/bin/python -m scripts.course.local_model --directory /tmp/sapar-model --serve",
         "# Второй терминал:",
-        ".venv/bin/python -m scripts.course.ai --dataset evals/pm-routing/dataset.jsonl --output-directory test-results/evals"
+        ".venv/bin/python -m scripts.course.ai --dataset evals/pm-routing/dataset.jsonl --output-directory test-results/evals",
+        ".venv/bin/python -m scripts.course.travel_assistant_eval"
       ],
       "steps": [
         {
@@ -4695,7 +4756,9 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/README.md",
+            "docs/adr/ADR-006.md"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -4714,7 +4777,9 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/README.md",
+            "docs/labs/lab-12/travel-risk-card.md"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -4733,7 +4798,10 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "scripts/course/travel_assistant_eval.py",
+            "docs/labs/lab-12/travel-assistant-evidence/rules.jsonl",
+            "docs/labs/lab-12/travel-assistant-evidence/results.json"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -4752,9 +4820,12 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "evals/travel-assistant/dataset.jsonl",
+            "evals/travel-assistant/annotation-a.csv",
+            "evals/travel-assistant/annotation-b.csv"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Есть 34 кейса, в том числе сложные многоходовые, но они синтетические; нужен новый набор реальных обезличенных запросов."
         },
         {
           "kind": "step",
@@ -4771,9 +4842,12 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "scripts/course/compare_travel_annotations.py",
+            "evals/travel-assistant/annotation-a.csv",
+            "evals/travel-assistant/annotation-b.csv"
           ],
-          "note": "Эталонные метки предложены ассистентом; нужны два независимых человека и разрешение споров."
+          "note": "Две слепые формы A/B подготовлены; нужны реальные независимые разметчики и решение PO по расхождениям."
         },
         {
           "kind": "step",
@@ -4790,7 +4864,8 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "evals/travel-assistant/dataset.jsonl"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -4809,7 +4884,8 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "evals/travel-assistant/dataset.jsonl"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -4828,7 +4904,9 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-assistant-evidence/zero-shot.jsonl",
+            "docs/labs/lab-12/travel-assistant-evidence/few-shot.jsonl"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -4847,9 +4925,10 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-assistant-evidence/results.json"
           ],
-          "note": "F1 вычислена, но gold не утверждён; diagnostic quality не сертифицирована."
+          "note": "Метрики рассчитаны, но эталоны synthetic AI-proposed; для настоящей оценки нужен human gold и отдельный holdout."
         },
         {
           "kind": "step",
@@ -4866,7 +4945,9 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-assistant-evidence/results.json",
+            "docs/labs/lab-12/travel-assistant-evidence/error-analysis.md"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -4885,9 +4966,11 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "backend/app/services/travel_assistant_service.py",
+            "docs/labs/lab-12/travel-risk-card.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Неуказанные значения остаются пустыми; для неоднозначной даты консультант просит уточнение. Числовая уверенность Gemini не калибрована."
         },
         {
           "kind": "step",
@@ -4895,7 +4978,7 @@
           "text": "Посчитайте стоимость эксплуатации. Длину запроса измеряйте токенизатором, а не на глаз. Формула: запросов в месяц × средняя длина в токенах × тариф из опубликованного прайса. Обязательно укажите дату, на которую взят тариф, и посчитайте сценарий роста нагрузки в 10 раз.",
           "source_paragraph": 566,
           "id": "LZ12-S12",
-          "status": "partial",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
             "evals/pm-routing/dataset.jsonl",
@@ -4904,9 +4987,10 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-assistant-evidence/cost.json"
           ],
-          "note": "Qwen tokens измерены; применение к тарифу другого API — proxy, не его фактический счёт."
+          "note": "На живых Gemini-запросах сохранены token usage counts; стоимость рассчитана по опубликованному тарифу с датой и сценариями 10x. Это оценка платного тарифа, не счёт."
         },
         {
           "kind": "step",
@@ -4914,7 +4998,7 @@
           "text": "Отдельно посчитайте вариант со своим сервером и найдите точку, где он становится дешевле API. Для учебного проекта эта точка обычно недостижима — так и напишите: вывод «self-hosted дешевле» без расчёта точки перелома неверен.",
           "source_paragraph": 567,
           "id": "LZ12-S13",
-          "status": "partial",
+          "status": "verified",
           "requires_people": false,
           "evidence": [
             "evals/pm-routing/dataset.jsonl",
@@ -4923,9 +5007,11 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-assistant-evidence/cost.json",
+            "docs/adr/ADR-006.md"
           ],
-          "note": "Точка перелома рассчитана как оценка; качество API и CPU-мощность на таком объёме не подтверждены."
+          "note": "Точка перелома рассчитана по измеренным токенам и явному self-host допущению $64/мес.; пропускная способность и качество на этой нагрузке не подтверждены."
         },
         {
           "kind": "step",
@@ -4942,7 +5028,8 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-risk-card.md"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -4952,7 +5039,7 @@
           "text": "Примите решение «делаем / не делаем» и оформите ADR с отвергнутыми вариантами и критерием пересмотра. Если тексты содержат персональные данные, вопрос выбора площадки решается не ценой — и это должно быть видно в записи решения.",
           "source_paragraph": 569,
           "id": "LZ12-S15",
-          "status": "verified",
+          "status": "documented",
           "requires_people": false,
           "evidence": [
             "evals/pm-routing/dataset.jsonl",
@@ -4961,9 +5048,10 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/adr/ADR-006.md"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "ADR-006 рекомендует ограниченный пилот, содержит альтернативы и критерий пересмотра; формальное решение Product Owner отдельно не записано."
         },
         {
           "kind": "check",
@@ -4980,9 +5068,12 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "evals/travel-assistant/annotation-a.csv",
+            "evals/travel-assistant/annotation-b.csv",
+            "scripts/course/compare_travel_annotations.py"
           ],
-          "note": "Нужно фактическое участие/подтверждение; подготовленный документ не заменяет событие."
+          "note": "Формы готовы, но независимая разметка и PO-арбитраж не подтверждены."
         },
         {
           "kind": "check",
@@ -4999,7 +5090,10 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-assistant-evidence/zero-shot.jsonl",
+            "docs/labs/lab-12/travel-assistant-evidence/few-shot.jsonl",
+            "docs/labs/lab-12/travel-assistant-evidence/results.json"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -5018,9 +5112,11 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-assistant-evidence/results.json",
+            "docs/adr/ADR-006.md"
           ],
-          "note": "Модель уступает правилам; ADR не разрешает внедрение. Положительное качество не выдумано."
+          "note": "AI не превосходит совместно настроенный rule baseline на synthetic данных; human holdout отсутствует. Положительный результат не заявляется."
         },
         {
           "kind": "check",
@@ -5037,7 +5133,8 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-assistant-evidence/cost.json"
           ],
           "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
         },
@@ -5056,9 +5153,12 @@
             "docs/adr/ADR-005.md",
             "docs/labs/lab-12/evidence/results.json",
             "docs/labs/lab-12/evidence/cost.json",
-            "docs/labs/lab-12/evidence/provenance.json"
+            "docs/labs/lab-12/evidence/provenance.json",
+            "docs/labs/lab-12/travel-risk-card.md",
+            "frontend/src/pages/Assistant.jsx",
+            "frontend/src/i18n.js"
           ],
-          "note": "Результат и способ проверки приведены в артефактах этой ЛЗ; проектные оценки не объявлены фактом."
+          "note": "Страница обозначает Gemini; распознанные фильтры видны и могут быть исправлены следующим сообщением."
         }
       ],
       "practice": {
