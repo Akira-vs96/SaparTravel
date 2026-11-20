@@ -36,10 +36,13 @@ class Settings(BaseSettings):
     smtp_timeout_seconds: int = Field(default=10, ge=1, le=30)
     mail_max_attempts: int = Field(default=5, ge=1, le=20)
     mail_retry_seconds: int = Field(default=60, ge=1, le=3600)
+    gemini_api_key: SecretStr | None = None
+    gemini_model: str = Field(default="gemini-3.5-flash-lite", min_length=1, max_length=100,
+                              pattern=r"^[A-Za-z0-9._-]+$")
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore", hide_input_in_errors=True)
 
-    @field_validator("admin_email", "admin_password", "smtp_from_email", "smtp_password", mode="before")
+    @field_validator("admin_email", "admin_password", "smtp_from_email", "smtp_password", "gemini_api_key", mode="before")
     @classmethod
     def optional_credentials(cls, value):
         return None if value == "" else value

@@ -36,6 +36,7 @@ export default function Layout() {
           </Link>
           <nav className="desktop-nav" aria-label={t("menu")}>
             <NavLink to="/explore">{t("explore")}</NavLink>
+            <NavLink to="/assistant">{t("assistantNav")}</NavLink>
             <a href="/#destinations">{t("destinations")}</a>
             <NavLink to="/about">{t("about")}</NavLink>
             <NavLink to="/support">{t("support")}</NavLink>
@@ -100,6 +101,7 @@ export default function Layout() {
             onClick={() => setMenuOpen(false)}
           >
             <Link to="/explore">{t("explore")}</Link>
+            <Link to="/assistant">{t("assistantNav")}</Link>
             <Link to="/favorites">{t("favorites")}</Link>
             <Link to="/bookings">{t("bookings")}</Link>
             <Link to="/compare">

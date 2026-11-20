@@ -16,6 +16,7 @@ import { Compare, Notifications, SavedSearches } from "./pages/TravelTools";
 import Support, { SupportDetail } from "./pages/Support";
 import Password from "./pages/Password";
 import Recommendations from "./pages/Recommendations";
+import Assistant from "./pages/Assistant";
 import "./styles.css";
 
 function About() {
@@ -85,6 +86,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="explore" element={<Catalog />} />
             <Route path="recommendations" element={<Recommendations />} />
+            <Route path="assistant" element={<Assistant />} />
             <Route path="trips/:slug" element={<Trip />} />
             <Route path="login" element={<Auth key="login" />} />
             <Route path="register" element={<Auth key="register" register />} />

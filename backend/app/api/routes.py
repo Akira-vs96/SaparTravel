@@ -67,10 +67,16 @@ def recommendations(
     category: Category | None = None,
     duration_max: int | None = Query(default=None, ge=1, le=90),
     travelers: int = Query(default=1, ge=1, le=20),
+    destination: str | None = Query(default=None, max_length=100),
+    date_from: date | None = None,
+    date_to: date | None = None,
     lang: Language = "ru",
 ):
     from app.services.recommendation_service import recommend
-    return recommend(db, budget=budget, category=category, duration_max=duration_max, travelers=travelers, lang=lang)
+    if date_from and date_to and date_to < date_from:
+        raise HTTPException(422, "Дата окончания диапазона не может быть раньше начала.")
+    return recommend(db, budget=budget, category=category, duration_max=duration_max, travelers=travelers,
+                     destination_slug=destination, date_from=date_from, date_to=date_to, lang=lang)
 
 
 @router.get("/catalog")

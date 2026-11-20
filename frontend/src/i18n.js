@@ -1308,6 +1308,38 @@ Object.assign(strings, {
   responseOverdue: ["Срок первой реакции истёк", "Алғашқы жауап мерзімі өтті", "The first response is overdue"],
   acknowledgeResponse: ["Подтверждаю приоритет и сообщаю следующий шаг (от 20 символов)", "Басымдықты растап, келесі қадамды хабарлаймын (кемінде 20 таңба)", "I confirm the priority and describe the next step (at least 20 characters)"],
 });
+Object.assign(strings, {
+  assistantNav: ["ИИ-подбор", "ИИ таңдауы", "AI trip finder"],
+  assistantTitle: ["Подберём путешествие вместе", "Сапарды бірге таңдайық", "Let's find your next trip"],
+  assistantIntro: [
+    "Опишите, куда и когда хотите поехать, сколько вас будет и какой бюджет. Консультант найдёт подходящие варианты в каталоге.",
+    "Қайда және қашан барғыңыз келетінін, адам санын және бюджетіңізді жазыңыз. Кеңесші каталогтан сәйкес турларды табады.",
+    "Tell us where and when you want to go, how many people are travelling, and your budget. The assistant will look for matches in the catalog.",
+  ],
+  assistantPrivacy: [
+    "Ответ формирует Gemini. Не отправляйте личные или платёжные данные. Цены и наличие мест проверяются по каталогу сайта.",
+    "Жауапты Gemini жасайды. Жеке немесе төлем деректерін жібермеңіз. Бағалар мен бос орындар сайт каталогынан тексеріледі.",
+    "Gemini generates the reply. Do not send personal or payment details. Prices and availability come from the site catalog.",
+  ],
+  assistantWelcome: [
+    "Здравствуйте! Расскажите, каким вы представляете путешествие — помогу найти варианты.",
+    "Сәлеметсіз бе! Қандай сапарды қалайтыныңызды айтыңыз — нұсқаларды табуға көмектесемін.",
+    "Hello! Tell me what kind of trip you have in mind and I’ll help find some options.",
+  ],
+  assistantPlaceholder: ["Например: нас трое, хотим в горы на 5 дней…", "Мысалы: үшеуміз, тауға 5 күнге барғымыз келеді…", "For example: three of us, looking for a five-day mountain trip…"],
+  assistantSend: ["Отправить", "Жіберу", "Send"],
+  assistantNewChat: ["Новый поиск", "Жаңа іздеу", "New search"],
+  assistantThinking: ["Подбираю варианты…", "Нұсқаларды іздеп жатырмын…", "Looking for matches…"],
+  assistantPromptBudget: ["Найди тур на выходные до 250 000 ₸", "250 000 ₸-ге дейін демалыс күндеріне тур тап", "Find a weekend trip under 250,000 KZT"],
+  assistantPromptNature: ["Хочу поездку на природу для двоих", "Екі адамға табиғатқа сапар іздеймін", "I want a nature trip for two"],
+  assistantPromptBeach: ["Есть ли пляжные туры на неделю?", "Бір аптаға жағажай турлары бар ма?", "Are there any beach trips for a week?"],
+  assistantToursFound: ["Варианты из каталога", "Каталогтағы нұсқалар", "Options from the catalog"],
+  assistantNoMatches: [
+    "Пока не нашлось туров со всеми этими условиями. Попробуйте изменить даты, бюджет или направление.",
+    "Бұл шарттардың барлығына сай тур табылмады. Күндерді, бюджетті немесе бағытты өзгертіп көріңіз.",
+    "No trips currently match all of those preferences. Try changing the dates, budget, or destination.",
+  ],
+});
 export const LANGUAGES = ["ru", "kk", "en"];
 export const CONTINENTS = [
   "Europe",

@@ -6725,3 +6725,207 @@ table caption {
   font-size: 12px;
   line-height: 1.8;
 }
+.assistant-page {
+  max-width: 1120px;
+}
+.assistant-disclosure {
+  max-width: 900px;
+  margin: -16px 0 25px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--coral);
+  background: #f2f1e9;
+  color: #59685d;
+  font-size: 12px;
+}
+.assistant-panel {
+  padding: 0;
+  overflow: hidden;
+  background: #fffefa;
+}
+.assistant-panel-heading {
+  min-height: 76px;
+  padding: 15px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.assistant-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.assistant-identity > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.assistant-identity strong {
+  font-size: 14px;
+}
+.assistant-identity small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.assistant-mark {
+  width: 39px;
+  height: 39px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--green);
+}
+.assistant-panel-heading .button.small {
+  min-height: 38px;
+  padding: 8px 12px;
+  font-size: 11px;
+}
+.assistant-messages {
+  min-height: 270px;
+  max-height: 650px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  padding: 24px clamp(16px, 4vw, 42px);
+  scroll-behavior: smooth;
+}
+.assistant-turn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.assistant-turn.user {
+  align-items: flex-end;
+}
+.assistant-bubble {
+  max-width: min(780px, 88%);
+  padding: 13px 17px;
+  border: 1px solid #e4e8df;
+  border-radius: 17px 17px 17px 4px;
+  background: #f5f6f0;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.assistant-turn.user .assistant-bubble {
+  border-color: var(--green);
+  border-radius: 17px 17px 4px 17px;
+  background: var(--green);
+  color: #fff;
+}
+.assistant-bubble.is-error {
+  border-color: #e8c3b6;
+  background: #fff6f1;
+  color: #843e2d;
+}
+.assistant-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.assistant-results {
+  width: 100%;
+}
+.assistant-results h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+.assistant-results .tour-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.assistant-no-matches {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.assistant-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 0 clamp(16px, 4vw, 42px) 18px;
+}
+.assistant-suggestions button {
+  padding: 9px 13px;
+  border: 1px solid #d9e0d8;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--green);
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: left;
+}
+.assistant-suggestions button:hover:not(:disabled) {
+  border-color: #9fb3a5;
+  background: #f3f5ef;
+}
+.assistant-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 16px 22px 20px;
+  border-top: 1px solid var(--line);
+  background: #fbfbf8;
+}
+.assistant-composer textarea {
+  min-height: 52px;
+  max-height: 150px;
+  resize: vertical;
+  border-color: #d9dfd7;
+  background: #fff;
+}
+.assistant-composer .button {
+  flex: 0 0 auto;
+  min-height: 52px;
+  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 760px) {
+  .assistant-results .tour-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 540px) {
+  .assistant-panel-heading {
+    padding: 13px 14px;
+  }
+  .assistant-panel-heading .button.small {
+    min-width: 0;
+    padding: 7px 9px;
+    font-size: 0;
+  }
+  .assistant-panel-heading .button.small svg {
+    margin: 0;
+  }
+  .assistant-messages {
+    max-height: 560px;
+    padding: 18px 13px;
+  }
+  .assistant-bubble {
+    max-width: 94%;
+    padding: 11px 13px;
+    font-size: 12px;
+  }
+  .assistant-composer {
+    padding: 12px;
+    gap: 8px;
+  }
+  .assistant-composer .button {
+    min-width: 49px;
+    padding: 10px 13px;
+    font-size: 0;
+  }
+  .assistant-composer .button svg {
+    margin: 0;
+  }
+  .assistant-results .tour-grid {
+    grid-template-columns: 1fr;
+  }
+}

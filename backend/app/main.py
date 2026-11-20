@@ -14,6 +14,7 @@ from app.api.identity import router as identity_router
 from app.api.engagement import router as engagement_router
 from app.api.commerce_routes import router as commerce_router
 from app.api.analytics import router as analytics_router
+from app.api.travel_assistant import router as travel_assistant_router
 from app.core.config import get_settings
 from app.core.logging import configure_logging
 from app.db import engine
@@ -77,3 +78,4 @@ app.include_router(identity_router, prefix=settings.api_prefix)
 app.include_router(engagement_router, prefix=settings.api_prefix)
 app.include_router(commerce_router, prefix=settings.api_prefix)
 app.include_router(analytics_router, prefix=settings.api_prefix)
+app.include_router(travel_assistant_router, prefix=settings.api_prefix)

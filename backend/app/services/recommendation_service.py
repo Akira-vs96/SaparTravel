@@ -1,23 +1,34 @@
 """Deterministic recommendations from current catalog and seat inventory."""
 from decimal import Decimal
+from datetime import date
 
 from sqlalchemy import func, select
 from sqlalchemy.orm import lazyload
 
 from app.core.clock import utc_now
-from app.domain.models import Booking, CategoryRecord, Departure, Experience
+from app.domain.models import Booking, CategoryRecord, Departure, Destination, Experience
 from app.services.catalog_service import active_booking_condition, departure_data, experience_data, money, reservation_counts
 from app.services.commerce_service import today
 
 
 def recommend(db, *, budget: Decimal | None = None, category: str | None = None,
-              duration_max: int | None = None, travelers: int = 1, lang: str = "ru"):
+              duration_max: int | None = None, travelers: int = 1, lang: str = "ru",
+              destination_slug: str | None = None, date_from: date | None = None,
+              date_to: date | None = None):
     moment = utc_now()
     occupied = select(func.coalesce(func.sum(Booking.travelers_count), 0)).where(
         Booking.departure_id == Departure.id, active_booking_condition(moment),
     ).correlate(Departure).scalar_subquery()
     eligible = select(Departure).where(Departure.status == "scheduled", Departure.start_date > today(),
                                        Departure.capacity - occupied >= travelers)
+    if date_from is not None:
+        eligible = eligible.where(Departure.start_date >= date_from)
+    if date_to is not None:
+        eligible = eligible.where(Departure.start_date <= date_to)
+    if destination_slug:
+        eligible = eligible.where(Departure.experience_id.in_(
+            select(Experience.id).join(Destination).where(Destination.slug == destination_slug),
+        ))
     if budget is not None:
         # Budget covers the group's base fare. Optional services are priced at checkout.
         eligible = eligible.where(Departure.price * travelers <= budget)
@@ -32,6 +43,8 @@ def recommend(db, *, budget: Decimal | None = None, category: str | None = None,
         query = query.where(Experience.category == category)
     if duration_max is not None:
         query = query.where(Experience.duration_days <= duration_max)
+    destination = db.scalar(select(Destination).where(Destination.slug == destination_slug)) if destination_slug else None
+    destination_label = (getattr(destination, "name_" + lang, None) or destination.slug) if destination else ""
     ordering = ((eligible_prices.c.lowest_price.desc(), Experience.rating.desc()) if budget is not None else
                 (Experience.rating.desc(), Experience.review_count.desc(), eligible_prices.c.lowest_price.asc()))
     rows = db.scalars(query.order_by(*ordering, Experience.id).limit(6)).all()
@@ -64,13 +77,19 @@ def recommend(db, *, budget: Decimal | None = None, category: str | None = None,
         reasons = {
             "ru": (["Укладывается в общий бюджет"] if budget is not None else []) +
                   ([f"Категория: {label}"] if category else []) +
-                  ([f"Длительность до {duration_max} дней"] if duration_max is not None else []) + [f"Есть места для {travelers} участников"],
+                  ([f"Направление: {destination_label}"] if destination else []) +
+                  ([f"Длительность до {duration_max} дней"] if duration_max is not None else []) +
+                  (["Есть выезд в выбранный период"] if date_from or date_to else []) + [f"Есть места для {travelers} участников"],
             "en": (["Fits your group budget"] if budget is not None else []) +
                   ([f"Category: {label}"] if category else []) +
-                  ([f"Up to {duration_max} days"] if duration_max is not None else []) + [f"Seats available for {travelers} travelers"],
+                  ([f"Destination: {destination_label}"] if destination else []) +
+                  ([f"Up to {duration_max} days"] if duration_max is not None else []) +
+                  (["Departure in the selected date range"] if date_from or date_to else []) + [f"Seats available for {travelers} travelers"],
             "kk": (["Топтың бюджетіне сай"] if budget is not None else []) +
                   ([f"Санат: {label}"] if category else []) +
-                  ([f"Ұзақтығы {duration_max} күнге дейін"] if duration_max is not None else []) + [f"{travelers} қатысушыға орын бар"],
+                  ([f"Бағыт: {destination_label}"] if destination else []) +
+                  ([f"Ұзақтығы {duration_max} күнге дейін"] if duration_max is not None else []) +
+                  (["Таңдалған кезеңде шығу бар"] if date_from or date_to else []) + [f"{travelers} қатысушыға орын бар"],
         }
         result = experience_data(experience, lang)
         result.update(reason=" · ".join(reasons[lang]), reason_code="_".join(
