@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "prompt_version": 6,
+      "machine_numeric_discrepancies": [],
+      "claim_number_errors": [],
+      "machine_check_passed": true,
+      "human_review": "pending",
+      "reviewer": null,
+      "semantic_error_rate": null,
+      "generation_seconds": 1.692
+    }
+  ],
+  "provider": "Google Gemini API",
+  "automatic_check_limitation": "Числовая проверка не проверяет смысл, причины, согласования и атрибуцию",
+  "manual_baseline_runs": [],
+  "net_savings_minutes": null,
+  "payback_runs": null,
+  "status": "draft_requires_human_review"
+}

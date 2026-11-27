@@ -1,0 +1,21 @@
+{
+  "text": "{\"summary\": \"За период с 2026-10-19 по 2026-10-25 создано задач: 0, закрыто задач: 0. Успешных CI: 3, неуспешных CI: 2. Записанных развертываний: 0. Согласование с заказчиком: нет данных. Цель спринта: нет данных. На дату снимка 2026-10-30 открытых задач: 28, закрытых задач: 2, проектов в работе: 1, заблокированных проектов: 0.\"}",
+  "usage": {
+    "promptTokenCount": 313,
+    "candidatesTokenCount": 138,
+    "totalTokenCount": 451,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 313
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "model": "gemini-3.5-flash-lite",
+  "provider": "Google Gemini API",
+  "temperature": 0,
+  "seed": 42,
+  "seconds": 1.3215,
+  "timestamp_utc": "2026-11-27T04:02:04.407032+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "text": "{\"claims\": [{\"text\": \"За отчётный период создано задач: 0.\", \"source_keys\": [\"issues_created\"]}, {\"text\": \"За отчётный период закрыто задач: 0.\", \"source_keys\": [\"issues_closed\"]}, {\"text\": \"На дату снимка 2026-10-30 открытых задач: 28.\", \"source_keys\": [\"issues_open_at_capture\"]}, {\"text\": \"На дату снимка 2026-10-30 закрытых задач: 2.\", \"source_keys\": [\"issues_closed_at_capture\"]}, {\"text\": \"На дату снимка 2026-10-30 задач в статусе в работе: 1.\", \"source_keys\": [\"project_in_progress_at_capture\"]}, {\"text\": \"На дату снимка 2026-10-30 заблокированных задач: 0.\", \"source_keys\": [\"project_blocked_at_capture\"]}, {\"text\": \"Успешных CI: 3.\", \"source_keys\": [\"ci_success\"]}, {\"text\": \"Неуспешных CI: 2.\", \"source_keys\": [\"ci_failure\"]}, {\"text\": \"В GitHub Deployments API нет записей.\", \"source_keys\": [\"recorded_deployments\"]}, {\"text\": \"Ручные развёртывания: нет данных.\", \"source_keys\": [\"manual_deployments\"]}, {\"text\": \"Согласование с заказчиком: нет данных.\", \"source_keys\": [\"customer_approval\"]}, {\"text\": \"Цель спринта: нет данных.\", \"source_keys\": [\"sprint_goal\"]}, {\"text\": \"Замеренные ручные минуты: нет данных.\", \"source_keys\": [\"measured_manual_minutes\"]}]}",
+  "usage": {
+    "promptTokenCount": 521,
+    "candidatesTokenCount": 393,
+    "totalTokenCount": 914,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 521
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "model": "gemini-3.5-flash-lite",
+  "provider": "Google Gemini API",
+  "temperature": 0,
+  "seed": 42,
+  "seconds": 1.623,
+  "timestamp_utc": "2026-11-27T04:06:00.862085+00:00"
+}

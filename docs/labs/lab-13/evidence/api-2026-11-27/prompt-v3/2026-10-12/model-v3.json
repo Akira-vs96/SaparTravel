@@ -1,0 +1,21 @@
+{
+  "text": "{\"claims\": [{\"text\": \"За отчётный период создано задач: 0.\", \"source_keys\": [\"issues_created\"]}, {\"text\": \"За отчётный период закрыто задач: 0.\", \"source_keys\": [\"issues_closed\"]}, {\"text\": \"На дату снимка 2026-10-30 открытых задач: 28.\", \"source_keys\": [\"issues_open_at_capture\"]}, {\"text\": \"На дату снимка 2026-10-30 закрытых задач: 2.\", \"source_keys\": [\"issues_closed_at_capture\"]}, {\"text\": \"На дату снимка 2026-10-30 задач в статусе in progress: 1.\", \"source_keys\": [\"project_in_progress_at_capture\"]}, {\"text\": \"На дату снимка 2026-10-30 заблокированных задач: 0.\", \"source_keys\": [\"project_blocked_at_capture\"]}, {\"text\": \"Успешных CI: 10.\", \"source_keys\": [\"ci_success\"]}, {\"text\": \"Неуспешных CI: 2.\", \"source_keys\": [\"ci_failure\"]}, {\"text\": \"В GitHub Deployments API нет записей.\", \"source_keys\": [\"recorded_deployments\"]}, {\"text\": \"Ручные развёртывания: нет данных.\", \"source_keys\": [\"manual_deployments\"]}]}",
+  "usage": {
+    "promptTokenCount": 522,
+    "candidatesTokenCount": 321,
+    "totalTokenCount": 843,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 522
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "model": "gemini-3.5-flash-lite",
+  "provider": "Google Gemini API",
+  "temperature": 0,
+  "seed": 42,
+  "seconds": 1.5947,
+  "timestamp_utc": "2026-11-27T04:05:59.174481+00:00"
+}

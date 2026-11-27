@@ -1,0 +1,30 @@
+{
+  "system_prompt": "Роль: ассистент менеджера проекта. Адресат: команда проекта. Подготовь краткий черновик статуса на русском языке в JSON вида {\"summary\":\"...\"}. Единственный источник фактов — JSON из сообщения пользователя. Не добавляй факты, числа, даты, причины, статусы согласования или выводы, которых в нём нет. При отсутствии сведений напиши «нет данных». Не используй оценочные слова. До 90 слов. Успешный CI не означает закрытую задачу или развёртывание. Поля со словом at_capture относятся к дате снимка, а не к отчётному периоду. Каждое фактическое предложение заканчивай ссылкой на ключ JSON в квадратных скобках. Не считай проценты, длительность или экономию. Не делай выводов об отсутствии ручных действий из пустого журнала. Значения null передавай словами «нет данных»; никогда не превращай их в ноль. Не называй CI-запуски задачами или развёртываниями. Если project_status_capture_date отсутствует, статус задач в работе и заблокированных задач неизвестен; если он указан, привяжи эти числа только к дате снимка.",
+  "user_facts": {
+    "period_start": "2026-10-19",
+    "period_end_exclusive": "2026-10-26",
+    "issues_created": 0,
+    "issues_closed": 0,
+    "issues_open_at_capture": 28,
+    "issues_closed_at_capture": 2,
+    "project_in_progress_at_capture": 1,
+    "project_blocked_at_capture": 0,
+    "project_status_capture_date": "2026-10-30",
+    "ci_success": 3,
+    "ci_failure": 2,
+    "recorded_deployments": 0,
+    "customer_approval": null,
+    "sprint_goal": null,
+    "measured_manual_minutes": null
+  },
+  "response_schema": null,
+  "generation": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
+    "temperature": 0,
+    "seed": 42,
+    "max_output_tokens": 300,
+    "response_mime_type": "application/json",
+    "endpoint": "v1beta/models/{model}:generateContent"
+  }
+}

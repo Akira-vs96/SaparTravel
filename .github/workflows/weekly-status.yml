@@ -22,24 +22,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Read repository facts without owner-level project permissions
-        run: python -m scripts.course.github_facts --repo "$GITHUB_REPOSITORY" --skip-project --output test-results/weekly/github.json
-      - name: Prepare and start pinned CPU model
+      - name: Read repository facts
+        env:
+          GH_PROJECT_TOKEN: ${{ secrets.GH_PROJECT_TOKEN }}
         run: |
-          python -m scripts.course.local_model --directory /tmp/sapar-course-model --serve > /tmp/sapar-course-model.log 2>&1 &
-          echo $! > /tmp/sapar-course-model.pid
-          python - <<'PY'
-          import time, urllib.request
-          for _ in range(180):
-              try:
-                  urllib.request.urlopen('http://127.0.0.1:18087/health', timeout=2).close()
-                  break
-              except OSError:
-                  time.sleep(2)
-          else:
-              raise SystemExit('Local model did not become ready; no report is certified')
-          PY
+          if [ -n "$GH_PROJECT_TOKEN" ]; then
+            export GH_TOKEN="$GH_PROJECT_TOKEN"
+            python -m scripts.course.github_facts --repo "$GITHUB_REPOSITORY" --output test-results/weekly/github.json
+          else
+            python -m scripts.course.github_facts --repo "$GITHUB_REPOSITORY" --skip-project --output test-results/weekly/github.json
+          fi
       - name: Generate a file for human review; never post it to issues or mail
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
         run: |
           python - <<'PY'
           from datetime import datetime, timedelta, timezone

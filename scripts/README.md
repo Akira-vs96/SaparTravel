@@ -7,7 +7,7 @@
 |---|---|---|
 | Приложение | setup_env.py, backup_db.sh | [runbook](../docs/ops/runbook.md) |
 | SLI/эксплуатация | availability_probe/report, catalog_load, database_recovery, ops_jobs, monthly_service_report | [SLI](../docs/ops/service-levels.md) |
-| Курс | course.github_facts/metrics/forecast/finance/ai/weekly_status/prioritize/audit/dashboard | [15 лабораторных](../docs/labs/README.md) |
+| Курс | course.github_facts/metrics/forecast/finance/ai/gemini_api/weekly_status/prioritize/audit/dashboard | [15 лабораторных](../docs/labs/README.md) |
 | Исторический пакет ЛЗ8 | create_lab8_package/create_lab8_kzt/convert/validate | [история и исправления](../docs/labs/lab-08/corrections.md) |
 
 Текущая исправленная модель: python -m scripts.course.finance. Старые генераторы

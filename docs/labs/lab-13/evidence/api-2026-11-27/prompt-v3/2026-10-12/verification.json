@@ -1,0 +1,73 @@
+{
+  "claims": [
+    {
+      "prompt_version": 3,
+      "machine_numeric_discrepancies": [],
+      "claim_number_errors": [
+        {
+          "claim_index": 2,
+          "kind": "date_generated_by_model"
+        },
+        {
+          "claim_index": 2,
+          "kind": "numbers_not_in_cited_facts",
+          "values": [
+            "10",
+            "2026",
+            "30"
+          ]
+        },
+        {
+          "claim_index": 3,
+          "kind": "date_generated_by_model"
+        },
+        {
+          "claim_index": 3,
+          "kind": "numbers_not_in_cited_facts",
+          "values": [
+            "10",
+            "2026",
+            "30"
+          ]
+        },
+        {
+          "claim_index": 4,
+          "kind": "date_generated_by_model"
+        },
+        {
+          "claim_index": 4,
+          "kind": "numbers_not_in_cited_facts",
+          "values": [
+            "10",
+            "2026",
+            "30"
+          ]
+        },
+        {
+          "claim_index": 5,
+          "kind": "date_generated_by_model"
+        },
+        {
+          "claim_index": 5,
+          "kind": "numbers_not_in_cited_facts",
+          "values": [
+            "10",
+            "2026",
+            "30"
+          ]
+        }
+      ],
+      "machine_check_passed": false,
+      "human_review": "pending",
+      "reviewer": null,
+      "semantic_error_rate": null,
+      "generation_seconds": 1.5947
+    }
+  ],
+  "provider": "Google Gemini API",
+  "automatic_check_limitation": "Числовая проверка не проверяет смысл, причины, согласования и атрибуцию",
+  "manual_baseline_runs": [],
+  "net_savings_minutes": null,
+  "payback_runs": null,
+  "status": "draft_requires_human_review"
+}

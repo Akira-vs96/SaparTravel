@@ -1,0 +1,21 @@
+{
+  "text": "{\"claims\":[{\"text\":\"За отчётный период создано задач: 0.\",\"source_keys\":[\"issues_created\"]},{\"text\":\"За отчётный период закрыто задач: 0.\",\"source_keys\":[\"issues_closed\"]},{\"text\":\"На дату снимка открытых задач: 28.\",\"source_keys\":[\"issues_open_at_capture\"]},{\"text\":\"На дату снимка закрытых задач: 2.\",\"source_keys\":[\"issues_closed_at_capture\"]},{\"text\":\"На дату снимка задач в работе: 1.\",\"source_keys\":[\"project_in_progress_at_capture\"]},{\"text\":\"На дату снимка заблокированных задач: 0.\",\"source_keys\":[\"project_blocked_at_capture\"]},{\"text\":\"За отчётный период успешных CI-запусков: 10.\",\"source_keys\":[\"ci_success\"]},{\"text\":\"За отчётный период неудачных CI-запусков: 2.\",\"source_keys\":[\"ci_failure\"]},{\"text\":\"За отчётный период в GitHub Deployments API записей нет: 0.\",\"source_keys\":[\"recorded_deployments\"]},{\"text\":\"Ручные развёртывания: нет данных.\",\"source_keys\":[\"manual_deployments\"]},{\"text\":\"Согласование с заказчиком: нет данных.\",\"source_keys\":[\"customer_approval\"]},{\"text\":\"Цель спринта: нет данных.\",\"source_keys\":[\"sprint_goal\"]},{\"text\":\"Измеренное время ручных операций в минутах: нет данных.\",\"source_keys\":[\"measured_manual_minutes\"]}]}",
+  "usage": {
+    "promptTokenCount": 781,
+    "candidatesTokenCount": 334,
+    "totalTokenCount": 1115,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 781
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "model": "gemini-3.5-flash-lite",
+  "provider": "Google Gemini API",
+  "temperature": 0,
+  "seed": 42,
+  "seconds": 1.6788,
+  "timestamp_utc": "2026-11-27T04:09:18.444178+00:00"
+}

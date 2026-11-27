@@ -1,0 +1,21 @@
+{
+  "text": "{\"claims\":[{\"text\":\"За отчётный период создано задач: нет данных\",\"source_keys\":[\"issues_created\"]},{\"text\":\"За отчётный период закрыто задач: нет данных\",\"source_keys\":[\"issues_closed\"]},{\"text\":\"На дату снимка открытых задач: нет данных\",\"source_keys\":[\"issues_open_at_capture\"]},{\"text\":\"На дату снимка закрытых задач: нет данных\",\"source_keys\":[\"issues_closed_at_capture\"]}]}",
+  "usage": {
+    "promptTokenCount": 462,
+    "candidatesTokenCount": 98,
+    "totalTokenCount": 560,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 462
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "model": "gemini-3.5-flash-lite",
+  "provider": "Google Gemini API",
+  "temperature": 0,
+  "seed": 42,
+  "seconds": 1.0666,
+  "timestamp_utc": "2026-11-27T04:07:57.823598+00:00"
+}

@@ -1,0 +1,996 @@
+{
+  "provider": "Google Gemini API",
+  "model": "gemini-3.5-flash-lite",
+  "source_snapshot": "docs/labs/evidence/github-2026-10-30.json",
+  "reviewer": "Codex source-grounded agent review; not student or PM sign-off",
+  "human_signoff": false,
+  "method": "Atomic facts in Gemini text were checked against facts.json and the saved GitHub snapshot; claim wording, units, time window, null handling, and source attribution were reviewed. Final v6 has two capture-date windows and 13 claims per report.",
+  "quality_comparison": [
+    {
+      "prompt_version": 1,
+      "reviewed_windows": 2,
+      "metric_assertions": 23,
+      "meaning_changing_errors": 4,
+      "meaning_changing_error_rate": 0.17391304347826086,
+      "other_findings": 3,
+      "finding_ids": [
+        "V1-01",
+        "V1-02",
+        "V1-03",
+        "V1-04",
+        "V1-05",
+        "V1-06",
+        "V1-07"
+      ]
+    },
+    {
+      "prompt_version": 2,
+      "reviewed_windows": 2,
+      "metric_assertions": 24,
+      "meaning_changing_errors": 0,
+      "meaning_changing_error_rate": 0.0,
+      "other_findings": 4,
+      "finding_ids": [
+        "V2-01",
+        "V2-02",
+        "V2-03",
+        "V2-04"
+      ]
+    },
+    {
+      "prompt_version": 6,
+      "reviewed_windows": 2,
+      "metric_assertions": 26,
+      "meaning_changing_errors": 0,
+      "stylistic_errors": 0,
+      "machine_check_errors": 0,
+      "meaning_changing_error_rate": 0.0,
+      "human_signoff": false,
+      "reviewed_claims_count": 26
+    }
+  ],
+  "intermediate_prompt_errors": "Prompt versions 3–5 were diagnostic iterations. Their detected errors and corrections are logged below. They are not the final reports.",
+  "errors": [
+    {
+      "id": "V1-01",
+      "prompt_version": 1,
+      "period": "2026-10-12/2026-10-19",
+      "claim": "Проектов в процессе: 1",
+      "source_keys": [
+        "project_in_progress_at_capture"
+      ],
+      "source_values": {
+        "project_in_progress_at_capture": 1
+      },
+      "type": "meaning_changing",
+      "explanation": "Число относится к задачам Project V2, но текст называет их проектами.",
+      "correction": "Задач в работе на дату снимка: 1."
+    },
+    {
+      "id": "V1-02",
+      "prompt_version": 1,
+      "period": "2026-10-12/2026-10-19",
+      "claim": "Заблокированных проектов: 0",
+      "source_keys": [
+        "project_blocked_at_capture"
+      ],
+      "source_values": {
+        "project_blocked_at_capture": 0
+      },
+      "type": "meaning_changing",
+      "explanation": "Число относится к задачам Project V2, но текст называет их проектами.",
+      "correction": "Заблокированных задач на дату снимка: 0."
+    },
+    {
+      "id": "V1-03",
+      "prompt_version": 1,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "Проектов в работе: 1",
+      "source_keys": [
+        "project_in_progress_at_capture"
+      ],
+      "source_values": {
+        "project_in_progress_at_capture": 1
+      },
+      "type": "meaning_changing",
+      "explanation": "Число относится к задачам Project V2, но текст называет их проектами.",
+      "correction": "Задач в работе на дату снимка: 1."
+    },
+    {
+      "id": "V1-04",
+      "prompt_version": 1,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "Заблокированных проектов: 0",
+      "source_keys": [
+        "project_blocked_at_capture"
+      ],
+      "source_values": {
+        "project_blocked_at_capture": 0
+      },
+      "type": "meaning_changing",
+      "explanation": "Число относится к задачам Project V2, но текст называет их проектами.",
+      "correction": "Заблокированных задач на дату снимка: 0."
+    },
+    {
+      "id": "V1-05",
+      "prompt_version": 1,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "Период: 2026-10-19 — 2026-10-25",
+      "source_keys": [
+        "period_end_exclusive"
+      ],
+      "source_values": {
+        "period_end_exclusive": "2026-10-26"
+      },
+      "type": "stylistic_traceability",
+      "explanation": "Модель самостоятельно вывела дату 25 октября. Это эквивалентная включительная запись окна, но такой даты не было в фактах и числовая проверка её отметила.",
+      "correction": "Показывать исходную правую границу 2026-10-26 с пометкой «не включена»."
+    },
+    {
+      "id": "V1-07",
+      "prompt_version": 1,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "Утверждение об измеренном ручном времени отсутствует",
+      "source_keys": [
+        "measured_manual_minutes"
+      ],
+      "source_values": {
+        "measured_manual_minutes": null
+      },
+      "change_type": "omission",
+      "type": "incomplete_report",
+      "explanation": "В исходных фактах измеренное ручное время было null, но модель не сообщила «нет данных». Это неполнота отчёта, не ложное утверждение.",
+      "correction": "Добавить явное «нет данных» для отсутствующего замера."
+    },
+    {
+      "id": "V1-06",
+      "prompt_version": 1,
+      "period": "2026-10-12/2026-10-19",
+      "claim": "Окончание периода: 2026-10-19",
+      "source_keys": [
+        "period_end_exclusive"
+      ],
+      "source_values": {
+        "period_end_exclusive": "2026-10-19"
+      },
+      "type": "stylistic_ambiguity",
+      "explanation": "В сгенерированной фразе не указано, что дата окончания исключающая. Детерминированный заголовок отчёта снимает неоднозначность.",
+      "correction": "Писать «до 2026-10-19, не включая дату» либо не повторять границы в модельном тексте."
+    },
+    {
+      "id": "V2-01",
+      "prompt_version": 2,
+      "period": "2026-10-12/2026-10-19",
+      "claim": "Зафиксировано ... развёртываний: 0",
+      "source_keys": [
+        "recorded_deployments"
+      ],
+      "source_values": {
+        "recorded_deployments": 0,
+        "manual_deployments": null
+      },
+      "type": "scope_ambiguity",
+      "explanation": "Факт — ноль записей GitHub Deployments API; текст не уточняет область подсчёта. Вручную выполненные развёртывания неизвестны.",
+      "correction": "В GitHub Deployments API нет записей; о ручных развёртываниях нет данных."
+    },
+    {
+      "id": "V2-02",
+      "prompt_version": 2,
+      "period": "2026-10-12/2026-10-19",
+      "claim": "За период с 2026-10-12 по 2026-10-19",
+      "source_keys": [
+        "period_end_exclusive"
+      ],
+      "source_values": {
+        "period_end_exclusive": "2026-10-19"
+      },
+      "type": "stylistic_ambiguity",
+      "explanation": "Формулировка «по» обычно читается включительно, тогда как правая граница в данных не включена.",
+      "correction": "Использовать только детерминированный заголовок с пометкой о невключённой правой границе."
+    },
+    {
+      "id": "V2-03",
+      "prompt_version": 2,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "За период с 2026-10-19 по 2026-10-26",
+      "source_keys": [
+        "period_end_exclusive"
+      ],
+      "source_values": {
+        "period_end_exclusive": "2026-10-26"
+      },
+      "type": "stylistic_ambiguity",
+      "explanation": "Формулировка «по» обычно читается включительно, тогда как правая граница в данных не включена.",
+      "correction": "Использовать только детерминированный заголовок с пометкой о невключённой правой границе."
+    },
+    {
+      "id": "V2-04",
+      "prompt_version": 2,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "Фактические предложения не содержат квадратных ссылок на ключи",
+      "source_keys": [],
+      "source_values": {},
+      "type": "stylistic_traceability",
+      "explanation": "В версии 2 требовалось заканчивать каждое фактическое предложение именами ключей JSON; в этом ответе ссылки отсутствуют.",
+      "correction": "Скрипт добавляет проверенные ссылки на source_keys в версии 6."
+    },
+    {
+      "id": "V3-01",
+      "prompt_version": 3,
+      "period": "2026-10-12/2026-10-19",
+      "claim": "Четыре утверждения о снимке содержат дату 2026-10-30 без ссылки на project_status_capture_date",
+      "source_keys": [
+        "issues_open_at_capture",
+        "issues_closed_at_capture",
+        "project_in_progress_at_capture",
+        "project_blocked_at_capture"
+      ],
+      "source_values": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "instances": 4,
+      "type": "stylistic_traceability",
+      "explanation": "Дата верна, но промпт запрещал модельные даты, а source_keys утверждений её не включали."
+    },
+    {
+      "id": "V3-02",
+      "prompt_version": 3,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "Четыре утверждения о снимке содержат дату 2026-10-30 без ссылки на project_status_capture_date",
+      "source_keys": [
+        "issues_open_at_capture",
+        "issues_closed_at_capture",
+        "project_in_progress_at_capture",
+        "project_blocked_at_capture"
+      ],
+      "source_values": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "instances": 4,
+      "type": "stylistic_traceability",
+      "explanation": "Дата верна, но промпт запрещал модельные даты, а source_keys утверждений её не включали."
+    },
+    {
+      "id": "V4-01",
+      "prompt_version": 4,
+      "period": "2026-10-12/2026-10-19",
+      "claim": "Проектов в работе: 1; заблокированных проектов: 0",
+      "source_keys": [
+        "project_in_progress_at_capture",
+        "project_blocked_at_capture"
+      ],
+      "source_values": {
+        "project_in_progress_at_capture": 1,
+        "project_blocked_at_capture": 0
+      },
+      "type": "meaning_changing",
+      "explanation": "Счётчики задач Project V2 вновь названы счётчиками проектов.",
+      "correction": "Задач в работе: 1; заблокированных задач: 0."
+    },
+    {
+      "id": "V4-02",
+      "prompt_version": 4,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "Создано, закрыто, открыто и закрыто на снимке: нет данных",
+      "source_keys": [
+        "issues_created",
+        "issues_closed",
+        "issues_open_at_capture",
+        "issues_closed_at_capture"
+      ],
+      "source_values": {
+        "issues_created": 0,
+        "issues_closed": 0,
+        "issues_open_at_capture": 28,
+        "issues_closed_at_capture": 2
+      },
+      "type": "meaning_changing",
+      "explanation": "Четыре известные числовые величины представлены как отсутствующие данные.",
+      "correction": "Сообщать нулевые счётчики как 0, а 28 открытых и 2 закрытых issue — как наблюдаемые значения."
+    },
+    {
+      "id": "V5-01",
+      "prompt_version": 5,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "За создано за отчётный период: 0. За закрыто за отчётный период: 0.",
+      "source_keys": [
+        "issues_created",
+        "issues_closed"
+      ],
+      "source_values": {
+        "issues_created": 0,
+        "issues_closed": 0
+      },
+      "type": "stylistic",
+      "explanation": "Грамматически некорректные фразы, хотя числа и источники указаны верно.",
+      "correction": "Создано задач за отчётный период: 0. Закрыто задач за отчётный период: 0."
+    },
+    {
+      "id": "V5-02",
+      "prompt_version": 5,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "Measured manual minutes: нет данных.",
+      "source_keys": [
+        "measured_manual_minutes"
+      ],
+      "source_values": {
+        "measured_manual_minutes": null
+      },
+      "type": "stylistic",
+      "explanation": "Английский фрагмент в русском отчёте.",
+      "correction": "Измеренное время ручных операций: нет данных."
+    },
+    {
+      "id": "V5-CHECK-01",
+      "prompt_version": 5,
+      "period": "2026-10-19/2026-10-26",
+      "claim": "Записей в GitHub Deployments API за отчётный период нет.",
+      "source_keys": [
+        "recorded_deployments"
+      ],
+      "source_values": {
+        "recorded_deployments": 0
+      },
+      "type": "machine_check_false_positive",
+      "explanation": "Человеческий разбор подтвердил, что «записей нет» точно передаёт ноль записей. Проверка требовала буквальную цифру 0 и была уточнена для этого ключа."
+    }
+  ],
+  "final_v6_claim_review": [
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 1,
+      "claim": "Создано задач за отчётный период: 0.",
+      "source_keys": [
+        "issues_created"
+      ],
+      "source_values": {
+        "issues_created": 0
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 2,
+      "claim": "Закрыто задач за отчётный период: 0.",
+      "source_keys": [
+        "issues_closed"
+      ],
+      "source_values": {
+        "issues_closed": 0
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 3,
+      "claim": "Открытых задач на дату снимка: 28.",
+      "source_keys": [
+        "issues_open_at_capture"
+      ],
+      "source_values": {
+        "issues_open_at_capture": 28
+      },
+      "source_context": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 4,
+      "claim": "Закрытых задач на дату снимка: 2.",
+      "source_keys": [
+        "issues_closed_at_capture"
+      ],
+      "source_values": {
+        "issues_closed_at_capture": 2
+      },
+      "source_context": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 5,
+      "claim": "Задач в работе на дату снимка: 1.",
+      "source_keys": [
+        "project_in_progress_at_capture"
+      ],
+      "source_values": {
+        "project_in_progress_at_capture": 1
+      },
+      "source_context": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 6,
+      "claim": "Заблокированных задач на дату снимка: 0.",
+      "source_keys": [
+        "project_blocked_at_capture"
+      ],
+      "source_values": {
+        "project_blocked_at_capture": 0
+      },
+      "source_context": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 7,
+      "claim": "Успешных CI-запусков за отчётный период: 10.",
+      "source_keys": [
+        "ci_success"
+      ],
+      "source_values": {
+        "ci_success": 10
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 8,
+      "claim": "Неуспешных CI-запусков за отчётный период: 2.",
+      "source_keys": [
+        "ci_failure"
+      ],
+      "source_values": {
+        "ci_failure": 2
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 9,
+      "claim": "Записей о развёртывании в GitHub API за отчётный период нет.",
+      "source_keys": [
+        "recorded_deployments"
+      ],
+      "source_values": {
+        "recorded_deployments": 0
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 10,
+      "claim": "Ручные развёртывания за отчётный период: нет данных.",
+      "source_keys": [
+        "manual_deployments"
+      ],
+      "source_values": {
+        "manual_deployments": null
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 11,
+      "claim": "Согласование с заказчиком за отчётный период: нет данных.",
+      "source_keys": [
+        "customer_approval"
+      ],
+      "source_values": {
+        "customer_approval": null
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 12,
+      "claim": "Цель спринта за отчётный период: нет данных.",
+      "source_keys": [
+        "sprint_goal"
+      ],
+      "source_values": {
+        "sprint_goal": null
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-12",
+      "prompt_version": 6,
+      "claim_number": 13,
+      "claim": "Измеренное время ручных операций за отчётный период: нет данных.",
+      "source_keys": [
+        "measured_manual_minutes"
+      ],
+      "source_values": {
+        "measured_manual_minutes": null
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 1,
+      "claim": "Создано задач за отчётный период: 0.",
+      "source_keys": [
+        "issues_created"
+      ],
+      "source_values": {
+        "issues_created": 0
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 2,
+      "claim": "Закрыто задач за отчётный период: 0.",
+      "source_keys": [
+        "issues_closed"
+      ],
+      "source_values": {
+        "issues_closed": 0
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 3,
+      "claim": "Открытых задач на дату снимка: 28.",
+      "source_keys": [
+        "issues_open_at_capture"
+      ],
+      "source_values": {
+        "issues_open_at_capture": 28
+      },
+      "source_context": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 4,
+      "claim": "Закрытых задач на дату снимка: 2.",
+      "source_keys": [
+        "issues_closed_at_capture"
+      ],
+      "source_values": {
+        "issues_closed_at_capture": 2
+      },
+      "source_context": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 5,
+      "claim": "Задач в работе на дату снимка: 1.",
+      "source_keys": [
+        "project_in_progress_at_capture"
+      ],
+      "source_values": {
+        "project_in_progress_at_capture": 1
+      },
+      "source_context": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 6,
+      "claim": "Заблокированных задач на дату снимка: 0.",
+      "source_keys": [
+        "project_blocked_at_capture"
+      ],
+      "source_values": {
+        "project_blocked_at_capture": 0
+      },
+      "source_context": {
+        "project_status_capture_date": "2026-10-30"
+      },
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 7,
+      "claim": "Успешных CI-запусков за отчётный период: 3.",
+      "source_keys": [
+        "ci_success"
+      ],
+      "source_values": {
+        "ci_success": 3
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 8,
+      "claim": "Неуспешных CI-запусков за отчётный период: 2.",
+      "source_keys": [
+        "ci_failure"
+      ],
+      "source_values": {
+        "ci_failure": 2
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 9,
+      "claim": "Записей о развёртывании в GitHub API за отчётный период нет.",
+      "source_keys": [
+        "recorded_deployments"
+      ],
+      "source_values": {
+        "recorded_deployments": 0
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 10,
+      "claim": "Ручные развёртывания: нет данных.",
+      "source_keys": [
+        "manual_deployments"
+      ],
+      "source_values": {
+        "manual_deployments": null
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 11,
+      "claim": "Согласование с заказчиком: нет данных.",
+      "source_keys": [
+        "customer_approval"
+      ],
+      "source_values": {
+        "customer_approval": null
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 12,
+      "claim": "Цель спринта: нет данных.",
+      "source_keys": [
+        "sprint_goal"
+      ],
+      "source_values": {
+        "sprint_goal": null
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    },
+    {
+      "period": "2026-10-19",
+      "prompt_version": 6,
+      "claim_number": 13,
+      "claim": "Измеренное время ручных операций: нет данных.",
+      "source_keys": [
+        "measured_manual_minutes"
+      ],
+      "source_values": {
+        "measured_manual_minutes": null
+      },
+      "source_context": {},
+      "agent_review": "matches_saved_GitHub_snapshot_and_computed_facts",
+      "error_type": null,
+      "human_signoff": false,
+      "recheck_2026_11_27": {
+        "reviewer": "Codex (ИИ-агент)",
+        "reviewed_at": "2026-11-27T11:24:38+05:00",
+        "method": "Полная сверка текста, source_keys, source_values, периода, единиц, null-значений и области метрики; числа независимо пересчитаны по сохранённому снимку.",
+        "result": "Совпадает с указанным источником; ошибка не обнаружена.",
+        "error_type": null,
+        "correction": null
+      }
+    }
+  ],
+  "limitations": [
+    "Only two historical weekly windows were available; official sprint boundaries were not supplied.",
+    "Agent review does not replace review and approval by the responsible PM.",
+    "Manual baseline, human review and edit time, and development effort were not measured; savings and payback are null.",
+    "The Gemini API account invoice and quota tier were not checked."
+  ],
+  "recheck_2026_11_27": {
+    "reviewer": "Codex (ИИ-агент)",
+    "reviewed_at": "2026-11-27T11:24:38+05:00",
+    "claims_reviewed": 26,
+    "claims_matching_sources": 26,
+    "errors_found": 0,
+    "snapshot": "docs/labs/evidence/github-2026-10-30.json",
+    "human_signoff": false,
+    "note": "Это повторная агентская проверка, не подпись PM и не заявление о проверке человеком."
+  }
+}

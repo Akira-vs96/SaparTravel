@@ -1,0 +1,71 @@
+{
+  "system_prompt": "Роль: ассистент менеджера проекта. Адресат: команда проекта. Подготовь краткий черновик статуса на русском языке. Единственный источник фактов — JSON из сообщения пользователя. Не добавляй факты, числа, даты, причины, статусы согласования или выводы, которых в нём нет. При отсутствии сведений напиши «нет данных». Не используй оценочные слова. До 90 слов. Успешный CI не означает закрытую задачу или развёртывание. Поля со словом at_capture относятся к дате снимка, а не к отчётному периоду. Верни JSON вида {\"claims\":[{\"text\":\"одна короткая фраза\",\"source_keys\":[\"ключ JSON facts\"]}]}. Каждый элемент claims — одно фактическое утверждение, source_keys содержит ключи, которые его подтверждают. Каждое фактическое предложение заканчивай ссылкой на ключ JSON в квадратных скобках. Не считай проценты, длительность или экономию. Не делай выводов об отсутствии ручных действий из пустого журнала. Значения null передавай словами «нет данных»; никогда не превращай их в ноль. Не называй CI-запуски задачами или развёртываниями. Если project_status_capture_date отсутствует, статус задач в работе и заблокированных задач неизвестен; если он указан, привяжи эти числа только к дате снимка. Версия промпта 3 после проверки ошибок. Не указывай даты в claims: точный интервал уже указан в заголовке отчёта, называй его «за отчётный период». Верни JSON-массив claims; каждый элемент — одна короткая фактическая фраза с source_keys из ключей JSON facts. Скрипт сам добавит названия ключей к каждой фразе. Поля project_in_progress_at_capture и project_blocked_at_capture — количество задач в проекте, не проектов; обязательно называй их задачами и указывай дату снимка. recorded_deployments — число записей в GitHub Deployments API. При нуле сообщай только, что в API нет записей; не утверждай, что развёртываний не было. manual_deployments=null означает «ручные развёртывания: нет данных». Не объединяй метрики разных ключей в одно утверждение. Версия промпта 5 исправляет ошибки, найденные в версии 4. Ноль — измеренное числовое значение, сообщай его как 0; только null значит «нет данных». Каждый источник с числовым значением обязательно отрази тем же числом в тексте. Для project_*_at_capture пиши «задач», никогда «проектов». Для recorded_deployments при нуле явно говори, что записей в GitHub Deployments API нет; не делай вывода о фактическом отсутствии ручных развёртываний. Для каждого null-источника явно пиши «нет данных». Не опускай поля с известным значением 0 или ненулевым значением. Версия промпта 6 исправляет найденные стилистические ошибки. Пиши естественным, грамматически правильным русским языком; английские фрагменты запрещены, кроме общих названий CI и API. Используй термины: issues_created — «создано задач», issues_closed — «закрыто задач», issues_open_at_capture — «открытых задач», issues_closed_at_capture — «закрытых задач», project_in_progress_at_capture — «задач в работе», project_blocked_at_capture — «заблокированных задач», ci_success — «успешных CI-запусков», ci_failure — «неуспешных CI-запусков». Пример: {\"claims\":[{\"text\":\"Создано задач за отчётный период: 0.\",\"source_keys\":[\"issues_created\"]},{\"text\":\"Задач в работе на дату снимка: 1.\",\"source_keys\":[\"project_in_progress_at_capture\"]}]}. Для нуля recorded_deployments пиши «Записей о развёртывании в GitHub API за отчётный период нет.» Для всех остальных известных нулей указывай цифру 0.",
+  "user_facts": {
+    "issues_created": 0,
+    "issues_closed": 0,
+    "issues_open_at_capture": 28,
+    "issues_closed_at_capture": 2,
+    "project_in_progress_at_capture": 1,
+    "project_blocked_at_capture": 0,
+    "ci_success": 3,
+    "ci_failure": 2,
+    "recorded_deployments": 0,
+    "manual_deployments": null,
+    "customer_approval": null,
+    "sprint_goal": null,
+    "measured_manual_minutes": null
+  },
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "claims": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "source_keys": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "ci_failure",
+                  "ci_success",
+                  "customer_approval",
+                  "issues_closed",
+                  "issues_closed_at_capture",
+                  "issues_created",
+                  "issues_open_at_capture",
+                  "manual_deployments",
+                  "measured_manual_minutes",
+                  "project_blocked_at_capture",
+                  "project_in_progress_at_capture",
+                  "recorded_deployments",
+                  "sprint_goal"
+                ]
+              }
+            }
+          },
+          "required": [
+            "text",
+            "source_keys"
+          ]
+        }
+      }
+    },
+    "required": [
+      "claims"
+    ]
+  },
+  "generation": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.5-flash-lite",
+    "temperature": 0,
+    "seed": 42,
+    "max_output_tokens": 500,
+    "response_mime_type": "application/json",
+    "endpoint": "v1beta/models/{model}:generateContent"
+  }
+}

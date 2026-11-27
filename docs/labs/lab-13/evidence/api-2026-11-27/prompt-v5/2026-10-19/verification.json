@@ -1,0 +1,27 @@
+{
+  "claims": [
+    {
+      "prompt_version": 5,
+      "machine_numeric_discrepancies": [],
+      "claim_number_errors": [
+        {
+          "claim_index": 8,
+          "kind": "known_count_omitted_or_changed",
+          "key": "recorded_deployments",
+          "expected": 0
+        }
+      ],
+      "machine_check_passed": false,
+      "human_review": "pending",
+      "reviewer": null,
+      "semantic_error_rate": null,
+      "generation_seconds": 1.4234
+    }
+  ],
+  "provider": "Google Gemini API",
+  "automatic_check_limitation": "Числовая проверка не проверяет смысл, причины, согласования и атрибуцию",
+  "manual_baseline_runs": [],
+  "net_savings_minutes": null,
+  "payback_runs": null,
+  "status": "draft_requires_human_review"
+}
